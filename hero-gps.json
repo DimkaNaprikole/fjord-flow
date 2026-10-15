@@ -1,0 +1,72 @@
+{
+  "hero-floibanen.jpg": {
+    "name": "Bergen · Fløibanen",
+    "coordinateType": "camera",
+    "source": "https://commons.wikimedia.org/wiki/File:Floeibanen-2021.jpg",
+    "latitude": 60.394444,
+    "longitude": 5.343333
+  },
+  "hero-bergen.jpg": {
+    "name": "Bergen · Bryggen",
+    "coordinateType": "place",
+    "source": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Bergen&treffPerSide=100&utkoordsys=4258",
+    "latitude": 60.39323,
+    "longitude": 5.3245
+  },
+  "hero-loen.jpg": {
+    "name": "Lovatnet · Loen",
+    "coordinateType": "camera",
+    "source": "https://commons.wikimedia.org/wiki/File:Summer_evening_at_Lovatnet,_Stryn,_Norway,_2013_June.jpg",
+    "latitude": 61.85055,
+    "longitude": 6.911775
+  },
+  "hero-stegastein.jpg": {
+    "name": "Stegastein · Aurlandsfjord",
+    "coordinateType": "camera",
+    "source": "https://commons.wikimedia.org/wiki/File:Stegastein_viewpoint_-_panoramio_(1).jpg",
+    "latitude": 60.90838,
+    "longitude": 7.212524
+  },
+  "hero-geiranger.jpg": {
+    "name": "Geirangerfjord",
+    "coordinateType": "camera",
+    "source": "https://commons.wikimedia.org/wiki/File:Geirangerfjord_from_%C3%98rnesvingen,_2013_June.jpg",
+    "latitude": 62.125819,
+    "longitude": 7.167022
+  },
+  "hero-atlantic.jpg": {
+    "name": "Atlanterhavsveien",
+    "coordinateType": "camera",
+    "source": "https://commons.wikimedia.org/wiki/File:Atlanterhavsveien_BG_2023.jpg",
+    "latitude": 63.01758,
+    "longitude": 7.36471
+  },
+  "hero-alesund.jpg": {
+    "name": "Ålesund · Aksla",
+    "coordinateType": "camera",
+    "source": "https://commons.wikimedia.org/wiki/File:Vista_de_%C3%85lesund_desde_Aksla,_Noruega,_2019-09-01,_DD_16.jpg",
+    "latitude": 62.4742735,
+    "longitude": 6.1640417
+  },
+  "hero-lofoten.jpg": {
+    "name": "Lofoten · Austnesfjorden",
+    "coordinateType": "camera",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Late_evening_view_to_Austnesfjorden_at_Sildpollnes_Church,_Austv%C3%A5g%C3%B8ya,_Lofoten,_Norway,_2015_April.jpg",
+    "latitude": 68.321778,
+    "longitude": 14.719267
+  },
+  "hero-naeroyfjord.jpg": {
+    "name": "Nærøyfjord",
+    "coordinateType": "camera",
+    "source": "https://commons.wikimedia.org/wiki/File:N%C3%A6r%C3%B8yfjord-cruise-view.jpg",
+    "latitude": 60.889144,
+    "longitude": 6.854811
+  },
+  "hero-trollstigen.jpg": {
+    "name": "Trollstigen",
+    "coordinateType": "place",
+    "source": "https://www.nasjonaleturistveger.no/no/turistvegene/geiranger-trollstigen/trollstigen/",
+    "latitude": 62.453301,
+    "longitude": 7.663136
+  }
+}

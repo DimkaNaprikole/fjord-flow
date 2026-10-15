@@ -34,7 +34,7 @@ Community|Fellesskap|Спільнота|Gemenskap|Fællesskab
 CURATED JOURNEYS · NORWAY|UTVALGTE REISER · NORGE|ВИБРАНІ ПОДОРОЖІ · НОРВЕГІЯ|UTVALDA RESOR · NORGE|UDVALGTE REJSER · NORGE
 INTERACTIVE PREVIEW|INTERAKTIV FORHÅNDSVISNING|ІНТЕРАКТИВНИЙ ПЕРЕГЛЯД|INTERAKTIV FÖRHANDSVISNING|INTERAKTIV FORHÅNDSVISNING
 YOUR NORWEGIAN FIELD GUIDE · VOL. 01|DIN NORGESGUIDE · UTGAVE 01|ВАШ ПУТІВНИК НОРВЕГІЄЮ · ВИПУСК 01|DIN NORGEGUIDE · UTGÅVA 01|DIN NORGESGUIDE · UDGAVE 01
-The North|Norden|Північ|Norden|Norden
+Norway|Norge|Норвегія|Norge|Norge
 is calling.|kaller.|кличе.|kallar.|kalder.
 Fjords that silence you. Mountains that stay with you.|Fjorder som tar pusten fra deg. Fjell du aldri glemmer.|Фіорди, що вражають. Гори, що залишаються в пам’яті.|Fjordar som tar andan ur dig. Berg du aldrig glömmer.|Fjorde, der tager pusten fra dig. Bjerge, du aldrig glemmer.
 Find your own extraordinary, from Hardanger to the Arctic.|Finn ditt eget eventyr, fra Hardanger til Arktis.|Знайдіть свою пригоду — від Хардангера до Арктики.|Hitta ditt eget äventyr, från Hardanger till Arktis.|Find dit eget eventyr, fra Hardanger til Arktis.
