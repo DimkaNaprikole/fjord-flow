@@ -43,7 +43,7 @@ const safeImage=value=>{if(typeof value==='string'&&/^(?:\.\/)?images\/[a-z0-9._
 const localized=value=>typeof value==='object'&&value!==null?(value[language()]||value.en||value.nb||''):String(value||'');
 const cafeSection=document.createElement('section');cafeSection.id='cafeStops';cafeSection.className='discovery-section discovery-cafes';cafeSection.dataset.i18nIgnore='';
 const storySection=document.createElement('section');storySection.id='travelStories';storySection.className='discovery-section discovery-stories';storySection.dataset.i18nIgnore='';
-const about=document.getElementById('about');if(!about)return;about.after(cafeSection,storySection);
+const about=document.getElementById('discoveryAnchor')||document.getElementById('about');if(!about)return;about.after(cafeSection,storySection);
 const dialog=document.createElement('dialog');dialog.id='discoveryStoryDialog';dialog.className='discovery-story-dialog';dialog.dataset.i18nIgnore='';dialog.setAttribute('aria-labelledby','discoveryStoryTitle');document.body.append(dialog);
 let cafes=[],cafeError=false,activeStory=null;
 function destination(id,route=false){if(typeof openGallery!=='function')return;if(dialog.open)dialog.close();openGallery(id);if(route)requestAnimationFrame(()=>{const target=document.querySelector('#galleryDialog .route-planner');target?.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('routeOrigin')?.focus({preventScroll:true})})}
