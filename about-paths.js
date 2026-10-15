@@ -31,7 +31,7 @@ function render(){
  action.querySelector('span').textContent=item.action;action.href=targets[selected];
  panel.setAttribute('aria-labelledby',buttons[selected].id);
  root.querySelector('.explorer-ghost').textContent='0'+(selected+1);
- root.dataset.selected=String(selected);photograph(selected);
+ root.dataset.selected=String(selected);photograph(selected);window.dispatchEvent(new CustomEvent('fjordexplorerchange',{detail:{index:selected}}));
 }
 function select(index,focus=false){selected=(index+buttons.length)%buttons.length;render();if(focus)buttons[selected].focus()}
 buttons.forEach((button,i)=>button.addEventListener('click',()=>select(i)));

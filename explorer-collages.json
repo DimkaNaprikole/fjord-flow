@@ -1,0 +1,22 @@
+[
+  [
+    {"image": "./images/lofoten.jpg", "caption": "Lofoten"},
+    {"image": "./images/trolltunga.jpg", "caption": "Trolltunga"},
+    {"image": "./images/senja.jpg", "caption": "Senja"}
+  ],
+  [
+    {"image": "./images/geiranger.jpg", "caption": "Geirangerfjord"},
+    {"image": "./images/geiranger-gallery-2.jpg", "caption": "Geirangerfjord"},
+    {"image": "./images/geiranger-gallery-3.jpg", "caption": "Geirangerfjord"}
+  ],
+  [
+    {"image": "./images/bergen-gallery-1.jpg", "caption": "Bergen"},
+    {"image": "./images/flam-gallery-1.jpg", "caption": "Flåm"},
+    {"image": "./images/geiranger.jpg", "caption": "Geirangerfjord"}
+  ],
+  [
+    {"image": "./images/travel-story-illustrations.png", "caption": "Bergen", "panel": 0},
+    {"image": "./images/travel-story-illustrations.png", "caption": "Flåm", "panel": 1},
+    {"image": "./images/travel-story-illustrations.png", "caption": "Geiranger", "panel": 2}
+  ]
+]
