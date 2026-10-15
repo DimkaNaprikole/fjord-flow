@@ -1,6 +1,6 @@
 let data,filter='All',selected,lastRequest;
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const safeURL=s=>{if(!s)return '';try{let u=new URL(s,location.origin);return ['http:','https:'].includes(u.protocol)?u.href:''}catch{return ''}};
+const safeURL=s=>{if(!s)return '';try{let u=new URL(s,document.baseURI);return ['http:','https:'].includes(u.protocol)?u.href:''}catch{return ''}};
 const money=n=>new Intl.NumberFormat('en-NO',{style:'currency',currency:'NOK',maximumFractionDigits:0}).format(n);
 async function api(path,body){let r=await fetch('./api/'+path,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{}),v=await r.json();if(!r.ok)throw Error(v.error||'Request failed');return v}
 function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';setTimeout(()=>$('#toast').style.display='none',4500)}

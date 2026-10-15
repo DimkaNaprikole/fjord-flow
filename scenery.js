@@ -13,7 +13,7 @@
     return result;
   };
   function localImage(path) {
-    return typeof path === 'string' && /^\/images\/[\w.-]+$/.test(path);
+    return typeof path === 'string' && /^(?:\.\/)?images\/[\w.-]+$/.test(path);
   }
   const credited = new Set();
   function credit(photo) {

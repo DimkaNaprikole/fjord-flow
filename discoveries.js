@@ -38,8 +38,8 @@ const cafeCopy={
 'cafe-ole-geiranger':{nb:'En kafé i gågaten i Geiranger, med kaffe, kaker og småretter ved fjorden. Et bygdestopp langs ruten gjennom Trollstigen, Geiranger og Loen. Bekreft åpningstidene før besøket.',uk:'Кав’ярня на пішохідній вулиці Geiranger: кава, тістечка та легкі страви біля фіорду. Зупинка на маршруті через Trollstigen, Geiranger і Loen. Перед візитом уточніть години роботи.',sv:'Ett kafé på gågatan i Geiranger, med kaffe, kakor och lättare rätter nära fjorden. Ett bystopp längs rutten genom Trollstigen, Geiranger och Loen. Bekräfta öppettider före besöket.',da:'En café på gågaden i Geiranger med kaffe, kager og lette retter ved fjorden. Et landsbystop på ruten gennem Trollstigen, Geiranger og Loen. Bekræft åbningstider før besøget.'}
 };
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const safeLink=value=>{try{const u=new URL(value,location.origin);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return ''}};
-const safeImage=value=>{if(typeof value==='string'&&/^\/images\/[a-z0-9._-]+$/i.test(value))return value;return safeLink(value)};
+const safeLink=value=>{if(!value)return '';try{const u=new URL(value,document.baseURI);return ['https:','http:'].includes(u.protocol)?u.href:''}catch{return ''}};
+const safeImage=value=>{if(typeof value==='string'&&/^(?:\.\/)?images\/[a-z0-9._-]+$/i.test(value))return value;return safeLink(value)};
 const localized=value=>typeof value==='object'&&value!==null?(value[language()]||value.en||value.nb||''):String(value||'');
 const cafeSection=document.createElement('section');cafeSection.id='cafeStops';cafeSection.className='discovery-section discovery-cafes';cafeSection.dataset.i18nIgnore='';
 const storySection=document.createElement('section');storySection.id='travelStories';storySection.className='discovery-section discovery-stories';storySection.dataset.i18nIgnore='';
