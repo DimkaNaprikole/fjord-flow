@@ -1,0 +1,32 @@
+/* Scenic foreground with still-image crossfades. */
+.nordic-backdrop .nordic-ski{background-image:url('./images/hero-bergen.jpg')}
+.nordic-backdrop .nordic-skate{background-image:url('./images/geiranger.jpg')}
+.nordic-backdrop .nordic-flight{background-image:url('./images/hero-loen.jpg')}
+.hero .landscape{background:#153e50!important;filter:none;transform:none}
+.hero .landscape:after{z-index:2;background:linear-gradient(90deg,#062438bf 0%,#082a3d73 48%,#05273908 85%),linear-gradient(0deg,#061d35b8,transparent 45%)}
+.scenery-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease;pointer-events:none}
+.scenery-frame.is-visible{opacity:1}
+.hero-content,.hero-bottom{z-index:3}
+.hero .mist{display:none}
+.hero-photo-info{display:flex;flex-direction:column;gap:5px;min-width:0}
+#heroPlace{font-size:14px;font-weight:750;letter-spacing:.5px}
+.scenery-controls{display:flex;align-items:center;gap:9px}
+.scenery-controls button,.route-photo-controls button{min-height:38px;padding:8px 13px;border:1px solid #ffffff70;border-radius:30px;background:#0d2b4080;color:white;font:700 11px Manrope,'Segoe UI',sans-serif;letter-spacing:.3px}
+.scenery-controls button:hover{background:#234b60}
+#heroPhotoCount{font-variant-numeric:tabular-nums;letter-spacing:1px}
+.roadtrip-presets button{padding:0 0 24px;overflow:hidden;display:flex;flex-direction:column;gap:0;min-width:0}
+.roadtrip-presets button>span,.roadtrip-presets button>b,.roadtrip-presets button>small{margin:0 23px}
+.roadtrip-presets button>span{margin-top:23px;margin-bottom:13px}
+.roadtrip-presets button>b{margin-bottom:12px;font-size:23px;min-height:58px}
+.roadtrip-presets button>small{font-size:11px;line-height:1.8}
+.route-scenery{position:relative;isolation:isolate;order:-1;width:100%;height:210px;flex-shrink:0;background:#17485a;overflow:hidden}
+.route-scenery:after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#071e37a6);pointer-events:none;z-index:1}
+.route-scenery .route-photo-place{position:absolute;bottom:15px;left:18px;right:12px;color:white;font:700 12px Manrope,'Segoe UI',sans-serif;text-shadow:0 2px 6px #0009;z-index:2}
+.route-scenery[data-preview-active="true"]:after{background:linear-gradient(transparent,#071e37c4)}
+.route-photo-controls{display:flex;justify-content:flex-end;margin:15px 0 0}
+.route-photo-controls button{border-color:#a6bfc8;background:#f5f9f6;color:#15394b}
+#sceneryCredits{font-size:11px;line-height:1.8}
+#sceneryCredits a{text-decoration:underline}
+@media(max-width:1100px){.hero-bottom{align-items:flex-end;gap:20px}.scenery-controls{flex-wrap:wrap;justify-content:flex-end}.route-scenery{height:190px}}
+@media(max-width:650px){.hero{height:680px}.hero-bottom{flex-wrap:wrap;gap:18px}.hero-photo-info{width:100%}.scenery-controls{justify-content:flex-start;gap:10px}.route-scenery{height:230px}.roadtrip-presets button>b{min-height:0}.hero-content{padding-top:80px}}
+@media(prefers-reduced-motion:reduce){.scenery-frame{transition:none}}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "cafe-opera-bergen",
+    "name": "Café Opera",
+    "town": "Bergen",
+    "address": "Engen 18, 5011 Bergen, Norway",
+    "website": "https://cafeopera.org/",
+    "route": "hardanger",
+    "placeId": "bergen",
+    "image": "./images/bergen-gallery-1.jpg",
+    "photoCaption": "Bergen surroundings — destination photograph, not a photograph of the café.",
+    "description": "A cultural café and coffee stop in central Bergen, with food and a programme of exhibitions and events. A city stop before setting out towards Hardanger. Check the official website for current opening hours."
+  },
+  {
+    "id": "flam-bakery",
+    "name": "Flåm Bakery",
+    "town": "Flåm",
+    "address": "Stasjonsvegen, 5743 Flåm, Norway",
+    "website": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+    "route": "fjord",
+    "placeId": "flam",
+    "image": "./images/flam-gallery-1.jpg",
+    "photoCaption": "Flåm surroundings — destination photograph, not a photograph of the bakery.",
+    "description": "A bakery on the quay near Flåm Railway station, serving baked goods, sandwiches and coffee. A stop in Flåm on the way between Bergen, Aurland and Gudvangen. Check the official website for current opening hours."
+  },
+  {
+    "id": "cafe-ole-geiranger",
+    "name": "Café Olé",
+    "town": "Geiranger",
+    "address": "Maråkvegen 19, 6216 Geiranger, Norway",
+    "website": "https://www.brasserieposten.no/",
+    "route": "sunnmore",
+    "placeId": "geiranger",
+    "image": "./images/geiranger.jpg",
+    "photoCaption": "Geiranger surroundings — destination photograph, not a photograph of the café.",
+    "description": "A café in Geiranger's pedestrian street, offering coffee, cakes and light meals near the fjord. A village stop on the route through Trollstigen, Geiranger and Loen. Confirm current opening hours before visiting."
+  }
+]
