@@ -1,0 +1,108 @@
+{
+  "continue": {
+    "iistart": "2021-02-16T16:02:38Z",
+    "continue": "||"
+  },
+  "query": {
+    "pages": {
+      "99590910": {
+        "pageid": 99590910,
+        "ns": 6,
+        "title": "File:Lindesnes komm (2020).svg",
+        "imagerepository": "local",
+        "imageinfo": [
+          {
+            "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Lindesnes_komm_%282020%29.svg/250px-Lindesnes_komm_%282020%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+            "thumbwidth": 250,
+            "thumbheight": 383,
+            "responsiveUrls": {
+              "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Lindesnes_komm_%282020%29.svg/500px-Lindesnes_komm_%282020%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+            },
+            "thumbattribs": {
+              "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Lindesnes_komm_%282020%29.svg/250px-Lindesnes_komm_%282020%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+              "decoding": "async",
+              "loading": "lazy",
+              "width": 250,
+              "height": 383,
+              "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Lindesnes_komm_%282020%29.svg/500px-Lindesnes_komm_%282020%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+            },
+            "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Lindesnes_komm_%282020%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+            "descriptionurl": "https://commons.wikimedia.org/wiki/File:Lindesnes_komm_(2020).svg",
+            "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=99590910",
+            "extmetadata": {
+              "DateTime": {
+                "value": "2025-04-19 10:46:51",
+                "source": "mediawiki-metadata",
+                "hidden": ""
+              },
+              "ObjectName": {
+                "value": "Lindesnes komm (2020)",
+                "source": "mediawiki-metadata"
+              },
+              "CommonsMetadataExtension": {
+                "value": 1.2,
+                "source": "extension",
+                "hidden": ""
+              },
+              "Categories": {
+                "value": "CC-Zero|Coats of arms of municipalities of Norway|Lighthouses in heraldry|Lindesnes|Self-published work|PD Coa Norway|Argent and azure in heraldry",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "Assessments": {
+                "value": "",
+                "source": "commons-categories",
+                "hidden": ""
+              },
+              "ImageDescription": {
+                "value": "Kommunevåpen for Lindesnes kommune per 2020. Som består av de tidligere kommunene Lindesnes, Mandal og Marnadal.",
+                "source": "commons-desc-page"
+              },
+              "DateTimeOriginal": {
+                "value": "2021-02-05",
+                "source": "commons-desc-page"
+              },
+              "Credit": {
+                "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+                "source": "commons-desc-page"
+              },
+              "Artist": {
+                "value": "<a href=\"//commons.wikimedia.org/wiki/User:Worldlydev\" title=\"User:Worldlydev\">Worldlydev</a>",
+                "source": "commons-desc-page"
+              },
+              "LicenseShortName": {
+                "value": "Public domain",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "UsageTerms": {
+                "value": "Public domain",
+                "source": "commons-desc-page"
+              },
+              "AttributionRequired": {
+                "value": "false",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Copyrighted": {
+                "value": "False",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "Restrictions": {
+                "value": "",
+                "source": "commons-desc-page",
+                "hidden": ""
+              },
+              "License": {
+                "value": "pd",
+                "source": "commons-templates",
+                "hidden": ""
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
