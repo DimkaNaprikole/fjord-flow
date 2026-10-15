@@ -3,9 +3,9 @@
 const root=document.getElementById('about'),frame=root?.querySelector('.explorer-frame');if(!frame)return;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)'),fine=matchMedia('(hover: hover) and (pointer: fine)');
 const collage=document.createElement('div');collage.className='explorer-collage';collage.setAttribute('aria-hidden','true');collage.hidden=true;frame.append(collage);
-let catalogue=[],last=-1,raf=0;
+let catalogue=[],last='',raf=0,currentPlace=null;
 function render(){
- const index=Number(root.dataset.selected||0),items=catalogue[index];if(!items||last===index)return;last=index;
+ const index=Number(root.dataset.selected||0),items=index===0&&currentPlace?[...new Set([currentPlace.image,...(currentPlace.gallery||[]).map(p=>p.image)].filter(Boolean))].slice(0,3).map(image=>({image,caption:currentPlace.name})):catalogue[index],key=index+':'+(index===0?currentPlace?.id||'':'');if(!items||last===key)return;last=key;
  collage.hidden=false;collage.replaceChildren();
  items.forEach((item,i)=>{
   const card=document.createElement('div');card.className='collage-card';card.style.setProperty('--card',i);
@@ -21,7 +21,7 @@ function render(){
  });
  root.classList.add('has-explorer-collage');
 }
-window.addEventListener('fjordexplorerchange',render);
+window.addEventListener('fjordexplorerchange',render);window.addEventListener('fjordexplorerphoto',event=>{if(event.detail?.index===0&&event.detail.place){currentPlace=event.detail.place;render()}});
 function resetTilt(){if(raf)cancelAnimationFrame(raf);raf=0;collage.style.setProperty('--tilt-x','0deg');collage.style.setProperty('--tilt-y','0deg')}
 frame.addEventListener('pointermove',event=>{
  if(!fine.matches||reduced.matches||document.hidden)return;
