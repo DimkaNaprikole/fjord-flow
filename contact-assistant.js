@@ -15,7 +15,7 @@ const footer=node('section','fjord-contact');footer.id='contact';footer.dataset.
 const heading=node('h2'),intro=node('p'),address=node('a','fjord-contact-email');address.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(email);address.target='_blank';address.rel='noopener noreferrer';address.textContent=email;
 const facebook=node('a','fjord-contact-facebook');facebook.href='https://www.facebook.com/profile.php?id=100032941041934';facebook.target='_blank';facebook.rel='noopener noreferrer';facebook.textContent='Facebook · Naprikole Dimka';
 const contactLinks=node('div','fjord-contact-links');contactLinks.append(address,facebook);
-const write=node('a','fjord-contact-write');write.href=mail('');footer.append(heading,intro,contactLinks,write);
+footer.append(heading,intro,contactLinks);
 document.querySelector('footer')?.before(footer);
 const launch=node('button','fjord-helper-launch');launch.type='button';launch.dataset.i18nIgnore='';launch.setAttribute('aria-haspopup','dialog');launch.setAttribute('aria-controls','fjordHelper');document.body.append(launch);
 const dialog=node('dialog','fjord-helper');dialog.id='fjordHelper';dialog.dataset.i18nIgnore='';dialog.setAttribute('aria-labelledby','fjordHelperTitle');

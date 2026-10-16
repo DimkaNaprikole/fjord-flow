@@ -21,6 +21,18 @@ const error=document.createElement('p');error.className='welcome-film-error';err
 function translate(){const w=copy[window.FjordI18n?.language||document.documentElement.lang]||copy.en;label.textContent=w.watch;hint.textContent=w.hint;title.textContent=w.title;intro.textContent=w.intro;close.setAttribute('aria-label',w.close);video.setAttribute('aria-label',w.play);explore.textContent=w.explore;credits.textContent=w.credits;error.textContent=w.error;selectCaptions();}
 translate();window.addEventListener('fjordlanguagechange',translate);
 video.addEventListener('loadedmetadata',selectCaptions);
+// Let the opening photograph settle, then fade into the scenic eagle flight.
+const heroScenery=document.getElementById('heroScenery');
+if(heroScenery){
+ const heroVideo=document.createElement('video');heroVideo.className='hero-intro-video';heroVideo.muted=true;heroVideo.defaultMuted=true;heroVideo.loop=true;heroVideo.playsInline=true;heroVideo.preload='none';heroVideo.setAttribute('playsinline','');heroVideo.setAttribute('aria-hidden','true');heroVideo.tabIndex=-1;heroScenery.append(heroVideo);
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)'),saveData=navigator.connection?.saveData===true;
+ let started=false,inView=true;
+ const update=()=>{if(reduced.matches||saveData||document.hidden||!inView){heroVideo.pause();return}if(!started)return;heroVideo.play().catch(()=>{});};
+ heroVideo.addEventListener('playing',()=>{heroVideo.classList.add('is-playing');heroScenery.closest('.hero')?.classList.add('is-film-playing')});
+ if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;update();},{threshold:.08}).observe(heroScenery);
+ document.addEventListener('visibilitychange',update);reduced.addEventListener?.('change',update);
+ if(!reduced.matches&&!saveData)setTimeout(()=>{started=true;heroVideo.src='media/eagle-ad-background.mp4';update();},2800);
+}
 let previousOverflow='';
 trigger.addEventListener('click',()=>{error.hidden=true;previousOverflow=document.body.style.overflow;dialog.showModal();document.body.style.overflow='hidden';if(!video.getAttribute('src'))video.src='media/fjord-flow-welcome.mp4';video.play().catch(()=>{/* Native controls remain available if playback is blocked. */});});
 function stop(){video.pause();document.body.style.overflow=previousOverflow;trigger.focus({preventScroll:true});}

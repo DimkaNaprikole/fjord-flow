@@ -117,7 +117,7 @@
   document.querySelectorAll('[data-scenery-pause]').forEach(button => {
     button.addEventListener('click', () => { paused = !paused; controls(); });
   });
-  document.getElementById('heroNextPhoto').addEventListener('click', () => {
+  document.getElementById('heroNextPhoto')?.addEventListener('click', () => {
     decks.find(deck => deck.host.id === 'heroScenery')?.next();
   });
   reduce.addEventListener('change', event => { paused = event.matches; controls(); });
