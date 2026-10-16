@@ -31,23 +31,11 @@ explore.addEventListener('click',e=>{e.preventDefault();dialog.close();const rou
 
 const advertising=document.querySelector('.advertising-showcase');
 if(advertising){
- const labels={nb:'Se reklamefilmen (norsk)',en:'Watch the ad film (Norwegian)',uk:'Дивитися рекламний ролик (норвезькою)',sv:'Se reklamfilmen (norska)',da:'Se reklamefilmen (norsk)'};
- const adFilmUrl='https://d2ol7oe51mr4n9.cloudfront.net/user_2xaGL2ZweQR3ccHuX5BlXzZ3s2k/ce662e82-eef6-4e90-bc31-489ac35780c3.mp4';
+ const adFilmUrl='media/eagle-ad-background.mp4';
  const backgroundVideo=document.createElement('video');backgroundVideo.className='advertising-background-film';backgroundVideo.muted=true;backgroundVideo.defaultMuted=true;backgroundVideo.loop=true;backgroundVideo.autoplay=true;backgroundVideo.playsInline=true;backgroundVideo.preload='none';backgroundVideo.poster='images/advertising-fjord-art.webp';backgroundVideo.setAttribute('aria-hidden','true');backgroundVideo.setAttribute('playsinline','');backgroundVideo.tabIndex=-1;advertising.prepend(backgroundVideo);
- const adTrigger=document.createElement('button');adTrigger.type='button';adTrigger.className='advertising-film-trigger';adTrigger.dataset.i18nIgnore='';
- const adDialog=document.createElement('dialog');adDialog.className='welcome-film-dialog advertising-film-dialog';adDialog.dataset.i18nIgnore='';
- const adTop=document.createElement('div');adTop.className='welcome-film-heading';const adTitle=document.createElement('h2');const adClose=document.createElement('button');adClose.className='welcome-film-close';adClose.type='button';adClose.textContent='×';adClose.setAttribute('aria-label','Close');adTop.append(adTitle,adClose);
- const adVideo=document.createElement('video');adVideo.controls=true;adVideo.playsInline=true;adVideo.preload='none';adVideo.poster='images/advertising-fjord-art.webp';adVideo.setAttribute('aria-label','FJORD FLOW Norwegian advertising film');
- adDialog.append(adTop,adVideo);document.body.append(adDialog);advertising.append(adTrigger);
- const adStyle=document.createElement('style');adStyle.textContent='.advertising-film-trigger{margin-top:26px;min-height:48px;padding:12px 22px;border:1px solid #fff5d5aa;border-radius:999px;background:#082f3dde;color:#fff9e5;font:750 14px Manrope,\"Segoe UI\",sans-serif;cursor:pointer;box-shadow:0 8px 30px #001b2b66;backdrop-filter:blur(8px)}.advertising-film-trigger:hover{background:#174a59}.advertising-film-trigger:focus-visible{outline:3px solid #ffe5a5;outline-offset:4px}.advertising-film-dialog{margin:auto}.advertising-film-dialog video{aspect-ratio:16/9}';document.head.append(adStyle);
- const translateAd=()=>{const language=window.FjordI18n?.language||document.documentElement.lang;adTrigger.textContent='▶ '+(labels[language]||labels.en);adTitle.textContent=labels[language]||labels.en;};translateAd();window.addEventListener('fjordlanguagechange',translateAd);
  let backgroundInView=false;const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
- const updateBackground=()=>{if(backgroundInView&&!reducedMotion.matches&&!adDialog.open){if(!backgroundVideo.src)backgroundVideo.src=adFilmUrl;backgroundVideo.play().catch(()=>{});}else backgroundVideo.pause();};
+ const updateBackground=()=>{if(backgroundInView&&!reducedMotion.matches){if(!backgroundVideo.src)backgroundVideo.src=adFilmUrl;backgroundVideo.play().catch(()=>{});}else backgroundVideo.pause();};
  if('IntersectionObserver' in window){new IntersectionObserver(entries=>{backgroundInView=entries[0].isIntersecting;updateBackground();},{rootMargin:'200px'}).observe(advertising);}else{backgroundInView=true;updateBackground();}
  reducedMotion.addEventListener?.('change',updateBackground);
- let previousAdOverflow='';
- adTrigger.addEventListener('click',()=>{previousAdOverflow=document.body.style.overflow;adDialog.showModal();document.body.style.overflow='hidden';updateBackground();if(!adVideo.src)adVideo.src=adFilmUrl;adVideo.play().catch(()=>{});});
- adClose.addEventListener('click',()=>adDialog.close());adDialog.addEventListener('close',()=>{adVideo.pause();document.body.style.overflow=previousAdOverflow;updateBackground();adTrigger.focus({preventScroll:true});});
- adDialog.addEventListener('click',e=>{if(e.target===adDialog)adDialog.close();});
 }
 })();
