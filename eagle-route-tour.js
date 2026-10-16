@@ -1,4 +1,4 @@
-/* A decorative flight between real contact links. No nested anchors in route buttons. */
+/* Static route contacts. */
 (() => {
  'use strict';
  const entries=[
@@ -9,21 +9,44 @@
   ['osterdalen','Røros','https://www.google.com/maps/search/?api=1&query=R%C3%B8ros%2C%20Norway']
  ];
  const words={en:['Contact','Pause the eagle','Resume the eagle','Explore route contacts','Static view','Map'],nb:['Kontakt','Sett ørnen på pause','La ørnen fly videre','Utforsk kontaktene langs rutene','Statisk visning','Kart'],uk:['Контакти','Призупинити політ орла','Продовжити політ орла','Контакти вздовж маршрутів','Без анімації','Карта'],sv:['Kontakt','Pausa örnen','Låt örnen flyga vidare','Utforska kontakter längs rutterna','Stillbildsläge','Karta'],da:['Kontakt','Sæt ørnen på pause','Lad ørnen flyve videre','Udforsk kontakter langs ruterne','Statisk visning','Kort']};
- const reduce=matchMedia('(prefers-reduced-motion: reduce)'),touch=matchMedia('(hover: none), (pointer: coarse)');
  const lang=()=>words[window.FjordI18n?.language]?window.FjordI18n.language:words[document.documentElement.lang]?document.documentElement.lang:'nb';
- let root,layer,bird,controls,pause,contacts=new Map(),targets=[],visible=false,userPaused=false,flight=0,lastFrame=0,raf=0,layoutRAF=0,active=-1;
- let rootObserver,resizeObserver,intersection;const visited=new Set(),bound=new WeakSet();
- const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
- function eagle(){const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 110 90');svg.setAttribute('aria-hidden','true');const shape=(parent,tag,attrs)=>{const n=document.createElementNS(ns,tag);Object.entries(attrs).forEach(([k,v])=>n.setAttribute(k,v));parent.append(n);return n;};const top=shape(svg,'g',{class:'eagle-wing eagle-wing-top'}),bottom=shape(svg,'g',{class:'eagle-wing eagle-bottom'});shape(top,'path',{d:'M61 44C55 34 57 18 43 7L37 2l3 16-9-12 4 18-12-10 7 18-13-6 16 18 18 6Z',fill:'#f5efd8',stroke:'#254f50','stroke-width':1.1,'stroke-linejoin':'round'});shape(bottom,'path',{d:'M61 46C55 56 57 72 43 83l-6 5 3-16-9 12 4-18-12 10 7-18-13 6 16-18 18-6Z',fill:'#e1eadb',stroke:'#254f50','stroke-width':1.1,'stroke-linejoin':'round'});shape(svg,'path',{d:'m55 37-20 4-18-7 6 11-6 11 18-7 20 4c9 0 17-3 23-7l11-1-9-5-5-9-12 7Z',fill:'#f7f1dc',stroke:'#254f50','stroke-width':1.2,'stroke-linejoin':'round'});shape(svg,'path',{d:'m78 40 12 5-11 3',fill:'#c99a57'});shape(svg,'circle',{cx:75,cy:40,r:1.7,fill:'#153e43'});shape(svg,'path',{d:'m39 44 23 1',stroke:'#789b90','stroke-width':1.3,'stroke-linecap':'round'});return svg;}
- function photoPaused(){return root?.querySelector('.roadtrip-scene')?.dataset.sceneryPaused==='true';}
- function moving(){return root?.isConnected&&visible&&!userPaused&&!reduce.matches&&!photoPaused()&&!document.hidden&&!document.querySelector('dialog[open]')&&targets.length>0;}
- function update(){if(!root)return;const w=words[lang()];pause.textContent=reduce.matches?w[4]:userPaused?w[2]:w[1];pause.disabled=reduce.matches;pause.setAttribute('aria-pressed',String(userPaused));controls.querySelector('span').textContent=w[3];layer.setAttribute('aria-label',w[3]);for(const [key,link]of contacts){link.querySelector('.eagle-contact-label').textContent=key==='osterdalen'?w[5]:w[0];}root.classList.toggle('eagle-tour-static',reduce.matches||touch.matches||userPaused||photoPaused());bird.classList.toggle('eagle-resting',!moving());if(moving()){if(!raf){lastFrame=0;raf=requestAnimationFrame(frame);}}else{cancelAnimationFrame(raf);raf=0;lastFrame=0;if(targets.length&&!bird.dataset.placed){place(targets[0].x+targets[0].rx,targets[0].y,-15);}}}
- function place(x,y,angle){bird.style.transform=`translate3d(${x}px,${y}px,0) translate(-50%,-50%) rotate(${angle}deg)`;bird.dataset.placed='true';}
- function curve(a,b,c,d,t){const u=1-t;return {x:u*u*u*a.x+3*u*u*t*b.x+3*u*t*t*c.x+t*t*t*d.x,y:u*u*u*a.y+3*u*u*t*b.y+3*u*t*t*c.y+t*t*t*d.y};}
- function position(index,time){const next=targets[index],previous=targets[(index+targets.length-1)%targets.length];const a={x:previous.x+previous.rx,y:previous.y},d={x:next.x+next.rx,y:next.y};if(time<.34){const t=time/.34;return curve(a,{x:a.x,y:a.y-65},{x:d.x,y:d.y+65},d,t);}const angle=-(time-.34)/.66*Math.PI*2;return{x:next.x+Math.cos(angle)*next.rx,y:next.y+Math.sin(angle)*next.ry};}
- function frame(now){raf=0;if(!moving()){update();return;}if(lastFrame)flight+=Math.min(now-lastFrame,80);lastFrame=now;const segment=7400,index=Math.floor(flight/segment)%targets.length,part=flight%segment/segment;if(active!==index){active=index;const key=targets[index].key;visited.add(key);for(const [id,link]of contacts){link.classList.toggle('is-current',id===key);link.classList.toggle('was-visited',visited.has(id));}}const p=position(index,part),q=position(index,Math.min(part+.0008,1));const angle=Math.atan2(q.y-p.y,q.x-p.x)*180/Math.PI;place(p.x,p.y,angle);raf=requestAnimationFrame(frame);}
- function layout(){layoutRAF=0;if(!root?.isConnected)return;const bounds=root.getBoundingClientRect();targets=[];for(const [key,name,href]of entries){const button=root.querySelector(`[data-roadtrip="${key}"]`),header=button?.querySelector('.route-scenery');if(!header){contacts.get(key)?.remove();contacts.delete(key);continue;}let link=contacts.get(key);if(!link){link=el('a',undefined,'eagle-contact');link.href=href;link.target='_blank';link.rel='noopener noreferrer';link.dataset.routeContact=key;link.dataset.i18nIgnore='';link.append(el('span',undefined,'eagle-contact-label'),el('strong',name),el('span','↗','eagle-contact-arrow'));link.addEventListener('focus',()=>link.classList.add('is-revealed'));link.addEventListener('blur',()=>link.classList.remove('is-revealed'));layer.append(link);contacts.set(key,link);}if(!bound.has(button)){bound.add(button);button.addEventListener('mouseenter',()=>contacts.get(key)?.classList.add('is-revealed'));button.addEventListener('mouseleave',()=>contacts.get(key)?.classList.remove('is-revealed'));button.addEventListener('focusin',()=>contacts.get(key)?.classList.add('is-revealed'));button.addEventListener('focusout',()=>contacts.get(key)?.classList.remove('is-revealed'));resizeObserver.observe(header);}const r=header.getBoundingClientRect(),x=r.left-bounds.left-root.clientLeft,y=r.top-bounds.top-root.clientTop;link.style.left=(x+12)+'px';link.style.top=(y+12)+'px';link.style.maxWidth=Math.max(110,r.width-24)+'px';link.classList.toggle('was-visited',visited.has(key));targets.push({key,x:x+r.width*.52,y:y+Math.min(117,r.height*.58),rx:Math.min(66,r.width*.24),ry:Math.min(32,r.height*.17)});}if(targets.length){active=-1;bird.hidden=false;if(!moving()){const first=targets[0];place(first.x+first.rx,first.y,-15);}}else bird.hidden=true;update();}
- function scheduleLayout(){if(!layoutRAF)layoutRAF=requestAnimationFrame(layout);}
- function mount(){const section=document.querySelector('.roadtrip-collection');if(!section||section===root)return;rootObserver?.disconnect();resizeObserver?.disconnect();intersection?.disconnect();cancelAnimationFrame(raf);raf=0;contacts=new Map();targets=[];root=section;root.classList.add('has-eagle-route-tour');layer=el('nav',undefined,'eagle-contact-layer');layer.dataset.i18nIgnore='';bird=el('div',undefined,'eagle-route-bird');bird.setAttribute('aria-hidden','true');bird.append(eagle());layer.append(bird);controls=el('div',undefined,'eagle-tour-controls');controls.dataset.i18nIgnore='';pause=el('button',undefined,'eagle-tour-pause');pause.type='button';pause.addEventListener('click',()=>{userPaused=!userPaused;update();});controls.append(el('span'),pause);root.append(layer,controls);resizeObserver=new ResizeObserver(scheduleLayout);resizeObserver.observe(root);intersection=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;update();},{rootMargin:'30px'});intersection.observe(root);rootObserver=new MutationObserver(records=>{if(records.some(r=>r.type==='attributes'))update();if(records.some(r=>r.type==='childList'&&!layer.contains(r.target)&&!controls.contains(r.target)))scheduleLayout();});rootObserver.observe(root,{childList:true,subtree:true,attributes:true,attributeFilter:['data-scenery-paused']});scheduleLayout();}
- new MutationObserver(records=>{if(!root?.isConnected)mount();if(records.some(r=>r.type==='attributes'))update();}).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['open']});window.addEventListener('resize',scheduleLayout);document.addEventListener('visibilitychange',update);window.addEventListener('fjordlanguagechange',update);reduce.addEventListener('change',update);touch.addEventListener('change',update);mount();
+
+ let root,layer,resize,observer,pending=0;
+ const links=new Map();
+ function layout(){
+  pending=0;if(!root?.isConnected)return;
+  const bounds=root.getBoundingClientRect(),w=words[lang()];
+  layer.setAttribute('aria-label',w[3]);
+  for(const [key,name,href] of entries){
+   const header=root.querySelector(`[data-roadtrip="${key}"] .route-scenery`);
+   if(!header)continue;
+   let link=links.get(key);
+   if(!link){
+    link=document.createElement('a');link.className='eagle-contact';
+    link.href=href;link.target='_blank';link.rel='noopener noreferrer';
+    link.dataset.routeContact=key;
+    for(const [tag,cls,text] of [['span','eagle-contact-label',''],['strong','',name],['span','eagle-contact-arrow','↗']]){
+     const child=document.createElement(tag);child.className=cls;child.textContent=text;link.append(child);
+    }
+    links.set(key,link);layer.append(link);resize.observe(header);
+   }
+   link.querySelector('.eagle-contact-label').textContent=key==='osterdalen'?w[5]:w[0];
+   const rect=header.getBoundingClientRect();
+   link.style.left=(rect.left-bounds.left-root.clientLeft+12)+'px';
+   link.style.top=(rect.top-bounds.top-root.clientTop+12)+'px';
+   link.style.maxWidth=Math.max(110,rect.width-24)+'px';
+  }
+ }
+ function schedule(){if(!pending)pending=requestAnimationFrame(layout);}
+ function mount(){
+  const section=document.querySelector('.roadtrip-collection');if(!section||section===root)return;
+  resize?.disconnect();observer?.disconnect();links.clear();root=section;
+  root.classList.add('has-route-contacts');
+  layer=document.createElement('nav');layer.className='eagle-contact-layer';layer.dataset.i18nIgnore='';root.append(layer);
+  resize=new ResizeObserver(schedule);resize.observe(root);
+  observer=new MutationObserver(records=>{if(records.some(r=>!layer.contains(r.target)))schedule();});
+  observer.observe(root,{childList:true,subtree:true});schedule();
+ }
+ new MutationObserver(()=>{if(!root?.isConnected)mount();}).observe(document.body,{childList:true,subtree:true});
+ window.addEventListener('resize',schedule);window.addEventListener('fjordlanguagechange',schedule);mount();
 })();
