@@ -21,6 +21,33 @@
  function illustration(kind){const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 480 210');svg.setAttribute('aria-hidden','true');const shape=(tag,attrs)=>{const n=document.createElementNS(ns,tag);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,v);svg.append(n);};shape('rect',{width:480,height:210,fill:'#e4e9d9'});shape('circle',{cx:368,cy:49,r:25,fill:'#f6d493'});shape('path',{d:'M0 161 98 76l98 82 96-108 130 114 58-44v90H0Z',fill:'#b4c8bb'});shape('path',{d:'M0 186q111-42 226-4t254-11v39H0Z',fill:'#719b8d'});shape('circle',{cx:241,cy:105,r:57,fill:'#fffcf0',opacity:.93});const icons={park:'M241 61v91m-22-60 22-31 22 31h-12l23 29h-66l23-29Zm-28 57h101',culture:'m202 87 39-23 39 23Zm5 8v42m23-42v42m23-42v42m22-42v42m-68 9h81',adventure:'m204 143 35-76 36 76Zm35-76-12 38 12-5 11 9m-23 34 13-24 13 24',landmark:'M219 143V85h44v58m-38-58V68h31v17m-46 58h63m-44-43h4m12 0h4m-22 17h4m12 0h4',sauna:'M205 142V99h72v43Zm5-43 31-23 31 23m-56 10h15v17h-15m30-5h19m-19 10h19m-36-61q-8-8 0-17m17 17q-8-8 0-17'};shape('path',{d:icons[kind]||icons.landmark,fill:'none',stroke:'#28564c','stroke-width':3,'stroke-linecap':'round','stroke-linejoin':'round'});return svg;}
  function appendPhotoCredit(container,place){const c=place.photoCredit;if(!c)return;const caption=el('figcaption');caption.append(document.createTextNode(c.authorPlain+' · '));if(url(c.licenseUrl))caption.append(external(c.license,url(c.licenseUrl)));if(url(c.commonsPage))caption.append(document.createTextNode(' · '),external('Wikimedia Commons',url(c.commonsPage)));caption.append(document.createTextNode(' · thumbnail'));container.append(caption);}
  const moreLabels={en:['Details & opening','Enlarge photo','Close photo'],nb:['Detaljer og åpning','Forstørr bildet','Lukk bildet'],uk:['Подробиці й сезон','Збільшити фото','Закрити фото'],sv:['Detaljer och öppettider','Förstora bilden','Stäng bilden'],da:['Detaljer og åbning','Forstør billedet','Luk billedet']};
+ const flipLabels={en:['About this place','Back to photo'],nb:['Om stedet','Til bildet'],uk:['Про місце','До фотографії'],sv:['Om platsen','Till bilden'],da:['Om stedet','Til billedet']};
+ const fineHover=matchMedia('(hover: hover) and (pointer: fine)');
+ let lastScroll=0;window.addEventListener('scroll',()=>{lastScroll=performance.now();},{passive:true});
+ function foldCard(article,figure,body,v,src){
+  if(!src)return;
+  article.classList.add('experience-flip');article.dataset.experienceId=v.id;
+  article.style.setProperty('--experience-photo',`url("${src}")`);
+  const caption=el('div',undefined,'experience-front-caption');
+  caption.append(el('small',v.area||'Norge'),el('strong',v.name));figure.append(caption);
+  const toggle=el('button',flipLabels[lang()][0]+' ↻','experience-flip-toggle');toggle.type='button';toggle.setAttribute('aria-expanded','false');
+  let dwell=0,returnTimer=0;
+  const side=open=>{
+   clearTimeout(dwell);clearTimeout(returnTimer);
+   article.classList.toggle('experience-flipped',open);body.inert=!open;figure.inert=open;
+   toggle.setAttribute('aria-expanded',String(open));toggle.textContent=flipLabels[lang()][open?1:0]+(open?' ↶':' ↻');
+  };
+  body.inert=true;
+  toggle.onclick=()=>side(!article.classList.contains('experience-flipped'));
+  article.addEventListener('pointerenter',event=>{
+   if(!fineHover.matches||event.pointerType==='touch')return;
+   clearTimeout(returnTimer);clearTimeout(dwell);
+   dwell=setTimeout(()=>{if(article.isConnected&&article.matches(':hover')&&performance.now()-lastScroll>250&&!document.querySelector('dialog[open]'))side(true);},2000);
+  });
+  article.addEventListener('pointerleave',()=>{clearTimeout(dwell);if(fineHover.matches&&!article.matches(':focus-within'))returnTimer=setTimeout(()=>side(false),280);});
+  article.addEventListener('focusout',()=>setTimeout(()=>{if(!article.matches(':focus-within,:hover'))side(false);},0));
+  article.append(toggle);
+ }
  function showPhoto(v){
   let dialog=$('experiencePhotoDialog');
   if(!dialog){dialog=el('dialog');dialog.id='experiencePhotoDialog';document.body.append(dialog);dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});}
@@ -41,7 +68,7 @@
   const maps=new URL('https://www.google.com/maps/dir/');
   if(Number.isFinite(v.latitude)&&Number.isFinite(v.longitude)&&Math.abs(v.latitude)<=90&&Math.abs(v.longitude)<=180)maps.search=new URLSearchParams({api:'1',destination:v.latitude+','+v.longitude}).toString();
   else if(v.address)maps.search=new URLSearchParams({api:'1',destination:v.name+', '+v.address}).toString();
-  if(maps.search)actions.append(external(t(9),maps.href,'experience-directions'));body.append(actions);article.append(body);return article;
+  if(maps.search)actions.append(external(t(9),maps.href,'experience-directions'));body.append(actions);article.append(body);foldCard(article,figure,body,v,src);return article;
  }
 
  function render(){const section=$('routeExperiences');if(!section)return;section.replaceChildren();const head=el('div',undefined,'experiences-heading');const title=el('h2',t(1));title.id='routeExperiencesTitle';head.append(el('p',t(0),'experiences-eyebrow'),title,el('p',t(2),'experiences-intro'));section.append(head);const nav=el('nav',undefined,'experience-filters');nav.setAttribute('aria-label',t(19));const keys=['all','east','hardanger','fjord','sunnmore','coast','arctic'];keys.forEach((key,i)=>{const b=el('button',i<5?t(i+3):extraRegions[lang()][i-5]);b.type='button';b.dataset.experienceRegion=key;b.setAttribute('aria-pressed',String(filter===key));b.onclick=()=>{filter=key;render();$('routeExperiences').querySelector('[data-experience-region="'+key+'"]').focus({preventScroll:true});};nav.append(b);});section.append(nav);if(phase==='ready'){const list=venues.filter(v=>imageURL(v.image)&&(filter==='all'||v.routes?.includes(filter)));section.append(el('p',list.length+' '+t(20),'experience-count'));if(list.length){const grid=el('div',undefined,'experiences-grid');list.forEach(v=>grid.append(card(v)));section.append(grid);}else section.append(el('p',t(15),'experiences-status'));}else{const message=el('p',phase==='error'?t(13):t(12),'experiences-status');message.setAttribute('role','status');section.append(message);if(phase==='error'){const retry=el('button',t(14),'experience-retry');retry.type='button';retry.onclick=()=>{loadPromise=load();};section.append(retry);}}const jumps=el('nav',undefined,'experience-jumps');['cafeNearby','staysSauna','droneExperience'].forEach((id,i)=>{const a=el('a',t(i+16)+' →');a.href='#'+id;jumps.append(a);});head.append(jumps);}
