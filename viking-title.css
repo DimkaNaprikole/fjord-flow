@@ -1,0 +1,6 @@
+/* Self-hosted display face; license in OFL-RuslanDisplay.txt. */
+@font-face{font-family:'Fjord Saga';src:url('./viking-title.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+.hero .hero-content h1,.hero .hero-content h1 em{font-family:'Fjord Saga',Georgia,serif;font-weight:400;font-style:normal;font-synthesis:none;text-transform:uppercase;letter-spacing:.025em;line-height:1.04;color:#fff4d5;text-shadow:0 2px 0 #173b45,0 5px 18px #001b32b3}
+.hero .hero-content h1{font-size:clamp(43px,6.5vw,88px);margin-bottom:24px}
+.hero .hero-content h1 em{color:#d4f0e9;letter-spacing:.055em}
+@media(max-width:650px){.hero .hero-content h1{font-size:clamp(33px,8.7vw,55px);letter-spacing:.012em;line-height:1.08}.hero .hero-content h1 em{letter-spacing:.03em}}
