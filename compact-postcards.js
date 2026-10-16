@@ -3,6 +3,7 @@
   const grid = document.querySelector('#cards');
   if (!grid) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const hover = matchMedia('(hover: hover) and (pointer: fine)');
   const copy = {uk:['Про місце','До фотографії'],nb:['Om stedet','Til bildet'],en:['About this place','Back to photo'],sv:['Om platsen','Till bilden'],da:['Om stedet','Til billedet']};
   const labels = () => copy[document.documentElement.lang] || copy.en;
   const observed = new WeakSet();
@@ -34,11 +35,34 @@
       toggle.type = 'button';toggle.className='postcard-toggle';
       toggle.setAttribute('aria-expanded','false');
       toggle.textContent=labels()[0]+' ↻';
-      toggle.addEventListener('click', () => {
-        const open = card.classList.toggle('postcard-open');
+      let dwell=0,returnTimer=0;
+      const setSide = open => {
+        clearTimeout(dwell);clearTimeout(returnTimer);
+        if(open){
+          const current=photo.querySelector('img')?.src;
+          if(current)card.style.setProperty('--postcard-photo',`url("${current}")`);
+        }
+        card.classList.toggle('postcard-open',open);
         back.inert=!open;photo.inert=open;caption.inert=open;
         toggle.setAttribute('aria-expanded',String(open));
-        toggle.textContent=labels()[open?1:0]+' ↻';
+        toggle.textContent=labels()[open?1:0]+(open?' ↶':' ↻');
+      };
+      toggle.addEventListener('click', () => {
+        setSide(!card.classList.contains('postcard-open'));
+      });
+      card.addEventListener('pointerenter',event=>{
+        if(!hover.matches||event.pointerType==='touch')return;
+        clearTimeout(returnTimer);
+        dwell=setTimeout(()=>{
+          if(card.isConnected&&card.matches(':hover')&&!document.querySelector('dialog[open]')&&!grid.classList.contains('card-focus-scrolling'))setSide(true);
+        },850);
+      });
+      card.addEventListener('pointerleave',()=>{
+        clearTimeout(dwell);
+        if(hover.matches&&!card.matches(':focus-within'))returnTimer=setTimeout(()=>setSide(false),280);
+      });
+      card.addEventListener('focusout',()=>{
+        setTimeout(()=>{if(!card.matches(':focus-within,:hover'))setSide(false);},0);
       });
       card.append(toggle);
       card.style.setProperty('--postcard-photo',`url("${photo.querySelector('img')?.src || ''}")`);
