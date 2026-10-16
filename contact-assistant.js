@@ -10,7 +10,6 @@ const copy={
 };
 const words=()=>copy[window.FjordI18n?.language||document.documentElement.lang]||copy.en;
 const node=(tag,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;return el;};
-const mail=body=>'mailto:'+email+'?subject='+encodeURIComponent(words()[19])+'&body='+encodeURIComponent(body||'');
 const footer=node('section','fjord-contact');footer.id='contact';footer.dataset.i18nIgnore='';
 const heading=node('h2'),intro=node('p'),address=node('a','fjord-contact-email');address.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(email);address.target='_blank';address.rel='noopener noreferrer';address.textContent=email;
 const facebook=node('a','fjord-contact-facebook');facebook.href='https://www.facebook.com/profile.php?id=100032941041934';facebook.target='_blank';facebook.rel='noopener noreferrer';facebook.textContent='Facebook · Naprikole Dimka';
@@ -22,16 +21,15 @@ const dialog=node('dialog','fjord-helper');dialog.id='fjordHelper';dialog.datase
 const close=node('button','fjord-helper-close');close.type='button';close.textContent='×';
 const title=node('h2');title.id='fjordHelperTitle';const note=node('p','fjord-helper-note');
 const topics=node('div','fjord-helper-topics');const answer=node('p','fjord-helper-answer');answer.setAttribute('aria-live','polite');
-const sectionLink=node('a','fjord-helper-go');const label=node('label');label.htmlFor='fjordHelperQuestion';const input=node('textarea');input.id='fjordHelperQuestion';input.rows=3;input.maxLength=1500;
-const draft=node('a','fjord-helper-draft');const notice=node('p','fjord-helper-note');dialog.append(close,title,note,topics,answer,sectionLink,label,input,draft,notice);document.body.append(dialog);
+const sectionLink=node('a','fjord-helper-go');dialog.append(close,title,note,topics,answer,sectionLink);document.body.append(dialog);
 let topic=0,returnFocus=null;
 const targets=['.roadtrip-collection','#cafeNearby','#staysSauna'];
-function render(){const w=words();heading.textContent=w[12];intro.textContent=w[13];write.textContent=w[14]+' ↗';write.href=mail('');launch.textContent='✦ '+w[0];title.textContent=w[1];note.textContent=w[2];close.setAttribute('aria-label',w[18]);topics.replaceChildren();
+function render(){const w=words();heading.textContent=w[12];intro.textContent=w[13];launch.textContent='✦ '+w[0];title.textContent=w[1];note.textContent=w[2];close.setAttribute('aria-label',w[18]);topics.replaceChildren();
  for(let i=0;i<4;i++){const button=node('button');button.type='button';button.textContent=w[3+i];button.setAttribute('aria-pressed',String(topic===i));button.onclick=()=>{topic=i;render();topics.children[i]?.focus({preventScroll:true})};topics.append(button)}
- answer.textContent=w[7+topic];sectionLink.textContent=(topic===3?w[14]:w[11])+' ↗';const target=document.querySelector(targets[topic]);if(target&&!target.id)target.id='scenicRoutes';sectionLink.href=topic===3?mail(''):target?'#'+target.id:'#collection';label.textContent=w[15];draft.textContent=w[16]+' ↗';draft.href=mail(input.value);notice.textContent=w[17];}
+ answer.textContent=w[7+topic];sectionLink.textContent=w[11]+' ↗';const target=document.querySelector(topic===3?'#contact':targets[topic]);if(target&&!target.id)target.id='scenicRoutes';sectionLink.href=target?'#'+target.id:'#collection';}
 launch.onclick=()=>{returnFocus=document.activeElement;render();if(!dialog.open)dialog.showModal();close.focus()};close.onclick=()=>dialog.close();
 dialog.addEventListener('close',()=>{if(returnFocus?.isConnected)returnFocus.focus({preventScroll:true})});
 dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()});
-sectionLink.onclick=e=>{if(topic===3)return;const target=document.querySelector(targets[topic])||document.getElementById('collection');if(!target)return;e.preventDefault();if(!target.hasAttribute('tabindex'))target.tabIndex=-1;returnFocus=target;dialog.close();target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});if(!target.hasAttribute('tabindex'))target.tabIndex=-1;target.focus({preventScroll:true})};
-input.addEventListener('input',()=>draft.href=mail(input.value));window.addEventListener('fjordlanguagechange',render);render();
+sectionLink.onclick=e=>{const target=document.querySelector(topic===3?'#contact':targets[topic])||document.getElementById('collection');if(!target)return;e.preventDefault();if(!target.hasAttribute('tabindex'))target.tabIndex=-1;returnFocus=target;dialog.close();target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});target.focus({preventScroll:true})};
+window.addEventListener('fjordlanguagechange',render);render();
 })();
