@@ -55,7 +55,7 @@
         clearTimeout(returnTimer);
         dwell=setTimeout(()=>{
           if(card.isConnected&&card.matches(':hover')&&!document.querySelector('dialog[open]')&&!grid.classList.contains('card-focus-scrolling'))setSide(true);
-        },850);
+        },4000);
       });
       card.addEventListener('pointerleave',()=>{
         clearTimeout(dwell);
