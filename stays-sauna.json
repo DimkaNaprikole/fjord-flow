@@ -1,9 +1,9 @@
 [
   {
-    "id": "sanner-hytter",
-    "name": "Sanner Hotell Hytter",
-    "area": "Granavollen · Gran / Hadeland",
-    "placeId": "gran",
+    "id": "kinsarvik-heng",
+    "name": "Kinsarvik Camping — Heng",
+    "area": "Kinsarvik · Hardanger",
+    "placeId": "voringfossen",
     "imageCaption": {
       "nb": "Illustrasjon — ikke et fotografi av overnattingsstedet.",
       "en": "Illustration — not a photograph of the property.",
@@ -12,24 +12,24 @@
       "da": "Illustration — ikke et fotografi af overnatningsstedet."
     },
     "description": {
-      "nb": "Selvhusholdshytter på Granavollen, med blant annet Jomfruburet, Drengestua og Dukkestua. Et lokalt alternativ ved starten av reisen fra Gran.",
-      "en": "Self-catering cottages on Granavollen, including Jomfruburet, Drengestua and Dukkestua. A local option at the start of a journey from Gran.",
-      "uk": "Будиночки з можливістю самостійно готувати на Granavollen, зокрема Jomfruburet, Drengestua та Dukkestua. Місцевий варіант на початку подорожі з Gran.",
-      "sv": "Stugor med självhushåll på Granavollen, bland annat Jomfruburet, Drengestua och Dukkestua. Ett lokalt alternativ i början av resan från Gran.",
-      "da": "Hytter med egen forplejning på Granavollen, blandt andet Jomfruburet, Drengestua og Dukkestua. En lokal mulighed ved starten af rejsen fra Gran."
+      "nb": "Familiehytter av typen Heng i Kinsarvik, med tre soverom, to bad og fullt utstyrt kjøkken. Et overnattingsalternativ i Hardanger-regionen med utsikt over Hardangerfjorden.",
+      "en": "Heng family cabins in Kinsarvik, with three bedrooms, two bathrooms and a fully equipped kitchen. A stay option in the Hardanger region with views over Hardangerfjord.",
+      "uk": "Сімейні будиночки категорії Heng у Kinsarvik із трьома спальнями, двома ванними кімнатами та повністю обладнаною кухнею. Варіант ночівлі в регіоні Hardanger з видом на Hardangerfjord.",
+      "sv": "Familjestugor av typen Heng i Kinsarvik, med tre sovrum, två badrum och fullt utrustat kök. Ett boendealternativ i Hardangerregionen med utsikt över Hardangerfjorden.",
+      "da": "Familiehytter af typen Heng i Kinsarvik med tre soveværelser, to badeværelser og fuldt udstyret køkken. En overnatningsmulighed i Hardanger-regionen med udsigt over Hardangerfjorden."
     },
     "sauna": {
-      "nb": "Felles badstue i hotellets velværeavdeling, ikke inne i hytta. Hyttegjester kan bruke hotellfasilitetene etter forhåndsavtale og i hotellets åpningstid. Bekreft tilgang og eventuelle tillegg ved bestilling.",
-      "en": "Shared sauna in the hotel wellness area, not inside the cottage. Cottage guests may use hotel facilities by prior arrangement during hotel opening hours. Confirm access and any additional charges when booking.",
-      "uk": "Спільна сауна в оздоровчій зоні готелю, не всередині будиночка. Гості будиночків можуть користуватися зручностями готелю за попередньою домовленістю в години його роботи. Підтвердьте доступ і можливі доплати під час бронювання.",
-      "sv": "Gemensam bastu i hotellets wellnessavdelning, inte inne i stugan. Stuggäster kan använda hotellets faciliteter efter överenskommelse i förväg under hotellets öppettider. Bekräfta tillgång och eventuella tillägg vid bokning.",
-      "da": "Fælles sauna i hotellets wellnessafdeling, ikke inde i hytten. Hyttegæster kan bruge hotellets faciliteter efter forudgående aftale i hotellets åbningstid. Bekræft adgang og eventuelle tillæg ved booking."
+      "nb": "Privat badstue inne i Heng-hyttene nr. 15–16. Opplysningen gjelder denne hyttetypen, ikke alle hyttene på campingplassen.",
+      "en": "Private sauna inside Heng cabins nos. 15–16. This applies to this cabin category, not every cabin at the campsite.",
+      "uk": "Власна сауна всередині будиночків Heng № 15–16. Це стосується саме цієї категорії, а не всіх будиночків кемпінгу.",
+      "sv": "Privat bastu inne i Heng-stugorna nr 15–16. Uppgiften gäller denna stugtyp, inte alla stugor på campingen.",
+      "da": "Privat sauna inde i Heng-hytterne nr. 15–16. Oplysningen gælder denne hyttetype, ikke alle hytter på campingpladsen."
     },
-    "website": "https://www.sanner-hotell.no/overnatte/hytter",
-    "bookingUrl": "https://book.sanner-hotell.no/",
+    "website": "https://www.kinsarvikcamping.no/overnatting/heng",
+    "bookingUrl": "https://online.bookvisit.com/accommodation?channelId=1a877ef6-b451-41cc-9726-8fa753577d63&langId=5",
     "sources": [
-      "https://www.sanner-hotell.no/overnatte/hytter",
-      "https://www.sanner-hotell.no/spa"
+      "https://www.kinsarvikcamping.no/overnatting/heng",
+      "https://online.bookvisit.com/accommodation?channelId=1a877ef6-b451-41cc-9726-8fa753577d63&langId=5"
     ],
     "checked": "2026-10-16"
   },
