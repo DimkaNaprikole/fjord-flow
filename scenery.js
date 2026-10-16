@@ -128,7 +128,8 @@
     decks.filter(deck => deck.visible).forEach(deck => {
       const active = !deck.route || !hover.matches || deck.hovered ||
         (deck.focused && !decks.some(other => other.route && other.hovered));
-      const delay = deck.route && hover.matches ? 3000 : 6500;
+      const delay = deck.host.id === 'heroScenery' && deck.host.dataset.currentImage === './images/hero-lofoten.jpg'
+        ? 15000 : deck.route && hover.matches ? 3000 : 6500;
       if (active && Date.now() - deck.lastChange >= delay) deck.next();
     });
   }, 500);

@@ -10,7 +10,7 @@ const copy={
 };
 const trigger=document.createElement('button');trigger.type='button';trigger.className='welcome-film-trigger';trigger.dataset.i18nIgnore='';trigger.setAttribute('aria-haspopup','dialog');trigger.setAttribute('aria-controls','welcomeFilmDialog');
 const icon=document.createElement('span');icon.className='welcome-film-play';icon.textContent='▶';icon.setAttribute('aria-hidden','true');
-const text=document.createElement('span'),label=document.createElement('strong'),hint=document.createElement('small');text.append(label,hint);trigger.append(icon,text);hero.append(trigger);
+const text=document.createElement('span'),label=document.createElement('strong'),hint=document.createElement('small');text.append(label,hint);trigger.append(icon,text);
 const dialog=document.createElement('dialog');dialog.id='welcomeFilmDialog';dialog.className='welcome-film-dialog';dialog.dataset.i18nIgnore='';dialog.setAttribute('aria-labelledby','welcomeFilmTitle');
 const top=document.createElement('div');top.className='welcome-film-heading';const title=document.createElement('h2');title.id='welcomeFilmTitle';const close=document.createElement('button');close.type='button';close.className='welcome-film-close';close.textContent='×';top.append(title,close);
 const video=document.createElement('video');video.id='welcomeFilmVideo';video.controls=true;video.playsInline=true;video.preload='none';video.poster='images/fjord-flow-welcome-poster.jpg';video.setAttribute('aria-describedby','welcomeFilmIntro');
@@ -21,17 +21,37 @@ const error=document.createElement('p');error.className='welcome-film-error';err
 function translate(){const w=copy[window.FjordI18n?.language||document.documentElement.lang]||copy.en;label.textContent=w.watch;hint.textContent=w.hint;title.textContent=w.title;intro.textContent=w.intro;close.setAttribute('aria-label',w.close);video.setAttribute('aria-label',w.play);explore.textContent=w.explore;credits.textContent=w.credits;error.textContent=w.error;selectCaptions();}
 translate();window.addEventListener('fjordlanguagechange',translate);
 video.addEventListener('loadedmetadata',selectCaptions);
-// Let the opening photograph settle, then fade into the scenic eagle flight.
+// Keep the welcome film available in the dialog, but let destination photos own the hero.
+// A verified location film accompanies Lofoten; the credited photo remains the fallback.
 const heroScenery=document.getElementById('heroScenery');
 if(heroScenery){
- const heroVideo=document.createElement('video');heroVideo.className='hero-intro-video';heroVideo.muted=true;heroVideo.defaultMuted=true;heroVideo.loop=true;heroVideo.playsInline=true;heroVideo.preload='none';heroVideo.setAttribute('playsinline','');heroVideo.setAttribute('aria-hidden','true');heroVideo.tabIndex=-1;heroScenery.append(heroVideo);
- const reduced=matchMedia('(prefers-reduced-motion: reduce)'),saveData=navigator.connection?.saveData===true;
- let started=false,inView=true;
- const update=()=>{if(reduced.matches||saveData||document.hidden||!inView){heroVideo.pause();return}if(!started)return;heroVideo.play().catch(()=>{});};
- heroVideo.addEventListener('playing',()=>{heroVideo.classList.add('is-playing');heroScenery.closest('.hero')?.classList.add('is-film-playing')});
- if('IntersectionObserver' in window)new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;update();},{threshold:.08}).observe(heroScenery);
- document.addEventListener('visibilitychange',update);reduced.addEventListener?.('change',update);
- if(!reduced.matches&&!saveData)setTimeout(()=>{started=true;heroVideo.src='media/eagle-ad-background.mp4';update();},2800);
+ const locationFilm=document.createElement('video');locationFilm.className='hero-location-film';locationFilm.muted=true;locationFilm.defaultMuted=true;locationFilm.playsInline=true;locationFilm.preload='metadata';locationFilm.loop=true;locationFilm.setAttribute('aria-hidden','true');locationFilm.tabIndex=-1;heroScenery.append(locationFilm);
+ const filmUrl='https://upload.wikimedia.org/wikipedia/commons/transcoded/3/30/LOFOTEN_ISLANDS_-_NORWAY_-_4K_FILM.webm/LOFOTEN_ISLANDS_-_NORWAY_-_4K_FILM.webm.1080p.vp9.webm';
+ const reduceFilm=matchMedia('(prefers-reduced-motion: reduce)');
+ let inView=true;
+ const updateLocationFilm=()=>{
+  const wanted=heroScenery.dataset.currentImage==='./images/hero-lofoten.jpg'&&inView&&!document.hidden&&!reduceFilm.matches&&!navigator.connection?.saveData;
+  if(!wanted){locationFilm.pause();locationFilm.classList.remove('is-visible');heroScenery.dataset.videoActive='false';return;}
+  if(!locationFilm.src)locationFilm.src=filmUrl;
+  if(locationFilm.readyState<1||locationFilm.seeking)return;
+  locationFilm.play().catch(()=>{/* The moving photograph remains visible. */});
+ };
+ locationFilm.addEventListener('loadedmetadata',()=>{locationFilm.currentTime=60});
+ locationFilm.addEventListener('seeked',updateLocationFilm);
+ locationFilm.addEventListener('playing',()=>{if(heroScenery.dataset.currentImage==='./images/hero-lofoten.jpg'&&locationFilm.currentTime>=60){locationFilm.classList.add('is-visible');heroScenery.dataset.videoActive='true'}});
+ locationFilm.addEventListener('error',()=>{locationFilm.classList.remove('is-visible');heroScenery.dataset.videoActive='false'});
+ new MutationObserver(updateLocationFilm).observe(heroScenery,{attributes:true,attributeFilter:['data-current-image']});
+ new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;updateLocationFilm()},{rootMargin:'100px'}).observe(heroScenery);
+ document.addEventListener('visibilitychange',updateLocationFilm);reduceFilm.addEventListener?.('change',updateLocationFilm);
+ const credits=document.getElementById('sceneryCredits');if(credits){const p=document.createElement('p');p.append('Lofoten location film — Danny Rest · ');for(const [label,href] of [['CC BY 3.0','https://creativecommons.org/licenses/by/3.0/'],['Original video','https://commons.wikimedia.org/wiki/File:LOFOTEN_ISLANDS_-_NORWAY_-_4K_FILM.webm']]){const a=document.createElement('a');a.textContent=label;a.href=href;a.target='_blank';a.rel='noopener noreferrer';p.append(a,' · ')}p.append('Muted, cropped preview.');credits.append(p)}
+}
+// Repeat the lower advertisement without changing its translated text or contact links.
+const sourceAd=document.querySelector('.advertising-message');
+if(sourceAd){
+ const heroAd=sourceAd.cloneNode(true);heroAd.classList.add('hero-advertising-message');heroAd.querySelector('[id]')?.removeAttribute('id');hero.closest('.hero')?.append(heroAd);
+ const selector='h2 span, .advertising-brand, .advertising-contact a';
+ const syncAd=()=>{const source=[...sourceAd.querySelectorAll(selector)],target=[...heroAd.querySelectorAll(selector)];source.forEach((item,i)=>{if(target[i])target[i].textContent=item.textContent})};
+ new MutationObserver(syncAd).observe(sourceAd,{subtree:true,childList:true,characterData:true});syncAd();
 }
 let previousOverflow='';
 trigger.addEventListener('click',()=>{error.hidden=true;previousOverflow=document.body.style.overflow;dialog.showModal();document.body.style.overflow='hidden';if(!video.getAttribute('src'))video.src='media/fjord-flow-welcome.mp4';video.play().catch(()=>{/* Native controls remain available if playback is blocked. */});});
