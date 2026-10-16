@@ -3,7 +3,7 @@
 const root=document.getElementById('about');
 if(!root||!window.FjordExplorerCopy)return;
 const photoPaths=['./images/hero-lofoten.jpg','./images/hero-geiranger.jpg','./images/hero-bergen.jpg','./images/travel-story-illustrations.png'];
-const targets=['#collection','#collection','#cafeStops','#travelStories'];
+const targets=['#collection','#collection','#routeExperiences','#travelStories'];
 root.innerHTML=`<div class="explorer-heading"><p class="explorer-eyebrow"></p><h2></h2><p class="explorer-intro"></p></div><div class="explorer-frame"><div class="explorer-visual" aria-hidden="true"><img alt="" decoding="async"><img alt="" decoding="async"></div><span class="explorer-ghost" aria-hidden="true">01</span><div class="explorer-copy" id="explorerPanel" role="tabpanel" tabindex="0"><p class="explorer-kicker"></p><h3></h3><p class="explorer-description"></p><a class="explorer-action" href="#collection"><span></span><b aria-hidden="true">↗</b></a></div><div class="explorer-tabs" role="tablist">${[0,1,2,3].map(i=>`<button type="button" role="tab" id="explorerTab${i}" aria-controls="explorerPanel" data-explorer-tab="${i}"><span class="explorer-tab-number">0${i+1}</span><span class="explorer-tab-label"></span><span class="explorer-tab-arrow" aria-hidden="true">↗</span></button>`).join('')}</div></div>`;
 const buttons=[...root.querySelectorAll('[data-explorer-tab]')],images=[...root.querySelectorAll('.explorer-visual img')];
 const action=root.querySelector('.explorer-action'),panel=root.querySelector('#explorerPanel');

@@ -1,0 +1,369 @@
+[
+  {
+    "id": "tusenfryd",
+    "name": "TusenFryd",
+    "website": "https://www.tusenfryd.no/",
+    "area": "Vinterbro · Oslo south",
+    "address": "Fryds vei 25, 1407 Vinterbro, Norway",
+    "category": "park",
+    "routes": [
+      "east"
+    ],
+    "description": {
+      "nb": "Berg-og-dal-baner og familieattraksjoner sør for Oslo. Sett av en egen parkdag, ikke en kort stopp på vei nordover.",
+      "en": "Roller coasters and family rides south of Oslo. Plan a dedicated park day rather than a quick stop on a northbound trip.",
+      "uk": "Американські гірки й сімейні атракціони на південь від Oslo. Плануйте окремий день у парку, а не коротку зупинку дорогою на північ.",
+      "sv": "Berg-och-dalbanor och familjeattraktioner söder om Oslo. Planera en egen parkdag, inte ett kort stopp på väg norrut.",
+      "da": "Rutsjebaner og familieattraktioner syd for Oslo. Planlæg en særskilt parkdag frem for et kort stop på vej nordpå."
+    },
+    "season": {
+      "nb": "Sesongkalender og høydekrav varierer. Sjekk dato og attraksjoner hos parken.",
+      "en": "Seasonal calendar and ride height limits vary. Check your date and rides with the park.",
+      "uk": "Сезонний календар і вимоги до зросту різняться. Перевірте дату та умови атракціонів у парку.",
+      "sv": "Säsongskalender och längdkrav varierar. Kontrollera datum och attraktioner hos parken.",
+      "da": "Sæsonkalender og højdekrav varierer. Tjek dato og attraktioner hos parken."
+    },
+    "sources": [
+      "https://shop.tusenfryd.no/pages/kjopsbetingelser",
+      "https://www.tusenfryd.no/relevant-informasjon/kontaktinformasjon",
+      "https://www.tusenfryd.no/kjop-billetter/grupper-og-skoler/grupper",
+      "https://www.tusenfryd.no/apningstider-og-priser/priser",
+      "https://www.tusenfryd.no/apningstider-og-priser"
+    ],
+    "checked": "2026-10-16",
+    "latitude": 59.748197673776765,
+    "longitude": 10.778811625913628,
+    "coordinatesSource": "https://www.tusenfryd.no/relevant-informasjon/kontaktinformasjon",
+    "image": "./experience-tusenfryd.jpg",
+    "photoCredit": {
+      "authorPlain": "Eirik Yven from Oslo, Norge",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Tusenfryd_(1).jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
+  },
+  {
+    "id": "hunderfossen",
+    "name": "Hunderfossen Eventyrpark",
+    "website": "https://hunderfossen.no/",
+    "area": "Fåberg · Lillehammer",
+    "address": "Fossekrovegen 22, 2625 Fåberg, Norway",
+    "category": "park",
+    "routes": [
+      "east"
+    ],
+    "description": {
+      "nb": "Norske eventyr, troll og familieattraksjoner ved Lillehammer. Et hovedmål for en familiedag.",
+      "en": "Norwegian fairy tales, trolls and family rides near Lillehammer. A destination for a full family day.",
+      "uk": "Норвезькі казки, тролі й сімейні атракціони біля Lillehammer. Основна програма для окремого сімейного дня.",
+      "sv": "Norska sagor, troll och familjeattraktioner vid Lillehammer. Ett huvudmål för en familjedag.",
+      "da": "Norske eventyr, trolde og familieattraktioner ved Lillehammer. Et hovedmål for en familiedag."
+    },
+    "season": {
+      "nb": "Eventyrparken, gården og vinterparken har egne sesonger og billetter. Sjekk kalenderen.",
+      "en": "The main park, farm and winter park have separate seasons and tickets. Check the calendar.",
+      "uk": "Основний парк, ферма й зимовий парк мають окремі сезони та квитки. Перевірте календар.",
+      "sv": "Huvudparken, gården och vinterparken har egna säsonger och biljetter. Kontrollera kalendern.",
+      "da": "Hovedparken, gården og vinterparken har egne sæsoner og billetter. Tjek kalenderen."
+    },
+    "sources": [
+      "https://hunderfossen.no/kontaktinformasjon/",
+      "https://hunderfossen.no/",
+      "https://hunderfossen.no/ofte-stilte-sporsmal/",
+      "https://hunderfossen.no/skoler-og-barnehager/",
+      "https://partner.hunderfossen.no/partnerid.aspx"
+    ],
+    "checked": "2026-10-16",
+    "latitude": 61.225736,
+    "longitude": 10.4361101,
+    "coordinatesSource": "https://hunderfossen.no/kontaktinformasjon/"
+  },
+  {
+    "id": "lilleputthammer",
+    "name": "Lilleputthammer Familiepark",
+    "website": "https://lilleputthammer.no/",
+    "area": "Hafjell · Øyer",
+    "address": "Hundervegen 41, 2636 Øyer, Norway",
+    "category": "park",
+    "routes": [
+      "east"
+    ],
+    "description": {
+      "nb": "En liten by i miniatyr med leker og attraksjoner, særlig for barn fra 1 til 8 år.",
+      "en": "A miniature town with play areas and rides, especially suited to children aged 1–8.",
+      "uk": "Містечко в мініатюрі з іграми й атракціонами, насамперед для дітей 1–8 років.",
+      "sv": "En miniatyrstad med lek och attraktioner, främst för barn 1–8 år.",
+      "da": "En miniatureby med leg og attraktioner, især til børn på 1–8 år."
+    },
+    "season": {
+      "nb": "Sesongåpent. Kontroller dagens åpningstid og krav ved hver attraksjon.",
+      "en": "Seasonal opening. Check the day’s hours and each ride’s requirements.",
+      "uk": "Сезонна робота. Перевірте години на обрану дату й вимоги окремих атракціонів.",
+      "sv": "Säsongsöppet. Kontrollera dagens tider och kraven för varje attraktion.",
+      "da": "Sæsonåbent. Tjek dagens åbningstid og krav ved hver attraktion."
+    },
+    "sources": [
+      "https://lilleputthammer.no/",
+      "https://lilleputthammer.no/apningstider-og-priser",
+      "https://lilleputthammer.no/attraksjoner-i-lilleputthammer-stort-utvalg-til-sma-gjester",
+      "https://lilleputthammer.no/dagsbilletter"
+    ],
+    "checked": "2026-10-16",
+    "latitude": 61.2389,
+    "longitude": 10.4391,
+    "coordinatesSource": "https://lilleputthammer.no/"
+  },
+  {
+    "id": "kistefos",
+    "name": "Kistefos",
+    "website": "https://www.kistefosmuseum.no/",
+    "area": "Jevnaker · Hadeland",
+    "address": "South parking: Kistefossveien 112, Jevnaker, Norway",
+    "category": "culture",
+    "routes": [
+      "east"
+    ],
+    "description": {
+      "nb": "The Twist, skulpturer og industrihistorie ved Randselva. Et interessant kulturstopp fra Gran og Jevnaker.",
+      "en": "The Twist, sculpture and industrial history beside Randselva. A rewarding cultural stop from Gran and Jevnaker.",
+      "uk": "The Twist, скульптури й промислова історія біля Randselva. Змістовна культурна зупинка з Gran і Jevnaker.",
+      "sv": "The Twist, skulpturer och industrihistoria vid Randselva. Ett givande kulturstopp från Gran och Jevnaker.",
+      "da": "The Twist, skulpturer og industrihistorie ved Randselva. Et interessant kulturstop fra Gran og Jevnaker."
+    },
+    "season": {
+      "nb": "Galleriene er sesongåpne. Punktet viser sørparkeringen; parken har grusveier og bakker.",
+      "en": "Galleries are seasonal. The map point is the south car park; paths include gravel and slopes.",
+      "uk": "Галереї працюють сезонно. На карті — південна парковка; на території є гравійні доріжки та схили.",
+      "sv": "Gallerierna är säsongsöppna. Kartpunkten är södra parkeringen; grusvägar och backar förekommer.",
+      "da": "Gallerierne er sæsonåbne. Kortpunktet er sydparkeringen; stierne har grus og bakker."
+    },
+    "sources": [
+      "https://www.kistefosmuseum.no/besok-oss/vanlige-sporsmal",
+      "https://www.kistefosmuseum.com/om-oss/contact",
+      "https://www.kistefosmuseum.no/besok-oss"
+    ],
+    "checked": "2026-10-16",
+    "latitude": 60.2197945,
+    "longitude": 10.3666135,
+    "coordinatesSource": "https://www.kistefosmuseum.no/besok-oss/vanlige-sporsmal",
+    "image": "./experience-kistefos.jpg",
+    "photoCredit": {
+      "authorPlain": "WikiPCF",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:%27The_Twist%27_bridge_at_Kistefos_Museum.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
+  },
+  {
+    "id": "flam-zipline",
+    "name": "Flåm Zipline",
+    "website": "https://www.flaamzipline.no/english",
+    "area": "Vatnahalsen · Flåmsdalen",
+    "address": "Vatnahalsen station → Kårdal, Flåmsdalen, Norway",
+    "category": "adventure",
+    "routes": [
+      "fjord"
+    ],
+    "description": {
+      "nb": "Zipline fra Vatnahalsen til Kårdal i Flåmsdalen. Kombiner med tog og eventuelt sykkel; dette er ikke en vanlig bilstopp.",
+      "en": "A zipline from Vatnahalsen to Kårdal in Flåmsdalen. Combine it with rail travel and possibly cycling; this is not a normal roadside stop.",
+      "uk": "Зіплайн від Vatnahalsen до Kårdal у Flåmsdalen. Поєднуйте з потягом і, за бажанням, велосипедом; це не звичайна зупинка біля дороги.",
+      "sv": "Zipline från Vatnahalsen till Kårdal i Flåmsdalen. Kombinera med tåg och eventuellt cykel; ingen vanlig bilstopp.",
+      "da": "Zipline fra Vatnahalsen til Kårdal i Flåmsdalen. Kombinér med tog og eventuelt cykel; ikke et almindeligt stop ved vejen."
+    },
+    "season": {
+      "nb": "Sesong og væravhengig. Vektkrav 25–140 kg. Bekreft sesong, tilgang og togbilletter med operatøren.",
+      "en": "Seasonal and weather dependent. Weight range 25–140 kg. Confirm the season, access and train tickets with the operator.",
+      "uk": "Залежить від сезону й погоди. Вага 25–140 кг. Уточніть сезон, доступ і квитки на потяг в оператора.",
+      "sv": "Säsongs- och väderberoende. Vikt 25–140 kg. Bekräfta säsong, tillträde och tågbiljetter hos operatören.",
+      "da": "Sæson- og vejrafhængig. Vægt 25–140 kg. Bekræft sæson, adgang og togbilletter hos operatøren."
+    },
+    "sources": [
+      "https://www.flaamzipline.no/english"
+    ],
+    "checked": "2026-10-16"
+  },
+  {
+    "id": "storelgen",
+    "name": "Storelgen — The Big Elk",
+    "area": "Bjøråa · Østerdalen",
+    "address": "Bjøråa rasteplass, Rv 3, Stor-Elvdal, Norway",
+    "category": "landmark",
+    "routes": [
+      "east"
+    ],
+    "website": "https://norconsult.no/prosjekter/bjoeraaa-rasteplass/",
+    "latitude": 61.6679224,
+    "longitude": 10.8843343,
+    "description": {
+      "nb": "Den store sølvfargede elgskulpturen ved Bjøråa rasteplass på rv. 3. En kort fotopause på Østerdalen-ruten.",
+      "en": "The giant silver-coloured elk sculpture at Bjøråa rest area on road 3. A short photo stop on the Østerdalen route.",
+      "uk": "Велетенська срібляста скульптура лося на Bjøråa біля дороги Rv 3. Коротка фотозупинка на маршруті Østerdalen.",
+      "sv": "Den stora silverfärgade älgskulpturen vid Bjøråa rastplats på riksväg 3. Ett kort fotostopp på Østerdalenrutten.",
+      "da": "Den store sølvfarvede elgskulptur ved Bjøråa rasteplads på vej 3. Et kort fotostop på Østerdalen-ruten."
+    },
+    "season": {
+      "nb": "Utendørs stopp, ingen aktivitetsbillett. Ta hensyn til føre og rasteplassens adkomst.",
+      "en": "Outdoor stop, no activity ticket. Check road conditions and rest-area access.",
+      "uk": "Відкрита фотозупинка без квитка на атракціон. Враховуйте дорожні умови й доступ до парковки.",
+      "sv": "Utomhusstopp utan aktivitetsbiljett. Ta hänsyn till väglag och tillfart.",
+      "da": "Udendørs stop uden aktivitetsbillet. Tag hensyn til vejforhold og adgang."
+    },
+    "sources": [
+      "https://norconsult.no/prosjekter/bjoeraaa-rasteplass/",
+      "https://www.stor-elvdal.kommune.no/_f/p1/ia6ea8311-63f2-4289-b5c0-15604b37c370/20230531_retninglinjer-bjoraa-rasteplass_vedtatt.pdf"
+    ],
+    "coordinatesSource": "https://www.openstreetmap.org/node/6677511968",
+    "checked": "2026-10-16",
+    "image": "./experience-storelgen.jpg",
+    "photoCredit": {
+      "authorPlain": "Orland",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Storelgen_i_Stor-Elvdal_2.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
+  },
+  {
+    "id": "voss-gondol",
+    "name": "Voss Gondol",
+    "area": "Voss · Bergen–Flåm",
+    "address": "Evangervegen 3, 5704 Voss, Norway",
+    "category": "adventure",
+    "routes": [
+      "fjord"
+    ],
+    "website": "https://vossgondol.no/",
+    "latitude": 60.6291914,
+    "longitude": 6.4111488,
+    "description": {
+      "nb": "Gondolen fra Voss stasjon til Hangurstoppen, med fjellutsikt og turmuligheter. Bilruten går til dalstasjonen.",
+      "en": "A gondola from Voss station to Hangurstoppen, with mountain views and walking options. The driving route ends at the lower station.",
+      "uk": "Канатна дорога від станції Voss до Hangurstoppen: панорами гір і прогулянки. Автомобільний маршрут веде до нижньої станції.",
+      "sv": "Gondolen från Voss station till Hangurstoppen, med fjällutsikt och promenader. Bilrutten går till dalstationen.",
+      "da": "Gondolen fra Voss station til Hangurstoppen, med bjergudsigt og vandreture. Bilruten slutter ved dalstationen."
+    },
+    "season": {
+      "nb": "Kontroller drift, vær og siste retur. Gondolbillett og tid på fjellet kommer i tillegg til kjøreturen.",
+      "en": "Check operation, weather and the last descent. Gondola tickets and mountain time are additional to the drive.",
+      "uk": "Перевірте роботу, погоду й останній спуск. Квиток на канатну дорогу та час на горі рахуються окремо.",
+      "sv": "Kontrollera drift, väder och sista nedfärd. Biljett och tid på fjället tillkommer utöver bilresan.",
+      "da": "Tjek drift, vejr og sidste nedtur. Billet og tid på bjerget kommer ud over køreturen."
+    },
+    "sources": [
+      "https://vossgondol.no/info/kontakt-oss",
+      "https://vossgondol.no/info/bestillingsvilkar/"
+    ],
+    "coordinatesSource": "https://www.openstreetmap.org/node/6330631166",
+    "checked": "2026-10-16",
+    "image": "./experience-voss-gondol.jpg",
+    "photoCredit": {
+      "authorPlain": "Wolfmann",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Voss_Gondol_Passenger_lift_cableway_(taubane)_to_Hanguren_View_from_gondola_cabin_towards_Vossavangen_Vangsvatnet_November_afternoon_sunset_Snow_etc_Voss_Norway_2019-11-20_0582.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
+  },
+  {
+    "id": "loen-skylift",
+    "name": "Loen Skylift",
+    "area": "Loen · Nordfjord",
+    "address": "Fjordvegen 1011, 6789 Loen, Norway",
+    "category": "adventure",
+    "routes": [
+      "sunnmore"
+    ],
+    "website": "https://www.loenskylift.no/",
+    "latitude": 61.8751453,
+    "longitude": 6.8393478,
+    "description": {
+      "nb": "Taubanen fra fjorden til Hoven. Fjordutsikt, fjellturer og restaurant; et aktivitetsvalg ved slutten av Loen-ruten.",
+      "en": "The cable car from the fjord to Hoven. Fjord views, walks and a restaurant; an activity option at the end of the Loen route.",
+      "uk": "Канатна дорога від фіорду до Hoven. Панорами, прогулянки й ресторан — окрема програма наприкінці маршруту до Loen.",
+      "sv": "Linbanan från fjorden till Hoven. Fjordutsikt, vandring och restaurang vid slutet av Loenrutten.",
+      "da": "Svævebanen fra fjorden til Hoven. Fjordudsigt, vandring og restaurant ved slutningen af Loen-ruten."
+    },
+    "season": {
+      "nb": "Kartpunktet er fjordstasjonen. Sjekk driftskalender, vær og siste retur før du reiser.",
+      "en": "The map point is the lower fjord station. Check the operating calendar, weather and last descent.",
+      "uk": "На карті — нижня станція біля фіорду. Перевірте календар роботи, погоду й останній спуск.",
+      "sv": "Kartpunkten är dalstationen. Kontrollera driftkalender, väder och sista nedfärd.",
+      "da": "Kortpunktet er dalstationen. Tjek driftskalender, vejr og sidste nedtur."
+    },
+    "sources": [
+      "https://www.loenskylift.no/kome-hit",
+      "https://en.loenskylift.no/press"
+    ],
+    "coordinatesSource": "https://www.openstreetmap.org/node/4845147627",
+    "checked": "2026-10-16"
+  },
+  {
+    "id": "fjordsauna-flam",
+    "name": "FjordSauna Flåm",
+    "area": "Flåm · Aurland",
+    "address": "Dock 10/11, Flåm harbour, 5743 Flåm, Norway",
+    "category": "sauna",
+    "routes": [
+      "fjord"
+    ],
+    "website": "https://www.fjordsauna.com/",
+    "latitude": null,
+    "longitude": null,
+    "description": {
+      "nb": "En badstupause i Flåm havn. Velg og bestill økt direkte hos operatøren; kombiner med fjordruten.",
+      "en": "A sauna pause in Flåm harbour. Choose and book a session with the operator, alongside the fjord route.",
+      "uk": "Пауза в сауні у гавані Flåm. Оберіть і забронюйте сеанс в оператора, поєднавши його з маршрутом фіордів.",
+      "sv": "En bastupaus i Flåms hamn. Välj och boka ett pass hos operatören längs fjordrutten.",
+      "da": "En saunapause i Flåm havn. Vælg og book en session hos operatøren langs fjordruten."
+    },
+    "season": {
+      "nb": "Forhåndsbestill og sjekk dagens økter. Ingen Fjord / Flow-rabatt er avtalt.",
+      "en": "Book ahead and check the day’s sessions. No Fjord / Flow discount has been agreed.",
+      "uk": "Бронюйте заздалегідь і перевіряйте сеанси. Знижку для Fjord / Flow ще не погоджено.",
+      "sv": "Boka i förväg och kontrollera dagens pass. Ingen Fjord / Flow-rabatt är avtalad.",
+      "da": "Book på forhånd og tjek dagens sessioner. Ingen Fjord / Flow-rabat er aftalt."
+    },
+    "sources": [
+      "https://www.fjordsauna.com/contact",
+      "https://www.fjordsauna.no/bransje-presse"
+    ],
+    "coordinatesSource": null,
+    "checked": "2026-10-16"
+  },
+  {
+    "id": "norsk-natursenter",
+    "name": "Norsk Natursenter – Hardanger",
+    "area": "Øvre Eidfjord · Hardanger",
+    "address": "Sæbøtunet 11, 5784 Øvre Eidfjord, Norway",
+    "category": "culture",
+    "routes": [
+      "hardanger"
+    ],
+    "website": "https://www.norsknatursenter.no/",
+    "latitude": 60.4228413,
+    "longitude": 7.135783,
+    "description": {
+      "nb": "Naturutstillinger og panoramafilm om fjorder, fjell og Hardangervidda. Et innendørs stopp på veien mot Vøringsfossen.",
+      "en": "Nature exhibits and a panoramic film about fjords, mountains and Hardangervidda. An indoor stop on the road towards Vøringsfossen.",
+      "uk": "Виставки про природу й панорамний фільм про фіорди, гори та Hardangervidda. Зупинка в приміщенні дорогою до Vøringsfossen.",
+      "sv": "Naturutställningar och panoramafilm om fjordar, fjäll och Hardangervidda. Ett inomhusstopp på vägen mot Vøringsfossen.",
+      "da": "Naturudstillinger og panoramafilm om fjorde, bjerge og Hardangervidda. Et indendørs stop på vejen mod Vøringsfossen."
+    },
+    "season": {
+      "nb": "Sesongåpent. Sjekk kalender og billetter; grupper utenom sesong etter avtale.",
+      "en": "Seasonal opening. Check the calendar and tickets; out-of-season groups by arrangement.",
+      "uk": "Сезонна робота. Перевірте календар і квитки; групи поза сезоном — за домовленістю.",
+      "sv": "Säsongsöppet. Kontrollera kalender och biljetter; grupper utanför säsong efter överenskommelse.",
+      "da": "Sæsonåbent. Tjek kalender og billetter; grupper uden for sæson efter aftale."
+    },
+    "sources": [
+      "https://www.norsknatursenter.no/",
+      "https://www.norsknatursenter.no/kontakt/"
+    ],
+    "coordinatesSource": "https://www.openstreetmap.org/node/14088580010",
+    "checked": "2026-10-16"
+  }
+]
