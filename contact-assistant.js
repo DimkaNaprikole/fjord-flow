@@ -16,7 +16,7 @@ const facebook=node('a','fjord-contact-facebook');facebook.href='https://www.fac
 const contactLinks=node('div','fjord-contact-links');contactLinks.append(address,facebook);
 footer.append(heading,intro,contactLinks);
 document.querySelector('footer')?.before(footer);
-const launch=node('button','fjord-helper-launch');launch.type='button';launch.dataset.i18nIgnore='';launch.setAttribute('aria-haspopup','dialog');launch.setAttribute('aria-controls','fjordHelper');document.body.append(launch);
+const launch=node('button','fjord-helper-launch');launch.type='button';launch.dataset.i18nIgnore='';launch.setAttribute('aria-haspopup','dialog');launch.setAttribute('aria-controls','fjordHelper');launch.setAttribute('aria-label','Афоня');document.body.append(launch);
 const dialog=node('dialog','fjord-helper');dialog.id='fjordHelper';dialog.dataset.i18nIgnore='';dialog.setAttribute('aria-labelledby','fjordHelperTitle');
 const close=node('button','fjord-helper-close');close.type='button';close.textContent='×';
 const title=node('h2');title.id='fjordHelperTitle';const note=node('p','fjord-helper-note');
