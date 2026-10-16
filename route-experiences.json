@@ -36,10 +36,10 @@
     "coordinatesSource": "https://www.tusenfryd.no/relevant-informasjon/kontaktinformasjon",
     "image": "./experience-tusenfryd.jpg",
     "photoCredit": {
-      "authorPlain": "Eirik Yven from Oslo, Norge",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "commonsPage": "https://commons.wikimedia.org/wiki/File:Tusenfryd_(1).jpg",
+      "authorPlain": "Andreasr24",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:ThunderCoaster_p%C3%A5_TusenFryd.JPG",
       "changes": "Wikimedia-generated thumbnail; no further image edits"
     }
   },
@@ -77,7 +77,15 @@
     "checked": "2026-10-16",
     "latitude": 61.225736,
     "longitude": 10.4361101,
-    "coordinatesSource": "https://hunderfossen.no/kontaktinformasjon/"
+    "coordinatesSource": "https://hunderfossen.no/kontaktinformasjon/",
+    "image": "./experience-hunderfossen.jpg",
+    "photoCredit": {
+      "authorPlain": "MikkelMagnus",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Eventyrslottet_i_Hunderfossen_Familiepark.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "lilleputthammer",
@@ -112,7 +120,15 @@
     "checked": "2026-10-16",
     "latitude": 61.2389,
     "longitude": 10.4391,
-    "coordinatesSource": "https://lilleputthammer.no/"
+    "coordinatesSource": "https://lilleputthammer.no/",
+    "image": "./experience-lilleputthammer.jpg",
+    "photoCredit": {
+      "authorPlain": "Chell Hill",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:2010-08-07_Lilleputthammer.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "kistefos",
@@ -298,7 +314,15 @@
       "https://en.loenskylift.no/press"
     ],
     "coordinatesSource": "https://www.openstreetmap.org/node/4845147627",
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./experience-loen-skylift.jpg",
+    "photoCredit": {
+      "authorPlain": "Bingar1234",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:LoenSky117BG23.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "fjordsauna-flam",
@@ -364,7 +388,15 @@
       "https://www.norsknatursenter.no/kontakt/"
     ],
     "coordinatesSource": "https://www.openstreetmap.org/node/14088580010",
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./experience-norsk-natursenter.jpg",
+    "photoCredit": {
+      "authorPlain": "Holger Uwe Schmitt",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Lehrreich,_unterhaltsam_und_sehr_spannend,_das_Hardangervidda_Naturzentrum._03.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "akvariet-bergen",
@@ -395,7 +427,15 @@
       "sv": "Kontrollera öppettider, dagsprogram och biljetter för valt datum på den officiella webbplatsen.",
       "da": "Tjek åbningstider, dagsprogram og billetter til den valgte dato på det officielle websted."
     },
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./experience-akvariet-bergen.jpg",
+    "photoCredit": {
+      "authorPlain": "Kjell Førde",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Akvariet_i_Bergen_penguin.JPG",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "atlanterhavsparken",
@@ -429,7 +469,15 @@
     },
     "checked": "2026-10-16",
     "latitude": 62.4655165,
-    "longitude": 6.0957797
+    "longitude": 6.0957797,
+    "image": "./experience-atlanterhavsparken.jpg",
+    "photoCredit": {
+      "authorPlain": "Fiver, der Hellseher",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Humboldtpinguine_Atlanterhavsparken_Norway.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "dyreparken-kristiansand",
@@ -460,7 +508,15 @@
       "sv": "Djurpark, vattenpark, föreställningar och boende har egna kalendrar och bokningsvillkor. Kontrollera valt datum.",
       "da": "Dyrepark, vandland, forestillinger og overnatning har særskilte kalendere og bookingvilkår. Tjek den valgte dato."
     },
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./experience-dyreparken-kristiansand.jpg",
+    "photoCredit": {
+      "authorPlain": "Bjoertvedt",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_kristiansand_dyrepark_IMG_4044.JPG",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "bjorneparken-fla",
@@ -491,7 +547,15 @@
       "sv": "Säsongskalender och datumstyrda biljetter; begränsad kapacitet. Kontrollera tillgänglighet och aktiviteter före resan.",
       "da": "Sæsonkalender og datobestemte billetter; begrænset kapacitet. Tjek tilgængelighed og aktiviteter før afrejse."
     },
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./experience-bjorneparken-fla.jpg",
+    "photoCredit": {
+      "authorPlain": "Chell Hill",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:2012-07_Bj%C3%B8rneparken_02.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "norsk-skogmuseum",
@@ -523,7 +587,15 @@
       "sv": "Sommarprogram, demonstrationer och barnaktiviteter varierar med datum och bemanning. Kontrollera öppettider och specialevenemang hos museet.",
       "da": "Sommerprogram, demonstrationer og børneaktiviteter afhænger af dato og bemanding. Tjek åbningstider og særlige arrangementer hos museet."
     },
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./experience-norsk-skogmuseum.jpg",
+    "photoCredit": {
+      "authorPlain": "ToB",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Norsk_Skogmuseum.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "polaria-tromso",
@@ -553,7 +625,15 @@
       "sv": "Kontrollera ordinarie öppettider och program. Tilläggsupplevelser har egna biljetter, ålderskrav och deltagargränser.",
       "da": "Tjek almindelige åbningstider og program. Ekstra oplevelser har særskilte billetter, alderskrav og deltagergrænser."
     },
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./experience-polaria-tromso.jpg",
+    "photoCredit": {
+      "authorPlain": "Lee Vilenski",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Polaria_(62458).jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   },
   {
     "id": "dovrefjell-wild-reindeer-centre",
@@ -584,6 +664,14 @@
       "sv": "Kontrollerat 16.10.2026: den officiella webbplatsen anger att viewpoint är stängt till juni 2027. Normalt säsongsöppet och väderberoende; 1,5 km promenad från separat parkering. Djurskydd kan medföra stängning. Kontrollera aktuell status, tillfart och vandringsregler före resan.",
       "da": "Kontrolleret 16.10.2026: det officielle websted oplyser, at viewpoint er lukket til juni 2027. Normalt sæsonåbent og vejrafhængigt; 1,5 km til fods fra særskilt parkering. Naturbeskyttelse kan medføre lukning. Tjek aktuel status, adgang og stiregler før afrejse."
     },
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./experience-dovrefjell-wild-reindeer-centre.jpg",
+    "photoCredit": {
+      "authorPlain": "Lars Rogstad",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Viewpoint_Sn%C3%B8hetta.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    }
   }
 ]

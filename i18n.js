@@ -1,6 +1,7 @@
 /* Original catalogue text is preserved; community content is never translated. */
 (()=>{'use strict';
 const rows=`
+A green glacier lake framed by mountains. Walk about 2.5 km each way from Bondhusdalen; swimming is not permitted.|Et grønt brevann omgitt av fjell. Omtrent 2,5 km til fots hver vei fra Bondhusdalen; bading er ikke tillatt.|Зелене льодовикове озеро серед гір. Від Bondhusdalen — близько 2,5 км пішки в один бік; купатися заборонено.|En grön glaciärsjö bland bergen. Cirka 2,5 km till fots i vardera riktningen från Bondhusdalen; bad är inte tillåtet.|En grøn gletsjersø mellem bjergene. Cirka 2,5 km til fods hver vej fra Bondhusdalen; badning er ikke tilladt.
 FJORD / FLOW — Norway, beautifully connected|FJORD / FLOW — Opplev Norge|FJORD / FLOW — Відкрийте Норвегію|FJORD / FLOW — Upptäck Norge|FJORD / FLOW — Oplev Norge
 YOUR JOURNEY, STOP BY STOP|REISEN DIN, STOPP FOR STOPP|ВАША ПОДОРОЖ, ЗУПИНКА ЗА ЗУПИНКОЮ|DIN RESA, STOPP FÖR STOPP|DIN REJSE, STOP FOR STOP
 Close itinerary|Lukk reiseruten|Закрити маршрут|Stäng resplanen|Luk rejseruten
