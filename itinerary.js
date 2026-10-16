@@ -147,7 +147,7 @@
       let result = cache.get(cacheKey);
       if (!result) {
         const timeout=setTimeout(()=>localController.abort(),25000);
-        try{result = custom||chosen.size?await directRoute(points,signal):await api('route', {origin: coords(points[0]).join(','), destination: config.destination, stops: config.stops, max_detour_minutes: 90});}finally{clearTimeout(timeout);}
+        try{result = custom||chosen.size?await directRoute(points,signal):await api('route', {origin: coords(points[0]).join(','), destination: config.destination, stops: config.stops, max_detour_minutes: 90}, {signal});}finally{clearTimeout(timeout);}
         if(token!==requestId||!dialog.open)return;
         if(!Array.isArray(result.geometry)||result.geometry.length<2||result.geometry.some(p=>!Array.isArray(p)||!Number.isFinite(p[0])||!Number.isFinite(p[1])||Math.abs(p[0])>180||Math.abs(p[1])>90))throw Error('Missing road geometry');
         cache.set(cacheKey, result);

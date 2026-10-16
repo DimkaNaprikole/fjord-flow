@@ -1,6 +1,11 @@
 /* Original catalogue text is preserved; community content is never translated. */
 (()=>{'use strict';
 const rows=`
+Video controls unavailable. Open the original video.|Videokontrollene er utilgjengelige. Åpne originalvideoen.|Керування відео недоступне. Відкрийте оригінальне відео.|Videokontrollerna är otillgängliga. Öppna originalvideon.|Videokontrollerne er utilgængelige. Åbn den originale video.
+Card checkout preview · no charge|Forhåndsvisning av kortbetaling · ingen belastning|Демонстрація оплати карткою · без списання|Förhandsvisning av kortbetalning · ingen debitering|Forhåndsvisning af kortbetaling · ingen opkrævning
+Replay same event (test duplicate protection)|Gjenta samme hendelse (test duplikatvern)|Повторити подію (перевірка захисту від дублювання)|Upprepa samma händelse (testa dubblettskydd)|Gentag samme hændelse (test dubletbeskyttelse)
+No personal details or payment information collected.|Ingen person- eller betalingsopplysninger samles inn.|Особисті та платіжні дані не збираються.|Inga person- eller betalningsuppgifter samlas in.|Ingen person- eller betalingsoplysninger indsamles.
+Duplicate safely ignored.|Duplikatet ble trygt ignorert.|Дублікат безпечно проігноровано.|Dubbletten ignorerades säkert.|Dublettet blev sikkert ignoreret.
 A green glacier lake framed by mountains. Walk about 2.5 km each way from Bondhusdalen; swimming is not permitted.|Et grønt brevann omgitt av fjell. Omtrent 2,5 km til fots hver vei fra Bondhusdalen; bading er ikke tillatt.|Зелене льодовикове озеро серед гір. Від Bondhusdalen — близько 2,5 км пішки в один бік; купатися заборонено.|En grön glaciärsjö bland bergen. Cirka 2,5 km till fots i vardera riktningen från Bondhusdalen; bad är inte tillåtet.|En grøn gletsjersø mellem bjergene. Cirka 2,5 km til fods hver vej fra Bondhusdalen; badning er ikke tilladt.
 FJORD / FLOW — Norway, beautifully connected|FJORD / FLOW — Opplev Norge|FJORD / FLOW — Відкрийте Норвегію|FJORD / FLOW — Upptäck Norge|FJORD / FLOW — Oplev Norge
 YOUR JOURNEY, STOP BY STOP|REISEN DIN, STOPP FOR STOPP|ВАША ПОДОРОЖ, ЗУПИНКА ЗА ЗУПИНКОЮ|DIN RESA, STOPP FÖR STOPP|DIN REJSE, STOP FOR STOP

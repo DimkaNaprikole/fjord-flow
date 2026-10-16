@@ -4,10 +4,11 @@ function loadYouTubeAPI(){
  if(window.YT?.Player)return Promise.resolve(window.YT);
  if(youtubeAPIReady)return youtubeAPIReady;
  youtubeAPIReady=new Promise((resolve,reject)=>{
+  const timer=setTimeout(()=>{youtubeAPIReady=null;reject(Error('YouTube controls timed out'))},15000);
   const previous=window.onYouTubeIframeAPIReady;
-  window.onYouTubeIframeAPIReady=()=>{previous?.();resolve(window.YT)};
+  window.onYouTubeIframeAPIReady=()=>{clearTimeout(timer);previous?.();resolve(window.YT)};
   const script=document.createElement('script');script.src='https://www.youtube.com/iframe_api';script.async=true;
-  script.onerror=()=>{youtubeAPIReady=null;reject(Error('YouTube controls could not load'))};document.head.append(script);
+  script.onerror=()=>{clearTimeout(timer);youtubeAPIReady=null;reject(Error('YouTube controls could not load'))};document.head.append(script);
  });return youtubeAPIReady;
 }
 function appendFlightMedia(place,photos){const film=flightVideos[place.id];return film?[...photos,{kind:'drone',image:place.image,...film}]:photos}
@@ -27,6 +28,7 @@ function showGalleryMotion(item){
  sound.onclick=()=>{const muted=galleryYouTubePlayer?.isMuted?.();command(muted?'unMute':'mute');sound.textContent=muted?'Mute':'Unmute';sound.setAttribute('aria-pressed',String(!muted))};
  const full=document.createElement('button');full.textContent='Full screen';full.onclick=()=>{const action=document.fullscreenElement?document.exitFullscreen?.():stage.requestFullscreen?.();action?.catch?.(()=>{})};
  controls.append(play,sound,full);
+ const original=document.createElement('a');original.href=safeURL(item.source)||'https://www.youtube.com/watch?v='+encodeURIComponent(item.youtubeId);original.target='_blank';original.rel='noopener noreferrer';original.textContent='Open original video ↗';controls.append(original);
  const status=document.createElement('span');status.setAttribute('role','status');status.textContent='Loading video controls…';controls.append(status);
  stage.append(controls);$('.gallery-stage').prepend(stage);
  loadYouTubeAPI().then(YT=>{
@@ -37,7 +39,7 @@ function showGalleryMotion(item){
    onAutoplayBlocked:()=>{status.textContent='Press play inside the video to start playback.'},
    onError:event=>{status.textContent='This film cannot play here. ';console.warn('YouTube embed unavailable',item.youtubeId,event.data);play.disabled=true;sound.disabled=true;const link=document.createElement('a');link.href=safeURL(item.source);link.target='_blank';link.rel='noopener noreferrer';link.textContent='Open original video ↗';status.append(link)}
   }});
- }).catch(()=>{if(stage.isConnected)status.textContent='Use play inside the video, or open the Original film link.'});
+ }).catch(()=>{if(stage.isConnected)status.textContent='Video controls unavailable. Open the original video.'});
 }
 function decorateFlights(){document.querySelectorAll('.card .photo').forEach(photo=>{const id=photo.dataset.gallery;if(photo.querySelector('[data-flight]')||!flightVideos[id])return;const button=document.createElement('button');button.className='flight-launch';button.dataset.flight=id;button.textContent=flightVideos[id].mediaKind==='visit'?'▶ Visit film':'▶ Watch the film';button.setAttribute('aria-label',(flightVideos[id].mediaKind==='visit'?'Watch a visit to ':'Fly over ')+(data.destinations.find(p=>p.id===id)?.name||id));button.onclick=e=>{e.stopPropagation();openGallery(id);galleryIndex=galleryPhotos.length-1;showGalleryPhoto()};button.onkeydown=e=>e.stopPropagation();photo.append(button)})}
 $('#galleryDialog').addEventListener('close',clearGalleryMotion);

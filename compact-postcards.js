@@ -77,9 +77,10 @@
       card.querySelector('.postcard-toggle').textContent=labels()[open?1:0]+' ↻';
     }
   });
+  const photosPaused=()=>!!document.querySelector('[data-scenery-pause][aria-pressed="true"]');
   let turn=0;
   setInterval(() => {
-    if(reduced.matches || document.hidden || document.querySelector('dialog[open]'))return;
+    if(reduced.matches || photosPaused() || document.hidden || document.querySelector('dialog[open]'))return;
     const cards=[...visible].filter(x=>x.isConnected&&!x.matches(':hover,:focus-within')&&!x.classList.contains('postcard-open'));
     if(!cards.length)return;
     const card=cards[turn++%cards.length];
@@ -87,7 +88,7 @@
     const image=card.querySelector('.photo > img');
     if(!image||pictures.length<2)return;
     const next=pictures[(pictures.indexOf(image.src)+1)%pictures.length];
-    const preload=new Image();preload.onload=()=>{if(card.isConnected){image.src=next;card.style.setProperty('--postcard-photo',`url("${next}")`);}};preload.src=next;
+    const preload=new Image();preload.onload=()=>{if(card.isConnected&&!photosPaused()&&!reduced.matches&&!document.hidden&&!card.matches(':hover,:focus-within')&&!card.classList.contains('postcard-open')&&!document.querySelector('dialog[open]')){image.src=next;card.style.setProperty('--postcard-photo',`url("${next}")`);}};preload.src=next;
   },4500);
   mount();
 })();
