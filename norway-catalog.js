@@ -52,9 +52,11 @@
   Object.entries(geoCopy).forEach(([language, row]) => {
     row[2] = {nb:'Vis steder nær meg',en:'Show places near me',uk:'Показати поруч зі мною',sv:'Visa platser nära mig',da:'Vis steder i nærheden af mig'}[language];
     row.push(...{nb:['Nærmeste tettsted', 'Endre sted'],en:['Nearest settlement', 'Change location'],uk:['Найближчий населений пункт', 'Змінити місце'],sv:['Närmaste ort', 'Ändra plats'],da:['Nærmeste bebyggelse', 'Skift placering']}[language]);
+    row[14] = {nb:'Posisjonen ble ikke funnet i tide. Sjekk at nettleseren har posisjonstilgang, og trykk igjen.',en:'Your location was not found in time. Check the browser’s location permission and press the button again.',uk:'Не вдалося вчасно визначити місцезнаходження. Перевірте доступ браузера до геолокації й натисніть ще раз.',sv:'Platsen hittades inte i tid. Kontrollera webbläsarens platsåtkomst och tryck igen.',da:'Placeringen blev ikke fundet i tide. Kontrollér browserens adgang til placering og tryk igen.'}[language];
+    row.push({nb:'Prøver en ny, mer nøyaktig posisjon…',en:'Trying a fresh, more accurate location…',uk:'Нова спроба визначити точніше місцезнаходження…',sv:'Försöker hämta en ny, mer exakt plats…',da:'Prøver at hente en ny, mere præcis placering…'}[language]);
   });
   const originState = createOriginState();
-  let baseChoice = '', radius = 'all', geoMessage = '', geoControls, geoStatus, gpsButton, manualDetails, manualOpen = false;
+  let baseChoice = '', radius = 'all', geoMessage = '', geoControls, geoStatus, gpsButton, manualDetails, manualOpen = false, gpsRequest;
   let townsPromise, townsMeta;
   function loadTowns() {
     if (!townsPromise) {
@@ -137,29 +139,37 @@
     const label = point ? (baseChoice === 'gps' ? g(5) + (point.nearestTown ? ` · ${g(15)}: ${point.nearestTown}` : '') : point.name) : '';
     geoStatus.textContent = (geoMessage ? g(Number(geoMessage)) + ' ' : '') + (label ? `${g(0)}: ${label}. ` : '') + g(13);
     if (baseChoice === 'gps' && point?.nearestTown && safe(townsMeta?.source)) geoStatus.append(document.createTextNode(' · '), link(townsMeta.attribution || 'Kartverket / SSR', townsMeta.attributionUrl || townsMeta.source));
-    if (gpsButton) {gpsButton.disabled = geoMessage === '6'; gpsButton.textContent = geoMessage === '6' ? g(6) : g(2);}
+    if (gpsButton) {const searching = geoMessage === '6' || geoMessage === '17'; gpsButton.disabled = searching; gpsButton.textContent = searching ? g(Number(geoMessage)) : g(2);}
   }
+  function cancelGPS() {gpsRequest?.cancel(); gpsRequest = null;}
   function chooseCity(value) {
     baseChoice = value; geoMessage = ''; originState.set(cities.find(c => c.name === value));
+    cancelGPS();
     if (value && radius === 'all') radius = '50';
     limit = 12; rebuild();
   }
   function requestGPS() {
-    if (!navigator.geolocation) {geoMessage = '9'; manualOpen = true; if (manualDetails) manualDetails.open = true; renderGeoStatus(); return;}
+    cancelGPS();
+    if (!window.FjordBrowserGeolocation) {geoMessage = '8'; manualOpen = true; if (manualDetails) manualDetails.open = true; renderGeoStatus(); return;}
     const token = originState.beginGPS(); geoMessage = '6'; renderGeoStatus();
     const townData = loadTowns(); // Local static file only: coordinates are never sent to an external lookup.
-    navigator.geolocation.getCurrentPosition(async position => {
-      const point = {latitude: position.coords.latitude, longitude: position.coords.longitude};
+    const request = window.FjordBrowserGeolocation.locate({userInitiated:true, onStage: state => {
+      if (!originState.isCurrent(token)) return; geoMessage = state.stage === 'fresh' ? '17' : '6'; renderGeoStatus();
+    }});
+    gpsRequest = request;
+    request.promise.then(async position => {
+      const point = {latitude: position.coords.latitude, longitude: position.coords.longitude, accuracy: position.coords.accuracy};
       if (!originState.isCurrent(token)) return;
       const towns = await townData;
       if (!originState.isCurrent(token)) return;
       point.nearestTown = nearestCity(point, towns, 50)?.name || '';
       if (!originState.acceptGPS(token, point)) {geoMessage = '8'; renderGeoStatus(); return;}
       baseChoice = 'gps'; geoMessage = ''; if (radius === 'all') radius = '20'; limit = 12; rebuild();
-    }, error => {
+    }).catch(error => {
       if (!originState.isCurrent(token)) return;
-      geoMessage = error.code === 1 ? '7' : error.code === 3 ? '14' : '8'; manualOpen = true; if (manualDetails) manualDetails.open = true; renderGeoStatus();
-    }, {enableHighAccuracy: false, timeout: 12000, maximumAge: 60000});
+      if (error.code === 'cancelled') return;
+      geoMessage = error.code === 1 ? '7' : error.code === 3 ? '14' : error.code === 'unsupported' ? '9' : '8'; manualOpen = true; if (manualDetails) manualDetails.open = true; renderGeoStatus();
+    }).finally(() => {if (gpsRequest === request) gpsRequest = null;});
   }
   function rebuild() {
     if (!section) return;
@@ -195,6 +205,7 @@
     catch {failed = true;} finally {loading = false; render();}
   }
   window.addEventListener('fjordlanguagechange', rebuild);
+  window.addEventListener('pagehide', () => {originState.set(originState.current); cancelGPS(); if (geoMessage === '6' || geoMessage === '17') geoMessage = ''; renderGeoStatus();});
   const observer = new MutationObserver(() => {mount(); if (section) observer.disconnect();});
   observer.observe(document.body, {childList: true, subtree: true}); mount(); if (section) observer.disconnect();
 })();
