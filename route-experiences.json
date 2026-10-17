@@ -148,18 +148,19 @@
       "da": "The Twist, skulpturer og industrihistorie ved Randselva. Et interessant kulturstop fra Gran og Jevnaker."
     },
     "season": {
-      "nb": "Galleriene er sesongåpne. Punktet viser sørparkeringen; parken har grusveier og bakker.",
-      "en": "Galleries are seasonal. The map point is the south car park; paths include gravel and slopes.",
-      "uk": "Галереї працюють сезонно. На карті — південна парковка; на території є гравійні доріжки та схили.",
-      "sv": "Gallerierna är säsongsöppna. Kartpunkten är södra parkeringen; grusvägar och backar förekommer.",
-      "da": "Gallerierne er sæsonåbne. Kortpunktet er sydparkeringen; stierne har grus og bakker."
+      "en": "Main season reopens 2 May 2027. Off-season area access has separate terms; galleries and cafe are not assumed open. Check the operator before adding this stop.",
+      "nb": "Hovedsesongen åpner 2. mai 2027. Adgang utenom sesongen har egne vilkår; gallerier og kafé antas ikke å være åpne. Sjekk med stedet før du legger til stoppet.",
+      "uk": "Основний сезон відкривається 2 травня 2027. Відвідування території поза сезоном має окремі умови; галереї та кафе не обов’язково відкриті. Перевірте в оператора перед додаванням зупинки.",
+      "sv": "Huvudsäsongen öppnar 2 maj 2027. Tillträde utanför säsongen har egna villkor; gallerier och kafé antas inte vara öppna. Kontrollera med anläggningen innan du lägger till stoppet.",
+      "da": "Hovedsæsonen åbner 2. maj 2027. Adgang uden for sæsonen har særskilte vilkår; gallerier og café antages ikke at være åbne. Tjek hos stedet, før du tilføjer stoppet."
     },
     "sources": [
       "https://www.kistefosmuseum.no/besok-oss/vanlige-sporsmal",
       "https://www.kistefosmuseum.com/om-oss/contact",
-      "https://www.kistefosmuseum.no/besok-oss"
+      "https://www.kistefosmuseum.no/besok-oss",
+      "https://www.kistefosmuseum.com/visit-kistefos/opening-hours-and-prices"
     ],
-    "checked": "2026-10-16",
+    "checked": "2026-10-17",
     "latitude": 60.2197945,
     "longitude": 10.3666135,
     "coordinatesSource": "https://www.kistefosmuseum.no/besok-oss/vanlige-sporsmal",

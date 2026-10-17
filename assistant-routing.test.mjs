@@ -28,3 +28,12 @@ console.log('PASS: multilingual directions, optional/explicit origin, known/hidd
 }
 
 assert.equal(parse('Как добраться до Осло из Грана?').destination,'Oslo');assert.equal(parse('Как добраться до Осло из Грана?').origin,'Gran');assert.equal(parse('Маршрут до Осло поездом').destination,'Oslo');assert.equal(parse('Маршрут до Осло поездом').mode,'transit');console.log('PASS: destination-first wording and inflected transport names do not pollute map destinations.');
+
+{
+ const {originCommand}=context.window.FjordAssistantRouting;
+ for(const question of ['Я еду из Грана. Хочу красивую поездку на один день, кафе рядом и без длинного перегона. Что посоветуешь?','Я еду из Грана, хочу кафе рядом','I am leaving from Gran. Suggest a day trip with a nearby cafe.','I am travelling from Gran, I want a short day trip','Я еду из Грана\nПокажи маршрут до Осло']){
+  const command=originCommand(question);assert.equal(command.origin,'Gran',question);assert.ok(command.question,'The remaining request must continue to be answered');assert.ok(!command.origin.includes('кафе'));
+ }
+ for(const question of ['Я еду из Грана хочу кафе рядом','I am leaving from Gran please recommend a trip','Я еду из Грана в Берген','Я еду из <script>','Я еду из https://example.com'])assert.equal(originCommand(question),null,'Malformed origin is not remembered: '+question);
+ assert.equal(originCommand('Я еду из Грана.').origin,'Gran');assert.equal(originCommand('My starting point is New York').origin,'New York');console.log('PASS: mixed origin plus request is separated, unsafe or malformed origin is never stored.');
+}

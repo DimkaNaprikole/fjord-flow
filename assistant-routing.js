@@ -19,12 +19,13 @@ function parse(question){
  return {destination:canonical(destination),origin:origin?canonical(origin):'',mode,...(useCurrent?{useCurrent:true}:{})};
 }
 function originCommand(question){
- const q=String(question||'').trim();if(q.length>200||/[<>\n\r]|https?:|javascript:/iu.test(q))return null;
+ const q=String(question||'').trim();if(q.length>1500||/[<>]|https?:|javascript:/iu.test(q))return null;
  if(/^(?:сбрось(?:те)? (?:старт|точку отправления)|забудь(?:те)?(?:,)? откуда я еду|reset (?:start|origin)|forget (?:my )?origin|nullstill start|glem start|скинь старт|забудь звідки я їду|nollställ start|nulstil start)[.! ]*$/iu.test(q))return {clear:true};
- const match=q.match(/^(?:(?:афоня[, ]+)?(?:запомни[, ]+)?(?:я |теперь |сейчас )*(?:еду|выезжаю|начинаю путь) из|(?:запомни[, ]+)?(?:мой старт|старт|точка отправления)[: ]+|(?:тепер |я )*їду з|(?:now )?(?:I am |I'm )?(?:leaving|starting) from|(?:my )?start(?:ing point)?(?: is|:) ?|(?:nå )?(?:jeg )?(?:reiser|kjører) fra|start(?:punkt)?(?: er|:) ?|(?:jag )?åker från|(?:jeg )?kører fra)\s*(.+?)[.! ]*$/iu);
- const origin=match&&canonical(clean(match[1]));
- if(!origin||origin.length>150||/(?:\s(?:до|в|к|to|til|till)\s)/iu.test(origin))return null;
- return {origin};
+ const parts=q.split(/[.!?\n\r]+\s*|,\s*(?=(?:хочу|покажи|посоветуй|подскажи|нуж|що|порадь|I\s+(?:want|would|need)|show|suggest|recommend)(?:\s|$))/iu),statement=parts.shift().trim(),remaining=parts.join('. ').trim();
+ const match=statement.match(/^(?:(?:афоня[, ]+)?(?:запомни[, ]+)?(?:я |теперь |сейчас )*(?:еду|выезжаю|начинаю путь) из|(?:запомни[, ]+)?(?:мой старт|старт|точка отправления)[: ]+|(?:тепер |я )*їду з|(?:now )?(?:I am |I'm )?(?:leaving|starting|travelling|traveling|driving) from|(?:my )?start(?:ing point)?(?: is|:) ?|(?:nå )?(?:jeg )?(?:reiser|kjører) fra|start(?:punkt)?(?: er|:) ?|(?:jag )?åker från|(?:jeg )?kører fra)\s*(.+?)[.! ]*$/iu);
+ const origin=match&&canonical(match[1].trim());
+ if(!origin||origin.length>100||origin.split(/\s+/u).length>8||!/^[\p{L}\p{N}\s’'(),–-]+$/u.test(origin)||/(?:\s(?:до|в|к|to|til|till)\s)|(?:хочу|посовет|покажи|подскажи|маршрут|кафе|I want|recommend|suggest|please|route|cafe)/iu.test(origin))return null;
+ return {origin,...(remaining?{question:remaining}:{})};
 }
 function createOriginMemory(storage,key){
  let origin='';try{const saved=storage?.getItem(key);if(typeof saved==='string'&&saved.length<=150&&!/[<>\n\r]/u.test(saved))origin=saved}catch{}

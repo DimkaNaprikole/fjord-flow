@@ -35,6 +35,7 @@
   const localized = value => typeof value === 'object' && value ? value[language()] || value.en || value.nb || '' : value || '';
   const valid = p => p && Number.isFinite(p.latitude) && Number.isFinite(p.longitude) && Math.abs(p.latitude)<=90 && Math.abs(p.longitude)<=180;
   const customRoutes = {
+    hadeland:{local:true,title:'A day close to Gran'},
     family:{origin:'oslo',required:['kistefos','hunderfossen'],title:'Family discoveries — several days'},
     osterdalen:{origin:'oslo',required:['storelgen'],destination:'roros',title:'Through Østerdalen'}
   };
@@ -80,7 +81,7 @@
     document.getElementById('itineraryExtrasError').textContent=failed?et('Experience information unavailable. Open the route again to retry.'):'';
     const box=document.getElementById('itineraryChoices');box.replaceChildren();
     const route=customRoutes[key]?'east':key, required=customRoutes[key]?.required||[];
-    const items=experiences.filter(p=>Array.isArray(p.routes)&&p.routes.includes(route)&&!required.includes(p.id));
+    const items=experiences.filter(p=>key==='hadeland'?p.id==='kistefos':Array.isArray(p.routes)&&p.routes.includes(route)&&!required.includes(p.id));
     if(!items.length)box.append(node('p',et('No extra stops for this route.')));
     for(const p of items){const label=node('label',undefined,'itinerary-choice'),check=node('input');check.type='checkbox';check.value=p.id;check.checked=chosen.has(p.id);check.disabled=!valid(p);const copy=node('span');copy.append(node('b',localized(p.name)),node('small',localized(p.area)||localized(p.address)),node('small',localized(p.season)));if(!valid(p))copy.append(node('small',et('Plan access separately; see the operator.')));const url=official(p);if(url){const a=node('a',et('Official information ↗'));a.href=url;a.target='_blank';a.rel='noopener noreferrer';copy.append(a);}label.append(check,copy);box.append(label);check.onchange=()=>{check.checked?chosen.add(p.id):chosen.delete(p.id);selectionChanged();};}
   }
@@ -118,7 +119,7 @@
       const item = document.createElement('li');
       item.id = `itinerary-stop-${i}`;
       if(p.extra){
-        item.dataset.i18nIgnore='';const title=node('div',undefined,'itinerary-stop-title');title.append(node('span',String(i+1).padStart(2,'0')),node('h4',localized(p.name)));const locate=node('button','⌖','stop-on-map');locate.type='button';locate.onclick=()=>{map.setView(coords(p),11);markers[i].openPopup();};title.append(locate);const illustration=node('figure',undefined,'itinerary-experience-photo');if(p.image){const image=node('img');image.src=safeURL(p.image);image.alt=localized(p.name);image.loading='lazy';illustration.append(image);window.FjordExperiences?.appendPhotoCredit?.(illustration,p);}else{illustration.className='itinerary-illustration';illustration.textContent='✦';illustration.setAttribute('aria-hidden','true');}item.append(title,illustration,node('p',localized(p.description)),node('small',localized(p.season),'itinerary-access'));const url=official(p);if(url){const a=node('a',et('Official information ↗'),'itinerary-official');a.href=url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}list.append(item);return;
+        item.dataset.i18nIgnore='';const title=node('div',undefined,'itinerary-stop-title');title.append(node('span',String(i+1).padStart(2,'0')),node('h4',localized(p.name)));const locate=node('button','⌖','stop-on-map');locate.type='button';locate.onclick=()=>{map.setView(coords(p),11);markers[i].openPopup();};title.append(locate);const illustration=node('figure',undefined,'itinerary-experience-photo');if(p.image){const image=node('img');image.src=safeURL(p.image);image.alt=localized(p.name);image.loading='lazy';illustration.append(image);window.FjordExperiences?.appendPhotoCredit?.(illustration,p);}else{illustration.className='itinerary-illustration';illustration.textContent='✦';illustration.setAttribute('aria-hidden','true');}item.append(title);if(!p.local)item.append(illustration);else item.classList.add('itinerary-stop-local');item.append(node('p',localized(p.description)),node('small',localized(p.season),'itinerary-access'));const url=official(p);if(url){const a=node('a',et('Official information ↗'),'itinerary-official');a.href=url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}window.FjordTripTools?.nearby(item,p);list.append(item);return;
       }
       const photos = [...new Set([p.image, ...(p.gallery || []).map(g => g.image)])].filter(Boolean).slice(0, 3);
       item.innerHTML = `<div class="itinerary-stop-title"><span data-i18n-ignore>${String(i + 1).padStart(2, '0')}</span><div><small>${i === 0 ? 'Starting point' : i === points.length - 1 ? 'Final stop' : 'Along the way'}</small><h4 data-i18n-ignore>${esc(p.name)}</h4></div><button type="button" class="stop-on-map" aria-label="Show on map">⌖</button></div><button type="button" class="itinerary-main-photo" aria-label="View photo journal"><img src="${esc(safeURL(photos[0]))}" alt="${esc(p.name)}" loading="lazy"><span>View photo journal ↗</span></button><div class="itinerary-thumbnails">${photos.slice(1).map(src => `<img src="${esc(safeURL(src))}" alt="${esc(p.name)}" loading="lazy">`).join('')}</div><p>${esc(p.description || '')}</p><small class="itinerary-access">${esc(p.routeLabel || p.name)}</small>`;
@@ -127,7 +128,7 @@
         map.setView(coords(p), 11); markers[i].openPopup();
         document.getElementById('itineraryMap').scrollIntoView({block: 'nearest', behavior: 'smooth'});
       };
-      list.append(item);
+      window.FjordTripTools?.nearby(item,p);list.append(item);
     });
   }
   async function openItinerary(key, button) {
@@ -138,15 +139,17 @@
     extraChoices(key,failed);
     const config = roadTrips[key];
     const custom=customRoutes[key];
+    const local=window.FjordTripTools?.localRoutes?.[key];
+    if(key==='hadeland')experiences=experiences.map(p=>p.id==='kistefos'?{...p,insertAfter:'hadeland-glassverk'}:p);
     const origin = find(custom?.origin || (key === 'sunnmore' ? 'rampestreken' : 'bergen'));
-    const base=custom?[origin,...custom.required.map(id=>experiences.find(p=>p.id===id)),...(custom.destination?[find(custom.destination)]:[])]:[origin,...config.stops.map(find),find(config.destination)];
+    const base=local?local.points:custom?[origin,...custom.required.map(id=>experiences.find(p=>p.id===id)),...(custom.destination?[find(custom.destination)]:[])]:[origin,...config.stops.map(find),find(config.destination)];
     baseChoices(base);
     document.getElementById('itineraryUpdate').classList.remove('needs-update');
     if(base.some(p=>!valid(p))){document.getElementById('itineraryTitle').textContent=custom?et(custom.title):button.querySelector('b').textContent;document.getElementById('itineraryOrder').textContent='';document.getElementById('itineraryStops').replaceChildren();document.getElementById('itineraryStatus').textContent=et('Required route coordinates are unavailable. No route was calculated.');document.getElementById('itineraryNavigation').removeAttribute('href');legLinks.replaceChildren();activePoints=[];layer?.clearLayers();routeLine=null;if(!dialog.open)dialog.showModal();return;}
     const points=withExtras(base.filter((p,i)=>i===0||i===base.length-1||!excludedStops.has(p.id)));
     // Åndalsnes is represented by the catalogue's Rampestreken road access.
     activePoints = points;
-    document.getElementById('itineraryTitle').textContent = custom?et(custom.title):button.querySelector('b').textContent;
+    document.getElementById('itineraryTitle').textContent = local?localized(local.title):custom?et(custom.title):button.querySelector('b').textContent;
     document.getElementById('itineraryTitle').setAttribute('data-i18n-ignore','');
     document.getElementById('itineraryOrder').textContent = points.map(p => localized(p.name)).join(' → ');
     document.getElementById('itineraryStatus').removeAttribute('data-i18n-ignore');
@@ -211,6 +214,7 @@
   });
   document.getElementById('itineraryUpdate').onclick=()=>openItinerary(activeKey,activeButton);
   const customButtons=[];
-  for(const [key,config] of Object.entries(customRoutes)){const button=node('button');button.type='button';button.dataset.roadtrip=key;button.dataset.i18nIgnore='';button.append(node('span',key==='family'?'04 / INNLANDET':'05 / ØSTERDALEN'),node('b',et(config.title)),node('small',key==='family'?'Oslo · Kistefos · Hunderfossen':'Oslo · Storelgen · Røros'));button.onclick=()=>openItinerary(key,button);document.querySelector('.roadtrip-presets')?.append(button);customButtons.push([button,config]);}
-  window.addEventListener('fjord:language',()=>{customButtons.forEach(([b,c])=>b.querySelector('b').textContent=et(c.title));if(dialog.open&&activeKey)openItinerary(activeKey,activeButton);});
+  for(const [key,config] of Object.entries(customRoutes)){const local=window.FjordTripTools?.localRoutes?.[key],button=node('button');button.type='button';button.dataset.roadtrip=key;button.dataset.i18nIgnore='';button.append(node('span',local?local.label:key==='family'?'04 / INNLANDET':'05 / ØSTERDALEN'),node('b',local?localized(local.title):et(config.title)),node('small',local?local.summary:key==='family'?'Oslo · Kistefos · Hunderfossen':'Oslo · Storelgen · Røros'));button.onclick=()=>openItinerary(key,button);const host=document.querySelector('.roadtrip-presets');local?host?.prepend(button):host?.append(button);customButtons.push([button,config,key]);}
+  window.FjordTripTools?.practical(dialog.querySelector('.itinerary-map-panel'));
+  window.addEventListener('fjord:language',()=>{customButtons.forEach(([b,c,key])=>b.querySelector('b').textContent=window.FjordTripTools?.localRoutes?.[key]?localized(window.FjordTripTools.localRoutes[key].title):et(c.title));if(dialog.open&&activeKey)openItinerary(activeKey,activeButton);});
 })();
