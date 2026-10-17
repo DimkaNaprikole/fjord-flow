@@ -55,7 +55,59 @@
       }
     ],
     "imageSource": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
-    "photoAlt": "Café Opera"
+    "photoAlt": "Café Opera",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "11:00",
+            "23:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "23:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "23:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "01:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "01:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "01:30"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "23:30"
+          ]
+        ]
+      ],
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://cafeopera.org/",
+      "sourceLabel": "Café Opera"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Caf%C3%A9%20Opera%2C%20Engen%2018%2C%205011%20Bergen%2C%20Norway"
   },
   {
     "id": "flam-bakery",
@@ -120,7 +172,59 @@
       }
     ],
     "imageSource": "https://www.visitnorway.com/listings/fl%C3%A5m-bakery/188744/",
-    "photoAlt": "Flåm Bakery"
+    "photoAlt": "Flåm Bakery",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ]
+      ],
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+      "sourceLabel": "Norway’s best"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Fl%C3%A5m%20Bakery%2C%20Stasjonsvegen%2C%205743%20Fl%C3%A5m%2C%20Norway"
   },
   {
     "id": "cafe-ole-geiranger",
@@ -171,6 +275,58 @@
       }
     ],
     "imageSource": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
-    "photoAlt": "Café Olé"
+    "photoAlt": "Café Olé",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ]
+      ],
+      "verified": false,
+      "checked": "2026-10-17",
+      "source": "https://no.tripadvisor.com/Restaurant_Review-g642196-d2186167-Reviews-CafeOle-Geiranger_Stranda_More_og_Romsdal_Western_Norway.html",
+      "sourceLabel": "Tripadvisor"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Caf%C3%A9%20Ol%C3%A9%2C%20Mar%C3%A5kvegen%2019%2C%206216%20Geiranger%2C%20Norway"
   }
 ]

@@ -15,7 +15,7 @@
   const el = (tag, cls, text) => { const e = document.createElement(tag); e.className = cls || ''; if (text) e.textContent = text; return e; };
   const valid = value => { if (typeof value !== "string" || !value.trim()) return ""; try {const u = new URL(value, document.baseURI); return u.protocol === 'https:' || u.origin === location.origin ? u.href : '';} catch {return '';} };
   let dialog, stage, photo, title, counter, caption, source, license, zoom, thumbs, error, previous, next, close;
-  let record, photos = [], index = 0, zoomed = false, touchStart;
+  let record, photos = [], index = 0, zoomed = false, touchStart, cafeInfo, cafeTimer;
   function button(cls, text, handler) { const b = el('button', cls, text); b.type = 'button'; b.onclick = handler; return b; }
   function toggleZoom() {
     zoomed = !zoomed; stage.classList.toggle('is-zoomed', zoomed);
@@ -58,7 +58,9 @@
     license = el('a', 'stay-gallery-source'); license.target = '_blank'; license.rel = 'noopener noreferrer'; license.hidden = true;
     meta.append(details, zoom, source, license);
     thumbs = el('nav', 'stay-gallery-thumbs');
-    dialog.append(header, viewer, meta, thumbs); document.body.append(dialog);
+    cafeInfo = el('section', 'cafe-gallery-info'); cafeInfo.hidden = true;
+    dialog.append(header, cafeInfo, viewer, meta, thumbs); document.body.append(dialog);
+    dialog.addEventListener('close', () => clearInterval(cafeTimer));
     dialog.addEventListener('click', e => {if (e.target === dialog) dialog.close();});
     dialog.addEventListener('keydown', e => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {e.preventDefault(); show(index + (e.key === 'ArrowRight' ? 1 : -1));}
@@ -87,6 +89,9 @@
         const img = el('img'); img.src = valid(p.src); img.alt = ''; img.loading = 'lazy'; b.append(img); return b;
       }));
       previous.hidden = next.hidden = photos.length < 2;
+      clearInterval(cafeTimer);
+      const refreshCafe = window.FjordCafeGalleryInfo?.render(cafeInfo, venue);
+      if (refreshCafe) cafeTimer = setInterval(refreshCafe, 60000);
       show(0); dialog.showModal();
     }
   };
