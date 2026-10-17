@@ -60,14 +60,14 @@
     source.target = '_blank'; source.rel = 'noopener noreferrer';
     const date = new Intl.DateTimeFormat(lang || 'nb').format(new Date(hours.checked + 'T12:00:00Z'));
     details.append(source, node('span', 'cafe-gallery-checked', `${w[9]}: ${date}`));
-    const note = node('p', 'cafe-gallery-hours-note', state.open === null ? w[7] : w[6]);
+    const note = node('p', 'cafe-gallery-hours-note', hours.verified ? w[6] : w[7]);
     host.append(line, note, details);
     return () => {
       const fresh = evaluate(hours);
       badge.textContent = fresh.open === null ? w[2] : fresh.open ? `${w[0]} ${fresh.until}` : w[1];
       badge.dataset.state = fresh.open === null ? 'unknown' : fresh.open ? 'open' : 'closed';
       todayLine.textContent = Array.isArray(hours.weekly) ? `${w[3]}: ${times(fresh.today)}` : w[10];
-      note.textContent = fresh.open === null ? w[7] : w[6];
+      note.textContent = hours.verified ? w[6] : w[7];
       [...table.children].forEach((row, day) => row.classList.toggle('is-today', day === fresh.day));
     };
   }
