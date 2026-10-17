@@ -47,7 +47,7 @@
         if(destroyed)return 0;clear();lastRows=Array.isArray(rows)?rows:[];lastRoute=route;lastCategory=category;
         filterPlaces(lastRows,category).forEach(record=>{
           const name=String(record.name||record.town||record.id||'').slice(0,140);
-          const marker=new library.Marker3DInteractiveElement({position:{lat:record.latitude,lng:record.longitude,altitude:0},altitudeMode:'CLAMP_TO_GROUND',title:name,label:symbols[record.category]+' '+name.slice(0,65),collisionBehavior:'REQUIRED',sizePreserved:true});
+          const marker=new library.Marker3DInteractiveElement({position:{lat:record.latitude,lng:record.longitude,altitude:0},altitudeMode:'CLAMP_TO_GROUND',title:name,collisionBehavior:'OPTIONAL_AND_HIDES_LOWER_PRIORITY',sizePreserved:true});
           const click=()=>{if(!destroyed)options.onPlaceClick?.(record);};
           marker.addEventListener('gmp-click',click);map.append(marker);markers.push({marker,click});
         });
