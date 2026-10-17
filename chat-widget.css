@@ -22,30 +22,31 @@ dialog.fjord-helper.fjord-ai:not(:modal){position:fixed;inset:auto 16px 82px aut
 .fjord-ai-compose-actions .fjord-ai-primary{margin-top:0;justify-self:start}
 .fjord-ai-compose-actions .fjord-ai-mic-language{justify-self:end;max-width:145px}
 
-/* Fixed chat shell: only the conversation scrolls; controls stay in view. */
-dialog.fjord-helper.fjord-ai[open]{display:flex;flex-direction:column;gap:0;overflow:hidden;padding:18px!important;height:min(720px,calc(100dvh - 110px));max-height:calc(100dvh - 110px)}
-dialog.fjord-helper.fjord-ai:not(:modal){bottom:82px;max-height:calc(100dvh - 110px)}
-.fjord-ai>*,.fjord-ai-footer>*{flex-shrink:0;min-width:0}
-.fjord-ai .fjord-ai-portrait{margin:0 40px 12px 0;min-height:42px;gap:10px}
-.fjord-ai .fjord-ai-portrait .fjord-ai-pet{width:32px;height:32px;transform:none;margin:3px}
+/* One scroll surface; composing and microphone controls stay in place. */
+dialog.fjord-helper.fjord-ai[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;gap:0;overflow:hidden;overscroll-behavior:contain;padding:16px!important;height:min(680px,calc(100dvh - 108px));max-height:calc(100dvh - 108px);min-height:0}
+dialog.fjord-helper.fjord-ai:not(:modal){position:fixed;inset:auto 16px 82px auto;margin:0}
+.fjord-ai>*,.fjord-ai-footer>*{min-width:0;min-height:0}
+.fjord-ai .fjord-ai-portrait{grid-row:1;margin:0 40px 10px 0;min-height:38px;gap:10px}
+.fjord-ai .fjord-ai-portrait .fjord-ai-pet{width:30px;height:30px;transform:none;margin:3px}
 .fjord-ai .fjord-ai-portrait h2{font-size:22px;margin:0}
-.fjord-ai-conversation{flex:1 1 0;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:0 3px 4px}
+.fjord-ai .fjord-ai-conversation{grid-row:2;min-height:0;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;padding:0 3px 4px}
 .fjord-ai .fjord-ai-log{min-height:0;max-height:none;overflow:visible;padding:0}
 .fjord-ai .fjord-ai-message{margin:8px 0;padding:10px 12px}
 .fjord-ai .fjord-ai-user{margin-left:auto}
 .fjord-ai-about{font-size:11px;color:#d4e6ed;margin:10px 0 4px}
 .fjord-ai-about summary{cursor:pointer;width:fit-content;text-decoration:underline;text-underline-offset:3px}
-.fjord-ai .fjord-ai-compose{flex:none;margin-top:8px;padding-top:10px;border-top:1px solid #ffffff26}
-.fjord-ai .fjord-ai-compose>label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.fjord-ai .fjord-ai-compose textarea{height:58px;min-height:58px;max-height:58px;resize:none;padding:8px 10px}
-.fjord-ai-compose-actions{gap:7px;margin-top:7px}
-.fjord-ai-compose-actions .fjord-ai-voice:nth-child(2){min-height:44px}
-.fjord-ai .fjord-ai-hold-note{margin:6px 0 0;font-size:11px;line-height:1.4}
-.fjord-ai-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px;padding-top:8px;border-top:1px solid #ffffff26}
-.fjord-ai .fjord-ai-human{margin:0;padding:8px 11px;font-size:12px;min-height:36px}
-.fjord-ai .fjord-ai-links{margin:0;padding:0;border:0;gap:10px;flex-wrap:wrap}
-.fjord-ai .fjord-ai-links a{font-size:11px}
+.fjord-ai .fjord-ai-compose{grid-row:3;margin:8px 0 0;padding-top:10px;border-top:1px solid #ffffff26;overflow:hidden}
+.fjord-ai .fjord-ai-compose>label,.fjord-ai .fjord-ai-hold-note{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0;padding:0}
+.fjord-ai .fjord-ai-compose textarea{height:52px;min-height:52px;max-height:52px;resize:none;padding:8px 10px}
+.fjord-ai .fjord-ai-compose-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:7px;margin-top:7px;align-items:center}
+.fjord-ai .fjord-ai-compose-actions .fjord-ai-primary{grid-column:2;grid-row:1;justify-self:end;min-height:36px;padding:7px 12px;margin:0;font-size:12px;line-height:1.4}
+.fjord-ai .fjord-ai-compose-actions .fjord-ai-mic-language{grid-column:1;grid-row:1;justify-self:start;min-width:0;max-width:100%;height:36px;padding:5px 9px;font-size:12px}
+.fjord-ai .fjord-ai-compose-actions .fjord-ai-voice:nth-child(2){grid-column:1/-1;grid-row:2;width:100%;min-height:42px;padding:8px 12px;margin:0;box-sizing:border-box;font-size:12px}
+.fjord-ai .fjord-ai-footer{grid-row:4;display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-top:8px;padding-top:8px;border-top:1px solid #ffffff26}
+.fjord-ai .fjord-ai-human{display:none!important}
+.fjord-ai .fjord-ai-links{margin:0;padding:0;border:0;gap:14px;flex-wrap:wrap}
+.fjord-ai .fjord-ai-links a{font-size:12px;line-height:1.5}
 .fjord-ai-auth-pending .fjord-ai-conversation,.fjord-ai-auth-pending .fjord-ai-footer{display:none!important}
-dialog.fjord-helper.fjord-ai.fjord-ai-auth-pending[open]{height:auto;overflow:auto}
-@media(max-width:500px){dialog.fjord-helper.fjord-ai:not(:modal){inset:auto 8px 8px;width:calc(100vw - 16px);height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);padding:14px!important;border-radius:18px}}
-@media(max-height:520px){dialog.fjord-helper.fjord-ai[open]{height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);bottom:8px;padding:12px!important}.fjord-ai .fjord-ai-portrait{min-height:32px;margin-bottom:6px}.fjord-ai .fjord-ai-portrait .fjord-ai-pet{display:none}.fjord-ai .fjord-ai-compose textarea{height:42px;min-height:42px;max-height:42px}.fjord-ai .fjord-ai-hold-note{display:none}.fjord-ai-compose-actions .fjord-ai-voice:nth-child(2){min-height:38px;grid-column:1;grid-row:1}.fjord-ai-compose-actions{grid-template-columns:minmax(0,1fr) auto}.fjord-ai-compose-actions .fjord-ai-primary{grid-row:1;grid-column:2}.fjord-ai-compose-actions .fjord-ai-mic-language{grid-column:1/-1;max-width:100%;padding:4px}.fjord-ai-footer{margin-top:5px;padding-top:5px}}
+dialog.fjord-helper.fjord-ai.fjord-ai-auth-pending[open]{display:block;height:auto;overflow:auto}
+@media(max-width:500px){dialog.fjord-helper.fjord-ai:not(:modal){inset:auto 8px 76px auto;width:calc(100vw - 16px);height:calc(100dvh - 92px);max-height:calc(100dvh - 92px);padding:12px!important;border-radius:18px}.fjord-ai .fjord-ai-portrait{margin-bottom:7px}}
+@media(max-height:520px){dialog.fjord-helper.fjord-ai[open]{height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);bottom:8px;padding:10px!important}.fjord-ai .fjord-ai-portrait{min-height:26px;margin-bottom:4px}.fjord-ai .fjord-ai-portrait .fjord-ai-pet{display:none}.fjord-ai .fjord-ai-portrait h2{font-size:18px}.fjord-ai .fjord-ai-compose{margin-top:4px;padding-top:6px}.fjord-ai .fjord-ai-compose textarea{height:38px;min-height:38px;max-height:38px;padding:6px 9px}.fjord-ai .fjord-ai-compose-actions{gap:4px;margin-top:4px}.fjord-ai .fjord-ai-compose-actions .fjord-ai-voice:nth-child(2){min-height:36px;padding:6px 10px}.fjord-ai .fjord-ai-footer{margin-top:5px;padding-top:5px}}
