@@ -25,7 +25,7 @@
 .norway-overview__standard .gm-style-iw{background:#123440;color:#edf6f8}
 .norway-overview__standard .gm-style-iw-tc::after{background:#123440}
 .norway-overview__standard .gm-ui-hover-effect[aria-label="Закрити"],.norway-overview__standard .gm-style-iw .gm-ui-hover-effect{filter:invert(1)}
-.norway-overview__standard .norway-overview__popup{max-height:350px;overflow:auto;padding:5px}
+.norway-overview__standard .norway-overview__popup{max-height:280px;overflow:auto;padding:5px;box-sizing:border-box}
 .fjord-google-marker{display:flex;align-items:center;gap:4px;cursor:pointer;filter:drop-shadow(0 2px 3px #0007);transform:translateY(3px)}
 .fjord-google-marker img{display:block;width:36px;height:42px;flex-shrink:0}
 .fjord-google-marker span{background:#123440ed;color:#fff;border:1px solid #ffffff9c;border-radius:7px;font:600 12px/1.25 Arial,sans-serif;padding:5px 8px;max-width:160px;white-space:normal;text-align:left}
