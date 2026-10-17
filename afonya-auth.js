@@ -22,19 +22,31 @@ export async function getVisitorToken(apiKey){
   }
   return saved.idToken;
 }
-export async function ensureVerified(dialog,apiKey,language='en'){
+const authFlows=new WeakMap();
+export function ensureVerified(dialog,apiKey,language='en'){
+  const existing=authFlows.get(dialog);if(existing)return existing.promise;
+  const flow={cancelled:false,promise:null};
+  const onClose=()=>{flow.cancelled=true;if(authFlows.get(dialog)===flow)authFlows.delete(dialog)};
+  dialog.addEventListener('close',onClose);
+  flow.promise=runVerification(dialog,apiKey,language,()=>!flow.cancelled&&dialog.open).finally(()=>{dialog.removeEventListener('close',onClose);if(authFlows.get(dialog)===flow)authFlows.delete(dialog)});
+  authFlows.set(dialog,flow);return flow.promise;
+}
+async function runVerification(dialog,apiKey,language,isActive){
   const w=copy[language]||copy.en;
   let previous=null;try{await getVisitorToken(apiKey);previous=JSON.parse(sessionStorage.getItem(cacheKey)||'null')}catch{}
   if(previous?.idToken&&previous?.email){try{const profile=await lookup(apiKey,previous.idToken);if(profile?.emailVerified&&profile.email===previous.email)return previous}catch{sessionStorage.removeItem(cacheKey)}}
+  if(!isActive())return null;
   return new Promise(resolve=>{
     const gate=make('section','fjord-ai-auth'),heading=make('h3'),form=make('form'),email=make('input'),password=make('input'),buttons=make('div','fjord-ai-auth-buttons'),create=make('button'),signIn=make('button'),verified=make('button'),resend=make('button'),message=make('p');
     heading.textContent=w[0];email.type='email';email.required=true;email.autocomplete='email';email.placeholder=w[1];password.type='password';password.required=true;password.minLength=6;password.autocomplete='current-password';password.placeholder=w[2];create.type=signIn.type=verified.type=resend.type='button';create.textContent=w[3];signIn.textContent=w[4];verified.textContent=w[6];resend.textContent=w[7];verified.hidden=resend.hidden=true;message.setAttribute('role','status');message.textContent=w[8];buttons.append(create,signIn,verified,resend);form.append(email,password,buttons,message);gate.append(heading,form);dialog.insertBefore(gate,dialog.querySelector('.fjord-ai-log'));dialog.classList.add('fjord-ai-auth-pending');
     let token=previous?.idToken||'',address=previous?.email||'';if(address)email.value=address;
+    if(token){verified.hidden=resend.hidden=false;message.textContent=w[9]}
     const finish=result=>{dialog.removeEventListener('close',onClose);gate.remove();dialog.classList.remove('fjord-ai-auth-pending');resolve(result)};
     const onClose=()=>finish(null);dialog.addEventListener('close',onClose);
     async function authenticate(route){if(!form.reportValidity())return;create.disabled=signIn.disabled=true;message.textContent='…';try{const result=await call(apiKey,route,{email:email.value.trim(),password:password.value,returnSecureToken:true});token=result.idToken;address=result.email;sessionStorage.setItem(cacheKey,JSON.stringify({idToken:token,email:address,refreshToken:result.refreshToken,expiresAt:Date.now()+Number(result.expiresIn||3600)*1000}));password.value='';const profile=await lookup(apiKey,token);if(profile?.emailVerified){finish({idToken:token,email:address});return}if(route==='signUp')await sendVerification();else{verified.hidden=resend.hidden=false;message.textContent=w[9]}}catch(error){message.textContent=error.message==='EMAIL_EXISTS'?w[8]:w[10]+' '+error.message}finally{create.disabled=signIn.disabled=false}}
     async function sendVerification(){if(!token)return;resend.disabled=true;try{await call(apiKey,'sendOobCode',{requestType:'VERIFY_EMAIL',idToken:token});verified.hidden=resend.hidden=false;message.textContent=w[5]}catch{message.textContent=w[10]}finally{resend.disabled=false}}
     create.onclick=()=>void authenticate('signUp');signIn.onclick=()=>void authenticate('signInWithPassword');resend.onclick=()=>void sendVerification();verified.onclick=async()=>{message.textContent='…';try{const profile=await lookup(apiKey,token);if(profile?.emailVerified){finish({idToken:token,email:address});return}message.textContent=w[9]}catch{message.textContent=w[10]}};
+    form.addEventListener('submit',event=>{event.preventDefault();if(!signIn.disabled)void authenticate('signInWithPassword')});
     email.focus({preventScroll:true});
   })
 }
