@@ -72,7 +72,13 @@
       "sv": "Riktiga fotografier · Visit Bergen / Visit Norway",
       "da": "Ægte fotografier · Visit Bergen / Visit Norway"
     },
-    "description": "A cultural café and coffee stop in central Bergen, with food and a programme of exhibitions and events. A city stop before setting out towards Hardanger. Check the official website for current opening hours.",
+    "description": {
+      "en": "A cultural café and coffee stop in central Bergen, with food and a programme of exhibitions and events. A city stop before setting out towards Hardanger. Check the official website for current opening hours.",
+      "nb": "En kulturkafé og kaffepause i Bergen sentrum, med mat, utstillinger og arrangementer. Et bystopp før turen mot Hardanger. Sjekk nettstedet for gjeldende åpningstider.",
+      "uk": "Культурна кав’ярня в центрі Bergen: їжа, виставки та події. Міська зупинка перед дорогою до Hardanger. Актуальні години роботи перевіряйте на сайті закладу.",
+      "sv": "Ett kulturkafé och kaffestopp i centrala Bergen, med mat, utställningar och evenemang. Ett stadsstopp före färden mot Hardanger. Kontrollera aktuella öppettider på webbplatsen.",
+      "da": "En kulturcafé og kaffepause i Bergen centrum med mad, udstillinger og arrangementer. Et bystop før turen mod Hardanger. Tjek aktuelle åbningstider på hjemmesiden."
+    },
     "gallery": [
       {
         "src": "./images/cafes/cafe-opera-bergen-1.webp",
@@ -182,7 +188,13 @@
       "sv": "Riktiga fotografier · Visit Sognefjord / Visit Norway",
       "da": "Ægte fotografier · Visit Sognefjord / Visit Norway"
     },
-    "description": "A bakery on the quay near Flåm Railway station, serving baked goods, sandwiches and coffee. A stop in Flåm on the way between Bergen, Aurland and Gudvangen. Check the official website for current opening hours.",
+    "description": {
+      "en": "A bakery on the quay near Flåm Railway station, serving baked goods, sandwiches and coffee. A stop in Flåm on the way between Bergen, Aurland and Gudvangen. Check the official website for current opening hours.",
+      "nb": "Et bakeri på kaien ved Flåm stasjon, med bakervarer, smørbrød og kaffe. Et stopp i Flåm på veien mellom Bergen, Aurland og Gudvangen. Sjekk nettstedet for gjeldende åpningstider.",
+      "uk": "Пекарня на набережній біля станції Flåm: випічка, сендвічі та кава. Зупинка дорогою між Bergen, Aurland і Gudvangen. Актуальні години роботи перевіряйте на сайті закладу.",
+      "sv": "Ett bageri på kajen nära Flåms station, med bakverk, smörgåsar och kaffe. Ett stopp i Flåm mellan Bergen, Aurland och Gudvangen. Kontrollera aktuella öppettider på webbplatsen.",
+      "da": "Et bageri på kajen ved Flåm station med bagværk, sandwich og kaffe. Et stop i Flåm mellem Bergen, Aurland og Gudvangen. Tjek aktuelle åbningstider på hjemmesiden."
+    },
     "gallery": [
       {
         "src": "./images/cafes/flam-bakery-1.webp",
@@ -302,7 +314,13 @@
       "sv": "Riktiga fotografier · Visit Northwest / Visit Norway",
       "da": "Ægte fotografier · Visit Northwest / Visit Norway"
     },
-    "description": "A café in Geiranger's pedestrian street, offering coffee, cakes and light meals near the fjord. A village stop on the route through Trollstigen, Geiranger and Loen. Confirm current opening hours before visiting.",
+    "description": {
+      "en": "A café in Geiranger's pedestrian street, offering coffee, cakes and light meals near the fjord. A village stop on the route through Trollstigen, Geiranger and Loen. Confirm current opening hours before visiting.",
+      "nb": "En kafé i gågaten i Geiranger, med kaffe, kaker og småretter ved fjorden. Et bygdestopp langs ruten gjennom Trollstigen, Geiranger og Loen. Bekreft åpningstidene før besøket.",
+      "uk": "Кав’ярня на пішохідній вулиці Geiranger: кава, тістечка та легкі страви біля фіорду. Зупинка на маршруті через Trollstigen, Geiranger і Loen. Перед візитом уточніть години роботи.",
+      "sv": "Ett kafé på gågatan i Geiranger, med kaffe, kakor och lättare rätter nära fjorden. Ett bystopp längs rutten genom Trollstigen, Geiranger och Loen. Bekräfta öppettider före besöket.",
+      "da": "En café på gågaden i Geiranger med kaffe, kager og lette retter ved fjorden. Et landsbystop på ruten gennem Trollstigen, Geiranger og Loen. Bekræft åbningstider før besøget."
+    },
     "gallery": [
       {
         "src": "./images/cafes/cafe-ole-geiranger-1.webp",
@@ -685,5 +703,206 @@
       "sourceLabel": "Lupro AS · LUPROhjørnet",
       "publishedText": "Mo,We,Fr 10:00-15:30; Tu,Th 10:00-17:00; Sa 10:00-15:00"
     }
+  },
+  {
+    "id": "tim-wendelboe-oslo",
+    "name": "Tim Wendelboe Espresso Bar",
+    "category": "cafe",
+    "region": "Oslo",
+    "town": "Oslo",
+    "address": "Grüners gate 1, 0552 Oslo",
+    "website": "https://timwendelboe.no/pages/contact-us",
+    "phone": "+4740004062",
+    "description": {
+      "nb": "Espressobar på Grünerløkka med kaffe fra eget brenneri. Et stopp for kaffe og smaking; dette er ikke en fullservice-restaurant.",
+      "en": "A Grünerløkka espresso bar serving coffee from its own roastery. A stop for coffee and tasting rather than a full restaurant meal.",
+      "uk": "Еспресо-бар на Grünerløkka з кавою власного обсмаження. Зупинка для кави й дегустації, а не повноцінного ресторанного обіду.",
+      "sv": "Espressobar på Grünerløkka med kaffe från eget rosteri. Ett stopp för kaffe och provsmakning snarare än en restaurangmåltid.",
+      "da": "Espressobar på Grünerløkka med kaffe fra eget risteri. Et stop til kaffe og smagning frem for et helt restaurantmåltid."
+    },
+    "hoursNote": {
+      "nb": "Publiserte tider kan endres på helligdager. Se operatørens nettside før avreise.",
+      "en": "Published hours may change on holidays. Check the operator’s website before travelling.",
+      "uk": "У святкові дні години можуть змінюватися. Перед поїздкою перевірте сайт закладу.",
+      "sv": "Publicerade tider kan ändras på helgdagar. Kontrollera verksamhetens webbplats före resan.",
+      "da": "Offentliggjorte tider kan ændres på helligdage. Tjek stedets hjemmeside før afrejse."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/tim-wendelboe.webp",
+        "kind": "facade",
+        "credit": "Tim Wendelboe · official website",
+        "source": "https://timwendelboe.no/pages/contact-us",
+        "original": "https://timwendelboe.no/cdn/shop/files/tw-espresso-bar-exterior.webp?v=1757874304&width=1000",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://timwendelboe.no/pages/contact-us",
+      "sourceLabel": "Tim Wendelboe",
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ]
+      ],
+      "publishedText": "Weekdays: 08:30–18:00; Saturdays & Sundays: 11:00–17:00"
+    },
+    "image": "./images/catalog/tim-wendelboe.webp",
+    "imageSource": "https://timwendelboe.no/pages/contact-us",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Tim Wendelboe · official website",
+      "en": "Photo from the operator’s website · Tim Wendelboe · official website",
+      "uk": "Фото із сайту закладу · Tim Wendelboe · official website",
+      "sv": "Foto från verksamhetens webbplats · Tim Wendelboe · official website",
+      "da": "Foto fra stedets hjemmeside · Tim Wendelboe · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://timwendelboe.no/pages/contact-us",
+    "photoVerified": true,
+    "coordinatesNote": "Use the published address for directions; exact coordinates have not been assigned."
+  },
+  {
+    "id": "dromedar-nordre-trondheim",
+    "name": "Dromedar Nordre",
+    "category": "cafe",
+    "region": "Trøndelag",
+    "town": "Trondheim",
+    "address": "Nordre gate 2, 7011 Trondheim",
+    "latitude": 63.43084605760483,
+    "longitude": 10.397489205732526,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nordre%20gate%202%20Trondheim&treffPerSide=3",
+    "website": "https://dromedar.no/kaffebarer/",
+    "phone": "+4790197835",
+    "description": {
+      "nb": "Kaffebar i Nordre gate i Trondheim sentrum. Et innendørs kaffestopp når du utforsker byen til fots.",
+      "en": "A coffee bar on Nordre gate in central Trondheim. An indoor coffee stop while exploring the city on foot.",
+      "uk": "Кав’ярня на Nordre gate у центрі Тронгейма. Зупинка на каву в приміщенні під час пішої прогулянки містом.",
+      "sv": "Kaffebar på Nordre gate i centrala Trondheim. En kaffepaus inomhus under en promenad genom staden.",
+      "da": "Kaffebar på Nordre gate i det centrale Trondheim. En indendørs kaffepause på en gåtur gennem byen."
+    },
+    "hoursNote": {
+      "nb": "Publiserte tider kan endres på helligdager. Se operatørens nettside før avreise.",
+      "en": "Published hours may change on holidays. Check the operator’s website before travelling.",
+      "uk": "У святкові дні години можуть змінюватися. Перед поїздкою перевірте сайт закладу.",
+      "sv": "Publicerade tider kan ändras på helgdagar. Kontrollera verksamhetens webbplats före resan.",
+      "da": "Offentliggjorte tider kan ændres på helligdage. Tjek stedets hjemmeside før afrejse."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/dromedar-nordre.jpeg",
+        "kind": "cafeInside",
+        "credit": "Dromedar Kaffebar · official website",
+        "source": "https://dromedar.no/kaffebarer/",
+        "original": "https://dromedar.no/wp-content/uploads/2026/02/Dromedar-kaffebar_nordre-1024x1024.jpeg",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://dromedar.no/kaffebarer/",
+      "sourceLabel": "Dromedar Kaffebar",
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ]
+      ],
+      "publishedText": "Hverdager 07–19; lørdag 09–18; søndag 11–17"
+    },
+    "image": "./images/catalog/dromedar-nordre.jpeg",
+    "imageSource": "https://dromedar.no/kaffebarer/",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Dromedar Kaffebar · official website",
+      "en": "Photo from the operator’s website · Dromedar Kaffebar · official website",
+      "uk": "Фото із сайту закладу · Dromedar Kaffebar · official website",
+      "sv": "Foto från verksamhetens webbplats · Dromedar Kaffebar · official website",
+      "da": "Foto fra stedets hjemmeside · Dromedar Kaffebar · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://dromedar.no/kaffebarer/",
+    "photoVerified": true,
+    "coordinatesNote": "Kartverket address point; entrance/pier position may differ."
   }
 ]

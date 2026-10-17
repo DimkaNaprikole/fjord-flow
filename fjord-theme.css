@@ -93,7 +93,7 @@ button, input, select, textarea { font-family: Manrope, 'Segoe UI', sans-serif; 
 select option { background: #123440; color: var(--ff-ink); }
 :is(input[type=checkbox], input[type=radio]) { accent-color: #78b9af; }
 /* All text buttons stay dark; their light labels never depend on inherited link colours. */
-:is(#cafeNearbySearch, #cafeNearbyTownForm button, #newTopic, #accountButton,
+:is(#cafeNearbySearch, #cafeNearbyOnline, #cafeNearbyTownForm button, #newTopic, #accountButton,
     .stay-booking, .experience-official, #accountSubmit, #postForm button[type=submit],
     #bookingForm button[type=submit], .fjord-ai-primary, .fjord-helper-draft,
     .drone-experience .button, #itineraryDialog .button, #galleryBook) {

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "granavollen-rest",
+    "name": "Granavollen · Søsterkirkene",
+    "category": "rest",
+    "region": "Hadeland",
+    "town": "Granavollen",
+    "address": "Granavollen, 2750 Gran, Norway",
+    "latitude": 60.36677,
+    "longitude": 10.5295,
+    "website": "https://www.visitnorway.com/places-to-go/eastern-norway/hadeland/",
+    "source": "https://www.visitnorway.com/places-to-go/eastern-norway/hadeland/",
+    "checked": "2026-10-17",
+    "image": "./images/granavollen-sister-churches.webp",
+    "description": {
+      "nb": "De historiske Søsterkirkene og en rolig landsbyvandring på en kort tur fra Gran.",
+      "en": "The historic Sister Churches and a village walk on a short trip from Gran.",
+      "uk": "Історичні церкви-сестри та прогулянка селом неподалік від Gran.",
+      "sv": "De historiska systerkyrkorna och en byvandring på en kort tur från Gran.",
+      "da": "De historiske søsterkirker og en landsbyvandring på en kort tur fra Gran."
+    },
+    "hoursNote": {
+      "nb": "Følg lokale regler på området. Åpningstider inne i kirkene er ikke bekreftet; sjekk før besøket.",
+      "en": "Respect local rules on the grounds. Interior opening hours have not been verified; check before visiting.",
+      "uk": "Дотримуйтеся місцевих правил на території. Години відвідування інтер’єрів не підтверджені — уточніть перед візитом.",
+      "sv": "Följ lokala regler på området. Öppettider inne i kyrkorna är inte bekräftade; kontrollera före besöket.",
+      "da": "Følg lokale regler på området. Åbningstider inde i kirkerne er ikke bekræftet; tjek før besøget."
+    },
+    "gallery": [{
+      "src": "./images/granavollen-sister-churches.webp",
+      "kind": "place",
+      "credit": "Sven Rosborn",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Gran1.jpg"
+    }]
+  }
+]

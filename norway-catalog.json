@@ -1,0 +1,2392 @@
+[
+  {
+    "id": "granavolden-cafe",
+    "name": "Granavolden Hotel & Gjæstgiveri",
+    "town": "Granavollen",
+    "address": "Granavollen 16, 2750 Gran, Norway",
+    "latitude": 60.36657375848351,
+    "longitude": 10.52822551268278,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Granavollen%2016%202750&treffPerSide=5",
+    "website": "https://www.granavolden.no/om-oss/restaurant-og-kafe/",
+    "phone": "+4761337700",
+    "route": "hadeland",
+    "placeId": "granavollen",
+    "image": "./images/cafes/granavolden-facade-2016.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Granavolden_Gj%C3%A6stgiveri_2016.jpg",
+    "photoAlt": "Granavolden Hotel & Gjæstgiveri, exterior photographed in 2016",
+    "description": {
+      "nb": "En kaffepause ved Granavollen: hotellet opplyser at hjemmelagd kake og kaffe selges hver dag i resepsjonen. Kontakt hotellet for nøyaktige serveringstider og bordbestilling.",
+      "en": "A coffee stop at Granavollen: the hotel says homemade cake and coffee are sold daily at reception. Contact the hotel for exact serving hours and table reservations.",
+      "uk": "Кавова зупинка на Granavollen: за інформацією готелю, домашній пиріг і каву продають щодня на рецепції. Точний час обслуговування та бронювання столика уточнюйте в готелі.",
+      "sv": "En kaffepaus vid Granavollen: enligt hotellet säljs hembakad kaka och kaffe varje dag i receptionen. Kontakta hotellet för exakta serveringstider och bordsbokning.",
+      "da": "En kaffepause ved Granavollen: hotellet oplyser, at hjemmebagt kage og kaffe sælges dagligt i receptionen. Kontakt hotellet om præcise serveringstider og bordbestilling."
+    },
+    "photoCaption": {
+      "nb": "Ekte fasadefoto fra 2016 · Jan-Tore Egge · CC BY-SA 4.0",
+      "en": "Real exterior photo from 2016 · Jan-Tore Egge · CC BY-SA 4.0",
+      "uk": "Справжнє фото фасаду 2016 року · Jan-Tore Egge · CC BY-SA 4.0",
+      "sv": "Äkta fasadfoto från 2016 · Jan-Tore Egge · CC BY-SA 4.0",
+      "da": "Ægte facadefoto fra 2016 · Jan-Tore Egge · CC BY-SA 4.0"
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/granavolden-facade-2016.jpg",
+        "kind": "facade",
+        "credit": "Jan-Tore Egge",
+        "source": "https://commons.wikimedia.org/wiki/File:Granavolden_Gj%C3%A6stgiveri_2016.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Granavolden_Gj%C3%A6stgiveri_2016.jpg"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-17",
+      "source": "https://www.granavolden.no/om-oss/restaurant-og-kafe/"
+    },
+    "hoursNote": {
+      "nb": "Kaffe og kake i resepsjonen hver dag, ifølge hotellet. Klokkeslett er ikke oppgitt; ring før besøket. Den separate Kafé & Landhandleri er merket «Sommerstengt» på nettsiden.",
+      "en": "The hotel advertises coffee and cake at reception daily. Exact hours are not published; call before visiting. The separate Kafé & Landhandleri is marked “Sommerstengt” (closed for summer) on its website.",
+      "uk": "За інформацією готелю, кава й пиріг на рецепції доступні щодня. Точні години не вказані — перед візитом зателефонуйте. Окреме Kafé & Landhandleri на сайті позначене «Sommerstengt» — зачинене на літо.",
+      "sv": "Hotellet erbjuder kaffe och kaka i receptionen varje dag. Exakta tider saknas; ring före besöket. Separata Kafé & Landhandleri är märkt «Sommerstengt» (sommarstängt) på webbplatsen.",
+      "da": "Hotellet tilbyder kaffe og kage i receptionen hver dag. Præcise tider er ikke oplyst; ring før besøget. Det separate Kafé & Landhandleri er markeret «Sommerstengt» (sommerlukket) på hjemmesiden."
+    },
+    "category": "cafe",
+    "region": "Hadeland",
+    "source": "https://www.granavolden.no/om-oss/restaurant-og-kafe/",
+    "checked": "2026-10-17",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.36657375848351%2C10.52822551268278"
+  },
+  {
+    "id": "cafe-opera-bergen",
+    "latitude": 60.391826703790635,
+    "longitude": 5.319807757621106,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Engen%2018%205011%20Bergen&treffPerSide=10",
+    "name": "Café Opera",
+    "town": "Bergen",
+    "address": "Engen 18, 5011 Bergen, Norway",
+    "website": "https://cafeopera.org/",
+    "route": "hardanger",
+    "placeId": "bergen",
+    "image": "./images/cafes/cafe-opera-bergen-1.webp",
+    "photoCaption": {
+      "nb": "Ekte bilder · Visit Bergen / Visit Norway",
+      "en": "Real photographs · Visit Bergen / Visit Norway",
+      "uk": "Справжні фото · Visit Bergen / Visit Norway",
+      "sv": "Riktiga fotografier · Visit Bergen / Visit Norway",
+      "da": "Ægte fotografier · Visit Bergen / Visit Norway"
+    },
+    "description": {
+      "en": "A cultural café and coffee stop in central Bergen, with food and a programme of exhibitions and events. A city stop before setting out towards Hardanger. Check the official website for current opening hours.",
+      "nb": "En kulturkafé og kaffepause i Bergen sentrum, med mat, utstillinger og arrangementer. Et bystopp før turen mot Hardanger. Sjekk nettstedet for gjeldende åpningstider.",
+      "uk": "Культурна кав’ярня в центрі Bergen: їжа, виставки та події. Міська зупинка перед дорогою до Hardanger. Актуальні години роботи перевіряйте на сайті закладу.",
+      "sv": "Ett kulturkafé och kaffestopp i centrala Bergen, med mat, utställningar och evenemang. Ett stadsstopp före färden mot Hardanger. Kontrollera aktuella öppettider på webbplatsen.",
+      "da": "En kulturcafé og kaffepause i Bergen centrum med mad, udstillinger og arrangementer. Et bystop før turen mod Hardanger. Tjek aktuelle åbningstider på hjemmesiden."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/cafe-opera-bergen-1.webp",
+        "kind": "facade",
+        "source": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+        "credit": "Visit Bergen / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/3fa501d4b3808a49f1daac5227d339210b94500a-4000x3000.jpg?rect=0,367,4000,2267&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-opera-bergen-2.webp",
+        "kind": "cafeInside",
+        "source": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+        "credit": "Visit Bergen / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/5fa0d9186037661e7275fcef446dc10aa6e0153d-4000x3000.jpg?rect=0,367,4000,2267&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-opera-bergen-3.webp",
+        "kind": "cafeInside",
+        "source": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+        "credit": "Visit Bergen / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/7a4e045e3a9190819a54e579db395a2b3e6fef8a-4000x3000.jpg?rect=0,367,4000,2267&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-opera-bergen-4.webp",
+        "kind": "food",
+        "source": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+        "credit": "Visit Bergen / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/225c4b8b28bd17b016722b5282e9b136e923f2a6-4000x3000.jpg?rect=0,367,4000,2267&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/bergen-gallery-1.jpg",
+        "kind": "view",
+        "source": "https://commons.wikimedia.org/wiki/File:Fassaden_in_Bryggen,_Bergen_N.jpg",
+        "credit": "JoachimKohler-HB",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+    "photoAlt": "Café Opera",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "11:00",
+            "23:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "23:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "23:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "01:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "01:30"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "01:30"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "23:30"
+          ]
+        ]
+      ],
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://cafeopera.org/",
+      "sourceLabel": "Café Opera"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Caf%C3%A9%20Opera%2C%20Engen%2018%2C%205011%20Bergen%2C%20Norway",
+    "category": "cafe",
+    "region": "Hardanger",
+    "source": "https://cafeopera.org/",
+    "checked": "2026-10-17"
+  },
+  {
+    "id": "flam-bakery",
+    "name": "Flåm Bakery",
+    "town": "Flåm",
+    "address": "Stasjonsvegen, 5743 Flåm, Norway",
+    "website": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+    "route": "fjord",
+    "placeId": "flam",
+    "image": "./images/cafes/flam-bakery-1.webp",
+    "photoCaption": {
+      "nb": "Ekte bilder · Visit Sognefjord / Visit Norway",
+      "en": "Real photographs · Visit Sognefjord / Visit Norway",
+      "uk": "Справжні фото · Visit Sognefjord / Visit Norway",
+      "sv": "Riktiga fotografier · Visit Sognefjord / Visit Norway",
+      "da": "Ægte fotografier · Visit Sognefjord / Visit Norway"
+    },
+    "description": {
+      "en": "A bakery on the quay near Flåm Railway station, serving baked goods, sandwiches and coffee. A stop in Flåm on the way between Bergen, Aurland and Gudvangen. Check the official website for current opening hours.",
+      "nb": "Et bakeri på kaien ved Flåm stasjon, med bakervarer, smørbrød og kaffe. Et stopp i Flåm på veien mellom Bergen, Aurland og Gudvangen. Sjekk nettstedet for gjeldende åpningstider.",
+      "uk": "Пекарня на набережній біля станції Flåm: випічка, сендвічі та кава. Зупинка дорогою між Bergen, Aurland і Gudvangen. Актуальні години роботи перевіряйте на сайті закладу.",
+      "sv": "Ett bageri på kajen nära Flåms station, med bakverk, smörgåsar och kaffe. Ett stopp i Flåm mellan Bergen, Aurland och Gudvangen. Kontrollera aktuella öppettider på webbplatsen.",
+      "da": "Et bageri på kajen ved Flåm station med bagværk, sandwich og kaffe. Et stop i Flåm mellem Bergen, Aurland og Gudvangen. Tjek aktuelle åbningstider på hjemmesiden."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/flam-bakery-1.webp",
+        "kind": "facade",
+        "source": "https://www.visitnorway.com/listings/fl%C3%A5m-bakery/188744/",
+        "credit": "Visit Sognefjord / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/8bafae736de92114b1b5c12445da0a1c637158d5-1240x711.jpg?rect=0,5,1240,703&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/flam-bakery-2.webp",
+        "kind": "cafeInside",
+        "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+        "credit": "Norway’s best",
+        "original": "https://cdn.sanity.io/images/ycnqsi1u/production/a8c0a56a3bf7a14726411a62067218d922f4add7-8192x5464.jpg?w=3840&q=75&fit=clip&auto=format"
+      },
+      {
+        "src": "./images/cafes/flam-bakery-3.webp",
+        "kind": "cafeInside",
+        "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+        "credit": "Norway’s best",
+        "original": "https://cdn.sanity.io/images/ycnqsi1u/production/8f354d138844fbb5aa4cbb8020cf8d0833f5cd0c-6518x4347.jpg?w=3840&q=75&fit=clip&auto=format"
+      },
+      {
+        "src": "./images/cafes/flam-bakery-4.webp",
+        "kind": "food",
+        "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+        "credit": "Norway’s best",
+        "original": "https://cdn.sanity.io/images/ycnqsi1u/production/d2a3caa7286fb26a3742a6f78e68d9328cf3a8b0-8192x5464.jpg?w=3840&q=75&fit=clip&auto=format"
+      },
+      {
+        "src": "./images/cafes/flam-bakery-5.webp",
+        "kind": "cafeInside",
+        "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+        "credit": "Norway’s best",
+        "original": "https://cdn.sanity.io/images/ycnqsi1u/production/ce37eafe43b93a77ec9069ca2100f8a3d5585436-5464x8192.jpg?w=3840&q=75&fit=clip&auto=format"
+      },
+      {
+        "src": "./images/flam-gallery-1.jpg",
+        "kind": "view",
+        "source": "https://commons.wikimedia.org/wiki/File:AIDAprima_in_Fl%C3%A5m,_Norway_-_June_2022.jpg",
+        "credit": "Martin Falbisoner",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://www.visitnorway.com/listings/fl%C3%A5m-bakery/188744/",
+    "photoAlt": "Flåm Bakery",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "19:00"
+          ]
+        ]
+      ],
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+      "sourceLabel": "Norway’s best"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Fl%C3%A5m%20Bakery%2C%20Stasjonsvegen%2C%205743%20Fl%C3%A5m%2C%20Norway",
+    "category": "cafe",
+    "region": "Aurland",
+    "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+    "checked": "2026-10-17"
+  },
+  {
+    "id": "cafe-ole-geiranger",
+    "latitude": 62.10188295945076,
+    "longitude": 7.206619328358421,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Mar%C3%A5kvegen%2019%206216%20Geiranger&treffPerSide=10",
+    "name": "Café Olé",
+    "town": "Geiranger",
+    "address": "Maråkvegen 19, 6216 Geiranger, Norway",
+    "website": "https://www.olebuda.no/cafeole/",
+    "route": "sunnmore",
+    "placeId": "geiranger",
+    "image": "./images/cafes/cafe-ole-geiranger-1.webp",
+    "photoCaption": {
+      "nb": "Ekte bilder · Visit Northwest / Visit Norway",
+      "en": "Real photographs · Visit Northwest / Visit Norway",
+      "uk": "Справжні фото · Visit Northwest / Visit Norway",
+      "sv": "Riktiga fotografier · Visit Northwest / Visit Norway",
+      "da": "Ægte fotografier · Visit Northwest / Visit Norway"
+    },
+    "description": {
+      "en": "A café in Geiranger's pedestrian street, offering coffee, cakes and light meals near the fjord. A village stop on the route through Trollstigen, Geiranger and Loen. Confirm current opening hours before visiting.",
+      "nb": "En kafé i gågaten i Geiranger, med kaffe, kaker og småretter ved fjorden. Et bygdestopp langs ruten gjennom Trollstigen, Geiranger og Loen. Bekreft åpningstidene før besøket.",
+      "uk": "Кав’ярня на пішохідній вулиці Geiranger: кава, тістечка та легкі страви біля фіорду. Зупинка на маршруті через Trollstigen, Geiranger і Loen. Перед візитом уточніть години роботи.",
+      "sv": "Ett kafé på gågatan i Geiranger, med kaffe, kakor och lättare rätter nära fjorden. Ett bystopp längs rutten genom Trollstigen, Geiranger och Loen. Bekräfta öppettider före besöket.",
+      "da": "En café på gågaden i Geiranger med kaffe, kager og lette retter ved fjorden. Et landsbystop på ruten gennem Trollstigen, Geiranger og Loen. Bekræft åbningstider før besøget."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/cafe-ole-geiranger-1.webp",
+        "kind": "facade",
+        "source": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
+        "credit": "Visit Northwest / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/0f4d351f19c2db2f0ebdb4b564a3065634eea7dc-2000x1558.jpg?rect=0,213,2000,1133&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-ole-geiranger-2.webp",
+        "kind": "cafeInside",
+        "source": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
+        "credit": "Visit Northwest / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/1292b542ac52d17bee84a556145d0877b18fc01b-2000x1500.jpg?rect=0,184,2000,1133&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-ole-geiranger-3.webp",
+        "kind": "cafeInside",
+        "source": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
+        "credit": "Visit Northwest / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/a058124b30094e6c486940fd0116305767489ad5-2000x1500.jpg?rect=0,184,2000,1133&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/geiranger.jpg",
+        "kind": "view",
+        "source": "https://commons.wikimedia.org/wiki/File:Geirangerfjord_.jpg",
+        "credit": "Andreas Trepte",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+      }
+    ],
+    "imageSource": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
+    "photoAlt": "Café Olé",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ]
+      ],
+      "verified": false,
+      "checked": "2026-10-17",
+      "source": "https://no.tripadvisor.com/Restaurant_Review-g642196-d2186167-Reviews-CafeOle-Geiranger_Stranda_More_og_Romsdal_Western_Norway.html",
+      "sourceLabel": "Tripadvisor"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Caf%C3%A9%20Ol%C3%A9%2C%20Mar%C3%A5kvegen%2019%2C%206216%20Geiranger%2C%20Norway",
+    "category": "cafe",
+    "region": "Sunnmøre",
+    "source": "https://no.tripadvisor.com/Restaurant_Review-g642196-d2186167-Reviews-CafeOle-Geiranger_Stranda_More_og_Romsdal_Western_Norway.html",
+    "checked": "2026-10-17"
+  },
+  {
+    "id": "sagvollstallen-gran",
+    "name": "Sagvollstallen",
+    "town": "Gran",
+    "address": "Sagvollvegen 611, Gran, Norway",
+    "latitude": 60.3762074,
+    "longitude": 10.7146382,
+    "osmId": "node:1105423159",
+    "coordinatesSource": "https://www.openstreetmap.org/node/1105423159",
+    "website": "https://www.granil.no/sagvollstallen",
+    "route": "hadeland",
+    "placeId": "gran",
+    "image": "./images/cafes/sagvollstallen-granil.jpeg",
+    "imageSource": "https://www.granil.no/sagvollstallen",
+    "photoAlt": {
+      "nb": "Ekte fasadefoto · Gran IL · official website",
+      "en": "Real exterior photograph · Gran IL · official website",
+      "uk": "Справжнє фото фасаду · Gran IL · official website",
+      "sv": "Äkta fasadfoto · Gran IL · official website",
+      "da": "Ægte facadefoto · Gran IL · official website"
+    },
+    "photoCaption": {
+      "nb": "Ekte fasadefoto · Gran IL · official website",
+      "en": "Real exterior photograph · Gran IL · official website",
+      "uk": "Справжнє фото фасаду · Gran IL · official website",
+      "sv": "Äkta fasadfoto · Gran IL · official website",
+      "da": "Ægte facadefoto · Gran IL · official website"
+    },
+    "description": {
+      "nb": "Vintersesong: januar–mars, lørdag og søndag kl. 11–15. Gran IL driver kiosken. Utenfor vintersesongen er det ikke ordinær kafédrift. Se Gran IL / Facebook for endringer.",
+      "en": "Winter season: January–March, Saturday and Sunday 11:00–15:00. Gran IL runs the kiosk. There is no regular café service outside the winter season. Check Gran IL / Facebook for changes.",
+      "uk": "Зимовий сезон: січень–березень, субота й неділя 11:00–15:00. Кіоском керує Gran IL. Поза зимовим сезоном регулярного обслуговування немає. Зміни перевіряйте на сайті Gran IL або у Facebook.",
+      "sv": "Vintersäsong: januari–mars, lördag och söndag kl. 11–15. Gran IL driver kiosken. Ingen ordinarie kaféservering utanför vintersäsongen. Se Gran IL / Facebook för ändringar.",
+      "da": "Vintersæson: januar–marts, lørdag og søndag kl. 11–15. Gran IL driver kiosken. Ingen almindelig caféservering uden for vintersæsonen. Se Gran IL / Facebook for ændringer."
+    },
+    "hoursNote": {
+      "nb": "Vintersesong: januar–mars, lørdag og søndag kl. 11–15. Gran IL driver kiosken. Utenfor vintersesongen er det ikke ordinær kafédrift. Se Gran IL / Facebook for endringer.",
+      "en": "Winter season: January–March, Saturday and Sunday 11:00–15:00. Gran IL runs the kiosk. There is no regular café service outside the winter season. Check Gran IL / Facebook for changes.",
+      "uk": "Зимовий сезон: січень–березень, субота й неділя 11:00–15:00. Кіоском керує Gran IL. Поза зимовим сезоном регулярного обслуговування немає. Зміни перевіряйте на сайті Gran IL або у Facebook.",
+      "sv": "Vintersäsong: januari–mars, lördag och söndag kl. 11–15. Gran IL driver kiosken. Ingen ordinarie kaféservering utanför vintersäsongen. Se Gran IL / Facebook för ändringar.",
+      "da": "Vintersæson: januar–marts, lørdag og søndag kl. 11–15. Gran IL driver kiosken. Ingen almindelig caféservering uden for vintersæsonen. Se Gran IL / Facebook for ændringer."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/sagvollstallen-granil.jpeg",
+        "kind": "facade",
+        "credit": "Gran IL · official website",
+        "source": "https://www.granil.no/sagvollstallen",
+        "original": "https://spond.com/storage/upload/7985FC20BE52625F5E1468C84969A83F/1745937696_A2A496C7/Stallen_350x263.jpeg"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "publishedText": "Jan-Mar: Sa-Su 11:00-15:00",
+      "checked": "2026-10-17",
+      "source": "https://www.granil.no/sagvollstallen",
+      "sourceLabel": "Sagvollstallen"
+    },
+    "category": "cafe",
+    "region": "Hadeland",
+    "source": "https://www.granil.no/sagvollstallen",
+    "checked": "2026-10-17",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.3762074%2C10.7146382"
+  },
+  {
+    "id": "cafe-oscar-ii-gran",
+    "name": "Café Oscar II",
+    "town": "Gran",
+    "address": "Røykenviklinna 460, 2760 Brandbu, Norway",
+    "latitude": 60.4306152,
+    "longitude": 10.4690111,
+    "osmId": "node:7550171985",
+    "coordinatesSource": "https://www.openstreetmap.org/node/7550171985",
+    "website": "https://vika-uteliv.no/cafe-oscar-ii/",
+    "phone": "+4761334560",
+    "route": "hadeland",
+    "placeId": "gran",
+    "image": "./images/cafes/cafe-oscar-ii-2010.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:R%C3%B8ykenvik_-_Oscar_II.jpg",
+    "photoAlt": {
+      "nb": "Ekte fasadefoto fra 2010 · Jan-Tore Egge",
+      "en": "Real exterior photograph from 2010 · Jan-Tore Egge",
+      "uk": "Справжнє фото фасаду 2010 року · Jan-Tore Egge",
+      "sv": "Äkta fasadfoto från 2010 · Jan-Tore Egge",
+      "da": "Ægte facadefoto fra 2010 · Jan-Tore Egge"
+    },
+    "photoCaption": {
+      "nb": "Ekte fasadefoto fra 2010 · Jan-Tore Egge",
+      "en": "Real exterior photograph from 2010 · Jan-Tore Egge",
+      "uk": "Справжнє фото фасаду 2010 року · Jan-Tore Egge",
+      "sv": "Äkta fasadfoto från 2010 · Jan-Tore Egge",
+      "da": "Ægte facadefoto fra 2010 · Jan-Tore Egge"
+    },
+    "description": {
+      "nb": "Sommerkafé: mai–august, ifølge eierens nettside. Dagens klokkeslett er ikke bekreftet; ring 61 33 45 60 før besøket. Arrangementer avtales separat.",
+      "en": "Summer café: May–August, according to the operator’s website. Daily opening times are not confirmed; call +47 61 33 45 60 before visiting. Events are arranged separately.",
+      "uk": "Літня кав’ярня: травень–серпень, за сайтом власника. Точні щоденні години не підтверджені — перед візитом телефонуйте +47 61 33 45 60. Події узгоджують окремо.",
+      "sv": "Sommarkafé: maj–augusti, enligt ägarens webbplats. Dagliga öppettider är inte bekräftade; ring +47 61 33 45 60 före besöket. Evenemang avtalas separat.",
+      "da": "Sommercafé: maj–august, ifølge ejerens hjemmeside. Daglige åbningstider er ikke bekræftet; ring +47 61 33 45 60 før besøget. Arrangementer aftales separat."
+    },
+    "hoursNote": {
+      "nb": "Sommerkafé: mai–august, ifølge eierens nettside. Dagens klokkeslett er ikke bekreftet; ring 61 33 45 60 før besøket. Arrangementer avtales separat.",
+      "en": "Summer café: May–August, according to the operator’s website. Daily opening times are not confirmed; call +47 61 33 45 60 before visiting. Events are arranged separately.",
+      "uk": "Літня кав’ярня: травень–серпень, за сайтом власника. Точні щоденні години не підтверджені — перед візитом телефонуйте +47 61 33 45 60. Події узгоджують окремо.",
+      "sv": "Sommarkafé: maj–augusti, enligt ägarens webbplats. Dagliga öppettider är inte bekräftade; ring +47 61 33 45 60 före besöket. Evenemang avtalas separat.",
+      "da": "Sommercafé: maj–august, ifølge ejerens hjemmeside. Daglige åbningstider er ikke bekræftet; ring +47 61 33 45 60 før besøget. Arrangementer aftales separat."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/cafe-oscar-ii-2010.jpg",
+        "kind": "facade",
+        "credit": "Jan-Tore Egge · 2010",
+        "source": "https://commons.wikimedia.org/wiki/File:R%C3%B8ykenvik_-_Oscar_II.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/2/26/R%C3%B8ykenvik_-_Oscar_II.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-17",
+      "source": "https://vika-uteliv.no/cafe-oscar-ii/",
+      "sourceLabel": "Café Oscar II"
+    },
+    "category": "cafe",
+    "region": "Hadeland",
+    "source": "https://vika-uteliv.no/cafe-oscar-ii/",
+    "checked": "2026-10-17",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.4306152%2C10.4690111"
+  },
+  {
+    "id": "hadeland-gjestegard-jaren",
+    "name": "Hadeland Gjestegård",
+    "town": "Jaren",
+    "address": "Nordre Ålsvegen 4, 2770 Jaren, Norway",
+    "latitude": 60.398304261601396,
+    "longitude": 10.552818172677284,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nordre%20%C3%85lsvegen%204%202770&treffPerSide=5",
+    "website": "https://www.hadelandgjestegard.no/",
+    "phone": "+4761329069",
+    "route": "hadeland",
+    "placeId": "gran",
+    "yearRound": true,
+    "image": "./images/cafes/hadeland-gjestegard-facade.webp",
+    "imageSource": "https://www.hadelandgjestegard.no/",
+    "photoAlt": "Hadeland Gjestegård — actual exterior",
+    "photoCaption": {
+      "nb": "Ekte bilder · Hadeland Gjestegård",
+      "en": "Real photographs · Hadeland Gjestegård",
+      "uk": "Справжні фото · Hadeland Gjestegård",
+      "sv": "Äkta foton · Hadeland Gjestegård",
+      "da": "Ægte fotos · Hadeland Gjestegård"
+    },
+    "description": {
+      "nb": "Vanlige ukentlige åpningstider, uten oppgitt sesongbegrensning. Kafé og spisested med kaffe, smørbrød og varm mat. Helligdager og private arrangementer kan gi avvik.",
+      "en": "Regular weekly opening hours, with no seasonal restriction listed. A café and dining stop for coffee, sandwiches and hot meals. Holiday hours and private events may differ.",
+      "uk": "Звичайний щотижневий графік без зазначеного сезонного обмеження. Кава, бутерброди й гарячі страви. У святкові дні та під час приватних подій можливі зміни.",
+      "sv": "Ordinarie veckotider utan angiven säsongsbegränsning. Kafé och matställe med kaffe, smörgåsar och varm mat. Helgdagar och privata evenemang kan ge avvikelser.",
+      "da": "Almindelige ugentlige åbningstider uden angivet sæsonbegrænsning. Café og spisested med kaffe, smørrebrød og varm mad. Helligdage og private arrangementer kan give ændringer."
+    },
+    "hoursNote": {
+      "nb": "Vanlige ukentlige åpningstider, uten oppgitt sesongbegrensning. Kafé og spisested med kaffe, smørbrød og varm mat. Helligdager og private arrangementer kan gi avvik.",
+      "en": "Regular weekly opening hours, with no seasonal restriction listed. A café and dining stop for coffee, sandwiches and hot meals. Holiday hours and private events may differ.",
+      "uk": "Звичайний щотижневий графік без зазначеного сезонного обмеження. Кава, бутерброди й гарячі страви. У святкові дні та під час приватних подій можливі зміни.",
+      "sv": "Ordinarie veckotider utan angiven säsongsbegränsning. Kafé och matställe med kaffe, smörgåsar och varm mat. Helgdagar och privata evenemang kan ge avvikelser.",
+      "da": "Almindelige ugentlige åbningstider uden angivet sæsonbegrænsning. Café og spisested med kaffe, smørrebrød og varm mad. Helligdage og private arrangementer kan give ændringer."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/hadeland-gjestegard-facade.webp",
+        "original": "https://www.hadelandgjestegard.no/uploads/GwFhZQth/640x640_640x640/PixelCo_B6A9222__msi___jpg.webp",
+        "kind": "facade",
+        "credit": "Hadeland Gjestegård · official website",
+        "source": "https://www.hadelandgjestegard.no/"
+      },
+      {
+        "src": "./images/cafes/hadeland-gjestegard-facade-2.webp",
+        "original": "https://www.hadelandgjestegard.no/uploads/LxsIPjV6/640x640_640x640/PixelCo_B6A9218__msi___jpg.webp",
+        "kind": "facade",
+        "credit": "Hadeland Gjestegård · official website",
+        "source": "https://www.hadelandgjestegard.no/"
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-17",
+      "source": "https://www.hadelandgjestegard.no/",
+      "sourceLabel": "Hadeland Gjestegård",
+      "weekly": [
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ]
+      ]
+    },
+    "category": "cafe",
+    "region": "Hadeland",
+    "source": "https://www.hadelandgjestegard.no/",
+    "checked": "2026-10-17",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.398304261601396%2C10.552818172677284"
+  },
+  {
+    "id": "luprohjornet-gran",
+    "name": "LUPROhjørnet",
+    "town": "Gran",
+    "address": "Storgata 26, 2750 Gran, Norway",
+    "addressSource": "https://smilefjes.mattilsynet.no/kommune/gran/",
+    "latitude": 60.35747702970864,
+    "longitude": 10.571360315913346,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Storgata%2026%202750%20Gran&treffPerSide=5",
+    "website": "https://www.lupro.no/lupro-hj%C3%B8rnet",
+    "phone": "+4747752533",
+    "route": "hadeland",
+    "placeId": "gran",
+    "yearRound": true,
+    "image": "./images/cafes/luprohjornet-1.jpg",
+    "imageSource": "https://www.lupro.no/lupro-hj%C3%B8rnet",
+    "photoAlt": "LUPROhjørnet — actual café entrance",
+    "photoCaption": {
+      "nb": "Ekte bilder · Lupro AS",
+      "en": "Real photographs · Lupro AS",
+      "uk": "Справжні фото · Lupro AS",
+      "sv": "Äkta foton · Lupro AS",
+      "da": "Ægte fotos · Lupro AS"
+    },
+    "description": {
+      "nb": "Kafé i Gran sentrum med kaffe, hjemmebakte godsaker og lokalmat. Vanlig ukeplan uten oppgitt sesongbegrensning. Søndag er ikke oppgitt av kafeen; ring før et søndagsbesøk. Helligdager kan gi avvik.",
+      "en": "A café in central Gran for coffee, homemade treats and local produce. Regular weekly schedule with no seasonal restriction listed. Sunday hours are not published by the café; call before a Sunday visit. Holiday hours may differ.",
+      "uk": "Кав’ярня в центрі Gran: кава, домашні смаколики й місцеві продукти. Звичайний щотижневий графік без зазначеного сезонного обмеження. Неділю заклад не вказав — перед недільним візитом зателефонуйте. У свята можливі зміни.",
+      "sv": "Kafé i centrala Gran med kaffe, hembakat och lokal mat. Ordinarie veckotider utan angiven säsongsbegränsning. Söndagstider är inte publicerade; ring före ett söndagsbesök. Helgdagar kan avvika.",
+      "da": "Café i Gran centrum med kaffe, hjemmebag og lokale råvarer. Almindelige ugentlige tider uden angivet sæsonbegrænsning. Søndagstider er ikke oplyst; ring før et søndagsbesøg. Helligdage kan afvige."
+    },
+    "hoursNote": {
+      "nb": "Kafé i Gran sentrum med kaffe, hjemmebakte godsaker og lokalmat. Vanlig ukeplan uten oppgitt sesongbegrensning. Søndag er ikke oppgitt av kafeen; ring før et søndagsbesøk. Helligdager kan gi avvik.",
+      "en": "A café in central Gran for coffee, homemade treats and local produce. Regular weekly schedule with no seasonal restriction listed. Sunday hours are not published by the café; call before a Sunday visit. Holiday hours may differ.",
+      "uk": "Кав’ярня в центрі Gran: кава, домашні смаколики й місцеві продукти. Звичайний щотижневий графік без зазначеного сезонного обмеження. Неділю заклад не вказав — перед недільним візитом зателефонуйте. У свята можливі зміни.",
+      "sv": "Kafé i centrala Gran med kaffe, hembakat och lokal mat. Ordinarie veckotider utan angiven säsongsbegränsning. Söndagstider är inte publicerade; ring före ett söndagsbesök. Helgdagar kan avvika.",
+      "da": "Café i Gran centrum med kaffe, hjemmebag og lokale råvarer. Almindelige ugentlige tider uden angivet sæsonbegrænsning. Søndagstider er ikke oplyst; ring før et søndagsbesøg. Helligdage kan afvige."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/luprohjornet-1.jpg",
+        "original": "https://irp.cdn-website.com/e295f418/dms3rep/multi/opt/DSC_0602-1920w.jpg",
+        "kind": "facade",
+        "credit": "Lupro AS · official website",
+        "source": "https://www.lupro.no/lupro-hj%C3%B8rnet"
+      },
+      {
+        "src": "./images/cafes/luprohjornet-2.jpg",
+        "original": "https://irp.cdn-website.com/e295f418/dms3rep/multi/opt/IMG_2385-1920w.jpg",
+        "kind": "food",
+        "credit": "Lupro AS · official website",
+        "source": "https://www.lupro.no/lupro-hj%C3%B8rnet"
+      },
+      {
+        "src": "./images/cafes/luprohjornet-3.jpg",
+        "original": "https://irp.cdn-website.com/e295f418/dms3rep/multi/opt/IMG_2386-1920w.jpg",
+        "kind": "food",
+        "credit": "Lupro AS · official website",
+        "source": "https://www.lupro.no/lupro-hj%C3%B8rnet"
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-17",
+      "source": "https://www.lupro.no/lupro-hj%C3%B8rnet",
+      "sourceLabel": "Lupro AS · LUPROhjørnet",
+      "publishedText": "Mo,We,Fr 10:00-15:30; Tu,Th 10:00-17:00; Sa 10:00-15:00"
+    },
+    "category": "cafe",
+    "region": "Hadeland",
+    "source": "https://www.lupro.no/lupro-hj%C3%B8rnet",
+    "checked": "2026-10-17",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.35747702970864%2C10.571360315913346"
+  },
+  {
+    "id": "tim-wendelboe-oslo",
+    "name": "Tim Wendelboe Espresso Bar",
+    "category": "cafe",
+    "region": "Oslo",
+    "town": "Oslo",
+    "address": "Grüners gate 1, 0552 Oslo",
+    "website": "https://timwendelboe.no/pages/contact-us",
+    "phone": "+4740004062",
+    "description": {
+      "nb": "Espressobar på Grünerløkka med kaffe fra eget brenneri. Et stopp for kaffe og smaking; dette er ikke en fullservice-restaurant.",
+      "en": "A Grünerløkka espresso bar serving coffee from its own roastery. A stop for coffee and tasting rather than a full restaurant meal.",
+      "uk": "Еспресо-бар на Grünerløkka з кавою власного обсмаження. Зупинка для кави й дегустації, а не повноцінного ресторанного обіду.",
+      "sv": "Espressobar på Grünerløkka med kaffe från eget rosteri. Ett stopp för kaffe och provsmakning snarare än en restaurangmåltid.",
+      "da": "Espressobar på Grünerløkka med kaffe fra eget risteri. Et stop til kaffe og smagning frem for et helt restaurantmåltid."
+    },
+    "hoursNote": {
+      "nb": "Publiserte tider kan endres på helligdager. Se operatørens nettside før avreise.",
+      "en": "Published hours may change on holidays. Check the operator’s website before travelling.",
+      "uk": "У святкові дні години можуть змінюватися. Перед поїздкою перевірте сайт закладу.",
+      "sv": "Publicerade tider kan ändras på helgdagar. Kontrollera verksamhetens webbplats före resan.",
+      "da": "Offentliggjorte tider kan ændres på helligdage. Tjek stedets hjemmeside før afrejse."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/tim-wendelboe.webp",
+        "kind": "facade",
+        "credit": "Tim Wendelboe · official website",
+        "source": "https://timwendelboe.no/pages/contact-us",
+        "original": "https://timwendelboe.no/cdn/shop/files/tw-espresso-bar-exterior.webp?v=1757874304&width=1000",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://timwendelboe.no/pages/contact-us",
+      "sourceLabel": "Tim Wendelboe",
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ]
+      ],
+      "publishedText": "Weekdays: 08:30–18:00; Saturdays & Sundays: 11:00–17:00"
+    },
+    "image": "./images/catalog/tim-wendelboe.webp",
+    "imageSource": "https://timwendelboe.no/pages/contact-us",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Tim Wendelboe · official website",
+      "en": "Photo from the operator’s website · Tim Wendelboe · official website",
+      "uk": "Фото із сайту закладу · Tim Wendelboe · official website",
+      "sv": "Foto från verksamhetens webbplats · Tim Wendelboe · official website",
+      "da": "Foto fra stedets hjemmeside · Tim Wendelboe · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://timwendelboe.no/pages/contact-us",
+    "photoVerified": true,
+    "coordinatesNote": "Use the published address for directions; exact coordinates have not been assigned.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Tim%20Wendelboe%20Espresso%20Bar%2C%20Gr%C3%BCners%20gate%201%2C%200552%20Oslo%2C%20Oslo%2C%20Norway"
+  },
+  {
+    "id": "dromedar-nordre-trondheim",
+    "name": "Dromedar Nordre",
+    "category": "cafe",
+    "region": "Trøndelag",
+    "town": "Trondheim",
+    "address": "Nordre gate 2, 7011 Trondheim",
+    "latitude": 63.43084605760483,
+    "longitude": 10.397489205732526,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nordre%20gate%202%20Trondheim&treffPerSide=3",
+    "website": "https://dromedar.no/kaffebarer/",
+    "phone": "+4790197835",
+    "description": {
+      "nb": "Kaffebar i Nordre gate i Trondheim sentrum. Et innendørs kaffestopp når du utforsker byen til fots.",
+      "en": "A coffee bar on Nordre gate in central Trondheim. An indoor coffee stop while exploring the city on foot.",
+      "uk": "Кав’ярня на Nordre gate у центрі Тронгейма. Зупинка на каву в приміщенні під час пішої прогулянки містом.",
+      "sv": "Kaffebar på Nordre gate i centrala Trondheim. En kaffepaus inomhus under en promenad genom staden.",
+      "da": "Kaffebar på Nordre gate i det centrale Trondheim. En indendørs kaffepause på en gåtur gennem byen."
+    },
+    "hoursNote": {
+      "nb": "Publiserte tider kan endres på helligdager. Se operatørens nettside før avreise.",
+      "en": "Published hours may change on holidays. Check the operator’s website before travelling.",
+      "uk": "У святкові дні години можуть змінюватися. Перед поїздкою перевірте сайт закладу.",
+      "sv": "Publicerade tider kan ändras på helgdagar. Kontrollera verksamhetens webbplats före resan.",
+      "da": "Offentliggjorte tider kan ændres på helligdage. Tjek stedets hjemmeside før afrejse."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/dromedar-nordre.jpeg",
+        "kind": "cafeInside",
+        "credit": "Dromedar Kaffebar · official website",
+        "source": "https://dromedar.no/kaffebarer/",
+        "original": "https://dromedar.no/wp-content/uploads/2026/02/Dromedar-kaffebar_nordre-1024x1024.jpeg",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://dromedar.no/kaffebarer/",
+      "sourceLabel": "Dromedar Kaffebar",
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ]
+      ],
+      "publishedText": "Hverdager 07–19; lørdag 09–18; søndag 11–17"
+    },
+    "image": "./images/catalog/dromedar-nordre.jpeg",
+    "imageSource": "https://dromedar.no/kaffebarer/",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Dromedar Kaffebar · official website",
+      "en": "Photo from the operator’s website · Dromedar Kaffebar · official website",
+      "uk": "Фото із сайту закладу · Dromedar Kaffebar · official website",
+      "sv": "Foto från verksamhetens webbplats · Dromedar Kaffebar · official website",
+      "da": "Foto fra stedets hjemmeside · Dromedar Kaffebar · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://dromedar.no/kaffebarer/",
+    "photoVerified": true,
+    "coordinatesNote": "Kartverket address point; entrance/pier position may differ.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=63.43084605760483%2C10.397489205732526"
+  },
+  {
+    "id": "kinsarvik-heng",
+    "name": "Kinsarvik Camping — Heng",
+    "area": "Kinsarvik · Hardanger",
+    "placeId": "voringfossen",
+    "imageCaption": {
+      "nb": "Foto fra Kinsarvik Camping · stedets nettside",
+      "en": "Photo from Kinsarvik Camping · venue website",
+      "uk": "Фото Kinsarvik Camping · сайт закладу",
+      "sv": "Foto från Kinsarvik Camping · anläggningens webbplats",
+      "da": "Foto fra Kinsarvik Camping · stedets hjemmeside"
+    },
+    "description": {
+      "nb": "Familiehytter av typen Heng i Kinsarvik, med tre soverom, to bad og fullt utstyrt kjøkken. Et overnattingsalternativ i Hardanger-regionen med utsikt over Hardangerfjorden.",
+      "en": "Heng family cabins in Kinsarvik, with three bedrooms, two bathrooms and a fully equipped kitchen. A stay option in the Hardanger region with views over Hardangerfjord.",
+      "uk": "Сімейні будиночки категорії Heng у Kinsarvik із трьома спальнями, двома ванними кімнатами та повністю обладнаною кухнею. Варіант ночівлі в регіоні Hardanger з видом на Hardangerfjord.",
+      "sv": "Familjestugor av typen Heng i Kinsarvik, med tre sovrum, två badrum och fullt utrustat kök. Ett boendealternativ i Hardangerregionen med utsikt över Hardangerfjorden.",
+      "da": "Familiehytter af typen Heng i Kinsarvik med tre soveværelser, to badeværelser og fuldt udstyret køkken. En overnatningsmulighed i Hardanger-regionen med udsigt over Hardangerfjorden."
+    },
+    "sauna": {
+      "nb": "Privat badstue inne i Heng-hyttene nr. 15–16. Opplysningen gjelder denne hyttetypen, ikke alle hyttene på campingplassen.",
+      "en": "Private sauna inside Heng cabins nos. 15–16. This applies to this cabin category, not every cabin at the campsite.",
+      "uk": "Власна сауна всередині будиночків Heng № 15–16. Це стосується саме цієї категорії, а не всіх будиночків кемпінгу.",
+      "sv": "Privat bastu inne i Heng-stugorna nr 15–16. Uppgiften gäller denna stugtyp, inte alla stugor på campingen.",
+      "da": "Privat sauna inde i Heng-hytterne nr. 15–16. Oplysningen gælder denne hyttetype, ikke alle hytter på campingpladsen."
+    },
+    "website": "https://www.kinsarvikcamping.no/overnatting/heng",
+    "bookingUrl": "https://online.bookvisit.com/accommodation?channelId=1a877ef6-b451-41cc-9726-8fa753577d63&langId=5",
+    "sources": [
+      "https://www.kinsarvikcamping.no/overnatting/heng",
+      "https://online.bookvisit.com/accommodation?channelId=1a877ef6-b451-41cc-9726-8fa753577d63&langId=5"
+    ],
+    "checked": "2026-10-16",
+    "image": "./images/catalog/cached-456ea4b3c5489fe2dead.webp",
+    "imageSource": "https://www.kinsarvikcamping.no/overnatting/heng",
+    "gallery": [
+      {
+        "src": "./images/catalog/cached-456ea4b3c5489fe2dead.webp",
+        "kind": "grounds",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng",
+        "original": "https://images.bookvisit.com/img/1b8f5e6d-9333-4239-ac2c-6aed89ff2504.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-f4f28911770c7ba16a5f.webp",
+        "kind": "inside",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng",
+        "original": "https://images.bookvisit.com/img/bddadd09-ad08-45f5-b284-b0161e430d4f.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-7b3b952897003f7ae747.webp",
+        "kind": "inside",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng",
+        "original": "https://images.bookvisit.com/img/77d34f42-407b-48ef-acef-fdeb780d3f0b.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-f456e933d192167ed947.webp",
+        "kind": "bedroom",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng",
+        "original": "https://images.bookvisit.com/img/3f01a3ef-ba5d-4b24-aea6-312f5dcfb073.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-b0ca0152de88b50ed7e5.webp",
+        "kind": "bathSauna",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng",
+        "original": "https://images.bookvisit.com/img/b37d1638-c849-451c-8cc1-db6f227028ec.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-78b8c75d273439c4bb4b.webp",
+        "kind": "grounds",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng",
+        "original": "https://images.bookvisit.com/img/e34fa04c-9d67-481a-ae83-1883453f2a36.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-939c641419b266c655db.webp",
+        "kind": "view",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng",
+        "original": "https://images.bookvisit.com/img/2d6ca7e6-c15c-48fc-9e6c-9f25a60be8c5.jpg"
+      }
+    ],
+    "routeQuery": "Kinsarvik Camping, Sandvikvegen 17, 5780 Kinsarvik, Norway",
+    "imageOriginal": "https://images.bookvisit.com/img/1b8f5e6d-9333-4239-ac2c-6aed89ff2504.jpg",
+    "hoursNote": {
+      "nb": "Tilgjengelighet, innsjekking og badstutider må avtales med verten. Se bestillingskalenderen før avreise. Privat badstue inne i Heng-hyttene nr. 15–16. Opplysningen gjelder denne hyttetypen, ikke alle hyttene på campingplassen.",
+      "en": "Availability, check-in and sauna times must be confirmed with the host. Check the booking calendar before travelling. Private sauna inside Heng cabins nos. 15–16. This applies to this cabin category, not every cabin at the campsite.",
+      "uk": "Наявність місць, заселення й час відвідування сауни потрібно узгодити з господарем. Перед поїздкою перевірте календар бронювань. Власна сауна всередині будиночків Heng № 15–16. Це стосується саме цієї категорії, а не всіх будиночків кемпінгу.",
+      "sv": "Tillgänglighet, incheckning och bastutider behöver bekräftas av värden. Kontrollera bokningskalendern före avresa. Privat bastu inne i Heng-stugorna nr 15–16. Uppgiften gäller denna stugtyp, inte alla stugor på campingen.",
+      "da": "Ledighed, indtjekning og saunatider skal aftales med værten. Kontrollér bookingkalenderen før afrejse. Privat sauna inde i Heng-hytterne nr. 15–16. Oplysningen gælder denne hyttetype, ikke alle hytter på campingpladsen."
+    },
+    "category": "cabin",
+    "region": "Kinsarvik · Hardanger",
+    "town": "Kinsarvik",
+    "address": "Kinsarvik · Hardanger",
+    "source": "https://www.kinsarvikcamping.no/overnatting/heng",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Kinsarvik%20Camping%2C%20Sandvikvegen%2017%2C%205780%20Kinsarvik%2C%20Norway",
+    "photoCaption": {
+      "nb": "Foto fra Kinsarvik Camping · stedets nettside",
+      "en": "Photo from Kinsarvik Camping · venue website",
+      "uk": "Фото Kinsarvik Camping · сайт закладу",
+      "sv": "Foto från Kinsarvik Camping · anläggningens webbplats",
+      "da": "Foto fra Kinsarvik Camping · stedets hjemmeside"
+    }
+  },
+  {
+    "id": "luster-fjordhytter",
+    "name": "Luster Fjordhytter & Fjordspa",
+    "area": "Høyheimsvik · Luster / Sognefjord",
+    "placeId": "nigardsbreen",
+    "imageCaption": {
+      "nb": "Foto fra Luster Fjordhytter · stedets nettside",
+      "en": "Photo from Luster Fjordhytter · venue website",
+      "uk": "Фото Luster Fjordhytter · сайт закладу",
+      "sv": "Foto från Luster Fjordhytter · anläggningens webbplats",
+      "da": "Foto fra Luster Fjordhytter · stedets hjemmeside"
+    },
+    "description": {
+      "nb": "Hytter ved Lustrafjorden med kjøkken, dusj og toalett. Et alternativ på en egen avstikker gjennom Luster og Sognefjord-regionen, ikke i Flåm sentrum.",
+      "en": "Cottages beside Lustrafjord with kitchens, showers and toilets. An option on a separate detour through Luster and the Sognefjord region, not in central Flåm.",
+      "uk": "Будиночки біля Lustrafjord із кухнею, душем і туалетом. Варіант для окремого відгалуження маршруту через Luster і регіон Sognefjord, не в центрі Flåm.",
+      "sv": "Stugor vid Lustrafjorden med kök, dusch och toalett. Ett alternativ på en separat avstickare genom Luster och Sognefjordregionen, inte i centrala Flåm.",
+      "da": "Hytter ved Lustrafjorden med køkken, bruser og toilet. En mulighed på en særskilt afstikker gennem Luster og Sognefjord-regionen, ikke i centrum af Flåm."
+    },
+    "sauna": {
+      "nb": "Separat vedfyrt badstue med fjordutsikt for 8–10 personer og vedfyrt badestamp. Drop-in og privat bestilling tilbys. Badstue er ikke bekreftet inkludert i hytteleien; avtal pris og tidspunkt med verten.",
+      "en": "Separate wood-fired sauna with fjord views for 8–10 people, plus a wood-fired hot tub. Drop-in and private bookings are offered. Sauna access is not confirmed as included in the cottage rate; arrange price and timing with the host.",
+      "uk": "Окрема сауна на дровах із видом на фіорд для 8–10 осіб і чан на дровах. Пропонуються спільні сеанси та приватне бронювання. Включення сауни у вартість будиночка не підтверджене; узгодьте ціну й час із господарем.",
+      "sv": "Separat vedeldad bastu med fjordutsikt för 8–10 personer samt vedeldad badtunna. Drop-in och privat bokning erbjuds. Bastu är inte bekräftad som inkluderad i stugpriset; avtala pris och tid med värden.",
+      "da": "Separat brændefyret sauna med fjordudsigt til 8–10 personer samt brændefyret vildmarksbad. Der tilbydes drop-in og privat booking. Sauna er ikke bekræftet inkluderet i hyttelejen; aftal pris og tidspunkt med værten."
+    },
+    "website": "https://www.luster-fjordhytter.com/en",
+    "bookingUrl": "https://www.luster-fjordhytter.com/en/booking",
+    "sources": [
+      "https://www.luster-fjordhytter.com/en",
+      "https://www.luster-fjordhytter.com/en/luster-fjordspa"
+    ],
+    "checked": "2026-10-16",
+    "image": "./images/catalog/cached-25313960d9a337b28fe5.webp",
+    "imageSource": "https://www.luster-fjordhytter.com/en",
+    "gallery": [
+      {
+        "src": "./images/catalog/cached-25313960d9a337b28fe5.webp",
+        "kind": "grounds",
+        "source": "https://www.luster-fjordhytter.com/en",
+        "original": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957ce59806898a97ee40d9_Hytter1.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-a9e4e1364b9c3f7b7784.webp",
+        "kind": "inside",
+        "source": "https://www.luster-fjordhytter.com/en",
+        "original": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60b7b514b346c6deeba04e79_Hytte%201-8.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-60ad45ff7dba1978070b.webp",
+        "kind": "inside",
+        "source": "https://www.luster-fjordhytter.com/en",
+        "original": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60b7b7aa7643b3171036461a_Hytte%209%20-%2012.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-59642be8bbd2bdf5ba59.webp",
+        "kind": "sauna",
+        "source": "https://www.luster-fjordhytter.com/en/luster-fjordspa",
+        "original": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/625ee6f22cf4b71f5650a0c1_LusterFjordspa_800x800_1.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-a70a4b3a31cada12ed70.webp",
+        "kind": "hotTub",
+        "source": "https://www.luster-fjordhytter.com/en/luster-fjordspa",
+        "original": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/625ee8d7b3dc6c941af8e9fd_LusterFjordspa_800x800_4.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-27797de594c103ef5908.webp",
+        "kind": "view",
+        "source": "https://www.luster-fjordhytter.com/en/luster-fjordspa",
+        "original": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957e42d927ff91e73aa869_stupebrett.jpg"
+      },
+      {
+        "src": "./images/catalog/cached-732b7ccfdf8ef83d4696.webp",
+        "kind": "terrace",
+        "source": "https://www.luster-fjordhytter.com/en",
+        "original": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60954d04fdc2121ae5fd1710_69319873_828053027595920_2733807594796246150_n.jpg"
+      }
+    ],
+    "routeQuery": "Luster Fjordhytter, Lustravegen 2623, 6875 Høyheimsvik, Norway",
+    "imageOriginal": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957ce59806898a97ee40d9_Hytter1.jpg",
+    "hoursNote": {
+      "nb": "Tilgjengelighet, innsjekking og badstutider må avtales med verten. Se bestillingskalenderen før avreise. Separat vedfyrt badstue med fjordutsikt for 8–10 personer og vedfyrt badestamp. Drop-in og privat bestilling tilbys. Badstue er ikke bekreftet inkludert i hytteleien; avtal pris og tidspunkt med verten.",
+      "en": "Availability, check-in and sauna times must be confirmed with the host. Check the booking calendar before travelling. Separate wood-fired sauna with fjord views for 8–10 people, plus a wood-fired hot tub. Drop-in and private bookings are offered. Sauna access is not confirmed as included in the cottage rate; arrange price and timing with the host.",
+      "uk": "Наявність місць, заселення й час відвідування сауни потрібно узгодити з господарем. Перед поїздкою перевірте календар бронювань. Окрема сауна на дровах із видом на фіорд для 8–10 осіб і чан на дровах. Пропонуються спільні сеанси та приватне бронювання. Включення сауни у вартість будиночка не підтверджене; узгодьте ціну й час із господарем.",
+      "sv": "Tillgänglighet, incheckning och bastutider behöver bekräftas av värden. Kontrollera bokningskalendern före avresa. Separat vedeldad bastu med fjordutsikt för 8–10 personer samt vedeldad badtunna. Drop-in och privat bokning erbjuds. Bastu är inte bekräftad som inkluderad i stugpriset; avtala pris och tid med värden.",
+      "da": "Ledighed, indtjekning og saunatider skal aftales med værten. Kontrollér bookingkalenderen før afrejse. Separat brændefyret sauna med fjordudsigt til 8–10 personer samt brændefyret vildmarksbad. Der tilbydes drop-in og privat booking. Sauna er ikke bekræftet inkluderet i hyttelejen; aftal pris og tidspunkt med værten."
+    },
+    "category": "cabin",
+    "region": "Høyheimsvik · Luster / Sognefjord",
+    "town": "Høyheimsvik",
+    "address": "Høyheimsvik · Luster / Sognefjord",
+    "source": "https://www.luster-fjordhytter.com/en",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Luster%20Fjordhytter%2C%20Lustravegen%202623%2C%206875%20H%C3%B8yheimsvik%2C%20Norway",
+    "photoCaption": {
+      "nb": "Foto fra Luster Fjordhytter · stedets nettside",
+      "en": "Photo from Luster Fjordhytter · venue website",
+      "uk": "Фото Luster Fjordhytter · сайт закладу",
+      "sv": "Foto från Luster Fjordhytter · anläggningens webbplats",
+      "da": "Foto fra Luster Fjordhytter · stedets hjemmeside"
+    }
+  },
+  {
+    "id": "kilsti-compact-lodge",
+    "name": "Kilsti Compact Lodge",
+    "area": "Eidsdal · Geiranger–Trollstigen",
+    "placeId": "geiranger",
+    "image": "./images/catalog/cached-b351b56fe7c2e9248170.webp",
+    "imageCaption": {
+      "nb": "Foto fra Kilsti Compact Lodge · stedets nettside",
+      "en": "Photo from Kilsti Compact Lodge · venue website",
+      "uk": "Фото Kilsti Compact Lodge · сайт закладу",
+      "sv": "Foto från Kilsti Compact Lodge · anläggningens webbplats",
+      "da": "Foto fra Kilsti Compact Lodge · stedets hjemmeside"
+    },
+    "description": {
+      "nb": "Små arkitekttegnede glasshytter med panoramautsikt i Eidsdal-området. Et overnattingsalternativ ved ruten mellom Geiranger og Trollstigen.",
+      "en": "Small architect-designed glass cottages with panoramic views in the Eidsdal area. A stay option by the route between Geiranger and Trollstigen.",
+      "uk": "Невеликі дизайнерські скляні будиночки з панорамними видами в районі Eidsdal. Варіант ночівлі біля маршруту між Geiranger і Trollstigen.",
+      "sv": "Små arkitektritade glasstugor med panoramautsikt i Eidsdalområdet. Ett boendealternativ vid rutten mellan Geiranger och Trollstigen.",
+      "da": "Små arkitekttegnede glashytter med panoramaudsigt i Eidsdal-området. En overnatningsmulighed ved ruten mellem Geiranger og Trollstigen."
+    },
+    "sauna": {
+      "nb": "Separat vedfyrt badstue med utedusj. Den er oppført som del av pakken når hele lodgen leies, med minst to netter. Ved bestilling av én hytte må tilgang, eventuell privat bruk og tillegg bekreftes.",
+      "en": "Separate wood-fired sauna with an outdoor shower. It is listed in the whole-lodge rental package, with a two-night minimum. For an individual cottage, confirm access, any private-use arrangements and extra charges.",
+      "uk": "Окрема сауна на дровах із душем надворі. Вона зазначена в пакеті оренди всього комплексу з мінімумом дві ночі. Для окремого будиночка підтвердьте доступ, умови приватного користування та доплати.",
+      "sv": "Separat vedeldad bastu med utomhusdusch. Den anges ingå när hela lodgen hyrs, med minst två nätter. Vid bokning av en stuga måste tillgång, eventuell privat användning och tillägg bekräftas.",
+      "da": "Separat brændefyret sauna med udendørs bruser. Den er angivet som del af pakken ved leje af hele lodgen, med mindst to nætter. Ved booking af én hytte skal adgang, eventuel privat brug og tillæg bekræftes."
+    },
+    "website": "https://www.kilsticompactlodge.no/",
+    "bookingUrl": "https://reservations.bookvisit.com/accommodation?channelId=677187f3-92a0-4ffa-b31a-cea24d063f0f&culture=nb",
+    "sources": [
+      "https://www.kilsticompactlodge.no/",
+      "https://www.kilsticompactlodge.no/hele-lodgen"
+    ],
+    "checked": "2026-10-16",
+    "imageSource": "https://www.kilsticompactlodge.no/",
+    "gallery": [
+      {
+        "src": "./images/catalog/cached-256811f045d1289ba588.webp",
+        "kind": "grounds",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1",
+        "original": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1674564152851-K59Z0KXD2M6S2V0Z1LVF/PRINT_2021-05-31+Reklamefoto+Kilsti-5497.JPG?format=1000w"
+      },
+      {
+        "src": "./images/catalog/cached-251a16ad5c2ed20843a8.webp",
+        "kind": "inside",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1",
+        "original": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1657903535379-COQYFRC6B2JS6NVUFXRN/DSC01817-kopi.jpg?format=1000w"
+      },
+      {
+        "src": "./images/catalog/cached-8b74433a6c52179e137e.webp",
+        "kind": "bedroom",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1",
+        "original": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1657903219361-K0K9PZYPEHSUMAJ8AHFI/DSC00791-kopi.jpg?format=1000w"
+      },
+      {
+        "src": "./images/catalog/cached-65a0f4e36ec8df87fc58.webp",
+        "kind": "view",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1",
+        "original": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1657903539445-WIGD1WGVHURE2YSVZMPA/DSC01923-kopi.jpg?format=1000w"
+      },
+      {
+        "src": "./images/catalog/cached-732ef7a0de4734bcf36f.webp",
+        "kind": "sauna",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1",
+        "original": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1742731263933-QNU8ZS0JH84NKW9K982L/20230724-7RV06634.JPG?format=1000w"
+      },
+      {
+        "src": "./images/catalog/cached-a3484b322066db3efc6a.webp",
+        "kind": "sauna",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1",
+        "original": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1742731265978-W2YGHJ93W4PNNIO1URAJ/20230724-7RV06653.JPG?format=1000w"
+      },
+      {
+        "src": "./images/catalog/cached-047fcc46aa7ef94f0222.webp",
+        "kind": "terrace",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1",
+        "original": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1668714514222-KWVSIFP84SJNFZEQFLI6/KilstiCL_3B7A8096_fotoKristinStoylen.jpg?format=1000w"
+      }
+    ],
+    "routeQuery": "Kilsti Compact Lodge, Eidsdal, Norway",
+    "imageOriginal": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1674564152851-K59Z0KXD2M6S2V0Z1LVF/PRINT_2021-05-31%2BReklamefoto%2BKilsti-5497.JPG?format=1000w",
+    "hoursNote": {
+      "nb": "Tilgjengelighet, innsjekking og badstutider må avtales med verten. Se bestillingskalenderen før avreise. Separat vedfyrt badstue med utedusj. Den er oppført som del av pakken når hele lodgen leies, med minst to netter. Ved bestilling av én hytte må tilgang, eventuell privat bruk og tillegg bekreftes.",
+      "en": "Availability, check-in and sauna times must be confirmed with the host. Check the booking calendar before travelling. Separate wood-fired sauna with an outdoor shower. It is listed in the whole-lodge rental package, with a two-night minimum. For an individual cottage, confirm access, any private-use arrangements and extra charges.",
+      "uk": "Наявність місць, заселення й час відвідування сауни потрібно узгодити з господарем. Перед поїздкою перевірте календар бронювань. Окрема сауна на дровах із душем надворі. Вона зазначена в пакеті оренди всього комплексу з мінімумом дві ночі. Для окремого будиночка підтвердьте доступ, умови приватного користування та доплати.",
+      "sv": "Tillgänglighet, incheckning och bastutider behöver bekräftas av värden. Kontrollera bokningskalendern före avresa. Separat vedeldad bastu med utomhusdusch. Den anges ingå när hela lodgen hyrs, med minst två nätter. Vid bokning av en stuga måste tillgång, eventuell privat användning och tillägg bekräftas.",
+      "da": "Ledighed, indtjekning og saunatider skal aftales med værten. Kontrollér bookingkalenderen før afrejse. Separat brændefyret sauna med udendørs bruser. Den er angivet som del af pakken ved leje af hele lodgen, med mindst to nætter. Ved booking af én hytte skal adgang, eventuel privat brug og tillæg bekræftes."
+    },
+    "category": "cabin",
+    "region": "Eidsdal · Geiranger–Trollstigen",
+    "town": "Eidsdal",
+    "address": "Eidsdal · Geiranger–Trollstigen",
+    "source": "https://www.kilsticompactlodge.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Kilsti%20Compact%20Lodge%2C%20Eidsdal%2C%20Norway",
+    "photoCaption": {
+      "nb": "Foto fra Kilsti Compact Lodge · stedets nettside",
+      "en": "Photo from Kilsti Compact Lodge · venue website",
+      "uk": "Фото Kilsti Compact Lodge · сайт закладу",
+      "sv": "Foto från Kilsti Compact Lodge · anläggningens webbplats",
+      "da": "Foto fra Kilsti Compact Lodge · stedets hjemmeside"
+    }
+  },
+  {
+    "id": "oslo-badstuforening-langkaia",
+    "name": "Oslo Badstuforening · Langkaia",
+    "category": "sauna",
+    "region": "Oslo",
+    "town": "Oslo",
+    "address": "Langkaia 1, 0150 Oslo",
+    "latitude": 59.90760281927637,
+    "longitude": 10.746880614147818,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Langkaia%201%20Oslo&treffPerSide=3",
+    "website": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+    "bookingUrl": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+    "description": {
+      "nb": "Flytende badstuer i sentrum med utsikt mot Operaen. Velg felles eller privat økt. Adkomst via trapper; ta med egen hengelås.",
+      "en": "Floating city-centre saunas facing the Opera House. Choose a shared or private session. Access is via stairs; bring your own padlock.",
+      "uk": "Плавучі сауни в центрі з видом на Оперу. Є спільні та приватні сеанси. Вхід сходами; візьміть власний замок для шафки.",
+      "sv": "Flytande bastur i centrum med utsikt mot Operan. Välj gemensam eller privat tid. Tillträde via trappor; ta med eget hänglås.",
+      "da": "Flydende saunaer i centrum med udsigt mod Operaen. Vælg fælles eller privat tid. Adgang via trapper; medbring egen hængelås."
+    },
+    "hoursNote": {
+      "nb": "Foreningen oppgir 07–23 hver dag. Ledige økter og eventuelt vedlikehold vises i bestillingen.",
+      "en": "The association publishes daily hours of 07:00–23:00. Available sessions and closures are shown in booking.",
+      "uk": "Асоціація вказує щодня 07:00–23:00. Доступні сеанси та закриття дивіться під час бронювання.",
+      "sv": "Föreningen anger dagligen 07–23. Lediga tider och stängningar visas i bokningen.",
+      "da": "Foreningen angiver dagligt 07–23. Ledige tider og lukninger vises i bookingen."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/langkaia.jpg",
+        "kind": "sauna",
+        "credit": "Oslo Badstuforening · official website",
+        "source": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+        "original": "https://oslobadstuforening.no/wp-content/uploads/2026/05/langkaia_1.jpg",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://oslobadstuforening.no/",
+      "sourceLabel": "Oslo Badstuforening",
+      "timeZone": "Europe/Oslo",
+      "publishedText": "Åpent hver dag fra 7 til 23. Booking availability applies."
+    },
+    "image": "./images/catalog/langkaia.jpg",
+    "imageSource": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Oslo Badstuforening · official website",
+      "en": "Photo from the operator’s website · Oslo Badstuforening · official website",
+      "uk": "Фото із сайту закладу · Oslo Badstuforening · official website",
+      "sv": "Foto från verksamhetens webbplats · Oslo Badstuforening · official website",
+      "da": "Foto fra stedets hjemmeside · Oslo Badstuforening · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+    "photoVerified": true,
+    "coordinatesNote": "Kartverket address point; entrance/pier position may differ.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=59.90760281927637%2C10.746880614147818"
+  },
+  {
+    "id": "fjordsauna-flam",
+    "name": "FjordSauna Flåm",
+    "category": "sauna",
+    "region": "Vestland",
+    "town": "Flåm",
+    "address": "Kaiplass 10 og 11, Flåm hamn, 5743 Flåm",
+    "website": "https://www.fjordsauna.com/fjordsauna-flaam",
+    "bookingUrl": "https://book.fjordsauna.com/en",
+    "phone": "+4796005305",
+    "description": {
+      "nb": "To flytende badstuer ved Flåm havn, hver med plass til opptil 12. Felles eller privat økt; store vinduer vender mot Aurlandsfjorden.",
+      "en": "Two floating saunas in Flåm harbour, each seating up to 12. Shared or private sessions with large windows facing the Aurlandsfjord.",
+      "uk": "Дві плавучі сауни в гавані Флома, кожна до 12 осіб. Спільні або приватні сеанси з великими вікнами на Aurlandsfjord.",
+      "sv": "Två flytande bastur i Flåms hamn, vardera för upp till 12 personer. Gemensamma eller privata pass med stora fönster mot Aurlandsfjorden.",
+      "da": "To flydende saunaer i Flåms havn, hver med plads til op til 12. Fælles eller private sessioner med store vinduer mod Aurlandsfjorden."
+    },
+    "hoursNote": {
+      "nb": "Åpent daglig hele året; klokkeslett varierer med sesongen. Forhåndsbestill og se tilgjengelige tider i kalenderen.",
+      "en": "Open daily year-round; session times vary by season. Book ahead and check the calendar for availability.",
+      "uk": "Працює щодня цілий рік; час сеансів залежить від сезону. Бронюйте заздалегідь і перевіряйте календар.",
+      "sv": "Öppet dagligen året runt; tider varierar med säsongen. Boka i förväg och kontrollera kalendern.",
+      "da": "Åbent dagligt hele året; tider varierer med sæsonen. Bestil på forhånd og tjek kalenderen."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/fjordsauna-flam.jpg",
+        "kind": "sauna",
+        "credit": "FjordSauna · official website",
+        "source": "https://www.fjordsauna.com/fjordsauna-flaam",
+        "original": "https://images.squarespace-cdn.com/content/v1/64a6be888d574a093bbcdba7/eac09432-0118-482c-a12d-362a94f278e7/resized+Plakat+foto-04.jpg?format=1000w",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      },
+      {
+        "src": "./images/catalog/fjordsauna-inside.jpg",
+        "kind": "sauna",
+        "credit": "Liv Einemo / FjordSauna",
+        "source": "https://www.fjordsauna.com/fjordsauna-flaam",
+        "original": "https://images.squarespace-cdn.com/content/v1/64a6be888d574a093bbcdba7/50854210-a152-46d3-9f9f-8f9eb5a5f860/%40Liv_Einemo+04.jpg?format=1000w",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://www.fjordsauna.com/fjordsauna-flaam",
+      "sourceLabel": "FjordSauna",
+      "timeZone": "Europe/Oslo",
+      "publishedText": "Open daily, all year round. Opening times vary by season — check the booking calendar."
+    },
+    "image": "./images/catalog/fjordsauna-flam.jpg",
+    "imageSource": "https://www.fjordsauna.com/fjordsauna-flaam",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · FjordSauna · official website",
+      "en": "Photo from the operator’s website · FjordSauna · official website",
+      "uk": "Фото із сайту закладу · FjordSauna · official website",
+      "sv": "Foto från verksamhetens webbplats · FjordSauna · official website",
+      "da": "Foto fra stedets hjemmeside · FjordSauna · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://www.fjordsauna.com/fjordsauna-flaam",
+    "photoVerified": true,
+    "coordinatesNote": "Use the published address for directions; exact coordinates have not been assigned.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=FjordSauna%20Fl%C3%A5m%2C%20Kaiplass%2010%20og%2011%2C%20Fl%C3%A5m%20hamn%2C%205743%20Fl%C3%A5m%2C%20Fl%C3%A5m%2C%20Norway"
+  },
+  {
+    "id": "tusenfryd",
+    "name": "TusenFryd",
+    "website": "https://www.tusenfryd.no/",
+    "area": "Vinterbro · Oslo south",
+    "address": "Fryds vei 25, 1407 Vinterbro, Norway",
+    "category": "rest",
+    "routes": [
+      "east"
+    ],
+    "description": {
+      "nb": "Berg-og-dal-baner og familieattraksjoner sør for Oslo. Sett av en egen parkdag, ikke en kort stopp på vei nordover.",
+      "en": "Roller coasters and family rides south of Oslo. Plan a dedicated park day rather than a quick stop on a northbound trip.",
+      "uk": "Американські гірки й сімейні атракціони на південь від Oslo. Плануйте окремий день у парку, а не коротку зупинку дорогою на північ.",
+      "sv": "Berg-och-dalbanor och familjeattraktioner söder om Oslo. Planera en egen parkdag, inte ett kort stopp på väg norrut.",
+      "da": "Rutsjebaner og familieattraktioner syd for Oslo. Planlæg en særskilt parkdag frem for et kort stop på vej nordpå."
+    },
+    "season": {
+      "nb": "Sesongkalender og høydekrav varierer. Sjekk dato og attraksjoner hos parken.",
+      "en": "Seasonal calendar and ride height limits vary. Check your date and rides with the park.",
+      "uk": "Сезонний календар і вимоги до зросту різняться. Перевірте дату та умови атракціонів у парку.",
+      "sv": "Säsongskalender och längdkrav varierar. Kontrollera datum och attraktioner hos parken.",
+      "da": "Sæsonkalender og højdekrav varierer. Tjek dato og attraktioner hos parken."
+    },
+    "sources": [
+      "https://shop.tusenfryd.no/pages/kjopsbetingelser",
+      "https://www.tusenfryd.no/relevant-informasjon/kontaktinformasjon",
+      "https://www.tusenfryd.no/kjop-billetter/grupper-og-skoler/grupper",
+      "https://www.tusenfryd.no/apningstider-og-priser/priser",
+      "https://www.tusenfryd.no/apningstider-og-priser"
+    ],
+    "checked": "2026-10-16",
+    "latitude": 59.748197673776765,
+    "longitude": 10.778811625913628,
+    "coordinatesSource": "https://www.tusenfryd.no/relevant-informasjon/kontaktinformasjon",
+    "image": "./experience-tusenfryd.jpg",
+    "photoCredit": {
+      "authorPlain": "Andreasr24",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:ThunderCoaster_p%C3%A5_TusenFryd.JPG",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "park",
+    "hoursNote": {
+      "nb": "Sesongkalender og høydekrav varierer. Sjekk dato og attraksjoner hos parken.",
+      "en": "Seasonal calendar and ride height limits vary. Check your date and rides with the park.",
+      "uk": "Сезонний календар і вимоги до зросту різняться. Перевірте дату та умови атракціонів у парку.",
+      "sv": "Säsongskalender och längdkrav varierar. Kontrollera datum och attraktioner hos parken.",
+      "da": "Sæsonkalender og højdekrav varierer. Tjek dato og attraktioner hos parken."
+    },
+    "region": "Vinterbro · Oslo south",
+    "town": "Vinterbro",
+    "source": "https://www.tusenfryd.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=59.748197673776765%2C10.778811625913628",
+    "gallery": [
+      {
+        "src": "./experience-tusenfryd.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:ThunderCoaster_p%C3%A5_TusenFryd.JPG",
+        "credit": "Andreasr24",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:ThunderCoaster_p%C3%A5_TusenFryd.JPG",
+    "photoCaption": ""
+  },
+  {
+    "id": "hunderfossen",
+    "name": "Hunderfossen Eventyrpark",
+    "website": "https://hunderfossen.no/",
+    "area": "Fåberg · Lillehammer",
+    "address": "Fossekrovegen 22, 2625 Fåberg, Norway",
+    "category": "rest",
+    "routes": [
+      "east"
+    ],
+    "description": {
+      "nb": "Norske eventyr, troll og familieattraksjoner ved Lillehammer. Et hovedmål for en familiedag.",
+      "en": "Norwegian fairy tales, trolls and family rides near Lillehammer. A destination for a full family day.",
+      "uk": "Норвезькі казки, тролі й сімейні атракціони біля Lillehammer. Основна програма для окремого сімейного дня.",
+      "sv": "Norska sagor, troll och familjeattraktioner vid Lillehammer. Ett huvudmål för en familjedag.",
+      "da": "Norske eventyr, trolde og familieattraktioner ved Lillehammer. Et hovedmål for en familiedag."
+    },
+    "season": {
+      "nb": "Eventyrparken, gården og vinterparken har egne sesonger og billetter. Sjekk kalenderen.",
+      "en": "The main park, farm and winter park have separate seasons and tickets. Check the calendar.",
+      "uk": "Основний парк, ферма й зимовий парк мають окремі сезони та квитки. Перевірте календар.",
+      "sv": "Huvudparken, gården och vinterparken har egna säsonger och biljetter. Kontrollera kalendern.",
+      "da": "Hovedparken, gården og vinterparken har egne sæsoner og billetter. Tjek kalenderen."
+    },
+    "sources": [
+      "https://hunderfossen.no/kontaktinformasjon/",
+      "https://hunderfossen.no/",
+      "https://hunderfossen.no/ofte-stilte-sporsmal/",
+      "https://hunderfossen.no/skoler-og-barnehager/",
+      "https://partner.hunderfossen.no/partnerid.aspx"
+    ],
+    "checked": "2026-10-16",
+    "latitude": 61.225736,
+    "longitude": 10.4361101,
+    "coordinatesSource": "https://hunderfossen.no/kontaktinformasjon/",
+    "image": "./experience-hunderfossen.jpg",
+    "photoCredit": {
+      "authorPlain": "MikkelMagnus",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Eventyrslottet_i_Hunderfossen_Familiepark.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "park",
+    "hoursNote": {
+      "nb": "Eventyrparken, gården og vinterparken har egne sesonger og billetter. Sjekk kalenderen.",
+      "en": "The main park, farm and winter park have separate seasons and tickets. Check the calendar.",
+      "uk": "Основний парк, ферма й зимовий парк мають окремі сезони та квитки. Перевірте календар.",
+      "sv": "Huvudparken, gården och vinterparken har egna säsonger och biljetter. Kontrollera kalendern.",
+      "da": "Hovedparken, gården og vinterparken har egne sæsoner og billetter. Tjek kalenderen."
+    },
+    "region": "Fåberg · Lillehammer",
+    "town": "Fåberg",
+    "source": "https://hunderfossen.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=61.225736%2C10.4361101",
+    "gallery": [
+      {
+        "src": "./experience-hunderfossen.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Eventyrslottet_i_Hunderfossen_Familiepark.jpg",
+        "credit": "MikkelMagnus",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Eventyrslottet_i_Hunderfossen_Familiepark.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "lilleputthammer",
+    "name": "Lilleputthammer Familiepark",
+    "website": "https://lilleputthammer.no/",
+    "area": "Hafjell · Øyer",
+    "address": "Hundervegen 41, 2636 Øyer, Norway",
+    "category": "rest",
+    "routes": [
+      "east"
+    ],
+    "description": {
+      "nb": "En liten by i miniatyr med leker og attraksjoner, særlig for barn fra 1 til 8 år.",
+      "en": "A miniature town with play areas and rides, especially suited to children aged 1–8.",
+      "uk": "Містечко в мініатюрі з іграми й атракціонами, насамперед для дітей 1–8 років.",
+      "sv": "En miniatyrstad med lek och attraktioner, främst för barn 1–8 år.",
+      "da": "En miniatureby med leg og attraktioner, især til børn på 1–8 år."
+    },
+    "season": {
+      "nb": "Sesongåpent. Kontroller dagens åpningstid og krav ved hver attraksjon.",
+      "en": "Seasonal opening. Check the day’s hours and each ride’s requirements.",
+      "uk": "Сезонна робота. Перевірте години на обрану дату й вимоги окремих атракціонів.",
+      "sv": "Säsongsöppet. Kontrollera dagens tider och kraven för varje attraktion.",
+      "da": "Sæsonåbent. Tjek dagens åbningstid og krav ved hver attraktion."
+    },
+    "sources": [
+      "https://lilleputthammer.no/",
+      "https://lilleputthammer.no/apningstider-og-priser",
+      "https://lilleputthammer.no/attraksjoner-i-lilleputthammer-stort-utvalg-til-sma-gjester",
+      "https://lilleputthammer.no/dagsbilletter"
+    ],
+    "checked": "2026-10-16",
+    "latitude": 61.2389,
+    "longitude": 10.4391,
+    "coordinatesSource": "https://lilleputthammer.no/",
+    "image": "./experience-lilleputthammer.jpg",
+    "photoCredit": {
+      "authorPlain": "Chell Hill",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:2010-08-07_Lilleputthammer.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "park",
+    "hoursNote": {
+      "nb": "Sesongåpent. Kontroller dagens åpningstid og krav ved hver attraksjon.",
+      "en": "Seasonal opening. Check the day’s hours and each ride’s requirements.",
+      "uk": "Сезонна робота. Перевірте години на обрану дату й вимоги окремих атракціонів.",
+      "sv": "Säsongsöppet. Kontrollera dagens tider och kraven för varje attraktion.",
+      "da": "Sæsonåbent. Tjek dagens åbningstid og krav ved hver attraktion."
+    },
+    "region": "Hafjell · Øyer",
+    "town": "Hafjell",
+    "source": "https://lilleputthammer.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=61.2389%2C10.4391",
+    "gallery": [
+      {
+        "src": "./experience-lilleputthammer.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:2010-08-07_Lilleputthammer.jpg",
+        "credit": "Chell Hill",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:2010-08-07_Lilleputthammer.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "kistefos",
+    "name": "Kistefos",
+    "website": "https://www.kistefosmuseum.no/",
+    "area": "Jevnaker · Hadeland",
+    "address": "South parking: Kistefossveien 112, Jevnaker, Norway",
+    "category": "rest",
+    "routes": [
+      "east"
+    ],
+    "description": {
+      "nb": "The Twist, skulpturer og industrihistorie ved Randselva. Et interessant kulturstopp fra Gran og Jevnaker.",
+      "en": "The Twist, sculpture and industrial history beside Randselva. A rewarding cultural stop from Gran and Jevnaker.",
+      "uk": "The Twist, скульптури й промислова історія біля Randselva. Змістовна культурна зупинка з Gran і Jevnaker.",
+      "sv": "The Twist, skulpturer och industrihistoria vid Randselva. Ett givande kulturstopp från Gran och Jevnaker.",
+      "da": "The Twist, skulpturer og industrihistorie ved Randselva. Et interessant kulturstop fra Gran og Jevnaker."
+    },
+    "season": {
+      "en": "Main season reopens 2 May 2027. Off-season area access has separate terms; galleries and cafe are not assumed open. Check the operator before adding this stop.",
+      "nb": "Hovedsesongen åpner 2. mai 2027. Adgang utenom sesongen har egne vilkår; gallerier og kafé antas ikke å være åpne. Sjekk med stedet før du legger til stoppet.",
+      "uk": "Основний сезон відкривається 2 травня 2027. Відвідування території поза сезоном має окремі умови; галереї та кафе не обов’язково відкриті. Перевірте в оператора перед додаванням зупинки.",
+      "sv": "Huvudsäsongen öppnar 2 maj 2027. Tillträde utanför säsongen har egna villkor; gallerier och kafé antas inte vara öppna. Kontrollera med anläggningen innan du lägger till stoppet.",
+      "da": "Hovedsæsonen åbner 2. maj 2027. Adgang uden for sæsonen har særskilte vilkår; gallerier og café antages ikke at være åbne. Tjek hos stedet, før du tilføjer stoppet."
+    },
+    "sources": [
+      "https://www.kistefosmuseum.no/besok-oss/vanlige-sporsmal",
+      "https://www.kistefosmuseum.com/om-oss/contact",
+      "https://www.kistefosmuseum.no/besok-oss",
+      "https://www.kistefosmuseum.com/visit-kistefos/opening-hours-and-prices"
+    ],
+    "checked": "2026-10-17",
+    "latitude": 60.2197945,
+    "longitude": 10.3666135,
+    "coordinatesSource": "https://www.kistefosmuseum.no/besok-oss/vanlige-sporsmal",
+    "image": "./experience-kistefos.jpg",
+    "photoCredit": {
+      "authorPlain": "WikiPCF",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:%27The_Twist%27_bridge_at_Kistefos_Museum.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "culture",
+    "hoursNote": {
+      "en": "Main season reopens 2 May 2027. Off-season area access has separate terms; galleries and cafe are not assumed open. Check the operator before adding this stop.",
+      "nb": "Hovedsesongen åpner 2. mai 2027. Adgang utenom sesongen har egne vilkår; gallerier og kafé antas ikke å være åpne. Sjekk med stedet før du legger til stoppet.",
+      "uk": "Основний сезон відкривається 2 травня 2027. Відвідування території поза сезоном має окремі умови; галереї та кафе не обов’язково відкриті. Перевірте в оператора перед додаванням зупинки.",
+      "sv": "Huvudsäsongen öppnar 2 maj 2027. Tillträde utanför säsongen har egna villkor; gallerier och kafé antas inte vara öppna. Kontrollera med anläggningen innan du lägger till stoppet.",
+      "da": "Hovedsæsonen åbner 2. maj 2027. Adgang uden for sæsonen har særskilte vilkår; gallerier og café antages ikke at være åbne. Tjek hos stedet, før du tilføjer stoppet."
+    },
+    "region": "Jevnaker · Hadeland",
+    "town": "Jevnaker",
+    "source": "https://www.kistefosmuseum.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.2197945%2C10.3666135",
+    "gallery": [
+      {
+        "src": "./experience-kistefos.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:%27The_Twist%27_bridge_at_Kistefos_Museum.jpg",
+        "credit": "WikiPCF",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:%27The_Twist%27_bridge_at_Kistefos_Museum.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "storelgen",
+    "name": "Storelgen — The Big Elk",
+    "area": "Bjøråa · Østerdalen",
+    "address": "Bjøråa rasteplass, Rv 3, Stor-Elvdal, Norway",
+    "category": "rest",
+    "routes": [
+      "east"
+    ],
+    "website": "https://norconsult.no/prosjekter/bjoeraaa-rasteplass/",
+    "latitude": 61.6679224,
+    "longitude": 10.8843343,
+    "description": {
+      "nb": "Den store sølvfargede elgskulpturen ved Bjøråa rasteplass på rv. 3. En kort fotopause på Østerdalen-ruten.",
+      "en": "The giant silver-coloured elk sculpture at Bjøråa rest area on road 3. A short photo stop on the Østerdalen route.",
+      "uk": "Велетенська срібляста скульптура лося на Bjøråa біля дороги Rv 3. Коротка фотозупинка на маршруті Østerdalen.",
+      "sv": "Den stora silverfärgade älgskulpturen vid Bjøråa rastplats på riksväg 3. Ett kort fotostopp på Østerdalenrutten.",
+      "da": "Den store sølvfarvede elgskulptur ved Bjøråa rasteplads på vej 3. Et kort fotostop på Østerdalen-ruten."
+    },
+    "season": {
+      "nb": "Utendørs stopp, ingen aktivitetsbillett. Ta hensyn til føre og rasteplassens adkomst.",
+      "en": "Outdoor stop, no activity ticket. Check road conditions and rest-area access.",
+      "uk": "Відкрита фотозупинка без квитка на атракціон. Враховуйте дорожні умови й доступ до парковки.",
+      "sv": "Utomhusstopp utan aktivitetsbiljett. Ta hänsyn till väglag och tillfart.",
+      "da": "Udendørs stop uden aktivitetsbillet. Tag hensyn til vejforhold og adgang."
+    },
+    "sources": [
+      "https://norconsult.no/prosjekter/bjoeraaa-rasteplass/",
+      "https://www.stor-elvdal.kommune.no/_f/p1/ia6ea8311-63f2-4289-b5c0-15604b37c370/20230531_retninglinjer-bjoraa-rasteplass_vedtatt.pdf"
+    ],
+    "coordinatesSource": "https://www.openstreetmap.org/node/6677511968",
+    "checked": "2026-10-16",
+    "image": "./experience-storelgen.jpg",
+    "photoCredit": {
+      "authorPlain": "Orland",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Storelgen_i_Stor-Elvdal_2.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "landmark",
+    "hoursNote": {
+      "nb": "Utendørs stopp, ingen aktivitetsbillett. Ta hensyn til føre og rasteplassens adkomst.",
+      "en": "Outdoor stop, no activity ticket. Check road conditions and rest-area access.",
+      "uk": "Відкрита фотозупинка без квитка на атракціон. Враховуйте дорожні умови й доступ до парковки.",
+      "sv": "Utomhusstopp utan aktivitetsbiljett. Ta hänsyn till väglag och tillfart.",
+      "da": "Udendørs stop uden aktivitetsbillet. Tag hensyn til vejforhold og adgang."
+    },
+    "region": "Bjøråa · Østerdalen",
+    "town": "Bjøråa",
+    "source": "https://norconsult.no/prosjekter/bjoeraaa-rasteplass/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=61.6679224%2C10.8843343",
+    "gallery": [
+      {
+        "src": "./experience-storelgen.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Storelgen_i_Stor-Elvdal_2.jpg",
+        "credit": "Orland",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Storelgen_i_Stor-Elvdal_2.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "voss-gondol",
+    "name": "Voss Gondol",
+    "area": "Voss · Bergen–Flåm",
+    "address": "Evangervegen 3, 5704 Voss, Norway",
+    "category": "rest",
+    "routes": [
+      "fjord"
+    ],
+    "website": "https://vossgondol.no/",
+    "latitude": 60.6291914,
+    "longitude": 6.4111488,
+    "description": {
+      "nb": "Gondolen fra Voss stasjon til Hangurstoppen, med fjellutsikt og turmuligheter. Bilruten går til dalstasjonen.",
+      "en": "A gondola from Voss station to Hangurstoppen, with mountain views and walking options. The driving route ends at the lower station.",
+      "uk": "Канатна дорога від станції Voss до Hangurstoppen: панорами гір і прогулянки. Автомобільний маршрут веде до нижньої станції.",
+      "sv": "Gondolen från Voss station till Hangurstoppen, med fjällutsikt och promenader. Bilrutten går till dalstationen.",
+      "da": "Gondolen fra Voss station til Hangurstoppen, med bjergudsigt og vandreture. Bilruten slutter ved dalstationen."
+    },
+    "season": {
+      "nb": "Kontroller drift, vær og siste retur. Gondolbillett og tid på fjellet kommer i tillegg til kjøreturen.",
+      "en": "Check operation, weather and the last descent. Gondola tickets and mountain time are additional to the drive.",
+      "uk": "Перевірте роботу, погоду й останній спуск. Квиток на канатну дорогу та час на горі рахуються окремо.",
+      "sv": "Kontrollera drift, väder och sista nedfärd. Biljett och tid på fjället tillkommer utöver bilresan.",
+      "da": "Tjek drift, vejr og sidste nedtur. Billet og tid på bjerget kommer ud over køreturen."
+    },
+    "sources": [
+      "https://vossgondol.no/info/kontakt-oss",
+      "https://vossgondol.no/info/bestillingsvilkar/"
+    ],
+    "coordinatesSource": "https://www.openstreetmap.org/node/6330631166",
+    "checked": "2026-10-16",
+    "image": "./experience-voss-gondol.jpg",
+    "photoCredit": {
+      "authorPlain": "Wolfmann",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Voss_Gondol_Passenger_lift_cableway_(taubane)_to_Hanguren_View_from_gondola_cabin_towards_Vossavangen_Vangsvatnet_November_afternoon_sunset_Snow_etc_Voss_Norway_2019-11-20_0582.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "adventure",
+    "hoursNote": {
+      "nb": "Kontroller drift, vær og siste retur. Gondolbillett og tid på fjellet kommer i tillegg til kjøreturen.",
+      "en": "Check operation, weather and the last descent. Gondola tickets and mountain time are additional to the drive.",
+      "uk": "Перевірте роботу, погоду й останній спуск. Квиток на канатну дорогу та час на горі рахуються окремо.",
+      "sv": "Kontrollera drift, väder och sista nedfärd. Biljett och tid på fjället tillkommer utöver bilresan.",
+      "da": "Tjek drift, vejr og sidste nedtur. Billet og tid på bjerget kommer ud over køreturen."
+    },
+    "region": "Voss · Bergen–Flåm",
+    "town": "Voss",
+    "source": "https://vossgondol.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.6291914%2C6.4111488",
+    "gallery": [
+      {
+        "src": "./experience-voss-gondol.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Voss_Gondol_Passenger_lift_cableway_(taubane)_to_Hanguren_View_from_gondola_cabin_towards_Vossavangen_Vangsvatnet_November_afternoon_sunset_Snow_etc_Voss_Norway_2019-11-20_0582.jpg",
+        "credit": "Wolfmann",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Voss_Gondol_Passenger_lift_cableway_(taubane)_to_Hanguren_View_from_gondola_cabin_towards_Vossavangen_Vangsvatnet_November_afternoon_sunset_Snow_etc_Voss_Norway_2019-11-20_0582.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "loen-skylift",
+    "name": "Loen Skylift",
+    "area": "Loen · Nordfjord",
+    "address": "Fjordvegen 1011, 6789 Loen, Norway",
+    "category": "rest",
+    "routes": [
+      "sunnmore"
+    ],
+    "website": "https://www.loenskylift.no/",
+    "latitude": 61.8751453,
+    "longitude": 6.8393478,
+    "description": {
+      "nb": "Taubanen fra fjorden til Hoven. Fjordutsikt, fjellturer og restaurant; et aktivitetsvalg ved slutten av Loen-ruten.",
+      "en": "The cable car from the fjord to Hoven. Fjord views, walks and a restaurant; an activity option at the end of the Loen route.",
+      "uk": "Канатна дорога від фіорду до Hoven. Панорами, прогулянки й ресторан — окрема програма наприкінці маршруту до Loen.",
+      "sv": "Linbanan från fjorden till Hoven. Fjordutsikt, vandring och restaurang vid slutet av Loenrutten.",
+      "da": "Svævebanen fra fjorden til Hoven. Fjordudsigt, vandring og restaurant ved slutningen af Loen-ruten."
+    },
+    "season": {
+      "nb": "Kartpunktet er fjordstasjonen. Sjekk driftskalender, vær og siste retur før du reiser.",
+      "en": "The map point is the lower fjord station. Check the operating calendar, weather and last descent.",
+      "uk": "На карті — нижня станція біля фіорду. Перевірте календар роботи, погоду й останній спуск.",
+      "sv": "Kartpunkten är dalstationen. Kontrollera driftkalender, väder och sista nedfärd.",
+      "da": "Kortpunktet er dalstationen. Tjek driftskalender, vejr og sidste nedtur."
+    },
+    "sources": [
+      "https://www.loenskylift.no/kome-hit",
+      "https://en.loenskylift.no/press"
+    ],
+    "coordinatesSource": "https://www.openstreetmap.org/node/4845147627",
+    "checked": "2026-10-16",
+    "image": "./experience-loen-skylift.jpg",
+    "photoCredit": {
+      "authorPlain": "Bingar1234",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:LoenSky117BG23.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "adventure",
+    "hoursNote": {
+      "nb": "Kartpunktet er fjordstasjonen. Sjekk driftskalender, vær og siste retur før du reiser.",
+      "en": "The map point is the lower fjord station. Check the operating calendar, weather and last descent.",
+      "uk": "На карті — нижня станція біля фіорду. Перевірте календар роботи, погоду й останній спуск.",
+      "sv": "Kartpunkten är dalstationen. Kontrollera driftkalender, väder och sista nedfärd.",
+      "da": "Kortpunktet er dalstationen. Tjek driftskalender, vejr og sidste nedtur."
+    },
+    "region": "Loen · Nordfjord",
+    "town": "Loen",
+    "source": "https://www.loenskylift.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=61.8751453%2C6.8393478",
+    "gallery": [
+      {
+        "src": "./experience-loen-skylift.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:LoenSky117BG23.jpg",
+        "credit": "Bingar1234",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:LoenSky117BG23.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "norsk-natursenter",
+    "name": "Norsk Natursenter – Hardanger",
+    "area": "Øvre Eidfjord · Hardanger",
+    "address": "Sæbøtunet 11, 5784 Øvre Eidfjord, Norway",
+    "category": "rest",
+    "routes": [
+      "hardanger"
+    ],
+    "website": "https://www.norsknatursenter.no/",
+    "latitude": 60.4228413,
+    "longitude": 7.135783,
+    "description": {
+      "nb": "Naturutstillinger og panoramafilm om fjorder, fjell og Hardangervidda. Et innendørs stopp på veien mot Vøringsfossen.",
+      "en": "Nature exhibits and a panoramic film about fjords, mountains and Hardangervidda. An indoor stop on the road towards Vøringsfossen.",
+      "uk": "Виставки про природу й панорамний фільм про фіорди, гори та Hardangervidda. Зупинка в приміщенні дорогою до Vøringsfossen.",
+      "sv": "Naturutställningar och panoramafilm om fjordar, fjäll och Hardangervidda. Ett inomhusstopp på vägen mot Vøringsfossen.",
+      "da": "Naturudstillinger og panoramafilm om fjorde, bjerge og Hardangervidda. Et indendørs stop på vejen mod Vøringsfossen."
+    },
+    "season": {
+      "nb": "Sesongåpent. Sjekk kalender og billetter; grupper utenom sesong etter avtale.",
+      "en": "Seasonal opening. Check the calendar and tickets; out-of-season groups by arrangement.",
+      "uk": "Сезонна робота. Перевірте календар і квитки; групи поза сезоном — за домовленістю.",
+      "sv": "Säsongsöppet. Kontrollera kalender och biljetter; grupper utanför säsong efter överenskommelse.",
+      "da": "Sæsonåbent. Tjek kalender og billetter; grupper uden for sæson efter aftale."
+    },
+    "sources": [
+      "https://www.norsknatursenter.no/",
+      "https://www.norsknatursenter.no/kontakt/"
+    ],
+    "coordinatesSource": "https://www.openstreetmap.org/node/14088580010",
+    "checked": "2026-10-16",
+    "image": "./experience-norsk-natursenter.jpg",
+    "photoCredit": {
+      "authorPlain": "Holger Uwe Schmitt",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Lehrreich,_unterhaltsam_und_sehr_spannend,_das_Hardangervidda_Naturzentrum._03.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "culture",
+    "hoursNote": {
+      "nb": "Sesongåpent. Sjekk kalender og billetter; grupper utenom sesong etter avtale.",
+      "en": "Seasonal opening. Check the calendar and tickets; out-of-season groups by arrangement.",
+      "uk": "Сезонна робота. Перевірте календар і квитки; групи поза сезоном — за домовленістю.",
+      "sv": "Säsongsöppet. Kontrollera kalender och biljetter; grupper utanför säsong efter överenskommelse.",
+      "da": "Sæsonåbent. Tjek kalender og billetter; grupper uden for sæson efter aftale."
+    },
+    "region": "Øvre Eidfjord · Hardanger",
+    "town": "Øvre Eidfjord",
+    "source": "https://www.norsknatursenter.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.4228413%2C7.135783",
+    "gallery": [
+      {
+        "src": "./experience-norsk-natursenter.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Lehrreich,_unterhaltsam_und_sehr_spannend,_das_Hardangervidda_Naturzentrum._03.jpg",
+        "credit": "Holger Uwe Schmitt",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Lehrreich,_unterhaltsam_und_sehr_spannend,_das_Hardangervidda_Naturzentrum._03.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "akvariet-bergen",
+    "name": "Akvariet i Bergen",
+    "address": "Nordnesbakken 4, Bergen, Norway",
+    "routes": [
+      "fjord"
+    ],
+    "website": "https://www.akvariet.no/",
+    "sources": [
+      "https://www.akvariet.no/",
+      "https://www.akvariet.no/finn-oss",
+      "https://www.akvariet.no/besoek-oss-med-en-gruppe"
+    ],
+    "area": "Bergen · Nordnes",
+    "category": "rest",
+    "description": {
+      "nb": "Et byakvarium på Nordnes med marine dyr, pingviner, otere og tropiske utstillinger. En innholdsrik byopplevelse i Bergen.",
+      "en": "A city aquarium on Nordnes with marine animals, penguins, otters and tropical exhibits. A substantial city experience in Bergen.",
+      "uk": "Міський акваріум на Nordnes з морськими тваринами, пінгвінами, видрами й тропічними експозиціями. Змістовна міська програма в Bergen.",
+      "sv": "Ett stadsakvarium på Nordnes med marina djur, pingviner, uttrar och tropiska utställningar. En innehållsrik stadsupplevelse i Bergen.",
+      "da": "Et byakvarium på Nordnes med havdyr, pingviner, oddere og tropiske udstillinger. En indholdsrig byoplevelse i Bergen."
+    },
+    "season": {
+      "nb": "Sjekk åpningstider, dagsprogram og billetter for valgt dato på det offisielle nettstedet.",
+      "en": "Check opening hours, the daily programme and tickets for your chosen date on the official website.",
+      "uk": "Перевірте години роботи, програму дня й квитки на вибрану дату на офіційному сайті.",
+      "sv": "Kontrollera öppettider, dagsprogram och biljetter för valt datum på den officiella webbplatsen.",
+      "da": "Tjek åbningstider, dagsprogram og billetter til den valgte dato på det officielle websted."
+    },
+    "checked": "2026-10-16",
+    "image": "./experience-akvariet-bergen.jpg",
+    "photoCredit": {
+      "authorPlain": "Kjell Førde",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Akvariet_i_Bergen_penguin.JPG",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "aquarium",
+    "hoursNote": {
+      "nb": "Sjekk åpningstider, dagsprogram og billetter for valgt dato på det offisielle nettstedet.",
+      "en": "Check opening hours, the daily programme and tickets for your chosen date on the official website.",
+      "uk": "Перевірте години роботи, програму дня й квитки на вибрану дату на офіційному сайті.",
+      "sv": "Kontrollera öppettider, dagsprogram och biljetter för valt datum på den officiella webbplatsen.",
+      "da": "Tjek åbningstider, dagsprogram og billetter til den valgte dato på det officielle websted."
+    },
+    "region": "Bergen · Nordnes",
+    "town": "Bergen",
+    "source": "https://www.akvariet.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Akvariet%20i%20Bergen%2C%20Nordnesbakken%204%2C%20Bergen%2C%20Norway%2C%20Bergen%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./experience-akvariet-bergen.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Akvariet_i_Bergen_penguin.JPG",
+        "credit": "Kjell Førde",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Akvariet_i_Bergen_penguin.JPG",
+    "photoCaption": ""
+  },
+  {
+    "id": "atlanterhavsparken",
+    "name": "Atlanterhavsparken — Det Norske Akvariet",
+    "address": "Atlanterhavsparken, Tueneset, 6006 Ålesund, Norway",
+    "routes": [
+      "sunnmore"
+    ],
+    "website": "https://www.atlanterhavsparken.no/",
+    "sources": [
+      "https://www.atlanterhavsparken.no/",
+      "https://www.atlanterhavsparken.no/kontakt-oss",
+      "https://www.atlanterhavsparken.no/sporsmal-og-svar",
+      "https://www.atlanterhavsparken.no/kurs-og-konferanse"
+    ],
+    "area": "Ålesund · Tueneset",
+    "category": "rest",
+    "description": {
+      "nb": "Et marint akvarium og vitensenter på Tueneset med fisk fra norskekysten, seler, otere og pingviner. En familieopplevelse ved Ålesund.",
+      "en": "A marine aquarium and science centre on Tueneset with fish from the Norwegian coast, seals, otters and penguins. A family experience near Ålesund.",
+      "uk": "Морський акваріум і науковий центр на Tueneset з рибами норвезького узбережжя, тюленями, видрами та пінгвінами. Сімейна програма біля Ålesund.",
+      "sv": "Ett havsakvarium och vetenskapscenter på Tueneset med fisk från Norges kust, sälar, uttrar och pingviner. En familjeupplevelse vid Ålesund.",
+      "da": "Et havakvarium og videnskabscenter på Tueneset med fisk fra Norges kyst, sæler, oddere og pingviner. En familieoplevelse ved Ålesund."
+    },
+    "season": {
+      "nb": "Sjekk åpningstider, fôringer og aktiviteter for valgt dato. Gruppearrangementer må avtales særskilt.",
+      "en": "Check opening hours, feeding sessions and activities for your chosen date. Group events require separate arrangements.",
+      "uk": "Перевірте години роботи, годування й заняття на вибрану дату. Групові заходи потребують окремого узгодження.",
+      "sv": "Kontrollera öppettider, matningar och aktiviteter för valt datum. Grupparrangemang bokas separat.",
+      "da": "Tjek åbningstider, fodringer og aktiviteter til den valgte dato. Gruppearrangementer aftales særskilt."
+    },
+    "checked": "2026-10-16",
+    "latitude": 62.4655165,
+    "longitude": 6.0957797,
+    "image": "./experience-atlanterhavsparken.jpg",
+    "photoCredit": {
+      "authorPlain": "Fiver, der Hellseher",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Humboldtpinguine_Atlanterhavsparken_Norway.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "aquarium",
+    "hoursNote": {
+      "nb": "Sjekk åpningstider, fôringer og aktiviteter for valgt dato. Gruppearrangementer må avtales særskilt.",
+      "en": "Check opening hours, feeding sessions and activities for your chosen date. Group events require separate arrangements.",
+      "uk": "Перевірте години роботи, годування й заняття на вибрану дату. Групові заходи потребують окремого узгодження.",
+      "sv": "Kontrollera öppettider, matningar och aktiviteter för valt datum. Grupparrangemang bokas separat.",
+      "da": "Tjek åbningstider, fodringer og aktiviteter til den valgte dato. Gruppearrangementer aftales særskilt."
+    },
+    "region": "Ålesund · Tueneset",
+    "town": "Ålesund",
+    "source": "https://www.atlanterhavsparken.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=62.4655165%2C6.0957797",
+    "gallery": [
+      {
+        "src": "./experience-atlanterhavsparken.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Humboldtpinguine_Atlanterhavsparken_Norway.jpg",
+        "credit": "Fiver, der Hellseher",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Humboldtpinguine_Atlanterhavsparken_Norway.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "dyreparken-kristiansand",
+    "name": "Dyreparken Kristiansand",
+    "address": "Dyreparkveien 1, 4609 Kardemomme by, Norway",
+    "routes": [
+      "coast"
+    ],
+    "website": "https://www.dyreparken.no/",
+    "sources": [
+      "https://www.dyreparken.no/",
+      "https://www.dyreparken.no/kontakt-oss/",
+      "https://www.dyreparken.no/pressemedia/"
+    ],
+    "area": "Kristiansand · Southern Norway",
+    "category": "rest",
+    "description": {
+      "nb": "Et stort familieanlegg ved Kristiansand med dyrepark, tematiserte områder og et eget Badeland. Planlegg en egen besøksdag og en sørlandsrute, ikke en kort avstikker fra fjordene.",
+      "en": "A large family complex near Kristiansand with a zoo, themed areas and a separate Badeland water park. Plan a dedicated visit day and southern route, not a quick fjord detour.",
+      "uk": "Великий сімейний комплекс біля Kristiansand: зоопарк, тематичні зони й окремий аквапарк Badeland. Плануйте окремий день і південний маршрут, а не короткий заїзд від фіордів.",
+      "sv": "Ett stort familjeområde vid Kristiansand med djurpark, temamiljöer och ett separat Badeland. Planera en egen besöksdag och sydlig rutt, inte en kort avstickare från fjordarna.",
+      "da": "Et stort familieområde ved Kristiansand med dyrepark, temaområder og et særskilt Badeland. Planlæg en hel besøgsdag og en sydlig rute, ikke en kort afstikker fra fjordene."
+    },
+    "season": {
+      "nb": "Dyrepark, Badeland, forestillinger og overnatting har egne kalendere og bestillingsvilkår. Sjekk valgt dato.",
+      "en": "The zoo, water park, shows and accommodation have separate calendars and booking conditions. Check your chosen date.",
+      "uk": "Зоопарк, аквапарк, вистави й проживання мають окремі календарі та умови бронювання. Перевірте вибрану дату.",
+      "sv": "Djurpark, vattenpark, föreställningar och boende har egna kalendrar och bokningsvillkor. Kontrollera valt datum.",
+      "da": "Dyrepark, vandland, forestillinger og overnatning har særskilte kalendere og bookingvilkår. Tjek den valgte dato."
+    },
+    "checked": "2026-10-16",
+    "image": "./experience-dyreparken-kristiansand.jpg",
+    "photoCredit": {
+      "authorPlain": "Bjoertvedt",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_kristiansand_dyrepark_IMG_4044.JPG",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "zoo",
+    "hoursNote": {
+      "nb": "Dyrepark, Badeland, forestillinger og overnatting har egne kalendere og bestillingsvilkår. Sjekk valgt dato.",
+      "en": "The zoo, water park, shows and accommodation have separate calendars and booking conditions. Check your chosen date.",
+      "uk": "Зоопарк, аквапарк, вистави й проживання мають окремі календарі та умови бронювання. Перевірте вибрану дату.",
+      "sv": "Djurpark, vattenpark, föreställningar och boende har egna kalendrar och bokningsvillkor. Kontrollera valt datum.",
+      "da": "Dyrepark, vandland, forestillinger og overnatning har særskilte kalendere og bookingvilkår. Tjek den valgte dato."
+    },
+    "region": "Kristiansand · Southern Norway",
+    "town": "Kristiansand",
+    "source": "https://www.dyreparken.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Dyreparken%20Kristiansand%2C%20Dyreparkveien%201%2C%204609%20Kardemomme%20by%2C%20Norway%2C%20Kristiansand%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./experience-dyreparken-kristiansand.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_kristiansand_dyrepark_IMG_4044.JPG",
+        "credit": "Bjoertvedt",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_kristiansand_dyrepark_IMG_4044.JPG",
+    "photoCaption": ""
+  },
+  {
+    "id": "bjorneparken-fla",
+    "name": "Bjørneparken",
+    "address": "Vikberget, 3539 Flå, Norway",
+    "routes": [
+      "east",
+      "fjord"
+    ],
+    "website": "https://bjorneparken.no/",
+    "sources": [
+      "https://bjorneparken.no/",
+      "https://bjorneparken.no/wp-content/uploads/2022/11/Bjorneparken.pdf"
+    ],
+    "area": "Flå · Hallingdal",
+    "category": "rest",
+    "description": {
+      "nb": "En dyrepark i Flå med norske rovdyr og hjortedyr, husdyr og reptiler. Aktuell for familieturer gjennom Hallingdal; ikke automatisk et stopp langs alle fjordruter.",
+      "en": "An animal park in Flå with Norwegian predators and hoofed animals, domestic animals and reptiles. Suitable for family trips through Hallingdal, not automatically a stop on every fjord route.",
+      "uk": "Парк тварин у Flå з норвезькими хижаками й копитними, свійськими тваринами та рептиліями. Підходить для сімейних поїздок через Hallingdal, але не лежить автоматично на кожному маршруті до фіордів.",
+      "sv": "En djurpark i Flå med norska rovdjur och klövdjur, husdjur och reptiler. Passar familjeresor genom Hallingdal, inte automatiskt alla fjordrutter.",
+      "da": "En dyrepark i Flå med norske rovdyr og hovdyr, husdyr og krybdyr. Egnet til familierejser gennem Hallingdal, ikke automatisk alle fjordruter."
+    },
+    "season": {
+      "nb": "Sesongkalender og daterte billetter; kapasiteten er begrenset. Sjekk tilgjengelighet og aktiviteter før avreise.",
+      "en": "Seasonal calendar and dated tickets; capacity is limited. Check availability and activities before travelling.",
+      "uk": "Сезонний календар і квитки на конкретну дату; місткість обмежена. Перевірте наявність квитків і заняття перед поїздкою.",
+      "sv": "Säsongskalender och datumstyrda biljetter; begränsad kapacitet. Kontrollera tillgänglighet och aktiviteter före resan.",
+      "da": "Sæsonkalender og datobestemte billetter; begrænset kapacitet. Tjek tilgængelighed og aktiviteter før afrejse."
+    },
+    "checked": "2026-10-16",
+    "image": "./experience-bjorneparken-fla.jpg",
+    "photoCredit": {
+      "authorPlain": "Chell Hill",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:2012-07_Bj%C3%B8rneparken_02.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "zoo",
+    "hoursNote": {
+      "nb": "Sesongkalender og daterte billetter; kapasiteten er begrenset. Sjekk tilgjengelighet og aktiviteter før avreise.",
+      "en": "Seasonal calendar and dated tickets; capacity is limited. Check availability and activities before travelling.",
+      "uk": "Сезонний календар і квитки на конкретну дату; місткість обмежена. Перевірте наявність квитків і заняття перед поїздкою.",
+      "sv": "Säsongskalender och datumstyrda biljetter; begränsad kapacitet. Kontrollera tillgänglighet och aktiviteter före resan.",
+      "da": "Sæsonkalender og datobestemte billetter; begrænset kapacitet. Tjek tilgængelighed og aktiviteter før afrejse."
+    },
+    "region": "Flå · Hallingdal",
+    "town": "Flå",
+    "source": "https://bjorneparken.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Bj%C3%B8rneparken%2C%20Vikberget%2C%203539%20Fl%C3%A5%2C%20Norway%2C%20Fl%C3%A5%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./experience-bjorneparken-fla.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:2012-07_Bj%C3%B8rneparken_02.jpg",
+        "credit": "Chell Hill",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:2012-07_Bj%C3%B8rneparken_02.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "norsk-skogmuseum",
+    "name": "Norsk skogmuseum",
+    "address": "Solørvegen 151, 2407 Elverum, Norway",
+    "routes": [
+      "east"
+    ],
+    "website": "https://skogmus.no/",
+    "sources": [
+      "https://skogmus.no/kontakt-oss",
+      "https://skogmus.no/faste-utstillinger",
+      "https://skogmus.no/utstillinger",
+      "https://skogmus.no/sommer-pa-museet"
+    ],
+    "area": "Elverum · Glomma",
+    "category": "rest",
+    "description": {
+      "nb": "Et museum om skogbruk, jakt, fiske og naturmangfold, med ferskvannsakvarium og uteområde ved Glomma. En opplevelse langs østlige ruter gjennom Elverum.",
+      "en": "A museum about forestry, hunting, fishing and biodiversity, with a freshwater aquarium and outdoor grounds by the Glomma. An experience on eastern routes through Elverum.",
+      "uk": "Музей лісового господарства, полювання, рибальства й біорізноманіття з прісноводним акваріумом і територією біля Glomma. Зупинка на східних маршрутах через Elverum.",
+      "sv": "Ett museum om skogsbruk, jakt, fiske och biologisk mångfald, med sötvattensakvarium och utomhusområde vid Glomma. En upplevelse längs östliga rutter genom Elverum.",
+      "da": "Et museum om skovbrug, jagt, fiskeri og biodiversitet med ferskvandsakvarium og udeareal ved Glomma. En oplevelse på østlige ruter gennem Elverum."
+    },
+    "season": {
+      "nb": "Sommerprogram, demonstrasjoner og barneaktiviteter varierer med dato og bemanning. Sjekk åpningstider og særarrangementer hos museet.",
+      "en": "Summer programmes, demonstrations and children’s activities vary by date and staffing. Check opening hours and special events with the museum.",
+      "uk": "Літня програма, демонстрації й дитячі заняття залежать від дати та персоналу. Перевірте години роботи й спеціальні заходи в музеї.",
+      "sv": "Sommarprogram, demonstrationer och barnaktiviteter varierar med datum och bemanning. Kontrollera öppettider och specialevenemang hos museet.",
+      "da": "Sommerprogram, demonstrationer og børneaktiviteter afhænger af dato og bemanding. Tjek åbningstider og særlige arrangementer hos museet."
+    },
+    "checked": "2026-10-16",
+    "image": "./experience-norsk-skogmuseum.jpg",
+    "photoCredit": {
+      "authorPlain": "ToB",
+      "license": "Public domain",
+      "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Norsk_Skogmuseum.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "museum",
+    "hoursNote": {
+      "nb": "Sommerprogram, demonstrasjoner og barneaktiviteter varierer med dato og bemanning. Sjekk åpningstider og særarrangementer hos museet.",
+      "en": "Summer programmes, demonstrations and children’s activities vary by date and staffing. Check opening hours and special events with the museum.",
+      "uk": "Літня програма, демонстрації й дитячі заняття залежать від дати та персоналу. Перевірте години роботи й спеціальні заходи в музеї.",
+      "sv": "Sommarprogram, demonstrationer och barnaktiviteter varierar med datum och bemanning. Kontrollera öppettider och specialevenemang hos museet.",
+      "da": "Sommerprogram, demonstrationer og børneaktiviteter afhænger af dato og bemanding. Tjek åbningstider og særlige arrangementer hos museet."
+    },
+    "region": "Elverum · Glomma",
+    "town": "Elverum",
+    "source": "https://skogmus.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Norsk%20skogmuseum%2C%20Sol%C3%B8rvegen%20151%2C%202407%20Elverum%2C%20Norway%2C%20Elverum%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./experience-norsk-skogmuseum.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Norsk_Skogmuseum.jpg",
+        "credit": "ToB",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Norsk_Skogmuseum.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "polaria-tromso",
+    "name": "Polaria",
+    "address": "Hjalmar Johansens gate 12, 9007 Tromsø, Norway",
+    "routes": [
+      "arctic"
+    ],
+    "website": "https://polaria.no/",
+    "sources": [
+      "https://polaria.no/",
+      "https://polaria.no/salgsbetingelser/"
+    ],
+    "area": "Tromsø · Arctic Norway",
+    "category": "rest",
+    "description": {
+      "nb": "Et arktisk opplevelsessenter og akvarium i Tromsø med marine dyr og formidling om naturen i nord. En byopplevelse som kan planlegges separat fra lengre naturutflukter.",
+      "en": "An Arctic experience centre and aquarium in Tromsø, with marine animals and interpretation of northern nature. A city visit that can be planned separately from longer nature excursions.",
+      "uk": "Арктичний пізнавальний центр і акваріум у Tromsø з морськими тваринами та розповідями про північну природу. Міське відвідування можна планувати окремо від далеких природних екскурсій.",
+      "sv": "Ett arktiskt upplevelsecenter och akvarium i Tromsø med marina djur och kunskap om nordlig natur. Ett stadsbesök som kan planeras separat från längre naturutflykter.",
+      "da": "Et arktisk oplevelsescenter og akvarium i Tromsø med havdyr og formidling om nordlig natur. Et bybesøg kan planlægges særskilt fra længere naturudflugter."
+    },
+    "season": {
+      "nb": "Sjekk ordinære åpningstider og program. Tilleggsopplevelser har egne billetter, alderskrav og kapasitetsgrenser.",
+      "en": "Check general opening hours and the programme. Extra experiences have separate tickets, age requirements and capacity limits.",
+      "uk": "Перевірте загальні години роботи й програму. Додаткові враження мають окремі квитки, вікові вимоги та обмеження кількості учасників.",
+      "sv": "Kontrollera ordinarie öppettider och program. Tilläggsupplevelser har egna biljetter, ålderskrav och deltagargränser.",
+      "da": "Tjek almindelige åbningstider og program. Ekstra oplevelser har særskilte billetter, alderskrav og deltagergrænser."
+    },
+    "checked": "2026-10-16",
+    "image": "./experience-polaria-tromso.jpg",
+    "photoCredit": {
+      "authorPlain": "Lee Vilenski",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Polaria_(62458).jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "aquarium",
+    "hoursNote": {
+      "nb": "Sjekk ordinære åpningstider og program. Tilleggsopplevelser har egne billetter, alderskrav og kapasitetsgrenser.",
+      "en": "Check general opening hours and the programme. Extra experiences have separate tickets, age requirements and capacity limits.",
+      "uk": "Перевірте загальні години роботи й програму. Додаткові враження мають окремі квитки, вікові вимоги та обмеження кількості учасників.",
+      "sv": "Kontrollera ordinarie öppettider och program. Tilläggsupplevelser har egna biljetter, ålderskrav och deltagargränser.",
+      "da": "Tjek almindelige åbningstider og program. Ekstra oplevelser har særskilte billetter, alderskrav og deltagergrænser."
+    },
+    "region": "Tromsø · Arctic Norway",
+    "town": "Tromsø",
+    "source": "https://polaria.no/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Polaria%2C%20Hjalmar%20Johansens%20gate%2012%2C%209007%20Troms%C3%B8%2C%20Norway%2C%20Troms%C3%B8%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./experience-polaria-tromso.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Polaria_(62458).jpg",
+        "credit": "Lee Vilenski",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Polaria_(62458).jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "dovrefjell-wild-reindeer-centre",
+    "name": "Besøkssenter villrein / viewpoint SNØHETTA",
+    "address": "Norsk villreinsenter Nord: Hjerkinnhusvegen 33, 2661 Hjerkinn, Norway. Viewpoint is reached from a separate car park and a 1.5 km walking trail; this postal/centre address is not the viewpoint itself.",
+    "routes": [
+      "east",
+      "sunnmore"
+    ],
+    "website": "https://villrein.no/besokssenter/",
+    "sources": [
+      "https://villrein.no/besokssenter/",
+      "https://villrein.no/norsk-villreinsenter/"
+    ],
+    "area": "Hjerkinn · Dovrefjell",
+    "category": "rest",
+    "description": {
+      "nb": "Besøkssenter om villrein og naturvern, med en separat vandring til paviljongen viewpoint SNØHETTA. Senteradressen er ikke paviljongen eller turparkeringen. Dette er en naturopplevelse, ikke en fornøyelsespark.",
+      "en": "A visitor centre about wild reindeer and conservation, with a separate walk to the viewpoint SNØHETTA pavilion. The centre address is not the pavilion or trail car park. This is a nature experience, not an amusement park.",
+      "uk": "Центр про дикого північного оленя й охорону природи з окремою прогулянкою до павільйону viewpoint SNØHETTA. Адреса центру не є адресою павільйону чи парковки стежки. Це природна програма, а не парк розваг.",
+      "sv": "Ett besökscenter om vildren och naturvård, med en separat vandring till paviljongen viewpoint SNØHETTA. Centrets adress är inte paviljongen eller vandringsparkeringen. Detta är en naturupplevelse, inte en nöjespark.",
+      "da": "Et besøgscenter om vilde rensdyr og naturbeskyttelse med en særskilt gåtur til pavillonen viewpoint SNØHETTA. Centrets adresse er ikke pavillonen eller stiens parkeringsplads. Dette er en naturoplevelse, ikke en forlystelsespark."
+    },
+    "season": {
+      "nb": "Kontrollert 16.10.2026: det offisielle nettstedet melder at viewpoint er stengt til juni 2027. Normalt sesongåpent og væravhengig; 1,5 km gange fra egen parkering. Naturhensyn kan gi stenging. Sjekk oppdatert status, adkomst og turregler før avreise.",
+      "en": "Checked 16 October 2026: the official site reports the viewpoint closed until June 2027. Normally seasonal and weather-dependent; a 1.5 km walk from a separate car park. Wildlife protection may cause closures. Check current status, access and trail rules before travelling.",
+      "uk": "Перевірено 16.10.2026: офіційний сайт повідомляє, що viewpoint закрито до червня 2027 року. Зазвичай працює сезонно й залежить від погоди; 1,5 км пішки від окремої парковки. Можливі закриття задля охорони тварин. Перевірте актуальний стан, доступ і правила стежки перед поїздкою.",
+      "sv": "Kontrollerat 16.10.2026: den officiella webbplatsen anger att viewpoint är stängt till juni 2027. Normalt säsongsöppet och väderberoende; 1,5 km promenad från separat parkering. Djurskydd kan medföra stängning. Kontrollera aktuell status, tillfart och vandringsregler före resan.",
+      "da": "Kontrolleret 16.10.2026: det officielle websted oplyser, at viewpoint er lukket til juni 2027. Normalt sæsonåbent og vejrafhængigt; 1,5 km til fods fra særskilt parkering. Naturbeskyttelse kan medføre lukning. Tjek aktuel status, adgang og stiregler før afrejse."
+    },
+    "checked": "2026-10-16",
+    "image": "./experience-dovrefjell-wild-reindeer-centre.jpg",
+    "photoCredit": {
+      "authorPlain": "Lars Rogstad",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "commonsPage": "https://commons.wikimedia.org/wiki/File:Viewpoint_Sn%C3%B8hetta.jpg",
+      "changes": "Wikimedia-generated thumbnail; no further image edits"
+    },
+    "subcategory": "nature",
+    "hoursNote": {
+      "nb": "Kontrollert 16.10.2026: det offisielle nettstedet melder at viewpoint er stengt til juni 2027. Normalt sesongåpent og væravhengig; 1,5 km gange fra egen parkering. Naturhensyn kan gi stenging. Sjekk oppdatert status, adkomst og turregler før avreise.",
+      "en": "Checked 16 October 2026: the official site reports the viewpoint closed until June 2027. Normally seasonal and weather-dependent; a 1.5 km walk from a separate car park. Wildlife protection may cause closures. Check current status, access and trail rules before travelling.",
+      "uk": "Перевірено 16.10.2026: офіційний сайт повідомляє, що viewpoint закрито до червня 2027 року. Зазвичай працює сезонно й залежить від погоди; 1,5 км пішки від окремої парковки. Можливі закриття задля охорони тварин. Перевірте актуальний стан, доступ і правила стежки перед поїздкою.",
+      "sv": "Kontrollerat 16.10.2026: den officiella webbplatsen anger att viewpoint är stängt till juni 2027. Normalt säsongsöppet och väderberoende; 1,5 km promenad från separat parkering. Djurskydd kan medföra stängning. Kontrollera aktuell status, tillfart och vandringsregler före resan.",
+      "da": "Kontrolleret 16.10.2026: det officielle websted oplyser, at viewpoint er lukket til juni 2027. Normalt sæsonåbent og vejrafhængigt; 1,5 km til fods fra særskilt parkering. Naturbeskyttelse kan medføre lukning. Tjek aktuel status, adgang og stiregler før afrejse."
+    },
+    "region": "Hjerkinn · Dovrefjell",
+    "town": "Hjerkinn",
+    "source": "https://villrein.no/besokssenter/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Bes%C3%B8kssenter%20villrein%20%2F%20viewpoint%20SN%C3%98HETTA%2C%20Norsk%20villreinsenter%20Nord%3A%20Hjerkinnhusvegen%2033%2C%202661%20Hjerkinn%2C%20Norway.%20Viewpoint%20is%20reached%20from%20a%20separate%20car%20park%20and%20a%201.5%20km%20walking%20trail%3B%20this%20postal%2Fcentre%20address%20is%20not%20the%20viewpoint%20itself.%2C%20Hjerkinn%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./experience-dovrefjell-wild-reindeer-centre.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Viewpoint_Sn%C3%B8hetta.jpg",
+        "credit": "Lars Rogstad",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ],
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Viewpoint_Sn%C3%B8hetta.jpg",
+    "photoCaption": ""
+  },
+  {
+    "id": "granavollen-rest",
+    "name": "Granavollen · Søsterkirkene",
+    "category": "rest",
+    "region": "Hadeland",
+    "town": "Granavollen",
+    "address": "Granavollen, 2750 Gran, Norway",
+    "latitude": 60.36677,
+    "longitude": 10.5295,
+    "website": "https://www.visitnorway.com/places-to-go/eastern-norway/hadeland/",
+    "source": "https://www.visitnorway.com/places-to-go/eastern-norway/hadeland/",
+    "checked": "2026-10-17",
+    "image": "./images/granavollen-sister-churches.webp",
+    "description": {
+      "nb": "De historiske Søsterkirkene og en rolig landsbyvandring på en kort tur fra Gran.",
+      "en": "The historic Sister Churches and a village walk on a short trip from Gran.",
+      "uk": "Історичні церкви-сестри та прогулянка селом неподалік від Gran.",
+      "sv": "De historiska systerkyrkorna och en byvandring på en kort tur från Gran.",
+      "da": "De historiske søsterkirker og en landsbyvandring på en kort tur fra Gran."
+    },
+    "hoursNote": {
+      "nb": "Følg lokale regler på området. Åpningstider inne i kirkene er ikke bekreftet; sjekk før besøket.",
+      "en": "Respect local rules on the grounds. Interior opening hours have not been verified; check before visiting.",
+      "uk": "Дотримуйтеся місцевих правил на території. Години відвідування інтер’єрів не підтверджені — уточніть перед візитом.",
+      "sv": "Följ lokala regler på området. Öppettider inne i kyrkorna är inte bekräftade; kontrollera före besöket.",
+      "da": "Følg lokale regler på området. Åbningstider inde i kirkerne er ikke bekræftet; tjek før besøget."
+    },
+    "gallery": [
+      {
+        "src": "./images/granavollen-sister-churches.webp",
+        "kind": "place",
+        "credit": "Sven Rosborn",
+        "license": "Public domain",
+        "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:Gran1.jpg"
+      }
+    ],
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.36677%2C10.5295",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Gran1.jpg",
+    "photoCaption": ""
+  }
+]

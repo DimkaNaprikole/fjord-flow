@@ -1,0 +1,325 @@
+[
+  {
+    "id": "tim-wendelboe-oslo",
+    "name": "Tim Wendelboe Espresso Bar",
+    "category": "cafe",
+    "region": "Oslo",
+    "town": "Oslo",
+    "address": "Grüners gate 1, 0552 Oslo",
+    "website": "https://timwendelboe.no/pages/contact-us",
+    "phone": "+4740004062",
+    "description": {
+      "nb": "Espressobar på Grünerløkka med kaffe fra eget brenneri. Et stopp for kaffe og smaking; dette er ikke en fullservice-restaurant.",
+      "en": "A Grünerløkka espresso bar serving coffee from its own roastery. A stop for coffee and tasting rather than a full restaurant meal.",
+      "uk": "Еспресо-бар на Grünerløkka з кавою власного обсмаження. Зупинка для кави й дегустації, а не повноцінного ресторанного обіду.",
+      "sv": "Espressobar på Grünerløkka med kaffe från eget rosteri. Ett stopp för kaffe och provsmakning snarare än en restaurangmåltid.",
+      "da": "Espressobar på Grünerløkka med kaffe fra eget risteri. Et stop til kaffe og smagning frem for et helt restaurantmåltid."
+    },
+    "hoursNote": {
+      "nb": "Publiserte tider kan endres på helligdager. Se operatørens nettside før avreise.",
+      "en": "Published hours may change on holidays. Check the operator’s website before travelling.",
+      "uk": "У святкові дні години можуть змінюватися. Перед поїздкою перевірте сайт закладу.",
+      "sv": "Publicerade tider kan ändras på helgdagar. Kontrollera verksamhetens webbplats före resan.",
+      "da": "Offentliggjorte tider kan ændres på helligdage. Tjek stedets hjemmeside før afrejse."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/tim-wendelboe.webp",
+        "kind": "facade",
+        "credit": "Tim Wendelboe · official website",
+        "source": "https://timwendelboe.no/pages/contact-us",
+        "original": "https://timwendelboe.no/cdn/shop/files/tw-espresso-bar-exterior.webp?v=1757874304&width=1000",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://timwendelboe.no/pages/contact-us",
+      "sourceLabel": "Tim Wendelboe",
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ]
+      ],
+      "publishedText": "Weekdays: 08:30–18:00; Saturdays & Sundays: 11:00–17:00"
+    },
+    "image": "./images/catalog/tim-wendelboe.webp",
+    "imageSource": "https://timwendelboe.no/pages/contact-us",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Tim Wendelboe · official website",
+      "en": "Photo from the operator’s website · Tim Wendelboe · official website",
+      "uk": "Фото із сайту закладу · Tim Wendelboe · official website",
+      "sv": "Foto från verksamhetens webbplats · Tim Wendelboe · official website",
+      "da": "Foto fra stedets hjemmeside · Tim Wendelboe · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://timwendelboe.no/pages/contact-us",
+    "photoVerified": true,
+    "coordinatesNote": "Use the published address for directions; exact coordinates have not been assigned."
+  },
+  {
+    "id": "dromedar-nordre-trondheim",
+    "name": "Dromedar Nordre",
+    "category": "cafe",
+    "region": "Trøndelag",
+    "town": "Trondheim",
+    "address": "Nordre gate 2, 7011 Trondheim",
+    "latitude": 63.43084605760483,
+    "longitude": 10.397489205732526,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nordre%20gate%202%20Trondheim&treffPerSide=3",
+    "website": "https://dromedar.no/kaffebarer/",
+    "phone": "+4790197835",
+    "description": {
+      "nb": "Kaffebar i Nordre gate i Trondheim sentrum. Et innendørs kaffestopp når du utforsker byen til fots.",
+      "en": "A coffee bar on Nordre gate in central Trondheim. An indoor coffee stop while exploring the city on foot.",
+      "uk": "Кав’ярня на Nordre gate у центрі Тронгейма. Зупинка на каву в приміщенні під час пішої прогулянки містом.",
+      "sv": "Kaffebar på Nordre gate i centrala Trondheim. En kaffepaus inomhus under en promenad genom staden.",
+      "da": "Kaffebar på Nordre gate i det centrale Trondheim. En indendørs kaffepause på en gåtur gennem byen."
+    },
+    "hoursNote": {
+      "nb": "Publiserte tider kan endres på helligdager. Se operatørens nettside før avreise.",
+      "en": "Published hours may change on holidays. Check the operator’s website before travelling.",
+      "uk": "У святкові дні години можуть змінюватися. Перед поїздкою перевірте сайт закладу.",
+      "sv": "Publicerade tider kan ändras på helgdagar. Kontrollera verksamhetens webbplats före resan.",
+      "da": "Offentliggjorte tider kan ændres på helligdage. Tjek stedets hjemmeside før afrejse."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/dromedar-nordre.jpeg",
+        "kind": "cafeInside",
+        "credit": "Dromedar Kaffebar · official website",
+        "source": "https://dromedar.no/kaffebarer/",
+        "original": "https://dromedar.no/wp-content/uploads/2026/02/Dromedar-kaffebar_nordre-1024x1024.jpeg",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://dromedar.no/kaffebarer/",
+      "sourceLabel": "Dromedar Kaffebar",
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ]
+      ],
+      "publishedText": "Hverdager 07–19; lørdag 09–18; søndag 11–17"
+    },
+    "image": "./images/catalog/dromedar-nordre.jpeg",
+    "imageSource": "https://dromedar.no/kaffebarer/",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Dromedar Kaffebar · official website",
+      "en": "Photo from the operator’s website · Dromedar Kaffebar · official website",
+      "uk": "Фото із сайту закладу · Dromedar Kaffebar · official website",
+      "sv": "Foto från verksamhetens webbplats · Dromedar Kaffebar · official website",
+      "da": "Foto fra stedets hjemmeside · Dromedar Kaffebar · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://dromedar.no/kaffebarer/",
+    "photoVerified": true,
+    "coordinatesNote": "Kartverket address point; entrance/pier position may differ."
+  },
+  {
+    "id": "oslo-badstuforening-langkaia",
+    "name": "Oslo Badstuforening · Langkaia",
+    "category": "sauna",
+    "region": "Oslo",
+    "town": "Oslo",
+    "address": "Langkaia 1, 0150 Oslo",
+    "latitude": 59.90760281927637,
+    "longitude": 10.746880614147818,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Langkaia%201%20Oslo&treffPerSide=3",
+    "website": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+    "bookingUrl": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+    "description": {
+      "nb": "Flytende badstuer i sentrum med utsikt mot Operaen. Velg felles eller privat økt. Adkomst via trapper; ta med egen hengelås.",
+      "en": "Floating city-centre saunas facing the Opera House. Choose a shared or private session. Access is via stairs; bring your own padlock.",
+      "uk": "Плавучі сауни в центрі з видом на Оперу. Є спільні та приватні сеанси. Вхід сходами; візьміть власний замок для шафки.",
+      "sv": "Flytande bastur i centrum med utsikt mot Operan. Välj gemensam eller privat tid. Tillträde via trappor; ta med eget hänglås.",
+      "da": "Flydende saunaer i centrum med udsigt mod Operaen. Vælg fælles eller privat tid. Adgang via trapper; medbring egen hængelås."
+    },
+    "hoursNote": {
+      "nb": "Foreningen oppgir 07–23 hver dag. Ledige økter og eventuelt vedlikehold vises i bestillingen.",
+      "en": "The association publishes daily hours of 07:00–23:00. Available sessions and closures are shown in booking.",
+      "uk": "Асоціація вказує щодня 07:00–23:00. Доступні сеанси та закриття дивіться під час бронювання.",
+      "sv": "Föreningen anger dagligen 07–23. Lediga tider och stängningar visas i bokningen.",
+      "da": "Foreningen angiver dagligt 07–23. Ledige tider og lukninger vises i bookingen."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/langkaia.jpg",
+        "kind": "sauna",
+        "credit": "Oslo Badstuforening · official website",
+        "source": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+        "original": "https://oslobadstuforening.no/wp-content/uploads/2026/05/langkaia_1.jpg",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://oslobadstuforening.no/",
+      "sourceLabel": "Oslo Badstuforening",
+      "timeZone": "Europe/Oslo",
+      "publishedText": "Åpent hver dag fra 7 til 23. Booking availability applies."
+    },
+    "image": "./images/catalog/langkaia.jpg",
+    "imageSource": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Oslo Badstuforening · official website",
+      "en": "Photo from the operator’s website · Oslo Badstuforening · official website",
+      "uk": "Фото із сайту закладу · Oslo Badstuforening · official website",
+      "sv": "Foto från verksamhetens webbplats · Oslo Badstuforening · official website",
+      "da": "Foto fra stedets hjemmeside · Oslo Badstuforening · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
+    "photoVerified": true,
+    "coordinatesNote": "Kartverket address point; entrance/pier position may differ."
+  },
+  {
+    "id": "fjordsauna-flam",
+    "name": "FjordSauna Flåm",
+    "category": "sauna",
+    "region": "Vestland",
+    "town": "Flåm",
+    "address": "Kaiplass 10 og 11, Flåm hamn, 5743 Flåm",
+    "website": "https://www.fjordsauna.com/fjordsauna-flaam",
+    "bookingUrl": "https://book.fjordsauna.com/en",
+    "phone": "+4796005305",
+    "description": {
+      "nb": "To flytende badstuer ved Flåm havn, hver med plass til opptil 12. Felles eller privat økt; store vinduer vender mot Aurlandsfjorden.",
+      "en": "Two floating saunas in Flåm harbour, each seating up to 12. Shared or private sessions with large windows facing the Aurlandsfjord.",
+      "uk": "Дві плавучі сауни в гавані Флома, кожна до 12 осіб. Спільні або приватні сеанси з великими вікнами на Aurlandsfjord.",
+      "sv": "Två flytande bastur i Flåms hamn, vardera för upp till 12 personer. Gemensamma eller privata pass med stora fönster mot Aurlandsfjorden.",
+      "da": "To flydende saunaer i Flåms havn, hver med plads til op til 12. Fælles eller private sessioner med store vinduer mod Aurlandsfjorden."
+    },
+    "hoursNote": {
+      "nb": "Åpent daglig hele året; klokkeslett varierer med sesongen. Forhåndsbestill og se tilgjengelige tider i kalenderen.",
+      "en": "Open daily year-round; session times vary by season. Book ahead and check the calendar for availability.",
+      "uk": "Працює щодня цілий рік; час сеансів залежить від сезону. Бронюйте заздалегідь і перевіряйте календар.",
+      "sv": "Öppet dagligen året runt; tider varierar med säsongen. Boka i förväg och kontrollera kalendern.",
+      "da": "Åbent dagligt hele året; tider varierer med sæsonen. Bestil på forhånd og tjek kalenderen."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/fjordsauna-flam.jpg",
+        "kind": "sauna",
+        "credit": "FjordSauna · official website",
+        "source": "https://www.fjordsauna.com/fjordsauna-flaam",
+        "original": "https://images.squarespace-cdn.com/content/v1/64a6be888d574a093bbcdba7/eac09432-0118-482c-a12d-362a94f278e7/resized+Plakat+foto-04.jpg?format=1000w",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      },
+      {
+        "src": "./images/catalog/fjordsauna-inside.jpg",
+        "kind": "sauna",
+        "credit": "Liv Einemo / FjordSauna",
+        "source": "https://www.fjordsauna.com/fjordsauna-flaam",
+        "original": "https://images.squarespace-cdn.com/content/v1/64a6be888d574a093bbcdba7/50854210-a152-46d3-9f9f-8f9eb5a5f860/%40Liv_Einemo+04.jpg?format=1000w",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://www.fjordsauna.com/fjordsauna-flaam",
+      "sourceLabel": "FjordSauna",
+      "timeZone": "Europe/Oslo",
+      "publishedText": "Open daily, all year round. Opening times vary by season — check the booking calendar."
+    },
+    "image": "./images/catalog/fjordsauna-flam.jpg",
+    "imageSource": "https://www.fjordsauna.com/fjordsauna-flaam",
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · FjordSauna · official website",
+      "en": "Photo from the operator’s website · FjordSauna · official website",
+      "uk": "Фото із сайту закладу · FjordSauna · official website",
+      "sv": "Foto från verksamhetens webbplats · FjordSauna · official website",
+      "da": "Foto fra stedets hjemmeside · FjordSauna · official website"
+    },
+    "checked": "2026-10-17",
+    "source": "https://www.fjordsauna.com/fjordsauna-flaam",
+    "photoVerified": true,
+    "coordinatesNote": "Use the published address for directions; exact coordinates have not been assigned."
+  }
+]

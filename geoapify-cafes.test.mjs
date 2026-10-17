@@ -53,3 +53,15 @@ const regular=regularResults.find(c=>c.curatedId==='hadeland-gjestegard-jaren');
 const lupro=regularResults.find(c=>c.curatedId==='luprohjornet-gran');assert(lupro.distanceMeters<500);assert.equal(lupro.photos.length,3);assert.match(lupro.hours.join('; '),/Mo,We,Fr 10:00-15:30/);assert(!lupro.hours.join('; ').includes('Su off'),'No invented Sunday closing');
 for(const id of ['luprohjornet-gran','hadeland-gjestegard-jaren'])for(const photo of granCatalogue.find(c=>c.id===id).gallery)assert(readFileSync(new URL(photo.src,import.meta.url)).length>1000);
 console.log('PASS: central Gran and nearby year-round options prioritized, exact regular hours, photos, no invented Sunday schedule.');
+
+const localOnly=setup({enabled:false,curated:[verifiedCafe,{...verifiedCafe,id:'without-photo',name:'No photograph',gallery:[]},{...verifiedCafe,id:'distant',latitude:62}]});
+assert.equal(localOnly.calls.length,0);
+const localResults=await localOnly.api.searchLocal({center:{lat:60.45,lng:10.5},radiusMeters:5000});
+assert.equal(localResults.length,2,'Local named venues do not require provider data or a photo');
+assert(localResults.every(c=>c.catalogue&&c.openNow===null&&c.distanceMeters<=5000));
+assert.equal(localResults.find(c=>c.curatedId==='known').hours.length,7);
+assert.equal(localOnly.calls.length,1,'One static catalogue fetch, no configuration or external APIs');
+assert.equal(localOnly.calls[0].url.href,'https://example.org/fjord-flow/cafes.json?v=6');
+await localOnly.api.searchLocal({center:{lat:60.45,lng:10.5}});
+assert.equal(localOnly.calls.length,1,'Catalogue reused for later local searches');
+console.log('PASS: local search uses only same-site catalogue, cached across searches; no Geoapify configuration, API, Commons or invented live status.');

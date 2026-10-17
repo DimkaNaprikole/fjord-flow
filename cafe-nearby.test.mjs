@@ -41,3 +41,18 @@ assert.match(markup,/www.openstreetmap.org\/node\/123/);assert.equal(geo.nodes.g
 geo.nodes.get('cafeNearbyForm').onsubmit({preventDefault(){}});geo.fail('RATE_LIMITED');await settle();assert.match(geo.nodes.get('cafeNearbyStatus').textContent,/free search limit/);
 const google=setup();await settle();google.events.get('fjord:nearby-cafes')({detail:{lat:60,lng:10,name:'Start'}});google.nodes.get('cafeNearbyForm').onsubmit({preventDefault(){}});google.finish([{id:'internal',googlePlaceId:'ChIJ-valid',name:'Café',lat:60,lng:10}]);await settle();assert.match(google.nodes.get('cafeNearbyResults').innerHTML,/destination_place_id=ChIJ-valid/);
 console.log('PASS: Geoapify unknown hours, source and website links, no Google ID confusion, bounded-provider filter, rate-limit message, Google explicit place ID.');
+
+let localSearchCount=0;
+const localWidget=setup({id:'geoapify',supportsOpenNow:false,searchLocal:async()=>{localSearchCount++;return[{id:'curated:test',catalogue:true,name:'Local café',lat:60.45,lng:10.5,hours:['Mo-Fr 09:00-17:00'],hoursChecked:'2026-10-17'}]}});
+await settle();
+assert.equal(localSearchCount,0,'Mount never starts a local or online search');
+assert.match(localWidget.nodes.get('cafeNearby').innerHTML,/Search more cafés online/);
+assert.match(localWidget.nodes.get('cafeNearby').innerHTML,/Catalogue search and photographs load from this site/);
+localWidget.events.get('fjord:nearby-cafes')({detail:{lat:60.45,lng:10.5,name:'Gran'}});
+localWidget.nodes.get('cafeNearbyForm').onsubmit({preventDefault(){}});await settle();
+assert.equal(localSearchCount,1);assert.equal(localWidget.searches,0,'Default search never calls external provider');
+assert.match(localWidget.nodes.get('cafeNearbyResults').innerHTML,/Local café/);
+assert.match(localWidget.nodes.get('cafeNearbyAttribution').innerHTML,/FLOW catalogue/);
+localWidget.nodes.get('cafeNearbyOnline').onclick();assert.equal(localWidget.searches,1,'Only explicit secondary action uses online provider');
+localWidget.finish([]);await settle();
+console.log('PASS: catalogue default, local attribution/privacy, explicit secondary online action only.');

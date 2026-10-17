@@ -151,7 +151,8 @@
       fjord: ['bergen', 'flam', 'stegastein', 'naeroyfjord'],
       sunnmore: ['rampestreken', 'trollstigen', 'geiranger', 'loen'],
       family: ['oslo'],
-      osterdalen: ['roros']
+      osterdalen: ['roros'],
+      hadeland: []
     };
     for (const [route, ids] of Object.entries(points)) {
       const button = document.querySelector(`[data-roadtrip="${route}"]`);
@@ -175,6 +176,7 @@
         pools.forEach(pool => { if (pool[i]) photos.push(pool[i]); });
       }
       if (extraId && experiencePhotos[extraId]) photos.unshift(experiencePhotos[extraId]);
+      if (route === 'hadeland') photos.unshift({image: './images/granavollen-sister-churches.webp', title: 'Granavollen · Søsterkirkene', author: 'Sven Rosborn', license: 'Public domain', licenseUrl: 'https://creativecommons.org/publicdomain/mark/1.0/', source: 'https://commons.wikimedia.org/wiki/File:Gran1.jpg'});
       if (!photos.length) continue;
       photos.forEach(credit);
       const viewport = document.createElement('div');

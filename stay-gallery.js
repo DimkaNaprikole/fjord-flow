@@ -9,7 +9,8 @@
     da: ['Åbn billedgalleri', 'Luk', 'Forrige billede', 'Næste billede', 'Forstør billedet', 'Tilpas billedet', 'Billedkilde', 'Billedet kunne ikke indlæses. Åbn billedkilden.', 'Hytter og omgivelser', 'Inde i hytten', 'Soveværelse', 'Sauna', 'Bad og indgang til saunaen', 'Udsigt', 'Terrasse', 'Vildmarksbad']
   };
   Object.entries(words).forEach(([lang, row]) => row.push(...{"nb":["Kafeen utenfra","Inne i kafeen","Kaffe og bakverk"],"en":["Café exterior","Inside the café","Coffee and baked treats"],"uk":["Кав’ярня зовні","Усередині кав’ярні","Кава та випічка"],"sv":["Kaféets utsida","Inne i kaféet","Kaffe och bakverk"],"da":["Caféen udefra","Inde i caféen","Kaffe og bagværk"]}[lang]));
-  const kinds = {facade: 16, cafeInside: 17, food: 18, grounds: 8, inside: 9, bedroom: 10, sauna: 11, bathSauna: 12, view: 13, terrace: 14, hotTub: 15};
+  Object.entries(words).forEach(([lang,row]) => row.push({nb:'Stedet og omgivelsene',en:'Place and surroundings',uk:'Місце та краєвиди',sv:'Platsen och omgivningen',da:'Stedet og omgivelserne'}[lang]));
+  const kinds = {place: 19, facade: 16, cafeInside: 17, food: 18, grounds: 8, inside: 9, bedroom: 10, sauna: 11, bathSauna: 12, view: 13, terrace: 14, hotTub: 15};
   const language = () => window.FjordI18n?.language || document.documentElement.lang;
   const w = () => words[language()] || words.nb;
   const el = (tag, cls, text) => { const e = document.createElement(tag); e.className = cls || ''; if (text) e.textContent = text; return e; };
@@ -90,12 +91,14 @@
         const img = el('img'); img.src = valid(p.src); img.alt = ''; img.loading = 'lazy'; b.append(img); return b;
       }));
       previous.hidden = next.hidden = photos.length < 2;
-      venueActions.replaceChildren(); venueActions.hidden = !venue.bookingUrl;
+      venueActions.replaceChildren(); venueActions.hidden = !venue.website || Boolean(venue.openingHours && !venue.bookingUrl);
       if (!venueActions.hidden) {
         const labels = {nb:['Nettsted','Bestill','Finn veien'],en:['Website','Book a stay','Get directions'],uk:['Сайт','Забронювати','Прокласти маршрут'],sv:['Webbplats','Boka','Hitta hit'],da:['Hjemmeside','Book','Find vej']}[language()] || ['Website','Book a stay','Get directions'];
+        if (venue.category && venue.category !== 'cabin') labels[1] = {nb:'Bestill',en:'Book',uk:'Забронювати',sv:'Boka',da:'Book'}[language()] || 'Book';
         venueActions.setAttribute('aria-label', venue.name);
-        const targets = [venue.website, venue.bookingUrl, 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(venue.routeQuery || venue.name + ', ' + venue.area + ', Norway')];
+        const targets = [venue.website, venue.bookingUrl, venue.directionsUrl || 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(venue.routeQuery || [venue.name,venue.address,venue.area,venue.town,'Norway'].filter(Boolean).join(', '))];
         targets.forEach((target, i) => {
+          if (venue.openingHours && i !== 1) return;
           let url; try { url = new URL(target); } catch { return; }
           if (url.protocol !== 'https:' || url.username || url.password) return;
           const a = el('a', i === 1 ? 'stay-gallery-book' : '', labels[i] + ' ↗');
