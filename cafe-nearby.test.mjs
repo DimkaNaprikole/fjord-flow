@@ -3,14 +3,14 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const source=readFileSync(new URL('./cafe-nearby.js',import.meta.url),'utf8');
 const settle=async()=>{for(let i=0;i<8;i++)await Promise.resolve()};
-function setup(){
- const nodes=new Map(),events=new Map(),calls=[];let nextTown=[],finishSearch,searches=0;
+function setup(provider={}){
+ const nodes=new Map(),events=new Map(),calls=[];let nextTown=[],finishSearch,rejectSearch,searches=0;
  class Node{set id(value){nodes.set(value,this)}constructor(){this.value='';this.children=[];this.dataset={};this.hidden=false}set innerHTML(html){this.html=html;for(const match of html.matchAll(/id="([^"]+)"/g))if(!nodes.has(match[1]))nodes.set(match[1],new Node())}get innerHTML(){return this.html||''}setAttribute(){}querySelector(){return null}querySelectorAll(){return []}prepend(){}insertAdjacentHTML(){}append(child){this.children.push(child)}replaceChildren(){this.children=[]}remove(){nodes.delete('cafeNearby')}}
  const section=new Node();nodes.set('cafeStops',section);
- const window={FjordI18n:{language:'en'},addEventListener:(name,fn)=>events.set(name,fn),FjordCafeProvider:{search:()=>{searches++;return new Promise(resolve=>finishSearch=resolve)}}};
+ const window={FjordI18n:{language:'en'},addEventListener:(name,fn)=>events.set(name,fn),FjordCafeProvider:{...provider,search:()=>{searches++;return new Promise((resolve,reject)=>{finishSearch=resolve;rejectSearch=reject})}}};
  const context={window,document:{getElementById:id=>nodes.get(id),createElement:()=>new Node(),body:new Node()},navigator:{},URL,URLSearchParams,AbortController,setTimeout,clearTimeout,MutationObserver:class{observe(){}},fetch:async(url,options)=>{calls.push({url,options});return{ok:true,json:async()=>String(url).includes('geonorge')?{navn:nextTown}:{destinations:[{id:'bergen',name:'Bergen',latitude:60.39,longitude:5.32}]}}}};
  vm.runInNewContext(source,context);
- return{nodes,events,calls,get searches(){return searches},setTown:r=>nextTown=r,finish:r=>finishSearch(r)};
+ return{nodes,events,calls,get searches(){return searches},setTown:r=>nextTown=r,finish:r=>finishSearch(r),fail:code=>rejectSearch({code})};
 }
 const f=setup();await settle();
 assert.equal(f.nodes.get('cafeNearbyPlace').value,'','No hidden Bergen default');
@@ -27,3 +27,17 @@ f.nodes.get('cafeNearbyTownResults').children[0].onclick();assert.match(f.nodes.
 const townCall=f.calls.find(c=>c.url.includes('geonorge'));assert.equal(new URL(townCall.url).searchParams.get('sok'),'Gran');assert.equal(townCall.options.credentials,'omit');
 f.setTown([]);f.nodes.get('cafeNearbyTown').value='Unknown';f.nodes.get('cafeNearbyTownForm').onsubmit({preventDefault(){}});await settle();assert.match(f.nodes.get('cafeNearbyTownStatus').textContent,/No locations/);
 console.log('PASS: explicit centre, no slideshow drift, no automatic Places requests, invalid coordinates, stale café response, explicit geocoded place selection, empty geocoder results.');
+const geo=setup({id:'geoapify',supportsOpenNow:false});await settle();
+assert.match(geo.nodes.get('cafeNearby').innerHTML,/cafe-open-filter" hidden/,'Unavailable open-now filter hidden');
+assert.match(geo.nodes.get('cafeNearby').innerHTML,/Geoapify/);
+geo.events.get('fjord:nearby-cafes')({detail:{lat:60.45,lng:10.5,name:'Gran'}});
+geo.nodes.get('cafeNearbyForm').onsubmit({preventDefault(){}});
+geo.finish([{id:'osm:node:123',name:'Real café',lat:60.46,lng:10.51,openNow:null,hours:['Mo-Fr 09:00-17:00'],website:'https://cafe.example/',sourceUrl:'https://www.openstreetmap.org/node/123'}]);await settle();
+let markup=geo.nodes.get('cafeNearbyResults').innerHTML;
+assert.doesNotMatch(markup,/destination_place_id/,'OSM IDs must never be passed as Google place IDs');
+assert.match(markup,/Opening status unknown/,'Raw hours do not establish open now');
+assert.match(markup,/hours may be outdated/);assert.match(markup,/cafe-hours" open/);assert.match(markup,/https:\/\/cafe.example\//);
+assert.match(markup,/www.openstreetmap.org\/node\/123/);assert.equal(geo.nodes.get('cafeNearbyFallback').hidden,true);
+geo.nodes.get('cafeNearbyForm').onsubmit({preventDefault(){}});geo.fail('RATE_LIMITED');await settle();assert.match(geo.nodes.get('cafeNearbyStatus').textContent,/free search limit/);
+const google=setup();await settle();google.events.get('fjord:nearby-cafes')({detail:{lat:60,lng:10,name:'Start'}});google.nodes.get('cafeNearbyForm').onsubmit({preventDefault(){}});google.finish([{id:'internal',googlePlaceId:'ChIJ-valid',name:'Café',lat:60,lng:10}]);await settle();assert.match(google.nodes.get('cafeNearbyResults').innerHTML,/destination_place_id=ChIJ-valid/);
+console.log('PASS: Geoapify unknown hours, source and website links, no Google ID confusion, bounded-provider filter, rate-limit message, Google explicit place ID.');
