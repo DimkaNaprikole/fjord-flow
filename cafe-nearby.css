@@ -19,3 +19,6 @@
 .cafe-open-filter[hidden]{display:none!important}.cafe-result-links{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.cafe-source{display:block;width:100%;font-size:11px;text-decoration:underline;text-underline-offset:3px;margin-top:9px}.cafe-hours-caution{color:#6d5d41;font-size:11px}.cafe-hours li{overflow-wrap:anywhere}.cafe-result-photo>img{cursor:default}
 
 .cafe-result-order{grid-column:1/-1;margin:4px 0 12px;font-size:12px;line-height:1.7;color:#365b62}.cafe-hours-source{font-size:11px;line-height:1.6}.cafe-hours-source a{color:inherit;text-underline-offset:3px}
+
+/* Keep square and portrait venue photos inside their fixed-height frame. */
+.cafe-result-photo{overflow:hidden}.cafe-result-photo>img{position:absolute;inset:0;min-width:0;min-height:0;width:100%;height:100%;object-fit:cover}
