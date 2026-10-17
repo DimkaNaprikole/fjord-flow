@@ -1,0 +1,29 @@
+/* Visitor email verification for Afonya. Passwords go only to Firebase Authentication. */
+const copy={
+  en:['Verify your email to talk to Afonya','Email','Password (at least 6 characters)','Create account','Sign in','We sent a verification link. Open it, then return and choose “I verified”.','I verified','Send the link again','Sign in if you already have an account.','Your email is not verified yet.','Could not confirm the email. Try again.'],
+  nb:['Bekreft e-posten for å snakke med Afonja','E-post','Passord (minst 6 tegn)','Opprett konto','Logg inn','Vi har sendt en bekreftelseslenke. Åpne den, kom tilbake og velg «Jeg har bekreftet».','Jeg har bekreftet','Send lenken på nytt','Logg inn hvis du allerede har en konto.','E-posten er ennå ikke bekreftet.','Kunne ikke bekrefte e-posten. Prøv igjen.'],
+  uk:['Підтвердьте пошту, щоб поговорити з Афонею','Електронна пошта','Пароль (щонайменше 6 символів)','Створити акаунт','Увійти','Ми надіслали посилання для підтвердження. Відкрийте його, поверніться й натисніть «Я підтвердив».','Я підтвердив','Надіслати посилання ще раз','Якщо маєте акаунт, увійдіть.','Пошта ще не підтверджена.','Не вдалося підтвердити пошту. Спробуйте ще раз.'],
+  sv:['Bekräfta din e-post för att prata med Afonja','E-post','Lösenord (minst 6 tecken)','Skapa konto','Logga in','Vi har skickat en verifieringslänk. Öppna den, återvänd och välj ”Jag har verifierat”.','Jag har verifierat','Skicka länken igen','Logga in om du redan har ett konto.','E-postadressen är inte verifierad ännu.','Kunde inte verifiera e-postadressen. Försök igen.'],
+  da:['Bekræft din e-mail for at tale med Afonja','E-mail','Adgangskode (mindst 6 tegn)','Opret konto','Log ind','Vi har sendt et bekræftelseslink. Åbn det, vend tilbage, og vælg »Jeg har bekræftet«.','Jeg har bekræftet','Send linket igen','Log ind, hvis du allerede har en konto.','E-mailen er endnu ikke bekræftet.','Kunne ikke bekræfte e-mailen. Prøv igen.']
+};
+const make=(tag,cls)=>{const element=document.createElement(tag);if(cls)element.className=cls;return element};
+const url=(apiKey,route)=>`https://identitytoolkit.googleapis.com/v1/accounts:${route}?key=${encodeURIComponent(apiKey)}`;
+async function call(apiKey,route,body){const response=await fetch(url(apiKey,route),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),credentials:'omit',cache:'no-store'});const data=await response.json();if(!response.ok)throw new Error(String(data.error?.message||'AUTH_FAILED').slice(0,100));return data}
+const lookup=(key,token)=>call(key,'lookup',{idToken:token}).then(value=>value.users?.[0]);
+const cacheKey='fjord-afonya-visitor';
+export async function ensureVerified(dialog,apiKey,language='en'){
+  const w=copy[language]||copy.en;
+  let previous=null;try{previous=JSON.parse(sessionStorage.getItem(cacheKey)||'null')}catch{}
+  if(previous?.idToken&&previous?.email){try{const profile=await lookup(apiKey,previous.idToken);if(profile?.emailVerified&&profile.email===previous.email)return previous}catch{sessionStorage.removeItem(cacheKey)}}
+  return new Promise(resolve=>{
+    const gate=make('section','fjord-ai-auth'),heading=make('h3'),form=make('form'),email=make('input'),password=make('input'),buttons=make('div','fjord-ai-auth-buttons'),create=make('button'),signIn=make('button'),verified=make('button'),resend=make('button'),message=make('p');
+    heading.textContent=w[0];email.type='email';email.required=true;email.autocomplete='email';email.placeholder=w[1];password.type='password';password.required=true;password.minLength=6;password.autocomplete='current-password';password.placeholder=w[2];create.type=signIn.type=verified.type=resend.type='button';create.textContent=w[3];signIn.textContent=w[4];verified.textContent=w[6];resend.textContent=w[7];verified.hidden=resend.hidden=true;message.setAttribute('role','status');message.textContent=w[8];buttons.append(create,signIn,verified,resend);form.append(email,password,buttons,message);gate.append(heading,form);dialog.insertBefore(gate,dialog.querySelector('.fjord-ai-log'));dialog.classList.add('fjord-ai-auth-pending');
+    let token=previous?.idToken||'',address=previous?.email||'';if(address)email.value=address;
+    const finish=result=>{dialog.removeEventListener('close',onClose);gate.remove();dialog.classList.remove('fjord-ai-auth-pending');resolve(result)};
+    const onClose=()=>finish(null);dialog.addEventListener('close',onClose);
+    async function authenticate(route){if(!form.reportValidity())return;create.disabled=signIn.disabled=true;message.textContent='…';try{const result=await call(apiKey,route,{email:email.value.trim(),password:password.value,returnSecureToken:true});token=result.idToken;address=result.email;sessionStorage.setItem(cacheKey,JSON.stringify({idToken:token,email:address}));password.value='';const profile=await lookup(apiKey,token);if(profile?.emailVerified){finish({idToken:token,email:address});return}if(route==='signUp')await sendVerification();else{verified.hidden=resend.hidden=false;message.textContent=w[9]}}catch(error){message.textContent=error.message==='EMAIL_EXISTS'?w[8]:w[10]+' '+error.message}finally{create.disabled=signIn.disabled=false}}
+    async function sendVerification(){if(!token)return;resend.disabled=true;try{await call(apiKey,'sendOobCode',{requestType:'VERIFY_EMAIL',idToken:token});verified.hidden=resend.hidden=false;message.textContent=w[5]}catch{message.textContent=w[10]}finally{resend.disabled=false}}
+    create.onclick=()=>void authenticate('signUp');signIn.onclick=()=>void authenticate('signInWithPassword');resend.onclick=()=>void sendVerification();verified.onclick=async()=>{message.textContent='…';try{const profile=await lookup(apiKey,token);if(profile?.emailVerified){finish({idToken:token,email:address});return}message.textContent=w[9]}catch{message.textContent=w[10]}};
+    email.focus({preventScroll:true});
+  })
+}
