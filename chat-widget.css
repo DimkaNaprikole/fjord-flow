@@ -50,3 +50,7 @@ dialog.fjord-helper.fjord-ai:not(:modal){position:fixed;inset:auto 16px 82px aut
 dialog.fjord-helper.fjord-ai.fjord-ai-auth-pending[open]{display:block;height:auto;overflow:auto}
 @media(max-width:500px){dialog.fjord-helper.fjord-ai:not(:modal){inset:auto 8px 76px auto;width:calc(100% - 16px);height:calc(100dvh - 92px);max-height:calc(100dvh - 92px);padding:12px!important;border-radius:18px}.fjord-ai .fjord-ai-portrait{margin-bottom:7px}}
 @media(max-height:520px){dialog.fjord-helper.fjord-ai[open]{height:calc(100dvh - 16px);max-height:calc(100dvh - 16px);bottom:8px;padding:10px!important}.fjord-ai .fjord-ai-portrait{min-height:26px;margin-bottom:4px}.fjord-ai .fjord-ai-portrait .fjord-ai-pet{display:none}.fjord-ai .fjord-ai-portrait h2{font-size:18px}.fjord-ai .fjord-ai-compose{margin-top:4px;padding-top:6px}.fjord-ai .fjord-ai-compose textarea{height:38px;min-height:38px;max-height:38px;padding:6px 9px}.fjord-ai .fjord-ai-compose-actions{gap:4px;margin-top:4px}.fjord-ai .fjord-ai-compose-actions .fjord-ai-voice:nth-child(2){min-height:36px;padding:6px 10px}.fjord-ai .fjord-ai-footer{margin-top:5px;padding-top:5px}}
+
+.fjord-ai .fjord-ai-record-fallback{grid-column:1/-1;grid-row:3;border:1px solid #bed4dc;border-radius:14px;padding:9px 12px;min-height:42px;background:#e0eff5;color:#103348;font:700 12px/1.4 Manrope,sans-serif;cursor:pointer}
+
+.fjord-ai .fjord-ai-record-note{grid-column:1/-1;grid-row:4;margin:0;font-size:11px;line-height:1.5;color:#d4e6ed}
