@@ -1,6 +1,63 @@
 [
   {
+    "id": "granavolden-cafe",
+    "name": "Granavolden Hotel & Gjæstgiveri",
+    "town": "Granavollen",
+    "address": "Granavollen 16, 2750 Gran, Norway",
+    "latitude": 60.36657375848351,
+    "longitude": 10.52822551268278,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Granavollen%2016%202750&treffPerSide=5",
+    "website": "https://www.granavolden.no/om-oss/restaurant-og-kafe/",
+    "phone": "+4761337700",
+    "route": "hadeland",
+    "placeId": "granavollen",
+    "image": "./images/cafes/granavolden-facade-2016.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Granavolden_Gj%C3%A6stgiveri_2016.jpg",
+    "photoAlt": "Granavolden Hotel & Gjæstgiveri, exterior photographed in 2016",
+    "description": {
+      "nb": "En kaffepause ved Granavollen: hotellet opplyser at hjemmelagd kake og kaffe selges hver dag i resepsjonen. Kontakt hotellet for nøyaktige serveringstider og bordbestilling.",
+      "en": "A coffee stop at Granavollen: the hotel says homemade cake and coffee are sold daily at reception. Contact the hotel for exact serving hours and table reservations.",
+      "uk": "Кавова зупинка на Granavollen: за інформацією готелю, домашній пиріг і каву продають щодня на рецепції. Точний час обслуговування та бронювання столика уточнюйте в готелі.",
+      "sv": "En kaffepaus vid Granavollen: enligt hotellet säljs hembakad kaka och kaffe varje dag i receptionen. Kontakta hotellet för exakta serveringstider och bordsbokning.",
+      "da": "En kaffepause ved Granavollen: hotellet oplyser, at hjemmebagt kage og kaffe sælges dagligt i receptionen. Kontakt hotellet om præcise serveringstider og bordbestilling."
+    },
+    "photoCaption": {
+      "nb": "Ekte fasadefoto fra 2016 · Jan-Tore Egge · CC BY-SA 4.0",
+      "en": "Real exterior photo from 2016 · Jan-Tore Egge · CC BY-SA 4.0",
+      "uk": "Справжнє фото фасаду 2016 року · Jan-Tore Egge · CC BY-SA 4.0",
+      "sv": "Äkta fasadfoto från 2016 · Jan-Tore Egge · CC BY-SA 4.0",
+      "da": "Ægte facadefoto fra 2016 · Jan-Tore Egge · CC BY-SA 4.0"
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/granavolden-facade-2016.jpg",
+        "kind": "facade",
+        "credit": "Jan-Tore Egge",
+        "source": "https://commons.wikimedia.org/wiki/File:Granavolden_Gj%C3%A6stgiveri_2016.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Granavolden_Gj%C3%A6stgiveri_2016.jpg"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-17",
+      "source": "https://www.granavolden.no/om-oss/restaurant-og-kafe/"
+    },
+    "hoursNote": {
+      "nb": "Kaffe og kake i resepsjonen hver dag, ifølge hotellet. Klokkeslett er ikke oppgitt; ring før besøket. Den separate Kafé & Landhandleri er merket «Sommerstengt» på nettsiden.",
+      "en": "The hotel advertises coffee and cake at reception daily. Exact hours are not published; call before visiting. The separate Kafé & Landhandleri is marked “Sommerstengt” (closed for summer) on its website.",
+      "uk": "За інформацією готелю, кава й пиріг на рецепції доступні щодня. Точні години не вказані — перед візитом зателефонуйте. Окреме Kafé & Landhandleri на сайті позначене «Sommerstengt» — зачинене на літо.",
+      "sv": "Hotellet erbjuder kaffe och kaka i receptionen varje dag. Exakta tider saknas; ring före besöket. Separata Kafé & Landhandleri är märkt «Sommerstengt» (sommarstängt) på webbplatsen.",
+      "da": "Hotellet tilbyder kaffe og kage i receptionen hver dag. Præcise tider er ikke oplyst; ring før besøget. Det separate Kafé & Landhandleri er markeret «Sommerstengt» (sommerlukket) på hjemmesiden."
+    }
+  },
+  {
     "id": "cafe-opera-bergen",
+    "latitude": 60.391826703790635,
+    "longitude": 5.319807757621106,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Engen%2018%205011%20Bergen&treffPerSide=10",
     "name": "Café Opera",
     "town": "Bergen",
     "address": "Engen 18, 5011 Bergen, Norway",
@@ -228,6 +285,9 @@
   },
   {
     "id": "cafe-ole-geiranger",
+    "latitude": 62.10188295945076,
+    "longitude": 7.206619328358421,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Mar%C3%A5kvegen%2019%206216%20Geiranger&treffPerSide=10",
     "name": "Café Olé",
     "town": "Geiranger",
     "address": "Maråkvegen 19, 6216 Geiranger, Norway",
