@@ -18,6 +18,7 @@
     let url = new URL('https://www.google.com/maps/dir/');
     if (record.directionsUrl) {try {const supplied = new URL(record.directionsUrl); if (supplied.protocol === 'https:' && !supplied.username && !supplied.password && /^(www\.)?google\.com$/.test(supplied.hostname) && /^\/maps\/dir\/?$/.test(supplied.pathname) && supplied.searchParams.get('destination')?.trim()) url = supplied;} catch {}}
     url.searchParams.set('api', '1');
+    url.searchParams.set('travelmode', 'driving');
     if (record.coordinatePrecision === 'area' && /^\s*[+-]?\d+(?:\.\d+)?\s*,\s*[+-]?\d+(?:\.\d+)?\s*$/.test(url.searchParams.get('destination') || '')) url.searchParams.delete('destination');
     if (!url.searchParams.has('destination')) url.searchParams.set('destination', validPoint(record) && record.coordinatePrecision !== 'area' ? `${record.latitude},${record.longitude}` : record.routeQuery || [record.name, record.address, record.town, 'Norway'].filter(Boolean).join(', '));
     url.searchParams.delete('origin');

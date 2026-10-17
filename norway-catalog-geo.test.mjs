@@ -38,6 +38,7 @@ assert.equal(suppliedAreaRoute.searchParams.get('origin'), '59.9139,10.7522');
 const parkingRoute = new URL(routeUrl({name:'Steinsdalsfossen', latitude:60.3706, longitude:6.1033, directionsUrl:'https://www.google.com/maps/dir/?api=1&destination=Steinsdalsfossen+parking&origin=old-session'}, gran));
 assert.equal(parkingRoute.searchParams.get('destination'), 'Steinsdalsfossen parking', 'Explicit safe parking destination must survive instead of waterfall coordinates');
 assert.equal(parkingRoute.searchParams.get('origin'), '60.3592,10.5728');
+assert.equal(parkingRoute.searchParams.get('travelmode'), 'driving');
 assert.equal(new URL(routeUrl({name:'Steinsdalsfossen', directionsUrl:parkingRoute.href}, null)).searchParams.has('origin'), false, 'Previous-session origin must not leak into a new session');
 const numericArea = new URL(routeUrl({name:'Flyt Jevnaker', ...gran, coordinatePrecision:'area', directionsUrl:'https://www.google.com/maps/dir/?api=1&destination=60.3592,10.5728'}, null));
 assert.equal(numericArea.searchParams.get('destination'), 'Flyt Jevnaker, Norway', 'Area coordinates in an explicit URL must also fall back to venue name');
