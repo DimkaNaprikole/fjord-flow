@@ -50,7 +50,7 @@
     if(!map)return; markers.clearLayers();lines.clearLayers();
     const visible=filterPlaces(rows,category); visible.forEach(p=>{
       const icon=window.L.divIcon({className:'norway-overview__pin',html:'<span style="background:'+colors[p.category]+'"></span>',iconSize:[22,22],iconAnchor:[11,11]});
-      const marker=window.L.marker([p.latitude,p.longitude],{icon,keyboard:true,title:p.name,alt:p.name,riseOnHover:true}).bindPopup(()=>popup(p),{maxWidth:270});marker.addTo(markers);
+      const marker=window.L.marker([p.latitude,p.longitude],{icon,keyboard:true,title:p.name,alt:p.name,riseOnHover:true}).bindPopup(()=>popup(p),{maxWidth:270,maxHeight:220,autoPanPadding:[15,15]});marker.addTo(markers);
     });
     let focus=[];
     const route=routes()[routeKey];
