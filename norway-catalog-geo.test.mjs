@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 const require = createRequire(import.meta.url);
-const {validPoint, distanceKm, nearby, routeUrl, createOriginState} = require('./norway-catalog.js');
+const {validPoint, distanceKm, nearby, nearestCity, routeUrl, createOriginState} = require('./norway-catalog.js');
 const gran = {latitude: 60.3592, longitude: 10.5728};
 const oslo = {latitude: 59.9139, longitude: 10.7522};
 assert.equal(distanceKm(gran, gran), 0);
@@ -18,6 +18,12 @@ assert.deepEqual(nearby(rows, gran, 'all').map(r => r.id), ['gran', 'oslo', 'unk
 assert.deepEqual(nearby(rows, null, '20'), [], 'No invented origin for a radius search');
 assert.deepEqual(nearby(rows, null, 'all').map(r => r.id), ['unknown', 'oslo', 'gran']);
 assert.equal(nearby(rows, null, 'all')[0].catalogueDistance, null);
+assert.equal(nearestCity(gran, [{name:'Oslo', ...oslo}, {name:'Gran', ...gran}]).name, 'Gran');
+assert.equal(nearestCity({latitude:60.36, longitude:10.58}, [{name:'Oslo', ...oslo}, {name:'Gran', ...gran}]).name, 'Gran');
+assert.equal(nearestCity(gran, [{name:'No coordinates'}]), null);
+assert.equal(nearestCity(gran, [{name:'Oslo', ...oslo}], 20), null, 'Do not name a settlement outside the maximum distance');
+assert.equal(nearestCity({latitude:48.8566, longitude:2.3522}, [{name:'Oslo', ...oslo}], 50), null, 'GPS outside Norway must not be presented as a Norwegian town');
+assert.equal(nearestCity(gran, [], 50), null, 'Missing local gazetteer means GPS without a fabricated town');
 const route = new URL(routeUrl({name:'A café', ...oslo}, gran));
 assert.equal(route.origin, 'https://www.google.com');
 assert.equal(route.searchParams.get('destination'), '59.9139,10.7522');
