@@ -48,6 +48,13 @@ def firebase_public_span(path, content):
 
 def scan_text(path, content):
     allowed = firebase_public_span(path, content)
+    # This browser Maps key is public by design. Google Cloud enforces its
+    # HTTP-referrer and Maps-JavaScript-only restrictions, not this scanner.
+    # Allow just the single key value in the exact root configuration shape.
+    if path == "google-maps-config.js":
+        config = re.fullmatch(r"(?:/\*[\s\S]*?\*/\s*)?window\.FjordGoogleMapConfig = Object\.freeze\(\{enabled:(?:true|false), apiKey:'(AIza[0-9A-Za-z_-]{35})'\}\);\s*", content)
+        if config:
+            allowed = config.span(1)
     findings = set()
     for kind, pattern in PATTERNS.items():
         for match in pattern.finditer(content):

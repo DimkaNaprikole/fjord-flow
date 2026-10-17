@@ -55,6 +55,13 @@ class SecretCheckTests(unittest.TestCase):
         content = json.dumps({"nested": {"firebaseApiKey": self.google}})
         self.assertEqual(len(scanner.scan_text("chat-config.json", content)), 1)
 
+    def test_maps_browser_key_exception_is_narrow(self):
+        config = "window.FjordGoogleMapConfig = Object.freeze({enabled:true, apiKey:'" + self.google + "'});\n"
+        self.assertEqual(scanner.scan_text("google-maps-config.js", config), [])
+        self.assertEqual(len(scanner.scan_text("other.js", config)), 1)
+        self.assertEqual(len(scanner.scan_text("google-maps-config.js", config + self.google)), 2)
+        self.assertEqual(len(scanner.scan_text("google-maps-config.js", "/* " + self.google + " */\n" + config)), 1)
+
     def test_invalid_or_duplicate_json_has_no_exception(self):
         duplicate = '{"firebaseApiKey":"' + self.google + '","firebaseApiKey":"' + self.google + '"}'
         self.assertEqual(len(scanner.scan_text("chat-config.json", duplicate)), 1)
