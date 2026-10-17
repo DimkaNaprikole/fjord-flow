@@ -1,0 +1,194 @@
+[
+  {
+    "id": "larvik-bokeskogen",
+    "name": "Larvik · Bøkeskogen",
+    "town": "Larvik",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "address": "Bøkeskogen, Larvik, Norway",
+    "latitude": 59.05833,
+    "longitude": 10.02404,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=B%C3%B8keskogen&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/attraksjon/bokeskogen",
+    "source": "https://www.visitvestfold.com/no/attraksjon/bokeskogen",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En grønn pause over Larvik: bøketrær, skogsstier og spor fra vikingtiden. Velg en kort tur før kaffe eller en rolig ettermiddag ved Larviksfjorden.",
+      "en": "A green pause above Larvik: beech trees, woodland paths and traces of Viking history. Choose a short walk before coffee or a quiet afternoon by Larviksfjorden.",
+      "uk": "Зелена зупинка над Ларвіком: буковий ліс, стежки та сліди доби вікінгів. Оберіть коротку прогулянку перед кавою або спокійним відпочинком біля Ларвік-фіорду.",
+      "sv": "En grön paus ovanför Larvik: bokträd, skogsstigar och spår från vikingatiden. Välj en kort promenad före kaffe eller en lugn eftermiddag vid Larviksfjorden.",
+      "da": "En grøn pause over Larvik: bøgetræer, skovstier og spor fra vikingetiden. Vælg en kort tur før kaffe eller en rolig eftermiddag ved Larviksfjorden."
+    },
+    "hoursNote": {
+      "nb": "Skogen kan besøkes hele året i dagslys. Stier kan være glatte; bruk passende sko. Ikke gå på gravhaugene. Kafeen har egne åpningstider. Punktet viser skogsområdet, ikke innkjøring eller parkering.",
+      "en": "Visit the forest year-round in daylight. Paths may be slippery; wear suitable shoes. Do not walk on burial mounds. The café keeps its own hours. The marker represents the woodland, not a vehicle entrance or parking space.",
+      "uk": "Ліс можна відвідувати цілий рік у світлу пору. Стежки бувають слизькі; потрібне відповідне взуття. Не ходіть по курганах. Кав’ярня має власні години. Позначка вказує ліс, а не автомобільний в’їзд чи паркінг.",
+      "sv": "Skogen kan besökas året runt i dagsljus. Stigarna kan vara hala; använd lämpliga skor. Gå inte på gravhögarna. Kaféet har egna öppettider. Punkten visar skogsområdet, inte bilinfart eller parkering.",
+      "da": "Skoven kan besøges året rundt i dagslys. Stierne kan være glatte; brug passende sko. Gå ikke på gravhøjene. Caféen har egne åbningstider. Punktet viser skovområdet, ikke bilindkørsel eller parkering."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=B%C3%B8keskogen%2C%20Larvik%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/vestfold-place-larvik.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ovre_gravfelt,_Bokeskogen.jpg",
+    "photoAlt": "Sunlight through beech trees above a preserved burial mound in Bøkeskogen, Larvik",
+    "photoCaption": "Morten Bakkeli · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-place-larvik.webp",
+        "kind": "view",
+        "credit": "Morten Bakkeli",
+        "source": "https://commons.wikimedia.org/wiki/File:Ovre_gravfelt,_Bokeskogen.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/3/38/Ovre_gravfelt%2C_Bokeskogen.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "sandefjord-waterfront",
+    "name": "Sandefjord · havn & strandpromenade",
+    "town": "Sandefjord",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "address": "Strandpromenaden, Sandefjord, Norway",
+    "latitude": 59.13133,
+    "longitude": 10.22234,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Sandefjord&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/forretning/sandefjord-havnevesen",
+    "source": "https://www.visitvestfold.com/no/forretning/sandefjord-havnevesen",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En lett bypause ved havnen: sjøluft, småbåter og en rusletur langs Strandpromenaden. Fortsett til sentrum for kaffe; la øy- og båtturer være valgfrie tillegg.",
+      "en": "An easy town stop by the harbour: sea air, small boats and a stroll along Strandpromenaden. Continue into the centre for coffee; island and boat trips remain optional.",
+      "uk": "Легка міська зупинка біля гавані: морське повітря, човни й прогулянка Strandpromenaden. Далі — кава в центрі; острови та морські екскурсії залишаються додатковими варіантами.",
+      "sv": "En enkel stadspaus vid hamnen: havsluft, småbåtar och en promenad längs Strandpromenaden. Fortsätt in till centrum för kaffe; ö- och båtturer är valfria tillägg.",
+      "da": "En let bypause ved havnen: havluft, småbåde og en tur langs Strandpromenaden. Fortsæt ind til centrum for kaffe; ø- og bådture er valgfrie ekstra oplevelser."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider. Parker lovlig og gå videre til fots. Punktet er en områdeangivelse, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep their own hours. Park legally and continue on foot. The marker represents an area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar ett område, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser et område, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Strandpromenaden%2C%20Sandefjord%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/vestfold-place-sandefjord.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sandefjord_-_harbour.jpg",
+    "photoAlt": "Calm water, marina pontoons and wooded shoreline in Sandefjord harbour",
+    "photoCaption": "Paweł 'pbm' Szubert · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-place-sandefjord.webp",
+        "kind": "view",
+        "credit": "Paweł 'pbm' Szubert",
+        "source": "https://commons.wikimedia.org/wiki/File:Sandefjord_-_harbour.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/1/12/Sandefjord_-_harbour.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "tonsberg-brygga",
+    "name": "Tønsberg · Brygga & Slottsfjellet",
+    "town": "Tønsberg",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "address": "Tønsberg Brygge, Tønsberg, Norway",
+    "latitude": 59.26753,
+    "longitude": 10.40763,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=T%C3%B8nsberg&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/attraksjon/tonsberg-brygge",
+    "source": "https://www.visitvestfold.com/no/attraksjon/tonsberg-brygge",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Fargerike sjøhus og båter langs Brygga gir en fin pause ved vannet. Har du lyst på utsikt, legg til en tur opp på Slottsfjellet; det er en egen motbakke fra brygga.",
+      "en": "Colourful waterfront buildings and boats along Brygga make a lovely waterside pause. For a view, add a walk up Slottsfjellet; it is a separate uphill walk from the quay.",
+      "uk": "Барвисті будинки й човни на Brygga — гарна зупинка біля води. За панорамою можна піднятися на Slottsfjellet: від набережної це окрема прогулянка вгору.",
+      "sv": "Färgglada hus och båtar längs Brygga ger en fin paus vid vattnet. För utsikt kan du lägga till Slottsfjellet; det är en separat promenad uppför från bryggan.",
+      "da": "Farverige huse og både langs Brygga giver en fin pause ved vandet. Vil du have udsigt, kan du tilføje Slottsfjellet; det er en særskilt gåtur opad fra kajen."
+    },
+    "hoursNote": {
+      "nb": "Brygga er et utendørs turområde hele året. Restauranter, konserter og Slottsfjelltårnet har egne tider; adgang til tårnet er ikke inkludert. Gå forsiktig ved vått føre, og parker utenfor gangområdene.",
+      "en": "Brygga is an outdoor walking area year-round. Restaurants, concerts and Slottsfjelltårnet keep separate hours; tower entry is not included. Take care in wet conditions and park outside pedestrian areas.",
+      "uk": "Brygga — відкрита набережна для прогулянок цілий рік. Ресторани, концерти й вежа Slottsfjelltårnet мають окремі години; вхід до вежі не включений. У дощ будьте обережні й паркуйтеся поза пішохідною зоною.",
+      "sv": "Brygga är ett utomhusområde för promenader året runt. Restauranger, konserter och Slottsfjelltårnet har egna tider; inträde till tornet ingår inte. Gå försiktigt vid väta och parkera utanför gångområdena.",
+      "da": "Brygga er et udendørs gåområde året rundt. Restauranter, koncerter og Slottsfjelltårnet har egne tider; adgang til tårnet er ikke inkluderet. Gå forsigtigt i vådt føre og parkér uden for gåområderne."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=T%C3%B8nsberg%20Brygge%2C%20T%C3%B8nsberg%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/vestfold-place-tonsberg.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Brygga_i_Tønsberg.JPG",
+    "photoAlt": "Colourful waterfront buildings and boats along Brygga in Tønsberg, with Slottsfjelltårnet in the distance",
+    "photoCaption": "Helge Høifødt · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-place-tonsberg.webp",
+        "kind": "view",
+        "credit": "Helge Høifødt",
+        "source": "https://commons.wikimedia.org/wiki/File:Brygga_i_Tønsberg.JPG",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Brygga_i_T%C3%B8nsberg.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "horten-karljohansvern",
+    "name": "Horten · Karljohansvern",
+    "town": "Horten",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "address": "Karljohansvern, Horten, Norway",
+    "latitude": 59.43159,
+    "longitude": 10.49163,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Karljohansvern&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/attraksjon/karljohansvern",
+    "source": "https://www.visitvestfold.com/no/attraksjon/karljohansvern",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Historiske marinebygninger, gamle trær og den stille Hortenskanalen. Ta en rolig rundtur til fots; Marinemuseet og Preus museum kan legges til hvis åpningstidene passer.",
+      "en": "Historic naval buildings, old trees and the quiet Horten Canal. Take an unhurried walk; add the Naval Museum or Preus Museum if opening times suit your visit.",
+      "uk": "Історичні морські будівлі, старі дерева й тихий Гортенський канал. Прогуляйтеся неспішно; Морський музей або Preus museum можна додати за відповідного розкладу.",
+      "sv": "Historiska marinbyggnader, gamla träd och den stilla Hortenkanalen. Ta en lugn promenad; lägg till Marinmuseet eller Preus museum om öppettiderna passar.",
+      "da": "Historiske flådebygninger, gamle træer og den stille Hortenkanal. Gå en rolig tur; tilføj Marinemuseet eller Preus museum, hvis åbningstiderne passer."
+    },
+    "hoursNote": {
+      "nb": "Uteområdet er åpent hele døgnet ifølge Visit Vestfold; velg dagslys for turen. Museer og kafeer har egne tider. Kulturverftet innenfor murene er bilfritt: bruk skiltet parkering utenfor. Respekter avsperrede militære områder.",
+      "en": "Visit Vestfold lists the outdoor area as open around the clock; choose daylight for your walk. Museums and cafés keep their own hours. Kulturverftet inside the walls is car-free: use signed parking outside. Respect restricted military areas.",
+      "uk": "За Visit Vestfold відкрита територія доступна цілодобово; для прогулянки обирайте світлу пору. Музеї й кав’ярні мають власні години. Kulturverftet усередині мурів — без автомобілів: користуйтеся позначеним паркінгом зовні. Не заходьте до закритих військових зон.",
+      "sv": "Visit Vestfold anger att utomhusområdet är öppet dygnet runt; välj dagsljus för promenaden. Museer och kaféer har egna tider. Kulturverftet innanför murarna är bilfritt: använd skyltad parkering utanför. Respektera avspärrade militära områden.",
+      "da": "Visit Vestfold angiver, at udeområdet er åbent døgnet rundt; vælg dagslys til turen. Museer og caféer har egne tider. Kulturverftet inden for murene er bilfrit: brug skiltet parkering udenfor. Respektér afspærrede militære områder."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Karljohansvern%2C%20Horten%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/vestfold-place-horten.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Horten_Norway_Karljohansvern_02.jpg",
+    "photoAlt": "Historic houses, white fences and flowering trees along a street in Karljohansvern, Horten",
+    "photoCaption": "Bjoertvedt · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-place-horten.webp",
+        "kind": "view",
+        "credit": "Bjoertvedt",
+        "source": "https://commons.wikimedia.org/wiki/File:Horten_Norway_Karljohansvern_02.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Horten_Norway_Karljohansvern_02.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  }
+]

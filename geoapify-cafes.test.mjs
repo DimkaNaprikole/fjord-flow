@@ -61,7 +61,7 @@ assert.equal(localResults.length,2,'Local named venues do not require provider d
 assert(localResults.every(c=>c.catalogue&&c.openNow===null&&c.distanceMeters<=5000));
 assert.equal(localResults.find(c=>c.curatedId==='known').hours.length,7);
 assert.equal(localOnly.calls.length,1,'One static catalogue fetch, no configuration or external APIs');
-assert.equal(localOnly.calls[0].url.href,'https://example.org/fjord-flow/cafes.json?v=9');
+assert.equal(localOnly.calls[0].url.href,'https://example.org/fjord-flow/cafes.json?v=10');
 await localOnly.api.searchLocal({center:{lat:60.45,lng:10.5}});
 assert.equal(localOnly.calls.length,1,'Catalogue reused for later local searches');
 console.log('PASS: local search uses only same-site catalogue, cached across searches; no Geoapify configuration, API, Commons or invented live status.');

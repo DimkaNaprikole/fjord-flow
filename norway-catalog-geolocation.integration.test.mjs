@@ -8,7 +8,7 @@ const helper = createRequire(import.meta.url)('./browser-geolocation.js');
 const source = await readFile(new URL('./norway-catalog.js', import.meta.url), 'utf8');
 const marker = "  window.addEventListener('fjordlanguagechange', rebuild);";
 assert.ok(source.includes(marker));
-const instrumented = source.replace(marker, `window.__test = {requestGPS, chooseCity, snapshot: () => ({origin:originState.current, message:geoMessage, baseChoice, radius})};\n${marker}`);
+const instrumented = source.replace(marker, `window.__test = {requestGPS, chooseCity, setRecords: value => {records = value;}, snapshot: () => ({origin:originState.current, message:geoMessage, baseChoice, radius, category, query})};\n${marker}`);
 const flush = async () => {for (let n=0;n<24;n++) await Promise.resolve();};
 function harness({deferTowns = false} = {}) {
   const calls = [], cleared = [], events = {}, fetches = [];
@@ -58,4 +58,13 @@ test('invalid catalogue-stop coordinates and categories cannot overwrite the ori
   const h=harness(); h.api.chooseCity('Gran');
   for(const detail of [{lat:91,lng:8,name:'Bad',category:'cabin'},{lat:58,lng:8,name:'Bad',category:'unknown'}]) h.events['fjord:catalogue-nearby']({detail});
   assert.equal(h.api.snapshot().origin.name,'Gran');
+});
+
+
+test('overview map selection opens the exact catalogue record and rejects unknown IDs',async()=>{
+  const h=harness(); h.api.setRecords([{id:'cafe-test',name:'Coastal Café',category:'cafe',latitude:59.13,longitude:10.22}]);
+  h.api.requestGPS(); h.calls[0].failure({code:3});
+  h.events['fjord:catalogue-select']({detail:{id:'cafe-test'}}); h.calls[1].success(actual); await flush();
+  const s=h.api.snapshot(); assert.equal(s.origin.name,'Coastal Café'); assert.equal(s.baseChoice,'stop'); assert.equal(s.category,'cafe'); assert.equal(s.query,'Coastal Café'); assert.deepEqual(h.cleared,[123]);
+  h.events['fjord:catalogue-select']({detail:{id:'missing'}}); assert.equal(h.api.snapshot().origin.name,'Coastal Café');
 });

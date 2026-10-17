@@ -1,0 +1,291 @@
+[
+  {
+    "id": "gon-vestfold-cabins",
+    "name": "Gon Camping · hytter",
+    "town": "Larvik",
+    "address": "Gonveien 100, 3260 Larvik, Norway",
+    "latitude": 59.021967330209264,
+    "longitude": 10.071814403762271,
+    "website": "https://goncamping.no/",
+    "bookingUrl": "https://goncamping.no/",
+    "source": "https://goncamping.no/hytter-cabins/",
+    "description": {
+      "nb": "Enkle firemannshytter ved Larviksfjorden med minikjøkken. Felles toaletter og dusjer; ta med eget sengetøy.",
+      "en": "Simple four-person cabins beside Larviksfjorden with kitchenettes. Shared toilets and showers; bring your own bed linen.",
+      "uk": "Прості будиночки на чотирьох біля Larviksfjorden із мінікухнею. Душові й туалети спільні; візьміть власну постільну білизну.",
+      "sv": "Enkla fyrbäddsstugor vid Larviksfjorden med kokvrå. Gemensamma toaletter och duschar; ta med egna sängkläder.",
+      "da": "Enkle firepersonershytter ved Larviksfjorden med tekøkken. Fælles toiletter og brusere; medbring eget sengelinned."
+    },
+    "hoursNote": {
+      "nb": "Sesongcamping; bekreft hyttenes datoer og innsjekk på e-post før avreise. Bestilling via operatørens nettside/kontakt. Rusfri campingplass.",
+      "en": "Seasonal campsite; confirm cabin dates and check-in by email before travelling. Booking through the operator’s website/contact. Alcohol-free campsite.",
+      "uk": "Сезонний кемпінг; заздалегідь уточніть дати й заселення електронною поштою. Бронювання через сайт або контакт оператора. Кемпінг без алкоголю.",
+      "sv": "Säsongscamping; bekräfta stugdatum och incheckning via e-post före resan. Boka via operatörens webbplats/kontakt. Alkoholfri camping.",
+      "da": "Sæsoncamping; bekræft hyttedatoer og indtjekning på e-mail før afrejse. Booking via operatørens hjemmeside/kontakt. Alkoholfri campingplads."
+    },
+    "photoAlt": "Gon Camping — red rental cabins and terrace",
+    "extraSources": [
+      "https://goncamping.no/om-plassen-facilities/",
+      "https://campinglarvik.no/gon-camping/"
+    ],
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "route": "vestfoldcoast",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Gonveien%20100%20Larvik&treffPerSide=3",
+    "descriptionSource": "https://goncamping.no/hytter-cabins/",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://goncamping.no/hytter-cabins/"
+    },
+    "imageSource": "https://goncamping.no/hytter-cabins/",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-stay-gon-exterior.webp",
+        "kind": "grounds",
+        "credit": "Gon Camping · official website",
+        "source": "https://goncamping.no/hytter-cabins/",
+        "original": "https://www-static.goncamping.no/wp-content/uploads/2013/04/2013-04-17-13.16.00.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-gon-inside.webp",
+        "kind": "inside",
+        "credit": "Gon Camping · official website",
+        "source": "https://goncamping.no/hytter-cabins/",
+        "original": "https://www-static.goncamping.no/wp-content/uploads/2013/04/2013-04-14-11.24.39.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-stay-gon-exterior.webp",
+    "photoCaption": {
+      "nb": "Ekte operatørfoto",
+      "en": "Real operator photograph",
+      "uk": "Справжнє фото оператора",
+      "sv": "Äkta operatörsfoto",
+      "da": "Ægte operatørfoto"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Gon%20Camping%2C%20Gonveien%20100%2C%203260%20Larvik%2C%20Norway"
+  },
+  {
+    "id": "vora-vestfold-cabins",
+    "name": "Vøra Camping · hytter",
+    "town": "Sandefjord",
+    "address": "Vesterøyveien 401, 3234 Sandefjord, Norway",
+    "latitude": 59.07151306773833,
+    "longitude": 10.259563814693815,
+    "website": "https://voracamping.no/",
+    "bookingUrl": "https://voracamping.no/book-overnatting/",
+    "source": "https://voracamping.no/overnatting/hytter/",
+    "phone": "+4790960142",
+    "description": {
+      "nb": "Hytter nær Vøra-stranden og kyststien. Hytte 1–2 har to soverom, kjøkken og bad; andre typer har annen standard.",
+      "en": "Cabins near Vøra beach and the coastal path. Cabins 1–2 have two bedrooms, a kitchen and bathroom; other types differ.",
+      "uk": "Будиночки біля пляжу Vøra та прибережної стежки. Типи 1–2 мають дві спальні, кухню й ванну; інші типи відрізняються.",
+      "sv": "Stugor nära Vøras strand och kuststigen. Stuga 1–2 har två sovrum, kök och badrum; andra typer skiljer sig.",
+      "da": "Hytter nær Vøras strand og kyststien. Hytte 1–2 har to soveværelser, køkken og bad; andre typer er anderledes."
+    },
+    "hoursNote": {
+      "nb": "Hytteutleie hele året; bekreft ledighet. Innsjekk 15, utsjekk 11. Sluttrengjøring kommer i tillegg. Bestillingsknappen åpner en forespørsel, ikke en bekreftet reservasjon.",
+      "en": "Year-round cabin rental; confirm availability. Check-in 15:00, check-out 11:00. Final cleaning is extra. Booking opens an enquiry, not a confirmed reservation.",
+      "uk": "Оренда будиночків цілий рік; уточнюйте наявність. Заселення о 15:00, виїзд об 11:00. Прибирання оплачується окремо. Кнопка бронювання відкриває запит, а не підтвердження.",
+      "sv": "Stuguthyrning året runt; bekräfta tillgänglighet. Incheckning 15, utcheckning 11. Slutstädning tillkommer. Bokningsknappen öppnar en förfrågan, ingen bekräftad bokning.",
+      "da": "Hytteudlejning hele året; bekræft ledighed. Indtjekning 15, udtjekning 11. Slutrengøring koster ekstra. Bookingknappen åbner en forespørgsel, ikke en bekræftet reservation."
+    },
+    "photoAlt": "Vøra Camping — wooden cabins beside the lawn",
+    "extraSources": [
+      "https://voracamping.no/overnatting/"
+    ],
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "route": "vestfoldcoast",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Vester%C3%B8yveien%20401&treffPerSide=3",
+    "descriptionSource": "https://voracamping.no/overnatting/hytter/",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://voracamping.no/overnatting/hytter/"
+    },
+    "imageSource": "https://voracamping.no/overnatting/hytter/",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-stay-vora-front.webp",
+        "kind": "grounds",
+        "credit": "Vøra Camping · official website",
+        "source": "https://voracamping.no/overnatting/hytter/",
+        "original": "https://voracamping.no/wp-content/uploads/elementor/thumbs/20231016_113035-rotated-qemgh06oln37kvjh12ro31il76me64omv2ewb964yo.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-vora-kitchen.webp",
+        "kind": "inside",
+        "credit": "Vøra Camping · official website",
+        "source": "https://voracamping.no/overnatting/hytter/",
+        "original": "https://voracamping.no/wp-content/uploads/elementor/thumbs/h1_1-pjx6zmemii7bf7ipu1xdml6uclaiwp33vhdfkqmsgw.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-vora-inside.webp",
+        "kind": "bedroom",
+        "credit": "Vøra Camping · official website",
+        "source": "https://voracamping.no/overnatting/hytter/",
+        "original": "https://voracamping.no/wp-content/uploads/elementor/thumbs/h1_2-pjx6zdy2szvqipv07g9qi5bp04g7zf5iubi298zc0w.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-stay-vora-front.webp",
+    "photoCaption": {
+      "nb": "Ekte operatørfoto",
+      "en": "Real operator photograph",
+      "uk": "Справжнє фото оператора",
+      "sv": "Äkta operatörsfoto",
+      "da": "Ægte operatørfoto"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=V%C3%B8ra%20Camping%2C%20Vester%C3%B8yveien%20401%2C%203234%20Sandefjord%2C%20Norway"
+  },
+  {
+    "id": "furustrand-vestfold-cabins",
+    "name": "Furustrand · strandhytter",
+    "town": "Tønsberg",
+    "address": "Tareveien 11, 3150 Tolvsrød, Norway",
+    "latitude": 59.27306578432201,
+    "longitude": 10.491603724325007,
+    "website": "https://furustrand.no/",
+    "bookingUrl": "https://furustrand.no/bestilling/",
+    "source": "https://furustrand.no/bestilling/",
+    "phone": "+4733357000",
+    "description": {
+      "nb": "Flere hyttetyper ved Ringshaugstranda utenfor Tønsberg. Galleriet viser anleggets strandhytter og felles strandmiljø; velg konkret type ved bestilling.",
+      "en": "Several cabin types beside Ringshaug beach outside Tønsberg. Gallery shows the resort’s beach cabins and shared beach area; choose your exact type when booking.",
+      "uk": "Кілька типів будиночків біля пляжу Ringshaug за Tønsberg. Галерея показує пляжні будиночки комплексу та спільну зону; конкретний тип обирайте під час бронювання.",
+      "sv": "Flera stugtyper vid Ringshaugstranda utanför Tønsberg. Galleriet visar anläggningens strandstugor och gemensamma strandmiljö; välj exakt typ vid bokning.",
+      "da": "Flere hyttetyper ved Ringshaugstranda uden for Tønsberg. Galleriet viser stedets strandhytter og fælles strandområde; vælg præcis type ved booking."
+    },
+    "hoursNote": {
+      "nb": "Innsjekk fra 15, utsjekk innen 11. Kontakt verten for bare én natt. Vinterutleie tilbys også; bekreft tilgjengelige datoer.",
+      "en": "Check-in from 15:00, check-out by 11:00. Contact the host for just one night. Winter rentals also offered; confirm available dates.",
+      "uk": "Заселення від 15:00, виїзд до 11:00. На одну ніч зверніться до господаря. Є також зимова оренда; уточнюйте вільні дати.",
+      "sv": "Incheckning från 15, utcheckning senast 11. Kontakta värden för bara en natt. Vinteruthyrning erbjuds också; bekräfta lediga datum.",
+      "da": "Indtjekning fra 15, udtjekning senest 11. Kontakt værten for kun én nat. Vinterudlejning tilbydes også; bekræft ledige datoer."
+    },
+    "photoAlt": "Furustrand — beach cabins facing the Oslofjord",
+    "imageSource": "https://furustrand.no/",
+    "extraSources": [
+      "https://furustrand.no/kjopsbetingelser/",
+      "https://furustrand.no/langtidsleie/"
+    ],
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "route": "vestfoldcoast",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Tareveien%2011%20Tolvsr%C3%B8d&treffPerSide=3",
+    "descriptionSource": "https://furustrand.no/bestilling/",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://furustrand.no/bestilling/"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-stay-furustrand-exterior.webp",
+        "kind": "grounds",
+        "credit": "Furustrand · official website",
+        "source": "https://furustrand.no/",
+        "original": "https://furustrand.no/wp-content/uploads/2025/05/Galleri-1-Hytte-edited.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-furustrand-view.webp",
+        "kind": "view",
+        "credit": "Furustrand · official website",
+        "source": "https://furustrand.no/",
+        "original": "https://furustrand.no/wp-content/uploads/2023/07/Furustrand-galleri-23-04-1024x684.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-stay-furustrand-exterior.webp",
+    "photoCaption": {
+      "nb": "Ekte operatørfoto",
+      "en": "Real operator photograph",
+      "uk": "Справжнє фото оператора",
+      "sv": "Äkta operatörsfoto",
+      "da": "Ægte operatørfoto"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Furustrand%2C%20Tareveien%2011%2C%203150%20Tolvsr%C3%B8d%2C%20Norway"
+  },
+  {
+    "id": "lovoya-vestfold-cabins",
+    "name": "Løvøya Oslofjord · Leafhut Ash",
+    "town": "Horten",
+    "address": "Løvøyveien 54, 3189 Horten, Norway",
+    "latitude": 59.44667591465805,
+    "longitude": 10.439962197147036,
+    "website": "https://lovoyaoslofjord.no/",
+    "bookingUrl": "https://booking.lovoyaoslofjord.no/en/accommodation",
+    "source": "https://booking.lovoyaoslofjord.no/en/accommodation",
+    "phone": "+4792920027",
+    "description": {
+      "nb": "Leafhut Ash er en 28 m² hytte for opptil seks personer med to soverom, kjøkken og eget bad på Løvøya ved Horten.",
+      "en": "Leafhut Ash is a 28 m² cabin for up to six with two bedrooms, a kitchen and private bathroom on Løvøya near Horten.",
+      "uk": "Leafhut Ash — будиночок 28 м² на шістьох із двома спальнями, кухнею та власною ванною на Løvøya біля Horten.",
+      "sv": "Leafhut Ash är en stuga på 28 m² för upp till sex med två sovrum, kök och eget badrum på Løvøya vid Horten.",
+      "da": "Leafhut Ash er en hytte på 28 m² til op til seks med to soveværelser, køkken og eget bad på Løvøya ved Horten."
+    },
+    "hoursNote": {
+      "nb": "Bekreft sesong, ledige hyttedatoer og innsjekk i bestillingen; gjeldende helårsåpning er ikke bekreftet. Velg Cabin, ikke glampingtelt.",
+      "en": "Confirm season, available cabin dates and check-in when booking; current year-round opening is not verified. Select Cabin, not a glamping tent.",
+      "uk": "Уточніть сезон, вільні дати й заселення під час бронювання; роботу цілий рік не підтверджено. Оберіть Cabin, а не глемпінговий намет.",
+      "sv": "Bekräfta säsong, lediga stugdatum och incheckning vid bokning; aktuellt helårsöppet är inte verifierat. Välj Cabin, inte glampingtält.",
+      "da": "Bekræft sæson, ledige hyttedatoer og indtjekning ved booking; aktuelt helårsåbent er ikke bekræftet. Vælg Cabin, ikke glampingtelt."
+    },
+    "photoAlt": "Løvøya Oslofjord — Leafhut Ash red cabin and terrace",
+    "extraSources": [
+      "https://lovoyaoslofjord.no/"
+    ],
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "route": "vestfoldcoast",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=L%C3%B8v%C3%B8yveien%2054&treffPerSide=3",
+    "descriptionSource": "https://booking.lovoyaoslofjord.no/en/accommodation",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://booking.lovoyaoslofjord.no/en/accommodation"
+    },
+    "imageSource": "https://booking.lovoyaoslofjord.no/en/accommodation",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-stay-lovoya-exterior.webp",
+        "kind": "grounds",
+        "credit": "Løvøya Oslofjord · official website",
+        "source": "https://booking.lovoyaoslofjord.no/en/accommodation",
+        "original": "https://images.bookvisit.com/img/b29a731c-6d47-4f10-8e68-37ef7c55a329.jpg?maxwidth=1200",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-lovoya-room.webp",
+        "kind": "inside",
+        "credit": "Løvøya Oslofjord · official website",
+        "source": "https://booking.lovoyaoslofjord.no/en/accommodation",
+        "original": "https://images.bookvisit.com/img/4f8f3f4d-3812-4ab2-85e9-041dbbc714c3.jpg?maxwidth=1200",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-stay-lovoya-exterior.webp",
+    "photoCaption": {
+      "nb": "Ekte operatørfoto",
+      "en": "Real operator photograph",
+      "uk": "Справжнє фото оператора",
+      "sv": "Äkta operatörsfoto",
+      "da": "Ægte operatørfoto"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=L%C3%B8v%C3%B8ya%20Oslofjord%2C%20L%C3%B8v%C3%B8yveien%2054%2C%203189%20Horten%2C%20Norway"
+  }
+]

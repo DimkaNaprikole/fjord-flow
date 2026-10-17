@@ -302,11 +302,18 @@
       "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
       "sourceLabel": "Norway’s best"
     },
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Fl%C3%A5m%20Bakery%2C%20Stasjonsvegen%2C%205743%20Fl%C3%A5m%2C%20Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Fl%C3%A5m%20Bakery%2C%20Fl%C3%A5m%2C%20Norway&travelmode=driving",
     "category": "cafe",
     "region": "Aurland",
     "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
-    "checked": "2026-10-17"
+    "checked": "2026-10-17",
+    "latitude": 60.86197584258663,
+    "longitude": 7.112441541309992,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nedre%20Fretheim%207%20Aurland&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://www.visitnorway.com/listings/flam-bakery/188773/",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Kartverket address point for Nedre Fretheim 7, published by Visit Sognefjord / Visit Norway. Orientation only, not a parking entrance; operator describes bakery on the quay near Flåm station."
   },
   {
     "id": "cafe-ole-geiranger",
@@ -849,8 +856,14 @@
     "checked": "2026-10-17",
     "source": "https://timwendelboe.no/pages/contact-us",
     "photoVerified": true,
-    "coordinatesNote": "Use the published address for directions; exact coordinates have not been assigned.",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Tim%20Wendelboe%20Espresso%20Bar%2C%20Gr%C3%BCners%20gate%201%2C%200552%20Oslo%2C%20Oslo%2C%20Norway"
+    "coordinatesNote": "Operator publishes Grüners gate 1. Kartverket returns 1A and 1B about 5 metres apart; 1A represents the address area, not a verified café door or parking entrance.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Tim%20Wendelboe%20Espresso%20Bar%2C%20Gr%C3%BCners%20gate%201%2C%20Oslo%2C%20Norway&travelmode=driving",
+    "latitude": 59.92331840109198,
+    "longitude": 10.75581858290532,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Gr%C3%BCners%20gate%201%20Oslo&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://timwendelboe.no/pages/contact-us",
+    "coordinatesChecked": "2026-10-18"
   },
   {
     "id": "dromedar-nordre-trondheim",
@@ -1834,6 +1847,347 @@
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nevlunghavn%20Bakeri%20%26%20Conditori%2C%20Oddaneveien%202%2C%203296%20Nevlunghavn"
   },
   {
+    "id": "teaterkafeen-larvik",
+    "name": "Teaterkafeen · Munken",
+    "town": "Larvik",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "category": "cafe",
+    "address": "Storgata 55, 3256 Larvik",
+    "latitude": 59.05006017648498,
+    "longitude": 10.033635284856123,
+    "website": "https://teaterhusetmunken.no/teaterkafeen/",
+    "source": "https://teaterhusetmunken.no/teaterkafeen/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Storgata%2055%2C%203256%20Larvik&treffPerSide=3",
+    "description": {
+      "nb": "Kaffe og en enkel matbit i teaterhusets kafé.",
+      "en": "Coffee and a light bite in the theatre café.",
+      "uk": "Кава й легкий перекус у театральній кав’ярні.",
+      "sv": "Kaffe och något lätt i teaterhusets kafé.",
+      "da": "Kaffe og en let bid i teaterhusets café."
+    },
+    "hoursNote": {
+      "nb": "Man–tor 12–19, fre 12–17; helg stengt. Juleferie 7. desember 2026–3. januar 2027.",
+      "en": "Mon–Thu 12–19, Fri 12–17; weekends closed. Christmas closure 7 December 2026–3 January 2027.",
+      "uk": "Пн–чт 12–19, пт 12–17; вихідні зачинено. Різдвяна перерва 7 грудня 2026–3 січня 2027.",
+      "sv": "Mån–tor 12–19, fre 12–17; helg stängt. Julstängt 7 december 2026–3 januari 2027.",
+      "da": "Man–tor 12–19, fre 12–17; weekend lukket. Julelukket 7. december 2026–3. januar 2027."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://teaterhusetmunken.no/teaterkafeen/",
+      "weekly": [
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "17:00"
+          ]
+        ],
+        [],
+        []
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-cafe-munken.webp",
+        "kind": "cafeInside",
+        "credit": "M. Gofjeld · Teaterhuset Munken",
+        "source": "https://teaterhusetmunken.no/teaterkafeen/",
+        "original": "https://teaterhusetmunken.no/media/5abb7573e0460d75.webp",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-cafe-munken.webp",
+    "imageSource": "https://teaterhusetmunken.no/teaterkafeen/",
+    "photoAlt": "Teaterkafeen · Munken — actual venue photograph",
+    "photoCaption": "Teaterkafeen · Munken · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Teaterkafeen%20%C2%B7%20Munken%2C%20Storgata%2055%2C%203256%20Larvik"
+  },
+  {
+    "id": "bare-beppe-sandefjord",
+    "name": "Bare Beppe · Sandefjord",
+    "town": "Sandefjord",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "category": "cafe",
+    "address": "Kongens gate 10, 3210 Sandefjord",
+    "latitude": 59.13195569639583,
+    "longitude": 10.223259392190384,
+    "website": "https://www.barebeppe.no/finn-oss",
+    "source": "https://www.barebeppe.no/finn-oss",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Kongens%20gate%2010%2C%203210%20Sandefjord&treffPerSide=3",
+    "description": {
+      "nb": "Kafé og håndverksbakeri ved Byparken i sentrum.",
+      "en": "Café and craft bakery beside the central Byparken park.",
+      "uk": "Кав’ярня й реміснича пекарня біля центрального парку Byparken.",
+      "sv": "Kafé och hantverksbageri vid Byparken i centrum.",
+      "da": "Café og håndværksbageri ved Byparken i centrum."
+    },
+    "hoursNote": {
+      "nb": "Man–lør 09–16, søndag stengt. Sjekk avvik på helligdager.",
+      "en": "Mon–Sat 09–16, Sunday closed. Check holiday changes.",
+      "uk": "Пн–сб 09–16, нд зачинено. Уточнюйте зміни у свята.",
+      "sv": "Mån–lör 09–16, söndag stängt. Kontrollera helgdagar.",
+      "da": "Man–lør 09–16, søndag lukket. Tjek helligdage."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://www.barebeppe.no/finn-oss",
+      "weekly": [
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        []
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-cafe-beppe-1.webp",
+        "kind": "cafeInside",
+        "credit": "Bare Beppe · Sandefjord · official website",
+        "source": "https://www.barebeppe.no/finn-oss",
+        "original": "https://static.wixstatic.com/media/63cbea_fa68b9102c60428d861d13092f939d42~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-cafe-beppe-2.webp",
+        "kind": "food",
+        "credit": "Bare Beppe · Sandefjord · official website",
+        "source": "https://www.barebeppe.no/finn-oss",
+        "original": "https://static.wixstatic.com/media/63cbea_c1dcff0cbd514c309314070942c87faf~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-cafe-beppe-1.webp",
+    "imageSource": "https://www.barebeppe.no/finn-oss",
+    "photoAlt": "Bare Beppe · Sandefjord — actual venue photograph",
+    "photoCaption": "Bare Beppe · Sandefjord · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Bare%20Beppe%20%C2%B7%20Sandefjord%2C%20Kongens%20gate%2010%2C%203210%20Sandefjord"
+  },
+  {
+    "id": "bare-barista-tonsberg",
+    "name": "Bare Barista · Øvre Langgate",
+    "town": "Tønsberg",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "category": "cafe",
+    "address": "Øvre Langgate 44, 3110 Tønsberg",
+    "latitude": 59.26803460942821,
+    "longitude": 10.407852234544498,
+    "website": "https://barebarista.no/",
+    "source": "https://barebarista.no/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=%C3%98vre%20Langgate%2044%2C%203110%20T%C3%B8nsberg&treffPerSide=3",
+    "description": {
+      "nb": "Spesialkaffe, et lite bakgårdsrom og en rolig bypause.",
+      "en": "Specialty coffee and a sheltered courtyard for an easy town break.",
+      "uk": "Спешелті-кава й затишний дворик для неспішної міської паузи.",
+      "sv": "Specialkaffe och en skyddad bakgård för en lugn stadspaus.",
+      "da": "Specialkaffe og en beskyttet baggård til en rolig bypause."
+    },
+    "hoursNote": {
+      "nb": "Man–fre 08–17, lør 09–17, søn 10–17. Gjelder Øvre Langgate, ikke jernbanekafeen.",
+      "en": "Mon–Fri 08–17, Sat 09–17, Sun 10–17. Øvre Langgate branch, not the station café.",
+      "uk": "Пн–пт 08–17, сб 09–17, нд 10–17. Філія Øvre Langgate, не вокзальна кав’ярня.",
+      "sv": "Mån–fre 08–17, lör 09–17, sön 10–17. Gäller Øvre Langgate, inte stationskaféet.",
+      "da": "Man–fre 08–17, lør 09–17, søn 10–17. Gælder Øvre Langgate, ikke stationscaféen."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://barebarista.no/",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-cafe-barista-1.webp",
+        "kind": "cafeInside",
+        "credit": "Bare Barista · Øvre Langgate · official website",
+        "source": "https://barebarista.no/",
+        "original": "https://barebarista.no/gallery-02.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-cafe-barista-2.webp",
+        "kind": "terrace",
+        "credit": "Bare Barista · Øvre Langgate · official website",
+        "source": "https://barebarista.no/",
+        "original": "https://barebarista.no/gallery-03.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-cafe-barista-1.webp",
+    "imageSource": "https://barebarista.no/",
+    "photoAlt": "Bare Barista · Øvre Langgate — actual venue photograph",
+    "photoCaption": "Bare Barista · Øvre Langgate · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Bare%20Barista%20%C2%B7%20%C3%98vre%20Langgate%2C%20%C3%98vre%20Langgate%2044%2C%203110%20T%C3%B8nsberg"
+  },
+  {
+    "id": "traktern-horten",
+    "name": "Traktern Kaffebar · Horten",
+    "town": "Horten",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "category": "cafe",
+    "address": "Falsens gate 11, 3187 Horten",
+    "latitude": 59.41379472344568,
+    "longitude": 10.481495556308307,
+    "website": "https://www.traktern.no/",
+    "source": "https://www.traktern.no/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Falsens%20gate%2011%2C%203187%20Horten&treffPerSide=3",
+    "description": {
+      "nb": "Kaffebar i sentrum med kaker og lunsj før eller etter Karljohansvern.",
+      "en": "Central coffee bar with cakes and lunch before or after Karljohansvern.",
+      "uk": "Кав’ярня в центрі з тістечками й обідом до або після Karljohansvern.",
+      "sv": "Kaffebar i centrum med kakor och lunch före eller efter Karljohansvern.",
+      "da": "Kaffebar i centrum med kager og frokost før eller efter Karljohansvern."
+    },
+    "hoursNote": {
+      "nb": "Ingen fast ukeplan funnet på operatørens nettsted. Ring 45 87 42 33 før avreise.",
+      "en": "No regular weekly timetable found on the operator website. Call +47 45 87 42 33 before travelling.",
+      "uk": "На сайті закладу не знайдено постійного тижневого розкладу. Перед виїздом телефонуйте +47 45 87 42 33.",
+      "sv": "Inget fast veckoschema hittades på webbplatsen. Ring +47 45 87 42 33 före avresa.",
+      "da": "Ingen fast ugeplan fundet på stedets hjemmeside. Ring +47 45 87 42 33 før afrejse."
+    },
+    "openingHours": {
+      "verified": false,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://www.traktern.no/"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-cafe-traktern-1.webp",
+        "kind": "facade",
+        "credit": "Traktern Kaffebar · Horten · official website",
+        "source": "https://www.traktern.no/",
+        "original": "https://www.traktern.no/wp-content/uploads/2024/05/Traktern-bilder-08.05_web-size-2.3-copy.webp",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-cafe-traktern-2.webp",
+        "kind": "cafeInside",
+        "credit": "Traktern Kaffebar · Horten · official website",
+        "source": "https://www.traktern.no/",
+        "original": "https://www.traktern.no/wp-content/uploads/2024/05/Traktern-bilder-08.05_web-size-24-copy.webp",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-cafe-traktern-1.webp",
+    "imageSource": "https://www.traktern.no/",
+    "photoAlt": "Traktern Kaffebar · Horten — actual venue photograph",
+    "photoCaption": "Traktern Kaffebar · Horten · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Traktern%20Kaffebar%20%C2%B7%20Horten%2C%20Falsens%20gate%2011%2C%203187%20Horten"
+  },
+  {
     "id": "kinsarvik-heng",
     "name": "Kinsarvik Camping — Heng",
     "area": "Kinsarvik · Hardanger",
@@ -2030,16 +2384,23 @@
     "category": "cabin",
     "region": "Høyheimsvik · Luster / Sognefjord",
     "town": "Høyheimsvik",
-    "address": "Høyheimsvik · Luster / Sognefjord",
+    "address": "Lustravegen 2623, 6875 Høyheimsvik, Norway",
     "source": "https://www.luster-fjordhytter.com/en",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Luster%20Fjordhytter%2C%20Lustravegen%202623%2C%206875%20H%C3%B8yheimsvik%2C%20Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Luster%20Fjordhytter%2C%20Lustravegen%202623%2C%20H%C3%B8yheimsvik%2C%20Norway&travelmode=driving",
     "photoCaption": {
       "nb": "Foto fra Luster Fjordhytter · stedets nettside",
       "en": "Photo from Luster Fjordhytter · venue website",
       "uk": "Фото Luster Fjordhytter · сайт закладу",
       "sv": "Foto från Luster Fjordhytter · anläggningens webbplats",
       "da": "Foto fra Luster Fjordhytter · stedets hjemmeside"
-    }
+    },
+    "latitude": 61.39969592552051,
+    "longitude": 7.395916039941032,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Lustravegen%202623&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://www.luster-fjordhytter.com/en",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Operator publishes Lustravegen 2623 without suffix. Kartverket returns 2623A/B/C within the cottage property; 2623A is a representative property address point, not a claimed reception, individual cabin or parking entrance."
   },
   {
     "id": "kilsti-compact-lodge",
@@ -2269,8 +2630,13 @@
     "checked": "2026-10-17",
     "source": "https://www.fjordsauna.com/fjordsauna-flaam",
     "photoVerified": true,
-    "coordinatesNote": "Use the published address for directions; exact coordinates have not been assigned.",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=FjordSauna%20Fl%C3%A5m%2C%20Kaiplass%2010%20og%2011%2C%20Fl%C3%A5m%20hamn%2C%205743%20Fl%C3%A5m%2C%20Fl%C3%A5m%2C%20Norway"
+    "coordinatesNote": "Visit Sognefjord publishes these coordinates for FjordSauna Flåm. Floating sauna at piers 10/11: area marker only. Operator requires public paid parking in Flåm centre followed by a walk; the nearby marina lot is reserved for marina guests.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Fl%C3%A5m%20public%20parking%2C%20Fl%C3%A5m%20sentrum%2C%20Norway&travelmode=driving",
+    "latitude": 60.86208,
+    "longitude": 7.11445,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://www.sognefjord.no/listing/fjordsauna-fl%C3%A5m/647530301/",
+    "coordinatesChecked": "2026-10-18"
   },
   {
     "id": "sanner-dukkestua-gran",
@@ -4002,6 +4368,487 @@
     "route": "telemarkcoast"
   },
   {
+    "id": "larvik-bokeskogen",
+    "name": "Larvik · Bøkeskogen",
+    "town": "Larvik",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "address": "Bøkeskogen, Larvik, Norway",
+    "latitude": 59.05833,
+    "longitude": 10.02404,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=B%C3%B8keskogen&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/attraksjon/bokeskogen",
+    "source": "https://www.visitvestfold.com/no/attraksjon/bokeskogen",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En grønn pause over Larvik: bøketrær, skogsstier og spor fra vikingtiden. Velg en kort tur før kaffe eller en rolig ettermiddag ved Larviksfjorden.",
+      "en": "A green pause above Larvik: beech trees, woodland paths and traces of Viking history. Choose a short walk before coffee or a quiet afternoon by Larviksfjorden.",
+      "uk": "Зелена зупинка над Ларвіком: буковий ліс, стежки та сліди доби вікінгів. Оберіть коротку прогулянку перед кавою або спокійним відпочинком біля Ларвік-фіорду.",
+      "sv": "En grön paus ovanför Larvik: bokträd, skogsstigar och spår från vikingatiden. Välj en kort promenad före kaffe eller en lugn eftermiddag vid Larviksfjorden.",
+      "da": "En grøn pause over Larvik: bøgetræer, skovstier og spor fra vikingetiden. Vælg en kort tur før kaffe eller en rolig eftermiddag ved Larviksfjorden."
+    },
+    "hoursNote": {
+      "nb": "Skogen kan besøkes hele året i dagslys. Stier kan være glatte; bruk passende sko. Ikke gå på gravhaugene. Kafeen har egne åpningstider. Punktet viser skogsområdet, ikke innkjøring eller parkering.",
+      "en": "Visit the forest year-round in daylight. Paths may be slippery; wear suitable shoes. Do not walk on burial mounds. The café keeps its own hours. The marker represents the woodland, not a vehicle entrance or parking space.",
+      "uk": "Ліс можна відвідувати цілий рік у світлу пору. Стежки бувають слизькі; потрібне відповідне взуття. Не ходіть по курганах. Кав’ярня має власні години. Позначка вказує ліс, а не автомобільний в’їзд чи паркінг.",
+      "sv": "Skogen kan besökas året runt i dagsljus. Stigarna kan vara hala; använd lämpliga skor. Gå inte på gravhögarna. Kaféet har egna öppettider. Punkten visar skogsområdet, inte bilinfart eller parkering.",
+      "da": "Skoven kan besøges året rundt i dagslys. Stierne kan være glatte; brug passende sko. Gå ikke på gravhøjene. Caféen har egne åbningstider. Punktet viser skovområdet, ikke bilindkørsel eller parkering."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=B%C3%B8keskogen%2C%20Larvik%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/vestfold-place-larvik.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ovre_gravfelt,_Bokeskogen.jpg",
+    "photoAlt": "Sunlight through beech trees above a preserved burial mound in Bøkeskogen, Larvik",
+    "photoCaption": "Morten Bakkeli · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-place-larvik.webp",
+        "kind": "view",
+        "credit": "Morten Bakkeli",
+        "source": "https://commons.wikimedia.org/wiki/File:Ovre_gravfelt,_Bokeskogen.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/3/38/Ovre_gravfelt%2C_Bokeskogen.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "sandefjord-waterfront",
+    "name": "Sandefjord · havn & strandpromenade",
+    "town": "Sandefjord",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "address": "Strandpromenaden, Sandefjord, Norway",
+    "latitude": 59.13133,
+    "longitude": 10.22234,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Sandefjord&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/forretning/sandefjord-havnevesen",
+    "source": "https://www.visitvestfold.com/no/forretning/sandefjord-havnevesen",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En lett bypause ved havnen: sjøluft, småbåter og en rusletur langs Strandpromenaden. Fortsett til sentrum for kaffe; la øy- og båtturer være valgfrie tillegg.",
+      "en": "An easy town stop by the harbour: sea air, small boats and a stroll along Strandpromenaden. Continue into the centre for coffee; island and boat trips remain optional.",
+      "uk": "Легка міська зупинка біля гавані: морське повітря, човни й прогулянка Strandpromenaden. Далі — кава в центрі; острови та морські екскурсії залишаються додатковими варіантами.",
+      "sv": "En enkel stadspaus vid hamnen: havsluft, småbåtar och en promenad längs Strandpromenaden. Fortsätt in till centrum för kaffe; ö- och båtturer är valfria tillägg.",
+      "da": "En let bypause ved havnen: havluft, småbåde og en tur langs Strandpromenaden. Fortsæt ind til centrum for kaffe; ø- og bådture er valgfrie ekstra oplevelser."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider. Parker lovlig og gå videre til fots. Punktet er en områdeangivelse, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep their own hours. Park legally and continue on foot. The marker represents an area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar ett område, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser et område, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Strandpromenaden%2C%20Sandefjord%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/vestfold-place-sandefjord.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sandefjord_-_harbour.jpg",
+    "photoAlt": "Calm water, marina pontoons and wooded shoreline in Sandefjord harbour",
+    "photoCaption": "Paweł 'pbm' Szubert · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-place-sandefjord.webp",
+        "kind": "view",
+        "credit": "Paweł 'pbm' Szubert",
+        "source": "https://commons.wikimedia.org/wiki/File:Sandefjord_-_harbour.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/1/12/Sandefjord_-_harbour.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "tonsberg-brygga",
+    "name": "Tønsberg · Brygga & Slottsfjellet",
+    "town": "Tønsberg",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "address": "Tønsberg Brygge, Tønsberg, Norway",
+    "latitude": 59.26753,
+    "longitude": 10.40763,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=T%C3%B8nsberg&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/attraksjon/tonsberg-brygge",
+    "source": "https://www.visitvestfold.com/no/attraksjon/tonsberg-brygge",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Fargerike sjøhus og båter langs Brygga gir en fin pause ved vannet. Har du lyst på utsikt, legg til en tur opp på Slottsfjellet; det er en egen motbakke fra brygga.",
+      "en": "Colourful waterfront buildings and boats along Brygga make a lovely waterside pause. For a view, add a walk up Slottsfjellet; it is a separate uphill walk from the quay.",
+      "uk": "Барвисті будинки й човни на Brygga — гарна зупинка біля води. За панорамою можна піднятися на Slottsfjellet: від набережної це окрема прогулянка вгору.",
+      "sv": "Färgglada hus och båtar längs Brygga ger en fin paus vid vattnet. För utsikt kan du lägga till Slottsfjellet; det är en separat promenad uppför från bryggan.",
+      "da": "Farverige huse og både langs Brygga giver en fin pause ved vandet. Vil du have udsigt, kan du tilføje Slottsfjellet; det er en særskilt gåtur opad fra kajen."
+    },
+    "hoursNote": {
+      "nb": "Brygga er et utendørs turområde hele året. Restauranter, konserter og Slottsfjelltårnet har egne tider; adgang til tårnet er ikke inkludert. Gå forsiktig ved vått føre, og parker utenfor gangområdene.",
+      "en": "Brygga is an outdoor walking area year-round. Restaurants, concerts and Slottsfjelltårnet keep separate hours; tower entry is not included. Take care in wet conditions and park outside pedestrian areas.",
+      "uk": "Brygga — відкрита набережна для прогулянок цілий рік. Ресторани, концерти й вежа Slottsfjelltårnet мають окремі години; вхід до вежі не включений. У дощ будьте обережні й паркуйтеся поза пішохідною зоною.",
+      "sv": "Brygga är ett utomhusområde för promenader året runt. Restauranger, konserter och Slottsfjelltårnet har egna tider; inträde till tornet ingår inte. Gå försiktigt vid väta och parkera utanför gångområdena.",
+      "da": "Brygga er et udendørs gåområde året rundt. Restauranter, koncerter og Slottsfjelltårnet har egne tider; adgang til tårnet er ikke inkluderet. Gå forsigtigt i vådt føre og parkér uden for gåområderne."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=T%C3%B8nsberg%20Brygge%2C%20T%C3%B8nsberg%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/vestfold-place-tonsberg.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Brygga_i_Tønsberg.JPG",
+    "photoAlt": "Colourful waterfront buildings and boats along Brygga in Tønsberg, with Slottsfjelltårnet in the distance",
+    "photoCaption": "Helge Høifødt · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-place-tonsberg.webp",
+        "kind": "view",
+        "credit": "Helge Høifødt",
+        "source": "https://commons.wikimedia.org/wiki/File:Brygga_i_Tønsberg.JPG",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Brygga_i_T%C3%B8nsberg.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "horten-karljohansvern",
+    "name": "Horten · Karljohansvern",
+    "town": "Horten",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "address": "Karljohansvern, Horten, Norway",
+    "latitude": 59.43159,
+    "longitude": 10.49163,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Karljohansvern&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/attraksjon/karljohansvern",
+    "source": "https://www.visitvestfold.com/no/attraksjon/karljohansvern",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Historiske marinebygninger, gamle trær og den stille Hortenskanalen. Ta en rolig rundtur til fots; Marinemuseet og Preus museum kan legges til hvis åpningstidene passer.",
+      "en": "Historic naval buildings, old trees and the quiet Horten Canal. Take an unhurried walk; add the Naval Museum or Preus Museum if opening times suit your visit.",
+      "uk": "Історичні морські будівлі, старі дерева й тихий Гортенський канал. Прогуляйтеся неспішно; Морський музей або Preus museum можна додати за відповідного розкладу.",
+      "sv": "Historiska marinbyggnader, gamla träd och den stilla Hortenkanalen. Ta en lugn promenad; lägg till Marinmuseet eller Preus museum om öppettiderna passar.",
+      "da": "Historiske flådebygninger, gamle træer og den stille Hortenkanal. Gå en rolig tur; tilføj Marinemuseet eller Preus museum, hvis åbningstiderne passer."
+    },
+    "hoursNote": {
+      "nb": "Uteområdet er åpent hele døgnet ifølge Visit Vestfold; velg dagslys for turen. Museer og kafeer har egne tider. Kulturverftet innenfor murene er bilfritt: bruk skiltet parkering utenfor. Respekter avsperrede militære områder.",
+      "en": "Visit Vestfold lists the outdoor area as open around the clock; choose daylight for your walk. Museums and cafés keep their own hours. Kulturverftet inside the walls is car-free: use signed parking outside. Respect restricted military areas.",
+      "uk": "За Visit Vestfold відкрита територія доступна цілодобово; для прогулянки обирайте світлу пору. Музеї й кав’ярні мають власні години. Kulturverftet усередині мурів — без автомобілів: користуйтеся позначеним паркінгом зовні. Не заходьте до закритих військових зон.",
+      "sv": "Visit Vestfold anger att utomhusområdet är öppet dygnet runt; välj dagsljus för promenaden. Museer och kaféer har egna tider. Kulturverftet innanför murarna är bilfritt: använd skyltad parkering utanför. Respektera avspärrade militära områden.",
+      "da": "Visit Vestfold angiver, at udeområdet er åbent døgnet rundt; vælg dagslys til turen. Museer og caféer har egne tider. Kulturverftet inden for murene er bilfrit: brug skiltet parkering udenfor. Respektér afspærrede militære områder."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Karljohansvern%2C%20Horten%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/vestfold-place-horten.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Horten_Norway_Karljohansvern_02.jpg",
+    "photoAlt": "Historic houses, white fences and flowering trees along a street in Karljohansvern, Horten",
+    "photoCaption": "Bjoertvedt · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-place-horten.webp",
+        "kind": "view",
+        "credit": "Bjoertvedt",
+        "source": "https://commons.wikimedia.org/wiki/File:Horten_Norway_Karljohansvern_02.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Horten_Norway_Karljohansvern_02.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "gon-vestfold-cabins",
+    "name": "Gon Camping · hytter",
+    "town": "Larvik",
+    "address": "Gonveien 100, 3260 Larvik, Norway",
+    "latitude": 59.021967330209264,
+    "longitude": 10.071814403762271,
+    "website": "https://goncamping.no/",
+    "bookingUrl": "https://goncamping.no/",
+    "source": "https://goncamping.no/hytter-cabins/",
+    "description": {
+      "nb": "Enkle firemannshytter ved Larviksfjorden med minikjøkken. Felles toaletter og dusjer; ta med eget sengetøy.",
+      "en": "Simple four-person cabins beside Larviksfjorden with kitchenettes. Shared toilets and showers; bring your own bed linen.",
+      "uk": "Прості будиночки на чотирьох біля Larviksfjorden із мінікухнею. Душові й туалети спільні; візьміть власну постільну білизну.",
+      "sv": "Enkla fyrbäddsstugor vid Larviksfjorden med kokvrå. Gemensamma toaletter och duschar; ta med egna sängkläder.",
+      "da": "Enkle firepersonershytter ved Larviksfjorden med tekøkken. Fælles toiletter og brusere; medbring eget sengelinned."
+    },
+    "hoursNote": {
+      "nb": "Sesongcamping; bekreft hyttenes datoer og innsjekk på e-post før avreise. Bestilling via operatørens nettside/kontakt. Rusfri campingplass.",
+      "en": "Seasonal campsite; confirm cabin dates and check-in by email before travelling. Booking through the operator’s website/contact. Alcohol-free campsite.",
+      "uk": "Сезонний кемпінг; заздалегідь уточніть дати й заселення електронною поштою. Бронювання через сайт або контакт оператора. Кемпінг без алкоголю.",
+      "sv": "Säsongscamping; bekräfta stugdatum och incheckning via e-post före resan. Boka via operatörens webbplats/kontakt. Alkoholfri camping.",
+      "da": "Sæsoncamping; bekræft hyttedatoer og indtjekning på e-mail før afrejse. Booking via operatørens hjemmeside/kontakt. Alkoholfri campingplads."
+    },
+    "photoAlt": "Gon Camping — red rental cabins and terrace",
+    "extraSources": [
+      "https://goncamping.no/om-plassen-facilities/",
+      "https://campinglarvik.no/gon-camping/"
+    ],
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "route": "vestfoldcoast",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Gonveien%20100%20Larvik&treffPerSide=3",
+    "descriptionSource": "https://goncamping.no/hytter-cabins/",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://goncamping.no/hytter-cabins/"
+    },
+    "imageSource": "https://goncamping.no/hytter-cabins/",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-stay-gon-exterior.webp",
+        "kind": "grounds",
+        "credit": "Gon Camping · official website",
+        "source": "https://goncamping.no/hytter-cabins/",
+        "original": "https://www-static.goncamping.no/wp-content/uploads/2013/04/2013-04-17-13.16.00.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-gon-inside.webp",
+        "kind": "inside",
+        "credit": "Gon Camping · official website",
+        "source": "https://goncamping.no/hytter-cabins/",
+        "original": "https://www-static.goncamping.no/wp-content/uploads/2013/04/2013-04-14-11.24.39.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-stay-gon-exterior.webp",
+    "photoCaption": {
+      "nb": "Ekte operatørfoto",
+      "en": "Real operator photograph",
+      "uk": "Справжнє фото оператора",
+      "sv": "Äkta operatörsfoto",
+      "da": "Ægte operatørfoto"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Gon%20Camping%2C%20Gonveien%20100%2C%203260%20Larvik%2C%20Norway"
+  },
+  {
+    "id": "vora-vestfold-cabins",
+    "name": "Vøra Camping · hytter",
+    "town": "Sandefjord",
+    "address": "Vesterøyveien 401, 3234 Sandefjord, Norway",
+    "latitude": 59.07151306773833,
+    "longitude": 10.259563814693815,
+    "website": "https://voracamping.no/",
+    "bookingUrl": "https://voracamping.no/book-overnatting/",
+    "source": "https://voracamping.no/overnatting/hytter/",
+    "phone": "+4790960142",
+    "description": {
+      "nb": "Hytter nær Vøra-stranden og kyststien. Hytte 1–2 har to soverom, kjøkken og bad; andre typer har annen standard.",
+      "en": "Cabins near Vøra beach and the coastal path. Cabins 1–2 have two bedrooms, a kitchen and bathroom; other types differ.",
+      "uk": "Будиночки біля пляжу Vøra та прибережної стежки. Типи 1–2 мають дві спальні, кухню й ванну; інші типи відрізняються.",
+      "sv": "Stugor nära Vøras strand och kuststigen. Stuga 1–2 har två sovrum, kök och badrum; andra typer skiljer sig.",
+      "da": "Hytter nær Vøras strand og kyststien. Hytte 1–2 har to soveværelser, køkken og bad; andre typer er anderledes."
+    },
+    "hoursNote": {
+      "nb": "Hytteutleie hele året; bekreft ledighet. Innsjekk 15, utsjekk 11. Sluttrengjøring kommer i tillegg. Bestillingsknappen åpner en forespørsel, ikke en bekreftet reservasjon.",
+      "en": "Year-round cabin rental; confirm availability. Check-in 15:00, check-out 11:00. Final cleaning is extra. Booking opens an enquiry, not a confirmed reservation.",
+      "uk": "Оренда будиночків цілий рік; уточнюйте наявність. Заселення о 15:00, виїзд об 11:00. Прибирання оплачується окремо. Кнопка бронювання відкриває запит, а не підтвердження.",
+      "sv": "Stuguthyrning året runt; bekräfta tillgänglighet. Incheckning 15, utcheckning 11. Slutstädning tillkommer. Bokningsknappen öppnar en förfrågan, ingen bekräftad bokning.",
+      "da": "Hytteudlejning hele året; bekræft ledighed. Indtjekning 15, udtjekning 11. Slutrengøring koster ekstra. Bookingknappen åbner en forespørgsel, ikke en bekræftet reservation."
+    },
+    "photoAlt": "Vøra Camping — wooden cabins beside the lawn",
+    "extraSources": [
+      "https://voracamping.no/overnatting/"
+    ],
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "route": "vestfoldcoast",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Vester%C3%B8yveien%20401&treffPerSide=3",
+    "descriptionSource": "https://voracamping.no/overnatting/hytter/",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://voracamping.no/overnatting/hytter/"
+    },
+    "imageSource": "https://voracamping.no/overnatting/hytter/",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-stay-vora-front.webp",
+        "kind": "grounds",
+        "credit": "Vøra Camping · official website",
+        "source": "https://voracamping.no/overnatting/hytter/",
+        "original": "https://voracamping.no/wp-content/uploads/elementor/thumbs/20231016_113035-rotated-qemgh06oln37kvjh12ro31il76me64omv2ewb964yo.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-vora-kitchen.webp",
+        "kind": "inside",
+        "credit": "Vøra Camping · official website",
+        "source": "https://voracamping.no/overnatting/hytter/",
+        "original": "https://voracamping.no/wp-content/uploads/elementor/thumbs/h1_1-pjx6zmemii7bf7ipu1xdml6uclaiwp33vhdfkqmsgw.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-vora-inside.webp",
+        "kind": "bedroom",
+        "credit": "Vøra Camping · official website",
+        "source": "https://voracamping.no/overnatting/hytter/",
+        "original": "https://voracamping.no/wp-content/uploads/elementor/thumbs/h1_2-pjx6zdy2szvqipv07g9qi5bp04g7zf5iubi298zc0w.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-stay-vora-front.webp",
+    "photoCaption": {
+      "nb": "Ekte operatørfoto",
+      "en": "Real operator photograph",
+      "uk": "Справжнє фото оператора",
+      "sv": "Äkta operatörsfoto",
+      "da": "Ægte operatørfoto"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=V%C3%B8ra%20Camping%2C%20Vester%C3%B8yveien%20401%2C%203234%20Sandefjord%2C%20Norway"
+  },
+  {
+    "id": "furustrand-vestfold-cabins",
+    "name": "Furustrand · strandhytter",
+    "town": "Tønsberg",
+    "address": "Tareveien 11, 3150 Tolvsrød, Norway",
+    "latitude": 59.27306578432201,
+    "longitude": 10.491603724325007,
+    "website": "https://furustrand.no/",
+    "bookingUrl": "https://furustrand.no/bestilling/",
+    "source": "https://furustrand.no/bestilling/",
+    "phone": "+4733357000",
+    "description": {
+      "nb": "Flere hyttetyper ved Ringshaugstranda utenfor Tønsberg. Galleriet viser anleggets strandhytter og felles strandmiljø; velg konkret type ved bestilling.",
+      "en": "Several cabin types beside Ringshaug beach outside Tønsberg. Gallery shows the resort’s beach cabins and shared beach area; choose your exact type when booking.",
+      "uk": "Кілька типів будиночків біля пляжу Ringshaug за Tønsberg. Галерея показує пляжні будиночки комплексу та спільну зону; конкретний тип обирайте під час бронювання.",
+      "sv": "Flera stugtyper vid Ringshaugstranda utanför Tønsberg. Galleriet visar anläggningens strandstugor och gemensamma strandmiljö; välj exakt typ vid bokning.",
+      "da": "Flere hyttetyper ved Ringshaugstranda uden for Tønsberg. Galleriet viser stedets strandhytter og fælles strandområde; vælg præcis type ved booking."
+    },
+    "hoursNote": {
+      "nb": "Innsjekk fra 15, utsjekk innen 11. Kontakt verten for bare én natt. Vinterutleie tilbys også; bekreft tilgjengelige datoer.",
+      "en": "Check-in from 15:00, check-out by 11:00. Contact the host for just one night. Winter rentals also offered; confirm available dates.",
+      "uk": "Заселення від 15:00, виїзд до 11:00. На одну ніч зверніться до господаря. Є також зимова оренда; уточнюйте вільні дати.",
+      "sv": "Incheckning från 15, utcheckning senast 11. Kontakta värden för bara en natt. Vinteruthyrning erbjuds också; bekräfta lediga datum.",
+      "da": "Indtjekning fra 15, udtjekning senest 11. Kontakt værten for kun én nat. Vinterudlejning tilbydes også; bekræft ledige datoer."
+    },
+    "photoAlt": "Furustrand — beach cabins facing the Oslofjord",
+    "imageSource": "https://furustrand.no/",
+    "extraSources": [
+      "https://furustrand.no/kjopsbetingelser/",
+      "https://furustrand.no/langtidsleie/"
+    ],
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "route": "vestfoldcoast",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Tareveien%2011%20Tolvsr%C3%B8d&treffPerSide=3",
+    "descriptionSource": "https://furustrand.no/bestilling/",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://furustrand.no/bestilling/"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-stay-furustrand-exterior.webp",
+        "kind": "grounds",
+        "credit": "Furustrand · official website",
+        "source": "https://furustrand.no/",
+        "original": "https://furustrand.no/wp-content/uploads/2025/05/Galleri-1-Hytte-edited.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-furustrand-view.webp",
+        "kind": "view",
+        "credit": "Furustrand · official website",
+        "source": "https://furustrand.no/",
+        "original": "https://furustrand.no/wp-content/uploads/2023/07/Furustrand-galleri-23-04-1024x684.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-stay-furustrand-exterior.webp",
+    "photoCaption": {
+      "nb": "Ekte operatørfoto",
+      "en": "Real operator photograph",
+      "uk": "Справжнє фото оператора",
+      "sv": "Äkta operatörsfoto",
+      "da": "Ægte operatørfoto"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Furustrand%2C%20Tareveien%2011%2C%203150%20Tolvsr%C3%B8d%2C%20Norway"
+  },
+  {
+    "id": "lovoya-vestfold-cabins",
+    "name": "Løvøya Oslofjord · Leafhut Ash",
+    "town": "Horten",
+    "address": "Løvøyveien 54, 3189 Horten, Norway",
+    "latitude": 59.44667591465805,
+    "longitude": 10.439962197147036,
+    "website": "https://lovoyaoslofjord.no/",
+    "bookingUrl": "https://booking.lovoyaoslofjord.no/en/accommodation",
+    "source": "https://booking.lovoyaoslofjord.no/en/accommodation",
+    "phone": "+4792920027",
+    "description": {
+      "nb": "Leafhut Ash er en 28 m² hytte for opptil seks personer med to soverom, kjøkken og eget bad på Løvøya ved Horten.",
+      "en": "Leafhut Ash is a 28 m² cabin for up to six with two bedrooms, a kitchen and private bathroom on Løvøya near Horten.",
+      "uk": "Leafhut Ash — будиночок 28 м² на шістьох із двома спальнями, кухнею та власною ванною на Løvøya біля Horten.",
+      "sv": "Leafhut Ash är en stuga på 28 m² för upp till sex med två sovrum, kök och eget badrum på Løvøya vid Horten.",
+      "da": "Leafhut Ash er en hytte på 28 m² til op til seks med to soveværelser, køkken og eget bad på Løvøya ved Horten."
+    },
+    "hoursNote": {
+      "nb": "Bekreft sesong, ledige hyttedatoer og innsjekk i bestillingen; gjeldende helårsåpning er ikke bekreftet. Velg Cabin, ikke glampingtelt.",
+      "en": "Confirm season, available cabin dates and check-in when booking; current year-round opening is not verified. Select Cabin, not a glamping tent.",
+      "uk": "Уточніть сезон, вільні дати й заселення під час бронювання; роботу цілий рік не підтверджено. Оберіть Cabin, а не глемпінговий намет.",
+      "sv": "Bekräfta säsong, lediga stugdatum och incheckning vid bokning; aktuellt helårsöppet är inte verifierat. Välj Cabin, inte glampingtält.",
+      "da": "Bekræft sæson, ledige hyttedatoer og indtjekning ved booking; aktuelt helårsåbent er ikke bekræftet. Vælg Cabin, ikke glampingtelt."
+    },
+    "photoAlt": "Løvøya Oslofjord — Leafhut Ash red cabin and terrace",
+    "extraSources": [
+      "https://lovoyaoslofjord.no/"
+    ],
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "route": "vestfoldcoast",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=L%C3%B8v%C3%B8yveien%2054&treffPerSide=3",
+    "descriptionSource": "https://booking.lovoyaoslofjord.no/en/accommodation",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://booking.lovoyaoslofjord.no/en/accommodation"
+    },
+    "imageSource": "https://booking.lovoyaoslofjord.no/en/accommodation",
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-stay-lovoya-exterior.webp",
+        "kind": "grounds",
+        "credit": "Løvøya Oslofjord · official website",
+        "source": "https://booking.lovoyaoslofjord.no/en/accommodation",
+        "original": "https://images.bookvisit.com/img/b29a731c-6d47-4f10-8e68-37ef7c55a329.jpg?maxwidth=1200",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-stay-lovoya-room.webp",
+        "kind": "inside",
+        "credit": "Løvøya Oslofjord · official website",
+        "source": "https://booking.lovoyaoslofjord.no/en/accommodation",
+        "original": "https://images.bookvisit.com/img/4f8f3f4d-3812-4ab2-85e9-041dbbc714c3.jpg?maxwidth=1200",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-stay-lovoya-exterior.webp",
+    "photoCaption": {
+      "nb": "Ekte operatørfoto",
+      "en": "Real operator photograph",
+      "uk": "Справжнє фото оператора",
+      "sv": "Äkta operatörsfoto",
+      "da": "Ægte operatørfoto"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=L%C3%B8v%C3%B8ya%20Oslofjord%2C%20L%C3%B8v%C3%B8yveien%2054%2C%203189%20Horten%2C%20Norway"
+  },
+  {
     "id": "tusenfryd",
     "name": "TusenFryd",
     "website": "https://www.tusenfryd.no/",
@@ -4756,7 +5603,7 @@
   {
     "id": "bjorneparken-fla",
     "name": "Bjørneparken",
-    "address": "Vikberget, 3539 Flå, Norway",
+    "address": "Bjørneparkvegen 61, 3539 Flå, Norway",
     "routes": [
       "east",
       "fjord"
@@ -4802,7 +5649,7 @@
     "region": "Flå · Hallingdal",
     "town": "Flå",
     "source": "https://bjorneparken.no/",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Bj%C3%B8rneparken%2C%20Vikberget%2C%203539%20Fl%C3%A5%2C%20Norway%2C%20Fl%C3%A5%2C%20Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Bj%C3%B8rneparken%2C%20Bj%C3%B8rneparkvegen%2061%2C%20Fl%C3%A5%2C%20Norway&travelmode=driving",
     "gallery": [
       {
         "src": "./experience-bjorneparken-fla.jpg",
@@ -4814,7 +5661,14 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:2012-07_Bj%C3%B8rneparken_02.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "latitude": 60.43389430090762,
+    "longitude": 9.447833999880439,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Bj%C3%B8rneparkvegen%2061%20Fl%C3%A5&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://no.linkedin.com/company/bj%C3%B8rneparken-as",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Kartverket address point matches the company-published Bjørneparkvegen 61. The operator arrival page confirms visitor parking outside the park. Marker is a property area, not a surveyed vehicle entrance."
   },
   {
     "id": "norsk-skogmuseum",
@@ -4999,7 +5853,7 @@
     "region": "Hjerkinn · Dovrefjell",
     "town": "Hjerkinn",
     "source": "https://villrein.no/besokssenter/",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Bes%C3%B8kssenter%20villrein%20%2F%20viewpoint%20SN%C3%98HETTA%2C%20Norsk%20villreinsenter%20Nord%3A%20Hjerkinnhusvegen%2033%2C%202661%20Hjerkinn%2C%20Norway.%20Viewpoint%20is%20reached%20from%20a%20separate%20car%20park%20and%20a%201.5%20km%20walking%20trail%3B%20this%20postal%2Fcentre%20address%20is%20not%20the%20viewpoint%20itself.%2C%20Hjerkinn%2C%20Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Norsk%20villreinsenter%20Nord%2C%20Hjerkinnhusvegen%2033%2C%202661%20Hjerkinn%2C%20Norway&travelmode=driving",
     "gallery": [
       {
         "src": "./experience-dovrefjell-wild-reindeer-centre.jpg",
@@ -5011,7 +5865,14 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Viewpoint_Sn%C3%B8hetta.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "latitude": 62.221369748446335,
+    "longitude": 9.545710818134248,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Hjerkinnhusvegen%2033&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://villrein.no/norsk-villreinsenter/",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Norsk villreinsenter Nord centre address Hjerkinnhusvegen 33 only, not viewpoint SNØHETTA or its separate trailhead parking. Pavilion requires a separate 1.5 km walk from its trail car park and is seasonal. Do not route cars onto the trail."
   },
   {
     "id": "granavollen-rest",

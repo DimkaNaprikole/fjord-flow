@@ -65,3 +65,22 @@ test('Telemark continues from Risør to Stavern by realistic mainland stops',()=
   if(i)assert.ok(p.longitude>points[i-1].longitude,'The coastal towns stay in eastbound order');
  }
 });
+
+test('Vestfold continues from Stavern through four mainland cities at a relaxed pace',()=>{
+ const route=routes.vestfoldcoast,points=route.points;
+ assert.deepEqual(points.map(p=>p.id),['vestfoldcoast-stavern','vestfoldcoast-larvik','vestfoldcoast-sandefjord','vestfoldcoast-tonsberg','vestfoldcoast-horten']);
+ assert.equal(points[0].latitude,routes.telemarkcoast.points.at(-1).latitude);
+ assert.equal(points[0].longitude,routes.telemarkcoast.points.at(-1).longitude);
+ assert.deepEqual(route.optionalExperienceIds,[]);assert.notEqual(route.navigationOnly,true);
+ assert.match(route.summary.en,/3–4 days/);assert.equal(route.photos.length,4);
+ assert.match(points[2].description.en,/does not board the Strømstad ferry/);
+ assert.match(points.at(-1).description.en,/without the Moss ferry/);
+ assert.match(points.at(-1).description.en,/one-way.*return/);
+ assert.match(points[1].description.en,/not a drive through the forest/);
+ for(let i=0;i<points.length;i++){
+  const p=points[i];assert.equal(p.coordinatePrecision,'area');assert.match(p.routeQuery,/sentrum, Norway$/);
+  assert.ok(p.latitude>58.99&&p.latitude<59.44);assert.ok(p.longitude>10&&p.longitude<10.5);
+  assert.match(p.description.en,/parking/);
+  if(i)assert.ok(p.latitude>points[i-1].latitude,'Continue north along the west side of Oslofjord');
+ }
+});

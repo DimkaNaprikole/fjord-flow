@@ -1778,5 +1778,346 @@
     "photoAlt": "Nevlunghavn Bakeri & Conditori — actual venue photograph",
     "photoCaption": "Nevlunghavn Bakeri & Conditori · official website photograph",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nevlunghavn%20Bakeri%20%26%20Conditori%2C%20Oddaneveien%202%2C%203296%20Nevlunghavn"
+  },
+  {
+    "id": "teaterkafeen-larvik",
+    "name": "Teaterkafeen · Munken",
+    "town": "Larvik",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "category": "cafe",
+    "address": "Storgata 55, 3256 Larvik",
+    "latitude": 59.05006017648498,
+    "longitude": 10.033635284856123,
+    "website": "https://teaterhusetmunken.no/teaterkafeen/",
+    "source": "https://teaterhusetmunken.no/teaterkafeen/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Storgata%2055%2C%203256%20Larvik&treffPerSide=3",
+    "description": {
+      "nb": "Kaffe og en enkel matbit i teaterhusets kafé.",
+      "en": "Coffee and a light bite in the theatre café.",
+      "uk": "Кава й легкий перекус у театральній кав’ярні.",
+      "sv": "Kaffe och något lätt i teaterhusets kafé.",
+      "da": "Kaffe og en let bid i teaterhusets café."
+    },
+    "hoursNote": {
+      "nb": "Man–tor 12–19, fre 12–17; helg stengt. Juleferie 7. desember 2026–3. januar 2027.",
+      "en": "Mon–Thu 12–19, Fri 12–17; weekends closed. Christmas closure 7 December 2026–3 January 2027.",
+      "uk": "Пн–чт 12–19, пт 12–17; вихідні зачинено. Різдвяна перерва 7 грудня 2026–3 січня 2027.",
+      "sv": "Mån–tor 12–19, fre 12–17; helg stängt. Julstängt 7 december 2026–3 januari 2027.",
+      "da": "Man–tor 12–19, fre 12–17; weekend lukket. Julelukket 7. december 2026–3. januar 2027."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://teaterhusetmunken.no/teaterkafeen/",
+      "weekly": [
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "17:00"
+          ]
+        ],
+        [],
+        []
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-cafe-munken.webp",
+        "kind": "cafeInside",
+        "credit": "M. Gofjeld · Teaterhuset Munken",
+        "source": "https://teaterhusetmunken.no/teaterkafeen/",
+        "original": "https://teaterhusetmunken.no/media/5abb7573e0460d75.webp",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-cafe-munken.webp",
+    "imageSource": "https://teaterhusetmunken.no/teaterkafeen/",
+    "photoAlt": "Teaterkafeen · Munken — actual venue photograph",
+    "photoCaption": "Teaterkafeen · Munken · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Teaterkafeen%20%C2%B7%20Munken%2C%20Storgata%2055%2C%203256%20Larvik"
+  },
+  {
+    "id": "bare-beppe-sandefjord",
+    "name": "Bare Beppe · Sandefjord",
+    "town": "Sandefjord",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "category": "cafe",
+    "address": "Kongens gate 10, 3210 Sandefjord",
+    "latitude": 59.13195569639583,
+    "longitude": 10.223259392190384,
+    "website": "https://www.barebeppe.no/finn-oss",
+    "source": "https://www.barebeppe.no/finn-oss",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Kongens%20gate%2010%2C%203210%20Sandefjord&treffPerSide=3",
+    "description": {
+      "nb": "Kafé og håndverksbakeri ved Byparken i sentrum.",
+      "en": "Café and craft bakery beside the central Byparken park.",
+      "uk": "Кав’ярня й реміснича пекарня біля центрального парку Byparken.",
+      "sv": "Kafé och hantverksbageri vid Byparken i centrum.",
+      "da": "Café og håndværksbageri ved Byparken i centrum."
+    },
+    "hoursNote": {
+      "nb": "Man–lør 09–16, søndag stengt. Sjekk avvik på helligdager.",
+      "en": "Mon–Sat 09–16, Sunday closed. Check holiday changes.",
+      "uk": "Пн–сб 09–16, нд зачинено. Уточнюйте зміни у свята.",
+      "sv": "Mån–lör 09–16, söndag stängt. Kontrollera helgdagar.",
+      "da": "Man–lør 09–16, søndag lukket. Tjek helligdage."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://www.barebeppe.no/finn-oss",
+      "weekly": [
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "16:00"
+          ]
+        ],
+        []
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-cafe-beppe-1.webp",
+        "kind": "cafeInside",
+        "credit": "Bare Beppe · Sandefjord · official website",
+        "source": "https://www.barebeppe.no/finn-oss",
+        "original": "https://static.wixstatic.com/media/63cbea_fa68b9102c60428d861d13092f939d42~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-cafe-beppe-2.webp",
+        "kind": "food",
+        "credit": "Bare Beppe · Sandefjord · official website",
+        "source": "https://www.barebeppe.no/finn-oss",
+        "original": "https://static.wixstatic.com/media/63cbea_c1dcff0cbd514c309314070942c87faf~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-cafe-beppe-1.webp",
+    "imageSource": "https://www.barebeppe.no/finn-oss",
+    "photoAlt": "Bare Beppe · Sandefjord — actual venue photograph",
+    "photoCaption": "Bare Beppe · Sandefjord · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Bare%20Beppe%20%C2%B7%20Sandefjord%2C%20Kongens%20gate%2010%2C%203210%20Sandefjord"
+  },
+  {
+    "id": "bare-barista-tonsberg",
+    "name": "Bare Barista · Øvre Langgate",
+    "town": "Tønsberg",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "category": "cafe",
+    "address": "Øvre Langgate 44, 3110 Tønsberg",
+    "latitude": 59.26803460942821,
+    "longitude": 10.407852234544498,
+    "website": "https://barebarista.no/",
+    "source": "https://barebarista.no/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=%C3%98vre%20Langgate%2044%2C%203110%20T%C3%B8nsberg&treffPerSide=3",
+    "description": {
+      "nb": "Spesialkaffe, et lite bakgårdsrom og en rolig bypause.",
+      "en": "Specialty coffee and a sheltered courtyard for an easy town break.",
+      "uk": "Спешелті-кава й затишний дворик для неспішної міської паузи.",
+      "sv": "Specialkaffe och en skyddad bakgård för en lugn stadspaus.",
+      "da": "Specialkaffe og en beskyttet baggård til en rolig bypause."
+    },
+    "hoursNote": {
+      "nb": "Man–fre 08–17, lør 09–17, søn 10–17. Gjelder Øvre Langgate, ikke jernbanekafeen.",
+      "en": "Mon–Fri 08–17, Sat 09–17, Sun 10–17. Øvre Langgate branch, not the station café.",
+      "uk": "Пн–пт 08–17, сб 09–17, нд 10–17. Філія Øvre Langgate, не вокзальна кав’ярня.",
+      "sv": "Mån–fre 08–17, lör 09–17, sön 10–17. Gäller Øvre Langgate, inte stationskaféet.",
+      "da": "Man–fre 08–17, lør 09–17, søn 10–17. Gælder Øvre Langgate, ikke stationscaféen."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://barebarista.no/",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "17:00"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-cafe-barista-1.webp",
+        "kind": "cafeInside",
+        "credit": "Bare Barista · Øvre Langgate · official website",
+        "source": "https://barebarista.no/",
+        "original": "https://barebarista.no/gallery-02.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-cafe-barista-2.webp",
+        "kind": "terrace",
+        "credit": "Bare Barista · Øvre Langgate · official website",
+        "source": "https://barebarista.no/",
+        "original": "https://barebarista.no/gallery-03.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-cafe-barista-1.webp",
+    "imageSource": "https://barebarista.no/",
+    "photoAlt": "Bare Barista · Øvre Langgate — actual venue photograph",
+    "photoCaption": "Bare Barista · Øvre Langgate · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Bare%20Barista%20%C2%B7%20%C3%98vre%20Langgate%2C%20%C3%98vre%20Langgate%2044%2C%203110%20T%C3%B8nsberg"
+  },
+  {
+    "id": "traktern-horten",
+    "name": "Traktern Kaffebar · Horten",
+    "town": "Horten",
+    "region": "Vestfold · Oslofjorden",
+    "route": "vestfoldcoast",
+    "category": "cafe",
+    "address": "Falsens gate 11, 3187 Horten",
+    "latitude": 59.41379472344568,
+    "longitude": 10.481495556308307,
+    "website": "https://www.traktern.no/",
+    "source": "https://www.traktern.no/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Falsens%20gate%2011%2C%203187%20Horten&treffPerSide=3",
+    "description": {
+      "nb": "Kaffebar i sentrum med kaker og lunsj før eller etter Karljohansvern.",
+      "en": "Central coffee bar with cakes and lunch before or after Karljohansvern.",
+      "uk": "Кав’ярня в центрі з тістечками й обідом до або після Karljohansvern.",
+      "sv": "Kaffebar i centrum med kakor och lunch före eller efter Karljohansvern.",
+      "da": "Kaffebar i centrum med kager og frokost før eller efter Karljohansvern."
+    },
+    "hoursNote": {
+      "nb": "Ingen fast ukeplan funnet på operatørens nettsted. Ring 45 87 42 33 før avreise.",
+      "en": "No regular weekly timetable found on the operator website. Call +47 45 87 42 33 before travelling.",
+      "uk": "На сайті закладу не знайдено постійного тижневого розкладу. Перед виїздом телефонуйте +47 45 87 42 33.",
+      "sv": "Inget fast veckoschema hittades på webbplatsen. Ring +47 45 87 42 33 före avresa.",
+      "da": "Ingen fast ugeplan fundet på stedets hjemmeside. Ring +47 45 87 42 33 før afrejse."
+    },
+    "openingHours": {
+      "verified": false,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://www.traktern.no/"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/vestfold-cafe-traktern-1.webp",
+        "kind": "facade",
+        "credit": "Traktern Kaffebar · Horten · official website",
+        "source": "https://www.traktern.no/",
+        "original": "https://www.traktern.no/wp-content/uploads/2024/05/Traktern-bilder-08.05_web-size-2.3-copy.webp",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/vestfold-cafe-traktern-2.webp",
+        "kind": "cafeInside",
+        "credit": "Traktern Kaffebar · Horten · official website",
+        "source": "https://www.traktern.no/",
+        "original": "https://www.traktern.no/wp-content/uploads/2024/05/Traktern-bilder-08.05_web-size-24-copy.webp",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/vestfold-cafe-traktern-1.webp",
+    "imageSource": "https://www.traktern.no/",
+    "photoAlt": "Traktern Kaffebar · Horten — actual venue photograph",
+    "photoCaption": "Traktern Kaffebar · Horten · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Traktern%20Kaffebar%20%C2%B7%20Horten%2C%20Falsens%20gate%2011%2C%203187%20Horten"
   }
 ]

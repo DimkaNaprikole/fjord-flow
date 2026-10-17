@@ -210,10 +210,17 @@
   }
   async function load() {
     loading = true; failed = false; render();
-    try {const response = await fetch('./norway-catalog.json?v=7'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
+    try {const response = await fetch('./norway-catalog.json?v=8'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
     catch {failed = true;} finally {loading = false; render();}
   }
   window.addEventListener('fjordlanguagechange', rebuild);
+  window.addEventListener('fjord:catalogue-select', event => {
+    const record = records.find(r => r.id === event.detail?.id);
+    if (!record || !validPoint(record)) return;
+    originState.set({latitude:record.latitude, longitude:record.longitude, name:record.name}); cancelGPS();
+    baseChoice = 'stop'; category = record.category; radius = '20'; query = record.name; geoMessage = ''; manualOpen = false; limit = 12; rebuild();
+    section?.scrollIntoView({block:'start',behavior:'smooth'}); search?.focus({preventScroll:true});
+  });
   window.addEventListener('fjord:catalogue-nearby', event => {
     const detail = event.detail || {}, point = {latitude:detail.lat, longitude:detail.lng, name:String(detail.name || '').slice(0,160)};
     if (!validPoint(point) || !['cabin','sauna'].includes(detail.category)) return;

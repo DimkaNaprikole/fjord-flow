@@ -246,6 +246,83 @@
     "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Stavern&treffPerSide=10&utkoordsys=4258"
   ]
 };
+ routes.vestfoldcoast={
+  label:'VESTFOLD · OSLOFJORD',checkedAt:'2026-10-18',optionalExperienceIds:[],
+  title:copy(['Harbours, beech woods and the Oslofjord','Havner, bøkeskog og Oslofjorden','Гавані, буковий ліс і Ослофіорд','Hamnar, bokskog och Oslofjorden','Havne, bøgeskov og Oslofjorden']),
+  summary:copy(['Stavern · Larvik · Sandefjord · Tønsberg · Horten · allow 3–4 days','Stavern · Larvik · Sandefjord · Tønsberg · Horten · sett av 3–4 dager','Stavern · Larvik · Sandefjord · Tønsberg · Horten · плануйте 3–4 дні','Stavern · Larvik · Sandefjord · Tønsberg · Horten · avsätt 3–4 dagar','Stavern · Larvik · Sandefjord · Tønsberg · Horten · afsæt 3–4 dage']),
+  photos:[
+  {
+    "image": "./images/catalog/vestfold-place-larvik.webp",
+    "title": "Larvik · Bøkeskogen",
+    "author": "Morten Bakkeli",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ovre_gravfelt,_Bokeskogen.jpg"
+  },
+  {
+    "image": "./images/catalog/vestfold-place-sandefjord.webp",
+    "title": "Sandefjord · havn & strandpromenade",
+    "author": "Paweł 'pbm' Szubert",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sandefjord_-_harbour.jpg"
+  },
+  {
+    "image": "./images/catalog/vestfold-place-tonsberg.webp",
+    "title": "Tønsberg · Brygga & Slottsfjellet",
+    "author": "Helge Høifødt",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Brygga_i_Tønsberg.JPG"
+  },
+  {
+    "image": "./images/catalog/vestfold-place-horten.webp",
+    "title": "Horten · Karljohansvern",
+    "author": "Bjoertvedt",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Horten_Norway_Karljohansvern_02.jpg"
+  }
+],
+  points:[
+   {id:'vestfoldcoast-stavern',name:'Stavern · havnen / Fredriksvern',latitude:routes.telemarkcoast.points.at(-1).latitude,longitude:routes.telemarkcoast.points.at(-1).longitude,extra:true,local:true,coordinatePrecision:'area',routeQuery:'Stavern sentrum, Norway',website:'https://www.visitvestfold.com/no/larvik/artikler/stavern',description:copy([
+    'Day 1: continue from the previous coastal route at Stavern harbour. Enjoy Fredriksvern on foot, then drive to Larvik. Use signed public parking; the town marker is an orientation area, not a parking entrance. Accommodation and meals are booked separately.',
+    'Dag 1: fortsett fra forrige kystetappe ved Stavern havn. Opplev Fredriksvern til fots, og kjør videre til Larvik. Bruk skiltet offentlig parkering; bymarkøren er et orienteringsområde, ikke en parkeringsinnkjørsel. Overnatting og mat bestilles separat.',
+    'День 1: продовжуйте попередній прибережний маршрут від гавані Stavern. Прогуляйтеся Fredriksvern і їдьте до Larvik. Оберіть громадську парковку за знаками: міська позначка — орієнтир, не в’їзд. Житло й харчування бронюйте окремо.',
+    'Dag 1: fortsätt från föregående kustetapp vid Staverns hamn. Upplev Fredriksvern till fots och kör vidare till Larvik. Använd skyltad allmän parkering; stadsmarkören är ett orienteringsområde, ingen parkeringsinfart. Boende och mat bokas separat.',
+    'Dag 1: fortsæt fra forrige kystetape ved Stavern havn. Oplev Fredriksvern til fods og kør videre til Larvik. Brug skiltet offentlig parkering; bymarkøren er et orienteringsområde, ingen parkeringsindkørsel. Overnatning og mad bestilles separat.'
+   ])},
+   {id:'vestfoldcoast-larvik',name:'Larvik · Indre havn / Bøkeskogen',latitude:59.05328,longitude:10.03518,extra:true,local:true,coordinatePrecision:'area',routeQuery:'Larvik sentrum, Norway',website:'https://www.visitvestfold.com/en/larvik',description:copy([
+    'Day 1: walk by Larvik’s waterfront, then make time for the paths in Bøkeskogen. These are walking visits after parking, not a drive through the forest. Overnight near Larvik or Sandefjord; check café hours and cabin availability for your dates.',
+    'Dag 1: gå langs vannet i Larvik og sett av tid til stiene i Bøkeskogen. Dette er gåturer etter parkering, ikke en biltur gjennom skogen. Overnatt ved Larvik eller Sandefjord; sjekk kafétider og ledige hytter for dine datoer.',
+    'День 1: прогуляйтеся набережною Larvik і стежками Bøkeskogen. Залиште авто на парковці: це піші прогулянки, не проїзд лісом. Ночуйте біля Larvik або Sandefjord; перевірте години кафе й наявність будиночків на свої дати.',
+    'Dag 1: promenera vid vattnet i Larvik och längs stigarna i Bøkeskogen. Det är promenader efter parkering, ingen bilväg genom skogen. Övernatta nära Larvik eller Sandefjord; kontrollera kafétider och lediga stugor för dina datum.',
+    'Dag 1: gå langs vandet i Larvik og på stierne i Bøkeskogen. Det er gåture efter parkering, ikke en biltur gennem skoven. Overnat ved Larvik eller Sandefjord; tjek cafétider og ledige hytter for dine datoer.'
+   ])},
+   {id:'vestfoldcoast-sandefjord',name:'Sandefjord · havnen',latitude:59.13133,longitude:10.22234,extra:true,local:true,coordinatePrecision:'area',routeQuery:'Sandefjord sentrum, Norway',website:'https://www.visitvestfold.com/en/sandefjord',description:copy([
+    'Day 2: follow mainland roads to Sandefjord and explore the harbour on foot with a café break. The Whaling Museum is an optional indoor stop; check its hours separately. This road trip does not board the Strømstad ferry. Find signed city parking first.',
+    'Dag 2: følg fastlandsveier til Sandefjord og utforsk havnen til fots med en kafépause. Hvalfangstmuseet er et valgfritt innendørsstopp; sjekk åpningstidene separat. Bilruten bruker ikke Strømstad-fergen. Finn skiltet byparkering først.',
+    'День 2: материковими дорогами до Sandefjord, далі пішки гаванню з кавовою паузою. Музей китобійного промислу — додаткова зупинка; години перевірте окремо. Маршрут не використовує пором до Strømstad. Спочатку знайдіть міську парковку за знаками.',
+    'Dag 2: följ fastlandsvägar till Sandefjord och utforska hamnen till fots med en kafépaus. Valfångstmuseet är ett valfritt inomhusstopp; kontrollera öppettider separat. Bilrutten använder inte Strømstadfärjan. Hitta skyltad stadsparkering först.',
+    'Dag 2: følg fastlandsveje til Sandefjord og oplev havnen til fods med en cafépause. Hvalfangstmuseet er et valgfrit indendørsstop; tjek åbningstider særskilt. Bilruten bruger ikke Strømstad-færgen. Find skiltet byparkering først.'
+   ])},
+   {id:'vestfoldcoast-tonsberg',name:'Tønsberg · Brygga / Slottsfjellet',latitude:59.26753,longitude:10.40763,extra:true,local:true,coordinatePrecision:'area',routeQuery:'Tønsberg sentrum, Norway',website:'https://www.visitvestfold.com/en/tonsberg',description:copy([
+    'Day 3: enjoy Tønsberg’s waterfront and, if conditions suit, walk up Slottsfjellet. Leave time for lunch rather than adding island detours. Choose signed parking; the marker is not an entrance. Stay nearby for four days, or continue to Horten today for three.',
+    'Dag 3: opplev brygga i Tønsberg og gå opp på Slottsfjellet hvis forholdene passer. Sett av tid til lunsj fremfor ekstra øyturer. Velg skiltet parkering; markøren er ingen innkjørsel. Overnatt i nærheten med fire dager, eller fortsett til Horten i dag med tre.',
+    'День 3: набережна Tønsberg і, за відповідних умов, підйом на Slottsfjellet. Залиште час на обід без додаткових острівних об’їздів. Оберіть парковку за знаками: позначка не є в’їздом. На чотири дні ночуйте поруч, на три — сьогодні їдьте до Horten.',
+    'Dag 3: upplev bryggan i Tønsberg och gå upp på Slottsfjellet om förhållandena passar. Avsätt tid för lunch utan extra öavstickare. Välj skyltad parkering; markören är ingen infart. Övernatta här med fyra dagar, eller fortsätt till Horten idag med tre.',
+    'Dag 3: oplev bryggen i Tønsberg og gå op på Slottsfjellet, hvis forholdene passer. Afsæt tid til frokost uden ekstra øture. Vælg skiltet parkering; markøren er ingen indkørsel. Overnat her med fire dage, eller fortsæt til Horten i dag med tre.'
+   ])},
+   {id:'vestfoldcoast-horten',name:'Horten · Karljohansvern',latitude:59.41721,longitude:10.48344,extra:true,local:true,coordinatePrecision:'area',routeQuery:'Horten sentrum, Norway',website:'https://www.forsvarsbygg.no/no/festningene/karljohansvern/karljohansvern-in-english/',description:copy([
+    'Day 3 or 4: finish in Horten with Karljohansvern and a canal-side walk. Reach the area by road and bridges, without the Moss ferry. Use signed parking outside car-free Kulturverftet. Museums have separate hours. This one-way route ends here; plan your return separately.',
+    'Dag 3 eller 4: avslutt i Horten med Karljohansvern og en tur langs kanalen. Kjør via vei og broer, uten Moss-fergen. Bruk skiltet parkering utenfor bilfrie Kulturverftet. Museene har egne åpningstider. Enveisruten slutter her; planlegg retur separat.',
+    'День 3 або 4: завершіть у Horten — Karljohansvern і прогулянка каналом. Під’їзд дорогами й мостами, без порома до Moss. Паркуйтеся за знаками поза пішохідним Kulturverftet. Музеї мають окремі години. Маршрут в один бік; повернення плануйте окремо.',
+    'Dag 3 eller 4: avsluta i Horten med Karljohansvern och en kanalpromenad. Kör via vägar och broar, utan Mossfärjan. Använd skyltad parkering utanför bilfria Kulturverftet. Museerna har egna öppettider. Enkelresan slutar här; planera retur separat.',
+    'Dag 3 eller 4: slut i Horten med Karljohansvern og en tur langs kanalen. Kør via veje og broer, uden Moss-færgen. Brug skiltet parkering uden for bilfrie Kulturverftet. Museerne har egne åbningstider. Envejsruten slutter her; planlæg retur særskilt.'
+   ])}
+  ],
+  sources:['https://www.visitvestfold.com/no/larvik/artikler/stavern','https://www.visitvestfold.com/en/larvik','https://www.visitvestfold.com/en/attraction/the-beech-forest-bokeskogen','https://www.visitvestfold.com/en/sandefjord','https://www.visitvestfold.com/en/tonsberg','https://www.visitvestfold.com/no/attraksjon/karljohansvern','https://www.forsvarsbygg.no/no/festningene/karljohansvern/karljohansvern-in-english/',...['Larvik','Sandefjord','Tønsberg','Horten'].map(name=>'https://ws.geonorge.no/stedsnavn/v1/navn?sok='+encodeURIComponent(name)+'&fuzzy=false&utkoordsys=4258&treffPerSide=10')]
+ };
  if(typeof module!=='undefined'&&module.exports)module.exports=routes;
  if(root.FjordTripTools)Object.assign(root.FjordTripTools.localRoutes,routes);
 })(typeof window!=='undefined'?window:globalThis);

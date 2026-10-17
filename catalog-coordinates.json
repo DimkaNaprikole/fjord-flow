@@ -42,5 +42,66 @@
   "pust-lavvo-tromso": {
     "coordinatePrecision": "area",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Pust+Lavvo+sauna,+Tromso,+Norway"
+  },
+  "flam-bakery": {
+    "latitude": 60.86197584258663,
+    "longitude": 7.112441541309992,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nedre%20Fretheim%207%20Aurland&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://www.visitnorway.com/listings/flam-bakery/188773/",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Kartverket address point for Nedre Fretheim 7, published by Visit Sognefjord / Visit Norway. Orientation only, not a parking entrance; operator describes bakery on the quay near Flåm station.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Fl%C3%A5m%20Bakery%2C%20Fl%C3%A5m%2C%20Norway&travelmode=driving"
+  },
+  "tim-wendelboe-oslo": {
+    "latitude": 59.92331840109198,
+    "longitude": 10.75581858290532,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Gr%C3%BCners%20gate%201%20Oslo&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://timwendelboe.no/pages/contact-us",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Operator publishes Grüners gate 1. Kartverket returns 1A and 1B about 5 metres apart; 1A represents the address area, not a verified café door or parking entrance.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Tim%20Wendelboe%20Espresso%20Bar%2C%20Gr%C3%BCners%20gate%201%2C%20Oslo%2C%20Norway&travelmode=driving"
+  },
+  "luster-fjordhytter": {
+    "latitude": 61.39969592552051,
+    "longitude": 7.395916039941032,
+    "address": "Lustravegen 2623, 6875 Høyheimsvik, Norway",
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Lustravegen%202623&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://www.luster-fjordhytter.com/en",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Operator publishes Lustravegen 2623 without suffix. Kartverket returns 2623A/B/C within the cottage property; 2623A is a representative property address point, not a claimed reception, individual cabin or parking entrance.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Luster%20Fjordhytter%2C%20Lustravegen%202623%2C%20H%C3%B8yheimsvik%2C%20Norway&travelmode=driving"
+  },
+  "fjordsauna-flam": {
+    "latitude": 60.86208,
+    "longitude": 7.11445,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://www.sognefjord.no/listing/fjordsauna-fl%C3%A5m/647530301/",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Visit Sognefjord publishes these coordinates for FjordSauna Flåm. Floating sauna at piers 10/11: area marker only. Operator requires public paid parking in Flåm centre followed by a walk; the nearby marina lot is reserved for marina guests.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Fl%C3%A5m%20public%20parking%2C%20Fl%C3%A5m%20sentrum%2C%20Norway&travelmode=driving"
+  },
+  "bjorneparken-fla": {
+    "latitude": 60.43389430090762,
+    "longitude": 9.447833999880439,
+    "address": "Bjørneparkvegen 61, 3539 Flå, Norway",
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Bj%C3%B8rneparkvegen%2061%20Fl%C3%A5&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://no.linkedin.com/company/bj%C3%B8rneparken-as",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Kartverket address point matches the company-published Bjørneparkvegen 61. The operator arrival page confirms visitor parking outside the park. Marker is a property area, not a surveyed vehicle entrance.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Bj%C3%B8rneparken%2C%20Bj%C3%B8rneparkvegen%2061%2C%20Fl%C3%A5%2C%20Norway&travelmode=driving"
+  },
+  "dovrefjell-wild-reindeer-centre": {
+    "latitude": 62.221369748446335,
+    "longitude": 9.545710818134248,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Hjerkinnhusvegen%2033&treffPerSide=5&utkoordsys=4258",
+    "coordinatesAddressSource": "https://villrein.no/norsk-villreinsenter/",
+    "coordinatesChecked": "2026-10-18",
+    "coordinatesNote": "Norsk villreinsenter Nord centre address Hjerkinnhusvegen 33 only, not viewpoint SNØHETTA or its separate trailhead parking. Pavilion requires a separate 1.5 km walk from its trail car park and is seasonal. Do not route cars onto the trail.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Norsk%20villreinsenter%20Nord%2C%20Hjerkinnhusvegen%2033%2C%202661%20Hjerkinn%2C%20Norway&travelmode=driving"
   }
 }
