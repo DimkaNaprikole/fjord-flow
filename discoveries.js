@@ -54,6 +54,6 @@ function showStory(id){activeStory=storyData.find(s=>s.id===id);if(!activeStory)
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
 function render(){renderCafes();renderStories();if(dialog.open)renderDialog()}
 window.addEventListener('fjordlanguagechange',render);render();
-fetch('./cafes.json?v=4').then(r=>{if(!r.ok)throw Error('Café catalogue unavailable');return r.json()}).then(value=>{const items=Array.isArray(value)?value:value.cafes||value.stops||[];cafes=items.filter(c=>c&&typeof c.name==='string'&&typeof c.address==='string');cafeError=!cafes.length;renderCafes()}).catch(()=>{cafeError=true;renderCafes()});
+fetch('./cafes.json?v=5').then(r=>{if(!r.ok)throw Error('Café catalogue unavailable');return r.json()}).then(value=>{const items=Array.isArray(value)?value:value.cafes||value.stops||[];cafes=items.filter(c=>c&&typeof c.name==='string'&&typeof c.address==='string');cafeError=!cafes.length;renderCafes()}).catch(()=>{cafeError=true;renderCafes()});
 window.FjordDiscoveries={openStories(){storySection.scrollIntoView({behavior:'smooth',block:'start'})},openCafes(){cafeSection.scrollIntoView({behavior:'smooth',block:'start'})},showStory};
 })();

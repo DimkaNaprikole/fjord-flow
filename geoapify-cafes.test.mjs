@@ -46,3 +46,10 @@ const sag=granResults.find(c=>c.name==='Sagvollstallen');assert.deepEqual(Array.
 const oscar=granResults.find(c=>c.name==='Café Oscar II');assert.equal(oscar.hours.length,0,'Unconfirmed daily hours are not fabricated');assert.match(oscar.hoursNote.en,/May–August/);
 for(const c of granCatalogue.filter(c=>['sagvollstallen-gran','cafe-oscar-ii-gran'].includes(c.id)))for(const photo of c.gallery)assert(readFileSync(new URL(photo.src,import.meta.url)).length>1000,'Photo asset exists');
 console.log('PASS: Gran venue photos, exact deduplication, winter season preserved, summer note and daily-hour uncertainty.');
+
+const regularResults=await granSeasonal.api.search({center:{lat:60.35916,lng:10.57282},radiusMeters:10000});
+assert.deepEqual(regularResults.slice(0,2).map(c=>c.curatedId).join(','),'luprohjornet-gran,hadeland-gjestegard-jaren','Verified regular cafe options appear first');
+const regular=regularResults.find(c=>c.curatedId==='hadeland-gjestegard-jaren');assert.equal(regular.hours.length,7);assert.equal(regular.hours[5],'Sa 10:00-18:00');assert.equal(regular.photos.length,2);assert(regular.distanceMeters<5000);
+const lupro=regularResults.find(c=>c.curatedId==='luprohjornet-gran');assert(lupro.distanceMeters<500);assert.equal(lupro.photos.length,3);assert.match(lupro.hours.join('; '),/Mo,We,Fr 10:00-15:30/);assert(!lupro.hours.join('; ').includes('Su off'),'No invented Sunday closing');
+for(const id of ['luprohjornet-gran','hadeland-gjestegard-jaren'])for(const photo of granCatalogue.find(c=>c.id===id).gallery)assert(readFileSync(new URL(photo.src,import.meta.url)).length>1000);
+console.log('PASS: central Gran and nearby year-round options prioritized, exact regular hours, photos, no invented Sunday schedule.');

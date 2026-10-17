@@ -510,5 +510,180 @@
       "source": "https://vika-uteliv.no/cafe-oscar-ii/",
       "sourceLabel": "Café Oscar II"
     }
+  },
+  {
+    "id": "hadeland-gjestegard-jaren",
+    "name": "Hadeland Gjestegård",
+    "town": "Jaren",
+    "address": "Nordre Ålsvegen 4, 2770 Jaren, Norway",
+    "latitude": 60.398304261601396,
+    "longitude": 10.552818172677284,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nordre%20%C3%85lsvegen%204%202770&treffPerSide=5",
+    "website": "https://www.hadelandgjestegard.no/",
+    "phone": "+4761329069",
+    "route": "hadeland",
+    "placeId": "gran",
+    "yearRound": true,
+    "image": "./images/cafes/hadeland-gjestegard-facade.webp",
+    "imageSource": "https://www.hadelandgjestegard.no/",
+    "photoAlt": "Hadeland Gjestegård — actual exterior",
+    "photoCaption": {
+      "nb": "Ekte bilder · Hadeland Gjestegård",
+      "en": "Real photographs · Hadeland Gjestegård",
+      "uk": "Справжні фото · Hadeland Gjestegård",
+      "sv": "Äkta foton · Hadeland Gjestegård",
+      "da": "Ægte fotos · Hadeland Gjestegård"
+    },
+    "description": {
+      "nb": "Vanlige ukentlige åpningstider, uten oppgitt sesongbegrensning. Kafé og spisested med kaffe, smørbrød og varm mat. Helligdager og private arrangementer kan gi avvik.",
+      "en": "Regular weekly opening hours, with no seasonal restriction listed. A café and dining stop for coffee, sandwiches and hot meals. Holiday hours and private events may differ.",
+      "uk": "Звичайний щотижневий графік без зазначеного сезонного обмеження. Кава, бутерброди й гарячі страви. У святкові дні та під час приватних подій можливі зміни.",
+      "sv": "Ordinarie veckotider utan angiven säsongsbegränsning. Kafé och matställe med kaffe, smörgåsar och varm mat. Helgdagar och privata evenemang kan ge avvikelser.",
+      "da": "Almindelige ugentlige åbningstider uden angivet sæsonbegrænsning. Café og spisested med kaffe, smørrebrød og varm mad. Helligdage og private arrangementer kan give ændringer."
+    },
+    "hoursNote": {
+      "nb": "Vanlige ukentlige åpningstider, uten oppgitt sesongbegrensning. Kafé og spisested med kaffe, smørbrød og varm mat. Helligdager og private arrangementer kan gi avvik.",
+      "en": "Regular weekly opening hours, with no seasonal restriction listed. A café and dining stop for coffee, sandwiches and hot meals. Holiday hours and private events may differ.",
+      "uk": "Звичайний щотижневий графік без зазначеного сезонного обмеження. Кава, бутерброди й гарячі страви. У святкові дні та під час приватних подій можливі зміни.",
+      "sv": "Ordinarie veckotider utan angiven säsongsbegränsning. Kafé och matställe med kaffe, smörgåsar och varm mat. Helgdagar och privata evenemang kan ge avvikelser.",
+      "da": "Almindelige ugentlige åbningstider uden angivet sæsonbegrænsning. Café og spisested med kaffe, smørrebrød og varm mad. Helligdage og private arrangementer kan give ændringer."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/hadeland-gjestegard-facade.webp",
+        "original": "https://www.hadelandgjestegard.no/uploads/GwFhZQth/640x640_640x640/PixelCo_B6A9222__msi___jpg.webp",
+        "kind": "facade",
+        "credit": "Hadeland Gjestegård · official website",
+        "source": "https://www.hadelandgjestegard.no/"
+      },
+      {
+        "src": "./images/cafes/hadeland-gjestegard-facade-2.webp",
+        "original": "https://www.hadelandgjestegard.no/uploads/LxsIPjV6/640x640_640x640/PixelCo_B6A9218__msi___jpg.webp",
+        "kind": "facade",
+        "credit": "Hadeland Gjestegård · official website",
+        "source": "https://www.hadelandgjestegard.no/"
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-17",
+      "source": "https://www.hadelandgjestegard.no/",
+      "sourceLabel": "Hadeland Gjestegård",
+      "weekly": [
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "19:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "19:00"
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "id": "luprohjornet-gran",
+    "name": "LUPROhjørnet",
+    "town": "Gran",
+    "address": "Storgata 26, 2750 Gran, Norway",
+    "addressSource": "https://smilefjes.mattilsynet.no/kommune/gran/",
+    "latitude": 60.35747702970864,
+    "longitude": 10.571360315913346,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Storgata%2026%202750%20Gran&treffPerSide=5",
+    "website": "https://www.lupro.no/lupro-hj%C3%B8rnet",
+    "phone": "+4747752533",
+    "route": "hadeland",
+    "placeId": "gran",
+    "yearRound": true,
+    "image": "./images/cafes/luprohjornet-1.jpg",
+    "imageSource": "https://www.lupro.no/lupro-hj%C3%B8rnet",
+    "photoAlt": "LUPROhjørnet — actual café entrance",
+    "photoCaption": {
+      "nb": "Ekte bilder · Lupro AS",
+      "en": "Real photographs · Lupro AS",
+      "uk": "Справжні фото · Lupro AS",
+      "sv": "Äkta foton · Lupro AS",
+      "da": "Ægte fotos · Lupro AS"
+    },
+    "description": {
+      "nb": "Kafé i Gran sentrum med kaffe, hjemmebakte godsaker og lokalmat. Vanlig ukeplan uten oppgitt sesongbegrensning. Søndag er ikke oppgitt av kafeen; ring før et søndagsbesøk. Helligdager kan gi avvik.",
+      "en": "A café in central Gran for coffee, homemade treats and local produce. Regular weekly schedule with no seasonal restriction listed. Sunday hours are not published by the café; call before a Sunday visit. Holiday hours may differ.",
+      "uk": "Кав’ярня в центрі Gran: кава, домашні смаколики й місцеві продукти. Звичайний щотижневий графік без зазначеного сезонного обмеження. Неділю заклад не вказав — перед недільним візитом зателефонуйте. У свята можливі зміни.",
+      "sv": "Kafé i centrala Gran med kaffe, hembakat och lokal mat. Ordinarie veckotider utan angiven säsongsbegränsning. Söndagstider är inte publicerade; ring före ett söndagsbesök. Helgdagar kan avvika.",
+      "da": "Café i Gran centrum med kaffe, hjemmebag og lokale råvarer. Almindelige ugentlige tider uden angivet sæsonbegrænsning. Søndagstider er ikke oplyst; ring før et søndagsbesøg. Helligdage kan afvige."
+    },
+    "hoursNote": {
+      "nb": "Kafé i Gran sentrum med kaffe, hjemmebakte godsaker og lokalmat. Vanlig ukeplan uten oppgitt sesongbegrensning. Søndag er ikke oppgitt av kafeen; ring før et søndagsbesøk. Helligdager kan gi avvik.",
+      "en": "A café in central Gran for coffee, homemade treats and local produce. Regular weekly schedule with no seasonal restriction listed. Sunday hours are not published by the café; call before a Sunday visit. Holiday hours may differ.",
+      "uk": "Кав’ярня в центрі Gran: кава, домашні смаколики й місцеві продукти. Звичайний щотижневий графік без зазначеного сезонного обмеження. Неділю заклад не вказав — перед недільним візитом зателефонуйте. У свята можливі зміни.",
+      "sv": "Kafé i centrala Gran med kaffe, hembakat och lokal mat. Ordinarie veckotider utan angiven säsongsbegränsning. Söndagstider är inte publicerade; ring före ett söndagsbesök. Helgdagar kan avvika.",
+      "da": "Café i Gran centrum med kaffe, hjemmebag og lokale råvarer. Almindelige ugentlige tider uden angivet sæsonbegrænsning. Søndagstider er ikke oplyst; ring før et søndagsbesøg. Helligdage kan afvige."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/luprohjornet-1.jpg",
+        "original": "https://irp.cdn-website.com/e295f418/dms3rep/multi/opt/DSC_0602-1920w.jpg",
+        "kind": "facade",
+        "credit": "Lupro AS · official website",
+        "source": "https://www.lupro.no/lupro-hj%C3%B8rnet"
+      },
+      {
+        "src": "./images/cafes/luprohjornet-2.jpg",
+        "original": "https://irp.cdn-website.com/e295f418/dms3rep/multi/opt/IMG_2385-1920w.jpg",
+        "kind": "food",
+        "credit": "Lupro AS · official website",
+        "source": "https://www.lupro.no/lupro-hj%C3%B8rnet"
+      },
+      {
+        "src": "./images/cafes/luprohjornet-3.jpg",
+        "original": "https://irp.cdn-website.com/e295f418/dms3rep/multi/opt/IMG_2386-1920w.jpg",
+        "kind": "food",
+        "credit": "Lupro AS · official website",
+        "source": "https://www.lupro.no/lupro-hj%C3%B8rnet"
+      }
+    ],
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-17",
+      "source": "https://www.lupro.no/lupro-hj%C3%B8rnet",
+      "sourceLabel": "Lupro AS · LUPROhjørnet",
+      "publishedText": "Mo,We,Fr 10:00-15:30; Tu,Th 10:00-17:00; Sa 10:00-15:00"
+    }
   }
 ]
