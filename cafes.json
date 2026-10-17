@@ -7,9 +7,55 @@
     "website": "https://cafeopera.org/",
     "route": "hardanger",
     "placeId": "bergen",
-    "image": "./images/bergen-gallery-1.jpg",
-    "photoCaption": "Bergen surroundings — destination photograph, not a photograph of the café.",
-    "description": "A cultural café and coffee stop in central Bergen, with food and a programme of exhibitions and events. A city stop before setting out towards Hardanger. Check the official website for current opening hours."
+    "image": "./images/cafes/cafe-opera-bergen-1.webp",
+    "photoCaption": {
+      "nb": "Ekte bilder · Visit Bergen / Visit Norway",
+      "en": "Real photographs · Visit Bergen / Visit Norway",
+      "uk": "Справжні фото · Visit Bergen / Visit Norway",
+      "sv": "Riktiga fotografier · Visit Bergen / Visit Norway",
+      "da": "Ægte fotografier · Visit Bergen / Visit Norway"
+    },
+    "description": "A cultural café and coffee stop in central Bergen, with food and a programme of exhibitions and events. A city stop before setting out towards Hardanger. Check the official website for current opening hours.",
+    "gallery": [
+      {
+        "src": "./images/cafes/cafe-opera-bergen-1.webp",
+        "kind": "facade",
+        "source": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+        "credit": "Visit Bergen / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/3fa501d4b3808a49f1daac5227d339210b94500a-4000x3000.jpg?rect=0,367,4000,2267&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-opera-bergen-2.webp",
+        "kind": "cafeInside",
+        "source": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+        "credit": "Visit Bergen / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/5fa0d9186037661e7275fcef446dc10aa6e0153d-4000x3000.jpg?rect=0,367,4000,2267&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-opera-bergen-3.webp",
+        "kind": "cafeInside",
+        "source": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+        "credit": "Visit Bergen / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/7a4e045e3a9190819a54e579db395a2b3e6fef8a-4000x3000.jpg?rect=0,367,4000,2267&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-opera-bergen-4.webp",
+        "kind": "food",
+        "source": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+        "credit": "Visit Bergen / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/225c4b8b28bd17b016722b5282e9b136e923f2a6-4000x3000.jpg?rect=0,367,4000,2267&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/bergen-gallery-1.jpg",
+        "kind": "view",
+        "source": "https://commons.wikimedia.org/wiki/File:Fassaden_in_Bryggen,_Bergen_N.jpg",
+        "credit": "JoachimKohler-HB",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://www.visitnorway.de/listings/caf%C3%A9-opera/236520/",
+    "photoAlt": "Café Opera"
   },
   {
     "id": "flam-bakery",
@@ -19,20 +65,112 @@
     "website": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
     "route": "fjord",
     "placeId": "flam",
-    "image": "./images/flam-gallery-1.jpg",
-    "photoCaption": "Flåm surroundings — destination photograph, not a photograph of the bakery.",
-    "description": "A bakery on the quay near Flåm Railway station, serving baked goods, sandwiches and coffee. A stop in Flåm on the way between Bergen, Aurland and Gudvangen. Check the official website for current opening hours."
+    "image": "./images/cafes/flam-bakery-1.webp",
+    "photoCaption": {
+      "nb": "Ekte bilder · Visit Sognefjord / Visit Norway",
+      "en": "Real photographs · Visit Sognefjord / Visit Norway",
+      "uk": "Справжні фото · Visit Sognefjord / Visit Norway",
+      "sv": "Riktiga fotografier · Visit Sognefjord / Visit Norway",
+      "da": "Ægte fotografier · Visit Sognefjord / Visit Norway"
+    },
+    "description": "A bakery on the quay near Flåm Railway station, serving baked goods, sandwiches and coffee. A stop in Flåm on the way between Bergen, Aurland and Gudvangen. Check the official website for current opening hours.",
+    "gallery": [
+      {
+        "src": "./images/cafes/flam-bakery-1.webp",
+        "kind": "facade",
+        "source": "https://www.visitnorway.com/listings/fl%C3%A5m-bakery/188744/",
+        "credit": "Visit Sognefjord / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/8bafae736de92114b1b5c12445da0a1c637158d5-1240x711.jpg?rect=0,5,1240,703&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/flam-bakery-2.webp",
+        "kind": "cafeInside",
+        "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+        "credit": "Norway’s best",
+        "original": "https://cdn.sanity.io/images/ycnqsi1u/production/a8c0a56a3bf7a14726411a62067218d922f4add7-8192x5464.jpg?w=3840&q=75&fit=clip&auto=format"
+      },
+      {
+        "src": "./images/cafes/flam-bakery-3.webp",
+        "kind": "cafeInside",
+        "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+        "credit": "Norway’s best",
+        "original": "https://cdn.sanity.io/images/ycnqsi1u/production/8f354d138844fbb5aa4cbb8020cf8d0833f5cd0c-6518x4347.jpg?w=3840&q=75&fit=clip&auto=format"
+      },
+      {
+        "src": "./images/cafes/flam-bakery-4.webp",
+        "kind": "food",
+        "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+        "credit": "Norway’s best",
+        "original": "https://cdn.sanity.io/images/ycnqsi1u/production/d2a3caa7286fb26a3742a6f78e68d9328cf3a8b0-8192x5464.jpg?w=3840&q=75&fit=clip&auto=format"
+      },
+      {
+        "src": "./images/cafes/flam-bakery-5.webp",
+        "kind": "cafeInside",
+        "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
+        "credit": "Norway’s best",
+        "original": "https://cdn.sanity.io/images/ycnqsi1u/production/ce37eafe43b93a77ec9069ca2100f8a3d5585436-5464x8192.jpg?w=3840&q=75&fit=clip&auto=format"
+      },
+      {
+        "src": "./images/flam-gallery-1.jpg",
+        "kind": "view",
+        "source": "https://commons.wikimedia.org/wiki/File:AIDAprima_in_Fl%C3%A5m,_Norway_-_June_2022.jpg",
+        "credit": "Martin Falbisoner",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "imageSource": "https://www.visitnorway.com/listings/fl%C3%A5m-bakery/188744/",
+    "photoAlt": "Flåm Bakery"
   },
   {
     "id": "cafe-ole-geiranger",
     "name": "Café Olé",
     "town": "Geiranger",
     "address": "Maråkvegen 19, 6216 Geiranger, Norway",
-    "website": "https://www.brasserieposten.no/",
+    "website": "https://www.olebuda.no/cafeole/",
     "route": "sunnmore",
     "placeId": "geiranger",
-    "image": "./images/geiranger.jpg",
-    "photoCaption": "Geiranger surroundings — destination photograph, not a photograph of the café.",
-    "description": "A café in Geiranger's pedestrian street, offering coffee, cakes and light meals near the fjord. A village stop on the route through Trollstigen, Geiranger and Loen. Confirm current opening hours before visiting."
+    "image": "./images/cafes/cafe-ole-geiranger-1.webp",
+    "photoCaption": {
+      "nb": "Ekte bilder · Visit Northwest / Visit Norway",
+      "en": "Real photographs · Visit Northwest / Visit Norway",
+      "uk": "Справжні фото · Visit Northwest / Visit Norway",
+      "sv": "Riktiga fotografier · Visit Northwest / Visit Norway",
+      "da": "Ægte fotografier · Visit Northwest / Visit Norway"
+    },
+    "description": "A café in Geiranger's pedestrian street, offering coffee, cakes and light meals near the fjord. A village stop on the route through Trollstigen, Geiranger and Loen. Confirm current opening hours before visiting.",
+    "gallery": [
+      {
+        "src": "./images/cafes/cafe-ole-geiranger-1.webp",
+        "kind": "facade",
+        "source": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
+        "credit": "Visit Northwest / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/0f4d351f19c2db2f0ebdb4b564a3065634eea7dc-2000x1558.jpg?rect=0,213,2000,1133&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-ole-geiranger-2.webp",
+        "kind": "cafeInside",
+        "source": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
+        "credit": "Visit Northwest / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/1292b542ac52d17bee84a556145d0877b18fc01b-2000x1500.jpg?rect=0,184,2000,1133&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/cafes/cafe-ole-geiranger-3.webp",
+        "kind": "cafeInside",
+        "source": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
+        "credit": "Visit Northwest / Visit Norway",
+        "original": "https://static.visitnorway.com/images/jlrwvnbf/commercial/a058124b30094e6c486940fd0116305767489ad5-2000x1500.jpg?rect=0,184,2000,1133&w=1500&h=850&q=75&auto=format"
+      },
+      {
+        "src": "./images/geiranger.jpg",
+        "kind": "view",
+        "source": "https://commons.wikimedia.org/wiki/File:Geirangerfjord_.jpg",
+        "credit": "Andreas Trepte",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5"
+      }
+    ],
+    "imageSource": "https://www.visitnorway.com/listings/cafe-ole-in-geiranger/505885/",
+    "photoAlt": "Café Olé"
   }
 ]

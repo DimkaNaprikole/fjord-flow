@@ -8,12 +8,13 @@
     sv: ['Öppna bildgalleriet', 'Stäng', 'Föregående bild', 'Nästa bild', 'Förstora bilden', 'Anpassa bilden', 'Bildkälla', 'Bilden kunde inte laddas. Öppna bildkällan.', 'Stugor och omgivning', 'Inne i stugan', 'Sovrum', 'Bastu', 'Badrum och ingång till bastun', 'Utsikt', 'Terrass', 'Badtunna'],
     da: ['Åbn billedgalleri', 'Luk', 'Forrige billede', 'Næste billede', 'Forstør billedet', 'Tilpas billedet', 'Billedkilde', 'Billedet kunne ikke indlæses. Åbn billedkilden.', 'Hytter og omgivelser', 'Inde i hytten', 'Soveværelse', 'Sauna', 'Bad og indgang til saunaen', 'Udsigt', 'Terrasse', 'Vildmarksbad']
   };
-  const kinds = {grounds: 8, inside: 9, bedroom: 10, sauna: 11, bathSauna: 12, view: 13, terrace: 14, hotTub: 15};
+  Object.entries(words).forEach(([lang, row]) => row.push(...{"nb":["Kafeen utenfra","Inne i kafeen","Kaffe og bakverk"],"en":["Café exterior","Inside the café","Coffee and baked treats"],"uk":["Кав’ярня зовні","Усередині кав’ярні","Кава та випічка"],"sv":["Kaféets utsida","Inne i kaféet","Kaffe och bakverk"],"da":["Caféen udefra","Inde i caféen","Kaffe og bagværk"]}[lang]));
+  const kinds = {facade: 16, cafeInside: 17, food: 18, grounds: 8, inside: 9, bedroom: 10, sauna: 11, bathSauna: 12, view: 13, terrace: 14, hotTub: 15};
   const language = () => window.FjordI18n?.language || document.documentElement.lang;
   const w = () => words[language()] || words.nb;
   const el = (tag, cls, text) => { const e = document.createElement(tag); e.className = cls || ''; if (text) e.textContent = text; return e; };
-  const valid = value => { try {const u = new URL(value, document.baseURI); return u.protocol === 'https:' || u.origin === location.origin ? u.href : '';} catch {return '';} };
-  let dialog, stage, photo, title, counter, caption, source, zoom, thumbs, error, previous, next, close;
+  const valid = value => { if (typeof value !== "string" || !value.trim()) return ""; try {const u = new URL(value, document.baseURI); return u.protocol === 'https:' || u.origin === location.origin ? u.href : '';} catch {return '';} };
+  let dialog, stage, photo, title, counter, caption, source, license, zoom, thumbs, error, previous, next, close;
   let record, photos = [], index = 0, zoomed = false, touchStart;
   function button(cls, text, handler) { const b = el('button', cls, text); b.type = 'button'; b.onclick = handler; return b; }
   function toggleZoom() {
@@ -29,6 +30,8 @@
     photo.alt = record.name + ' — ' + label; photo.src = valid(p.src);
     caption.textContent = label; counter.textContent = `${index + 1} / ${photos.length}`;
     source.href = valid(p.source || record.imageSource || record.website);
+    source.textContent = [p.credit, w()[6] + ' ↗'].filter(Boolean).join(' · ');
+    license.hidden = !valid(p.licenseUrl); license.textContent = p.license || ''; if (!license.hidden) license.href = valid(p.licenseUrl);
     [...thumbs.children].forEach((b, n) => {b.setAttribute('aria-current', String(n === index));});
   }
   function create() {
@@ -52,7 +55,8 @@
     counter.setAttribute('aria-live', 'polite'); details.append(caption, counter);
     zoom = button('stay-gallery-zoom', '', toggleZoom); zoom.setAttribute('aria-pressed', 'false');
     source = el('a', 'stay-gallery-source'); source.target = '_blank'; source.rel = 'noopener noreferrer';
-    meta.append(details, zoom, source);
+    license = el('a', 'stay-gallery-source'); license.target = '_blank'; license.rel = 'noopener noreferrer'; license.hidden = true;
+    meta.append(details, zoom, source, license);
     thumbs = el('nav', 'stay-gallery-thumbs');
     dialog.append(header, viewer, meta, thumbs); document.body.append(dialog);
     dialog.addEventListener('click', e => {if (e.target === dialog) dialog.close();});
