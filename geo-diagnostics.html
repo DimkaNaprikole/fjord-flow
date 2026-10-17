@@ -1,0 +1,22 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Проверка геолокации · FJORD / FLOW</title><style>body{margin:0;background:#102e3a;color:#edf6f4;font:16px/1.6 system-ui}main{max-width:800px;margin:4vh auto;padding:24px}button,a{color:#edf6f4}button{background:#255563;border:1px solid #8aafaf;border-radius:12px;padding:14px 22px;font:700 16px system-ui;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0a232e;padding:18px;border-radius:14px;font:14px/1.8 monospace}</style><main><a href="./#norwayCatalogue">← Каталог</a><h1>Проверка геолокации</h1><p>Координаты не отправляются на сервер и не записываются в журнал. Проверка разрешения, обычного запроса и ожидания обновления позиции — не более 40 секунд.</p><button id="start">Проверить местоположение</button><pre id="result" role="status">Нажмите кнопку для начала.</pre></main><script>
+(() => {
+ const button=document.getElementById('start'),result=document.getElementById('result');let stops=[];
+ const log=text=>{result.textContent+=text+'\n';};
+ async function nearest(position){try{const data=await fetch('./norway-towns.json?v=1').then(r=>r.json()),lat=position.coords.latitude,lon=position.coords.longitude,rad=x=>x*Math.PI/180;let chosen=null,best=Infinity;for(const town of data.towns){const a=Math.sin(rad(town.latitude-lat)/2)**2+Math.cos(rad(lat))*Math.cos(rad(town.latitude))*Math.sin(rad(town.longitude-lon)/2)**2;const d=6371*2*Math.asin(Math.sqrt(Math.min(1,a)));if(d<best){best=d;chosen=town;}}return best<=50?chosen.name:'нет населённого пункта Норвегии в пределах 50 км';}catch{return 'справочник недоступен';}}
+ button.onclick=async()=>{
+  stops.forEach(stop=>stop());stops=[];button.disabled=true;result.textContent='';const started=Date.now();
+  log('Браузер: '+navigator.userAgent);log('HTTPS/secure context: '+window.isSecureContext);
+  log('Geolocation API: '+Boolean(navigator.geolocation));const policy=document.permissionsPolicy||document.featurePolicy;log('Политика страницы: '+(policy?.allowsFeature?.('geolocation')??'неизвестно'));
+  try{log('Разрешение: '+(await navigator.permissions.query({name:'geolocation'})).state);}catch{log('Разрешение: API проверки недоступен');}
+  if(!navigator.geolocation){button.disabled=false;return;}
+  const success=async(label,position)=>log(label+': координаты получены за '+((Date.now()-started)/1000).toFixed(1)+' c; точность ±'+Math.round(position.coords.accuracy)+' м; ближайшее место: '+await nearest(position));
+  const error=(label,e)=>log(label+': ошибка '+e.code+' — '+e.message+'; '+((Date.now()-started)/1000).toFixed(1)+' c');
+  navigator.geolocation.getCurrentPosition(p=>success('Обычный запрос',p),e=>error('Обычный запрос',e),{enableHighAccuracy:false,timeout:35000,maximumAge:300000});
+  navigator.geolocation.getCurrentPosition(p=>success('Точный запрос',p),e=>error('Точный запрос',e),{enableHighAccuracy:true,timeout:35000,maximumAge:0});
+  let watch;watch=navigator.geolocation.watchPosition(p=>{navigator.geolocation.clearWatch(watch);success('Обновление позиции',p);},e=>{error('Обновление позиции',e);if(e.code===1)navigator.geolocation.clearWatch(watch);},{enableHighAccuracy:true,timeout:35000,maximumAge:300000});
+  stops.push(()=>navigator.geolocation.clearWatch(watch));
+  const timer=setTimeout(()=>{stops.forEach(stop=>stop());stops=[];button.disabled=false;log('Проверка завершена.');},40000);stops.push(()=>clearTimeout(timer));
+ };
+ window.addEventListener('pagehide',()=>stops.forEach(stop=>stop()));
+})();
+</script></html>
