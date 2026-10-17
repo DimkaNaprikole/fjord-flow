@@ -12,3 +12,17 @@
 .itinerary-pin span{display:grid;place-items:center;width:30px;height:30px;background:#b70d35;color:white;border:2px solid white;border-radius:50%;box-shadow:0 2px 8px #1237;font:800 12px Manrope,sans-serif}.leaflet-popup-content button{margin-top:7px;border:0;border-radius:5px;background:#e6f0f1;padding:8px;font-size:11px}.leaflet-container{font-family:Manrope,'Segoe UI',sans-serif}.leaflet-control-attribution{font-size:9px}
 @media(max-width:760px){.itinerary-header{padding:22px 18px}.itinerary-layout{grid-template-columns:1fr;padding:20px 18px;gap:25px}.itinerary-map-panel{position:static}#itineraryMap{height:310px}.itinerary-main-photo{height:220px}#itineraryDialog{max-height:94vh;border-radius:14px}}
 .itinerary-experience-photo{margin:0;border-radius:9px;overflow:hidden;background:#edf2e8}.itinerary-experience-photo>img{display:block;width:100%;height:205px;object-fit:cover}.itinerary-experience-photo figcaption{padding:9px 12px;font-size:9px;line-height:1.7;color:#506b62}.itinerary-experience-photo figcaption a{color:inherit;text-underline-offset:2px}
+
+/* Keep stop selection visible and distinguish the fixed ends of a trip. */
+.itinerary-base-picker{padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid #c2d5cf}
+.itinerary-base-picker>p{font-size:12px;line-height:1.7;margin:8px 0 12px}
+.itinerary-selection-actions{display:flex;flex-wrap:wrap;gap:10px 20px;margin-bottom:14px}
+.itinerary-selection-actions .text-link{font:700 12px/1.5 Manrope,sans-serif;padding:7px 0;color:#174959;text-underline-offset:4px}
+#itineraryBaseChoices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:10px}
+.itinerary-base-choice{align-items:center;min-width:0;transition:background .18s,border-color .18s}
+.itinerary-base-choice>img{width:48px;height:48px;object-fit:cover;border-radius:7px;flex-shrink:0}
+.itinerary-choice:has(input:checked){border-color:#5a8b88;background:#f4fbf9}
+.itinerary-base-choice:has(input:disabled){background:#e4eeeb;color:#47635f}
+.itinerary-base-choice input{margin-top:0}
+.itinerary-base-choice span{min-width:0;overflow-wrap:anywhere}
+#itineraryUpdate.needs-update{box-shadow:0 0 0 3px #b70d3525}

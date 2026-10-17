@@ -7,9 +7,15 @@
     <div class="itinerary-layout"><section class="itinerary-map-panel"><div id="itineraryMap" aria-label="Map of the whole itinerary"></div><p id="itineraryStatus" role="status"></p><p class="itinerary-notice">Driving estimates exclude visits, hikes, ferries and current road conditions. Check seasonal mountain-road closures before travelling.</p><a id="itineraryNavigation" class="button" target="_blank" rel="noopener noreferrer">Open full route in Google Maps ↗</a><button id="itineraryFit" class="text-link" type="button">Show the whole route</button></section><section><h3>All stops along the way</h3><ol id="itineraryStops"></ol></section></div>`;
   document.body.append(dialog);
   let map, layer, routeLine, activePoints = [], requestId = 0, controller, activeKey, activeButton, experiences = [];
-  const chosen = new Set();
+  const chosen = new Set(), excludedStops = new Set();
   const languages = ['en','nb','uk','sv','da'];
   const extraText = new Map([
+    'Route stops|Rutestopp|Зупинки маршруту|Ruttstopp|Rutestop',
+    'Choose your stops. The start and finish stay fixed; update the route after changes.|Velg stoppene dine. Start og mål er faste; oppdater ruten etter endringer.|Виберіть зупинки. Початок і фініш незмінні; після змін оновіть маршрут.|Välj dina stopp. Start och mål är fasta; uppdatera rutten efter ändringar.|Vælg dine stop. Start og mål er faste; opdater ruten efter ændringer.',
+    'Select all stops|Velg alle stopp|Вибрати всі зупинки|Välj alla stopp|Vælg alle stop',
+    'Start and finish only|Bare start og mål|Лише початок і фініш|Bara start och mål|Kun start og mål',
+    'Fixed starting point|Fast startpunkt|Незмінний початок|Fast startpunkt|Fast startpunkt',
+    'Fixed final stop|Fast sluttpunkt|Незмінний фініш|Fast slutpunkt|Fast slutpunkt',
     'Optional experiences|Valgfrie opplevelser|Додаткові враження|Valfria upplevelser|Valgfrie oplevelser',
     'Update route|Oppdater rute|Оновити маршрут|Uppdatera rutt|Opdater rute',
     'Choose optional stops, then update the route.|Velg valgfrie stopp og oppdater ruten.|Виберіть додаткові зупинки й оновіть маршрут.|Välj valfria stopp och uppdatera rutten.|Vælg valgfrie stop og opdater ruten.',
@@ -33,11 +39,40 @@
     osterdalen:{origin:'oslo',required:['storelgen'],destination:'roros',title:'Through Østerdalen'}
   };
   const extraPanel = document.createElement('section');extraPanel.className='itinerary-extras';extraPanel.dataset.i18nIgnore='';
-  extraPanel.innerHTML='<h3 id="itineraryExtrasTitle"></h3><p id="itineraryExtrasHint"></p><div id="itineraryChoices"></div><button id="itineraryUpdate" class="button" type="button"></button><p id="itineraryExtrasError" role="status"></p>';
+  extraPanel.innerHTML='<div class="itinerary-base-picker"><h3 id="itineraryBaseTitle"></h3><p id="itineraryBaseHint"></p><div class="itinerary-selection-actions"><button id="itinerarySelectAll" class="text-link" type="button"></button><button id="itinerarySelectNone" class="text-link" type="button"></button></div><div id="itineraryBaseChoices"></div></div><h3 id="itineraryExtrasTitle"></h3><p id="itineraryExtrasHint"></p><div id="itineraryChoices"></div><button id="itineraryUpdate" class="button" type="button"></button><p id="itineraryExtrasError" role="status"></p>';
   dialog.querySelector('.itinerary-header').after(extraPanel);
   const legLinks=document.createElement('div');legLinks.id='itineraryLegs';legLinks.dataset.i18nIgnore='';document.getElementById('itineraryNavigation').after(legLinks);
   const official = p => {try{const u=new URL(p.website);return u.protocol==='https:'?u.href:null;}catch{return null;}};
   const node = (tag,value,cls) => {const e=document.createElement(tag);if(value!==undefined)e.textContent=value;if(cls)e.className=cls;return e;};
+  function selectionChanged(){
+    requestId++;controller?.abort();
+    document.getElementById('itineraryNavigation').removeAttribute('href');
+    legLinks.replaceChildren();
+    if(routeLine){layer.removeLayer(routeLine);routeLine=null;}
+    document.getElementById('itineraryStatus').setAttribute('data-i18n-ignore','');
+    document.getElementById('itineraryStatus').textContent=et('Selections changed — update the route.');
+    document.getElementById('itineraryUpdate').classList.add('needs-update');
+  }
+  function baseChoices(base){
+    document.getElementById('itineraryBaseTitle').textContent=et('Route stops');
+    document.getElementById('itineraryBaseHint').textContent=et('Choose your stops. The start and finish stay fixed; update the route after changes.');
+    document.getElementById('itinerarySelectAll').textContent=et('Select all stops');
+    document.getElementById('itinerarySelectNone').textContent=et('Start and finish only');
+    const box=document.getElementById('itineraryBaseChoices');box.replaceChildren();
+    base.forEach((p,i)=>{
+      if(!p)return;
+      const fixed=i===0||i===base.length-1,label=node('label',undefined,'itinerary-choice itinerary-base-choice'),check=node('input');
+      check.type='checkbox';check.value=p.id;check.checked=fixed||!excludedStops.has(p.id);check.disabled=fixed;check.dataset.baseStop=p.id;
+      const copy=node('span');copy.append(node('b',localized(p.name)));
+      if(fixed)copy.append(node('small',et(i===0?'Fixed starting point':'Fixed final stop')));
+      label.append(check);
+      if(p.image){const img=node('img');img.src=safeURL(p.image);img.alt='';img.loading='lazy';label.append(img);}
+      label.append(copy);box.append(label);
+      check.onchange=()=>{check.checked?excludedStops.delete(p.id):excludedStops.add(p.id);selectionChanged();};
+    });
+    document.getElementById('itinerarySelectAll').onclick=()=>{excludedStops.clear();baseChoices(base);selectionChanged();};
+    document.getElementById('itinerarySelectNone').onclick=()=>{base.slice(1,-1).forEach(p=>{if(p)excludedStops.add(p.id);});chosen.clear();baseChoices(base);dialog.querySelectorAll('#itineraryChoices input').forEach(input=>{input.checked=false;});selectionChanged();};
+  }
   function extraChoices(key,failed=false){
     document.getElementById('itineraryExtrasTitle').textContent=et('Optional experiences');
     document.getElementById('itineraryExtrasHint').textContent=et('Choose optional stops, then update the route.');
@@ -47,7 +82,7 @@
     const route=customRoutes[key]?'east':key, required=customRoutes[key]?.required||[];
     const items=experiences.filter(p=>Array.isArray(p.routes)&&p.routes.includes(route)&&!required.includes(p.id));
     if(!items.length)box.append(node('p',et('No extra stops for this route.')));
-    for(const p of items){const label=node('label',undefined,'itinerary-choice'),check=node('input');check.type='checkbox';check.value=p.id;check.checked=chosen.has(p.id);check.disabled=!valid(p);const copy=node('span');copy.append(node('b',localized(p.name)),node('small',localized(p.area)||localized(p.address)),node('small',localized(p.season)));if(!valid(p))copy.append(node('small',et('Plan access separately; see the operator.')));const url=official(p);if(url){const a=node('a',et('Official information ↗'));a.href=url;a.target='_blank';a.rel='noopener noreferrer';copy.append(a);}label.append(check,copy);box.append(label);check.onchange=()=>{check.checked?chosen.add(p.id):chosen.delete(p.id);requestId++;controller?.abort();document.getElementById('itineraryNavigation').removeAttribute('href');legLinks.replaceChildren();if(routeLine){layer.removeLayer(routeLine);routeLine=null;}document.getElementById('itineraryStatus').textContent=et('Selections changed — update the route.');};}
+    for(const p of items){const label=node('label',undefined,'itinerary-choice'),check=node('input');check.type='checkbox';check.value=p.id;check.checked=chosen.has(p.id);check.disabled=!valid(p);const copy=node('span');copy.append(node('b',localized(p.name)),node('small',localized(p.area)||localized(p.address)),node('small',localized(p.season)));if(!valid(p))copy.append(node('small',et('Plan access separately; see the operator.')));const url=official(p);if(url){const a=node('a',et('Official information ↗'));a.href=url;a.target='_blank';a.rel='noopener noreferrer';copy.append(a);}label.append(check,copy);box.append(label);check.onchange=()=>{check.checked?chosen.add(p.id):chosen.delete(p.id);selectionChanged();};}
   }
   function withExtras(base){
     const result=[...base];
@@ -96,7 +131,7 @@
     });
   }
   async function openItinerary(key, button) {
-    if(key!==activeKey){chosen.clear();}activeKey=key;activeButton=button;
+    if(key!==activeKey){chosen.clear();excludedStops.clear();}activeKey=key;activeButton=button;
     const token = ++requestId;controller?.abort();controller=new AbortController();const localController=controller,signal=localController.signal;
     let failed=false;try{const loaded=await window.FjordExperiences.load();if(!Array.isArray(loaded))throw Error();experiences=loaded.map(p=>({...p,latitude:p.latitude??p.lat,longitude:p.longitude??p.lon,extra:true}));}catch{experiences=[];failed=true;}
     if(token!==requestId)return;
@@ -105,8 +140,10 @@
     const custom=customRoutes[key];
     const origin = find(custom?.origin || (key === 'sunnmore' ? 'rampestreken' : 'bergen'));
     const base=custom?[origin,...custom.required.map(id=>experiences.find(p=>p.id===id)),...(custom.destination?[find(custom.destination)]:[])]:[origin,...config.stops.map(find),find(config.destination)];
+    baseChoices(base);
+    document.getElementById('itineraryUpdate').classList.remove('needs-update');
     if(base.some(p=>!valid(p))){document.getElementById('itineraryTitle').textContent=custom?et(custom.title):button.querySelector('b').textContent;document.getElementById('itineraryOrder').textContent='';document.getElementById('itineraryStops').replaceChildren();document.getElementById('itineraryStatus').textContent=et('Required route coordinates are unavailable. No route was calculated.');document.getElementById('itineraryNavigation').removeAttribute('href');legLinks.replaceChildren();activePoints=[];layer?.clearLayers();routeLine=null;if(!dialog.open)dialog.showModal();return;}
-    const points=withExtras(base);
+    const points=withExtras(base.filter((p,i)=>i===0||i===base.length-1||!excludedStops.has(p.id)));
     // Åndalsnes is represented by the catalogue's Rampestreken road access.
     activePoints = points;
     document.getElementById('itineraryTitle').textContent = custom?et(custom.title):button.querySelector('b').textContent;
@@ -147,7 +184,7 @@
       let result = cache.get(cacheKey);
       if (!result) {
         const timeout=setTimeout(()=>localController.abort(),25000);
-        try{result = custom||chosen.size?await directRoute(points,signal):await api('route', {origin: coords(points[0]).join(','), destination: config.destination, stops: config.stops, max_detour_minutes: 90}, {signal});}finally{clearTimeout(timeout);}
+        try{result = custom||chosen.size||excludedStops.size?await directRoute(points,signal):await api('route', {origin: coords(points[0]).join(','), destination: config.destination, stops: config.stops, max_detour_minutes: 90}, {signal});}finally{clearTimeout(timeout);}
         if(token!==requestId||!dialog.open)return;
         if(!Array.isArray(result.geometry)||result.geometry.length<2||result.geometry.some(p=>!Array.isArray(p)||!Number.isFinite(p[0])||!Number.isFinite(p[1])||Math.abs(p[0])>180||Math.abs(p[1])>90))throw Error('Missing road geometry');
         cache.set(cacheKey, result);
