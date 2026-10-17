@@ -1,5 +1,5 @@
 let data,filter='All',selected,lastRequest;
-import('./pagination.js?v=1');
+import('./pagination.js?v=2');
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeURL=s=>{if(!s)return '';try{let u=new URL(s,document.baseURI);return ['http:','https:'].includes(u.protocol)?u.href:''}catch{return ''}};
 const money=n=>new Intl.NumberFormat('en-NO',{style:'currency',currency:'NOK',maximumFractionDigits:0}).format(n);
