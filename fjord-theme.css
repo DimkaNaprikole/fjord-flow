@@ -1,0 +1,220 @@
+/* FJORD / FLOW visual system. One palette and surface language across features.
+ * Keep layout, photographic layers, maps and interaction states in feature CSS.
+ */
+:root {
+  --ff-ink: #edf6f4;
+  --ff-muted: #b8cecf;
+  --ff-accent: #d0e7df;
+  --ff-deep: #0c2530;
+  --ff-panel: #123440;
+  --ff-card: #193f4b;
+  --ff-field: #0c2a36;
+  --ff-action: #255563;
+  --ff-line: #b5d7d22e;
+  --ff-line-strong: #b5d7d25c;
+  --ff-radius: 18px;
+  --ff-control-radius: 12px;
+  --ff-shadow: 0 12px 30px #06212d1c;
+  --fjord-focus: #e6c78c;
+}
+button, input, select, textarea { font-family: Manrope, 'Segoe UI', sans-serif; }
+/* Section panels and cards share the same cool fjord palette. */
+:is(.roadtrip-collection, .route-experiences, .stays-sauna, .cafe-nearby,
+    .community-section, .discovery-cafes, .discovery-stories, .fjord-contact, .drone-experience) {
+  background: linear-gradient(135deg, #173e49, var(--ff-panel));
+  color: var(--ff-ink);
+  border: 1px solid var(--ff-line);
+  border-radius: 24px;
+  box-shadow: var(--ff-shadow);
+}
+.community-section { padding: 32px; }
+.discovery-stories { margin: 40px 5%; padding: 34px; }
+.discovery-cafes { margin: 40px 5%; padding: 34px; }
+.discovery-cafes { --disc-paper: var(--ff-card); --disc-navy: var(--ff-ink); --disc-teal: var(--ff-accent); --disc-line: var(--ff-line); }
+.roadtrip-scene:after { background: linear-gradient(130deg, #0c2833ed, #123744d9); }
+:is(.cafe-result, .discovery-cafe-card, .stay-card, .community-post, .community-empty,
+    .discovery-story-card > button, .roadtrip-presets > button) {
+  background: var(--ff-card);
+  color: var(--ff-ink);
+  border: 1px solid var(--ff-line-strong);
+  border-radius: var(--ff-radius);
+  box-shadow: var(--ff-shadow);
+}
+.roadtrip-presets > button { background: var(--ff-card) !important; }
+:is(.cafe-photo-authors, .discovery-cafe-card figcaption, .stay-figure figcaption,
+    .experience-visual figcaption, .experience-credit, .stay-gallery-meta) {
+  background: var(--ff-deep);
+  color: var(--ff-muted);
+  border-color: var(--ff-line);
+}
+:is(.cafe-result-photo, .stay-figure, .experience-visual) { background-color: var(--ff-deep); }
+.cafe-result-copy, .discovery-cafe-copy, .stay-body { padding: 22px; }
+/* Apply text colours only inside dark panels; photography and the page canvas retain their contrast. */
+:is(#cafeStops, #cafeNearby, #staysSauna, #routeExperiences, #community, #scenicRoutes,
+    .discovery-cafe-card, .discovery-stories, .fjord-contact, .drone-experience)
+  :is(h2, h3, h4, label, summary, strong) { color: var(--ff-ink); }
+:is(#cafeStops, #cafeNearby, #staysSauna, #routeExperiences, #community, #scenicRoutes,
+    .discovery-cafe-card, .discovery-stories, .fjord-contact, .drone-experience)
+  :is(p, small, figcaption, .cafe-data-authors, .discovery-cafe-number, .stay-area,
+      .experience-area, .experience-address, .post-meta, .experience-count) { color: var(--ff-muted); }
+:is(#cafeStops, #cafeNearby, #staysSauna, #routeExperiences, #community, #scenicRoutes,
+    .discovery-cafe-card, .discovery-stories) a { color: var(--ff-accent); }
+:is(.experiences-eyebrow, .stays-eyebrow, .roadtrip-collection > .eyebrow,
+    .discovery-stories .discovery-kicker, .discovery-story-copy > small) { color: #b6d8d2; }
+.cafe-result-copy h4, .discovery-cafe-card h3, .stay-body h3,
+.experience-body h3, .discovery-story-copy h3 { font-family: Manrope, 'Segoe UI', sans-serif; font-weight: 750; letter-spacing: -.5px; }
+:is(.cafe-result-address, .cafe-hours, .stay-description, .experience-description,
+    .discovery-cafe-copy > p, .discovery-story-copy > p) { line-height: 1.8; }
+.cafe-photo-authors a, .discovery-cafe-card figcaption a, .stay-figure figcaption a { color: inherit; }
+:is(.cafe-hours-caution, .cafe-hours-source, .stay-sources, .discovery-cafe-address,
+    .community-local, .discovery-story-copy > b, .discovery-story-next) { border-color: var(--ff-line); }
+/* Quiet inset panels instead of isolated cream/white rectangles. */
+:is(.cafe-nearby-town, .stay-sauna-fact, .experience-season, .trip-nearby,
+    .trip-practical, .itinerary-local-note, .community-empty, .discovery-story-next,
+    #destinationDetails, .account-tabs, .itinerary-choice, #itineraryStops li) {
+  background: var(--ff-field);
+  color: var(--ff-muted);
+  border-color: var(--ff-line);
+  border-radius: var(--ff-control-radius);
+}
+/* Forms use the same ink, focus ring and height everywhere. */
+:is(#cafeNearby, #community, #itineraryDialog, #accountDialog, #postDialog,
+    #bookingDialog, #galleryDialog, .fjord-helper, .fjord-ai)
+  :is(input:not([type=checkbox]):not([type=radio]), select, textarea) {
+  background: var(--ff-field);
+  color: var(--ff-ink);
+  border: 1px solid var(--ff-line-strong);
+  border-radius: var(--ff-control-radius);
+  box-shadow: inset 0 1px #ffffff05;
+  min-height: 44px;
+}
+:is(#cafeNearby, #community, #itineraryDialog, #accountDialog, #postDialog,
+    #bookingDialog, #galleryDialog, .fjord-helper, .fjord-ai) ::placeholder { color: #a9c1c4; opacity: 1; }
+select option { background: #123440; color: var(--ff-ink); }
+:is(input[type=checkbox], input[type=radio]) { accent-color: #78b9af; }
+/* All text buttons stay dark; their light labels never depend on inherited link colours. */
+:is(#cafeNearbySearch, #cafeNearbyTownForm button, #newTopic, #accountButton,
+    .stay-booking, .experience-official, #accountSubmit, #postForm button[type=submit],
+    #bookingForm button[type=submit], .fjord-ai-primary, .fjord-helper-draft,
+    .drone-experience .button, #itineraryDialog .button, #galleryBook) {
+  background: var(--ff-action);
+  border: 1px solid #a9d4cd80;
+  color: var(--ff-ink) !important;
+  border-radius: var(--ff-control-radius);
+  min-height: 44px;
+  font-weight: 750;
+  box-shadow: 0 4px 14px #00131e14;
+}
+:is(#cafeNearbyGPS, .cafe-route, .stay-link, .stay-actions a, .experience-actions a,
+    .trip-nearby a, .trip-nearby button, .stays-waypoints a, .experience-filters button,
+    .experience-retry, .stays-retry, #cafeNearbyTownResults button, .stop-on-map,
+    .itinerary-base-actions button, .account-tabs button, .discovery-story-next button) {
+  background: #ffffff08;
+  border: 1px solid var(--ff-line-strong);
+  border-radius: var(--ff-control-radius);
+  color: var(--ff-ink);
+  min-height: 44px;
+  font-weight: 700;
+}
+.stay-actions a.stay-booking { background: var(--ff-action); border-color: #a9d4cd80 !important; color: var(--ff-ink) !important; }
+.experience-filters button[aria-pressed=true], .account-tabs button[aria-selected=true], .account-tabs button.active { background: var(--ff-action); color: var(--ff-ink); border-color: #a9d4cd80; }
+.fjord-ai-user { background: var(--ff-accent); color: #10333f; }
+.fjord-ai-assistant { background: var(--ff-card); border-color: var(--ff-line); }
+.fjord-ai .fjord-ai-auth input { background: var(--ff-field); color: var(--ff-ink); border-color: var(--ff-line-strong); border-radius: var(--ff-control-radius); }
+:is(.discovery-cafe-links a, .discovery-cafe-links button, .cafe-source) { color: var(--ff-accent); border-color: var(--ff-line-strong); text-underline-offset: 4px; }
+.cafe-result .cafe-open-status { background: #ffffff0d; color: var(--ff-muted); border: 1px solid var(--ff-line); }
+.cafe-result .cafe-status-open { color: #c5efce; background: #3e825633; }
+.cafe-result .cafe-status-closed { color: #f3c7b7; background: #a25b4433; }
+/* Every modal continues the same surface hierarchy. Leaflet tiles and photo stages stay untouched. */
+:is(#itineraryDialog, #galleryDialog, #accountDialog, #postDialog, #bookingDialog,
+    #experiencePhotoDialog, dialog.stay-gallery, dialog.discovery-story-dialog, dialog.fjord-helper) {
+  background: var(--ff-panel);
+  color: var(--ff-ink);
+  border: 1px solid var(--ff-line-strong);
+  border-radius: 22px;
+  box-shadow: 0 30px 100px #00121ca6;
+}
+dialog::backdrop { background: #041923c9; backdrop-filter: blur(8px); }
+:is(#itineraryDialog, #accountDialog, #postDialog, #bookingDialog, dialog.stay-gallery, .discovery-story-dialog)
+  :is(h2, h3, h4, label, summary, strong, b) { color: var(--ff-ink); }
+:is(#itineraryDialog, #accountDialog, #postDialog, #bookingDialog, dialog.stay-gallery, .discovery-story-dialog)
+  :is(p, small, dt, dd, .itinerary-access, .cafe-gallery-today, .cafe-gallery-checked) { color: var(--ff-muted); }
+:is(#itineraryDialog, #accountDialog, #postDialog, #bookingDialog, dialog.stay-gallery, .discovery-story-dialog)
+  a:not(.button):not(.leaflet-control-zoom-in):not(.leaflet-control-zoom-out) { color: var(--ff-accent); }
+:is(.itinerary-header, .itinerary-extras, .stay-gallery-header, .cafe-gallery-info,
+    .cafe-gallery-summary, .cafe-gallery-hours, .stay-gallery-meta, .discovery-story-full) {
+  background: transparent;
+  color: var(--ff-ink);
+  border-color: var(--ff-line);
+}
+#itineraryOrder, #itineraryStatus, .itinerary-notice, .cafe-gallery-hours-note,
+.cafe-gallery-address, .discovery-story-full > p, .discovery-story-full > .discovery-story-lead { color: var(--ff-muted) !important; }
+#itineraryStops li, .itinerary-choice:has(input:disabled) { background: var(--ff-field); border-color: var(--ff-line); }
+:is(.itinerary-experience-photo, .cafe-gallery-info) { background: var(--ff-field); border-color: var(--ff-line); }
+.discovery-story-image > span { background: #10333fde; color: var(--ff-ink); border: 1px solid var(--ff-line-strong); border-radius: 10px; }
+.discovery-story-next button:last-child { background: var(--ff-action); color: var(--ff-ink); border-color: #a9d4cd80; }
+/* Selected stops and payment choices use the same inset surfaces. */
+#galleryDialog :is(.route-stop, .trip-leg, #tripSummary span),
+#bookingDialog :is(.payment-options label, .guest), .account-identity {
+  background: var(--ff-field); color: var(--ff-muted); border-color: var(--ff-line); border-radius: var(--ff-control-radius);
+}
+#galleryDialog .route-stop:has(input:checked), #itineraryDialog .itinerary-choice:has(input:checked) {
+  background: #24535c; border-color: #8ac6bc;
+}
+#galleryDialog :is(.route-stop, .trip-leg) :is(p, small, span, b, strong, label),
+#galleryDialog :is(.stop-explanation, #tripSummary) { color: var(--ff-muted); }
+#galleryDialog :is(.route-stop, .trip-leg) a { color: var(--ff-accent); }
+#itineraryChoices .itinerary-choice, #itineraryStops .trip-nearby { background: var(--ff-field); border-color: var(--ff-line); }
+#cafeStops :is(.cafe-route, .stays-waypoints a), #staysSauna .stay-link { color: var(--ff-ink); }
+#accountStatus, #postStatus, #communityNotice, #itineraryExtrasError { color: #f0cba1; }
+/* Old feature styles set text-link colours directly. Scope these fixes to dark
+ * surfaces rather than inheriting a dark label from the original cream theme. */
+:is(#itineraryDialog, #galleryDialog, #accountDialog, #postDialog, #bookingDialog,
+    #cafeStops, #staysSauna, #routeExperiences, #community, dialog.stay-gallery, .discovery-stories)
+  :is(.text-link, .button, .stay-booking, .stay-link, .experience-actions a,
+      .cafe-route, .account-post-group button, .stay-links a, .cafe-gallery-route,
+      .cafe-gallery-website, .stay-gallery-book) {
+  background: var(--ff-action); color: var(--ff-ink) !important;
+  border: 1px solid var(--ff-line-strong); border-radius: var(--ff-control-radius);
+}
+#itineraryDialog :is(#itinerarySelectAll, #itinerarySelectNone, #itineraryFit) {
+  color: var(--ff-ink); background: #ffffff08; padding: 10px 13px;
+  min-height: 44px; display: inline-flex; align-items: center; text-decoration: none;
+}
+:is(#filters button, .place-pagination button, .header-register,
+    .hero .button.light, .explorer-action, .fjord-ai-primary, .fjord-ai-guide) {
+  background: var(--ff-action); color: var(--ff-ink); border: 1px solid #91bab580;
+  border-radius: var(--ff-control-radius);
+}
+#filters button.active, .place-pagination button[aria-current=page] { background: #102e3b; color: var(--ff-ink); border-color: #a9d4cd; }
+.place-pagination button:disabled { background: #dce7e3; color: #536f76; border-color: #a1b6b8; }
+#headerAccount #headerRegister { background: var(--ff-action); color: var(--ff-ink); border-color: #91bab580; }
+#headerAccount .header-account-button { background: var(--ff-action); color: var(--ff-ink); border-color: #91bab580; border-radius: var(--ff-control-radius); }
+#siteLanguage { background: var(--ff-field); color: var(--ff-ink); border-color: #91bab580; border-radius: var(--ff-control-radius); }
+#cafeStops .discovery-cafe-address > span { color: var(--ff-muted); }
+#galleryDialog .film-controls button { background: var(--ff-action); color: var(--ff-ink); border-color: #91bab580; border-radius: var(--ff-control-radius); }
+#galleryDialog .gallery-quick-actions button { background: var(--ff-action); color: var(--ff-ink); border-color: #91bab580; border-radius: var(--ff-control-radius); }
+#accountDialog #signOut { background: #ffffff08; color: #f3c7b7; border-color: #d39b8b80; }
+dialog.stay-gallery .stay-gallery-actions a, dialog.stay-gallery .stay-gallery-book,
+dialog.stay-gallery .stay-gallery-venue-actions a {
+  background: var(--ff-action); color: var(--ff-ink) !important;
+  border-color: #91bab580; border-radius: var(--ff-control-radius);
+}
+/* Keep icon buttons round and their existing centred cross/arrow artwork. */
+:is(#itineraryClose, .stay-gallery-icon, .experience-photo-close, .discovery-story-close, .community-close) {
+  background: var(--ff-card); color: var(--ff-ink); border: 1px solid var(--ff-line-strong);
+  width: 44px; height: 44px; border-radius: 50%; padding: 0;
+  display: inline-grid; place-items: center; line-height: 1;
+}
+:is(.cafe-photo-controls button, .stay-photo-open span) { background: #10333fd9; border-color: var(--ff-line-strong); color: var(--ff-ink); border-radius: 10px; }
+.cafe-photo-controls button { min-width: 38px; min-height: 38px; }
+.cafe-result :is(.cafe-hours, .cafe-result-address, .cafe-result-distance, .cafe-data-authors) { font-size: 12px; line-height: 1.75; }
+.cafe-photo-authors { font-size: 11px; }
+:is(button, a, input, select, textarea, summary):focus-visible { outline: 3px solid var(--fjord-focus); outline-offset: 3px; }
+@media (max-width:650px) {
+  .community-section, .discovery-stories, .discovery-cafes { padding: 22px 18px; }
+  .cafe-result-copy, .discovery-cafe-copy, .stay-body { padding: 19px; }
+  :is(.roadtrip-collection, .route-experiences, .stays-sauna, .cafe-nearby, .community-section) { border-radius: 20px; }
+  :is(#cafeNearby, #accountDialog, #postDialog, #bookingDialog, #community) :is(input, select, textarea) { font-size: 16px; }
+}
+@media (prefers-reduced-motion:reduce) { :is(.cafe-result, .stay-card, .discovery-cafe-card) { transition: none; } }
