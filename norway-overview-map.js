@@ -128,5 +128,6 @@
   routeButton.addEventListener('click',()=>{const trigger=[...document.querySelectorAll('[data-roadtrip]')].find(b=>b.dataset.roadtrip===routeKey);trigger?.click();});
   select.addEventListener('change',()=>{routeKey=select.value;routeButton.hidden=!routeKey;draw(true);});allButton.addEventListener('click',()=>{category='all';routeKey='';labels();if(loaded)draw(true);else load();});
   window.addEventListener('fjordlanguagechange',labels);labels();
-  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();load();}},{rootMargin:'250px'});observer.observe(section);} else load();
+  async function loadDefault(){await load();if(loaded&&googleConfig.enabled===true&&!standardActive&&!standardLoading&&!googleActive)standardButton.click();}
+  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();loadDefault();}},{rootMargin:'100px'});observer.observe(section);} else load();
 })();
