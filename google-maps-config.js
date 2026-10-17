@@ -1,5 +1,5 @@
-/* Browser key must be restricted to this site's HTTPS referrers and Maps JavaScript API.
- * Activation stays off until billing, provider quotas and a real browser test are complete.
- * Google's budget alerts are notifications, not a hard spending cap.
+/* Public browser key: restricted to dimkanaprikole.github.io and Maps JavaScript API.
+ * Free-trial activation only; budget alerts are not a hard spending cap.
+ * Google SDK loads only after the visitor explicitly selects 3D.
  */
-window.FjordGoogleMapConfig = Object.freeze({enabled:false, apiKey:''});
+window.FjordGoogleMapConfig = Object.freeze({enabled:true, apiKey:'AIzaSyBz7x4_paJPXj4sTkbGYIXSkwwJL-JksV8'});
