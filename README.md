@@ -1,5 +1,8 @@
 # FJORD / FLOW — portable static preview
 
+For the optional Afonya account/chat integration, see [SECURITY.md](SECURITY.md)
+for the public Firebase key's required restrictions and backend-secret handling.
+
 Publish the contents of this directory as a static site. It supports both a domain root and a project subdirectory such as `/fjord-flow/`; no hard-coded repository name is needed.
 
 `demo-runtime.js` derives its base URL from its own script URL. Same-origin calls under `<base>/api/` are intercepted in the browser; static snapshots are loaded from `<base>/demo-data/`. Booking previews are in memory only. Accounts, public posts, payments and real bookings remain disabled. Map routes use saved sample routes or the existing external road services.
