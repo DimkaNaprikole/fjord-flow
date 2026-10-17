@@ -33,7 +33,7 @@
     const badge = node('strong', 'cafe-gallery-status', state.open === null ? w[2] : state.open ? `${w[0]} ${state.until}` : w[1]);
     badge.dataset.state = state.open === null ? 'unknown' : state.open ? 'open' : 'closed';
     const times = periods => periods.length ? periods.map(p => p.join('–')).join(', ') : w[8];
-    info.append(badge, node('span', 'cafe-gallery-today', `${w[3]}: ${times(state.today)}`));
+    const todayLine = node('span', 'cafe-gallery-today', Array.isArray(hours.weekly) ? `${w[3]}: ${times(state.today)}` : w[10]); info.append(badge, todayLine);
     const route = node('a', 'cafe-gallery-route', w[5] + ' ↗');
     route.href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(venue.name + ', ' + venue.address);
     route.target = '_blank'; route.rel = 'noopener noreferrer';
@@ -47,15 +47,15 @@
       }
     } catch {}
     line.append(info, actions);
-    const details = node('details', 'cafe-gallery-hours'), summary = node('summary', '', w[4]); details.append(summary);
+    const details = node('details', 'cafe-gallery-hours'), summary = node('summary', '', w[4]); details.append(summary); details.open = !!venue.hoursNote;
     const table = node('dl');
-    hours.weekly.forEach((periods, day) => {
+    (hours.weekly || []).forEach((periods, day) => {
       const row = node('div'); if (day === state.day) row.className = 'is-today';
       const label = new Intl.DateTimeFormat(lang || 'nb', {weekday: 'long', timeZone: 'UTC'}).format(new Date(Date.UTC(2026, 9, 12 + day)));
       row.append(node('dt', '', label), node('dd', '', times(periods))); table.append(row);
     });
-    details.append(table, node('p', 'cafe-gallery-address', venue.address));
-    const source = node('a', '', hours.sourceLabel + ' ↗');
+    details.append(table); if (hours.publishedText) details.append(node('p', '', hours.publishedText)); const hoursNote = typeof venue.hoursNote === 'string' ? venue.hoursNote : venue.hoursNote?.[lang] || venue.hoursNote?.en; if (hoursNote) details.append(node('p', 'cafe-gallery-hours-note', hoursNote)); details.append(node('p', 'cafe-gallery-address', venue.address));
+    const source = node('a', '', (hours.sourceLabel || venue.name) + ' ↗');
     try {const url = new URL(hours.source); if (url.protocol === 'https:') source.href = url.href;} catch {}
     source.target = '_blank'; source.rel = 'noopener noreferrer';
     const date = new Intl.DateTimeFormat(lang || 'nb').format(new Date(hours.checked + 'T12:00:00Z'));
@@ -66,7 +66,7 @@
       const fresh = evaluate(hours);
       badge.textContent = fresh.open === null ? w[2] : fresh.open ? `${w[0]} ${fresh.until}` : w[1];
       badge.dataset.state = fresh.open === null ? 'unknown' : fresh.open ? 'open' : 'closed';
-      info.querySelector('.cafe-gallery-today').textContent = `${w[3]}: ${times(fresh.today)}`;
+      todayLine.textContent = Array.isArray(hours.weekly) ? `${w[3]}: ${times(fresh.today)}` : w[10];
       note.textContent = fresh.open === null ? w[7] : w[6];
       [...table.children].forEach((row, day) => row.classList.toggle('is-today', day === fresh.day));
     };

@@ -388,5 +388,127 @@
       "sourceLabel": "Tripadvisor"
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Caf%C3%A9%20Ol%C3%A9%2C%20Mar%C3%A5kvegen%2019%2C%206216%20Geiranger%2C%20Norway"
+  },
+  {
+    "id": "sagvollstallen-gran",
+    "name": "Sagvollstallen",
+    "town": "Gran",
+    "address": "Sagvollvegen 611, Gran, Norway",
+    "latitude": 60.3762074,
+    "longitude": 10.7146382,
+    "osmId": "node:1105423159",
+    "coordinatesSource": "https://www.openstreetmap.org/node/1105423159",
+    "website": "https://www.granil.no/sagvollstallen",
+    "route": "hadeland",
+    "placeId": "gran",
+    "image": "./images/cafes/sagvollstallen-granil.jpeg",
+    "imageSource": "https://www.granil.no/sagvollstallen",
+    "photoAlt": {
+      "nb": "Ekte fasadefoto · Gran IL · official website",
+      "en": "Real exterior photograph · Gran IL · official website",
+      "uk": "Справжнє фото фасаду · Gran IL · official website",
+      "sv": "Äkta fasadfoto · Gran IL · official website",
+      "da": "Ægte facadefoto · Gran IL · official website"
+    },
+    "photoCaption": {
+      "nb": "Ekte fasadefoto · Gran IL · official website",
+      "en": "Real exterior photograph · Gran IL · official website",
+      "uk": "Справжнє фото фасаду · Gran IL · official website",
+      "sv": "Äkta fasadfoto · Gran IL · official website",
+      "da": "Ægte facadefoto · Gran IL · official website"
+    },
+    "description": {
+      "nb": "Vintersesong: januar–mars, lørdag og søndag kl. 11–15. Gran IL driver kiosken. Utenfor vintersesongen er det ikke ordinær kafédrift. Se Gran IL / Facebook for endringer.",
+      "en": "Winter season: January–March, Saturday and Sunday 11:00–15:00. Gran IL runs the kiosk. There is no regular café service outside the winter season. Check Gran IL / Facebook for changes.",
+      "uk": "Зимовий сезон: січень–березень, субота й неділя 11:00–15:00. Кіоском керує Gran IL. Поза зимовим сезоном регулярного обслуговування немає. Зміни перевіряйте на сайті Gran IL або у Facebook.",
+      "sv": "Vintersäsong: januari–mars, lördag och söndag kl. 11–15. Gran IL driver kiosken. Ingen ordinarie kaféservering utanför vintersäsongen. Se Gran IL / Facebook för ändringar.",
+      "da": "Vintersæson: januar–marts, lørdag og søndag kl. 11–15. Gran IL driver kiosken. Ingen almindelig caféservering uden for vintersæsonen. Se Gran IL / Facebook for ændringer."
+    },
+    "hoursNote": {
+      "nb": "Vintersesong: januar–mars, lørdag og søndag kl. 11–15. Gran IL driver kiosken. Utenfor vintersesongen er det ikke ordinær kafédrift. Se Gran IL / Facebook for endringer.",
+      "en": "Winter season: January–March, Saturday and Sunday 11:00–15:00. Gran IL runs the kiosk. There is no regular café service outside the winter season. Check Gran IL / Facebook for changes.",
+      "uk": "Зимовий сезон: січень–березень, субота й неділя 11:00–15:00. Кіоском керує Gran IL. Поза зимовим сезоном регулярного обслуговування немає. Зміни перевіряйте на сайті Gran IL або у Facebook.",
+      "sv": "Vintersäsong: januari–mars, lördag och söndag kl. 11–15. Gran IL driver kiosken. Ingen ordinarie kaféservering utanför vintersäsongen. Se Gran IL / Facebook för ändringar.",
+      "da": "Vintersæson: januar–marts, lørdag og søndag kl. 11–15. Gran IL driver kiosken. Ingen almindelig caféservering uden for vintersæsonen. Se Gran IL / Facebook for ændringer."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/sagvollstallen-granil.jpeg",
+        "kind": "facade",
+        "credit": "Gran IL · official website",
+        "source": "https://www.granil.no/sagvollstallen",
+        "original": "https://spond.com/storage/upload/7985FC20BE52625F5E1468C84969A83F/1745937696_A2A496C7/Stallen_350x263.jpeg"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "publishedText": "Jan-Mar: Sa-Su 11:00-15:00",
+      "checked": "2026-10-17",
+      "source": "https://www.granil.no/sagvollstallen",
+      "sourceLabel": "Sagvollstallen"
+    }
+  },
+  {
+    "id": "cafe-oscar-ii-gran",
+    "name": "Café Oscar II",
+    "town": "Gran",
+    "address": "Røykenviklinna 460, 2760 Brandbu, Norway",
+    "latitude": 60.4306152,
+    "longitude": 10.4690111,
+    "osmId": "node:7550171985",
+    "coordinatesSource": "https://www.openstreetmap.org/node/7550171985",
+    "website": "https://vika-uteliv.no/cafe-oscar-ii/",
+    "phone": "+4761334560",
+    "route": "hadeland",
+    "placeId": "gran",
+    "image": "./images/cafes/cafe-oscar-ii-2010.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:R%C3%B8ykenvik_-_Oscar_II.jpg",
+    "photoAlt": {
+      "nb": "Ekte fasadefoto fra 2010 · Jan-Tore Egge",
+      "en": "Real exterior photograph from 2010 · Jan-Tore Egge",
+      "uk": "Справжнє фото фасаду 2010 року · Jan-Tore Egge",
+      "sv": "Äkta fasadfoto från 2010 · Jan-Tore Egge",
+      "da": "Ægte facadefoto fra 2010 · Jan-Tore Egge"
+    },
+    "photoCaption": {
+      "nb": "Ekte fasadefoto fra 2010 · Jan-Tore Egge",
+      "en": "Real exterior photograph from 2010 · Jan-Tore Egge",
+      "uk": "Справжнє фото фасаду 2010 року · Jan-Tore Egge",
+      "sv": "Äkta fasadfoto från 2010 · Jan-Tore Egge",
+      "da": "Ægte facadefoto fra 2010 · Jan-Tore Egge"
+    },
+    "description": {
+      "nb": "Sommerkafé: mai–august, ifølge eierens nettside. Dagens klokkeslett er ikke bekreftet; ring 61 33 45 60 før besøket. Arrangementer avtales separat.",
+      "en": "Summer café: May–August, according to the operator’s website. Daily opening times are not confirmed; call +47 61 33 45 60 before visiting. Events are arranged separately.",
+      "uk": "Літня кав’ярня: травень–серпень, за сайтом власника. Точні щоденні години не підтверджені — перед візитом телефонуйте +47 61 33 45 60. Події узгоджують окремо.",
+      "sv": "Sommarkafé: maj–augusti, enligt ägarens webbplats. Dagliga öppettider är inte bekräftade; ring +47 61 33 45 60 före besöket. Evenemang avtalas separat.",
+      "da": "Sommercafé: maj–august, ifølge ejerens hjemmeside. Daglige åbningstider er ikke bekræftet; ring +47 61 33 45 60 før besøget. Arrangementer aftales separat."
+    },
+    "hoursNote": {
+      "nb": "Sommerkafé: mai–august, ifølge eierens nettside. Dagens klokkeslett er ikke bekreftet; ring 61 33 45 60 før besøket. Arrangementer avtales separat.",
+      "en": "Summer café: May–August, according to the operator’s website. Daily opening times are not confirmed; call +47 61 33 45 60 before visiting. Events are arranged separately.",
+      "uk": "Літня кав’ярня: травень–серпень, за сайтом власника. Точні щоденні години не підтверджені — перед візитом телефонуйте +47 61 33 45 60. Події узгоджують окремо.",
+      "sv": "Sommarkafé: maj–augusti, enligt ägarens webbplats. Dagliga öppettider är inte bekräftade; ring +47 61 33 45 60 före besöket. Evenemang avtalas separat.",
+      "da": "Sommercafé: maj–august, ifølge ejerens hjemmeside. Daglige åbningstider er ikke bekræftet; ring +47 61 33 45 60 før besøget. Arrangementer aftales separat."
+    },
+    "gallery": [
+      {
+        "src": "./images/cafes/cafe-oscar-ii-2010.jpg",
+        "kind": "facade",
+        "credit": "Jan-Tore Egge · 2010",
+        "source": "https://commons.wikimedia.org/wiki/File:R%C3%B8ykenvik_-_Oscar_II.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/2/26/R%C3%B8ykenvik_-_Oscar_II.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-17",
+      "source": "https://vika-uteliv.no/cafe-oscar-ii/",
+      "sourceLabel": "Café Oscar II"
+    }
   }
 ]
