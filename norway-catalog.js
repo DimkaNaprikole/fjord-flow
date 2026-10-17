@@ -107,7 +107,15 @@
       hours.append(node('p', '', local(r.openingHours.publishedText)), node('p', 'norway-catalog-muted', t(26))); body.append(hours);
     } else if (!note) body.append(node('p', 'norway-catalog-hours-note', t(16)));
     const actions = node('nav', 'norway-catalog-actions'); actions.setAttribute('aria-label', r.name);
+    if (local(r.visitInfo?.text)) {
+      const visit = node('details', 'norway-catalog-hours');
+      visit.append(node('summary', '', {nb:'Før du drar',en:'Before you go',uk:'Перед поїздкою',sv:'Före besöket',da:'Før afrejse'}[lang()]), node('p', '', local(r.visitInfo.text)));
+      if (safe(r.visitInfo.source)) visit.append(link(t(17) + ' ↗', r.visitInfo.source));
+      if (r.visitInfo.checked) visit.append(node('p', 'norway-catalog-muted', `${t(18)}: ${r.visitInfo.checked}`));
+      body.append(visit);
+    }
     if (safe(r.website)) actions.append(link(t(13) + ' ↗', r.website));
+    if (safe(r.bookingUrl)) actions.append(link(({nb:'Bestill',en:'Book',uk:'Забронювати',sv:'Boka',da:'Book'})[lang()] + ' ↗', r.bookingUrl));
     actions.append(link(t(14) + ' ↗', directions(r))); body.append(actions);
     const meta = node('div', 'norway-catalog-meta');
     const infoSource = safe(r.source) || safe(r.openingHours?.source) || safe(r.website);
@@ -201,7 +209,7 @@
   }
   async function load() {
     loading = true; failed = false; render();
-    try {const response = await fetch('./norway-catalog.json?v=2'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
+    try {const response = await fetch('./norway-catalog.json?v=3'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
     catch {failed = true;} finally {loading = false; render();}
   }
   window.addEventListener('fjordlanguagechange', rebuild);

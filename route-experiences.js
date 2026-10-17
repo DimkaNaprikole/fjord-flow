@@ -73,6 +73,22 @@
 
  function render(){const section=$('routeExperiences');if(!section)return;section.replaceChildren();const head=el('div',undefined,'experiences-heading');const title=el('h2',t(1));title.id='routeExperiencesTitle';head.append(el('p',t(0),'experiences-eyebrow'),title,el('p',t(2),'experiences-intro'));section.append(head);const nav=el('nav',undefined,'experience-filters');nav.setAttribute('aria-label',t(19));const keys=['all','east','hardanger','fjord','sunnmore','coast','arctic'];keys.forEach((key,i)=>{const b=el('button',i<5?t(i+3):extraRegions[lang()][i-5]);b.type='button';b.dataset.experienceRegion=key;b.setAttribute('aria-pressed',String(filter===key));b.onclick=()=>{filter=key;render();$('routeExperiences').querySelector('[data-experience-region="'+key+'"]').focus({preventScroll:true});};nav.append(b);});section.append(nav);if(phase==='ready'){const list=venues.filter(v=>imageURL(v.image)&&(filter==='all'||v.routes?.includes(filter)));section.append(el('p',list.length+' '+t(20),'experience-count'));if(list.length){const grid=el('div',undefined,'experiences-grid');list.forEach(v=>grid.append(card(v)));section.append(grid);}else section.append(el('p',t(15),'experiences-status'));}else{const message=el('p',phase==='error'?t(13):t(12),'experiences-status');message.setAttribute('role','status');section.append(message);if(phase==='error'){const retry=el('button',t(14),'experience-retry');retry.type='button';retry.onclick=()=>{loadPromise=load();};section.append(retry);}}const jumps=el('nav',undefined,'experience-jumps');['cafeNearby','staysSauna','droneExperience'].forEach((id,i)=>{const a=el('a',t(i+16)+' →');a.href='#'+id;jumps.append(a);});head.append(jumps);}
  function mount(){const cafe=$('cafeStops');if(!cafe)return;let section=$('routeExperiences');if(!section){section=el('section',undefined,'route-experiences');section.id='routeExperiences';section.dataset.i18nIgnore='';section.setAttribute('aria-labelledby','routeExperiencesTitle');cafe.before(section);render();}else if(section.nextElementSibling!==cafe)cafe.before(section);}
- async function load(){if(pending)return;pending=true;phase='loading';render();try{const response=await fetch('./route-experiences.json?v=4',{credentials:'same-origin'});if(!response.ok)throw Error('HTTP '+response.status);const data=await response.json();if(!Array.isArray(data))throw Error('Expected attraction array');venues=data.filter(v=>v&&typeof v.id==='string'&&typeof v.name==='string'&&url(v.website));phase='ready';window.dispatchEvent(new CustomEvent('fjordexperiencesready',{detail:{places:venues}}));}catch(error){phase='error';console.info('FJORD / FLOW regional experiences unavailable:',error.message);}finally{pending=false;render();}return venues;}
+ async function load(){
+  if(pending)return;pending=true;phase='loading';render();
+  const controller=new AbortController();let timer;
+  try{
+   // Bound the entire download, including a response body that never finishes.
+   const timeout=new Promise((_,reject)=>{timer=setTimeout(()=>{controller.abort();reject(Error('Experiences request timed out'));},8000);});
+   const download=(async()=>{const response=await fetch('./route-experiences.json?v=4',{credentials:'same-origin',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);return response.json();})();
+   const data=await Promise.race([download,timeout]);
+   if(!Array.isArray(data))throw Error('Expected attraction array');
+   venues=data.filter(v=>v&&typeof v.id==='string'&&typeof v.name==='string'&&url(v.website));phase='ready';
+   window.dispatchEvent(new CustomEvent('fjordexperiencesready',{detail:{places:venues}}));
+  }catch(error){phase='error';console.info('FJORD / FLOW regional experiences unavailable:',error.message);}
+  finally{clearTimeout(timer);pending=false;render();}
+  // A failed optional list must not masquerade as a successful empty list:
+  // the itinerary can open its base stops and show the existing retry hint.
+  return phase==='ready'?venues:null;
+ }
  new MutationObserver(mount).observe(document.body,{subtree:true,childList:true});window.addEventListener('fjordlanguagechange',()=>{mount();render();});mount();loadPromise=load();window.FjordExperiences={appendPhotoCredit,load:()=>pending?loadPromise:phase==='ready'?Promise.resolve(venues):(loadPromise=load()),get places(){return venues;}};
 })();

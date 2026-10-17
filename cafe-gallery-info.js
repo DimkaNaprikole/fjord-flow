@@ -2,11 +2,11 @@
 (() => {
   'use strict';
   const strings = {
-    nb: ['Åpent til', 'Stengt nå', 'Åpningstider må bekreftes', 'I dag', 'Åpningstider', 'Finn veien', 'Etter publisert timeplan · norsk tid. Endringer kan forekomme.', 'Veiledende tider · ikke bekreftet av kafeen.', 'Stengt', 'Sjekket', 'Ukjent'],
-    en: ['Open until', 'Closed now', 'Confirm opening hours', 'Today', 'Opening hours', 'Get directions', 'Based on published hours · Norway time. Changes may occur.', 'Indicative hours · not confirmed by the café.', 'Closed', 'Checked', 'Unknown'],
-    uk: ['Відкрито до', 'Зараз зачинено', 'Години потребують уточнення', 'Сьогодні', 'Години роботи', 'Прокласти маршрут', 'За опублікованим розкладом · час Норвегії. Можливі зміни.', 'Орієнтовні години · не підтверджені кав’ярнею.', 'Зачинено', 'Перевірено', 'Невідомо'],
-    sv: ['Öppet till', 'Stängt nu', 'Bekräfta öppettiderna', 'I dag', 'Öppettider', 'Hitta hit', 'Enligt publicerade tider · norsk tid. Ändringar kan förekomma.', 'Ungefärliga tider · inte bekräftade av kaféet.', 'Stängt', 'Kontrollerat', 'Okänt'],
-    da: ['Åbent til', 'Lukket nu', 'Bekræft åbningstiderne', 'I dag', 'Åbningstider', 'Find vej', 'Ifølge offentliggjorte tider · norsk tid. Ændringer kan forekomme.', 'Vejledende tider · ikke bekræftet af caféen.', 'Lukket', 'Kontrolleret', 'Ukendt']
+    nb: ['Åpent til', 'Stengt nå', 'Åpningstider må bekreftes', 'I dag', 'Åpningstider', 'Finn veien', 'Etter publisert timeplan · norsk tid. Endringer kan forekomme.', 'Veiledende tider · ikke bekreftet av stedet.', 'Stengt', 'Sjekket', 'Ukjent'],
+    en: ['Open until', 'Closed now', 'Confirm opening hours', 'Today', 'Opening hours', 'Get directions', 'Based on published hours · Norway time. Changes may occur.', 'Indicative hours · not confirmed by the venue.', 'Closed', 'Checked', 'Unknown'],
+    uk: ['Відкрито до', 'Зараз зачинено', 'Години потребують уточнення', 'Сьогодні', 'Години роботи', 'Прокласти маршрут', 'За опублікованим розкладом · час Норвегії. Можливі зміни.', 'Орієнтовні години · не підтверджені закладом.', 'Зачинено', 'Перевірено', 'Невідомо'],
+    sv: ['Öppet till', 'Stängt nu', 'Bekräfta öppettiderna', 'I dag', 'Öppettider', 'Hitta hit', 'Enligt publicerade tider · norsk tid. Ändringar kan förekomma.', 'Ungefärliga tider · inte bekräftade av platsen.', 'Stängt', 'Kontrollerat', 'Okänt'],
+    da: ['Åbent til', 'Lukket nu', 'Bekræft åbningstiderne', 'I dag', 'Åbningstider', 'Find vej', 'Ifølge offentliggjorte tider · norsk tid. Ændringer kan forekomme.', 'Vejledende tider · ikke bekræftet af stedet.', 'Lukket', 'Kontrolleret', 'Ukendt']
   };
   const minutes = value => /^\d{2}:\d{2}$/.test(value || '') ? Number(value.slice(0, 2)) * 60 + Number(value.slice(3)) : NaN;
   function evaluate(hours, now = new Date()) {
@@ -42,7 +42,7 @@
     try {
       const url = new URL(venue.website);
       if (url.protocol === 'https:' && !url.username && !url.password) {
-        const labels = {nb: 'Kafeens nettsted', en: 'Café website', uk: 'Сайт закладу', sv: 'Kaféets webbplats', da: 'Caféens hjemmeside'};
+        const labels = {nb: 'Stedets nettsted', en: 'Website', uk: 'Сайт закладу', sv: 'Platsens webbplats', da: 'Stedets hjemmeside'};
         const website = node('a', 'cafe-gallery-website', (labels[lang] || labels.nb) + ' ↗');
         website.href = url.href; website.target = '_blank'; website.rel = 'noopener noreferrer'; actions.append(website);
       }

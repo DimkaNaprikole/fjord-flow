@@ -664,7 +664,18 @@
     "region": "Hadeland",
     "source": "https://www.hadelandgjestegard.no/",
     "checked": "2026-10-17",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.398304261601396%2C10.552818172677284"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.398304261601396%2C10.552818172677284",
+    "visitInfo": {
+      "checked": "2026-10-18",
+      "source": "https://www.hadelandgjestegard.no/",
+      "text": {
+        "nb": "Frokost serveres mandag–fredag 09–12, lunsj 09–15. Menyen har også barnemeny og varme retter.",
+        "en": "Weekday breakfast is served 09–12 and lunch 09–15. A children’s menu and hot meals are also listed.",
+        "uk": "Сніданки в будні подають 09–12, обіди — 09–15. У меню також є дитячі та гарячі страви.",
+        "sv": "Vardagsfrukost serveras 09–12 och lunch 09–15. Det finns även barnmeny och varma rätter.",
+        "da": "Morgenmad serveres på hverdage 09–12 og frokost 09–15. Der er også børnemenu og varme retter."
+      }
+    }
   },
   {
     "id": "luprohjornet-gran",
@@ -2671,7 +2682,18 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:%27The_Twist%27_bridge_at_Kistefos_Museum.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "visitInfo": {
+      "checked": "2026-10-18",
+      "source": "https://www.kistefosmuseum.com/visit-kistefos/parking-at-kistefos",
+      "text": {
+        "nb": "Sørinngang: Kistefossveien 112, flatere terreng. Nordinngang: Samsmoveien 41. Begge har parkering og elbillading. Parkering er avgiftsbelagt.",
+        "en": "South entrance: Kistefossveien 112, flatter terrain. North entrance: Samsmoveien 41. Both have parking and EV charging. Parking is paid.",
+        "uk": "Південний вхід: Kistefossveien 112, рівніша місцевість. Північний: Samsmoveien 41. Обидва мають паркування й зарядки електромобілів. Паркування платне.",
+        "sv": "Södra entrén: Kistefossveien 112, flackare terräng. Norra: Samsmoveien 41. Båda har parkering och elbilsladdning. Parkeringsavgift tillkommer.",
+        "da": "Sydindgang: Kistefossveien 112, fladere terræn. Nordindgang: Samsmoveien 41. Begge har parkering og elbilladning. Parkering er mod betaling."
+      }
+    }
   },
   {
     "id": "storelgen",
@@ -2866,7 +2888,18 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:LoenSky117BG23.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "visitInfo": {
+      "checked": "2026-10-18",
+      "source": "https://en.loenskylift.no/faq",
+      "text": {
+        "nb": "Gratis parkering ved banen for gjester. Barnevogn kan tas med gratis. Restaurantbord må bestilles. Sjekk dagens åpningstider og driftsstatus før avreise.",
+        "en": "Guests can park free beside the cable car. Strollers travel free. Restaurant tables require booking. Check today’s opening hours and operating status before departure.",
+        "uk": "Для гостей є безкоштовне паркування біля підйомника. Дитячий візок перевозять безкоштовно. Столик у ресторані потрібно бронювати. Перед виїздом перевірте години й роботу підйомника.",
+        "sv": "Gäster parkerar gratis vid linbanan. Barnvagnar tas med gratis. Restaurangbord behöver bokas. Kontrollera dagens öppettider och driftstatus före avresa.",
+        "da": "Gæster parkerer gratis ved svævebanen. Barnevogne medtages gratis. Bord i restauranten skal bookes. Tjek dagens åbningstider og driftsstatus før afrejse."
+      }
+    }
   },
   {
     "id": "norsk-natursenter",

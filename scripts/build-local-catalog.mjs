@@ -82,6 +82,7 @@ if (!await exists(path.join(root, 'catalog-rest.json'))) {
 }
 const additions = (await Promise.all(['catalog-new-venues.json', 'catalog-central.json', 'catalog-north.json', 'catalog-west-south.json'].map(read))).flat();
 const coordinateOverrides = await read('catalog-coordinates.json');
+const visitNotes = await read('catalog-visit-notes.json');
 const oldCafes = await read('cafes.json');
 const cafeMap = new Map(oldCafes.map(r => [r.id, r]));
 for (const entry of additions.filter(r => r.category === 'cafe')) cafeMap.set(entry.id, {...cafeMap.get(entry.id), ...entry});
@@ -95,7 +96,7 @@ const entries = [
   ...newNonCafes.map(r => normalized(r, r.category)),
   ...experiences.map(r => normalized({...r, subcategory: r.category, hoursNote: r.hoursNote || r.season}, 'rest')),
   ...rest.map(r => normalized(r, r.category || 'rest'))
-].map(record => ({...record, ...(coordinateOverrides[record.id] || {})}));
+].map(record => ({...record, ...(coordinateOverrides[record.id] || {}), ...(visitNotes[record.id] ? {visitInfo: visitNotes[record.id]} : {})}));
 const ids = new Set();
 for (const entry of entries) {
   if (!entry.id || ids.has(entry.id)) throw Error('Duplicate or empty ID: ' + entry.id);
