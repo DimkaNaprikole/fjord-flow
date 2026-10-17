@@ -25,12 +25,22 @@
   const eyebrow=el('p','norway-overview__eyebrow'), title=el('h2'), intro=el('p','norway-overview__intro'); title.id='norwayOverviewTitle'; section.setAttribute('aria-labelledby',title.id);
   const controls=el('div','norway-overview__controls'), filters=el('div','norway-overview__filters'), select=el('select'), allButton=el('button'), routeButton=el('button'), status=el('p','norway-overview__status'), canvas=el('div','norway-overview__canvas'), note=el('p','norway-overview__note');
   status.setAttribute('role','status'); canvas.id='norwayOverviewCanvas'; canvas.setAttribute('role','region');
-  controls.append(filters,select,routeButton,allButton); section.append(eyebrow,title,intro,controls,status,canvas,note);
+  const providerControls=el('div','norway-overview__providers'), googleButton=el('button','','Google Maps · 3D'), flatButton=el('button','','2D'), fullButton=el('button','','⛶');
+  const googleCanvas=el('div','norway-overview__canvas norway-overview__google'), details=el('div','norway-overview__details');
+  googleCanvas.id='norwayGoogleCanvas';googleCanvas.hidden=true;details.hidden=true;
+  const googleConfig=window.FjordGoogleMapConfig || {};providerControls.hidden=googleConfig.enabled!==true;
+  for(const button of [googleButton,flatButton,fullButton])button.type='button';
+  providerControls.append(googleButton,flatButton,fullButton);
+  controls.append(filters,select,routeButton,allButton); section.append(eyebrow,title,intro,controls,providerControls,status,canvas,googleCanvas,details,note);
   const footer=document.querySelector('footer'); if(footer)footer.before(section); else document.querySelector('main')?.append(section);
   let rows=[], category='all', routeKey='', map=null, markers=null, lines=null, loaded=false, loading=false;
+  let googleMap=null, googleActive=false, googleLoading=false, googleGeneration=0;
+  const googleCopy={nb:['Fullskjerm','Google 3D kunne ikke åpnes. Vanlig kart er fortsatt tilgjengelig.','Satellitt og 3D. Velg en markør for foto og informasjon.'],en:['Full screen','Google 3D could not open. The standard map is still available.','Satellite and 3D. Select a marker for photographs and details.'],uk:['На весь екран','Не вдалося відкрити Google 3D. Звичайна карта залишається доступною.','Супутник і 3D. Оберіть позначку для фото й інформації.'],sv:['Helskärm','Google 3D kunde inte öppnas. Den vanliga kartan finns kvar.','Satellit och 3D. Välj en markör för bilder och information.'],da:['Fuld skærm','Google 3D kunne ikke åbnes. Det almindelige kort er stadig tilgængeligt.','Satellit og 3D. Vælg en markør for billeder og oplysninger.']};
   const routes=()=>window.FjordTripTools?.localRoutes || {};
   function labels() {
     const a=t(); eyebrow.textContent=a[0];title.textContent=a[1];intro.textContent=a[2];note.textContent=a[16];canvas.setAttribute('aria-label',a[19]);select.setAttribute('aria-label',a[18]);allButton.textContent=a[9];allButton.type='button';routeButton.type='button';routeButton.textContent=({nb:'Åpne ruten',en:'Open route',uk:'Відкрити маршрут',sv:'Öppna rutten',da:'Åbn ruten'})[lang()];routeButton.hidden=!routeKey;
+    fullButton.textContent='⛶ '+googleCopy[lang()][0];googleCanvas.setAttribute('aria-label','Google Maps 3D');googleCanvas.setAttribute('role','region');
+    googleButton.setAttribute('aria-pressed',String(googleActive));flatButton.setAttribute('aria-pressed',String(!googleActive));if(googleActive)note.textContent=googleCopy[lang()][2];
     filters.replaceChildren(); ['all',...categories].forEach((key,i)=>{const b=el('button','',a[i+3]);b.type='button';b.setAttribute('aria-pressed',String(category===key)); if(key!=='all')b.style.setProperty('--map-category',colors[key]); b.addEventListener('click',()=>{category=key;labels();if(loaded)draw(true);});filters.append(b);});
     select.replaceChildren(); const first=el('option','',a[8]);first.value='';select.append(first);
     Object.entries(routes()).filter(([,r])=>routePoints(r).length>1).forEach(([key,r])=>{const option=el('option','',localized(r.title)||r.label||key);option.value=key;select.append(option);});select.value=routeKey;
@@ -42,11 +52,12 @@
     const credit=p.gallery?.find(g=>g.src===p.image)||p.gallery?.[0];
     if(credit){const caption=el('small','norway-overview__credit',[credit.credit,credit.license].filter(Boolean).join(' · ')),source=safeURL(credit.source);if(source){const a=el('a','',caption.textContent+' ↗');a.href=source;a.target='_blank';a.rel='noopener noreferrer';caption.replaceChildren(a);}box.append(caption);}
     box.append(el('strong','',p.name),el('p','',[p.town,t()[4+categories.indexOf(p.category)]].filter(Boolean).join(' · ')));
-    const open=el('button','',t()[10]);open.type='button';open.addEventListener('click',()=>{map.closePopup();window.dispatchEvent(new CustomEvent('fjord:catalogue-select',{detail:{id:p.id}}));});box.append(open);
+    const open=el('button','',t()[10]);open.type='button';open.addEventListener('click',()=>{map?.closePopup();details.hidden=true;window.dispatchEvent(new CustomEvent('fjord:catalogue-select',{detail:{id:p.id}}));});box.append(open);
     const website=safeURL(p.website);if(website){const link=el('a','',t()[11]+' ↗');link.href=website;link.target='_blank';link.rel='noopener noreferrer';box.append(link);}
     return box;
   }
   function draw(fit) {
+    if(googleActive && googleMap){const route=routes()[routeKey],count=googleMap.render(rows,route,category);status.textContent=count+' '+t()[17]+(route?' · '+localized(route.title):'');return;}
     if(!map)return; markers.clearLayers();lines.clearLayers();
     const visible=filterPlaces(rows,category); visible.forEach(p=>{
       const icon=window.L.divIcon({className:'norway-overview__pin',html:'<span style="background:'+colors[p.category]+'"></span>',iconSize:[22,22],iconAnchor:[11,11]});
@@ -58,6 +69,23 @@
     status.textContent=visible.length ? visible.length+' '+t()[17]+(route?' · '+localized(route.title):'') : t()[15];
     if(fit){const points=focus.length?focus:visible.map(p=>[p.latitude,p.longitude]);if(points.length)map.fitBounds(points,{padding:[30,30],maxZoom:12});else map.setView([65,14],4);}
   }
+  function flatView(error=false){
+    googleGeneration++;googleActive=false;googleCanvas.hidden=true;canvas.hidden=false;details.hidden=true;
+    labels();map?.invalidateSize();if(loaded)draw(true);if(error)status.textContent=googleCopy[lang()][1];
+  }
+  googleButton.addEventListener('click',async()=>{
+    if(googleConfig.enabled!==true||googleLoading)return;
+    if(!loaded){await load();if(!loaded)return;}
+    const generation=++googleGeneration;googleLoading=true;googleButton.disabled=true;status.textContent=t()[12];
+    try{
+      googleCanvas.hidden=false;
+      if(!googleMap){const created=await window.FjordGoogleNorwayMap.create(googleCanvas,{enabled:true,userActivated:true,apiKey:googleConfig.apiKey,language:lang(),onPlaceClick:p=>{details.replaceChildren(popup(p));details.hidden=false;},onError:()=>{googleMap?.destroy();googleMap=null;flatView(true);}});if(generation!==googleGeneration){created.destroy();return;}googleMap=created;}
+      if(generation!==googleGeneration)return;googleActive=true;canvas.hidden=true;details.hidden=true;labels();draw(true);
+    }catch{googleMap?.destroy();googleMap=null;flatView(true);}
+    finally{googleLoading=false;googleButton.disabled=false;}
+  });
+  flatButton.addEventListener('click',()=>flatView());
+  fullButton.addEventListener('click',()=>{const target=googleActive?googleCanvas:canvas;const action=document.fullscreenElement?document.exitFullscreen?.():target.requestFullscreen?.();action?.catch?.(()=>{});});
   async function load() {
     if(loading||loaded)return; loading=true;status.textContent=t()[12];
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),12000);
