@@ -56,7 +56,7 @@
   }
   function popup(p) {
     const box=el('div','norway-overview__popup');
-    if(/^\.\/images\/[a-z0-9_./% -]+$/i.test(p.image || '') && !p.image.includes('..')) {const img=el('img');img.src=p.image;img.alt=p.photoAlt||p.name;img.loading='lazy';box.append(img);if(p.photoCaption){const credit=el('small','norway-overview__credit',p.photoCaption);box.append(credit);}}
+    if(/^\.\/images\/[a-z0-9_./% -]+$/i.test(p.image || '') && !p.image.includes('..')) {const img=el('img');img.src=p.image;img.alt=p.photoAlt||p.name;img.loading='lazy';box.append(img);if(p.photoCaption){const credit=el('small','norway-overview__credit',localized(p.photoCaption));box.append(credit);}}
     const credit=p.gallery?.find(g=>g.src===p.image)||p.gallery?.[0];
     if(credit){const caption=el('small','norway-overview__credit',[credit.credit,credit.license].filter(Boolean).join(' · ')),source=safeURL(credit.source);if(source){const a=el('a','',caption.textContent+' ↗');a.href=source;a.target='_blank';a.rel='noopener noreferrer';caption.replaceChildren(a);}box.append(caption);}
     box.append(el('strong','',p.name),el('p','',[p.town,t()[4+categories.indexOf(p.category)]].filter(Boolean).join(' · ')));
