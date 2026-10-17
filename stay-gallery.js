@@ -107,6 +107,14 @@
       }
       clearInterval(cafeTimer);
       const refreshCafe = window.FjordCafeGalleryInfo?.render(cafeInfo, venue);
+      if (!venue.openingHours && venue.hoursNote) {
+        const local = value => typeof value === 'string' ? value : value?.[language()] || value?.en || value?.nb || '';
+        cafeInfo.hidden = false;
+        const details = el('details', 'cafe-gallery-hours');
+        details.append(el('summary', '', {nb:'Besøk og bestilling',en:'Visiting and booking',uk:'Відвідування та бронювання',sv:'Besök och bokning',da:'Besøg og booking'}[language()] || 'Visiting and booking'), el('p', '', local(venue.hoursNote)));
+        if (venue.address) details.append(el('p', 'cafe-gallery-address', venue.address));
+        cafeInfo.append(details);
+      }
       if (refreshCafe) cafeTimer = setInterval(refreshCafe, 60000);
       show(0); dialog.showModal();
     }

@@ -1,0 +1,389 @@
+[
+  {
+    "id": "boker-og-borst-stavanger",
+    "name": "Bøker og Børst",
+    "town": "Stavanger",
+    "region": "Rogaland",
+    "category": "cafe",
+    "address": "Øvre Holmegate 32, 4006 Stavanger",
+    "website": "https://www.bokerogborst.no/",
+    "source": "https://www.bokerogborst.no/contact.html",
+    "phone": "+4751860476",
+    "description": {
+      "nb": "Kafé og bar i Fargegata, med kaffe, kake og et lunt sted å ta pause.",
+      "en": "Café and bar in colourful Fargegata, with coffee, cake and a cosy break from exploring.",
+      "uk": "Кав’ярня та бар на кольоровій Fargegata: кава, пиріг і затишна перерва під час прогулянки.",
+      "sv": "Kafé och bar i färgstarka Fargegata, med kaffe, kaka och en mysig paus.",
+      "da": "Café og bar i farverige Fargegata med kaffe, kage og en hyggelig pause."
+    },
+    "hoursNote": {
+      "nb": "Oppgitt på nettsiden: hver dag 09:00–02:00 neste dag. Høytider kan avvike.",
+      "en": "Published hours: daily 09:00–02:00 the following day. Holidays may differ.",
+      "uk": "Опубліковані години: щодня 09:00–02:00 наступного дня. У свята можливі зміни.",
+      "sv": "Angivna tider: dagligen 09:00–02:00 nästa dag. Helgdagar kan avvika.",
+      "da": "Angivne tider: dagligt 09:00–02:00 næste dag. Helligdage kan afvige."
+    },
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=%C3%98vre%20Holmegate%2032%20Stavanger&treffPerSide=3",
+    "latitude": 58.972792701286615,
+    "longitude": 5.7335055781026645,
+    "checked": "2026-10-17",
+    "image": "./images/catalog/south-boker.webp",
+    "imageSource": "https://www.bokerogborst.no/",
+    "photoAlt": "Bøker og Børst — food photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/south-boker.webp",
+        "kind": "food",
+        "credit": "Bøker og Børst · official website",
+        "source": "https://www.bokerogborst.no/",
+        "original": "https://impro.usercontent.one/appid/oneComWsb/domain/bokerogborst.no/media/bokerogborst.no/onewebmedia/12493492_1236300023051830_7206201715575789892_o.jpg?resize=906,604&quality=85",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "source": "https://www.bokerogborst.no/contact.html",
+      "checked": "2026-10-17",
+      "publishedText": "Mo-Su 09:00-02:00"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.972792701286615%2C5.7335055781026645",
+    "photoCaption": {
+      "nb": "Ekte foto · Bøker og Børst",
+      "en": "Real photograph · Bøker og Børst",
+      "uk": "Справжнє фото · Bøker og Børst",
+      "sv": "Äkta foto · Bøker og Børst",
+      "da": "Ægte foto · Bøker og Børst"
+    }
+  },
+  {
+    "id": "heit-sandviken-bergen",
+    "name": "Heit Bergen · Sandviken",
+    "town": "Bergen",
+    "region": "Vestland",
+    "category": "sauna",
+    "address": "Måseskjæret 3, 5035 Bergen",
+    "website": "https://heitbergen.no/home",
+    "source": "https://heitbergen.no/home",
+    "bookingUrl": "https://heitbergen.no/home",
+    "phone": "+4740039297",
+    "description": {
+      "nb": "Flytende badstuer ved sjøen i Sandviken, med garderober og badestiger. Bestill en økt før besøket.",
+      "en": "Floating waterfront saunas in Sandviken, with changing rooms and bathing ladders. Book a session before visiting.",
+      "uk": "Плавучі сауни біля води в Sandviken, з роздягальнями та драбинами для купання. Забронюйте сеанс заздалегідь.",
+      "sv": "Flytande bastur vid vattnet i Sandviken, med omklädning och badstegar. Boka ett pass före besöket.",
+      "da": "Flydende saunaer ved vandet i Sandviken med omklædning og badestiger. Bestil en tid før besøget."
+    },
+    "hoursNote": {
+      "nb": "Operatøren oppgir åpent hver dag hele året. Ledige økter og nøyaktige tider må sjekkes i bestillingen.",
+      "en": "The operator advertises daily, year-round opening. Check the booking calendar for available sessions and exact times.",
+      "uk": "Оператор повідомляє про щоденну роботу протягом року. Вільні сеанси й точний час перевіряйте в календарі бронювання.",
+      "sv": "Operatören anger öppet varje dag året runt. Se bokningskalendern för lediga pass och exakta tider.",
+      "da": "Operatøren angiver åbent hver dag hele året. Se bookingkalenderen for ledige tider."
+    },
+    "yearRound": true,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=M%C3%A5seskj%C3%A6ret%203%20Bergen&treffPerSide=3",
+    "latitude": 60.412825415730005,
+    "longitude": 5.320733551917008,
+    "checked": "2026-10-17",
+    "coordinateNote": "Published street-address arrival point; floating sauna exact berth may differ.",
+    "image": "./images/catalog/south-heit.webp",
+    "imageSource": "https://heitbergen.no/home",
+    "photoAlt": "Heit Bergen · Sandviken — facade photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/south-heit.webp",
+        "kind": "facade",
+        "credit": "Heit Bergen Sauna · official website",
+        "source": "https://heitbergen.no/home",
+        "original": "https://images.squarespace-cdn.com/content/v1/68a594a78f815476cf352b58/608b16a4-f0b3-4cc4-a57e-71ef4a725181/Ma%CC%8Aseskj%C3%A6ret+Product+Photo+01.png?format=1000w",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "source": "https://heitbergen.no/home",
+      "checked": "2026-10-17"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.412825415730005%2C5.320733551917008",
+    "photoCaption": {
+      "nb": "Ekte foto · Heit Bergen · Sandviken",
+      "en": "Real photograph · Heit Bergen · Sandviken",
+      "uk": "Справжнє фото · Heit Bergen · Sandviken",
+      "sv": "Äkta foto · Heit Bergen · Sandviken",
+      "da": "Ægte foto · Heit Bergen · Sandviken"
+    }
+  },
+  {
+    "id": "damp-venla-stavanger",
+    "name": "Damp Sauna · Venla",
+    "town": "Stavanger",
+    "region": "Rogaland",
+    "category": "sauna",
+    "address": "Dokkgata 4, 4015 Stavanger · Svankevigå",
+    "website": "https://www.dampsauna.no/vare-badstuer/",
+    "source": "https://booking.dampsauna.no/saunas/SAU1790860543",
+    "bookingUrl": "https://booking.dampsauna.no/saunas/SAU1790860543",
+    "description": {
+      "nb": "En trebastu ved vannet i Svankevigå. Bildet viser den navngitte Venla-badstuen; ankomstpunktet er adressen Dokkgata 4.",
+      "en": "A wooden waterside sauna in Svankevigå. The photograph shows the named Venla sauna; the arrival point is the Dokkgata 4 address.",
+      "uk": "Дерев’яна сауна біля води в Svankevigå. На фото саме Venla; точка прибуття — адреса Dokkgata 4.",
+      "sv": "En träbastu vid vattnet i Svankevigå. Bilden visar Venla; ankomstpunkten är adressen Dokkgata 4.",
+      "da": "En træsauna ved vandet i Svankevigå. Billedet viser Venla; ankomstpunktet er adressen Dokkgata 4."
+    },
+    "hoursNote": {
+      "nb": "Venlas morgenselvfyring annonseres 06:00–09:00. Dette er ikke en generell åpningstid: sjekk valgt økt, instruksjoner og tilgjengelighet før bestilling.",
+      "en": "Venla advertises a self-heated morning session 06:00–09:00. This is not a general opening schedule: check your selected session, instructions and availability before booking.",
+      "uk": "Для Venla рекламують ранковий сеанс із самостійним розпалюванням 06:00–09:00. Це не загальний графік: перед бронюванням перевірте потрібний сеанс, інструкції та наявність місць.",
+      "sv": "Venla erbjuder morgonpass med egen eldning 06:00–09:00. Detta är inte allmänna öppettider: kontrollera valt pass, instruktioner och tillgänglighet.",
+      "da": "Venla tilbyder morgenpas med egen optænding 06:00–09:00. Dette er ikke generelle åbningstider: kontrollér valgt pas, instruktioner og ledige pladser."
+    },
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Dokkgata%204%20Stavanger&treffPerSide=3",
+    "latitude": 58.97155073966166,
+    "longitude": 5.750923362896597,
+    "checked": "2026-10-17",
+    "coordinateNote": "Published street-address arrival point; floating sauna exact berth may differ.",
+    "image": "./images/catalog/south-venla.webp",
+    "imageSource": "https://www.dampsauna.no/vare-badstuer/",
+    "photoAlt": "Damp Sauna · Venla — facade photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/south-venla.webp",
+        "kind": "facade",
+        "credit": "Damp Sauna · official booking page",
+        "source": "https://www.dampsauna.no/vare-badstuer/",
+        "original": "https://booking.dampsauna.no/storage/images/1790860185-4d10e252-577d-49c2-9cb8-46c294994eef.jpeg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "source": "https://booking.dampsauna.no/saunas/SAU1790860543",
+      "checked": "2026-10-17"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.97155073966166%2C5.750923362896597",
+    "photoCaption": {
+      "nb": "Ekte foto · Damp Sauna · Venla",
+      "en": "Real photograph · Damp Sauna · Venla",
+      "uk": "Справжнє фото · Damp Sauna · Venla",
+      "sv": "Äkta foto · Damp Sauna · Venla",
+      "da": "Ægte foto · Damp Sauna · Venla"
+    }
+  },
+  {
+    "id": "drommeplassen-kristiansand",
+    "name": "Drømmeplassen",
+    "town": "Kristiansand",
+    "region": "Agder",
+    "category": "cafe",
+    "address": "Skippergata 26, 4611 Kristiansand",
+    "website": "https://www.drommeplassen.no/",
+    "source": "https://krsguide.no/spisesteder/drommeplassen/",
+    "phone": "+4745974549",
+    "description": {
+      "nb": "Bakeri, kafé og konditori i Skippergata med kaffe, bakst og lunsj. Bildet viser servering med stedets navn.",
+      "en": "Bakery, café and cake shop in Skippergata, serving coffee, baking and lunch. The photograph shows food and tableware bearing the venue name.",
+      "uk": "Пекарня, кав’ярня та кондитерська на Skippergata: кава, випічка й обід. На фото страви та посуд із назвою закладу.",
+      "sv": "Bageri, kafé och konditori i Skippergata med kaffe, bakverk och lunch. Bilden visar servering med platsens namn.",
+      "da": "Bageri, café og konditori i Skippergata med kaffe, bagværk og frokost. Billedet viser servering med stedets navn."
+    },
+    "hoursNote": {
+      "nb": "KRSGuide oppgir man–fre 08:30–17:00, lør 09:00–17:00, søn 10:00–16:00. Bekreft høytider direkte med kafeen.",
+      "en": "KRSGuide lists Mon–Fri 08:30–17:00, Sat 09:00–17:00, Sun 10:00–16:00. Confirm holiday changes with the café.",
+      "uk": "KRSGuide вказує пн–пт 08:30–17:00, сб 09:00–17:00, нд 10:00–16:00. Святкові зміни уточнюйте в закладі.",
+      "sv": "KRSGuide anger mån–fre 08:30–17:00, lör 09:00–17:00, sön 10:00–16:00. Kontrollera helgdagar med kaféet.",
+      "da": "KRSGuide angiver man–fre 08:30–17:00, lør 09:00–17:00, søn 10:00–16:00. Bekræft helligdage med caféen."
+    },
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Skippergata%2026%20Kristiansand&treffPerSide=3",
+    "latitude": 58.1470891219409,
+    "longitude": 7.993821312245067,
+    "checked": "2026-10-17",
+    "image": "./images/catalog/south-dromme.webp",
+    "imageSource": "https://krsguide.no/spisesteder/drommeplassen/",
+    "photoAlt": "Drømmeplassen — food photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/south-dromme.webp",
+        "kind": "food",
+        "credit": "Drømmeplassen / KRSGuide",
+        "source": "https://krsguide.no/spisesteder/drommeplassen/",
+        "original": "https://krsguide.no/wp-content/uploads/2026/04/Drommeplassen.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "source": "https://krsguide.no/spisesteder/drommeplassen/",
+      "checked": "2026-10-17",
+      "weekly": [
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "16:00"
+          ]
+        ]
+      ]
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.1470891219409%2C7.993821312245067",
+    "photoCaption": {
+      "nb": "Ekte foto · Drømmeplassen",
+      "en": "Real photograph · Drømmeplassen",
+      "uk": "Справжнє фото · Drømmeplassen",
+      "sv": "Äkta foto · Drømmeplassen",
+      "da": "Ægte foto · Drømmeplassen"
+    }
+  },
+  {
+    "id": "sande-camping-loen",
+    "name": "Sande Camping",
+    "town": "Loen",
+    "region": "Vestland",
+    "category": "cabin",
+    "address": "Lodalsvegen 494, 6789 Loen",
+    "latitude": 61.851037111,
+    "longitude": 6.9121813773,
+    "coordinatesSource": "https://sande-camping.no/en/kontakt-oss/",
+    "website": "https://sande-camping.no/en/",
+    "source": "https://sande-camping.no/en/kontakt-oss/",
+    "bookingUrl": "https://sande-camping.no/en/booking/",
+    "phone": "+4741669192",
+    "description": {
+      "nb": "Hytter og camping ved Lovatnet, omtrent fem kilometer fra Loen. Bildet viser campingplassens beliggenhet ved vannet, ikke en bestemt hytte.",
+      "en": "Cabins and camping beside Lovatnet, about five kilometres from Loen. The photograph shows the lakeside campsite, not a specific cabin.",
+      "uk": "Будиночки й кемпінг біля Lovatnet, приблизно за п’ять кілометрів від Loen. На фото територія біля озера, а не конкретний будиночок.",
+      "sv": "Stugor och camping vid Lovatnet, cirka fem kilometer från Loen. Bilden visar läget vid sjön, inte en viss stuga.",
+      "da": "Hytter og camping ved Lovatnet, cirka fem kilometer fra Loen. Billedet viser pladsen ved søen, ikke en bestemt hytte."
+    },
+    "hoursNote": {
+      "nb": "Tilgjengelighet, sesong og innsjekking må bekreftes i bestillingen eller med resepsjonen; ingen fast døgnåpen resepsjon er bekreftet.",
+      "en": "Confirm availability, season and check-in with the booking system or reception; a 24-hour reception is not confirmed.",
+      "uk": "Наявність, сезон і час заселення уточнюйте в бронюванні або на рецепції; цілодобову рецепцію не підтверджено.",
+      "sv": "Bekräfta tillgänglighet, säsong och incheckning i bokningen eller med receptionen; dygnetruntöppet är inte bekräftat.",
+      "da": "Bekræft ledighed, sæson og indtjekning i bookingen eller hos receptionen; døgnåben reception er ikke bekræftet."
+    },
+    "checked": "2026-10-17",
+    "image": "./images/catalog/south-sande.webp",
+    "imageSource": "https://sande-camping.no/en/",
+    "photoAlt": "Sande Camping — view photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/south-sande.webp",
+        "kind": "view",
+        "credit": "Sande Camping · official website",
+        "source": "https://sande-camping.no/en/",
+        "original": "https://sande-camping.no/wp-content/uploads/2026/03/Sande-Camping-oppstillingsplassar-scaled.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "source": "https://sande-camping.no/en/kontakt-oss/",
+      "checked": "2026-10-17"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=61.851037111%2C6.9121813773",
+    "photoCaption": {
+      "nb": "Ekte foto · Sande Camping",
+      "en": "Real photograph · Sande Camping",
+      "uk": "Справжнє фото · Sande Camping",
+      "sv": "Äkta foto · Sande Camping",
+      "da": "Ægte foto · Sande Camping"
+    }
+  },
+  {
+    "id": "tjugen-camping-cabins",
+    "name": "Tjugen Camping · hytter",
+    "town": "Loen",
+    "region": "Vestland",
+    "category": "cabin",
+    "address": "Lodalsvegen 198, 6789 Loen",
+    "website": "https://tjugen.no/",
+    "source": "https://tjugen.no/",
+    "bookingUrl": "https://tjugen.no/#campinghytter",
+    "phone": "+4790522714",
+    "description": {
+      "nb": "Små campinghytter med terrasse og minikjøkken i Loen. De enkle hyttene har fire sengeplasser og passer best for to voksne eller en liten familie.",
+      "en": "Small camping cabins with a terrace and kitchenette in Loen. These simple four-berth cabins best suit two adults or a small family.",
+      "uk": "Невеликі кемпінгові будиночки з терасою та мінікухнею в Loen. Чотири спальні місця; найзручніше для двох дорослих або невеликої сім’ї.",
+      "sv": "Små campingstugor med terrass och pentry i Loen. Fyra bäddar, bäst för två vuxna eller en liten familj.",
+      "da": "Små campinghytter med terrasse og tekøkken i Loen. Fire sengepladser, bedst til to voksne eller en lille familie."
+    },
+    "hoursNote": {
+      "nb": "Nettsiden oppgir resepsjon 09:00–21:00 og sesong til 11. oktober. Per 17. oktober: ikke regn med åpent; avklar nye datoer og hytteutleie med vertskapet.",
+      "en": "The website lists reception 09:00–21:00 and a season ending 11 October. As of 17 October, do not assume it is open; confirm future dates and cabin availability with the hosts.",
+      "uk": "На сайті вказані рецепція 09:00–21:00 і сезон до 11 жовтня. Станом на 17 жовтня не розраховуйте на роботу без підтвердження; уточнюйте нові дати та оренду в господарів.",
+      "sv": "Webbplatsen anger reception 09:00–21:00 och säsong till 11 oktober. Den 17 oktober bör öppet inte antas; bekräfta nya datum och stugor med värdarna.",
+      "da": "Hjemmesiden angiver reception 09:00–21:00 og sæson til 11. oktober. Den 17. oktober bør åbent ikke antages; bekræft nye datoer og hytter med værterne."
+    },
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Lodalsvegen%20198%20Loen&treffPerSide=3",
+    "latitude": 61.868104462093136,
+    "longitude": 6.875634534850351,
+    "checked": "2026-10-17",
+    "image": "./images/catalog/south-tjugen-cabins-small.webp",
+    "imageSource": "https://tjugen.no/",
+    "photoAlt": "Tjugen Camping · hytter — facade photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/south-tjugen-cabins-small.webp",
+        "kind": "facade",
+        "credit": "Tjugen Camping · official website",
+        "source": "https://tjugen.no/",
+        "original": "https://tjugen.no/assets/uploads/_rektangel/215/Tjugen-2-For-web-59.webp",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "source": "https://tjugen.no/",
+      "checked": "2026-10-17"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=61.868104462093136%2C6.875634534850351",
+    "photoCaption": {
+      "nb": "Ekte foto · Tjugen Camping · hytter",
+      "en": "Real photograph · Tjugen Camping · hytter",
+      "uk": "Справжнє фото · Tjugen Camping · hytter",
+      "sv": "Äkta foto · Tjugen Camping · hytter",
+      "da": "Ægte foto · Tjugen Camping · hytter"
+    }
+  }
+]

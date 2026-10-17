@@ -904,5 +904,362 @@
     "source": "https://dromedar.no/kaffebarer/",
     "photoVerified": true,
     "coordinatesNote": "Kartverket address point; entrance/pier position may differ."
+  },
+  {
+    "id": "smortorget-tromso",
+    "name": "Smørtorget Kaffe og Mat",
+    "category": "cafe",
+    "region": "Troms",
+    "town": "Tromsø",
+    "address": "Sjøgata 11, 9008 Tromsø",
+    "website": "https://www.smortorget.no/",
+    "description": {
+      "nb": "Kafé i Tromsø sentrum med kaffe, lunsj og søte bakverk. Et innendørs stopp nær havna.",
+      "en": "A central Tromsø café serving coffee, lunch and sweet bakes. An indoor stop near the harbour.",
+      "uk": "Кав’ярня в центрі Тромсе з кавою, обідами й солодкою випічкою. Зупинка в приміщенні неподалік гавані.",
+      "sv": "Kafé i centrala Tromsø med kaffe, lunch och söta bakverk. Ett stopp inomhus nära hamnen.",
+      "da": "Café i det centrale Tromsø med kaffe, frokost og sødt bagværk. Et indendørs stop nær havnen."
+    },
+    "hoursNote": {
+      "nb": "Publisert: man–fre 08–18, lør 10–18, søn 11–18. Helligdager kan avvike.",
+      "en": "Published: Mon–Fri 08:00–18:00, Sat 10:00–18:00, Sun 11:00–18:00. Holidays may differ.",
+      "uk": "Опубліковано: пн–пт 08:00–18:00, сб 10:00–18:00, нд 11:00–18:00. У свята можливі зміни.",
+      "sv": "Angivet: mån–fre 08–18, lör 10–18, sön 11–18. Helgdagar kan avvika.",
+      "da": "Angivet: man–fre 08–18, lør 10–18, søn 11–18. Helligdage kan afvige."
+    },
+    "latitude": 69.64955436441228,
+    "longitude": 18.959189119291192,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Sj%C3%B8gata%2011%20Troms%C3%B8&treffPerSide=2",
+    "coordinatesNote": "Address/arrival reference point; follow the operator’s booking directions to the exact entrance or pier.",
+    "image": "./images/catalog/north-smortorget.webp",
+    "imageSource": "https://www.smortorget.no/",
+    "gallery": [
+      {
+        "src": "./images/catalog/north-smortorget.webp",
+        "kind": "cafeInside",
+        "credit": "Smørtorget Kaffe og Mat · official website",
+        "source": "https://www.smortorget.no/",
+        "original": "https://foodspace.imgix.net/foodspace/bakeries/641/assets/1780586904371.blob-1780586904371-xj0kjs.png?width=1000&height=700&auto=format&format=webp&fit=clip&q=70",
+        "rightsNote": "Official operator photograph; no open licence asserted."
+      }
+    ],
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Smørtorget Kaffe og Mat · official website",
+      "en": "Photo from the operator’s website · Smørtorget Kaffe og Mat · official website",
+      "uk": "Фото із сайту закладу · Smørtorget Kaffe og Mat · official website",
+      "sv": "Foto från verksamhetens webbplats · Smørtorget Kaffe og Mat · official website",
+      "da": "Foto fra stedets hjemmeside · Smørtorget Kaffe og Mat · official website"
+    },
+    "source": "https://www.smortorget.no/",
+    "checked": "2026-10-17",
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://www.smortorget.no/",
+      "sourceLabel": "Smørtorget Kaffe og Mat",
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "18:00"
+          ]
+        ]
+      ]
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=69.64955436441228%2C18.959189119291192"
+  },
+  {
+    "id": "dromedar-moxness-trondheim",
+    "name": "Dromedar Moxness",
+    "category": "cafe",
+    "region": "Trøndelag",
+    "town": "Trondheim",
+    "address": "Olav Tryggvasons gate 16, 7011 Trondheim",
+    "website": "https://dromedar.no/kaffebarer/",
+    "description": {
+      "nb": "Kaffebar i Trondheim sentrum med sitteplasser inne. Et praktisk kaffestopp under en byvandring.",
+      "en": "A coffee bar in central Trondheim with indoor seating. A convenient coffee stop while walking around the city.",
+      "uk": "Кав’ярня в центрі Тронгейма з місцями всередині. Зручна зупинка на каву під час прогулянки містом.",
+      "sv": "Kaffebar i centrala Trondheim med sittplatser inomhus. En praktisk kaffepaus under stadspromenaden.",
+      "da": "Kaffebar i det centrale Trondheim med indendørs siddepladser. En praktisk kaffepause på byvandringen."
+    },
+    "hoursNote": {
+      "nb": "Publisert: man–fre 07–18, lør 09–18, søn 11–17. Helligdager kan avvike.",
+      "en": "Published: Mon–Fri 07:00–18:00, Sat 09:00–18:00, Sun 11:00–17:00. Holidays may differ.",
+      "uk": "Опубліковано: пн–пт 07:00–18:00, сб 09:00–18:00, нд 11:00–17:00. У свята можливі зміни.",
+      "sv": "Angivet: mån–fre 07–18, lör 09–18, sön 11–17. Helgdagar kan avvika.",
+      "da": "Angivet: man–fre 07–18, lør 09–18, søn 11–17. Helligdage kan afvige."
+    },
+    "latitude": 63.43342507642698,
+    "longitude": 10.399037956615386,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Olav%20Tryggvasons%20gate%2016%20Trondheim&treffPerSide=2",
+    "coordinatesNote": "Address/arrival reference point; follow the operator’s booking directions to the exact entrance or pier.",
+    "image": "./images/catalog/north-moxness.webp",
+    "imageSource": "https://dromedar.no/kaffebarer/",
+    "gallery": [
+      {
+        "src": "./images/catalog/north-moxness.webp",
+        "kind": "cafeInside",
+        "credit": "Dromedar Kaffebar · official website",
+        "source": "https://dromedar.no/kaffebarer/",
+        "original": "https://dromedar.no/wp-content/uploads/2026/02/Dromedar-kaffebar_moxness-1024x1024.jpeg",
+        "rightsNote": "Official operator photograph; no open licence asserted."
+      }
+    ],
+    "photoCaption": {
+      "nb": "Foto fra operatørens nettside · Dromedar Kaffebar · official website",
+      "en": "Photo from the operator’s website · Dromedar Kaffebar · official website",
+      "uk": "Фото із сайту закладу · Dromedar Kaffebar · official website",
+      "sv": "Foto från verksamhetens webbplats · Dromedar Kaffebar · official website",
+      "da": "Foto fra stedets hjemmeside · Dromedar Kaffebar · official website"
+    },
+    "source": "https://dromedar.no/kaffebarer/",
+    "checked": "2026-10-17",
+    "openingHours": {
+      "verified": true,
+      "checked": "2026-10-17",
+      "source": "https://dromedar.no/kaffebarer/",
+      "sourceLabel": "Dromedar Kaffebar",
+      "timeZone": "Europe/Oslo",
+      "weekly": [
+        [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "17:00"
+          ]
+        ]
+      ]
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=63.43342507642698%2C10.399037956615386"
+  },
+  {
+    "id": "boker-og-borst-stavanger",
+    "name": "Bøker og Børst",
+    "town": "Stavanger",
+    "region": "Rogaland",
+    "category": "cafe",
+    "address": "Øvre Holmegate 32, 4006 Stavanger",
+    "website": "https://www.bokerogborst.no/",
+    "source": "https://www.bokerogborst.no/contact.html",
+    "phone": "+4751860476",
+    "description": {
+      "nb": "Kafé og bar i Fargegata, med kaffe, kake og et lunt sted å ta pause.",
+      "en": "Café and bar in colourful Fargegata, with coffee, cake and a cosy break from exploring.",
+      "uk": "Кав’ярня та бар на кольоровій Fargegata: кава, пиріг і затишна перерва під час прогулянки.",
+      "sv": "Kafé och bar i färgstarka Fargegata, med kaffe, kaka och en mysig paus.",
+      "da": "Café og bar i farverige Fargegata med kaffe, kage og en hyggelig pause."
+    },
+    "hoursNote": {
+      "nb": "Oppgitt på nettsiden: hver dag 09:00–02:00 neste dag. Høytider kan avvike.",
+      "en": "Published hours: daily 09:00–02:00 the following day. Holidays may differ.",
+      "uk": "Опубліковані години: щодня 09:00–02:00 наступного дня. У свята можливі зміни.",
+      "sv": "Angivna tider: dagligen 09:00–02:00 nästa dag. Helgdagar kan avvika.",
+      "da": "Angivne tider: dagligt 09:00–02:00 næste dag. Helligdage kan afvige."
+    },
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=%C3%98vre%20Holmegate%2032%20Stavanger&treffPerSide=3",
+    "latitude": 58.972792701286615,
+    "longitude": 5.7335055781026645,
+    "checked": "2026-10-17",
+    "image": "./images/catalog/south-boker.webp",
+    "imageSource": "https://www.bokerogborst.no/",
+    "photoAlt": "Bøker og Børst — food photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/south-boker.webp",
+        "kind": "food",
+        "credit": "Bøker og Børst · official website",
+        "source": "https://www.bokerogborst.no/",
+        "original": "https://impro.usercontent.one/appid/oneComWsb/domain/bokerogborst.no/media/bokerogborst.no/onewebmedia/12493492_1236300023051830_7206201715575789892_o.jpg?resize=906,604&quality=85",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "source": "https://www.bokerogborst.no/contact.html",
+      "checked": "2026-10-17",
+      "publishedText": "Mo-Su 09:00-02:00"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.972792701286615%2C5.7335055781026645",
+    "photoCaption": {
+      "nb": "Ekte foto · Bøker og Børst",
+      "en": "Real photograph · Bøker og Børst",
+      "uk": "Справжнє фото · Bøker og Børst",
+      "sv": "Äkta foto · Bøker og Børst",
+      "da": "Ægte foto · Bøker og Børst"
+    }
+  },
+  {
+    "id": "drommeplassen-kristiansand",
+    "name": "Drømmeplassen",
+    "town": "Kristiansand",
+    "region": "Agder",
+    "category": "cafe",
+    "address": "Skippergata 26, 4611 Kristiansand",
+    "website": "https://www.drommeplassen.no/",
+    "source": "https://krsguide.no/spisesteder/drommeplassen/",
+    "phone": "+4745974549",
+    "description": {
+      "nb": "Bakeri, kafé og konditori i Skippergata med kaffe, bakst og lunsj. Bildet viser servering med stedets navn.",
+      "en": "Bakery, café and cake shop in Skippergata, serving coffee, baking and lunch. The photograph shows food and tableware bearing the venue name.",
+      "uk": "Пекарня, кав’ярня та кондитерська на Skippergata: кава, випічка й обід. На фото страви та посуд із назвою закладу.",
+      "sv": "Bageri, kafé och konditori i Skippergata med kaffe, bakverk och lunch. Bilden visar servering med platsens namn.",
+      "da": "Bageri, café og konditori i Skippergata med kaffe, bagværk og frokost. Billedet viser servering med stedets navn."
+    },
+    "hoursNote": {
+      "nb": "KRSGuide oppgir man–fre 08:30–17:00, lør 09:00–17:00, søn 10:00–16:00. Bekreft høytider direkte med kafeen.",
+      "en": "KRSGuide lists Mon–Fri 08:30–17:00, Sat 09:00–17:00, Sun 10:00–16:00. Confirm holiday changes with the café.",
+      "uk": "KRSGuide вказує пн–пт 08:30–17:00, сб 09:00–17:00, нд 10:00–16:00. Святкові зміни уточнюйте в закладі.",
+      "sv": "KRSGuide anger mån–fre 08:30–17:00, lör 09:00–17:00, sön 10:00–16:00. Kontrollera helgdagar med kaféet.",
+      "da": "KRSGuide angiver man–fre 08:30–17:00, lør 09:00–17:00, søn 10:00–16:00. Bekræft helligdage med caféen."
+    },
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Skippergata%2026%20Kristiansand&treffPerSide=3",
+    "latitude": 58.1470891219409,
+    "longitude": 7.993821312245067,
+    "checked": "2026-10-17",
+    "image": "./images/catalog/south-dromme.webp",
+    "imageSource": "https://krsguide.no/spisesteder/drommeplassen/",
+    "photoAlt": "Drømmeplassen — food photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/south-dromme.webp",
+        "kind": "food",
+        "credit": "Drømmeplassen / KRSGuide",
+        "source": "https://krsguide.no/spisesteder/drommeplassen/",
+        "original": "https://krsguide.no/wp-content/uploads/2026/04/Drommeplassen.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "source": "https://krsguide.no/spisesteder/drommeplassen/",
+      "checked": "2026-10-17",
+      "weekly": [
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "09:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "16:00"
+          ]
+        ]
+      ]
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.1470891219409%2C7.993821312245067",
+    "photoCaption": {
+      "nb": "Ekte foto · Drømmeplassen",
+      "en": "Real photograph · Drømmeplassen",
+      "uk": "Справжнє фото · Drømmeplassen",
+      "sv": "Äkta foto · Drømmeplassen",
+      "da": "Ægte foto · Drømmeplassen"
+    }
   }
 ]

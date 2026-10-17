@@ -36,6 +36,7 @@
     const todayLine = node('span', 'cafe-gallery-today', Array.isArray(hours.weekly) ? `${w[3]}: ${times(state.today)}` : w[10]); info.append(badge, todayLine);
     const route = node('a', 'cafe-gallery-route', w[5] + ' ↗');
     route.href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(venue.name + ', ' + venue.address);
+    try {const supplied = new URL(venue.directionsUrl); if (supplied.protocol === 'https:' && /^(www\.)?google\.com$/.test(supplied.hostname) && supplied.pathname.startsWith('/maps/dir') && !supplied.username && !supplied.password) route.href = supplied.href;} catch {}
     route.target = '_blank'; route.rel = 'noopener noreferrer';
     const actions = node('div', 'cafe-gallery-actions'); actions.append(route);
     try {

@@ -1,6 +1,33 @@
 /* The site's own curated catalogue: one local data request, no search API. */
 (() => {
   'use strict';
+  const validPoint = p => !!p && Number.isFinite(p.latitude) && Number.isFinite(p.longitude) && Math.abs(p.latitude) <= 90 && Math.abs(p.longitude) <= 180;
+  function distanceKm(a, b) {
+    if (!validPoint(a) || !validPoint(b)) return null;
+    const rad = n => n * Math.PI / 180, dLat = rad(b.latitude - a.latitude), dLng = rad(b.longitude - a.longitude);
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.latitude)) * Math.cos(rad(b.latitude)) * Math.sin(dLng / 2) ** 2;
+    return 6371.0088 * 2 * Math.asin(Math.sqrt(Math.min(1, Math.max(0, h))));
+  }
+  function nearby(rows, origin, radius) {
+    const mapped = rows.map((record, index) => ({...record, catalogueDistance: distanceKm(origin, record), catalogueIndex: index}));
+    return mapped.filter(r => radius === 'all' || (r.catalogueDistance !== null && r.catalogueDistance <= Number(radius)))
+      .sort((a, b) => validPoint(origin) ? (a.catalogueDistance ?? Infinity) - (b.catalogueDistance ?? Infinity) || a.catalogueIndex - b.catalogueIndex : a.catalogueIndex - b.catalogueIndex);
+  }
+  function routeUrl(record, origin) {
+    let url = new URL('https://www.google.com/maps/dir/');
+    if (record.directionsUrl) {try {const supplied = new URL(record.directionsUrl); if (supplied.protocol === 'https:' && !supplied.username && !supplied.password && /^(www\.)?google\.com$/.test(supplied.hostname) && /^\/maps\/dir\/?$/.test(supplied.pathname) && supplied.searchParams.get('destination')?.trim()) url = supplied;} catch {}}
+    url.searchParams.set('api', '1');
+    if (record.coordinatePrecision === 'area' && /^\s*[+-]?\d+(?:\.\d+)?\s*,\s*[+-]?\d+(?:\.\d+)?\s*$/.test(url.searchParams.get('destination') || '')) url.searchParams.delete('destination');
+    if (!url.searchParams.has('destination')) url.searchParams.set('destination', validPoint(record) && record.coordinatePrecision !== 'area' ? `${record.latitude},${record.longitude}` : record.routeQuery || [record.name, record.address, record.town, 'Norway'].filter(Boolean).join(', '));
+    url.searchParams.delete('origin');
+    if (validPoint(origin)) url.searchParams.set('origin', `${origin.latitude},${origin.longitude}`);
+    return url.href;
+  }
+  function createOriginState() {
+    let current = null, revision = 0;
+    return {get current() {return current;}, set(point) {revision++; current = validPoint(point) ? {...point} : null;}, beginGPS() {return ++revision;}, acceptGPS(token, point) {if (token !== revision || !validPoint(point)) return false; current = {...point}; return true;}, isCurrent(token) {return token === revision;}};
+  }
+  if (typeof window === 'undefined') {if (typeof module !== 'undefined') module.exports = {validPoint, distanceKm, nearby, routeUrl, createOriginState}; return;}
   const copy = {
     nb: ['Norge, stopp for stopp', 'Vår egen reisekatalog', 'Et utvalg kafeer, hytter, badstuer og fine pauser langs veien. Bilder og informasjon ligger på nettstedet. Sjekk dato og vertens nettside før besøket.', 'Søk etter sted, by eller region', 'Alle steder', 'Kafeer', 'Hytter', 'Badstuer', 'Fine pauser', 'steder', 'Vis flere', 'Ingen treff. Prøv en annen by eller kategori.', 'Åpne bildegalleri', 'Nettsted', 'Finn veien', 'Åpningstider og sesong', 'Åpningstider er ikke publisert. Kontakt stedet før besøket.', 'Informasjonskilde', 'Sist kontrollert', 'Fotokilde', 'Foto kommer når et ekte bilde er tilgjengelig.', 'Laster katalogen…', 'Kunne ikke laste katalogen.', 'Prøv igjen', 'Ikke oppgitt', 'Mandag|Tirsdag|Onsdag|Torsdag|Fredag|Lørdag|Søndag', 'Åpningstider kan endres på helligdager. Dette er ikke en sanntidsstatus.'],
     en: ['Norway, stop by stop', 'Our own travel catalogue', 'A selection of cafés, cabins, saunas and worthwhile breaks along the road. Photos and information are stored on this website. Check the date and the host’s website before visiting.', 'Search place, town or region', 'All places', 'Cafés', 'Cabins', 'Saunas', 'Places to unwind', 'places', 'Show more', 'No matches. Try another town or category.', 'Open photo gallery', 'Website', 'Get directions', 'Opening hours and season', 'Opening hours are not published. Contact the venue before visiting.', 'Information source', 'Last checked', 'Photo source', 'A photo will appear when a genuine image is available.', 'Loading catalogue…', 'Could not load the catalogue.', 'Try again', 'Not published', 'Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday', 'Holiday hours may differ. This is not a live open/closed status.'],
@@ -9,15 +36,29 @@
     da: ['Norge, stop for stop', 'Vores eget rejsekatalog', 'Et udvalg af caféer, hytter, saunaer og fine pauser langs vejen. Billeder og information ligger på hjemmesiden. Kontrollér dato og værtens hjemmeside før besøget.', 'Søg sted, by eller region', 'Alle steder', 'Caféer', 'Hytter', 'Saunaer', 'Steder til en pause', 'steder', 'Vis flere', 'Ingen resultater. Prøv en anden by eller kategori.', 'Åbn billedgalleri', 'Hjemmeside', 'Find vej', 'Åbningstider og sæson', 'Åbningstider er ikke offentliggjort. Kontakt stedet før besøget.', 'Informationskilde', 'Sidst kontrolleret', 'Billedkilde', 'Et billede vises, når et ægte foto er tilgængeligt.', 'Indlæser kataloget…', 'Kataloget kunne ikke indlæses.', 'Prøv igen', 'Ikke offentliggjort', 'Mandag|Tirsdag|Onsdag|Torsdag|Fredag|Lørdag|Søndag', 'Helligdagstider kan variere. Dette er ikke en aktuel åbningsstatus.']
   };
   const categories = ['all', 'cafe', 'cabin', 'sauna', 'rest'];
+  const geoCopy = {
+    nb: ['Utgangspunkt', 'Velg by / hele landet', 'Bruk posisjonen min', 'Radius', 'Hele Norge', 'Posisjonen din', 'Henter posisjon…', 'Posisjonstilgang ble avslått. Velg en by manuelt.', 'Posisjonen kunne ikke hentes. Velg en by eller prøv igjen.', 'Geolokalisering støttes ikke i denne nettleseren.', 'i luftlinje', 'Velg en by eller bruk posisjonen din for å søke innenfor en radius.', 'Ingen katalogsteder i denne radiusen. Utvid radiusen eller velg hele Norge.', 'GPS brukes bare i denne økten, etter ditt klikk. Avstand er i luftlinje, ikke kjørelengde.'],
+    en: ['Starting point', 'Choose a town / nationwide', 'Use my location', 'Radius', 'All Norway', 'Your location', 'Getting your location…', 'Location access was denied. Choose a town manually.', 'Location could not be obtained. Choose a town or try again.', 'This browser does not support geolocation.', 'in a straight line', 'Choose a town or use your location to search within a radius.', 'No catalogue places in this radius. Increase the radius or choose all Norway.', 'GPS is used only for this session, after your click. Distances are straight-line distances, not driving distances.'],
+    uk: ['Звідки їдете', 'Виберіть місто / вся країна', 'Моє місцезнаходження', 'Радіус', 'Уся Норвегія', 'Ваше місцезнаходження', 'Визначення місцезнаходження…', 'Доступ до геолокації відхилено. Виберіть місто вручну.', 'Не вдалося визначити місцезнаходження. Виберіть місто або спробуйте ще.', 'Цей браузер не підтримує геолокацію.', 'по прямій', 'Виберіть місто або геолокацію для пошуку в заданому радіусі.', 'У каталозі немає місць у цьому радіусі. Збільште його або виберіть усю Норвегію.', 'GPS використовується лише в цьому сеансі й після натискання. Відстань по прямій, а не дорогою.'],
+    sv: ['Utgångspunkt', 'Välj ort / hela landet', 'Använd min plats', 'Radie', 'Hela Norge', 'Din plats', 'Hämtar din plats…', 'Platsåtkomst nekades. Välj en ort manuellt.', 'Platsen kunde inte hämtas. Välj en ort eller försök igen.', 'Webbläsaren stöder inte geolokalisering.', 'fågelvägen', 'Välj en ort eller din plats för att söka inom en radie.', 'Inga katalogplatser inom radien. Öka radien eller välj hela Norge.', 'GPS används bara under denna session, efter ditt klick. Avstånd är fågelvägen, inte körsträckor.'],
+    da: ['Udgangspunkt', 'Vælg by / hele landet', 'Brug min placering', 'Radius', 'Hele Norge', 'Din placering', 'Henter din placering…', 'Adgang til placering blev afvist. Vælg en by manuelt.', 'Placeringen kunne ikke hentes. Vælg en by eller prøv igen.', 'Browseren understøtter ikke geolokalisering.', 'i luftlinje', 'Vælg en by eller din placering for at søge inden for en radius.', 'Ingen katalogsteder inden for radius. Udvid radius eller vælg hele Norge.', 'GPS bruges kun i denne session, efter dit klik. Afstande er i luftlinje, ikke køreafstande.']
+  };
+  const cities = [
+    ['Gran',60.3592,10.5728], ['Oslo',59.9139,10.7522], ['Bergen',60.3913,5.3221], ['Stavanger',58.969,5.7331], ['Kristiansand',58.1467,7.9956], ['Trondheim',63.4305,10.3951], ['Ålesund',62.4722,6.1549], ['Bodø',67.2804,14.4049], ['Tromsø',69.6492,18.9553], ['Alta',69.9689,23.2716], ['Kirkenes',69.7271,30.045]
+  ].map(([name,latitude,longitude]) => ({name,latitude,longitude}));
+  Object.entries(geoCopy).forEach(([language, row]) => row.push({nb: 'Det tok for lang tid å hente posisjonen. Velg en by eller prøv igjen.', en: 'Getting your location timed out. Choose a town or try again.', uk: 'Час визначення місцезнаходження минув. Виберіть місто або спробуйте ще.', sv: 'Tiden för att hämta platsen gick ut. Välj en ort eller försök igen.', da: 'Det tog for lang tid at hente placeringen. Vælg en by eller prøv igen.'}[language]));
+  const originState = createOriginState();
+  let baseChoice = '', radius = 'all', geoMessage = '', geoControls, geoStatus, gpsButton;
   const lang = () => copy[window.FjordI18n?.language || document.documentElement.lang] ? (window.FjordI18n?.language || document.documentElement.lang) : 'nb';
   const t = n => copy[lang()][n];
+  const g = n => geoCopy[lang()][n];
   const local = value => typeof value === 'string' ? value : value?.[lang()] || value?.en || value?.nb || '';
   const node = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
   const safe = value => { if (typeof value !== 'string' || !value.trim()) return ''; try { const u = new URL(value, document.baseURI); return u.protocol === 'https:' || (u.protocol === location.protocol && u.origin === location.origin) ? u.href : ''; } catch { return ''; } };
   const fold = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ø/g, 'o').replace(/æ/g, 'ae').toLowerCase();
   let section, grid, status, search, select, more, records = [], query = '', category = 'all', limit = 12, loading = true, failed = false;
   function link(text, href, cls = '') { const a = node('a', cls, text); a.href = safe(href); a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; }
-  function directions(r) { return safe(r.directionsUrl) || 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(Number.isFinite(r.latitude) && Number.isFinite(r.longitude) ? `${r.latitude},${r.longitude}` : [r.name, r.address, r.town, 'Norway'].filter(Boolean).join(', ')); }
+  function directions(r) { return routeUrl(r, originState.current); }
   function card(r) {
     const article = node('article', 'norway-catalog-card');
     const photos = (Array.isArray(r.gallery) ? r.gallery : []).filter(p => safe(p.src));
@@ -28,12 +69,13 @@
       const img = node('img'); img.src = image; img.alt = local(r.photoAlt) || r.name; img.loading = 'lazy'; img.decoding = 'async';
       img.addEventListener('error', () => {img.remove(); visual.append(node('span', 'norway-catalog-no-photo', t(20)));}, {once: true});
       visual.append(img, node('span', 'norway-catalog-photo-label', t(12) + ' ↗'));
-      visual.onclick = () => window.FjordStayGallery?.open({...r, gallery: photos.length ? photos : [{src: image, kind: r.category === 'cafe' ? 'facade' : 'grounds', source: r.imageSource, credit: r.photoCredit, license: r.photoLicense, licenseUrl: r.photoLicenseUrl}]});
+      visual.onclick = () => window.FjordStayGallery?.open({...r, directionsUrl: directions(r), gallery: photos.length ? photos : [{src: image, kind: r.category === 'cafe' ? 'facade' : 'grounds', source: r.imageSource, credit: r.photoCredit, license: r.photoLicense, licenseUrl: r.photoLicenseUrl}]});
     } else visual.append(node('p', 'norway-catalog-no-photo', t(20)));
     article.append(visual);
     const body = node('div', 'norway-catalog-copy');
     body.append(node('p', 'norway-catalog-location', [t(4 + Math.max(1, categories.indexOf(r.category))), r.town, r.region].filter(Boolean).join(' · ')), node('h3', '', r.name), node('p', 'norway-catalog-description', local(r.description)));
     if (r.address) body.append(node('p', 'norway-catalog-address', r.address));
+    if (r.catalogueDistance !== null && r.catalogueDistance !== undefined) body.append(node('p', 'norway-catalog-distance', `${r.coordinatePrecision === 'area' ? '≈ ' : ''}${new Intl.NumberFormat(lang(), {maximumFractionDigits: 1}).format(r.catalogueDistance)} km ${g(10)}`));
     const hours = node('details', 'norway-catalog-hours'); hours.append(node('summary', '', t(15)));
     const note = local(r.hoursNote) || local(r.openingHours?.publishedText);
     if (note && note !== local(r.description)) body.append(node('p', 'norway-catalog-hours-note', note));
@@ -59,9 +101,10 @@
   }
   function render() {
     if (!grid) return;
-    const filtered = records.filter(r => (category === 'all' || r.category === category) && (!query || fold([r.name, r.town, r.region, r.address].join(' ')).includes(fold(query))));
+    const filtered = nearby(records.filter(r => (category === 'all' || r.category === category) && (!query || fold([r.name, r.town, r.region, r.address].join(' ')).includes(fold(query)))), originState.current, radius);
     grid.replaceChildren(...filtered.slice(0, limit).map(card));
-    status.textContent = loading ? t(21) : failed ? t(22) : filtered.length ? `${Math.min(limit, filtered.length)} / ${filtered.length} ${t(9)}` : t(11);
+    status.textContent = loading ? t(21) : failed ? t(22) : filtered.length ? `${Math.min(limit, filtered.length)} / ${filtered.length} ${t(9)}` : radius !== 'all' && !originState.current ? g(11) : radius !== 'all' ? g(12) : t(11);
+    renderGeoStatus();
     more.hidden = loading || failed || filtered.length <= limit;
     more.textContent = t(10);
     if (failed) {const retry = node('button', 'norway-catalog-retry', t(23)); retry.type = 'button'; retry.onclick = load; grid.append(retry);}
@@ -70,6 +113,31 @@
     if (section || !document.getElementById('cafeStops')) return;
     section = node('section', 'norway-catalog'); section.id = 'norwayCatalogue'; section.dataset.i18nIgnore = ''; section.setAttribute('aria-labelledby', 'norwayCatalogueTitle');
     document.getElementById('cafeStops').before(section); rebuild(); load();
+  }
+  function renderGeoStatus() {
+    if (!geoStatus) return;
+    const point = originState.current;
+    const label = point ? (baseChoice === 'gps' ? g(5) : point.name) : '';
+    geoStatus.textContent = (geoMessage ? g(Number(geoMessage)) + ' ' : '') + (label ? `${g(0)}: ${label}. ` : '') + g(13);
+    if (gpsButton) {gpsButton.disabled = geoMessage === '6'; gpsButton.textContent = geoMessage === '6' ? g(6) : g(2);}
+  }
+  function chooseCity(value) {
+    baseChoice = value; geoMessage = ''; originState.set(cities.find(c => c.name === value));
+    if (value && radius === 'all') radius = '50';
+    limit = 12; rebuild();
+  }
+  function requestGPS() {
+    if (!navigator.geolocation) {geoMessage = '9'; renderGeoStatus(); return;}
+    const token = originState.beginGPS(); geoMessage = '6'; renderGeoStatus();
+    navigator.geolocation.getCurrentPosition(position => {
+      const point = {latitude: position.coords.latitude, longitude: position.coords.longitude};
+      if (!originState.isCurrent(token)) return;
+      if (!originState.acceptGPS(token, point)) {geoMessage = '8'; renderGeoStatus(); return;}
+      baseChoice = 'gps'; geoMessage = ''; if (radius === 'all') radius = '20'; limit = 12; rebuild();
+    }, error => {
+      if (!originState.isCurrent(token)) return;
+      geoMessage = error.code === 1 ? '7' : error.code === 3 ? '14' : '8'; renderGeoStatus();
+    }, {enableHighAccuracy: false, timeout: 12000, maximumAge: 60000});
   }
   function rebuild() {
     if (!section) return;
@@ -82,13 +150,24 @@
     const categoryLabel = node('label', '', t(4)); select = node('select');
     categories.forEach((value, index) => {const option = node('option', '', t(4 + index)); option.value = value; select.append(option);}); select.value = category; categoryLabel.append(select);
     controls.append(searchLabel, categoryLabel); status = node('p', 'norway-catalog-status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
+    geoControls = node('div', 'norway-catalog-geo-controls');
+    const baseLabel = node('label', '', g(0)), baseSelect = node('select'); baseSelect.id = 'norwayCatalogueOrigin';
+    const defaultOption = node('option', '', g(1)); defaultOption.value = ''; baseSelect.append(defaultOption);
+    if (baseChoice === 'gps') {const gpsOption = node('option', '', g(5)); gpsOption.value = 'gps'; baseSelect.append(gpsOption);}
+    cities.forEach(c => {const option = node('option', '', c.name); option.value = c.name; baseSelect.append(option);}); baseSelect.value = baseChoice;
+    baseSelect.onchange = () => {if (baseSelect.value !== 'gps') chooseCity(baseSelect.value);}; baseLabel.append(baseSelect);
+    const radiusLabel = node('label', '', g(3)), radiusSelect = node('select'); radiusSelect.id = 'norwayCatalogueRadius';
+    ['20','50','100','250','all'].forEach(value => {const option = node('option', '', value === 'all' ? g(4) : value + ' km'); option.value = value; radiusSelect.append(option);}); radiusSelect.value = radius;
+    radiusSelect.onchange = () => {radius = radiusSelect.value; limit = 12; render();}; radiusLabel.append(radiusSelect);
+    gpsButton = node('button', 'norway-catalog-gps', g(2)); gpsButton.type = 'button'; gpsButton.onclick = requestGPS;
+    geoControls.append(baseLabel, radiusLabel, gpsButton); geoStatus = node('p', 'norway-catalog-geo-status'); geoStatus.setAttribute('role', 'status'); geoStatus.setAttribute('aria-live', 'polite');
     grid = node('div', 'norway-catalog-grid'); more = node('button', 'norway-catalog-more', t(10)); more.type = 'button'; more.onclick = () => {limit += 12; render();};
     search.oninput = () => {query = search.value.trim(); limit = 12; render();}; select.onchange = () => {category = select.value; limit = 12; render();};
-    section.replaceChildren(eyebrow, title, node('p', 'norway-catalog-intro', t(2)), controls, status, grid, more); render();
+    section.replaceChildren(eyebrow, title, node('p', 'norway-catalog-intro', t(2)), geoControls, geoStatus, controls, status, grid, more); render();
   }
   async function load() {
     loading = true; failed = false; render();
-    try {const response = await fetch('./norway-catalog.json?v=1'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
+    try {const response = await fetch('./norway-catalog.json?v=2'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
     catch {failed = true;} finally {loading = false; render();}
   }
   window.addEventListener('fjordlanguagechange', rebuild);

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "sanner-dukkestua-gran",
+    "name": "Dukkestua · Sanner Hotell",
+    "category": "cabin",
+    "region": "Hadeland",
+    "town": "Granavollen",
+    "address": "Granavollen 3–5, 2750 Gran, Norway",
+    "website": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
+    "bookingUrl": "https://book.sanner-hotell.no/en",
+    "source": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
+    "checked": "2026-10-17",
+    "latitude": 60.36572106156721,
+    "longitude": 10.537541749560843,
+    "coordinatePrecision": "property-access",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Granavollen%203%202750%20Gran&treffPerSide=5",
+    "image": "./images/catalog/central-sanner-1.webp",
+    "gallery": [
+      {
+        "src": "./images/catalog/central-sanner-1.webp",
+        "kind": "grounds",
+        "source": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
+        "credit": "Sanner Hotell · official website",
+        "original": "https://www.sanner-hotell.no/uploads/YwPd7xpx/768x0_640x0/Dukkestua_fasade9_523__msi___jpg.webp",
+        "rightsNote": "Operator photograph; source retained. No open licence asserted."
+      },
+      {
+        "src": "./images/catalog/central-sanner-2.webp",
+        "kind": "inside",
+        "source": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
+        "credit": "Sanner Hotell · official website",
+        "original": "https://www.sanner-hotell.no/uploads/V27g9cF7/767x0_2560x0/Dukkestua-allrom__msi___jpg.webp",
+        "rightsNote": "Operator photograph; source retained. No open licence asserted."
+      },
+      {
+        "src": "./images/catalog/central-sanner-3.webp",
+        "kind": "bedroom",
+        "source": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
+        "credit": "Sanner Hotell · official website",
+        "original": "https://www.sanner-hotell.no/uploads/rGExTRLy/767x0_2560x0/Dukkestua.sov__msi___jpg.webp",
+        "rightsNote": "Operator photograph; source retained. No open licence asserted."
+      }
+    ],
+    "description": {
+      "nb": "En liten, selvstendig hytte i hagen på Sanner Hotell, med kjøkken, bad og terrasse. Nær Søsterkirkene på Granavollen.",
+      "en": "A small self-catering cottage in Sanner Hotel’s garden, with kitchen, bathroom and terrace, near the Sister Churches at Granavollen.",
+      "uk": "Невеликий окремий будиночок у саду Sanner Hotell: кухня, ванна й тераса, неподалік від церков-сестер Granavollen.",
+      "sv": "En liten stuga i Sanner Hotels trädgård med kök, badrum och terrass nära systerkyrkorna i Granavollen.",
+      "da": "En lille hytte i Sanner Hotels have med køkken, bad og terrasse nær søsterkirkerne på Granavollen."
+    },
+    "hoursNote": {
+      "nb": "Bestill overnatting og avtal innsjekking med hotellet. Bruk av velværeavdelingen krever avtale; badstue er ikke bekreftet inkludert. Kartpunktet viser hotellets adresse.",
+      "en": "Reserve accommodation and confirm check-in with the hotel. Wellness access requires prior agreement; sauna is not confirmed included. The map point is the hotel address.",
+      "uk": "Бронюйте проживання й узгоджуйте заселення з готелем. Доступ до спа — за домовленістю; сауна не підтверджена як включена. Точка на карті — адреса готелю.",
+      "sv": "Boka boende och bekräfta incheckning med hotellet. Tillgång till spa kräver överenskommelse; bastu är inte bekräftad inkluderad. Kartpunkten är hotellets adress.",
+      "da": "Book ophold og aftal indtjekning med hotellet. Wellness kræver aftale; sauna er ikke bekræftet inkluderet. Kortpunktet er hotellets adresse."
+    }
+  },
+  {
+    "id": "flyt-fjordsauna-jevnaker",
+    "name": "Flyt FjordSauna · Jevnaker",
+    "category": "sauna",
+    "region": "Hadeland",
+    "town": "Jevnaker",
+    "address": "Bergertjernet · Jevnaker båthavn, Jevnaker, Norway",
+    "website": "https://www.flytfjordsauna.no/",
+    "bookingUrl": "https://www.flytfjordsauna.no/",
+    "source": "https://www.flytfjordsauna.no/",
+    "checked": "2026-10-17",
+    "latitude": 60.23503,
+    "longitude": 10.3724,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Bergertjernet&fuzzy=false&utkoordsys=4258&treffPerSide=30",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=FLYT+FjordSauna,+Jevnaker+Norway",
+    "image": "./images/catalog/central-flyt-1.webp",
+    "gallery": [
+      {
+        "src": "./images/catalog/central-flyt-1.webp",
+        "kind": "sauna",
+        "source": "https://www.flytfjordsauna.no/",
+        "credit": "Flyt FjordSauna · official website",
+        "original": "https://static.wixstatic.com/media/8763fc_43fef326000c4b52b475a1ba99130067~mv2.jpg",
+        "rightsNote": "Operator photograph; source retained. No open licence asserted."
+      },
+      {
+        "src": "./images/catalog/central-flyt-2.webp",
+        "kind": "sauna",
+        "source": "https://www.flytfjordsauna.no/",
+        "credit": "Flyt FjordSauna · official website",
+        "original": "https://static.wixstatic.com/media/8763fc_31c13423a12242f4be8a89c2aa5e8bd1~mv2.jpg",
+        "rightsNote": "Operator photograph; source retained. No open licence asserted."
+      }
+    ],
+    "description": {
+      "nb": "Privat, vedfyrt flytende badstue ved Bergertjernet i Jevnaker. Et stopp mellom Hadeland Glassverk og Kistefos.",
+      "en": "A private wood-fired floating sauna at Bergertjernet in Jevnaker, between Hadeland Glassverk and Kistefos.",
+      "uk": "Приватна плавуча сауна на дровах біля Bergertjernet у Jevnaker, між Hadeland Glassverk та Kistefos.",
+      "sv": "En privat vedeldad flytande bastu vid Bergertjernet i Jevnaker, mellan Hadeland Glassverk och Kistefos.",
+      "da": "En privat brændefyret flydende sauna ved Bergertjernet i Jevnaker, mellem Hadeland Glassverk og Kistefos."
+    },
+    "hoursNote": {
+      "nb": "Tilgjengelig hele året ifølge kommunen; se ledige tider hos operatøren og bestill på forhånd. Omtrentlig kartpunkt ved Bergertjernet; bruk operatørens veibeskrivelse til parkeringen.",
+      "en": "Available year-round according to the municipality; check session availability and reserve ahead. Approximate map point at Bergertjernet; follow the operator’s parking directions.",
+      "uk": "За інформацією комуни доступна цілий рік; перевірте сеанси й бронюйте заздалегідь. Точка біля Bergertjernet приблизна — до парковки їдьте за вказівками власника.",
+      "sv": "Tillgänglig året runt enligt kommunen; kontrollera tider och boka i förväg. Ungefärlig kartpunkt vid Bergertjernet; följ ägarens anvisningar till parkeringen.",
+      "da": "Tilgængelig året rundt ifølge kommunen; tjek tider og book på forhånd. Omtrentlig kortposition ved Bergertjernet; følg ejerens vejledning til parkering."
+    },
+    "sources": [
+      "https://www.flytfjordsauna.no/",
+      "https://www.jevnaker.kommune.no/organisasjon/om-kommunen/oppdag-og-opplev-jevnaker"
+    ]
+  }
+]

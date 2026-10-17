@@ -1,0 +1,46 @@
+{
+  "kinsarvik-heng": {
+    "latitude": 60.374461,
+    "longitude": 6.719237,
+    "address": "Sandvikvegen 17, 5780 Kinsarvik, Norway",
+    "coordinatePrecision": "property-access",
+    "coordinatesSource": "https://online.camping.no/visit/?id=1447874&lang=en"
+  },
+  "kilsti-compact-lodge": {
+    "latitude": 62.25882889455008,
+    "longitude": 7.153376458356803,
+    "address": "Kilstivegen 333, 6215 Eidsdal, Norway",
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Kilstivegen%20333%20Eidsdal&treffPerSide=3",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Kilsti+Compact+Lodge+parking,+Eidsdal,+Norway",
+    "coordinatesNote": "Property address; park above the lodge on Kilstivegen and walk down. Driving to the cottages is prohibited. Follow operator arrival instructions."
+  },
+  "akvariet-bergen": {
+    "latitude": 60.39953338901728,
+    "longitude": 5.303672853123771,
+    "coordinatePrecision": "property-access",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nordnesbakken%204%20Bergen&treffPerSide=3"
+  },
+  "polaria-tromso": {
+    "latitude": 69.64389074850263,
+    "longitude": 18.949387020457127,
+    "coordinatePrecision": "property-access",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Hjalmar%20Johansens%20gate%2012%20Troms%C3%B8&treffPerSide=3"
+  },
+  "norsk-skogmuseum": {
+    "latitude": 60.87012197240354,
+    "longitude": 11.559864165903274,
+    "coordinatePrecision": "property-access",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Sol%C3%B8rvegen%20151%20Elverum&treffPerSide=3"
+  },
+  "dyreparken-kristiansand": {
+    "latitude": 58.18165754225514,
+    "longitude": 8.145859544812948,
+    "coordinatePrecision": "property-access",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Dyreparkveien%201%20Kristiansand&treffPerSide=3"
+  },
+  "pust-lavvo-tromso": {
+    "coordinatePrecision": "area",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Pust+Lavvo+sauna,+Tromso,+Norway"
+  }
+}
