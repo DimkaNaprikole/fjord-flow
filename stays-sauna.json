@@ -5,11 +5,11 @@
     "area": "Kinsarvik · Hardanger",
     "placeId": "voringfossen",
     "imageCaption": {
-      "nb": "Illustrasjon — ikke et fotografi av overnattingsstedet.",
-      "en": "Illustration — not a photograph of the property.",
-      "uk": "Ілюстрація — не фотографія помешкання.",
-      "sv": "Illustration — inte ett fotografi av boendet.",
-      "da": "Illustration — ikke et fotografi af overnatningsstedet."
+      "nb": "Foto fra Kinsarvik Camping · stedets nettside",
+      "en": "Photo from Kinsarvik Camping · venue website",
+      "uk": "Фото Kinsarvik Camping · сайт закладу",
+      "sv": "Foto från Kinsarvik Camping · anläggningens webbplats",
+      "da": "Foto fra Kinsarvik Camping · stedets hjemmeside"
     },
     "description": {
       "nb": "Familiehytter av typen Heng i Kinsarvik, med tre soverom, to bad og fullt utstyrt kjøkken. Et overnattingsalternativ i Hardanger-regionen med utsikt over Hardangerfjorden.",
@@ -31,7 +31,9 @@
       "https://www.kinsarvikcamping.no/overnatting/heng",
       "https://online.bookvisit.com/accommodation?channelId=1a877ef6-b451-41cc-9726-8fa753577d63&langId=5"
     ],
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "https://images.bookvisit.com/img/1b8f5e6d-9333-4239-ac2c-6aed89ff2504.jpg",
+    "imageSource": "https://www.kinsarvikcamping.no/overnatting/heng"
   },
   {
     "id": "luster-fjordhytter",
@@ -39,11 +41,11 @@
     "area": "Høyheimsvik · Luster / Sognefjord",
     "placeId": "nigardsbreen",
     "imageCaption": {
-      "nb": "Illustrasjon — ikke et fotografi av overnattingsstedet.",
-      "en": "Illustration — not a photograph of the property.",
-      "uk": "Ілюстрація — не фотографія помешкання.",
-      "sv": "Illustration — inte ett fotografi av boendet.",
-      "da": "Illustration — ikke et fotografi af overnatningsstedet."
+      "nb": "Foto fra Luster Fjordhytter · stedets nettside",
+      "en": "Photo from Luster Fjordhytter · venue website",
+      "uk": "Фото Luster Fjordhytter · сайт закладу",
+      "sv": "Foto från Luster Fjordhytter · anläggningens webbplats",
+      "da": "Foto fra Luster Fjordhytter · stedets hjemmeside"
     },
     "description": {
       "nb": "Hytter ved Lustrafjorden med kjøkken, dusj og toalett. Et alternativ på en egen avstikker gjennom Luster og Sognefjord-regionen, ikke i Flåm sentrum.",
@@ -65,20 +67,22 @@
       "https://www.luster-fjordhytter.com/en",
       "https://www.luster-fjordhytter.com/en/luster-fjordspa"
     ],
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957ce59806898a97ee40d9_Hytter1.jpg",
+    "imageSource": "https://www.luster-fjordhytter.com/en"
   },
   {
     "id": "kilsti-compact-lodge",
     "name": "Kilsti Compact Lodge",
     "area": "Eidsdal · Geiranger–Trollstigen",
     "placeId": "geiranger",
-    "image": "./images/geiranger.jpg",
+    "image": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1674564152851-K59Z0KXD2M6S2V0Z1LVF/PRINT_2021-05-31%2BReklamefoto%2BKilsti-5497.JPG?format=1000w",
     "imageCaption": {
-      "nb": "Illustrasjonsfoto fra Geiranger-regionen — ikke et fotografi av Kilsti eller utsikten fra hytta.",
-      "en": "Illustrative photograph of the Geiranger region — not a photograph of Kilsti or the view from its cottages.",
-      "uk": "Ілюстративне фото регіону Geiranger — не фотографія Kilsti або виду з його будиночків.",
-      "sv": "Illustrativt foto från Geirangerregionen — inte ett fotografi av Kilsti eller utsikten från stugorna.",
-      "da": "Illustrationsfoto fra Geiranger-regionen — ikke et fotografi af Kilsti eller udsigten fra hytterne."
+      "nb": "Foto fra Kilsti Compact Lodge · stedets nettside",
+      "en": "Photo from Kilsti Compact Lodge · venue website",
+      "uk": "Фото Kilsti Compact Lodge · сайт закладу",
+      "sv": "Foto från Kilsti Compact Lodge · anläggningens webbplats",
+      "da": "Foto fra Kilsti Compact Lodge · stedets hjemmeside"
     },
     "description": {
       "nb": "Små arkitekttegnede glasshytter med panoramautsikt i Eidsdal-området. Et overnattingsalternativ ved ruten mellom Geiranger og Trollstigen.",
@@ -100,6 +104,7 @@
       "https://www.kilsticompactlodge.no/",
       "https://www.kilsticompactlodge.no/hele-lodgen"
     ],
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "imageSource": "https://www.kilsticompactlodge.no/"
   }
 ]
