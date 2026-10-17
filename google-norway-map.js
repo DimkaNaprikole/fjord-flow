@@ -30,7 +30,7 @@
     const initial=cameraForPoints([]);
     if(Number.isFinite(options.range)&&options.range>=2500&&options.range<=15000000)initial.range=options.range;
     if(validPoint(options.center))initial.center={lat:options.center.latitude,lng:options.center.longitude,altitude:0};
-    const map=new library.Map3DElement({...initial,mode:'HYBRID',gestureHandling:'GREEDY'});
+    const map=new library.Map3DElement({...initial,mode:'HYBRID',gestureHandling:'GREEDY',defaultUIHidden:true});
     if(map.style){map.style.width='100%';map.style.height='100%';map.style.display='block';}
     container.append(map);
     let markers=[],destroyed=false,lastRows=[],lastRoute=null,lastCategory='all';

@@ -12,7 +12,7 @@ test('full Google canvas enables wheel zoom and retains camera during label refr
   vm.runInNewContext(readFileSync(new URL('./google-standard-map.js',import.meta.url),'utf8'),context);
   await assert.rejects(context.window.FjordGoogleStandardMap.create({},{}),/NOT_ENABLED/);
   const adapter=await context.window.FjordGoogleStandardMap.create({replaceChildren(){}},{enabled:true,userActivated:true,buildInfo:r=>r.id});
-  assert.equal(options.gestureHandling,'greedy');assert.equal(options.scrollwheel,true);assert.equal(options.zoomControl,true);assert.equal(options.mapTypeControl,true);assert.equal(options.fullscreenControl,true);
+  assert.equal(options.gestureHandling,'greedy');assert.equal(options.scrollwheel,true);assert.equal(options.zoomControl,true);assert.equal(options.mapTypeControl,true);assert.equal(options.fullscreenControl,false);
   const rows=[{id:'coffee',name:'Coffee',latitude:60,longitude:10,category:'cafe'},{id:'hill',name:'View',latitude:61,longitude:11,category:'rest',kind:'attraction'}];
   assert.equal(adapter.render(rows,null,'all'),2);assert.equal(frames,1);
   adapter.render(rows,null,'all',false);assert.equal(frames,1);assert.equal(markers.length,2);

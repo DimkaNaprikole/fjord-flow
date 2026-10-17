@@ -33,7 +33,7 @@
   const googleConfig=window.FjordGoogleMapConfig || {};providerControls.hidden=googleConfig.enabled!==true;
   for(const button of [googleButton,flatButton,fullButton])button.type='button';
   flatButton.textContent='OpenStreetMap';standardButton.type='button';locationButton.type='button';
-  providerControls.append(standardButton,googleButton,flatButton,locationButton,fullButton);
+  providerControls.append(standardButton,googleButton,locationButton);
   controls.append(filters,select,routeButton,allButton); section.append(eyebrow,title,intro,controls,providerControls,typeControls,status,canvas,standardCanvas,googleCanvas,details,note);
   const footer=document.querySelector('footer'); if(footer)footer.before(section); else document.querySelector('main')?.append(section);
   let rows=[], category='all', routeKey='', map=null, markers=null, lines=null, loaded=false, loading=false;

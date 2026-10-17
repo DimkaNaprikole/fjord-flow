@@ -19,7 +19,7 @@
     if(options.enabled!==true||options.userActivated!==true)throw Error('GOOGLE_MAPS_NOT_ENABLED');
     await window.FjordGoogleNorwayMap.loadAPI(options);
     const [{Map,InfoWindow},{AdvancedMarkerElement}]=await Promise.all([google.maps.importLibrary('maps'),google.maps.importLibrary('marker')]);
-    const map=new Map(container,{center:{lat:60.37,lng:10.56},zoom:10,mapId:'DEMO_MAP_ID',mapTypeId:'hybrid',gestureHandling:'greedy',scrollwheel:true,zoomControl:true,cameraControl:true,mapTypeControl:true,mapTypeControlOptions:{mapTypeIds:['roadmap','hybrid','satellite','terrain']},fullscreenControl:true,streetViewControl:false,scaleControl:true,clickableIcons:true});
+    const map=new Map(container,{center:{lat:60.37,lng:10.56},zoom:10,mapId:'DEMO_MAP_ID',mapTypeId:'hybrid',gestureHandling:'greedy',scrollwheel:true,zoomControl:true,cameraControl:true,mapTypeControl:true,mapTypeControlOptions:{mapTypeIds:['roadmap','hybrid','satellite','terrain']},fullscreenControl:false,streetViewControl:false,scaleControl:true,clickableIcons:true});
     const info=new InfoWindow({minWidth:275,maxWidth:325});let markers=[],signature='',first=true,userMarker=null;
     function frame(rows,route){const points=Array.isArray(route?.points)?route.points.filter(valid):rows;if(!points.length)return;const bounds=new google.maps.LatLngBounds();points.forEach(p=>bounds.extend({lat:p.latitude,lng:p.longitude}));map.fitBounds(bounds,45);}
     return {
