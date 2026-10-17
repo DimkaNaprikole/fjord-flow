@@ -52,3 +52,5 @@ const roadTrips={hardanger:{origin:'Bergen',destination:'trolltunga',stops:['ste
 $('#routeDetour').addEventListener('change',updateRoute);
 
 window.addEventListener('fjordlanguagechange',()=>{if(data&&$('#placeSearch').value.trim())cards()});
+
+window.addEventListener('fjord:open-place',event=>{const id=event.detail?.id;if(data?.destinations.some(p=>p.id===id&&p.showcase!==false))openGallery(id)});
