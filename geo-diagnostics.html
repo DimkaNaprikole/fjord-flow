@@ -2,12 +2,16 @@
 (() => {
  const button=document.getElementById('start'),result=document.getElementById('result');let stops=[];
  const log=text=>{result.textContent+=text+'\n';};
+ const permissionLine=document.createElement('p');permissionLine.id='permissionState';button.before(permissionLine);
+ let permission;
+ async function inspectPermission(){try{permission=await navigator.permissions.query({name:'geolocation'});const show=()=>{permissionLine.textContent='Текущее разрешение браузера: '+permission.state;};show();permission.onchange=()=>{show();log('Изменение разрешения: '+permission.state);};}catch{permissionLine.textContent='Состояние разрешения недоступно';}}
+ inspectPermission();window.addEventListener('focus',inspectPermission);
  async function nearest(position){try{const data=await fetch('./norway-towns.json?v=1').then(r=>r.json()),lat=position.coords.latitude,lon=position.coords.longitude,rad=x=>x*Math.PI/180;let chosen=null,best=Infinity;for(const town of data.towns){const a=Math.sin(rad(town.latitude-lat)/2)**2+Math.cos(rad(lat))*Math.cos(rad(town.latitude))*Math.sin(rad(town.longitude-lon)/2)**2;const d=6371*2*Math.asin(Math.sqrt(Math.min(1,a)));if(d<best){best=d;chosen=town;}}return best<=50?chosen.name:'нет населённого пункта Норвегии в пределах 50 км';}catch{return 'справочник недоступен';}}
  button.onclick=async()=>{
   stops.forEach(stop=>stop());stops=[];button.disabled=true;result.textContent='';const started=Date.now();
   log('Браузер: '+navigator.userAgent);log('HTTPS/secure context: '+window.isSecureContext);
   log('Geolocation API: '+Boolean(navigator.geolocation));const policy=document.permissionsPolicy||document.featurePolicy;log('Политика страницы: '+(policy?.allowsFeature?.('geolocation')??'неизвестно'));
-  try{log('Разрешение: '+(await navigator.permissions.query({name:'geolocation'})).state);}catch{log('Разрешение: API проверки недоступен');}
+  log('Разрешение перед запросом: '+(permission?.state||'неизвестно'));log('Прямое действие пользователя: '+(navigator.userActivation?.isActive??'неизвестно'));
   if(!navigator.geolocation){button.disabled=false;return;}
   const success=async(label,position)=>log(label+': координаты получены за '+((Date.now()-started)/1000).toFixed(1)+' c; точность ±'+Math.round(position.coords.accuracy)+' м; ближайшее место: '+await nearest(position));
   const error=(label,e)=>log(label+': ошибка '+e.code+' — '+e.message+'; '+((Date.now()-started)/1000).toFixed(1)+' c');
