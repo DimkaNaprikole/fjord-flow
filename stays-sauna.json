@@ -70,7 +70,8 @@
         "kind": "view",
         "source": "https://www.kinsarvikcamping.no/overnatting/heng"
       }
-    ]
+    ],
+    "routeQuery": "Kinsarvik Camping, Sandvikvegen 17, 5780 Kinsarvik, Norway"
   },
   {
     "id": "luster-fjordhytter",
@@ -99,7 +100,7 @@
       "da": "Separat brændefyret sauna med fjordudsigt til 8–10 personer samt brændefyret vildmarksbad. Der tilbydes drop-in og privat booking. Sauna er ikke bekræftet inkluderet i hyttelejen; aftal pris og tidspunkt med værten."
     },
     "website": "https://www.luster-fjordhytter.com/en",
-    "bookingUrl": "https://www.luster-fjordhytter.com/en/luster-fjordspa",
+    "bookingUrl": "https://www.luster-fjordhytter.com/en/booking",
     "sources": [
       "https://www.luster-fjordhytter.com/en",
       "https://www.luster-fjordhytter.com/en/luster-fjordspa"
@@ -143,7 +144,8 @@
         "kind": "terrace",
         "source": "https://www.luster-fjordhytter.com/en"
       }
-    ]
+    ],
+    "routeQuery": "Luster Fjordhytter, Lustravegen 2623, 6875 Høyheimsvik, Norway"
   },
   {
     "id": "kilsti-compact-lodge",
@@ -216,6 +218,7 @@
         "kind": "terrace",
         "source": "https://www.kilsticompactlodge.no/hyttene-1"
       }
-    ]
+    ],
+    "routeQuery": "Kilsti Compact Lodge, Eidsdal, Norway"
   }
 ]

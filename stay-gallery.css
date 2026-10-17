@@ -56,3 +56,9 @@ dialog.stay-gallery:has(.cafe-gallery-info:not([hidden])) .stay-gallery-stage{he
 .cafe-gallery-website{display:inline-flex;align-items:center;justify-content:center;min-height:42px;box-sizing:border-box;padding:10px 14px;border:1px solid #b4d4dc80;border-radius:999px;color:#e0f2f5;text-decoration:none;font-weight:700}
 .cafe-gallery-website:hover{background:#ffffff12}
 @media(max-width:700px){.cafe-gallery-summary{flex-wrap:wrap}.cafe-gallery-summary>.cafe-gallery-actions{justify-content:flex-start;width:100%}.cafe-gallery-actions .cafe-gallery-route{max-width:none}.cafe-gallery-website{font-size:11px;padding:9px 12px}}
+
+.stay-gallery-venue-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:9px;padding:11px 22px;background:#173b45;border-block:1px solid #afd7dc26}
+.stay-gallery-venue-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;box-sizing:border-box;padding:10px 16px;border:1px solid #b4d4dc80;border-radius:999px;color:#e0f2f5;text-decoration:none;font:700 12px/1.4 Manrope,"Segoe UI",sans-serif}
+.stay-gallery-venue-actions a:hover{background:#ffffff14}.stay-gallery-venue-actions .stay-gallery-book{background:#d7efeb;color:#123b45;border-color:#d6eeef8c}.stay-gallery-venue-actions .stay-gallery-book:hover{background:#f1fffb}
+dialog.stay-gallery:has(.stay-gallery-venue-actions:not([hidden])) .stay-gallery-stage{height:min(48dvh,560px)}
+@media(max-width:700px){.stay-gallery-venue-actions{padding:10px 13px;gap:7px;justify-content:flex-start}.stay-gallery-venue-actions a{padding:9px 12px;font-size:11px}dialog.stay-gallery:has(.stay-gallery-venue-actions:not([hidden])) .stay-gallery-stage{height:43dvh}}

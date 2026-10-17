@@ -15,7 +15,7 @@
   const el = (tag, cls, text) => { const e = document.createElement(tag); e.className = cls || ''; if (text) e.textContent = text; return e; };
   const valid = value => { if (typeof value !== "string" || !value.trim()) return ""; try {const u = new URL(value, document.baseURI); return u.protocol === 'https:' || u.origin === location.origin ? u.href : '';} catch {return '';} };
   let dialog, stage, photo, title, counter, caption, source, license, zoom, thumbs, error, previous, next, close;
-  let record, photos = [], index = 0, zoomed = false, touchStart, cafeInfo, cafeTimer;
+  let record, photos = [], index = 0, zoomed = false, touchStart, cafeInfo, cafeTimer, venueActions;
   function button(cls, text, handler) { const b = el('button', cls, text); b.type = 'button'; b.onclick = handler; return b; }
   function toggleZoom() {
     zoomed = !zoomed; stage.classList.toggle('is-zoomed', zoomed);
@@ -59,7 +59,8 @@
     meta.append(details, zoom, source, license);
     thumbs = el('nav', 'stay-gallery-thumbs');
     cafeInfo = el('section', 'cafe-gallery-info'); cafeInfo.hidden = true;
-    dialog.append(header, cafeInfo, viewer, meta, thumbs); document.body.append(dialog);
+    venueActions = el('nav', 'stay-gallery-venue-actions'); venueActions.hidden = true;
+    dialog.append(header, cafeInfo, venueActions, viewer, meta, thumbs); document.body.append(dialog);
     dialog.addEventListener('close', () => clearInterval(cafeTimer));
     dialog.addEventListener('click', e => {if (e.target === dialog) dialog.close();});
     dialog.addEventListener('keydown', e => {
@@ -89,6 +90,18 @@
         const img = el('img'); img.src = valid(p.src); img.alt = ''; img.loading = 'lazy'; b.append(img); return b;
       }));
       previous.hidden = next.hidden = photos.length < 2;
+      venueActions.replaceChildren(); venueActions.hidden = !venue.bookingUrl;
+      if (!venueActions.hidden) {
+        const labels = {nb:['Nettsted','Bestill','Finn veien'],en:['Website','Book a stay','Get directions'],uk:['Сайт','Забронювати','Прокласти маршрут'],sv:['Webbplats','Boka','Hitta hit'],da:['Hjemmeside','Book','Find vej']}[language()] || ['Website','Book a stay','Get directions'];
+        venueActions.setAttribute('aria-label', venue.name);
+        const targets = [venue.website, venue.bookingUrl, 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(venue.routeQuery || venue.name + ', ' + venue.area + ', Norway')];
+        targets.forEach((target, i) => {
+          let url; try { url = new URL(target); } catch { return; }
+          if (url.protocol !== 'https:' || url.username || url.password) return;
+          const a = el('a', i === 1 ? 'stay-gallery-book' : '', labels[i] + ' ↗');
+          a.href = url.href; a.target = '_blank'; a.rel = 'noopener noreferrer'; venueActions.append(a);
+        });
+      }
       clearInterval(cafeTimer);
       const refreshCafe = window.FjordCafeGalleryInfo?.render(cafeInfo, venue);
       if (refreshCafe) cafeTimer = setInterval(refreshCafe, 60000);
