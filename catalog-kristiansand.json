@@ -1,0 +1,44 @@
+[
+  {
+    "id": "odderoya-kristiansand",
+    "name": "Odderøya · Kristiansand",
+    "town": "Kristiansand",
+    "region": "Agder · Sørlandet",
+    "category": "rest",
+    "address": "Odderøya, Kristiansand, Norway",
+    "website": "https://en.visitsorlandet.com/listing/odder%C3%B8ya/139632306/",
+    "source": "https://en.visitsorlandet.com/listing/odder%C3%B8ya/139632306/",
+    "checked": "2026-10-18",
+    "latitude": 58.13318,
+    "longitude": 8.00546,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://en.visitsorlandet.com/listing/odder%C3%B8ya/139632306/",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Odder%C3%B8ya%2C%20Kristiansand%2C%20Norway&travelmode=driving",
+    "description": {
+      "nb": "Kyststier, svaberg og utsikt mot havna. En bynær pause ved sjøen sør for Kristiansand sentrum.",
+      "en": "Coastal paths, smooth rocks and harbour views: a seaside break just south of central Kristiansand.",
+      "uk": "Прибережні стежки, скелі й краєвиди гавані. Морська прогулянка неподалік від центру Кристиансанна.",
+      "sv": "Kuststigar, klippor och hamnutsikt: en paus vid havet strax söder om Kristiansands centrum.",
+      "da": "Kyststier, klipper og havneudsigt: en pause ved havet lige syd for Kristiansands centrum."
+    },
+    "hoursNote": {
+      "nb": "Parker ved Kilden og fortsett til fots. Rundturen er omtrent 3 km. Kafeenes åpningstider varierer.",
+      "en": "Park by Kilden and continue on foot. The walk is about 3 km. Café opening hours vary.",
+      "uk": "Паркуйтеся біля Kilden і продовжуйте пішки. Прогулянка — близько 3 км. Години кав’ярень різняться.",
+      "sv": "Parkera vid Kilden och fortsätt till fots. Promenaden är cirka 3 km. Kaféernas öppettider varierar.",
+      "da": "Parkér ved Kilden og fortsæt til fods. Gåturen er cirka 3 km. Caféernes åbningstider varierer."
+    },
+    "image": "./images/catalog/sorlandet-odderoya.webp",
+    "imageSource": "https://en.visitsorlandet.com/listing/odder%C3%B8ya/139632306/",
+    "photoAlt": "Coastal rocks and sea at Odderøya, Kristiansand",
+    "photoCaption": "Erik Engenes / Visit Sørlandet · tourism-board photograph · no open licence claimed",
+    "gallery": [{
+      "src": "./images/catalog/sorlandet-odderoya.webp",
+      "kind": "view",
+      "credit": "Erik Engenes / Visit Sørlandet",
+      "source": "https://en.visitsorlandet.com/listing/odder%C3%B8ya/139632306/",
+      "original": "https://tellusdmsmedia.newmindmedia.com/wsimgs/Odder_ya-Kristiansand-Foto-Erik-Engenes_2__174120410.jpg",
+      "license": "Tourism-board-published photograph; no open licence claimed"
+    }]
+  }
+]

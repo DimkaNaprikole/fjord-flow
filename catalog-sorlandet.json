@@ -1,0 +1,123 @@
+[
+  {
+    "id": "lindesnes-fyr-coast",
+    "name": "Lindesnes fyr",
+    "town": "Lindesnes",
+    "region": "Sørlandet · Agder",
+    "category": "rest",
+    "address": "Lindesnesveien 1139, 4521 Lindesnes, Norway",
+    "latitude": 57.98229486990713,
+    "longitude": 7.047650772711434,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Lindesnesveien%201139&treffPerSide=3",
+    "website": "https://lindesnesfyr.no/",
+    "bookingUrl": "https://booking.lindesnesfyr.no/",
+    "source": "https://lindesnesfyr.no/kontakt-oss/",
+    "checked": "2026-10-18",
+    "image": "./images/catalog/sorlandet-lindesnes-day.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Lindesnes_Fyr.jpg",
+    "photoAlt": "Lindesnes lighthouse, red lantern and rocky coast, September 2011",
+    "description": {
+      "nb": "Fyr, havhorisont og svaberg: en værpreget kyststopp ved Lindesnes. Sett av tid til museet og en rolig tur på området.",
+      "en": "A lighthouse, open sea and rocky shore: an atmospheric coastal stop at Lindesnes. Allow time for the museum and a stroll around the grounds.",
+      "uk": "Маяк, морський обрій і скелястий берег: атмосферна зупинка на Lindesnes. Залиште час на музей і прогулянку територією.",
+      "sv": "Fyr, havshorisont och klippor: ett stämningsfullt kuststopp vid Lindesnes. Avsätt tid för museet och en promenad på området.",
+      "da": "Fyr, havhorisont og klipper: et stemningsfuldt kyststop ved Lindesnes. Afsæt tid til museet og en tur på området."
+    },
+    "hoursNote": {
+      "nb": "Publisert plan: 5. oktober–31. desember kl. 11–16, stengt 24., 25. og 31. desember. Sjekk årets plan før besøket; tidene varierer med sesongen.",
+      "en": "Published schedule: 5 October–31 December, 11:00–16:00; closed 24, 25 and 31 December. Check the current year's calendar before visiting; hours vary by season.",
+      "uk": "Опублікований розклад: 5 жовтня–31 грудня, 11:00–16:00; 24, 25 і 31 грудня зачинено. Перед візитом звірте календар поточного року — години сезонні.",
+      "sv": "Publicerat schema: 5 oktober–31 december kl. 11–16, stängt 24, 25 och 31 december. Kontrollera årets kalender före besöket; tiderna varierar med säsongen.",
+      "da": "Offentliggjort plan: 5. oktober–31. december kl. 11–16, lukket 24., 25. og 31. december. Tjek årets kalender inden besøget; tiderne varierer efter sæson."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://lindesnesfyr.no/kontakt-oss/"
+    },
+    "photoCaption": {
+      "nb": "Lindesnes fyr · Christian Schuster · CC BY-SA 3.0 NO · 2011",
+      "en": "Lindesnes lighthouse · Christian Schuster · CC BY-SA 3.0 NO · 2011",
+      "uk": "Маяк Lindesnes · Christian Schuster · CC BY-SA 3.0 NO · 2011",
+      "sv": "Lindesnes fyr · Christian Schuster · CC BY-SA 3.0 NO · 2011",
+      "da": "Lindesnes fyr · Christian Schuster · CC BY-SA 3.0 NO · 2011"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/sorlandet-lindesnes-day.jpg",
+        "kind": "surroundings",
+        "credit": "Christian Schuster",
+        "source": "https://commons.wikimedia.org/wiki/File:Lindesnes_Fyr.jpg",
+        "license": "CC BY-SA 3.0 no",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/no/deed.en",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/4/44/Lindesnes_Fyr.jpg"
+      },
+      {
+        "src": "./images/catalog/sorlandet-lindesnes-coast.jpg",
+        "kind": "surroundings",
+        "credit": "Ssu",
+        "source": "https://commons.wikimedia.org/wiki/File:Lindesnes_fyr_-_utsikt_(4).jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Lindesnes_fyr_-_utsikt_%284%29.jpg"
+      }
+    ]
+  },
+  {
+    "id": "sjosanden-mandal",
+    "name": "Sjøsanden · Furulunden",
+    "town": "Mandal",
+    "region": "Sørlandet · Agder",
+    "category": "rest",
+    "address": "Sjøsanden, Mandal, Lindesnes, Norway",
+    "latitude": 58.02057,
+    "longitude": 7.45045,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Sj%C3%B8sanden&fuzzy=false&treffPerSide=10",
+    "website": "https://www.visitnorway.com/listings/sjosanden-beach/17423/",
+    "source": "https://www.visitnorway.com/listings/sjosanden-beach/17423/",
+    "checked": "2026-10-18",
+    "image": "./images/catalog/sorlandet-sjosanden.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sjosanden_fra_piren.JPG",
+    "photoAlt": "Sjøsanden beach at Mandal seen from the pier, August 2008",
+    "description": {
+      "nb": "Lang sandstrand ved Mandal og turstier i Furulunden. En rolig kystpause med plass til både strandtur og skogstur.",
+      "en": "A long sandy beach beside Mandal, with walking paths in Furulunden. A relaxed coastal stop for beach and woodland walks.",
+      "uk": "Довгий піщаний пляж біля Mandal і стежки Furulunden. Спокійна прибережна зупинка для прогулянки берегом та лісом.",
+      "sv": "Lång sandstrand vid Mandal och vandringsstigar i Furulunden. Ett lugnt kuststopp för promenader längs stranden och i skogen.",
+      "da": "Lang sandstrand ved Mandal og stier i Furulunden. Et roligt kyststop med ture langs stranden og gennem skoven."
+    },
+    "hoursNote": {
+      "nb": "Turistkontoret beskriver bruk også utenom sommeren. Ingen faste besøkstider er publisert; kafétilbud og andre tjenester kan være sesongbasert. Kartpunktet markerer strandområdet, ikke parkering.",
+      "en": "The tourism office describes visits outside summer too. No fixed visitor hours are published; cafés and services may be seasonal. The map point represents the beach area, not parking.",
+      "uk": "Туристичний офіс описує відвідування й поза літом. Фіксованих годин немає; кафе та послуги можуть бути сезонними. Точка на карті позначає пляж, а не парковку.",
+      "sv": "Turistbyrån beskriver besök även utanför sommaren. Fasta besökstider saknas; kaféer och service kan vara säsongsöppna. Kartpunkten visar strandområdet, inte parkering.",
+      "da": "Turistkontoret beskriver besøg også uden for sommeren. Faste besøgstider er ikke oplyst; caféer og service kan være sæsonåbne. Kortpunktet viser strandområdet, ikke parkering."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://www.visitnorway.com/listings/sjosanden-beach/17423/"
+    },
+    "photoCaption": {
+      "nb": "Sjøsanden, Mandal · Yosh3000 · CC BY-SA 3.0 · 2008",
+      "en": "Sjøsanden, Mandal · Yosh3000 · CC BY-SA 3.0 · 2008",
+      "uk": "Sjøsanden, Mandal · Yosh3000 · CC BY-SA 3.0 · 2008",
+      "sv": "Sjøsanden, Mandal · Yosh3000 · CC BY-SA 3.0 · 2008",
+      "da": "Sjøsanden, Mandal · Yosh3000 · CC BY-SA 3.0 · 2008"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/sorlandet-sjosanden.jpg",
+        "kind": "surroundings",
+        "credit": "Yosh3000",
+        "source": "https://commons.wikimedia.org/wiki/File:Sjosanden_fra_piren.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Sjosanden_fra_piren.JPG"
+      }
+    ]
+  }
+]

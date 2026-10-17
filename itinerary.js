@@ -28,7 +28,8 @@
     'Through Østerdalen|Gjennom Østerdalen|Через Østerdalen|Genom Østerdalen|Gennem Østerdalen',
     'Driving only; visits and waiting are extra.|Kun kjøring; besøk og venting kommer i tillegg.|Лише їзда; відвідування й очікування додатково.|Endast körning; besök och väntan tillkommer.|Kun kørsel; besøg og ventetid kommer oveni.',
     'Required route coordinates are unavailable. No route was calculated.|Nødvendige rutekoordinater mangler. Ingen rute ble beregnet.|Відсутні необхідні координати. Маршрут не обчислено.|Nödvändiga koordinater saknas. Ingen rutt beräknades.|Nødvendige koordinater mangler. Ingen rute blev beregnet.',
-    'Navigation leg|Navigasjonsetappe|Етап навігації|Navigeringsetapp|Navigationsetape'
+    'Navigation leg|Navigasjonsetappe|Етап навігації|Navigeringsetapp|Navigationsetape',
+    'Open driving directions in Google Maps; parking entrances are resolved there. Map markers show approximate visit areas, not vehicle entrances.|Åpne kjøreveiledning i Google Maps; parkeringsinnkjørslene finnes der. Kartmarkørene viser omtrentlige besøksområder, ikke bilinnkjørsler.|Відкрийте автомобільну навігацію в Google Maps: в’їзди на парковки визначаються там. Позначки на карті показують приблизні місця огляду, а не в’їзди для авто.|Öppna vägbeskrivningen i Google Maps; parkeringsinfarter hittas där. Kartmarkörerna visar ungefärliga besöksområden, inte bilinfarter.|Åbn kørselsvejledning i Google Maps; parkeringsindkørslerne findes der. Kortmarkørerne viser omtrentlige besøgsområder, ikke bilindkørsler.'
   ].map(row => {const values=row.split('|');return [values[0],values];}));
   const language = () => window.FjordI18n?.language || 'en';
   const et = source => extraText.get(source)?.[Math.max(0,languages.indexOf(language()))] || source;
@@ -39,6 +40,7 @@
     family:{origin:'oslo',required:['kistefos','hunderfossen'],title:'Family discoveries — several days'},
     osterdalen:{origin:'oslo',required:['storelgen'],destination:'roros',title:'Through Østerdalen'}
   };
+  for(const [key,route] of Object.entries(window.FjordTripTools?.localRoutes||{}))customRoutes[key]={local:true,title:localized(route.title)};
   const extraPanel = document.createElement('section');extraPanel.className='itinerary-extras';extraPanel.dataset.i18nIgnore='';
   extraPanel.innerHTML='<div class="itinerary-base-picker"><h3 id="itineraryBaseTitle"></h3><p id="itineraryBaseHint"></p><div class="itinerary-selection-actions"><button id="itinerarySelectAll" class="text-link" type="button"></button><button id="itinerarySelectNone" class="text-link" type="button"></button></div><div id="itineraryBaseChoices"></div></div><h3 id="itineraryExtrasTitle"></h3><p id="itineraryExtrasHint"></p><div id="itineraryChoices"></div><button id="itineraryUpdate" class="button" type="button"></button><p id="itineraryExtrasError" role="status"></p>';
   dialog.querySelector('.itinerary-header').after(extraPanel);
@@ -81,7 +83,8 @@
     document.getElementById('itineraryExtrasError').textContent=failed?et('Experience information unavailable. Open the route again to retry.'):'';
     const box=document.getElementById('itineraryChoices');box.replaceChildren();
     const route=customRoutes[key]?'east':key, required=customRoutes[key]?.required||[];
-    const items=experiences.filter(p=>key==='hadeland'?p.id==='kistefos':Array.isArray(p.routes)&&p.routes.includes(route)&&!required.includes(p.id));
+    const localRoute=window.FjordTripTools?.localRoutes?.[key];
+    const items=experiences.filter(p=>localRoute?(localRoute.optionalExperienceIds|| (key==='hadeland'?['kistefos']:[])).includes(p.id):Array.isArray(p.routes)&&p.routes.includes(route)&&!required.includes(p.id));
     if(!items.length)box.append(node('p',et('No extra stops for this route.')));
     for(const p of items){const label=node('label',undefined,'itinerary-choice'),check=node('input');check.type='checkbox';check.value=p.id;check.checked=chosen.has(p.id);check.disabled=!valid(p);const copy=node('span');copy.append(node('b',localized(p.name)),node('small',localized(p.area)||localized(p.address)),node('small',localized(p.season)));if(!valid(p))copy.append(node('small',et('Plan access separately; see the operator.')));const url=official(p);if(url){const a=node('a',et('Official information ↗'));a.href=url;a.target='_blank';a.rel='noopener noreferrer';copy.append(a);}label.append(check,copy);box.append(label);check.onchange=()=>{check.checked?chosen.add(p.id):chosen.delete(p.id);selectionChanged();};}
   }
@@ -100,7 +103,7 @@
   const cache = new Map();
   const text = source => window.FjordI18n?.t(source) || source;
   const coords = p => [p.latitude, p.longitude];
-  const query = p => p.extra ? coords(p).join(',') : p.routeQuery || coords(p).join(',');
+  const query = p => p.routeQuery || coords(p).join(',');
   const find = id => data.destinations.find(p => p.id === id);
   const fit = () => {
     if (!map || !dialog.open || !activePoints.length) return;
@@ -182,6 +185,11 @@
     legLinks.replaceChildren();if(points.length>5){for(let i=0;i<points.length-1;i+=4){const chunk=points.slice(i,i+5),url=new URL(navigation.href);url.searchParams.set('origin',query(chunk[0]));url.searchParams.set('destination',query(chunk.at(-1)));url.searchParams.set('waypoints',chunk.slice(1,-1).map(query).join('|'));const link=node('a',`${et('Navigation leg')} ${Math.floor(i/4)+1}: ${localized(chunk[0].name)} → ${localized(chunk.at(-1).name)} ↗`);link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';legLinks.append(link);}}
     if(!dialog.open)dialog.showModal(); dialog.scrollTop = 0;
     window.FjordI18n?.apply(); requestAnimationFrame(fit);
+    if(local?.navigationOnly){
+      document.getElementById('itineraryStatus').setAttribute('data-i18n-ignore','');
+      document.getElementById('itineraryStatus').textContent=et('Open driving directions in Google Maps; parking entrances are resolved there. Map markers show approximate visit areas, not vehicle entrances.');
+      fit();return;
+    }
     try {
       const cacheKey=JSON.stringify(points.map(p=>[p.id,p.latitude,p.longitude]));
       let result = cache.get(cacheKey);
@@ -214,7 +222,7 @@
   });
   document.getElementById('itineraryUpdate').onclick=()=>openItinerary(activeKey,activeButton);
   const customButtons=[];
-  for(const [key,config] of Object.entries(customRoutes)){const local=window.FjordTripTools?.localRoutes?.[key],button=node('button');button.type='button';button.dataset.roadtrip=key;button.dataset.i18nIgnore='';button.append(node('span',local?local.label:key==='family'?'04 / INNLANDET':'05 / ØSTERDALEN'),node('b',local?localized(local.title):et(config.title)),node('small',local?local.summary:key==='family'?'Oslo · Kistefos · Hunderfossen':'Oslo · Storelgen · Røros'));button.onclick=()=>openItinerary(key,button);const host=document.querySelector('.roadtrip-presets');local?host?.prepend(button):host?.append(button);customButtons.push([button,config,key]);}
+  for(const [key,config] of Object.entries(customRoutes)){const local=window.FjordTripTools?.localRoutes?.[key],button=node('button');button.type='button';button.dataset.roadtrip=key;button.dataset.i18nIgnore='';button.append(node('span',local?local.label:key==='family'?'04 / INNLANDET':'05 / ØSTERDALEN'),node('b',local?localized(local.title):et(config.title)),node('small',local?localized(local.summary):key==='family'?'Oslo · Kistefos · Hunderfossen':'Oslo · Storelgen · Røros'));button.onclick=()=>openItinerary(key,button);const host=document.querySelector('.roadtrip-presets');key==='hadeland'?host?.prepend(button):host?.append(button);customButtons.push([button,config,key]);}
   window.FjordTripTools?.practical(dialog.querySelector('.itinerary-map-panel'));
-  window.addEventListener('fjord:language',()=>{customButtons.forEach(([b,c,key])=>b.querySelector('b').textContent=window.FjordTripTools?.localRoutes?.[key]?localized(window.FjordTripTools.localRoutes[key].title):et(c.title));if(dialog.open&&activeKey)openItinerary(activeKey,activeButton);});
+  window.addEventListener('fjord:language',()=>{customButtons.forEach(([b,c,key])=>{const local=window.FjordTripTools?.localRoutes?.[key];b.querySelector('b').textContent=local?localized(local.title):et(c.title);if(local)b.querySelector('small').textContent=localized(local.summary);});if(dialog.open&&activeKey)openItinerary(activeKey,activeButton);});
 })();

@@ -16,7 +16,7 @@
     return result;
   };
   function localImage(path) {
-    return typeof path === 'string' && /^(?:(?:\.\/|\/)?images\/[\w.-]+|(?:\.\/)?experience-(?:kistefos|storelgen)\.jpg)$/.test(path);
+    return typeof path === 'string' && /^(?:(?:\.\/|\/)?images\/(?:catalog\/)?[\w.-]+|(?:\.\/)?experience-(?:kistefos|storelgen)\.jpg)$/.test(path);
   }
   const credited = new Set();
   function credit(photo) {
@@ -154,6 +154,7 @@
       osterdalen: ['roros'],
       hadeland: []
     };
+    for(const key of Object.keys(window.FjordTripTools?.localRoutes||{}))points[key]||=[];
     for (const [route, ids] of Object.entries(points)) {
       const button = document.querySelector(`[data-roadtrip="${route}"]`);
       if (!button || button.querySelector('.route-scenery')) continue;
@@ -177,6 +178,7 @@
       }
       if (extraId && experiencePhotos[extraId]) photos.unshift(experiencePhotos[extraId]);
       if (route === 'hadeland') photos.unshift({image: './images/granavollen-sister-churches.webp', title: 'Granavollen · Søsterkirkene', author: 'Sven Rosborn', license: 'Public domain', licenseUrl: 'https://creativecommons.org/publicdomain/mark/1.0/', source: 'https://commons.wikimedia.org/wiki/File:Gran1.jpg'});
+      photos.push(...(window.FjordTripTools?.localRoutes?.[route]?.photos||[]).filter(photo=>localImage(photo.image)));
       if (!photos.length) continue;
       photos.forEach(credit);
       const viewport = document.createElement('div');

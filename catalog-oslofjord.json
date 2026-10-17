@@ -1,0 +1,94 @@
+[
+  {
+    "id": "oslo-opera-waterfront",
+    "name": "Operahuset · Bjørvika",
+    "category": "rest",
+    "town": "Oslo",
+    "region": "Oslofjord",
+    "address": "Kirsten Flagstads plass 1, 0150 Oslo",
+    "latitude": 59.90777660297918,
+    "longitude": 10.752057851974856,
+    "coordinatePrecision": "area",
+    "coordinateNote": "Kartverket street-address point for the Opera House, not a parking entrance. Drive to Operagata P-hus, then walk to the waterfront.",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Kirsten%20Flagstads%20plass%201%20Oslo&treffPerSide=3",
+    "website": "https://www.operaen.no/en/about-us-oslo-operahouse/about-the-oslo-opera-house/",
+    "source": "https://www.operaen.no/en/about-us-oslo-operahouse/about-the-oslo-opera-house/",
+    "sources": ["https://www.operaen.no/en/about-us-oslo-operahouse/about-the-oslo-opera-house/", "https://onepark.no/parkering/oslo/operagata-p-hus/"],
+    "checked": "2026-10-18",
+    "yearRound": true,
+    "routeQuery": "Operagata P-hus, Oslo, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Operagata%20P-hus%2C%20Oslo%2C%20Norway&travelmode=driving",
+    "description": {
+      "nb": "Hvit marmor som møter Oslofjorden: gå langs Bjørvika og opp på operataket for utsikt over vannet og byen. Parkér i Operagata P-hus og fortsett til fots.",
+      "en": "White marble meets the Oslofjord: explore the Bjørvika waterfront and the opera roof for views of the water and city. Park at Operagata P-hus and continue on foot.",
+      "uk": "Білий мармур біля Осло-фіорду: прогуляйтеся набережною Bjørvika й дахом опери з видом на воду та місто. Залиште авто в Operagata P-hus і далі йдіть пішки.",
+      "sv": "Vit marmor möter Oslofjorden: promenera längs Bjørvika och upp på operataket med utsikt över vattnet och staden. Parkera i Operagata P-hus och fortsätt till fots.",
+      "da": "Hvid marmor møder Oslofjorden: gå langs Bjørvika og op på operataget med udsigt over vandet og byen. Parkér i Operagata P-hus og fortsæt til fods."
+    },
+    "hoursNote": {
+      "nb": "Utendørsbesøk uten forestillingsbillett. Følg skilting og eventuelle sperringer på taket. Foajé, omvisninger og forestillinger har egne tider på Operaens nettside.",
+      "en": "No performance ticket is needed for an outdoor visit. Follow signs and any roof closures. Check the Opera website for foyer, guided-tour and performance times.",
+      "uk": "Для прогулянки зовні квиток на виставу не потрібен. Дотримуйтеся знаків і можливих обмежень доступу на дах. Години фоє, екскурсій та вистав перевіряйте на сайті опери.",
+      "sv": "Ingen föreställningsbiljett behövs utomhus. Följ skyltar och eventuella avspärrningar på taket. Foajé, visningar och föreställningar har egna tider på Operans webbplats.",
+      "da": "En udendørs tur kræver ikke billet til en forestilling. Følg skilte og eventuelle afspærringer på taget. Se Operaens hjemmeside for foyer, rundvisninger og forestillinger."
+    },
+    "image": "./images/catalog/oslo-opera.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Oslo_Opera_House_-_2025.jpg",
+    "photoAlt": "Oslo Opera House glowing beside the fjord at blue hour",
+    "gallery": [{
+      "src": "./images/catalog/oslo-opera.webp",
+      "kind": "place",
+      "credit": "Pierre Blaché · Wikimedia Commons · resized and converted to WebP",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Oslo_Opera_House_-_2025.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/3/39/Oslo_Opera_House_-_2025.jpg"
+    }]
+  },
+  {
+    "id": "huk-bygdoy-beach",
+    "name": "Huk · Bygdøy",
+    "category": "rest",
+    "town": "Oslo",
+    "region": "Oslofjord",
+    "address": "Huk, Bygdøy, Oslo",
+    "latitude": 59.89536,
+    "longitude": 10.67666,
+    "coordinatePrecision": "area",
+    "coordinateNote": "Kartverket SSR beach-area representative point, not a driving destination. Use the named parking destination and walk the final stretch.",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Huk&treffPerSide=5",
+    "website": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/badeplasser/huk/",
+    "source": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/badeplasser/huk/",
+    "sources": ["https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/badeplasser/huk/", "https://www.visitoslo.com/attraction/huk"],
+    "checked": "2026-10-18",
+    "yearRound": true,
+    "routeQuery": "Huk parkeringsplass, Oslo, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Huk%20parkeringsplass%2C%20Oslo%2C%20Norway&travelmode=driving",
+    "description": {
+      "nb": "Strand, svaberg og gress ved tuppen av Bygdøy, med utsikt over Oslofjorden. Kyststiene gir en fin tur også utenfor badesesongen. Begrenset parkering ved adkomsten; gå siste strekning.",
+      "en": "Beach, smooth rocks and lawns at the tip of Bygdøy, overlooking the Oslofjord. Coastal trails make this a worthwhile walk beyond summer too. Parking near the entrance is limited; walk the final stretch.",
+      "uk": "Пляж, прибережні скелі й галявини на краю Bygdøy з видом на Осло-фіорд. Узбережними стежками приємно гуляти й поза купальним сезоном. Паркомісць біля входу небагато; останню ділянку пройдіть пішки.",
+      "sv": "Strand, klippor och gräsmattor längst ut på Bygdøy med utsikt över Oslofjorden. Kuststigarna passar för promenader även utanför badsäsongen. Begränsad parkering vid entrén; gå sista biten.",
+      "da": "Strand, klipper og græs ved spidsen af Bygdøy med udsigt over Oslofjorden. Kyststierne er også en tur værd uden for badesæsonen. Begrænset parkering ved indgangen; gå det sidste stykke."
+    },
+    "hoursNote": {
+      "nb": "Friluftsområdet brukes hele året; kafé og øvrige tilbud har egne sesonger og tider. Sjekk kommunens badevannsinformasjon før bading, særlig etter kraftig regn.",
+      "en": "The outdoor area is used year-round; cafés and other services have separate seasons and hours. Check municipal bathing-water advice before swimming, especially after heavy rain.",
+      "uk": "Територія для прогулянок доступна протягом року; кафе та інші послуги мають окремі сезони й години. Перед купанням перевірте інформацію комуни про якість води, особливо після сильного дощу.",
+      "sv": "Friluftsområdet används året runt; kaféer och annan service har egna säsonger och tider. Kontrollera kommunens badvatteninformation före bad, särskilt efter kraftigt regn.",
+      "da": "Friluftsområdet bruges hele året; caféer og andre tilbud har egne sæsoner og tider. Tjek kommunens badevandsinformation før badning, især efter kraftig regn."
+    },
+    "image": "./images/catalog/oslo-huk.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Huk_-_Oslo,_Norway_2020-08-12.jpg",
+    "photoAlt": "Huk beach and lawns on Bygdøy overlooking the Oslofjord",
+    "gallery": [{
+      "src": "./images/catalog/oslo-huk.webp",
+      "kind": "place",
+      "credit": "Ryan Hodnett · Wikimedia Commons · resized and converted to WebP",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source": "https://commons.wikimedia.org/wiki/File:Huk_-_Oslo,_Norway_2020-08-12.jpg",
+      "original": "https://upload.wikimedia.org/wikipedia/commons/4/42/Huk_-_Oslo%2C_Norway_2020-08-12.jpg"
+    }]
+  }
+]
