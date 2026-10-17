@@ -36,7 +36,17 @@
     info.append(badge, node('span', 'cafe-gallery-today', `${w[3]}: ${times(state.today)}`));
     const route = node('a', 'cafe-gallery-route', w[5] + ' ↗');
     route.href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(venue.name + ', ' + venue.address);
-    route.target = '_blank'; route.rel = 'noopener noreferrer'; line.append(info, route);
+    route.target = '_blank'; route.rel = 'noopener noreferrer';
+    const actions = node('div', 'cafe-gallery-actions'); actions.append(route);
+    try {
+      const url = new URL(venue.website);
+      if (url.protocol === 'https:' && !url.username && !url.password) {
+        const labels = {nb: 'Kafeens nettsted', en: 'Café website', uk: 'Сайт закладу', sv: 'Kaféets webbplats', da: 'Caféens hjemmeside'};
+        const website = node('a', 'cafe-gallery-website', (labels[lang] || labels.nb) + ' ↗');
+        website.href = url.href; website.target = '_blank'; website.rel = 'noopener noreferrer'; actions.append(website);
+      }
+    } catch {}
+    line.append(info, actions);
     const details = node('details', 'cafe-gallery-hours'), summary = node('summary', '', w[4]); details.append(summary);
     const table = node('dl');
     hours.weekly.forEach((periods, day) => {
