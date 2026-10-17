@@ -29,6 +29,15 @@ const voiceCopy={
 const lang=()=>window.FjordI18n?.language||document.documentElement.lang||'en';
 const words=()=>translations[lang()]||translations.en;
 const voiceWords=()=>voiceCopy[lang()]||voiceCopy.en;
+const holdCopy={
+ ru:['Удерживайте, чтобы говорить','Слушаю — говорите','Удерживайте кнопку и говорите. Отпустите — вопрос отправится.','Завершаю распознавание…','Отпустите кнопку, чтобы отправить вопрос.'],
+ en:['Hold to talk','Listening — speak now','Hold the button and speak. Release to send your question.','Finishing dictation…','Release the button to send your question.'],
+ nb:['Hold inne for å snakke','Lytter — snakk nå','Hold knappen inne og snakk. Slipp for å sende spørsmålet.','Avslutter dikteringen…','Slipp knappen for å sende spørsmålet.'],
+ uk:['Утримуйте, щоб говорити','Слухаю — говоріть','Утримуйте кнопку й говоріть. Відпустіть — запитання надішлеться.','Завершую розпізнавання…','Відпустіть кнопку, щоб надіслати запитання.'],
+ sv:['Håll in för att prata','Lyssnar — prata nu','Håll knappen intryckt och prata. Släpp för att skicka frågan.','Avslutar dikteringen…','Släpp knappen för att skicka frågan.'],
+ da:['Hold inde for at tale','Lytter — tal nu','Hold knappen inde og tal. Slip for at sende spørgsmålet.','Afslutter dikteringen…','Slip knappen for at sende spørgsmålet.']
+};
+const holdWords=()=>holdCopy[lang()]||holdCopy.en;
 const recordingCopy={
  ru:['Режим микрофона','Диктовка браузера · бесплатно','Короткая запись · ИИ','Звук отправляется OpenAI и расходует баланс владельца. До 30 секунд; нажмите микрофон ещё раз для распознавания.','Распознать запись','Распознаю запись…','Проверьте текст и нажмите «Отправить».','Достигнут предел 30 секунд. Запись отменена. Попробуйте более короткий вопрос.'],
  en:['Microphone mode','Browser dictation · free','Short recording · AI','Audio is sent to OpenAI using the owner’s balance. Up to 30 seconds; press the microphone again to transcribe.','Transcribe recording','Transcribing recording…','Review the text, then press Send.','The 30-second limit was reached. Recording cancelled. Try a shorter question.'],
@@ -61,7 +70,7 @@ function endpointURL(value){if(typeof value!=='string'||value.length>500)return 
 async function request(url,options={},timeout=35000){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeout);try{const response=await fetch(url,{...options,signal:controller.signal,credentials:'omit',cache:'no-store'});if(!response.ok)throw new Error('Service unavailable');return await response.json()}finally{clearTimeout(timer)}}
 async function init(){let config;try{config=await request('./chat-config.json',{},8000)}catch{return}if(config?.enabled!==true)return;const endpoint=endpointURL(config.endpoint);if(!endpoint)return;try{if((await request(endpoint+'/health',{},8000))?.ready!==true)return}catch{return}
 const dialog=document.getElementById('fjordHelper'),launch=document.querySelector('.fjord-helper-launch');if(!dialog||!launch)return;
-let visitorToken='',browserRecognition=null;
+let visitorToken='',browserRecognition=null,dictationSession=null,micPointerId=null,micKey=null;
 const make=(tag,cls)=>{const n=document.createElement(tag);if(cls)n.className=cls;return n};
 const pet=make('span','fjord-ai-pet'),petFace=make('span','fjord-ai-pet-face'),petEyes=make('span','fjord-ai-pet-eyes'),petMouth=make('span','fjord-ai-pet-mouth'),petName=make('span','fjord-ai-pet-name');pet.setAttribute('aria-hidden','true');petFace.append(petEyes,petMouth);pet.append(petFace);launch.replaceChildren(pet,petName);launch.setAttribute('aria-label','Афоня — открыть помощника');let mirrorPet=null;const setPet=state=>{pet.setAttribute('data-state',state);mirrorPet?.setAttribute('data-state',state)};setPet('idle');
 dialog.classList.add('fjord-ai');
@@ -74,7 +83,7 @@ const status=make('p','fjord-ai-status');status.setAttribute('role','status');
 const handoff=make('form','fjord-ai-handoff');handoff.hidden=true;const emailLabel=make('label'),email=make('input');email.id='fjordAIEmail';email.type='email';email.autocomplete='off';email.maxLength=254;email.required=false;email.hidden=true;emailLabel.hidden=true;emailLabel.htmlFor=email.id;
 const consentLabel=make('label','fjord-ai-consent'),consent=make('input'),consentText=make('span');consent.type='checkbox';consent.required=true;consentLabel.append(consent,consentText);const deliver=make('button','fjord-ai-primary');deliver.type='submit';handoff.append(emailLabel,email,consentLabel,deliver);
 const fallback=make('a','fjord-ai-email');fallback.href='mailto:'+owner;const privacy=make('p','fjord-ai-note');
-const actions=make('div','fjord-ai-compose-actions'),mic=make('button','fjord-ai-voice'),speaker=make('button','fjord-ai-voice');mic.type=speaker.type='button';mic.textContent='🎙';speaker.textContent='🔊';speaker.setAttribute('aria-pressed','false');const micLanguage=make('select','fjord-ai-mic-language');micLanguage.setAttribute('aria-label','Microphone language');for(const [code,name] of [['ru-RU','Русский'],['nb-NO','Norsk'],['uk-UA','Українська'],['en-US','English'],['sv-SE','Svenska'],['da-DK','Dansk']]){const option=make('option');option.value=code;option.textContent=name;micLanguage.append(option)}micLanguage.value=voiceLang();const micMode=make('select','fjord-ai-mic-mode');for(const mode of ['browser','recording']){const option=make('option');option.value=mode;micMode.append(option)}micMode.value='browser';const recordingNote=make('p','fjord-ai-recording-note');recordingNote.hidden=true;actions.append(send,mic,speaker,micLanguage,micMode);form.append(label,input,actions,recordingNote);
+const actions=make('div','fjord-ai-compose-actions'),mic=make('button','fjord-ai-voice'),speaker=make('button','fjord-ai-voice');mic.type=speaker.type='button';mic.textContent='🎙';speaker.textContent='🔊';speaker.setAttribute('aria-pressed','false');const micLanguage=make('select','fjord-ai-mic-language');micLanguage.setAttribute('aria-label','Microphone language');for(const [code,name] of [['ru-RU','Русский'],['nb-NO','Norsk'],['uk-UA','Українська'],['en-US','English'],['sv-SE','Svenska'],['da-DK','Dansk']]){const option=make('option');option.value=code;option.textContent=name;micLanguage.append(option)}micLanguage.value=voiceLang();const holdNote=make('p','fjord-ai-hold-note');holdNote.id='fjordAIMicHint';mic.setAttribute('aria-describedby',holdNote.id);actions.append(send,mic,speaker,micLanguage);form.append(label,input,actions,holdNote);
 const links=make('nav','fjord-ai-links'),mailLink=make('a'),facebookLink=make('a');mailLink.href='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(owner);mailLink.target='_blank';mailLink.rel='noopener noreferrer';mailLink.textContent='Email';facebookLink.href='https://www.facebook.com/profile.php?id=100032941041934';facebookLink.target='_blank';facebookLink.rel='noopener noreferrer';facebookLink.textContent='Facebook';links.setAttribute('aria-label','Fjord Flow contacts');links.append(mailLink,facebookLink);
 dialog.replaceChildren(close,portrait,intro,log,form,human,status,handoff,links,fallback,privacy);
 let messages=[],busy=false,token=null,returnFocus=null,activeController=null,speakReplies=false,welcomeBubble=null,awaitingOwnerMessage=false;
@@ -84,7 +93,7 @@ speaker.hidden=true;
 function say(){setPet('idle')}
 function speakNotice(){}
 function speakKnownAnswer(){setPet('listening')}
-function refresh(){const w=words(),v=voiceWords(),r=recordingWords();micMode.setAttribute('aria-label',r[0]);micMode.children[0].textContent=r[1];micMode.children[1].textContent=r[2];recordingNote.hidden=micMode.value!=='recording';recordingNote.textContent=r[3];micMode.disabled=voiceMode||busy;micLanguage.disabled=voiceMode||busy;petName.textContent='Афоня';close.setAttribute('aria-label',w[14]);title.textContent='Афоня';intro.textContent=profileCopy[lang()]||profileCopy.en;label.textContent=w[2];send.textContent=w[3];human.textContent=w[4];emailLabel.textContent=w[7];consentText.textContent=w[8];deliver.textContent=w[9];fallback.textContent=w[11]+' ↗';privacy.textContent=w[18]+' '+(lang()==='ru'?'Голосовой ввод обрабатывает служба браузера. Счётчики вопросов и расхода хранятся до 30 дней; подтверждённый email связывается с ними после входа.':'Dictation uses your browser’s speech service. Question and usage counters are kept for 30 days and linked to your verified email after sign-in.');log.setAttribute('aria-label','Афоня');mic.textContent=voiceMode?'■ '+(micMode.value==='recording'?r[4]:v.stop):'🎙 '+v.mic;mic.setAttribute('aria-label',voiceMode?(micMode.value==='recording'?r[4]:v.stop):v.mic);mic.setAttribute('aria-pressed',String(voiceMode));mic.title=voiceMode?(micMode.value==='recording'?r[4]:v.stop):v.mic;speaker.setAttribute('aria-label',v.speak);speaker.title=v.speak;if(welcomeBubble&&!messages.length)welcomeBubble.textContent=w[16];}
+function refresh(){const w=words(),v=voiceWords(),h=holdWords();micLanguage.disabled=Boolean(dictationSession)||voiceMode||busy;holdNote.textContent=h[2];petName.textContent='Афоня';close.setAttribute('aria-label',w[14]);title.textContent='Афоня';intro.textContent=profileCopy[lang()]||profileCopy.en;label.textContent=w[2];send.textContent=w[3];human.textContent=w[4];emailLabel.textContent=w[7];consentText.textContent=w[8];deliver.textContent=w[9];fallback.textContent=w[11]+' ↗';privacy.textContent=w[18]+' '+(lang()==='ru'?'Голосовой ввод обрабатывает служба браузера. Счётчики вопросов и расхода хранятся до 30 дней; подтверждённый email связывается с ними после входа.':'Dictation uses your browser’s speech service. Question and usage counters are kept for 30 days and linked to your verified email after sign-in.');log.setAttribute('aria-label','Афоня');mic.textContent='🎙 '+h[voiceMode?1:0];mic.setAttribute('aria-label',h[0]);mic.setAttribute('aria-pressed',String(voiceMode));mic.title=h[2];speaker.setAttribute('aria-label',v.speak);speaker.title=v.speak;if(welcomeBubble&&!messages.length)welcomeBubble.textContent=w[16];}
 function bubble(role,text){const n=make('p','fjord-ai-message fjord-ai-'+role);n.textContent=text;log.append(n);log.scrollTop=log.scrollHeight;return n}
 function speakClosedAnswer(answer){if(!answer||!('speechSynthesis' in window)||!('SpeechSynthesisUtterance' in window))return;try{const utterance=new SpeechSynthesisUtterance(answer.slice(0,1200));utterance.lang=questionLanguage(answer)==='ru'?'ru-RU':questionLanguage(answer)==='uk'?'uk-UA':questionLanguage(answer)==='no'?'nb-NO':'en-US';speechSynthesis.cancel();speechSynthesis.speak(utterance)}catch{}}
 const wantsOwner=value=>/(?:связ(?:аться|и)|напиши|передай|позови|соедини|контакт).{0,60}(?:владельц|хозя|димк|автор|человек|администрат|админ)|(?:owner|human|person|contact|message|email|e-mail|write to).{0,60}(?:owner|human|person|site|you|admin)|(?:kontakt|snakk|skriv|melding|e-post).{0,60}(?:eier|deg|menneske|administrator)|(?:зв.?яж|напиш|передай).{0,60}(?:власник|людин|димк|адміністратор)/iu.test(value);
@@ -161,14 +170,14 @@ async function startLive(){
     await peer.setRemoteDescription({type:'answer',sdp:answer});
   }catch(error){stopLive(serviceError(error,lang()))}
 }
-function endVoice(){recordingGeneration++;if(browserRecognition){const current=browserRecognition;browserRecognition=null;current.abort()}if(livePeer||liveConnecting){stopLive();return}voiceMode=false;refresh();setPet('idle');if(recorder)finishRecording(false);else releaseMicrophone();window.speechSynthesis?.cancel()}
+function endVoice(){recordingGeneration++;cancelBrowserDictation();if(livePeer||liveConnecting){stopLive();return}voiceMode=false;refresh();setPet('idle');if(recorder)finishRecording(false);else releaseMicrophone();window.speechSynthesis?.cancel()}
 async function startListening(){if(!voiceMode||!dialog.open||recorder||busy)return;const generation=recordingGeneration;if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder){endVoice();status.textContent=voiceWords().unavailable;return}try{const obtained=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true},video:false});if(!voiceMode||!dialog.open||generation!==recordingGeneration){obtained.getTracks().forEach(track=>track.stop());return}stream=obtained;const format=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(type=>MediaRecorder.isTypeSupported(type));recorder=new MediaRecorder(stream,format?{mimeType:format,audioBitsPerSecond:48000}:{audioBitsPerSecond:48000});voiceParts=[];const parts=voiceParts;recorder.ondataavailable=event=>{if(event.data?.size)parts.push(event.data)};recorder.onerror=()=>{endVoice();status.textContent=voiceWords().unavailable};recorder.start(250);setPet('listening');status.textContent=recordingWords()[3];recordTimer=setTimeout(()=>{if(recorder){endVoice();status.textContent=recordingWords()[7]}},30000)}catch{if(generation!==recordingGeneration)return;endVoice();status.textContent=voiceWords().unavailable}}
 async function ask(content,requestHuman=false,detectedLanguage='auto'){if(busy||!content.trim())return;const clean=content.trim().slice(0,1500);const answerLanguage=['ru','no','uk','en','sv','da'].includes(detectedLanguage)?detectedLanguage:questionLanguage(clean);const previous=messages.slice(-7);while(previous[0]?.role==='assistant')previous.shift();while(previous.length&&previous.reduce((n,m)=>n+m.content.length,clean.length)>6000){previous.shift();while(previous[0]?.role==='assistant')previous.shift()}const payload=[...previous,{role:'user',content:clean}];const pending=bubble('user',clean);setBusy(true);setPet('thinking');status.textContent=words()[5];token=null;handoff.hidden=true;
  try{const data=await post('/chat',{messages:payload,language:answerLanguage,...(requestHuman?{request_human:true}:{})});if(typeof data.answer!=='string'||!data.answer.trim()||data.answer.length>2000)throw new Error('Invalid answer');messages=[...payload,{role:'assistant',content:data.answer}];bubble('assistant',data.answer);if(speakAfterClose){speakAfterClose=false;speakClosedAnswer(data.answer)}setPet('idle');if(!requestHuman){const navWords=navigationCopy[answerLanguage]||navigationCopy.en;for(const section of navigationFor(data,clean)){const guide=make('button','fjord-ai-guide');guide.type='button';guide.textContent=navWords[0]+navWords[navigationSections.indexOf(section)+1]+' ↗';guide.setAttribute('aria-controls',section);guide.onclick=()=>{const target=document.getElementById(section);if(!target)return;returnFocus=target;dialog.close();target.tabIndex=-1;target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});target.focus({preventScroll:true})};log.append(guide)}}log.scrollTop=log.scrollHeight;if(!requestHuman)input.value='';status.textContent='';if(data.needs_human===true&&typeof data.escalation_token==='string'&&data.escalation_token.length<=50000){token=data.escalation_token;pendingQuestion=clean;handoffWasVoice=false;handoff.hidden=false;consent.checked=false}fallbackMail();}
  catch(error){pending.remove();setPet('idle');if(voiceMode)endVoice();status.textContent=serviceError(error,questionLanguage(clean));fallbackMail()}
  finally{setBusy(false)}
 }
-form.addEventListener('submit',e=>{e.preventDefault();if(form.reportValidity()){if(voiceMode)endVoice();ask(input.value)}});
+form.addEventListener('submit',e=>{e.preventDefault();if(form.reportValidity()){if(dictationSession||voiceMode)endVoice();ask(input.value)}});
 
 const dictationMessages={
   ru:['Разрешите микрофон для этого сайта в настройках браузера и попробуйте снова.','Браузер не разрешил службу распознавания речи. Попробуйте открыть сайт в Chrome или Edge.','Не удалось получить звук. Проверьте выбранный микрофон и настройки звука.','Служба распознавания речи браузера не отвечает по сети. Попробуйте снова или откройте сайт в Chrome/Edge.','Речь не распознана. Проверьте язык рядом с микрофоном и попробуйте снова.','Этот язык недоступен для голосового ввода в вашем браузере. Выберите другой язык.','Голосовой ввод завершён. Проверьте текст и нажмите «Отправить».','В этом браузере нет голосового ввода. Откройте сайт в Chrome/Edge или используйте диктовку клавиатуры.','Не удалось запустить голосовой ввод. Попробуйте снова или напишите вопрос.'],
@@ -179,19 +188,67 @@ const dictationMessages={
   da:['Tillad mikrofonen for hjemmesiden i browserindstillingerne og prøv igen.','Browseren tillader ikke talegenkendelse. Prøv hjemmesiden i Chrome eller Edge.','Kunne ikke optage lyd. Kontrollér den valgte mikrofon og lydindstillingerne.','Browserens taletjeneste kunne ikke oprette forbindelse. Prøv igen eller åbn hjemmesiden i Chrome/Edge.','Ingen tale blev genkendt. Kontrollér sproget ved mikrofonen og prøv igen.','Browseren understøtter ikke diktering på dette sprog. Vælg et andet sprog.','Dikteringen er afsluttet. Kontrollér teksten og tryk Send.','Denne browser har ikke diktering. Åbn hjemmesiden i Chrome/Edge eller brug tastaturets diktering.','Kunne ikke starte diktering. Prøv igen eller skriv dit spørgsmål.']
 };
 function dictationMessage(code){const index={'not-allowed':0,'service-not-allowed':1,'audio-capture':2,network:3,'no-speech':4,'language-not-supported':5,ended:6,unsupported:7}[code]??8;return(dictationMessages[lang()]||dictationMessages.en)[index]}
-function startBrowserDictation(){
-  const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!Recognition){status.setAttribute('data-speech-error','unsupported');status.textContent=dictationMessage('unsupported');return}
-  const recognition=new Recognition();const recognitionLanguage=micLanguage.value;let heard='';browserRecognition=recognition;recognition.lang=recognitionLanguage;recognition.continuous=false;recognition.interimResults=true;voiceMode=true;refresh();setPet('listening');status.setAttribute('data-speech-error','');status.textContent=voiceWords().listen;
-  recognition.onresult=event=>{if(browserRecognition!==recognition)return;heard='';let final=false;for(let i=0;i<event.results.length;i++){heard+=event.results[i][0].transcript;final=final||event.results[i].isFinal}input.value=heard;fallbackMail();if(final&&heard.trim()){browserRecognition=null;voiceMode=false;recognition.stop();refresh();void ask(heard,false,recognitionLanguage.startsWith('nb-')?'no':recognitionLanguage.split('-')[0])}};
-  recognition.onerror=event=>{if(browserRecognition!==recognition)return;browserRecognition=null;voiceMode=false;refresh();setPet('idle');const code=event?.error||'unknown';status.setAttribute('data-speech-error',code);status.textContent=code==='aborted'?'':dictationMessage(code)};
-  recognition.onend=()=>{if(browserRecognition!==recognition)return;browserRecognition=null;voiceMode=false;refresh();if(!busy){setPet('idle');status.textContent=dictationMessage(heard.trim()?'ended':'no-speech')}};
-  try{recognition.start()}catch(error){recognition.onerror({error:error?.name==='NotAllowedError'?'not-allowed':'unknown'})}
+function releaseHoldControls(){
+  const pointer=micPointerId;micPointerId=null;micKey=null;
+  if(pointer!==null)try{if(mic.hasPointerCapture?.(pointer))mic.releasePointerCapture(pointer)}catch{}
 }
-micMode.addEventListener('change',()=>{endVoice();status.textContent='';refresh()});
-mic.addEventListener('click',()=>{hoverOpen=false;if(voiceMode){if(micMode.value==='recording'&&recorder)finishRecording(true);else{endVoice();status.textContent=''}return}if(micMode.value==='recording'){recordingGeneration++;voiceMode=true;refresh();void startListening()}else if(config.paidVoice===true)void startLive();else startBrowserDictation()});
+function clearDictation(session){
+  if(dictationSession!==session)return;
+  if(session.timer)clearTimeout(session.timer);
+  dictationSession=null;browserRecognition=null;voiceMode=false;releaseHoldControls();refresh();
+}
+function cancelBrowserDictation(){
+  const session=dictationSession;releaseHoldControls();if(!session)return;
+  clearDictation(session);try{session.recognition.abort()}catch{}setPet('idle');
+}
+function finishDictation(session){
+  if(dictationSession!==session||!session.released)return;
+  const heard=session.heard.trim();clearDictation(session);setPet('idle');
+  if(!dialog.open)return;
+  if(!heard){status.textContent=dictationMessage('no-speech');return}
+  input.value=heard;fallbackMail();
+  void ask(heard,false,session.language.startsWith('nb-')?'no':session.language.split('-')[0]);
+}
+function releaseDictation(submit){
+  const session=dictationSession;releaseHoldControls();if(!session||session.released)return;
+  session.released=true;voiceMode=false;if(session.timer)clearTimeout(session.timer);refresh();
+  if(!submit){cancelBrowserDictation();status.textContent=session.heard.trim()?dictationMessage('ended'):'';return}
+  if(session.ended){finishDictation(session);return}
+  setPet('thinking');status.textContent=holdWords()[3];
+  // stop() releases capture and lets the browser deliver its final result before onend.
+  // If its service stalls, keep the editable draft and cancel instead of hanging.
+  session.timer=setTimeout(()=>{if(dictationSession!==session)return;cancelBrowserDictation();status.textContent=dictationMessage(session.heard.trim()?'ended':'no-speech')},4000);
+  try{session.recognition.stop()}catch{cancelBrowserDictation();status.textContent=dictationMessage(session.heard.trim()?'ended':'unknown')}
+}
+function startBrowserDictation(){
+  if(busy||dictationSession||!dialog.open||mic.disabled)return false;
+  const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!Recognition){releaseHoldControls();status.setAttribute('data-speech-error','unsupported');status.textContent=dictationMessage('unsupported');return false}
+  let recognition;try{recognition=new Recognition()}catch{releaseHoldControls();status.textContent=dictationMessage('unknown');return false}
+  const session={recognition,language:micLanguage.value,heard:'',released:false,ended:false,timer:null};dictationSession=session;browserRecognition=recognition;recognition.lang=session.language;recognition.continuous=true;recognition.interimResults=true;voiceMode=true;refresh();setPet('listening');status.setAttribute('data-speech-error','');status.textContent=holdWords()[1];
+  recognition.onresult=event=>{if(dictationSession!==session)return;session.heard=Array.from(event.results,result=>result[0].transcript).join('');input.value=session.heard;fallbackMail()};
+  recognition.onerror=event=>{if(dictationSession!==session)return;const code=event?.error||'unknown';cancelBrowserDictation();status.setAttribute('data-speech-error',code);status.textContent=code==='aborted'?'':dictationMessage(code)};
+  recognition.onend=()=>{if(dictationSession!==session)return;session.ended=true;voiceMode=false;refresh();setPet('idle');if(session.released)finishDictation(session);else status.textContent=holdWords()[4]};
+  session.timer=setTimeout(()=>{if(dictationSession!==session)return;cancelBrowserDictation();status.textContent=dictationMessage(session.heard.trim()?'ended':'no-speech')},60000);
+  try{recognition.start();return dictationSession===session}catch(error){recognition.onerror({error:error?.name==='NotAllowedError'?'not-allowed':'unknown'});return false}
+}
+mic.addEventListener('pointerdown',event=>{if(event.button!==0||event.isPrimary===false||micPointerId!==null||micKey!==null||dictationSession||busy)return;event.preventDefault();pinAssistant();mic.focus({preventScroll:true});micPointerId=event.pointerId;if(startBrowserDictation())try{mic.setPointerCapture(event.pointerId)}catch{}else releaseHoldControls()});
+function releasePointer(event,submit){if(micPointerId===null||event.pointerId!==micPointerId)return;event.preventDefault();releaseDictation(submit)}
+mic.addEventListener('pointerup',event=>releasePointer(event,true));
+mic.addEventListener('pointercancel',event=>releasePointer(event,false));
+mic.addEventListener('lostpointercapture',event=>releasePointer(event,false));
+window.addEventListener('pointerup',event=>releasePointer(event,true));
+window.addEventListener('pointercancel',event=>releasePointer(event,false));
+const holdKey=event=>event.key===' '||event.key==='Spacebar'?'Space':event.key==='Enter'?'Enter':null;
+mic.addEventListener('keydown',event=>{const key=holdKey(event);if(!key)return;event.preventDefault();if(event.repeat||micKey!==null||micPointerId!==null||dictationSession||busy)return;pinAssistant();micKey=key;if(!startBrowserDictation())releaseHoldControls()});
+mic.addEventListener('keyup',event=>{const key=holdKey(event);if(!key||key!==micKey)return;event.preventDefault();releaseDictation(true)});
+mic.addEventListener('blur',()=>releaseDictation(false));
+mic.addEventListener('click',event=>event.preventDefault());
+mic.addEventListener('contextmenu',event=>event.preventDefault());
+window.addEventListener('blur',()=>releaseDictation(false));
+document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseDictation(false)});
 input.addEventListener('input',fallbackMail);fallback.addEventListener('click',fallbackMail);
-human.addEventListener('click',()=>ask(input.value.trim()||words()[12],true));
+human.addEventListener('click',()=>{if(dictationSession||voiceMode)endVoice();ask(input.value.trim()||words()[12],true)});
 handoff.addEventListener('submit',async e=>{e.preventDefault();if(busy||!token)return;if(!handoff.reportValidity()||!consent.checked){status.textContent=words()[13];return}setBusy(true);status.textContent=words()[15];try{const result=await post('/contact',{token,escalation_token:token,consent:true});if(result.recorded!==true||!/^[a-f0-9]{64}$/.test(String(result.ticket_id||'')))throw new Error('Not recorded');const ticketId=result.ticket_id,question=pendingQuestion;pendingTicket=ticketId;const receipt=(bridgeCopy[lang()]||bridgeCopy.en)[0];status.textContent=words()[10]+ticketId+' '+receipt;token=null;handoff.hidden=true;void pollOwnerReply(ticketId);if(ownerAwayTimer)clearTimeout(ownerAwayTimer);ownerAwayTimer=setTimeout(()=>void offerAssistantAnswer(ticketId,question),5000)}catch{status.textContent=words()[19]}finally{setBusy(false)}});
 async function openAssistant(){speakAfterClose=false;window.speechSynthesis?.cancel();if(dialog.open)return;returnFocus=document.activeElement;refresh();dialog.show();if(pendingTicket&&!replyPollTimer)void pollOwnerReply(pendingTicket);if(typeof config.firebaseApiKey==='string'&&config.firebaseApiKey){try{const auth=await import('./afonya-auth.js?v=3');const verified=await auth.ensureVerified(dialog,config.firebaseApiKey,lang());if(!verified||!dialog.open)return;visitorToken=verified.idToken;email.value=verified.email;email.readOnly=true}catch{status.textContent='Registration is temporarily unavailable.';return}}setPet('idle')}
 function closeAfterHover(){if(!hoverOpen||overLaunch||overDialog||!dialog.open||dialog.classList.contains?.('fjord-ai-auth-pending'))return;hoverOpen=false;speakAfterClose=responseActive||busy;if(speakAfterClose)liveStream?.getAudioTracks().forEach(track=>{track.enabled=false});dialog.close()}
@@ -205,7 +262,7 @@ function pinAssistant(){hoverOpen=false;if(hoverCloseTimer){clearTimeout(hoverCl
 dialog.addEventListener('pointerdown',pinAssistant);
 dialog.addEventListener('focusin',pinAssistant);
 close.onclick=()=>{hoverOpen=false;dialog.close()};
-dialog.addEventListener('close',()=>{if(browserRecognition){const current=browserRecognition;browserRecognition=null;voiceMode=false;current.abort()}if(!speakAfterClose)activeController?.abort();if(replyPollTimer){clearTimeout(replyPollTimer);replyPollTimer=null}if(ownerAwayTimer){clearTimeout(ownerAwayTimer);ownerAwayTimer=null}if(!speakAfterClose)endVoice();returnFocus?.isConnected&&returnFocus.focus({preventScroll:true})});
+dialog.addEventListener('close',()=>{cancelBrowserDictation();if(!speakAfterClose)activeController?.abort();if(replyPollTimer){clearTimeout(replyPollTimer);replyPollTimer=null}if(ownerAwayTimer){clearTimeout(ownerAwayTimer);ownerAwayTimer=null}if(!speakAfterClose)endVoice();returnFocus?.isConnected&&returnFocus.focus({preventScroll:true})});
 window.addEventListener('fjordlanguagechange',refresh);refresh();welcomeBubble=bubble('assistant',words()[16]);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{void init()},{once:true});else void init();
