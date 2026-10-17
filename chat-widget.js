@@ -30,14 +30,15 @@ const lang=()=>window.FjordI18n?.language||document.documentElement.lang||'en';
 const words=()=>translations[lang()]||translations.en;
 const voiceWords=()=>voiceCopy[lang()]||voiceCopy.en;
 const holdCopy={
- ru:['Удерживайте, чтобы говорить','Слушаю — говорите','Удерживайте кнопку и говорите. Отпустите — вопрос отправится.','Завершаю распознавание…','Отпустите кнопку, чтобы отправить вопрос.'],
- en:['Hold to talk','Listening — speak now','Hold the button and speak. Release to send your question.','Finishing dictation…','Release the button to send your question.'],
- nb:['Hold inne for å snakke','Lytter — snakk nå','Hold knappen inne og snakk. Slipp for å sende spørsmålet.','Avslutter dikteringen…','Slipp knappen for å sende spørsmålet.'],
- uk:['Утримуйте, щоб говорити','Слухаю — говоріть','Утримуйте кнопку й говоріть. Відпустіть — запитання надішлеться.','Завершую розпізнавання…','Відпустіть кнопку, щоб надіслати запитання.'],
- sv:['Håll in för att prata','Lyssnar — prata nu','Håll knappen intryckt och prata. Släpp för att skicka frågan.','Avslutar dikteringen…','Släpp knappen för att skicka frågan.'],
- da:['Hold inde for at tale','Lytter — tal nu','Hold knappen inde og tal. Slip for at sende spørgsmålet.','Afslutter dikteringen…','Slip knappen for at sende spørgsmålet.']
+ ru:['Удерживайте, чтобы говорить','Слушаю — говорите','Зажмите кнопку, дождитесь «Слушаю» и говорите. Отпустите — вопрос отправится.','Завершаю распознавание…','Отпустите кнопку, чтобы отправить вопрос.'],
+ en:['Hold to talk','Listening — speak now','Hold the button, wait for “Listening”, then speak. Release to send your question.','Finishing dictation…','Release the button to send your question.'],
+ nb:['Hold inne for å snakke','Lytter — snakk nå','Hold knappen inne, vent på «Lytter», og snakk. Slipp for å sende spørsmålet.','Avslutter dikteringen…','Slipp knappen for å sende spørsmålet.'],
+ uk:['Утримуйте, щоб говорити','Слухаю — говоріть','Затисніть кнопку, дочекайтеся «Слухаю» і говоріть. Відпустіть — запитання надішлеться.','Завершую розпізнавання…','Відпустіть кнопку, щоб надіслати запитання.'],
+ sv:['Håll in för att prata','Lyssnar — prata nu','Håll knappen intryckt, vänta på «Lyssnar» och prata. Släpp för att skicka frågan.','Avslutar dikteringen…','Släpp knappen för att skicka frågan.'],
+ da:['Hold inde for at tale','Lytter — tal nu','Hold knappen inde, vent på «Lytter», og tal. Slip for at sende spørgsmålet.','Afslutter dikteringen…','Slip knappen for at sende spørgsmålet.']
 };
-const holdWords=()=>holdCopy[lang()]||holdCopy.en;
+const holdWords=(language=lang())=>holdCopy[language]||holdCopy.en;
+const holdStartCopy={ru:['Подключаю микрофон…','Дождитесь надписи «Слушаю» и говорите, удерживая кнопку.'],en:['Starting microphone…','Wait for “Listening”, then speak while holding the button.'],nb:['Starter mikrofonen…','Vent på «Lytter», og snakk mens du holder knappen inne.'],uk:['Підключаю мікрофон…','Дочекайтеся напису «Слухаю» і говоріть, утримуючи кнопку.'],sv:['Startar mikrofonen…','Vänta på «Lyssnar» och prata medan du håller knappen intryckt.'],da:['Starter mikrofonen…','Vent på «Lytter», og tal, mens du holder knappen inde.']};
 const recordingCopy={
  ru:['Режим микрофона','Диктовка браузера · бесплатно','Короткая запись · ИИ','Звук отправляется OpenAI и расходует баланс владельца. До 30 секунд; нажмите микрофон ещё раз для распознавания.','Распознать запись','Распознаю запись…','Проверьте текст и нажмите «Отправить».','Достигнут предел 30 секунд. Запись отменена. Попробуйте более короткий вопрос.'],
  en:['Microphone mode','Browser dictation · free','Short recording · AI','Audio is sent to OpenAI using the owner’s balance. Up to 30 seconds; press the microphone again to transcribe.','Transcribe recording','Transcribing recording…','Review the text, then press Send.','The 30-second limit was reached. Recording cancelled. Try a shorter question.'],
@@ -70,7 +71,7 @@ function endpointURL(value){if(typeof value!=='string'||value.length>500)return 
 async function request(url,options={},timeout=35000){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeout);try{const response=await fetch(url,{...options,signal:controller.signal,credentials:'omit',cache:'no-store'});if(!response.ok)throw new Error('Service unavailable');return await response.json()}finally{clearTimeout(timer)}}
 async function init(){let config;try{config=await request('./chat-config.json',{},8000)}catch{return}if(config?.enabled!==true)return;const endpoint=endpointURL(config.endpoint);if(!endpoint)return;try{if((await request(endpoint+'/health',{},8000))?.ready!==true)return}catch{return}
 const dialog=document.getElementById('fjordHelper'),launch=document.querySelector('.fjord-helper-launch');if(!dialog||!launch)return;
-let visitorToken='',browserRecognition=null,dictationSession=null,micPointerId=null,micKey=null;
+let visitorToken='',browserRecognition=null,dictationSession=null,micPointerId=null,micKey=null,micLanguageExplicit=false;
 const make=(tag,cls)=>{const n=document.createElement(tag);if(cls)n.className=cls;return n};
 const pet=make('span','fjord-ai-pet'),petFace=make('span','fjord-ai-pet-face'),petEyes=make('span','fjord-ai-pet-eyes'),petMouth=make('span','fjord-ai-pet-mouth'),petName=make('span','fjord-ai-pet-name');pet.setAttribute('aria-hidden','true');petFace.append(petEyes,petMouth);pet.append(petFace);launch.replaceChildren(pet,petName);launch.setAttribute('aria-label','Афоня — открыть помощника');let mirrorPet=null;const setPet=state=>{pet.setAttribute('data-state',state);mirrorPet?.setAttribute('data-state',state)};setPet('idle');
 dialog.classList.add('fjord-ai');
@@ -93,7 +94,7 @@ speaker.hidden=true;
 function say(){setPet('idle')}
 function speakNotice(){}
 function speakKnownAnswer(){setPet('listening')}
-function refresh(){const w=words(),v=voiceWords(),h=holdWords();micLanguage.disabled=Boolean(dictationSession)||voiceMode||busy;holdNote.textContent=h[2];petName.textContent='Афоня';close.setAttribute('aria-label',w[14]);title.textContent='Афоня';intro.textContent=profileCopy[lang()]||profileCopy.en;label.textContent=w[2];send.textContent=w[3];human.textContent=w[4];emailLabel.textContent=w[7];consentText.textContent=w[8];deliver.textContent=w[9];fallback.textContent=w[11]+' ↗';privacy.textContent=w[18]+' '+(lang()==='ru'?'Голосовой ввод обрабатывает служба браузера. Счётчики вопросов и расхода хранятся до 30 дней; подтверждённый email связывается с ними после входа.':'Dictation uses your browser’s speech service. Question and usage counters are kept for 30 days and linked to your verified email after sign-in.');log.setAttribute('aria-label','Афоня');mic.textContent='🎙 '+h[voiceMode?1:0];mic.setAttribute('aria-label',h[0]);mic.setAttribute('aria-pressed',String(voiceMode));mic.title=h[2];speaker.setAttribute('aria-label',v.speak);speaker.title=v.speak;if(welcomeBubble&&!messages.length)welcomeBubble.textContent=w[16];}
+function refresh(){const w=words(),v=voiceWords(),h=microphoneWords();micLanguage.disabled=Boolean(dictationSession)||voiceMode||busy;holdNote.textContent=h[2];petName.textContent='Афоня';close.setAttribute('aria-label',w[14]);title.textContent='Афоня';intro.textContent=profileCopy[lang()]||profileCopy.en;label.textContent=w[2];send.textContent=w[3];human.textContent=w[4];emailLabel.textContent=w[7];consentText.textContent=w[8];deliver.textContent=w[9];fallback.textContent=w[11]+' ↗';privacy.textContent=w[18]+' '+(lang()==='ru'?'Голосовой ввод обрабатывает служба браузера. Счётчики вопросов и расхода хранятся до 30 дней; подтверждённый email связывается с ними после входа.':'Dictation uses your browser’s speech service. Question and usage counters are kept for 30 days and linked to your verified email after sign-in.');log.setAttribute('aria-label','Афоня');mic.textContent='🎙 '+(dictationSession&&!dictationSession.started&&!dictationSession.ended&&!dictationSession.released?microphoneStartWords()[0]:h[voiceMode?1:0]);mic.setAttribute('aria-label',h[0]);mic.setAttribute('aria-pressed',String(voiceMode));mic.title=h[2];speaker.setAttribute('aria-label',v.speak);speaker.title=v.speak;if(welcomeBubble&&!messages.length)welcomeBubble.textContent=w[16];}
 function bubble(role,text){const n=make('p','fjord-ai-message fjord-ai-'+role);n.textContent=text;log.append(n);log.scrollTop=log.scrollHeight;return n}
 function speakClosedAnswer(answer){if(!answer||!('speechSynthesis' in window)||!('SpeechSynthesisUtterance' in window))return;try{const utterance=new SpeechSynthesisUtterance(answer.slice(0,1200));utterance.lang=questionLanguage(answer)==='ru'?'ru-RU':questionLanguage(answer)==='uk'?'uk-UA':questionLanguage(answer)==='no'?'nb-NO':'en-US';speechSynthesis.cancel();speechSynthesis.speak(utterance)}catch{}}
 const wantsOwner=value=>/(?:связ(?:аться|и)|напиши|передай|позови|соедини|контакт).{0,60}(?:владельц|хозя|димк|автор|человек|администрат|админ)|(?:owner|human|person|contact|message|email|e-mail|write to).{0,60}(?:owner|human|person|site|you|admin)|(?:kontakt|snakk|skriv|melding|e-post).{0,60}(?:eier|deg|menneske|administrator)|(?:зв.?яж|напиш|передай).{0,60}(?:власник|людин|димк|адміністратор)/iu.test(value);
@@ -187,7 +188,10 @@ const dictationMessages={
   sv:['Tillåt mikrofonen för webbplatsen i webbläsarens inställningar och försök igen.','Webbläsaren tillåter inte taligenkänning. Prova webbplatsen i Chrome eller Edge.','Kunde inte fånga ljud. Kontrollera vald mikrofon och ljudinställningar.','Webbläsarens taltjänst kunde inte ansluta. Försök igen eller öppna webbplatsen i Chrome/Edge.','Inget tal kändes igen. Kontrollera språket vid mikrofonen och försök igen.','Webbläsaren stöder inte diktering på detta språk. Välj ett annat språk.','Dikteringen avslutades. Kontrollera texten och tryck Skicka.','Denna webbläsare saknar diktering. Öppna webbplatsen i Chrome/Edge eller använd tangentbordets diktering.','Kunde inte starta diktering. Försök igen eller skriv din fråga.'],
   da:['Tillad mikrofonen for hjemmesiden i browserindstillingerne og prøv igen.','Browseren tillader ikke talegenkendelse. Prøv hjemmesiden i Chrome eller Edge.','Kunne ikke optage lyd. Kontrollér den valgte mikrofon og lydindstillingerne.','Browserens taletjeneste kunne ikke oprette forbindelse. Prøv igen eller åbn hjemmesiden i Chrome/Edge.','Ingen tale blev genkendt. Kontrollér sproget ved mikrofonen og prøv igen.','Browseren understøtter ikke diktering på dette sprog. Vælg et andet sprog.','Dikteringen er afsluttet. Kontrollér teksten og tryk Send.','Denne browser har ikke diktering. Åbn hjemmesiden i Chrome/Edge eller brug tastaturets diktering.','Kunne ikke starte diktering. Prøv igen eller skriv dit spørgsmål.']
 };
-function dictationMessage(code){const index={'not-allowed':0,'service-not-allowed':1,'audio-capture':2,network:3,'no-speech':4,'language-not-supported':5,ended:6,unsupported:7}[code]??8;return(dictationMessages[lang()]||dictationMessages.en)[index]}
+function selectedVoiceLanguage(){return micLanguage.value.split('-')[0]||lang()}
+function microphoneWords(){return holdWords(selectedVoiceLanguage())}
+function microphoneStartWords(){return holdStartCopy[selectedVoiceLanguage()]||holdStartCopy.en}
+function dictationMessage(code){const index={'not-allowed':0,'service-not-allowed':1,'audio-capture':2,network:3,'no-speech':4,'language-not-supported':5,ended:6,unsupported:7}[code]??8;return(dictationMessages[selectedVoiceLanguage()]||dictationMessages.en)[index]}
 function releaseHoldControls(){
   const pointer=micPointerId;micPointerId=null;micKey=null;
   if(pointer!==null)try{if(mic.hasPointerCapture?.(pointer))mic.releasePointerCapture(pointer)}catch{}
@@ -214,7 +218,8 @@ function releaseDictation(submit){
   session.released=true;voiceMode=false;if(session.timer)clearTimeout(session.timer);refresh();
   if(!submit){cancelBrowserDictation();status.textContent=session.heard.trim()?dictationMessage('ended'):'';return}
   if(session.ended){finishDictation(session);return}
-  setPet('thinking');status.textContent=holdWords()[3];
+  if(!session.started){const recognition=session.recognition;if(session.heard.trim()){finishDictation(session);try{recognition.abort()}catch{}}else{cancelBrowserDictation();status.textContent=microphoneStartWords()[1]}return}
+  setPet('thinking');status.textContent=microphoneWords()[3];
   // stop() releases capture and lets the browser deliver its final result before onend.
   // If its service stalls, keep the editable draft and cancel instead of hanging.
   session.timer=setTimeout(()=>{if(dictationSession!==session)return;cancelBrowserDictation();status.textContent=dictationMessage(session.heard.trim()?'ended':'no-speech')},4000);
@@ -224,13 +229,20 @@ function startBrowserDictation(){
   if(busy||dictationSession||!dialog.open||mic.disabled)return false;
   const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!Recognition){releaseHoldControls();status.setAttribute('data-speech-error','unsupported');status.textContent=dictationMessage('unsupported');return false}
-  let recognition;try{recognition=new Recognition()}catch{releaseHoldControls();status.textContent=dictationMessage('unknown');return false}
-  const session={recognition,language:micLanguage.value,heard:'',released:false,ended:false,timer:null};dictationSession=session;browserRecognition=recognition;recognition.lang=session.language;recognition.continuous=true;recognition.interimResults=true;voiceMode=true;refresh();setPet('listening');status.setAttribute('data-speech-error','');status.textContent=holdWords()[1];
-  recognition.onresult=event=>{if(dictationSession!==session)return;session.heard=Array.from(event.results,result=>result[0].transcript).join('');input.value=session.heard;fallbackMail()};
-  recognition.onerror=event=>{if(dictationSession!==session)return;const code=event?.error||'unknown';cancelBrowserDictation();status.setAttribute('data-speech-error',code);status.textContent=code==='aborted'?'':dictationMessage(code)};
-  recognition.onend=()=>{if(dictationSession!==session)return;session.ended=true;voiceMode=false;refresh();setPet('idle');if(session.released)finishDictation(session);else status.textContent=holdWords()[4]};
+  window.speechSynthesis?.cancel();
+  const session={recognition:null,language:micLanguage.value,heard:'',committed:'',released:false,ended:false,started:false,restarts:0,timer:null};dictationSession=session;
+  const beginRecognition=()=>{
+    let recognition;try{recognition=new Recognition()}catch{cancelBrowserDictation();status.textContent=dictationMessage('unknown');return false}
+    session.recognition=recognition;browserRecognition=recognition;session.started=false;session.ended=false;recognition.lang=session.language;recognition.continuous=true;recognition.interimResults=true;voiceMode=false;refresh();setPet('thinking');status.setAttribute('data-speech-error','');status.textContent=microphoneStartWords()[0];
+    const active=()=>dictationSession===session&&session.recognition===recognition;
+    recognition.onstart=()=>{if(!active()||session.released)return;session.started=true;voiceMode=true;refresh();setPet('listening');status.textContent=microphoneWords()[1]};
+    recognition.onresult=event=>{if(!active())return;const current=Array.from(event.results,result=>result[0].transcript.trim()).filter(Boolean).join(' ');session.heard=[session.committed,current].filter(Boolean).join(' ');input.value=session.heard;fallbackMail()};
+    recognition.onerror=event=>{if(!active())return;const code=event?.error||'unknown';if(code==='no-speech')return;cancelBrowserDictation();status.setAttribute('data-speech-error',code);status.textContent=code==='aborted'?'':dictationMessage(code)};
+    recognition.onend=()=>{if(!active())return;session.ended=true;session.started=false;voiceMode=false;session.committed=session.heard.trim();if(session.released){finishDictation(session);return}if(session.restarts<3){session.restarts++;beginRecognition();return}refresh();setPet('idle');status.textContent=session.heard.trim()?microphoneWords()[4]:dictationMessage('no-speech')};
+    try{recognition.start();return dictationSession===session}catch(error){recognition.onerror({error:error?.name==='NotAllowedError'?'not-allowed':'unknown'});return false}
+  };
   session.timer=setTimeout(()=>{if(dictationSession!==session)return;cancelBrowserDictation();status.textContent=dictationMessage(session.heard.trim()?'ended':'no-speech')},60000);
-  try{recognition.start();return dictationSession===session}catch(error){recognition.onerror({error:error?.name==='NotAllowedError'?'not-allowed':'unknown'});return false}
+  return beginRecognition();
 }
 mic.addEventListener('pointerdown',event=>{if(event.button!==0||event.isPrimary===false||micPointerId!==null||micKey!==null||dictationSession||busy)return;event.preventDefault();pinAssistant();mic.focus({preventScroll:true});micPointerId=event.pointerId;if(startBrowserDictation())try{mic.setPointerCapture(event.pointerId)}catch{}else releaseHoldControls()});
 function releasePointer(event,submit){if(micPointerId===null||event.pointerId!==micPointerId)return;event.preventDefault();releaseDictation(submit)}
@@ -263,7 +275,8 @@ dialog.addEventListener('pointerdown',pinAssistant);
 dialog.addEventListener('focusin',pinAssistant);
 close.onclick=()=>{hoverOpen=false;dialog.close()};
 dialog.addEventListener('close',()=>{cancelBrowserDictation();if(!speakAfterClose)activeController?.abort();if(replyPollTimer){clearTimeout(replyPollTimer);replyPollTimer=null}if(ownerAwayTimer){clearTimeout(ownerAwayTimer);ownerAwayTimer=null}if(!speakAfterClose)endVoice();returnFocus?.isConnected&&returnFocus.focus({preventScroll:true})});
-window.addEventListener('fjordlanguagechange',refresh);refresh();welcomeBubble=bubble('assistant',words()[16]);
+micLanguage.addEventListener('change',()=>{micLanguageExplicit=true;refresh()});
+window.addEventListener('fjordlanguagechange',()=>{if(!micLanguageExplicit&&!dictationSession)micLanguage.value=voiceLang();refresh()});refresh();welcomeBubble=bubble('assistant',words()[16]);
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{void init()},{once:true});else void init();
 })();

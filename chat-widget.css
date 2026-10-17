@@ -17,3 +17,7 @@ dialog.fjord-helper.fjord-ai:not(:modal){position:fixed;inset:auto 16px 82px aut
 .fjord-ai-mic-language{max-width:125px;border:1px solid #6c919b;border-radius:12px;padding:7px;background:#103947;color:#fff}
 
 .fjord-ai-hold-note{margin:8px 0 0;font-size:12px;line-height:1.5;color:#d4e6ed}
+.fjord-ai-compose-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;margin-top:9px}
+.fjord-ai-compose-actions .fjord-ai-voice:nth-child(2){grid-column:1/-1;grid-row:1;width:100%;min-height:48px;margin-top:0;box-sizing:border-box}
+.fjord-ai-compose-actions .fjord-ai-primary{margin-top:0;justify-self:start}
+.fjord-ai-compose-actions .fjord-ai-mic-language{justify-self:end;max-width:145px}
