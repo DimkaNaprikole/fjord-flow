@@ -3,13 +3,14 @@
 const normalize=s=>String(s||'').normalize('NFKD').replace(/\p{M}/gu,'').toLowerCase().replace(/ø/g,'o').replace(/æ/g,'ae').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const aliases={осло:'Oslo',берген:'Bergen',бергена:'Bergen',бергену:'Bergen',гран:'Gran',грана:'Gran',ставангер:'Stavanger',ставангера:'Stavanger',тронхейм:'Trondheim',тромсе:'Tromsø',тромсё:'Tromsø',флом:'Flåm',флома:'Flåm',лофотены:'Lofoten',лофотен:'Lofoten',гейрангер:'Geirangerfjord',гейрангерфьорд:'Geirangerfjord',тролльтунга:'Trolltunga',троллтунга:'Trolltunga',прекестулен:'Preikestolen',сеня:'Senja',рейне:'Reine',олесунн:'Ålesund',олесунд:'Ålesund',тролльстиген:'Trollstigen',троллстиген:'Trollstigen',лотефоссен:'Låtefossen',верингсфоссен:'Vøringsfossen',ворингсфоссен:'Vøringsfossen'};
 const canonical=s=>{const name=String(s).replace(/^(?:город(?:а|у|е)?|водопад(?:а|у)?|city of|the city of)\s+/iu,'');return aliases[normalize(name)]||name};
-function clean(s){return String(s||'').replace(/[?!\.]+$/u,'').replace(/\s+(?:пожалуйста|будь ласка|please|на машине|на автомобиле|на автобусе|на поезде|пешком|by car|by bus|by train|on foot|with public transport|med bil|med buss|til fots).*$/iu,'').trim()}
+function clean(s){return String(s||'').replace(/[?!\.]+$/u,'').replace(/\s+(?:пожалуйста|будь ласка|please|на машине|на автомобиле|на автобусе|на поезде|поездом|автобусом|машиной|пешком|by car|by bus|by train|on foot|with public transport|med bil|med buss|til fots).*$/iu,'').trim()}
 function parse(question){
  const q=String(question||'').trim();if(q.length>500||/[<>\n\r]|https?:|javascript:/iu.test(q))return null;
  if(!/(?:маршрут|доехать|добраться|дістатися|доїхати|directions|route|get to|rute|veien|rutt|vägen|vej)/iu.test(q))return null;
  let origin='',destination='';
+ const reverse=q.match(/(?:доехать|добраться|доїхати|дістатися|маршрут|дорогу)\s+(?:до|в|к|у)\s+(.+?)\s+(?:из|от|з|від)\s+(.+)/iu);if(reverse){destination=clean(reverse[1]);origin=clean(reverse[2])}
  const pairs=[/\bfrom\s+(.+?)\s+to\s+(.+)/iu,/(?:^|\s)(?:из|от|з|від)\s+(.+?)\s+(?:до|в|к|у)\s+(.+)/iu,/(?:^|\s)(?:fra|från)\s+(.+?)\s+(?:til|till)\s+(.+)/iu];
- for(const p of pairs){const m=q.match(p);if(m){origin=clean(m[1]);destination=clean(m[2]);break}}
+ for(const p of origin?[]:pairs){const m=q.match(p);if(m){origin=clean(m[1]);destination=clean(m[2]);break}}
  if(!destination){const patterns=[/(?:доехать|добраться|доїхати|дістатися)\s+(?:до|в|к|у)\s+(.+)/iu,/(?:маршрут|дорогу)\s+(?:(?:до|в|к|у)\s+)?(.+)/iu,/(?:directions|route|way|get)\s+to\s+(.+)/iu,/(?:rute|veien|rutt|vägen|vej)\s+(?:til|till)\s+(.+)/iu];for(const p of patterns){const m=q.match(p);if(m){destination=clean(m[1]);break}}}
  if(!destination||destination.length>150||origin.length>150||/^(?:как|как-то|и |по |с |до |к |в |поездк|мне|нам|туда|там|here|there)/iu.test(destination))return null;
  if(/^(?:водопад(?:ам|ы|у|а)?|водоспад(?:ів|и)?|фьорды|фіорди|сауна|домики|waterfalls?|fjords?|sauna|the waterfalls)$/iu.test(destination))return null;

@@ -12,7 +12,7 @@ function render(){
   const floating=document.createElement('div');floating.className='collage-float';
   const figure=document.createElement('figure');figure.className='collage-face';
   const picture=document.createElement('div');picture.className='collage-picture';
-  const image=document.createElement('img');image.alt='';image.decoding='async';image.src=item.image;
+  const image=document.createElement('img');image.alt='';image.decoding='async';image.onerror=()=>{card.remove();if(!collage.children.length){collage.hidden=true;root.classList.remove('has-explorer-collage');last=''}};image.src=item.image;
   if(Number.isInteger(item.panel)){picture.classList.add('collage-illustration');image.style.left=(-100*item.panel)+'%'}
   picture.append(image);
   const caption=document.createElement('figcaption');caption.textContent=item.caption;
