@@ -27,20 +27,28 @@
   status.setAttribute('role','status'); canvas.id='norwayOverviewCanvas'; canvas.setAttribute('role','region');
   const providerControls=el('div','norway-overview__providers'), googleButton=el('button','','Google Maps · 3D'), flatButton=el('button','','2D'), fullButton=el('button','','⛶');
   const googleCanvas=el('div','norway-overview__canvas norway-overview__google'), details=el('div','norway-overview__details');
+  const standardCanvas=el('div','norway-overview__canvas norway-overview__standard'),standardButton=el('button','','Google Maps'),locationButton=el('button','','◎'),typeControls=el('div','norway-overview__providers');
+  standardCanvas.id='norwayStandardCanvas';standardCanvas.hidden=true;typeControls.hidden=true;
   googleCanvas.id='norwayGoogleCanvas';googleCanvas.hidden=true;details.hidden=true;
   const googleConfig=window.FjordGoogleMapConfig || {};providerControls.hidden=googleConfig.enabled!==true;
   for(const button of [googleButton,flatButton,fullButton])button.type='button';
-  providerControls.append(googleButton,flatButton,fullButton);
-  controls.append(filters,select,routeButton,allButton); section.append(eyebrow,title,intro,controls,providerControls,status,canvas,googleCanvas,details,note);
+  flatButton.textContent='OpenStreetMap';standardButton.type='button';locationButton.type='button';
+  providerControls.append(standardButton,googleButton,flatButton,locationButton,fullButton);
+  controls.append(filters,select,routeButton,allButton); section.append(eyebrow,title,intro,controls,providerControls,typeControls,status,canvas,standardCanvas,googleCanvas,details,note);
   const footer=document.querySelector('footer'); if(footer)footer.before(section); else document.querySelector('main')?.append(section);
   let rows=[], category='all', routeKey='', map=null, markers=null, lines=null, loaded=false, loading=false;
   let googleMap=null, googleActive=false, googleLoading=false, googleGeneration=0;
+  let standardMap=null,standardActive=false,standardLoading=false,mapType='hybrid',standardGeneration=0;
+  const ui={nb:['Kart','Satellitt','Terreng','Min posisjon','Vis meg på kartet','Kunne ikke finne posisjonen. Prøv Chrome eller velg en rute.','Klikk Google Maps for satellitt, veier, terreng og zoom.'],en:['Map','Satellite','Terrain','My location','Show me on the map','Location unavailable. Try Chrome or choose a route.','Select Google Maps for satellite, roads, terrain and zoom.'],uk:['Карта','Супутник','Рельєф','Де я','Показати мене на карті','Не вдалося визначити місце. Спробуйте Chrome або оберіть маршрут.','Оберіть Google Maps: супутник, дороги, рельєф і масштаб.'],sv:['Karta','Satellit','Terräng','Min position','Visa mig på kartan','Positionen kunde inte hittas. Prova Chrome eller välj en rutt.','Välj Google Maps för satellit, vägar, terräng och zoom.'],da:['Kort','Satellit','Terræn','Min position','Vis mig på kortet','Positionen kunne ikke findes. Prøv Chrome eller vælg en rute.','Vælg Google Maps for satellit, veje, terræn og zoom.']};
   const googleCopy={nb:['Fullskjerm','Google 3D kunne ikke åpnes. Vanlig kart er fortsatt tilgjengelig.','Satellitt og 3D. Velg en markør for foto og informasjon.'],en:['Full screen','Google 3D could not open. The standard map is still available.','Satellite and 3D. Select a marker for photographs and details.'],uk:['На весь екран','Не вдалося відкрити Google 3D. Звичайна карта залишається доступною.','Супутник і 3D. Оберіть позначку для фото й інформації.'],sv:['Helskärm','Google 3D kunde inte öppnas. Den vanliga kartan finns kvar.','Satellit och 3D. Välj en markör för bilder och information.'],da:['Fuld skærm','Google 3D kunne ikke åbnes. Det almindelige kort er stadig tilgængeligt.','Satellit og 3D. Vælg en markør for billeder og oplysninger.']};
   const routes=()=>window.FjordTripTools?.localRoutes || {};
   function labels() {
     const a=t(); eyebrow.textContent=a[0];title.textContent=a[1];intro.textContent=a[2];note.textContent=a[16];canvas.setAttribute('aria-label',a[19]);select.setAttribute('aria-label',a[18]);allButton.textContent=a[9];allButton.type='button';routeButton.type='button';routeButton.textContent=({nb:'Åpne ruten',en:'Open route',uk:'Відкрити маршрут',sv:'Öppna rutten',da:'Åbn ruten'})[lang()];routeButton.hidden=!routeKey;
     fullButton.textContent='⛶ '+googleCopy[lang()][0];googleCanvas.setAttribute('aria-label','Google Maps 3D');googleCanvas.setAttribute('role','region');
     googleButton.setAttribute('aria-pressed',String(googleActive));flatButton.setAttribute('aria-pressed',String(!googleActive));if(googleActive)note.textContent=googleCopy[lang()][2];
+    standardButton.setAttribute('aria-pressed',String(standardActive));flatButton.setAttribute('aria-pressed',String(!googleActive&&!standardActive));locationButton.textContent='◎ '+ui[lang()][3];locationButton.title=ui[lang()][4];
+    typeControls.hidden=!standardActive;typeControls.replaceChildren();['roadmap','hybrid','terrain'].forEach((type,i)=>{const b=el('button','',ui[lang()][i]);b.type='button';b.setAttribute('aria-pressed',String(mapType===type));b.addEventListener('click',()=>{mapType=type;standardMap?.setType(type);labels();});typeControls.append(b);});
+    if(standardActive)note.textContent=ui[lang()][6];
     filters.replaceChildren(); ['all',...categories].forEach((key,i)=>{const b=el('button','',a[i+3]);b.type='button';b.setAttribute('aria-pressed',String(category===key)); if(key!=='all')b.style.setProperty('--map-category',colors[key]); b.addEventListener('click',()=>{category=key;labels();if(loaded)draw(true);});filters.append(b);});
     select.replaceChildren(); const first=el('option','',a[8]);first.value='';select.append(first);
     Object.entries(routes()).filter(([,r])=>routePoints(r).length>1).forEach(([key,r])=>{const option=el('option','',localized(r.title)||r.label||key);option.value=key;select.append(option);});select.value=routeKey;
@@ -52,11 +60,14 @@
     const credit=p.gallery?.find(g=>g.src===p.image)||p.gallery?.[0];
     if(credit){const caption=el('small','norway-overview__credit',[credit.credit,credit.license].filter(Boolean).join(' · ')),source=safeURL(credit.source);if(source){const a=el('a','',caption.textContent+' ↗');a.href=source;a.target='_blank';a.rel='noopener noreferrer';caption.replaceChildren(a);}box.append(caption);}
     box.append(el('strong','',p.name),el('p','',[p.town,t()[4+categories.indexOf(p.category)]].filter(Boolean).join(' · ')));
-    const open=el('button','',t()[10]);open.type='button';open.addEventListener('click',()=>{map?.closePopup();details.hidden=true;window.dispatchEvent(new CustomEvent('fjord:catalogue-select',{detail:{id:p.id}}));});box.append(open);
+    if(p.coordinateLabel)box.append(el('p','norway-overview__access',p.coordinateLabel));
+    const open=el('button','',t()[10]);open.type='button';open.addEventListener('click',()=>{map?.closePopup();details.hidden=true;window.dispatchEvent(new CustomEvent(p.destinationId?'fjord:open-place':'fjord:catalogue-select',{detail:{id:p.destinationId||p.id}}));});box.append(open);
+    const drive=el('a','',({nb:'Kjør hit',en:'Directions',uk:'Прокласти маршрут',sv:'Vägbeskrivning',da:'Rutevejledning'})[lang()]+' ↗');drive.href='https://www.google.com/maps/dir/?api=1&travelmode=driving&destination='+encodeURIComponent(p.latitude+','+p.longitude);drive.target='_blank';drive.rel='noopener noreferrer';box.append(drive);
     const website=safeURL(p.website);if(website){const link=el('a','',t()[11]+' ↗');link.href=website;link.target='_blank';link.rel='noopener noreferrer';box.append(link);}
     return box;
   }
   function draw(fit) {
+    if(standardActive&&standardMap){const route=routes()[routeKey],count=standardMap.render(rows,route,category,fit);status.textContent=count+' '+t()[17]+(route?' · '+localized(route.title):'');return;}
     if(googleActive && googleMap){const route=routes()[routeKey],count=googleMap.render(rows,route,category);status.textContent=count+' '+t()[17]+(route?' · '+localized(route.title):'');return;}
     if(!map)return; markers.clearLayers();lines.clearLayers();
     const visible=filterPlaces(rows,category); visible.forEach(p=>{
@@ -70,12 +81,14 @@
     if(fit){const points=focus.length?focus:visible.map(p=>[p.latitude,p.longitude]);if(points.length)map.fitBounds(points,{padding:[30,30],maxZoom:12});else map.setView([65,14],4);}
   }
   function flatView(error=false){
+    standardGeneration++;standardActive=false;standardCanvas.hidden=true;typeControls.hidden=true;
     googleGeneration++;googleActive=false;googleCanvas.hidden=true;canvas.hidden=false;details.hidden=true;
     labels();map?.invalidateSize();if(loaded)draw(true);if(error)status.textContent=googleCopy[lang()][1];
   }
   googleButton.addEventListener('click',async()=>{
     if(googleConfig.enabled!==true||googleLoading)return;
     if(!loaded){await load();if(!loaded)return;}
+    standardGeneration++;standardActive=false;standardCanvas.hidden=true;
     const generation=++googleGeneration;googleLoading=true;googleButton.disabled=true;status.textContent=t()[12];
     try{
       googleCanvas.hidden=false;
@@ -85,7 +98,20 @@
     finally{googleLoading=false;googleButton.disabled=false;}
   });
   flatButton.addEventListener('click',()=>flatView());
-  fullButton.addEventListener('click',()=>{const target=googleActive?googleCanvas:canvas;const action=document.fullscreenElement?document.exitFullscreen?.():target.requestFullscreen?.();action?.catch?.(()=>{});});
+  standardButton.addEventListener('click',async()=>{
+    if(googleConfig.enabled!==true||standardLoading)return;
+    if(!loaded){await load();if(!loaded)return;}
+    const generation=++standardGeneration;googleGeneration++;googleActive=false;googleCanvas.hidden=true;standardCanvas.hidden=false;standardLoading=true;standardButton.disabled=true;status.textContent=t()[12];
+    try{if(!standardMap)standardMap=await window.FjordGoogleStandardMap.create(standardCanvas,{...googleConfig,userActivated:true,language:lang(),buildInfo:popup});if(generation!==standardGeneration)return;standardActive=true;canvas.hidden=true;details.hidden=true;standardMap.resize();labels();draw(true);}
+    catch{flatView(true);}finally{standardLoading=false;standardButton.disabled=false;}
+  });
+  locationButton.addEventListener('click',async()=>{
+    if(!standardActive){standardButton.click();}
+    locationButton.disabled=true;
+    try{if(!window.FjordBrowserGeolocation)throw Error('Location unavailable');const p=await window.FjordBrowserGeolocation.locate({userInitiated:true}).promise;if(!standardMap)throw Error('Map unavailable');standardMap.locate({latitude:p.coords.latitude,longitude:p.coords.longitude});}
+    catch{status.textContent=ui[lang()][5];}finally{locationButton.disabled=false;}
+  });
+  fullButton.addEventListener('click',()=>{const target=standardActive?standardCanvas:googleActive?googleCanvas:canvas;const action=document.fullscreenElement?document.exitFullscreen?.():target.requestFullscreen?.();action?.catch?.(()=>{});});
   async function load() {
     if(loading||loaded)return; loading=true;status.textContent=t()[12];
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),12000);
@@ -93,6 +119,7 @@
       if(!window.L)throw Error('Leaflet unavailable');
       const response=await fetch('./norway-catalog.json?v=8',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);
       const data=await response.json();if(!Array.isArray(data))throw Error('Invalid catalogue');rows=data;
+      try{const extra=await fetch('./map-attractions.json?v=1',{signal:controller.signal});if(extra.ok){const attractions=await extra.json();if(Array.isArray(attractions))rows=rows.concat(attractions.filter(validPoint));}}catch{/* Catalogue remains available if attraction data cannot load. */}
       if(!map){map=window.L.map(canvas,{scrollWheelZoom:true});window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);markers=window.L.layerGroup().addTo(map);lines=window.L.layerGroup().addTo(map);}
       loaded=true; labels();map.invalidateSize();draw(true);
     } catch {status.textContent=t()[13]+' ';const retry=el('button','',t()[14]);retry.type='button';retry.addEventListener('click',load);status.append(retry);}

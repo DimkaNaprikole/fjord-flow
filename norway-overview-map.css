@@ -19,3 +19,14 @@
 .norway-overview__details{max-width:360px;margin:16px 0 0;padding:16px;border:1px solid var(--ff-border,#4a6b76);border-radius:16px;background:var(--ff-panel,#123440)}
 .norway-overview__canvas:fullscreen{width:100vw;height:100dvh;border-radius:0}
 @media(max-width:600px){.norway-overview__google{height:440px}}
+.norway-overview__standard{height:580px;overflow:hidden}
+.norway-overview__standard .gm-style button{min-height:0;border-radius:0;border:0;padding:0;font-size:14px;box-shadow:none;color:#222}
+.norway-overview__standard .gm-style .gm-style-mtc button{background:#fff;color:#222}
+.norway-overview__standard .gm-style-iw{background:#123440;color:#edf6f8}
+.norway-overview__standard .gm-style-iw-tc::after{background:#123440}
+.norway-overview__standard .norway-overview__popup{max-height:350px;overflow:auto;padding:5px}
+.fjord-google-marker{display:flex;align-items:center;gap:4px;cursor:pointer;filter:drop-shadow(0 2px 3px #0007);transform:translateY(3px)}
+.fjord-google-marker img{display:block;width:36px;height:42px;flex-shrink:0}
+.fjord-google-marker span{background:#123440ed;color:#fff;border:1px solid #ffffff9c;border-radius:7px;font:600 12px/1.25 Arial,sans-serif;padding:5px 8px;max-width:160px;white-space:normal;text-align:left}
+.norway-overview__standard .gm-style .norway-overview__popup :is(button,a){background:#173f4c;color:#edf6f8;border:1px solid #5a7c87;border-radius:9px;padding:9px 12px;min-height:38px}
+@media(max-width:600px){.norway-overview__standard{height:520px}.fjord-google-marker span{max-width:110px;font-size:11px}}

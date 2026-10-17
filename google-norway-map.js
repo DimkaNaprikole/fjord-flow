@@ -30,7 +30,7 @@
     const initial=cameraForPoints([]);
     if(Number.isFinite(options.range)&&options.range>=2500&&options.range<=15000000)initial.range=options.range;
     if(validPoint(options.center))initial.center={lat:options.center.latitude,lng:options.center.longitude,altitude:0};
-    const map=new library.Map3DElement({...initial,mode:'HYBRID'});
+    const map=new library.Map3DElement({...initial,mode:'HYBRID',gestureHandling:'GREEDY'});
     if(map.style){map.style.width='100%';map.style.height='100%';map.style.display='block';}
     container.append(map);
     let markers=[],destroyed=false,lastRows=[],lastRoute=null,lastCategory='all';
@@ -48,6 +48,10 @@
         filterPlaces(lastRows,category).forEach(record=>{
           const name=String(record.name||record.town||record.id||'').slice(0,140);
           const marker=new library.Marker3DInteractiveElement({position:{lat:record.latitude,lng:record.longitude,altitude:0},altitudeMode:'CLAMP_TO_GROUND',title:name,collisionBehavior:'OPTIONAL_AND_HIDES_LOWER_PRIORITY',sizePreserved:true});
+          if(typeof window!=='undefined'&&window.FjordGoogleStandardMap?.iconSVG){
+            const template=document.createElement('template'),image=document.createElement('img');
+            image.src='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(window.FjordGoogleStandardMap.iconSVG(record.category));image.width=44;image.height=50;template.content.append(image);marker.append(template);
+          }
           const click=()=>{if(!destroyed)options.onPlaceClick?.(record);};
           marker.addEventListener('gmp-click',click);map.append(marker);markers.push({marker,click});
         });
@@ -90,5 +94,5 @@
       return createWithLibrary(container,options,library);
     } finally {clearTimeout(timer);}
   }
-  window.FjordGoogleNorwayMap={create};
+  window.FjordGoogleNorwayMap={create,loadAPI:async(options={})=>{if(options.enabled!==true||options.userActivated!==true)throw Error('GOOGLE_MAPS_NOT_ENABLED');scriptURL(options.apiKey,options.language);await load(options.apiKey,options.language||'nb');}};
 })();
