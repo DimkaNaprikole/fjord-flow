@@ -218,3 +218,26 @@ dialog.stay-gallery .stay-gallery-venue-actions a {
   :is(#cafeNearby, #accountDialog, #postDialog, #bookingDialog, #community) :is(input, select, textarea) { font-size: 16px; }
 }
 @media (prefers-reduced-motion:reduce) { :is(.cafe-result, .stay-card, .discovery-cafe-card) { transition: none; } }
+/* Phone controls: readable labels, deliberate wrapping and finger-sized targets. */
+@media (max-width:650px) {
+  :is(#cafeNearby, #itineraryDialog, #galleryDialog, dialog.stay-gallery)
+    :is(.cafe-route, .button, .text-link, .cafe-gallery-route, .cafe-gallery-website,
+        .stay-gallery-venue-actions a, .stay-gallery-zoom, .gallery-quick-actions button) {
+    min-height: 44px; font-size: 13px; line-height: 1.5;
+    white-space: normal; overflow-wrap: anywhere; min-width: 0;
+  }
+  dialog.stay-gallery .stay-gallery-venue-actions {
+    display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px;
+  }
+  dialog.stay-gallery .stay-gallery-venue-actions a { padding: 11px 12px; text-align: center; }
+  dialog.stay-gallery .stay-gallery-venue-actions a:last-child:nth-child(3) { grid-column: 1/-1; }
+  :is(#cafeNearbySearch, #cafeNearbyGPS, #itinerarySelectAll, #itinerarySelectNone,
+      #itineraryUpdate, #itineraryFit) { font-size: 13px; min-height: 44px; white-space: normal; }
+  #cafeNearby .cafe-result :is(.cafe-hours, .cafe-result-address, .cafe-result-distance) { font-size: 13px; }
+  #itineraryDialog :is(.itinerary-notice, .itinerary-choice small) { font-size: 12px; }
+  dialog.stay-gallery .stay-gallery-source { min-height: 44px; display: inline-flex; align-items: center; }
+  .gallery-quick-actions { min-width: 0; }
+}
+@media (max-width:400px) {
+  #cafeNearby .cafe-result-links .cafe-route { flex: 1 1 100%; justify-content: center; }
+}
