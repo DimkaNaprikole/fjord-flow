@@ -47,3 +47,15 @@ test('denied access does not retry or substitute a town',async()=>{
   const h=harness(); h.api.requestGPS(); h.calls[0].failure({code:1}); await flush();
   assert.equal(h.calls.length,1); assert.equal(h.api.snapshot().message,'7'); assert.equal(h.api.snapshot().origin,null);
 });
+test('route-stop catalogue selection cancels GPS and uses the chosen stop without claiming GPS',async()=>{
+  const h=harness(); h.api.requestGPS(); h.calls[0].failure({code:3});
+  h.events['fjord:catalogue-nearby']({detail:{lat:58.34,lng:8.59,name:'Grimstad',category:'cabin'}});
+  h.calls[1].success(actual); await flush();
+  const s=h.api.snapshot(); assert.equal(s.baseChoice,'stop'); assert.equal(s.radius,'20');
+  assert.equal(s.origin.name,'Grimstad'); assert.equal(s.origin.latitude,58.34); assert.deepEqual(h.cleared,[123]);
+});
+test('invalid catalogue-stop coordinates and categories cannot overwrite the origin',()=>{
+  const h=harness(); h.api.chooseCity('Gran');
+  for(const detail of [{lat:91,lng:8,name:'Bad',category:'cabin'},{lat:58,lng:8,name:'Bad',category:'unknown'}]) h.events['fjord:catalogue-nearby']({detail});
+  assert.equal(h.api.snapshot().origin.name,'Gran');
+});

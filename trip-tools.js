@@ -13,7 +13,7 @@
  function nearby(container,p){const c=point(p);if(!c)return;const name=typeof p.name==='object'?(p.name[language()]||p.name.en||p.name.nb):p.name;
   const panel=node('div');panel.className='trip-nearby';panel.dataset.i18nIgnore='';panel.append(node('small',t(0)+' · '+name));const actions=node('div');
   const cafe=node('button',t(1));cafe.type='button';cafe.onclick=()=>{window.dispatchEvent(new CustomEvent('fjord:nearby-cafes',{detail:{...c,id:p.id,name}}));container.closest('dialog')?.close();document.getElementById('cafeNearby')?.scrollIntoView({block:'start',behavior:'smooth'});document.getElementById('cafeNearbySearch')?.focus({preventScroll:true});};actions.append(cafe);
-  for(const [label,query]of[[2,'cabin accommodation'],[3,'sauna']]){const a=node('a',t(label)+' ↗');a.href=searchURL(query,p);a.target='_blank';a.rel='noopener noreferrer';actions.append(a);}panel.append(actions);container.append(panel);
+  for(const [label,category]of[[2,'cabin'],[3,'sauna']]){const b=node('button',t(label));b.type='button';b.onclick=()=>{window.dispatchEvent(new CustomEvent('fjord:catalogue-nearby',{detail:{...c,id:p.id,name,category}}));container.closest('dialog')?.close();};actions.append(b);}panel.append(actions);container.append(panel);
  }
  function practical(container){const d=node('details');d.className='trip-practical';d.dataset.i18nIgnore='';d.append(node('summary',t(4)),node('p',t(6)));const a=node('a',t(5)+' · Statens vegvesen ↗');a.href='https://www.vegvesen.no/trafikk';a.target='_blank';a.rel='noopener noreferrer';d.append(a);container.append(d);return d;}
  let places=[];window.addEventListener('fjord:state',e=>{places=e.detail?.destinations||[];refreshGallery();});

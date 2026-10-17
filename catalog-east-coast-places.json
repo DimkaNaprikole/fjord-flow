@@ -1,0 +1,194 @@
+[
+  {
+    "id": "lillesand-harbour",
+    "name": "Lillesand · havn & trehus",
+    "town": "Lillesand",
+    "category": "rest",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "address": "Lillesand sentrum, Agder, Norway",
+    "latitude": 58.24945,
+    "longitude": 8.37719,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Lillesand&treffPerSide=20",
+    "coordinateNote": "Kartverket SSR representative city point; orientation only, not a parking entrance.",
+    "website": "https://www.visitsorlandet.com/destinasjoner/lillesand/",
+    "source": "https://www.visitsorlandet.com/destinasjoner/lillesand/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Hvite trehus og båter ved havna. En rolig rusletur i Lillesands historiske sentrum.",
+      "en": "White wooden houses and harbour boats: a gentle stroll through historic Lillesand.",
+      "uk": "Білі дерев’яні будинки й човни в гавані. Неспішна прогулянка історичним Ліллесанном.",
+      "sv": "Vita trähus och båtar vid hamnen. En lugn promenad i historiska Lillesand.",
+      "da": "Hvide træhuse og både ved havnen. En rolig gåtur i historiske Lillesand."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Butikker og kafeer har egne tider, noen sesongåpent. Parker lovlig og fortsett til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Shops and cafés keep individual hours; some are seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Магазини й кав’ярні мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Butiker och kaféer har egna tider, vissa är säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Butikker og caféer har egne tider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Lillesand%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/eastcoast-lillesand.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Lillesand_havn.jpg",
+    "photoAlt": "Sailing boats and waterfront wooden houses in Lillesand harbour, April 2011",
+    "photoCaption": "Jan-Tore Egge · CC BY-SA 4.0 · 2011-04-20 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-lillesand.webp",
+        "kind": "view",
+        "credit": "Jan-Tore Egge",
+        "source": "https://commons.wikimedia.org/wiki/File:Lillesand_havn.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Lillesand_havn.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "grimstad-harbour",
+    "name": "Grimstad · havn & smågater",
+    "town": "Grimstad",
+    "category": "rest",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "address": "Grimstad sentrum, Agder, Norway",
+    "latitude": 58.34046,
+    "longitude": 8.59337,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Grimstad&treffPerSide=20",
+    "coordinateNote": "Kartverket SSR representative city point; orientation only, not a parking entrance.",
+    "website": "https://www.visitsorlandet.com/destinasjoner/grimstad/",
+    "source": "https://www.visitsorlandet.com/destinasjoner/grimstad/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Smågater, trehus og havn i dikterbyen. Ta en pause ved sjøen før neste kystetappe.",
+      "en": "Lanes, wooden houses and a harbour in the poets’ town. Pause by the sea before the next coastal leg.",
+      "uk": "Вулички, дерев’яні будинки й гавань міста поетів. Морська пауза перед наступним відрізком узбережжя.",
+      "sv": "Smågator, trähus och hamn i diktarnas stad. Ta en havspaus före nästa kustetapp.",
+      "da": "Små gader, træhuse og havn i digternes by. Hold en havpause før næste kystetape."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Butikker og kafeer har egne tider, noen sesongåpent. Parker lovlig og fortsett til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Shops and cafés keep individual hours; some are seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Магазини й кав’ярні мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Butiker och kaféer har egna tider, vissa är säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Butikker og caféer har egne tider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Grimstad%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/eastcoast-grimstad.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Grimstad1.jpeg",
+    "photoAlt": "Aerial view of Grimstad harbour and coastal islands, August 2015",
+    "photoCaption": "Havstad112 · CC BY-SA 4.0 · 2015-08-26 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-grimstad.webp",
+        "kind": "view",
+        "credit": "Havstad112",
+        "source": "https://commons.wikimedia.org/wiki/File:Grimstad1.jpeg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/d/de/Grimstad1.jpeg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "arendal-pollen-tyholmen",
+    "name": "Arendal · Pollen & Tyholmen",
+    "town": "Arendal",
+    "category": "rest",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "address": "Arendal sentrum, Agder, Norway",
+    "latitude": 58.46121,
+    "longitude": 8.76695,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Arendal&treffPerSide=20",
+    "coordinateNote": "Kartverket SSR representative city point; orientation only, not a parking entrance.",
+    "website": "https://www.visitsorlandet.com/destinasjoner/arendal/",
+    "source": "https://www.visitsorlandet.com/destinasjoner/arendal/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Havnebassenget Pollen og trehusene på Tyholmen. En bypause med sjøutsikt.",
+      "en": "Pollen harbour and Tyholmen’s wooden houses: a town break with waterfront views.",
+      "uk": "Гавань Pollen і дерев’яні будинки Tyholmen. Міська прогулянка з морськими краєвидами.",
+      "sv": "Hamnbassängen Pollen och Tyholmens trähus. En stadspaus med havsutsikt.",
+      "da": "Havnebassinet Pollen og Tyholmens træhuse. En bypause med havudsigt."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Butikker og kafeer har egne tider, noen sesongåpent. Parker lovlig og fortsett til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Shops and cafés keep individual hours; some are seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Магазини й кав’ярні мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Butiker och kaféer har egna tider, vissa är säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Butikker og caféer har egne tider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Arendal%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/eastcoast-arendal.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Pollen_panorama,_Arendal.jpg",
+    "photoAlt": "Panoramic view of Pollen waterfront and Trinity Church, Arendal, May 2025",
+    "photoCaption": "YosemiteYamper · CC BY-SA 4.0 · 2025-05-06 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-arendal.webp",
+        "kind": "view",
+        "credit": "YosemiteYamper",
+        "source": "https://commons.wikimedia.org/wiki/File:Pollen_panorama,_Arendal.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Pollen_panorama%2C_Arendal.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "risor-harbour-oldtown",
+    "name": "Risør · havn & hvite trehus",
+    "town": "Risør",
+    "category": "rest",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "address": "Risør sentrum, Agder, Norway",
+    "latitude": 58.72058,
+    "longitude": 9.23421,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Ris%C3%B8r&treffPerSide=20",
+    "coordinateNote": "Kartverket SSR representative city point; orientation only, not a parking entrance.",
+    "website": "https://www.visitsorlandet.com/destinasjoner/risor/",
+    "source": "https://www.visitsorlandet.com/destinasjoner/risor/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Hvite trehus, små smug og havna ved Skagerrak. En rolig avslutning på kystturen.",
+      "en": "White wooden houses, narrow lanes and a Skagerrak harbour: a gentle finish to the coastal journey.",
+      "uk": "Білі дерев’яні будинки, провулки й гавань Скагерраку. Спокійне завершення прибережної подорожі.",
+      "sv": "Vita trähus, smala gränder och hamn vid Skagerrak. Ett lugnt slut på kustresan.",
+      "da": "Hvide træhuse, smalle stræder og havn ved Skagerrak. En rolig afslutning på kystrejsen."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Butikker og kafeer har egne tider, noen sesongåpent. Parker lovlig og fortsett til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Shops and cafés keep individual hours; some are seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Магазини й кав’ярні мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Butiker och kaféer har egna tider, vissa är säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Butikker og caféer har egne tider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Ris%C3%B8r%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/eastcoast-risor.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ris%C3%B6r_Hafen_2.JPG",
+    "photoAlt": "Risør harbour, white waterfront houses and boats, July 2012",
+    "photoCaption": "Zairon · CC BY-SA 3.0 · 2012-07-11 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-risor.webp",
+        "kind": "view",
+        "credit": "Zairon",
+        "source": "https://commons.wikimedia.org/wiki/File:Ris%C3%B6r_Hafen_2.JPG",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Ris%C3%B6r_Hafen_2.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  }
+]

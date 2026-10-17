@@ -1,0 +1,297 @@
+[
+  {
+    "id": "strandhaven-lillesand",
+    "name": "Strandhaven · Lillesand",
+    "town": "Lillesand",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "category": "cafe",
+    "address": "Strandgata 10, 4790 Lillesand",
+    "website": "https://www.strand-haven.no/",
+    "source": "https://www.strand-haven.no/",
+    "checked": "2026-10-18",
+    "latitude": 58.24872908235062,
+    "longitude": 8.378005412060075,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Strandgata%2010%20Lillesand&treffPerSide=3",
+    "description": {
+      "nb": "Kaffepause og lunsj ved havna, med orangeri og sesongmeny.",
+      "en": "Coffee and lunch beside the harbour, with an orangery and seasonal menu.",
+      "uk": "Кава й обід біля гавані, оранжерея та сезонне меню.",
+      "sv": "Kaffe och lunch vid hamnen, med orangeri och säsongsmeny.",
+      "da": "Kaffe og frokost ved havnen, med orangeri og sæsonmenu."
+    },
+    "hoursNote": {
+      "nb": "Tirsdag–fredag fra 12, lørdag fra 13; siste bestilling 20, ikke bekreftet stengetid. Mandag og søndag stengt.",
+      "en": "Tue–Fri from 12, Sat from 13; last booking 20 is not the closing time. Closed Mon/Sun.",
+      "uk": "Вт–пт з 12, сб з 13; останнє бронювання о 20 не є часом закриття. Пн/нд зачинено.",
+      "sv": "Tis–fre från 12, lör från 13; sista bokning 20 är inte stängningstid. Stängt mån/sön.",
+      "da": "Tir–fre fra 12, lør fra 13; sidste booking 20 er ikke lukketid. Lukket man/søn."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://www.strand-haven.no/"
+    },
+    "image": "./images/catalog/eastcoast-cafe-strandhaven-room.webp",
+    "imageSource": "https://www.strand-haven.no/",
+    "photoAlt": "Strandhaven · Lillesand — actual venue photograph",
+    "photoCaption": "Strandhaven · Lillesand · official website photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-cafe-strandhaven-room.webp",
+        "kind": "cafeInside",
+        "credit": "Strandhaven · Lillesand · official website",
+        "source": "https://www.strand-haven.no/",
+        "original": "https://images.squarespace-cdn.com/content/v1/62a1e0240da7324e6c077628/b263b77f-395d-42d8-b450-9ee4f6e57126/Strandhaven-158.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-cafe-strandhaven.webp",
+        "kind": "food",
+        "credit": "Strandhaven · Lillesand · official website",
+        "source": "https://www.strand-haven.no/",
+        "original": "https://images.squarespace-cdn.com/content/v1/62a1e0240da7324e6c077628/d398502e-7f4c-4ef6-9f31-31ab7c23c8c8/Strandhaven-62.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-cafe-strandhaven-hall.webp",
+        "kind": "food",
+        "credit": "Strandhaven · Lillesand · official website",
+        "source": "https://www.strand-haven.no/",
+        "original": "https://images.squarespace-cdn.com/content/v1/62a1e0240da7324e6c077628/e058eb84-2978-492a-867e-d946f704e865/Strandhaven-50.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ]
+  },
+  {
+    "id": "herlighed-grimstad",
+    "name": "Herlighed · Grimstad",
+    "town": "Grimstad",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "category": "cafe",
+    "address": "Storgaten 9, 4876 Grimstad",
+    "website": "https://www.herlighed.no/",
+    "source": "https://www.herlighed.no/",
+    "checked": "2026-10-18",
+    "latitude": 58.34069660932937,
+    "longitude": 8.593075663056158,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Storgaten%209%20Grimstad&treffPerSide=3",
+    "description": {
+      "nb": "Hjemmelaget mat, kaffe og bakst i sentrum. Arresten parkeringshus ligger i nærheten.",
+      "en": "Homemade food, coffee and baked treats in town, near Arresten parking garage.",
+      "uk": "Домашні страви, кава й випічка в центрі, неподалік від парковки Arresten.",
+      "sv": "Hemlagad mat, kaffe och bakverk i centrum, nära parkeringshuset Arresten.",
+      "da": "Hjemmelavet mad, kaffe og bagværk i centrum, nær parkeringshuset Arresten."
+    },
+    "hoursNote": {
+      "nb": "Mandag–lørdag 08–18, søndag 11–18. Høytider kan avvike.",
+      "en": "Mon–Sat 08–18, Sun 11–18. Holiday hours may differ.",
+      "uk": "Пн–сб 08–18, нд 11–18. У свята можливі зміни.",
+      "sv": "Mån–lör 08–18, sön 11–18. Helgdagar kan avvika.",
+      "da": "Man–lør 08–18, søn 11–18. Helligdage kan afvige."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "checked": "2026-10-18",
+      "source": "https://www.herlighed.no/",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "18:00"
+          ]
+        ]
+      ]
+    },
+    "image": "./images/catalog/eastcoast-cafe-herlighed.webp",
+    "imageSource": "https://www.herlighed.no/",
+    "photoAlt": "Herlighed · Grimstad — actual venue photograph",
+    "photoCaption": "Herlighed · Grimstad · official website photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-cafe-herlighed.webp",
+        "kind": "facade",
+        "credit": "Herlighed · Grimstad · official website",
+        "source": "https://www.herlighed.no/",
+        "original": "https://www.herlighed.no/wp-content/uploads/2023/12/sommerbilde-utenfor-scaled.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ]
+  },
+  {
+    "id": "tyholmen-arendal",
+    "name": "Tyholmen Kolonial · Arendal",
+    "town": "Arendal",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "category": "cafe",
+    "address": "Teaterplassen 9A, 4836 Arendal",
+    "website": "https://tyholmenkolonial.no/",
+    "source": "https://tyholmenkolonial.no/",
+    "checked": "2026-10-18",
+    "latitude": 58.458361861705846,
+    "longitude": 8.767058180361452,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Teaterplassen%209A%20Arendal&treffPerSide=3",
+    "description": {
+      "nb": "Delikatessekafé ved Teaterplassen med smørbrød og salater, nær Tyholmens gamle gater.",
+      "en": "A delicatessen café by Teaterplassen with sandwiches and salads, near Tyholmen’s old streets.",
+      "uk": "Кав’ярня-делікатесна на Teaterplassen із сендвічами й салатами, біля старих вулиць Tyholmen.",
+      "sv": "Delikatesskafé vid Teaterplassen med smörgåsar och sallader, nära Tyholmens gamla gator.",
+      "da": "Delikatessecafé ved Teaterplassen med sandwiches og salater, nær Tyholmens gamle gader."
+    },
+    "hoursNote": {
+      "nb": "Mandag–fredag 10–16, lørdag 11–17. Søndag er ikke oppgitt. Gjelder kafeen, ikke Steenhuset restaurant.",
+      "en": "Mon–Fri 10–16, Sat 11–17; Sunday not published. These are café hours, not Steenhuset restaurant hours.",
+      "uk": "Пн–пт 10–16, сб 11–17; неділю не вказано. Це години кав’ярні, не ресторану Steenhuset.",
+      "sv": "Mån–fre 10–16, lör 11–17; söndag saknas. Gäller kaféet, inte Steenhuset restaurang.",
+      "da": "Man–fre 10–16, lør 11–17; søndag ikke oplyst. Gælder caféen, ikke Steenhuset restaurant."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://tyholmenkolonial.no/"
+    },
+    "image": "./images/catalog/eastcoast-cafe-tyholmen.webp",
+    "imageSource": "https://tyholmenkolonial.no/",
+    "photoAlt": "Tyholmen Kolonial · Arendal — actual venue photograph",
+    "photoCaption": "Tyholmen Kolonial · Arendal · official website photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-cafe-tyholmen.webp",
+        "kind": "facade",
+        "credit": "Tyholmen Kolonial · Arendal · official website",
+        "source": "https://tyholmenkolonial.no/",
+        "original": "https://files.builder.misssite.com/40/3b/403b773d-7b9d-4ef3-8908-fe6deb13febf.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ]
+  },
+  {
+    "id": "stavelin-risor",
+    "name": "Stavelin Bakeri · Risør",
+    "town": "Risør",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "category": "cafe",
+    "address": "Krags gate 9, 4950 Risør",
+    "website": "https://www.stavelin.no/utsalgene",
+    "source": "https://www.stavelin.no/utsalgene",
+    "checked": "2026-10-18",
+    "latitude": 58.72034215228381,
+    "longitude": 9.232572560468363,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Krags%20gate%209%20Ris%C3%B8r&treffPerSide=3",
+    "description": {
+      "nb": "Bakeri og kafé ved gågata: brød, kaker og en pause på byturen.",
+      "en": "A bakery café beside the pedestrian street: bread, cakes and a break during the town walk.",
+      "uk": "Пекарня-кав’ярня біля пішохідної вулиці: хліб, тістечка та перерва під час прогулянки.",
+      "sv": "Bagerikafé vid gågatan: bröd, kakor och en paus under stadspromenaden.",
+      "da": "Bagericafé ved gågaden: brød, kager og en pause på byturen."
+    },
+    "hoursNote": {
+      "nb": "Mandag–fredag 08–16, lørdag 08.30–15, søndag stengt. Høytider kan avvike.",
+      "en": "Mon–Fri 08–16, Sat 08:30–15, Sun closed. Holiday hours may differ.",
+      "uk": "Пн–пт 08–16, сб 08:30–15, нд зачинено. У свята можливі зміни.",
+      "sv": "Mån–fre 08–16, lör 08.30–15, sön stängt. Helgdagar kan avvika.",
+      "da": "Man–fre 08–16, lør 08.30–15, søn lukket. Helligdage kan afvige."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "checked": "2026-10-18",
+      "source": "https://www.stavelin.no/utsalgene",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "15:00"
+          ]
+        ],
+        []
+      ]
+    },
+    "image": "./images/catalog/eastcoast-cafe-stavelin.webp",
+    "imageSource": "https://www.stavelin.no/utsalgene",
+    "photoAlt": "Stavelin Bakeri · Risør — actual venue photograph",
+    "photoCaption": "Stavelin Bakeri · Risør · official website photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-cafe-stavelin.webp",
+        "kind": "cafeInside",
+        "credit": "Stavelin Bakeri · Risør · official website",
+        "source": "https://www.stavelin.no/utsalgene",
+        "original": "https://bcdn.cakeiteasy.com/foodspace/1760073331946-blob?width=1040&height=600&optimizer=image&format=webp&auto=compress",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ]
+  }
+]

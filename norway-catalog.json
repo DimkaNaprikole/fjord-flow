@@ -1313,6 +1313,305 @@
     }
   },
   {
+    "id": "strandhaven-lillesand",
+    "name": "Strandhaven · Lillesand",
+    "town": "Lillesand",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "category": "cafe",
+    "address": "Strandgata 10, 4790 Lillesand",
+    "website": "https://www.strand-haven.no/",
+    "source": "https://www.strand-haven.no/",
+    "checked": "2026-10-18",
+    "latitude": 58.24872908235062,
+    "longitude": 8.378005412060075,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Strandgata%2010%20Lillesand&treffPerSide=3",
+    "description": {
+      "nb": "Kaffepause og lunsj ved havna, med orangeri og sesongmeny.",
+      "en": "Coffee and lunch beside the harbour, with an orangery and seasonal menu.",
+      "uk": "Кава й обід біля гавані, оранжерея та сезонне меню.",
+      "sv": "Kaffe och lunch vid hamnen, med orangeri och säsongsmeny.",
+      "da": "Kaffe og frokost ved havnen, med orangeri og sæsonmenu."
+    },
+    "hoursNote": {
+      "nb": "Tirsdag–fredag fra 12, lørdag fra 13; siste bestilling 20, ikke bekreftet stengetid. Mandag og søndag stengt.",
+      "en": "Tue–Fri from 12, Sat from 13; last booking 20 is not the closing time. Closed Mon/Sun.",
+      "uk": "Вт–пт з 12, сб з 13; останнє бронювання о 20 не є часом закриття. Пн/нд зачинено.",
+      "sv": "Tis–fre från 12, lör från 13; sista bokning 20 är inte stängningstid. Stängt mån/sön.",
+      "da": "Tir–fre fra 12, lør fra 13; sidste booking 20 er ikke lukketid. Lukket man/søn."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://www.strand-haven.no/"
+    },
+    "image": "./images/catalog/eastcoast-cafe-strandhaven-room.webp",
+    "imageSource": "https://www.strand-haven.no/",
+    "photoAlt": "Strandhaven · Lillesand — actual venue photograph",
+    "photoCaption": "Strandhaven · Lillesand · official website photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-cafe-strandhaven-room.webp",
+        "kind": "cafeInside",
+        "credit": "Strandhaven · Lillesand · official website",
+        "source": "https://www.strand-haven.no/",
+        "original": "https://images.squarespace-cdn.com/content/v1/62a1e0240da7324e6c077628/b263b77f-395d-42d8-b450-9ee4f6e57126/Strandhaven-158.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-cafe-strandhaven.webp",
+        "kind": "food",
+        "credit": "Strandhaven · Lillesand · official website",
+        "source": "https://www.strand-haven.no/",
+        "original": "https://images.squarespace-cdn.com/content/v1/62a1e0240da7324e6c077628/d398502e-7f4c-4ef6-9f31-31ab7c23c8c8/Strandhaven-62.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-cafe-strandhaven-hall.webp",
+        "kind": "food",
+        "credit": "Strandhaven · Lillesand · official website",
+        "source": "https://www.strand-haven.no/",
+        "original": "https://images.squarespace-cdn.com/content/v1/62a1e0240da7324e6c077628/e058eb84-2978-492a-867e-d946f704e865/Strandhaven-50.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.24872908235062%2C8.378005412060075"
+  },
+  {
+    "id": "herlighed-grimstad",
+    "name": "Herlighed · Grimstad",
+    "town": "Grimstad",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "category": "cafe",
+    "address": "Storgaten 9, 4876 Grimstad",
+    "website": "https://www.herlighed.no/",
+    "source": "https://www.herlighed.no/",
+    "checked": "2026-10-18",
+    "latitude": 58.34069660932937,
+    "longitude": 8.593075663056158,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Storgaten%209%20Grimstad&treffPerSide=3",
+    "description": {
+      "nb": "Hjemmelaget mat, kaffe og bakst i sentrum. Arresten parkeringshus ligger i nærheten.",
+      "en": "Homemade food, coffee and baked treats in town, near Arresten parking garage.",
+      "uk": "Домашні страви, кава й випічка в центрі, неподалік від парковки Arresten.",
+      "sv": "Hemlagad mat, kaffe och bakverk i centrum, nära parkeringshuset Arresten.",
+      "da": "Hjemmelavet mad, kaffe og bagværk i centrum, nær parkeringshuset Arresten."
+    },
+    "hoursNote": {
+      "nb": "Mandag–lørdag 08–18, søndag 11–18. Høytider kan avvike.",
+      "en": "Mon–Sat 08–18, Sun 11–18. Holiday hours may differ.",
+      "uk": "Пн–сб 08–18, нд 11–18. У свята можливі зміни.",
+      "sv": "Mån–lör 08–18, sön 11–18. Helgdagar kan avvika.",
+      "da": "Man–lør 08–18, søn 11–18. Helligdage kan afvige."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "checked": "2026-10-18",
+      "source": "https://www.herlighed.no/",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "11:00",
+            "18:00"
+          ]
+        ]
+      ]
+    },
+    "image": "./images/catalog/eastcoast-cafe-herlighed.webp",
+    "imageSource": "https://www.herlighed.no/",
+    "photoAlt": "Herlighed · Grimstad — actual venue photograph",
+    "photoCaption": "Herlighed · Grimstad · official website photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-cafe-herlighed.webp",
+        "kind": "facade",
+        "credit": "Herlighed · Grimstad · official website",
+        "source": "https://www.herlighed.no/",
+        "original": "https://www.herlighed.no/wp-content/uploads/2023/12/sommerbilde-utenfor-scaled.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.34069660932937%2C8.593075663056158"
+  },
+  {
+    "id": "tyholmen-arendal",
+    "name": "Tyholmen Kolonial · Arendal",
+    "town": "Arendal",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "category": "cafe",
+    "address": "Teaterplassen 9A, 4836 Arendal",
+    "website": "https://tyholmenkolonial.no/",
+    "source": "https://tyholmenkolonial.no/",
+    "checked": "2026-10-18",
+    "latitude": 58.458361861705846,
+    "longitude": 8.767058180361452,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Teaterplassen%209A%20Arendal&treffPerSide=3",
+    "description": {
+      "nb": "Delikatessekafé ved Teaterplassen med smørbrød og salater, nær Tyholmens gamle gater.",
+      "en": "A delicatessen café by Teaterplassen with sandwiches and salads, near Tyholmen’s old streets.",
+      "uk": "Кав’ярня-делікатесна на Teaterplassen із сендвічами й салатами, біля старих вулиць Tyholmen.",
+      "sv": "Delikatesskafé vid Teaterplassen med smörgåsar och sallader, nära Tyholmens gamla gator.",
+      "da": "Delikatessecafé ved Teaterplassen med sandwiches og salater, nær Tyholmens gamle gader."
+    },
+    "hoursNote": {
+      "nb": "Mandag–fredag 10–16, lørdag 11–17. Søndag er ikke oppgitt. Gjelder kafeen, ikke Steenhuset restaurant.",
+      "en": "Mon–Fri 10–16, Sat 11–17; Sunday not published. These are café hours, not Steenhuset restaurant hours.",
+      "uk": "Пн–пт 10–16, сб 11–17; неділю не вказано. Це години кав’ярні, не ресторану Steenhuset.",
+      "sv": "Mån–fre 10–16, lör 11–17; söndag saknas. Gäller kaféet, inte Steenhuset restaurang.",
+      "da": "Man–fre 10–16, lør 11–17; søndag ikke oplyst. Gælder caféen, ikke Steenhuset restaurant."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://tyholmenkolonial.no/"
+    },
+    "image": "./images/catalog/eastcoast-cafe-tyholmen.webp",
+    "imageSource": "https://tyholmenkolonial.no/",
+    "photoAlt": "Tyholmen Kolonial · Arendal — actual venue photograph",
+    "photoCaption": "Tyholmen Kolonial · Arendal · official website photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-cafe-tyholmen.webp",
+        "kind": "facade",
+        "credit": "Tyholmen Kolonial · Arendal · official website",
+        "source": "https://tyholmenkolonial.no/",
+        "original": "https://files.builder.misssite.com/40/3b/403b773d-7b9d-4ef3-8908-fe6deb13febf.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.458361861705846%2C8.767058180361452"
+  },
+  {
+    "id": "stavelin-risor",
+    "name": "Stavelin Bakeri · Risør",
+    "town": "Risør",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "category": "cafe",
+    "address": "Krags gate 9, 4950 Risør",
+    "website": "https://www.stavelin.no/utsalgene",
+    "source": "https://www.stavelin.no/utsalgene",
+    "checked": "2026-10-18",
+    "latitude": 58.72034215228381,
+    "longitude": 9.232572560468363,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Krags%20gate%209%20Ris%C3%B8r&treffPerSide=3",
+    "description": {
+      "nb": "Bakeri og kafé ved gågata: brød, kaker og en pause på byturen.",
+      "en": "A bakery café beside the pedestrian street: bread, cakes and a break during the town walk.",
+      "uk": "Пекарня-кав’ярня біля пішохідної вулиці: хліб, тістечка та перерва під час прогулянки.",
+      "sv": "Bagerikafé vid gågatan: bröd, kakor och en paus under stadspromenaden.",
+      "da": "Bagericafé ved gågaden: brød, kager og en pause på byturen."
+    },
+    "hoursNote": {
+      "nb": "Mandag–fredag 08–16, lørdag 08.30–15, søndag stengt. Høytider kan avvike.",
+      "en": "Mon–Fri 08–16, Sat 08:30–15, Sun closed. Holiday hours may differ.",
+      "uk": "Пн–пт 08–16, сб 08:30–15, нд зачинено. У свята можливі зміни.",
+      "sv": "Mån–fre 08–16, lör 08.30–15, sön stängt. Helgdagar kan avvika.",
+      "da": "Man–fre 08–16, lør 08.30–15, søn lukket. Helligdage kan afvige."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "checked": "2026-10-18",
+      "source": "https://www.stavelin.no/utsalgene",
+      "weekly": [
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:00",
+            "16:00"
+          ]
+        ],
+        [
+          [
+            "08:30",
+            "15:00"
+          ]
+        ],
+        []
+      ]
+    },
+    "image": "./images/catalog/eastcoast-cafe-stavelin.webp",
+    "imageSource": "https://www.stavelin.no/utsalgene",
+    "photoAlt": "Stavelin Bakeri · Risør — actual venue photograph",
+    "photoCaption": "Stavelin Bakeri · Risør · official website photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-cafe-stavelin.webp",
+        "kind": "cafeInside",
+        "credit": "Stavelin Bakeri · Risør · official website",
+        "source": "https://www.stavelin.no/utsalgene",
+        "original": "https://bcdn.cakeiteasy.com/foodspace/1760073331946-blob?width=1040&height=600&optimizer=image&format=webp&auto=compress",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.72034215228381%2C9.232572560468363"
+  },
+  {
     "id": "kinsarvik-heng",
     "name": "Kinsarvik Camping — Heng",
     "area": "Kinsarvik · Hardanger",
@@ -2684,6 +2983,400 @@
       }
     ],
     "photoCaption": ""
+  },
+  {
+    "id": "lillesand-harbour",
+    "name": "Lillesand · havn & trehus",
+    "town": "Lillesand",
+    "category": "rest",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "address": "Lillesand sentrum, Agder, Norway",
+    "latitude": 58.24945,
+    "longitude": 8.37719,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Lillesand&treffPerSide=20",
+    "coordinateNote": "Kartverket SSR representative city point; orientation only, not a parking entrance.",
+    "website": "https://www.visitsorlandet.com/destinasjoner/lillesand/",
+    "source": "https://www.visitsorlandet.com/destinasjoner/lillesand/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Hvite trehus og båter ved havna. En rolig rusletur i Lillesands historiske sentrum.",
+      "en": "White wooden houses and harbour boats: a gentle stroll through historic Lillesand.",
+      "uk": "Білі дерев’яні будинки й човни в гавані. Неспішна прогулянка історичним Ліллесанном.",
+      "sv": "Vita trähus och båtar vid hamnen. En lugn promenad i historiska Lillesand.",
+      "da": "Hvide træhuse og både ved havnen. En rolig gåtur i historiske Lillesand."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Butikker og kafeer har egne tider, noen sesongåpent. Parker lovlig og fortsett til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Shops and cafés keep individual hours; some are seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Магазини й кав’ярні мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Butiker och kaféer har egna tider, vissa är säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Butikker og caféer har egne tider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Lillesand%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/eastcoast-lillesand.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Lillesand_havn.jpg",
+    "photoAlt": "Sailing boats and waterfront wooden houses in Lillesand harbour, April 2011",
+    "photoCaption": "Jan-Tore Egge · CC BY-SA 4.0 · 2011-04-20 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-lillesand.webp",
+        "kind": "view",
+        "credit": "Jan-Tore Egge",
+        "source": "https://commons.wikimedia.org/wiki/File:Lillesand_havn.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Lillesand_havn.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "grimstad-harbour",
+    "name": "Grimstad · havn & smågater",
+    "town": "Grimstad",
+    "category": "rest",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "address": "Grimstad sentrum, Agder, Norway",
+    "latitude": 58.34046,
+    "longitude": 8.59337,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Grimstad&treffPerSide=20",
+    "coordinateNote": "Kartverket SSR representative city point; orientation only, not a parking entrance.",
+    "website": "https://www.visitsorlandet.com/destinasjoner/grimstad/",
+    "source": "https://www.visitsorlandet.com/destinasjoner/grimstad/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Smågater, trehus og havn i dikterbyen. Ta en pause ved sjøen før neste kystetappe.",
+      "en": "Lanes, wooden houses and a harbour in the poets’ town. Pause by the sea before the next coastal leg.",
+      "uk": "Вулички, дерев’яні будинки й гавань міста поетів. Морська пауза перед наступним відрізком узбережжя.",
+      "sv": "Smågator, trähus och hamn i diktarnas stad. Ta en havspaus före nästa kustetapp.",
+      "da": "Små gader, træhuse og havn i digternes by. Hold en havpause før næste kystetape."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Butikker og kafeer har egne tider, noen sesongåpent. Parker lovlig og fortsett til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Shops and cafés keep individual hours; some are seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Магазини й кав’ярні мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Butiker och kaféer har egna tider, vissa är säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Butikker og caféer har egne tider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Grimstad%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/eastcoast-grimstad.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Grimstad1.jpeg",
+    "photoAlt": "Aerial view of Grimstad harbour and coastal islands, August 2015",
+    "photoCaption": "Havstad112 · CC BY-SA 4.0 · 2015-08-26 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-grimstad.webp",
+        "kind": "view",
+        "credit": "Havstad112",
+        "source": "https://commons.wikimedia.org/wiki/File:Grimstad1.jpeg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/d/de/Grimstad1.jpeg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "arendal-pollen-tyholmen",
+    "name": "Arendal · Pollen & Tyholmen",
+    "town": "Arendal",
+    "category": "rest",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "address": "Arendal sentrum, Agder, Norway",
+    "latitude": 58.46121,
+    "longitude": 8.76695,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Arendal&treffPerSide=20",
+    "coordinateNote": "Kartverket SSR representative city point; orientation only, not a parking entrance.",
+    "website": "https://www.visitsorlandet.com/destinasjoner/arendal/",
+    "source": "https://www.visitsorlandet.com/destinasjoner/arendal/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Havnebassenget Pollen og trehusene på Tyholmen. En bypause med sjøutsikt.",
+      "en": "Pollen harbour and Tyholmen’s wooden houses: a town break with waterfront views.",
+      "uk": "Гавань Pollen і дерев’яні будинки Tyholmen. Міська прогулянка з морськими краєвидами.",
+      "sv": "Hamnbassängen Pollen och Tyholmens trähus. En stadspaus med havsutsikt.",
+      "da": "Havnebassinet Pollen og Tyholmens træhuse. En bypause med havudsigt."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Butikker og kafeer har egne tider, noen sesongåpent. Parker lovlig og fortsett til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Shops and cafés keep individual hours; some are seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Магазини й кав’ярні мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Butiker och kaféer har egna tider, vissa är säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Butikker og caféer har egne tider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Arendal%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/eastcoast-arendal.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Pollen_panorama,_Arendal.jpg",
+    "photoAlt": "Panoramic view of Pollen waterfront and Trinity Church, Arendal, May 2025",
+    "photoCaption": "YosemiteYamper · CC BY-SA 4.0 · 2025-05-06 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-arendal.webp",
+        "kind": "view",
+        "credit": "YosemiteYamper",
+        "source": "https://commons.wikimedia.org/wiki/File:Pollen_panorama,_Arendal.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Pollen_panorama%2C_Arendal.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "risor-harbour-oldtown",
+    "name": "Risør · havn & hvite trehus",
+    "town": "Risør",
+    "category": "rest",
+    "region": "Agder · Sørlandet",
+    "route": "agdercoast",
+    "address": "Risør sentrum, Agder, Norway",
+    "latitude": 58.72058,
+    "longitude": 9.23421,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Ris%C3%B8r&treffPerSide=20",
+    "coordinateNote": "Kartverket SSR representative city point; orientation only, not a parking entrance.",
+    "website": "https://www.visitsorlandet.com/destinasjoner/risor/",
+    "source": "https://www.visitsorlandet.com/destinasjoner/risor/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Hvite trehus, små smug og havna ved Skagerrak. En rolig avslutning på kystturen.",
+      "en": "White wooden houses, narrow lanes and a Skagerrak harbour: a gentle finish to the coastal journey.",
+      "uk": "Білі дерев’яні будинки, провулки й гавань Скагерраку. Спокійне завершення прибережної подорожі.",
+      "sv": "Vita trähus, smala gränder och hamn vid Skagerrak. Ett lugnt slut på kustresan.",
+      "da": "Hvide træhuse, smalle stræder og havn ved Skagerrak. En rolig afslutning på kystrejsen."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Butikker og kafeer har egne tider, noen sesongåpent. Parker lovlig og fortsett til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Shops and cafés keep individual hours; some are seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Магазини й кав’ярні мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Butiker och kaféer har egna tider, vissa är säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Butikker og caféer har egne tider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Ris%C3%B8r%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/eastcoast-risor.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Ris%C3%B6r_Hafen_2.JPG",
+    "photoAlt": "Risør harbour, white waterfront houses and boats, July 2012",
+    "photoCaption": "Zairon · CC BY-SA 3.0 · 2012-07-11 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-risor.webp",
+        "kind": "view",
+        "credit": "Zairon",
+        "source": "https://commons.wikimedia.org/wiki/File:Ris%C3%B6r_Hafen_2.JPG",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Ris%C3%B6r_Hafen_2.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "skottevik-coastal-cabins",
+    "name": "Skottevik Feriesenter · hytter",
+    "town": "Høvåg · Lillesand",
+    "region": "Sørlandet · Agder",
+    "category": "cabin",
+    "address": "Sandeveien 35, 4770 Høvåg, Norway",
+    "latitude": 58.12528488601606,
+    "longitude": 8.230686057212504,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Sandeveien+35&treffPerSide=3",
+    "website": "https://skottevik.no/overnatting/hytter/",
+    "bookingUrl": "https://reservations.visbook.com/4158?lang=no",
+    "source": "https://skottevik.no/om-oss/",
+    "checked": "2026-10-18",
+    "phone": "+4737269030",
+    "description": {
+      "nb": "Campinghytter ved kysten vest for Lillesand. H4 har kjøkkenkrok; dusj og toalett ligger i servicebygget. Andre hyttetyper har annen standard.",
+      "en": "Coastal camping cabins west of Lillesand. H4 has a kitchenette and shared washrooms in the service building. Other cabin types have different facilities.",
+      "uk": "Кемпінгові будиночки на узбережжі західніше Lillesand. H4 має мінікухню; душ і туалет — у сервісному корпусі. Умови інших типів відрізняються.",
+      "sv": "Campingstugor vid kusten väster om Lillesand. H4 har kokvrå; dusch och toalett finns i servicebyggnaden. Andra stugtyper har annan standard.",
+      "da": "Campinghytter ved kysten vest for Lillesand. H4 har tekøkken; bad og toilet findes i servicebygningen. Andre hyttetyper har andre faciliteter."
+    },
+    "hoursNote": {
+      "nb": "Operatøren oppgir sesong 1. mai–30. september. Bekreft datoer og innsjekk ved bestilling. Bildene viser H4, ikke alle hyttetyper.",
+      "en": "The operator publishes a 1 May–30 September season. Confirm dates and check-in when booking. Photos show H4, not every cabin type.",
+      "uk": "Оператор указує сезон 1 травня–30 вересня. Дати й заселення уточнюйте під час бронювання. Фото показують H4, а не всі типи.",
+      "sv": "Operatören anger säsong 1 maj–30 september. Bekräfta datum och incheckning vid bokning. Bilderna visar H4, inte alla stugtyper.",
+      "da": "Operatøren angiver sæson 1. maj–30. september. Bekræft datoer og indtjekning ved booking. Billederne viser H4, ikke alle hyttetyper."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://skottevik.no/om-oss/"
+    },
+    "image": "./images/catalog/eastcoast-skottevik-exterior.webp",
+    "imageSource": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
+    "photoAlt": "Skottevik Feriesenter · hytter — actual operator photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-skottevik-exterior.webp",
+        "kind": "facade",
+        "credit": "Skottevik Feriesenter · hytter · official website",
+        "source": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
+        "original": "https://skottevik.no/wp-content/uploads/2016/03/h-4-1-6.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-skottevik-interior.webp",
+        "kind": "interior",
+        "credit": "Skottevik Feriesenter · hytter · official website",
+        "source": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
+        "original": "https://skottevik.no/wp-content/uploads/2016/04/1-2-2-1140x760.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Skottevik Feriesenter · hytter",
+      "en": "Real photograph · Skottevik Feriesenter · hytter",
+      "uk": "Справжнє фото · Skottevik Feriesenter · hytter",
+      "sv": "Äkta foto · Skottevik Feriesenter · hytter",
+      "da": "Ægte foto · Skottevik Feriesenter · hytter"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Skottevik%20Feriesenter%20%C2%B7%20hytter%2C%20Sandeveien%2035%2C%204770%20H%C3%B8v%C3%A5g%2C%20Norway",
+    "descriptionSource": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
+    "route": "agdercoast"
+  },
+  {
+    "id": "moysand-coastal-cabins",
+    "name": "Moysand Familiecamping · hytter",
+    "town": "Grimstad",
+    "region": "Sørlandet · Agder",
+    "category": "cabin",
+    "address": "Moysandveien 95, 4885 Grimstad, Norway",
+    "latitude": 58.353920242727106,
+    "longitude": 8.6518392822684,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Moysandveien+95&treffPerSide=3",
+    "website": "https://www.moysand-familiecamping.no/opphold-hos-oss/",
+    "bookingUrl": "https://v3.onlinebooking.dk/v3MOYSAND",
+    "source": "https://www.moysand-familiecamping.no/praktisk-informasjon/",
+    "checked": "2026-10-18",
+    "phone": "+4737040209",
+    "description": {
+      "nb": "Hytter med kjøkken og bad ved kysten mellom Grimstad og Fevik. Kyststier og strand gir en rolig overnattingspause.",
+      "en": "Cabins with kitchens and bathrooms on the coast between Grimstad and Fevik. Coastal paths and the beach offer a relaxed overnight stop.",
+      "uk": "Будиночки з кухнею та ванною на узбережжі між Grimstad і Fevik. Пляж і прибережні стежки — для спокійної зупинки з ночівлею.",
+      "sv": "Stugor med kök och badrum vid kusten mellan Grimstad och Fevik. Kuststigar och strand ger ett lugnt övernattningsstopp.",
+      "da": "Hytter med køkken og bad ved kysten mellem Grimstad og Fevik. Kyststier og strand giver et roligt stop med overnatning."
+    },
+    "hoursNote": {
+      "nb": "Sesongbasert camping. Publisert hytteinnsjekk 15–22 og utsjekk innen 12; bekreft tilgjengelighet og tider for dine datoer.",
+      "en": "Seasonal campsite. Published cabin check-in is 15:00–22:00 and check-out by 12:00; confirm availability and times for your dates.",
+      "uk": "Сезонний кемпінг. Опубліковане заселення в будиночки 15:00–22:00, виїзд до 12:00; наявність і час для ваших дат уточнюйте.",
+      "sv": "Säsongscamping. Angiven stugincheckning 15–22 och utcheckning senast 12; bekräfta tillgänglighet och tider för dina datum.",
+      "da": "Sæsoncamping. Angivet indtjekning i hytter 15–22 og udtjekning senest 12; bekræft tilgængelighed og tider for dine datoer."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://www.moysand-familiecamping.no/praktisk-informasjon/"
+    },
+    "image": "./images/catalog/eastcoast-moysand-cabins.webp",
+    "imageSource": "https://www.moysand-familiecamping.no/wp-json/wp/v2/media?search=hytte&per_page=100",
+    "photoAlt": "Moysand Familiecamping · hytter — actual operator photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-moysand-cabins.webp",
+        "kind": "facade",
+        "credit": "Moysand Familiecamping · hytter · official website",
+        "source": "https://www.moysand-familiecamping.no/wp-json/wp/v2/media?search=hytte&per_page=100",
+        "original": "https://www.moysand-familiecamping.no/wp-content/uploads/2020/05/Hytter.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-moysand-interior.webp",
+        "kind": "interior",
+        "credit": "Moysand Familiecamping · hytter · official website",
+        "source": "https://www.moysand-familiecamping.no/wp-json/wp/v2/media?search=hytte&per_page=100",
+        "original": "https://www.moysand-familiecamping.no/wp-content/uploads/2018/02/Hyttebilder-til-web-4-1.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Moysand Familiecamping · hytter",
+      "en": "Real photograph · Moysand Familiecamping · hytter",
+      "uk": "Справжнє фото · Moysand Familiecamping · hytter",
+      "sv": "Äkta foto · Moysand Familiecamping · hytter",
+      "da": "Ægte foto · Moysand Familiecamping · hytter"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Moysand%20Familiecamping%20%C2%B7%20hytter%2C%20Moysandveien%2095%2C%204885%20Grimstad%2C%20Norway",
+    "descriptionSource": "https://www.moysand-familiecamping.no/opphold-hos-oss/",
+    "seasonSource": "https://www.moysand-familiecamping.no/sesongplass/",
+    "route": "agdercoast"
+  },
+  {
+    "id": "risor-resort-seaside-cabin",
+    "name": "Risør Resort · Sjøhytta",
+    "town": "Risør · Moen",
+    "region": "Sørlandet · Agder",
+    "category": "cabin",
+    "address": "Moensveien 22, 4950 Risør, Norway",
+    "latitude": 58.72600306127953,
+    "longitude": 9.06883323502367,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Moensveien%2022%20Ris%C3%B8r&treffPerSide=3",
+    "website": "https://risorresort.no/sjohytta/",
+    "bookingUrl": "https://risorresort.no/bestilling/",
+    "source": "https://risorresort.no/sjohytta/",
+    "checked": "2026-10-18",
+    "phone": "+4790981902",
+    "description": {
+      "nb": "Romslig sjøhytte ved Sørfjorden utenfor Risør. Tre soverom, eget kjøkken og bad samt uteplass mot vannet.",
+      "en": "A spacious waterside cabin on Sørfjorden outside Risør, with three bedrooms, a kitchen, bathroom and terrace facing the water.",
+      "uk": "Просторий будиночок біля Sørfjorden неподалік Risør: три спальні, власна кухня, ванна та тераса з видом на воду.",
+      "sv": "Rymlig sjöstuga vid Sørfjorden utanför Risør. Tre sovrum, eget kök och badrum samt uteplats mot vattnet.",
+      "da": "Rummelig hytte ved Sørfjorden uden for Risør. Tre soveværelser, eget køkken og bad samt terrasse mod vandet."
+    },
+    "hoursNote": {
+      "nb": "Sjøhytta tilbys hele året, etter tilgjengelighet. Send bestillingsforespørsel; avtal pris og ankomsttid med verten. Kartpunktet viser anleggets adresseområde.",
+      "en": "The cabin is offered year-round, subject to availability. Request a booking and confirm price and arrival time. The map point represents the resort address area.",
+      "uk": "Будиночок пропонують цілий рік за наявності місць. Надішліть запит, уточніть ціну й час прибуття. Точка позначає територію адреси комплексу.",
+      "sv": "Stugan erbjuds året runt i mån av plats. Skicka bokningsförfrågan och bekräfta pris och ankomsttid. Kartpunkten visar anläggningens adressområde.",
+      "da": "Hytten tilbydes hele året efter tilgængelighed. Send bookingforespørgsel og bekræft pris og ankomsttid. Kortpunktet viser anlæggets adresseområde."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://risorresort.no/sjohytta/"
+    },
+    "image": "./images/catalog/eastcoast-risor-cabin.webp",
+    "imageSource": "https://risorresort.no/sjohytta/",
+    "photoAlt": "Risør Resort · Sjøhytta — actual operator photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-risor-cabin.webp",
+        "kind": "facade",
+        "credit": "Risør Resort · Sjøhytta · official website",
+        "source": "https://risorresort.no/sjohytta/",
+        "original": "https://risorresort.no/wp-content/uploads/2023/03/Sjohytta-total-mfolk-scaled.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-risor-view.webp",
+        "kind": "view",
+        "credit": "Risør Resort · Sjøhytta · official website",
+        "source": "https://risorresort.no/sjohytta/",
+        "original": "https://risorresort.no/wp-content/uploads/2023/03/IMG_3693-1-768x576-1.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "coordinatePrecision": "area",
+    "photoCaption": {
+      "nb": "Ekte foto · Risør Resort · Sjøhytta",
+      "en": "Real photograph · Risør Resort · Sjøhytta",
+      "uk": "Справжнє фото · Risør Resort · Sjøhytta",
+      "sv": "Äkta foto · Risør Resort · Sjøhytta",
+      "da": "Ægte foto · Risør Resort · Sjøhytta"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Ris%C3%B8r%20Resort%20%C2%B7%20Sj%C3%B8hytta%2C%20Moensveien%2022%2C%204950%20Ris%C3%B8r%2C%20Norway",
+    "route": "agdercoast"
   },
   {
     "id": "tusenfryd",

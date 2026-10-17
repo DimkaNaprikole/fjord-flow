@@ -1,0 +1,204 @@
+[
+  {
+    "id": "skottevik-coastal-cabins",
+    "name": "Skottevik Feriesenter · hytter",
+    "town": "Høvåg · Lillesand",
+    "region": "Sørlandet · Agder",
+    "category": "cabin",
+    "address": "Sandeveien 35, 4770 Høvåg, Norway",
+    "latitude": 58.12528488601606,
+    "longitude": 8.230686057212504,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Sandeveien+35&treffPerSide=3",
+    "website": "https://skottevik.no/overnatting/hytter/",
+    "bookingUrl": "https://reservations.visbook.com/4158?lang=no",
+    "source": "https://skottevik.no/om-oss/",
+    "checked": "2026-10-18",
+    "phone": "+4737269030",
+    "description": {
+      "nb": "Campinghytter ved kysten vest for Lillesand. H4 har kjøkkenkrok; dusj og toalett ligger i servicebygget. Andre hyttetyper har annen standard.",
+      "en": "Coastal camping cabins west of Lillesand. H4 has a kitchenette and shared washrooms in the service building. Other cabin types have different facilities.",
+      "uk": "Кемпінгові будиночки на узбережжі західніше Lillesand. H4 має мінікухню; душ і туалет — у сервісному корпусі. Умови інших типів відрізняються.",
+      "sv": "Campingstugor vid kusten väster om Lillesand. H4 har kokvrå; dusch och toalett finns i servicebyggnaden. Andra stugtyper har annan standard.",
+      "da": "Campinghytter ved kysten vest for Lillesand. H4 har tekøkken; bad og toilet findes i servicebygningen. Andre hyttetyper har andre faciliteter."
+    },
+    "hoursNote": {
+      "nb": "Operatøren oppgir sesong 1. mai–30. september. Bekreft datoer og innsjekk ved bestilling. Bildene viser H4, ikke alle hyttetyper.",
+      "en": "The operator publishes a 1 May–30 September season. Confirm dates and check-in when booking. Photos show H4, not every cabin type.",
+      "uk": "Оператор указує сезон 1 травня–30 вересня. Дати й заселення уточнюйте під час бронювання. Фото показують H4, а не всі типи.",
+      "sv": "Operatören anger säsong 1 maj–30 september. Bekräfta datum och incheckning vid bokning. Bilderna visar H4, inte alla stugtyper.",
+      "da": "Operatøren angiver sæson 1. maj–30. september. Bekræft datoer og indtjekning ved booking. Billederne viser H4, ikke alle hyttetyper."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://skottevik.no/om-oss/"
+    },
+    "image": "./images/catalog/eastcoast-skottevik-exterior.webp",
+    "imageSource": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
+    "photoAlt": "Skottevik Feriesenter · hytter — actual operator photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-skottevik-exterior.webp",
+        "kind": "facade",
+        "credit": "Skottevik Feriesenter · hytter · official website",
+        "source": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
+        "original": "https://skottevik.no/wp-content/uploads/2016/03/h-4-1-6.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-skottevik-interior.webp",
+        "kind": "interior",
+        "credit": "Skottevik Feriesenter · hytter · official website",
+        "source": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
+        "original": "https://skottevik.no/wp-content/uploads/2016/04/1-2-2-1140x760.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Skottevik Feriesenter · hytter",
+      "en": "Real photograph · Skottevik Feriesenter · hytter",
+      "uk": "Справжнє фото · Skottevik Feriesenter · hytter",
+      "sv": "Äkta foto · Skottevik Feriesenter · hytter",
+      "da": "Ægte foto · Skottevik Feriesenter · hytter"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Skottevik%20Feriesenter%20%C2%B7%20hytter%2C%20Sandeveien%2035%2C%204770%20H%C3%B8v%C3%A5g%2C%20Norway",
+    "descriptionSource": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
+    "route": "agdercoast"
+  },
+  {
+    "id": "moysand-coastal-cabins",
+    "name": "Moysand Familiecamping · hytter",
+    "town": "Grimstad",
+    "region": "Sørlandet · Agder",
+    "category": "cabin",
+    "address": "Moysandveien 95, 4885 Grimstad, Norway",
+    "latitude": 58.353920242727106,
+    "longitude": 8.6518392822684,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Moysandveien+95&treffPerSide=3",
+    "website": "https://www.moysand-familiecamping.no/opphold-hos-oss/",
+    "bookingUrl": "https://v3.onlinebooking.dk/v3MOYSAND",
+    "source": "https://www.moysand-familiecamping.no/praktisk-informasjon/",
+    "checked": "2026-10-18",
+    "phone": "+4737040209",
+    "description": {
+      "nb": "Hytter med kjøkken og bad ved kysten mellom Grimstad og Fevik. Kyststier og strand gir en rolig overnattingspause.",
+      "en": "Cabins with kitchens and bathrooms on the coast between Grimstad and Fevik. Coastal paths and the beach offer a relaxed overnight stop.",
+      "uk": "Будиночки з кухнею та ванною на узбережжі між Grimstad і Fevik. Пляж і прибережні стежки — для спокійної зупинки з ночівлею.",
+      "sv": "Stugor med kök och badrum vid kusten mellan Grimstad och Fevik. Kuststigar och strand ger ett lugnt övernattningsstopp.",
+      "da": "Hytter med køkken og bad ved kysten mellem Grimstad og Fevik. Kyststier og strand giver et roligt stop med overnatning."
+    },
+    "hoursNote": {
+      "nb": "Sesongbasert camping. Publisert hytteinnsjekk 15–22 og utsjekk innen 12; bekreft tilgjengelighet og tider for dine datoer.",
+      "en": "Seasonal campsite. Published cabin check-in is 15:00–22:00 and check-out by 12:00; confirm availability and times for your dates.",
+      "uk": "Сезонний кемпінг. Опубліковане заселення в будиночки 15:00–22:00, виїзд до 12:00; наявність і час для ваших дат уточнюйте.",
+      "sv": "Säsongscamping. Angiven stugincheckning 15–22 och utcheckning senast 12; bekräfta tillgänglighet och tider för dina datum.",
+      "da": "Sæsoncamping. Angivet indtjekning i hytter 15–22 og udtjekning senest 12; bekræft tilgængelighed og tider for dine datoer."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://www.moysand-familiecamping.no/praktisk-informasjon/"
+    },
+    "image": "./images/catalog/eastcoast-moysand-cabins.webp",
+    "imageSource": "https://www.moysand-familiecamping.no/wp-json/wp/v2/media?search=hytte&per_page=100",
+    "photoAlt": "Moysand Familiecamping · hytter — actual operator photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-moysand-cabins.webp",
+        "kind": "facade",
+        "credit": "Moysand Familiecamping · hytter · official website",
+        "source": "https://www.moysand-familiecamping.no/wp-json/wp/v2/media?search=hytte&per_page=100",
+        "original": "https://www.moysand-familiecamping.no/wp-content/uploads/2020/05/Hytter.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-moysand-interior.webp",
+        "kind": "interior",
+        "credit": "Moysand Familiecamping · hytter · official website",
+        "source": "https://www.moysand-familiecamping.no/wp-json/wp/v2/media?search=hytte&per_page=100",
+        "original": "https://www.moysand-familiecamping.no/wp-content/uploads/2018/02/Hyttebilder-til-web-4-1.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Moysand Familiecamping · hytter",
+      "en": "Real photograph · Moysand Familiecamping · hytter",
+      "uk": "Справжнє фото · Moysand Familiecamping · hytter",
+      "sv": "Äkta foto · Moysand Familiecamping · hytter",
+      "da": "Ægte foto · Moysand Familiecamping · hytter"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Moysand%20Familiecamping%20%C2%B7%20hytter%2C%20Moysandveien%2095%2C%204885%20Grimstad%2C%20Norway",
+    "descriptionSource": "https://www.moysand-familiecamping.no/opphold-hos-oss/",
+    "seasonSource": "https://www.moysand-familiecamping.no/sesongplass/",
+    "route": "agdercoast"
+  },
+  {
+    "id": "risor-resort-seaside-cabin",
+    "name": "Risør Resort · Sjøhytta",
+    "town": "Risør · Moen",
+    "region": "Sørlandet · Agder",
+    "category": "cabin",
+    "address": "Moensveien 22, 4950 Risør, Norway",
+    "latitude": 58.72600306127953,
+    "longitude": 9.06883323502367,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Moensveien%2022%20Ris%C3%B8r&treffPerSide=3",
+    "website": "https://risorresort.no/sjohytta/",
+    "bookingUrl": "https://risorresort.no/bestilling/",
+    "source": "https://risorresort.no/sjohytta/",
+    "checked": "2026-10-18",
+    "phone": "+4790981902",
+    "description": {
+      "nb": "Romslig sjøhytte ved Sørfjorden utenfor Risør. Tre soverom, eget kjøkken og bad samt uteplass mot vannet.",
+      "en": "A spacious waterside cabin on Sørfjorden outside Risør, with three bedrooms, a kitchen, bathroom and terrace facing the water.",
+      "uk": "Просторий будиночок біля Sørfjorden неподалік Risør: три спальні, власна кухня, ванна та тераса з видом на воду.",
+      "sv": "Rymlig sjöstuga vid Sørfjorden utanför Risør. Tre sovrum, eget kök och badrum samt uteplats mot vattnet.",
+      "da": "Rummelig hytte ved Sørfjorden uden for Risør. Tre soveværelser, eget køkken og bad samt terrasse mod vandet."
+    },
+    "hoursNote": {
+      "nb": "Sjøhytta tilbys hele året, etter tilgjengelighet. Send bestillingsforespørsel; avtal pris og ankomsttid med verten. Kartpunktet viser anleggets adresseområde.",
+      "en": "The cabin is offered year-round, subject to availability. Request a booking and confirm price and arrival time. The map point represents the resort address area.",
+      "uk": "Будиночок пропонують цілий рік за наявності місць. Надішліть запит, уточніть ціну й час прибуття. Точка позначає територію адреси комплексу.",
+      "sv": "Stugan erbjuds året runt i mån av plats. Skicka bokningsförfrågan och bekräfta pris och ankomsttid. Kartpunkten visar anläggningens adressområde.",
+      "da": "Hytten tilbydes hele året efter tilgængelighed. Send bookingforespørgsel og bekræft pris og ankomsttid. Kortpunktet viser anlæggets adresseområde."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://risorresort.no/sjohytta/"
+    },
+    "image": "./images/catalog/eastcoast-risor-cabin.webp",
+    "imageSource": "https://risorresort.no/sjohytta/",
+    "photoAlt": "Risør Resort · Sjøhytta — actual operator photograph",
+    "gallery": [
+      {
+        "src": "./images/catalog/eastcoast-risor-cabin.webp",
+        "kind": "facade",
+        "credit": "Risør Resort · Sjøhytta · official website",
+        "source": "https://risorresort.no/sjohytta/",
+        "original": "https://risorresort.no/wp-content/uploads/2023/03/Sjohytta-total-mfolk-scaled.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/eastcoast-risor-view.webp",
+        "kind": "view",
+        "credit": "Risør Resort · Sjøhytta · official website",
+        "source": "https://risorresort.no/sjohytta/",
+        "original": "https://risorresort.no/wp-content/uploads/2023/03/IMG_3693-1-768x576-1.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "coordinatePrecision": "area",
+    "photoCaption": {
+      "nb": "Ekte foto · Risør Resort · Sjøhytta",
+      "en": "Real photograph · Risør Resort · Sjøhytta",
+      "uk": "Справжнє фото · Risør Resort · Sjøhytta",
+      "sv": "Äkta foto · Risør Resort · Sjøhytta",
+      "da": "Ægte foto · Risør Resort · Sjøhytta"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Ris%C3%B8r%20Resort%20%C2%B7%20Sj%C3%B8hytta%2C%20Moensveien%2022%2C%204950%20Ris%C3%B8r%2C%20Norway",
+    "route": "agdercoast"
+  }
+]

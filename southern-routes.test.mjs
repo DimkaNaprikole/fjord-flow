@@ -15,7 +15,23 @@ test('Every route and stop has all five languages, source dates and real local p
  for(const route of Object.values(routes)){
   for(const lang of ['en','nb','uk','sv','da']){assert.ok(route.title[lang]);assert.ok(route.summary[lang]);for(const p of route.points)assert.ok(p.description[lang]);}
   assert.match(route.checkedAt,/^\d{4}-\d{2}-\d{2}$/);assert.ok(route.sources.length>=3);
+  assert.ok(route.photos.length>0,'Every route needs a real photo');
   for(const photo of route.photos){assert.ok(existsSync(new URL(photo.image,import.meta.url)),photo.image);assert.ok(photo.author&&photo.license&&photo.licenseUrl&&photo.source);}
+ }
+});
+
+test('Eastern Agder follows the mainland coast without unrelated detours or implied parking entrances',()=>{
+ const route=routes.agdercoast,points=route.points;
+ assert.deepEqual(points.map(p=>p.id),['agdercoast-lillesand','agdercoast-grimstad','agdercoast-arendal','agdercoast-risor']);
+ assert.deepEqual(route.optionalExperienceIds,[]);
+ assert.notEqual(route.navigationOnly,true,'The actual mainland road calculation remains available');
+ assert.match(route.summary.en,/3–4 days/);
+ assert.match(points.at(-1).description.en,/one-way.*return/);
+ assert.ok(points[0].description.en.includes('seasonal'));
+ for(let i=0;i<points.length;i++){
+  const p=points[i];assert.equal(p.coordinatePrecision,'area');assert.match(p.routeQuery,/sentrum, Norway$/);assert.match(p.description.en,/park/);
+  assert.ok(p.latitude>58.2&&p.latitude<58.8);assert.ok(p.longitude>8.3&&p.longitude<9.3);
+  if(i)assert.ok(p.longitude>points[i-1].longitude&&p.latitude>points[i-1].latitude);
  }
 });
 test('Oslo uses named car parks and cannot send the beach marker to numeric routing',()=>{

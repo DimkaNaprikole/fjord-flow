@@ -194,8 +194,9 @@
     const baseLabel = node('label', '', g(0)), baseSelect = node('select'); baseSelect.id = 'norwayCatalogueOrigin';
     const defaultOption = node('option', '', g(1)); defaultOption.value = ''; baseSelect.append(defaultOption);
     if (baseChoice === 'gps') {const gpsOption = node('option', '', g(5)); gpsOption.value = 'gps'; baseSelect.append(gpsOption);}
+    if (baseChoice === 'stop') {const stopOption = node('option', '', originState.current?.name || ''); stopOption.value = 'stop'; baseSelect.append(stopOption);}
     cities.forEach(c => {const option = node('option', '', c.name); option.value = c.name; baseSelect.append(option);}); baseSelect.value = baseChoice;
-    baseSelect.onchange = () => {if (baseSelect.value !== 'gps') chooseCity(baseSelect.value);}; baseLabel.append(baseSelect);
+    baseSelect.onchange = () => {if (!['gps','stop'].includes(baseSelect.value)) chooseCity(baseSelect.value);}; baseLabel.append(baseSelect);
     const radiusLabel = node('label', '', g(3)), radiusSelect = node('select'); radiusSelect.id = 'norwayCatalogueRadius';
     ['20','50','100','250','all'].forEach(value => {const option = node('option', '', value === 'all' ? g(4) : value + ' km'); option.value = value; radiusSelect.append(option);}); radiusSelect.value = radius;
     radiusSelect.onchange = () => {radius = radiusSelect.value; limit = 12; render();}; radiusLabel.append(radiusSelect);
@@ -209,10 +210,16 @@
   }
   async function load() {
     loading = true; failed = false; render();
-    try {const response = await fetch('./norway-catalog.json?v=4'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
+    try {const response = await fetch('./norway-catalog.json?v=5'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
     catch {failed = true;} finally {loading = false; render();}
   }
   window.addEventListener('fjordlanguagechange', rebuild);
+  window.addEventListener('fjord:catalogue-nearby', event => {
+    const detail = event.detail || {}, point = {latitude:detail.lat, longitude:detail.lng, name:String(detail.name || '').slice(0,160)};
+    if (!validPoint(point) || !['cabin','sauna'].includes(detail.category)) return;
+    originState.set(point); cancelGPS(); baseChoice = 'stop'; category = detail.category; radius = '20'; query = ''; geoMessage = ''; manualOpen = false; limit = 12; rebuild();
+    section?.scrollIntoView({block:'start',behavior:'smooth'}); select?.focus({preventScroll:true});
+  });
   window.addEventListener('pagehide', () => {originState.set(originState.current); cancelGPS(); if (geoMessage === '6' || geoMessage === '17') geoMessage = ''; renderGeoStatus();});
   const observer = new MutationObserver(() => {mount(); if (section) observer.disconnect();});
   observer.observe(document.body, {childList: true, subtree: true}); mount(); if (section) observer.disconnect();
