@@ -33,7 +33,44 @@
     ],
     "checked": "2026-10-16",
     "image": "https://images.bookvisit.com/img/1b8f5e6d-9333-4239-ac2c-6aed89ff2504.jpg",
-    "imageSource": "https://www.kinsarvikcamping.no/overnatting/heng"
+    "imageSource": "https://www.kinsarvikcamping.no/overnatting/heng",
+    "gallery": [
+      {
+        "src": "https://images.bookvisit.com/img/1b8f5e6d-9333-4239-ac2c-6aed89ff2504.jpg",
+        "kind": "grounds",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng"
+      },
+      {
+        "src": "https://images.bookvisit.com/img/bddadd09-ad08-45f5-b284-b0161e430d4f.jpg",
+        "kind": "inside",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng"
+      },
+      {
+        "src": "https://images.bookvisit.com/img/77d34f42-407b-48ef-acef-fdeb780d3f0b.jpg",
+        "kind": "inside",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng"
+      },
+      {
+        "src": "https://images.bookvisit.com/img/3f01a3ef-ba5d-4b24-aea6-312f5dcfb073.jpg",
+        "kind": "bedroom",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng"
+      },
+      {
+        "src": "https://images.bookvisit.com/img/b37d1638-c849-451c-8cc1-db6f227028ec.jpg",
+        "kind": "bathSauna",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng"
+      },
+      {
+        "src": "https://images.bookvisit.com/img/e34fa04c-9d67-481a-ae83-1883453f2a36.jpg",
+        "kind": "grounds",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng"
+      },
+      {
+        "src": "https://images.bookvisit.com/img/2d6ca7e6-c15c-48fc-9e6c-9f25a60be8c5.jpg",
+        "kind": "view",
+        "source": "https://www.kinsarvikcamping.no/overnatting/heng"
+      }
+    ]
   },
   {
     "id": "luster-fjordhytter",
@@ -69,7 +106,44 @@
     ],
     "checked": "2026-10-16",
     "image": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957ce59806898a97ee40d9_Hytter1.jpg",
-    "imageSource": "https://www.luster-fjordhytter.com/en"
+    "imageSource": "https://www.luster-fjordhytter.com/en",
+    "gallery": [
+      {
+        "src": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957ce59806898a97ee40d9_Hytter1.jpg",
+        "kind": "grounds",
+        "source": "https://www.luster-fjordhytter.com/en"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60b7b514b346c6deeba04e79_Hytte%201-8.jpg",
+        "kind": "inside",
+        "source": "https://www.luster-fjordhytter.com/en"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60b7b7aa7643b3171036461a_Hytte%209%20-%2012.jpg",
+        "kind": "inside",
+        "source": "https://www.luster-fjordhytter.com/en"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/625ee6f22cf4b71f5650a0c1_LusterFjordspa_800x800_1.jpg",
+        "kind": "sauna",
+        "source": "https://www.luster-fjordhytter.com/en/luster-fjordspa"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/625ee8d7b3dc6c941af8e9fd_LusterFjordspa_800x800_4.jpg",
+        "kind": "hotTub",
+        "source": "https://www.luster-fjordhytter.com/en/luster-fjordspa"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957e42d927ff91e73aa869_stupebrett.jpg",
+        "kind": "view",
+        "source": "https://www.luster-fjordhytter.com/en/luster-fjordspa"
+      },
+      {
+        "src": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60954d04fdc2121ae5fd1710_69319873_828053027595920_2733807594796246150_n.jpg",
+        "kind": "terrace",
+        "source": "https://www.luster-fjordhytter.com/en"
+      }
+    ]
   },
   {
     "id": "kilsti-compact-lodge",
@@ -105,6 +179,43 @@
       "https://www.kilsticompactlodge.no/hele-lodgen"
     ],
     "checked": "2026-10-16",
-    "imageSource": "https://www.kilsticompactlodge.no/"
+    "imageSource": "https://www.kilsticompactlodge.no/",
+    "gallery": [
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1674564152851-K59Z0KXD2M6S2V0Z1LVF/PRINT_2021-05-31+Reklamefoto+Kilsti-5497.JPG?format=1000w",
+        "kind": "grounds",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1"
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1657903535379-COQYFRC6B2JS6NVUFXRN/DSC01817-kopi.jpg?format=1000w",
+        "kind": "inside",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1"
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1657903219361-K0K9PZYPEHSUMAJ8AHFI/DSC00791-kopi.jpg?format=1000w",
+        "kind": "bedroom",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1"
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1657903539445-WIGD1WGVHURE2YSVZMPA/DSC01923-kopi.jpg?format=1000w",
+        "kind": "view",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1"
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1742731263933-QNU8ZS0JH84NKW9K982L/20230724-7RV06634.JPG?format=1000w",
+        "kind": "sauna",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1"
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1742731265978-W2YGHJ93W4PNNIO1URAJ/20230724-7RV06653.JPG?format=1000w",
+        "kind": "sauna",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1"
+      },
+      {
+        "src": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1668714514222-KWVSIFP84SJNFZEQFLI6/KilstiCL_3B7A8096_fotoKristinStoylen.jpg?format=1000w",
+        "kind": "terrace",
+        "source": "https://www.kilsticompactlodge.no/hyttene-1"
+      }
+    ]
   }
 ]
