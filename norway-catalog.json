@@ -3833,7 +3833,7 @@
     "gallery": [
       {
         "src": "./images/catalog/telemark-stay-lovisenberg-exterior.webp",
-        "kind": "facade",
+        "kind": "grounds",
         "credit": "Lovisenberg Familiecamping · official website",
         "source": "https://lovisenbergfamiliecamping.no/",
         "original": "https://lovisenbergfamiliecamping.no/wp-content/uploads/2023/03/IMG_9535-1-scaled.jpg",
@@ -3841,7 +3841,7 @@
       },
       {
         "src": "./images/catalog/telemark-stay-lovisenberg-surroundings.webp",
-        "kind": "surroundings",
+        "kind": "view",
         "credit": "Lovisenberg Familiecamping · official website",
         "source": "https://lovisenbergfamiliecamping.no/",
         "original": "https://lovisenbergfamiliecamping.no/wp-content/uploads/2022/08/88A8005-scaled-e1673292508142.jpg",
@@ -3900,7 +3900,7 @@
     "gallery": [
       {
         "src": "./images/catalog/telemark-stay-langesund-mozart.webp",
-        "kind": "facade",
+        "kind": "grounds",
         "credit": "Langesund Bad · official website",
         "source": "https://www.langesundbad.no/",
         "original": "https://static.wixstatic.com/media/85093f_f937cf10a8e64f40995cb749f7a3e020~mv2.jpg",
@@ -3967,7 +3967,7 @@
     "gallery": [
       {
         "src": "./images/catalog/telemark-stay-oddane-3.webp",
-        "kind": "facade",
+        "kind": "grounds",
         "credit": "KNA Oddane Sand · Utsikten 2 · official website",
         "source": "https://oddanesand.no/products/utsikten-2",
         "original": "https://oddanesand.no/cdn/shop/files/58ffd2_ce4eecbc29b545828b82576f1c05547b_mv2.jpg?v=1742819939",
@@ -3983,7 +3983,7 @@
       },
       {
         "src": "./images/catalog/telemark-stay-oddane-view.webp",
-        "kind": "surroundings",
+        "kind": "view",
         "credit": "KNA Oddane Sand · Utsikten 2 · official website",
         "source": "https://oddanesand.no/products/utsikten-2",
         "original": "https://oddanesand.no/cdn/shop/files/58ffd2_6acd9b321cd64cb1a459290ade52e889_mv2.jpg?v=1742819943",
