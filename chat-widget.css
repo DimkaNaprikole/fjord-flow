@@ -56,3 +56,5 @@ dialog.fjord-helper.fjord-ai.fjord-ai-auth-pending[open]{display:block;height:au
 .fjord-ai .fjord-ai-record-note{grid-column:1/-1;grid-row:4;margin:0;font-size:11px;line-height:1.5;color:#d4e6ed}
 
 .fjord-ai .fjord-ai-record-fallback{grid-row:2}.fjord-ai .fjord-ai-auto-send{grid-column:1/-1;grid-row:3;display:flex;align-items:center;gap:8px;font-size:12px;cursor:pointer}.fjord-ai-auto-send input{width:17px;height:17px;accent-color:#9de4da}
+
+.fjord-ai-origin{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:7px;color:#d4e6ed;font-size:12px;overflow-wrap:anywhere}.fjord-ai-origin button{border:0;background:transparent;color:#e1f4fa;font:inherit;text-decoration:underline;cursor:pointer;padding:5px}

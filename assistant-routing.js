@@ -13,9 +13,22 @@ function parse(question){
  if(!destination){const patterns=[/(?:доехать|добраться|доїхати|дістатися)\s+(?:до|в|к|у)\s+(.+)/iu,/(?:маршрут|дорогу)\s+(?:(?:до|в|к|у)\s+)?(.+)/iu,/(?:directions|route|way|get)\s+to\s+(.+)/iu,/(?:rute|veien|rutt|vägen|vej)\s+(?:til|till)\s+(.+)/iu];for(const p of patterns){const m=q.match(p);if(m){destination=clean(m[1]);break}}}
  if(!destination||destination.length>150||origin.length>150||/^(?:как|как-то|и |по |с |до |к |в |поездк|мне|нам|туда|там|here|there)/iu.test(destination))return null;
  if(/^(?:водопад(?:ам|ы|у|а)?|водоспад(?:ів|и)?|фьорды|фіорди|сауна|домики|waterfalls?|fjords?|sauna|the waterfalls)$/iu.test(destination))return null;
- if(/^(?:меня|моего местоположения|my location|here|meg)$/iu.test(origin))origin='';
+ const useCurrent=/^(?:меня|моего местоположения|my location|here|meg)$/iu.test(origin);if(useCurrent)origin='';
  const mode=/(?:пешком|пішки|on foot|walking|til fots)/iu.test(q)?'walking':/(?:обществен|потяг|поезд|автобус|public transport|transit|kollektiv)/iu.test(q)?'transit':'driving';
- return {destination:canonical(destination),origin:origin?canonical(origin):'',mode};
+ return {destination:canonical(destination),origin:origin?canonical(origin):'',mode,...(useCurrent?{useCurrent:true}:{})};
+}
+function originCommand(question){
+ const q=String(question||'').trim();if(q.length>200||/[<>\n\r]|https?:|javascript:/iu.test(q))return null;
+ if(/^(?:сбрось(?:те)? (?:старт|точку отправления)|забудь(?:те)?(?:,)? откуда я еду|reset (?:start|origin)|forget (?:my )?origin|nullstill start|glem start|скинь старт|забудь звідки я їду|nollställ start|nulstil start)[.! ]*$/iu.test(q))return {clear:true};
+ const match=q.match(/^(?:(?:афоня[, ]+)?(?:запомни[, ]+)?(?:я |теперь |сейчас )*(?:еду|выезжаю|начинаю путь) из|(?:запомни[, ]+)?(?:мой старт|старт|точка отправления)[: ]+|(?:тепер |я )*їду з|(?:now )?(?:I am |I'm )?(?:leaving|starting) from|(?:my )?start(?:ing point)?(?: is|:) ?|(?:nå )?(?:jeg )?(?:reiser|kjører) fra|start(?:punkt)?(?: er|:) ?|(?:jag )?åker från|(?:jeg )?kører fra)\s*(.+?)[.! ]*$/iu);
+ const origin=match&&canonical(clean(match[1]));
+ if(!origin||origin.length>150||/(?:\s(?:до|в|к|to|til|till)\s)/iu.test(origin))return null;
+ return {origin};
+}
+function createOriginMemory(storage,key){
+ let origin='';try{const saved=storage?.getItem(key);if(typeof saved==='string'&&saved.length<=150&&!/[<>\n\r]/u.test(saved))origin=saved}catch{}
+ const save=value=>{origin=value;try{if(value)storage?.setItem(key,value);else storage?.removeItem(key)}catch{}return origin};
+ return {get:()=>origin,set:value=>save(String(value||'').slice(0,150)),clear:()=>save(''),apply:request=>{if(request.useCurrent)save('');else if(request.origin)save(request.origin);return {...request,origin:request.useCurrent?'':request.origin||origin}}};
 }
 function build(request,places=[]){
  const wanted=normalize(canonical(request.destination));
@@ -24,5 +37,5 @@ function build(request,places=[]){
  const url=new URL('https://www.google.com/maps/dir/');url.searchParams.set('api','1');url.searchParams.set('destination',place?.routeQuery||place?.routeLabel||request.destination);url.searchParams.set('travelmode',request.mode||'driving');if(request.origin)url.searchParams.set('origin',request.origin);
  return {url:url.href,name:place?.name||request.destination,placeId:place?.id||null,origin:request.origin||''};
 }
-window.FjordAssistantRouting={parse,build};
+window.FjordAssistantRouting={parse,build,originCommand,createOriginMemory};
 })();
