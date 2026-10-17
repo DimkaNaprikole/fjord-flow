@@ -65,7 +65,7 @@
       if(!window.L)throw Error('Leaflet unavailable');
       const response=await fetch('./norway-catalog.json?v=8',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);
       const data=await response.json();if(!Array.isArray(data))throw Error('Invalid catalogue');rows=data;
-      if(!map){map=window.L.map(canvas,{scrollWheelZoom:false});window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);markers=window.L.layerGroup().addTo(map);lines=window.L.layerGroup().addTo(map);}
+      if(!map){map=window.L.map(canvas,{scrollWheelZoom:true});window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);markers=window.L.layerGroup().addTo(map);lines=window.L.layerGroup().addTo(map);}
       loaded=true; labels();map.invalidateSize();draw(true);
     } catch {status.textContent=t()[13]+' ';const retry=el('button','',t()[14]);retry.type='button';retry.addEventListener('click',load);status.append(retry);}
     finally{clearTimeout(timeout);loading=false;}
