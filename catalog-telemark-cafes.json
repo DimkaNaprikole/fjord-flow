@@ -1,0 +1,224 @@
+[
+  {
+    "id": "nordraak-kragero",
+    "name": "Nordraak · Kragerø",
+    "town": "Kragerø",
+    "region": "Telemark · Vestfold",
+    "route": "telemarkcoast",
+    "category": "cafe",
+    "address": "Nordraaks gate 4, 3770 Kragerø",
+    "latitude": 58.86964236946123,
+    "longitude": 9.41174054529421,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nordraaks%20gate%204%2C%203770%20Krager%C3%B8&treffPerSide=3",
+    "website": "https://www.nordraakkragero.no/",
+    "source": "https://www.nordraakkragero.no/%C3%A5pningstider-om-oss",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Lunsjkafé i et trehus nær havna. Trapper ved inngangen: avtal tilrettelegging på forhånd.",
+      "en": "Lunch café in a wooden house near the harbour. Entrance steps: discuss access before visiting.",
+      "uk": "Обідня кав’ярня в дерев’яному будинку біля гавані. При вході сходи: доступність узгодьте заздалегідь.",
+      "sv": "Lunchkafé i ett trähus nära hamnen. Trappor vid entrén: fråga om tillgänglighet före besöket.",
+      "da": "Frokostcafé i et træhus nær havnen. Trapper ved indgangen: aftal adgang før besøget."
+    },
+    "hoursNote": {
+      "nb": "Høst/vinter/vår: ons–lør ankomst 11–21, søn 13–17 med søndagsmiddag. Sommer 10. juni–16. august: ankomst 12–21 daglig. Dette er ankomsttider, ikke bekreftet stengetid.",
+      "en": "Autumn/winter/spring arrivals: Wed–Sat 11–21, Sun 13–17 for Sunday dinner. Summer 10 June–16 August: daily arrivals 12–21. These are arrival windows, not confirmed closing times.",
+      "uk": "Восени/взимку/навесні прибуття: ср–сб 11–21, нд 13–17 на недільний обід. 10 червня–16 серпня щодня 12–21. Це час прибуття, не підтверджений час закриття.",
+      "sv": "Höst/vinter/vår ankomst: ons–lör 11–21, sön 13–17 för söndagsmiddag. Sommar 10 juni–16 augusti: dagligen 12–21. Ankomsttider, inte bekräftad stängningstid.",
+      "da": "Efterår/vinter/forår ankomst: ons–lør 11–21, søn 13–17 til søndagsmiddag. Sommer 10. juni–16. august: dagligt 12–21. Ankomsttider, ikke bekræftet lukketid."
+    },
+    "openingHours": {
+      "verified": false,
+      "timeZone": "Europe/Oslo",
+      "source": "https://www.nordraakkragero.no/%C3%A5pningstider-om-oss",
+      "checked": "2026-10-18"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-cafe-nordraak-outside.webp",
+        "kind": "facade",
+        "source": "https://www.nordraakkragero.no/",
+        "original": "https://static.wixstatic.com/media/a2f9d2_ebf089151e4d4219bb156c6684f4a6d3~mv2.jpg",
+        "credit": "Nordraak · Kragerø · official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-cafe-nordraak-inside.webp",
+        "kind": "cafeInside",
+        "source": "https://www.nordraakkragero.no/",
+        "original": "https://static.wixstatic.com/media/996267_4b15d9ece2e94407adfc458f4fd8c5f5~mv2.jpg",
+        "credit": "Nordraak · Kragerø · official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/telemark-cafe-nordraak-outside.webp",
+    "imageSource": "https://www.nordraakkragero.no/",
+    "photoAlt": "Nordraak · Kragerø — actual venue photograph",
+    "photoCaption": "Nordraak · Kragerø · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nordraak%20%C2%B7%20Krager%C3%B8%2C%20Nordraaks%20gate%204%2C%203770%20Krager%C3%B8"
+  },
+  {
+    "id": "langesund-bad-cafe",
+    "name": "Langesund Bad · kafé og kake",
+    "town": "Langesund",
+    "region": "Telemark · Vestfold",
+    "route": "telemarkcoast",
+    "category": "cafe",
+    "address": "Badeveien 5, 3970 Langesund",
+    "latitude": 58.998687305730215,
+    "longitude": 9.742841094056661,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Badeveien%205%2C%203970%20Langesund&treffPerSide=3",
+    "website": "https://www.langesundbad.no/restaurant",
+    "source": "https://www.langesundbad.no/restaurant",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Kaffe og kake på badehotellet, med havutsikt fra terrassen. Andre måltider serveres til egne tider.",
+      "en": "Coffee and cake at the seaside hotel, with sea views from the terrace. Other meals have separate service times.",
+      "uk": "Кава й тістечка в приморському готелі з морською терасою. Інші прийоми їжі мають окремий розклад.",
+      "sv": "Kaffe och kaka på badhotellet, med havsutsikt från terrassen. Andra måltider har egna serveringstider.",
+      "da": "Kaffe og kage på badehotellet med havudsigt fra terrassen. Andre måltider har egne serveringstider."
+    },
+    "hoursNote": {
+      "nb": "Kafé og kake daglig 15–17. Dette er kaffetiden; restaurantens øvrige serveringstider er annerledes. Bekreft ved høytider.",
+      "en": "Coffee and cake daily 15–17. This is the café service window; other restaurant services differ. Confirm holiday changes.",
+      "uk": "Кава й тістечка щодня 15–17. Це час кавового обслуговування; ресторан має інший розклад страв. У свята уточнюйте.",
+      "sv": "Kaffe och kaka dagligen 15–17. Detta är kaféserveringen; restaurangens övriga tider skiljer sig. Kontrollera helgdagar.",
+      "da": "Kaffe og kage dagligt 15–17. Dette er caféserveringen; restaurantens øvrige tider er anderledes. Tjek helligdage."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "source": "https://www.langesundbad.no/restaurant",
+      "checked": "2026-10-18",
+      "weekly": [
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-cafe-langesund-terrace.webp",
+        "kind": "view",
+        "source": "https://www.langesundbad.no/restaurant",
+        "original": "https://static.wixstatic.com/media/85093f_79cf84d553894cf998695d35831b426a~mv2.jpg",
+        "credit": "Langesund Bad · kafé og kake · official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-cafe-langesund-inside.webp",
+        "kind": "cafeInside",
+        "source": "https://www.langesundbad.no/restaurant",
+        "original": "https://static.wixstatic.com/media/85093f_eba2b014c36d4a6dad9e8fbe66b3b484~mv2.jpeg",
+        "credit": "Langesund Bad · kafé og kake · official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/telemark-cafe-langesund-terrace.webp",
+    "imageSource": "https://www.langesundbad.no/restaurant",
+    "photoAlt": "Langesund Bad · kafé og kake — actual venue photograph",
+    "photoCaption": "Langesund Bad · kafé og kake · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Langesund%20Bad%20%C2%B7%20kaf%C3%A9%20og%20kake%2C%20Badeveien%205%2C%203970%20Langesund"
+  },
+  {
+    "id": "nevlunghavn-bakeri",
+    "name": "Nevlunghavn Bakeri & Conditori",
+    "town": "Nevlunghavn",
+    "region": "Telemark · Vestfold",
+    "route": "telemarkcoast",
+    "category": "cafe",
+    "address": "Oddaneveien 2, 3296 Nevlunghavn",
+    "latitude": 58.971891106860944,
+    "longitude": 9.863106639440973,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Oddaneveien%202%2C%203296%20Nevlunghavn&treffPerSide=3",
+    "website": "https://www.nevlunghavnbakeri.no/",
+    "source": "https://www.nevlunghavnbakeri.no/kontakt/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Familiebakeri med kaffe og bakst nær Nevlunghavn og Mølen. Bildene viser bakeriets terrasse og havneomgivelsene.",
+      "en": "Family bakery for coffee and pastries near Nevlunghavn and Mølen. Photos show its terrace and harbour surroundings.",
+      "uk": "Сімейна пекарня з кавою й випічкою біля Nevlunghavn та Mølen. На фото — тераса пекарні та околиці гавані.",
+      "sv": "Familjebageri med kaffe och bakverk nära Nevlunghavn och Mølen. Bilderna visar bageriets terrass och hamnomgivningar.",
+      "da": "Familiebageri med kaffe og bagværk nær Nevlunghavn og Mølen. Billederne viser bageriets terrasse og havneomgivelser."
+    },
+    "hoursNote": {
+      "nb": "Butikkens kontaktside sier fra 06 på hverdager; nettbestilling oppgir 08–16 daglig. Dette er ulike opplysninger, ikke én bekreftet butikkplan. Ring 33 18 89 00 før avreise.",
+      "en": "The shop contact page says weekdays from 06; online ordering lists 08–16 daily. These differ and are not a confirmed shop timetable. Call +47 33 18 89 00 before travelling.",
+      "uk": "Сторінка магазину: у будні з 06; онлайн-замовлення: щодня 08–16. Дані відрізняються й не є підтвердженим розкладом магазину. Перед виїздом телефонуйте +47 33 18 89 00.",
+      "sv": "Butikens kontaktsida anger vardagar från 06; nätbeställning visar dagligen 08–16. Uppgifterna skiljer sig och är inte en bekräftad butiksplan. Ring +47 33 18 89 00 före avresa.",
+      "da": "Butikkens kontaktside siger hverdage fra 06; netbestilling viser dagligt 08–16. Oplysningerne er forskellige og er ikke en bekræftet butikstidsplan. Ring +47 33 18 89 00 før afrejse."
+    },
+    "sources": [
+      "https://www.nevlunghavnbakeri.no/kontakt/",
+      "https://bestill.nevlunghavnbakeri.no/"
+    ],
+    "openingHours": {
+      "verified": false,
+      "timeZone": "Europe/Oslo",
+      "source": "https://www.nevlunghavnbakeri.no/kontakt/",
+      "checked": "2026-10-18"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-cafe-nevlunghavn-terrace.webp",
+        "kind": "terrace",
+        "source": "https://www.nevlunghavnbakeri.no/bakeriet/",
+        "original": "https://www.nevlunghavnbakeri.no/wp-content/uploads/2014/09/bakeriet6.png",
+        "credit": "Svenn Dvergastein · Nevlunghavn Bakeri official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-cafe-nevlunghavn-harbour.webp",
+        "kind": "view",
+        "source": "https://www.nevlunghavnbakeri.no/bakeriet/",
+        "original": "https://www.nevlunghavnbakeri.no/wp-content/uploads/2014/09/bakeriet1.png",
+        "credit": "Svenn Dvergastein · Nevlunghavn Bakeri official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/telemark-cafe-nevlunghavn-terrace.webp",
+    "imageSource": "https://www.nevlunghavnbakeri.no/bakeriet/",
+    "photoAlt": "Nevlunghavn Bakeri & Conditori — actual venue photograph",
+    "photoCaption": "Nevlunghavn Bakeri & Conditori · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nevlunghavn%20Bakeri%20%26%20Conditori%2C%20Oddaneveien%202%2C%203296%20Nevlunghavn"
+  }
+]

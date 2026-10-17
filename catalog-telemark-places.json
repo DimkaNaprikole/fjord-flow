@@ -1,0 +1,194 @@
+[
+  {
+    "id": "kragero-waterfront",
+    "name": "Kragerø · brygger & trehus",
+    "town": "Kragerø",
+    "category": "rest",
+    "region": "Telemark · kysten",
+    "route": "telemarkcoast",
+    "address": "Kragerø sentrum, Norway",
+    "latitude": 58.8693,
+    "longitude": 9.41493,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Krager%C3%B8&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative town point; orientation only, not a parking entrance.",
+    "website": "https://www.visittelemark.com/kragero/kragero/information/customer-home",
+    "source": "https://www.visittelemark.com/kragero/kragero/information/customer-home",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Små smug, trehus og brygger mellom åser og skjærgård. Bruk Kragerø som en rolig bypause uten å være avhengig av øyferger.",
+      "en": "Lanes, wooden houses and quays between hills and coastal islands. Explore Kragerø at an easy pace without needing an island ferry.",
+      "uk": "Провулки, дерев’яні будинки й причали між пагорбами та шхерами. Неспішна зупинка в Краґере без обов’язкових поромів на острови.",
+      "sv": "Små gränder, trähus och bryggor mellan kullar och skärgård. Ta en lugn stadspaus i Kragerø utan att behöva ta öfärja.",
+      "da": "Små gyder, træhuse og brygger mellem bakker og skærgård. Hold en rolig bypause i Kragerø uden at være afhængig af øfærger."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider, noen er sesongåpne. Parker lovlig og gå videre til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep individual hours, some seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider, vissa säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Krager%C3%B8%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/telemark-place-kragero.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:130720086512kragerø_øya.jpg",
+    "photoAlt": "Wooden waterfront houses on Øya in Kragerø, photographed across the harbour in July 2008",
+    "photoCaption": "Bjoertvedt · CC BY-SA 3.0 · 2008-07-13 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-place-kragero.webp",
+        "kind": "view",
+        "credit": "Bjoertvedt",
+        "source": "https://commons.wikimedia.org/wiki/File:130720086512kragerø_øya.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/1/1a/130720086512krager%C3%B8_%C3%B8ya.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "langesund-harbour",
+    "name": "Langesund · havn & smågater",
+    "town": "Langesund",
+    "category": "rest",
+    "region": "Telemark · Bamble",
+    "route": "telemarkcoast",
+    "address": "Langesund sentrum, Norway",
+    "latitude": 59.00066,
+    "longitude": 9.74873,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Langesund&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative town point; orientation only, not a parking entrance.",
+    "website": "https://www.visittelemark.no/produkter/langesund",
+    "source": "https://www.visittelemark.no/produkter/langesund",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En liten kystby med trehus, havn og gater ned mot fjorden. Velg en kort spasertur i sentrum, eller følg kyststien et stykke når været passer.",
+      "en": "A compact coastal town with wooden houses, a harbour and streets leading to the fjord. Stroll around the centre or sample a section of coastal path in suitable weather.",
+      "uk": "Невелике приморське містечко з дерев’яними будинками, гаванню й вуличками до фіорду. Прогуляйтеся центром або частиною берегової стежки за доброї погоди.",
+      "sv": "En liten kuststad med trähus, hamn och gator ner mot fjorden. Promenera i centrum eller följ en bit av kuststigen när vädret passar.",
+      "da": "En lille kystby med træhuse, havn og gader ned mod fjorden. Gå en tur i centrum eller følg lidt af kyststien i passende vejr."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider, noen er sesongåpne. Parker lovlig og gå videre til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep individual hours, some seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider, vissa säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Langesund%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/telemark-place-langesund.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Fra_havnen_i_Langesund.jpg",
+    "photoAlt": "Red wooden waterfront building and public seating by Langesund harbour, 2026",
+    "photoCaption": "Orf3us · CC BY-SA 4.0 · 2026 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-place-langesund.webp",
+        "kind": "view",
+        "credit": "Orf3us",
+        "source": "https://commons.wikimedia.org/wiki/File:Fra_havnen_i_Langesund.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Fra_havnen_i_Langesund.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "nevlunghavn-harbour",
+    "name": "Nevlunghavn · fiskehavn",
+    "town": "Nevlunghavn",
+    "category": "rest",
+    "region": "Vestfold · Larvik",
+    "route": "telemarkcoast",
+    "address": "Nevlunghavn sentrum, Norway",
+    "latitude": 58.96741,
+    "longitude": 9.86748,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Nevlunghavn&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative town point; orientation only, not a parking entrance.",
+    "website": "https://visitvestfold.com/no/sted/nevlunghavn",
+    "source": "https://visitvestfold.com/no/sted/nevlunghavn",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En liten fiskehavn med hvite hus og åpne havutsikter. Ta en kort bryggepause; kyststien og Mølen er mulige tillegg når du har tid og været passer.",
+      "en": "A small fishing harbour with white houses and open sea views. Pause on the quay; the coastal path and Mølen are optional additions when time and weather allow.",
+      "uk": "Маленька рибальська гавань із білими будинками й відкритим морем. Відпочиньте на причалі; берегова стежка та Mølen — додаткові зупинки, якщо є час і дозволяє погода.",
+      "sv": "En liten fiskehamn med vita hus och öppna havsutsikter. Pausa vid bryggan; kuststigen och Mølen är möjliga tillägg om tid och väder tillåter.",
+      "da": "En lille fiskerhavn med hvide huse og åben havudsigt. Hold en pause på kajen; kyststien og Mølen er mulige ekstra stop, når tid og vejr tillader det."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider, noen er sesongåpne. Parker lovlig og gå videre til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep individual hours, some seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider, vissa säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Nevlunghavn%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/telemark-place-nevlunghavn.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg",
+    "photoAlt": "Fishing boats and red waterfront buildings at Nevlunghavn harbour in July 2005",
+    "photoCaption": "Dort~commonswiki (attributed on Commons) · Public domain · 2005-07-13 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-place-nevlunghavn.webp",
+        "kind": "view",
+        "credit": "Dort~commonswiki (attributed on Commons)",
+        "source": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Nevlunghavn_-_brygga.jpg",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg#Licensing",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "stavern-harbour-fredriksvern",
+    "name": "Stavern · havn & Fredriksvern",
+    "town": "Stavern",
+    "category": "rest",
+    "region": "Vestfold · Larvik",
+    "route": "telemarkcoast",
+    "address": "Stavern sentrum, Norway",
+    "latitude": 58.9983,
+    "longitude": 10.03557,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Stavern&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative town point; orientation only, not a parking entrance.",
+    "website": "https://www.visitvestfold.com/no/larvik/artikler/Stavern",
+    "source": "https://www.visitvestfold.com/no/larvik/artikler/Stavern",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Havn, smågater og det historiske Fredriksvern Verft. Sett av tid til en rusletur mellom sjøen og kulturmiljøet; gallerier har egne åpningstider.",
+      "en": "Harbour lanes meet historic Fredriksvern Verft. Allow time for a gentle walk between the waterfront and heritage buildings; galleries keep their own opening hours.",
+      "uk": "Гавань, вулички й історична верф Fredriksvern. Залиште час на прогулянку між морем та старовинними будівлями; галереї мають власні години роботи.",
+      "sv": "Hamn, smågator och historiska Fredriksvern Verft. Avsätt tid för en promenad mellan vattnet och kulturmiljön; gallerier har egna öppettider.",
+      "da": "Havn, små gader og det historiske Fredriksvern Verft. Sæt tid af til en gåtur mellem vandet og kulturmiljøet; gallerier har egne åbningstider."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider, noen er sesongåpne. Parker lovlig og gå videre til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep individual hours, some seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider, vissa säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Stavern%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/telemark-place-stavern.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Stavern_havn.jpg",
+    "photoAlt": "Sailing boats, small red boathouse and blue water in Stavern harbour in July 2008",
+    "photoCaption": "Eaglestein · CC BY-SA 3.0 · 2008-07-17 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-place-stavern.webp",
+        "kind": "view",
+        "credit": "Eaglestein",
+        "source": "https://commons.wikimedia.org/wiki/File:Stavern_havn.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/9/94/Stavern_havn.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  }
+]

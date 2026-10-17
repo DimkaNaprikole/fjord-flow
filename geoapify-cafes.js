@@ -19,7 +19,7 @@
  function distanceMeters(a,b){const r=Math.PI/180,h=Math.sin((b.lat-a.lat)*r/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin((b.lng-a.lng)*r/2)**2;return Math.round(12742000*Math.asin(Math.min(1,Math.sqrt(h))))}
  async function request(url){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),10000);try{const response=await fetch(url,{signal:controller.signal,credentials:'omit'});if(!response.ok)throw fail(response.status===429?'RATE_LIMITED':[401,403].includes(response.status)?'REQUEST_DENIED':'SEARCH_FAILED','The café service could not complete this request.');return await response.json()}catch(e){if(e instanceof CafeError)throw e;throw fail('SEARCH_FAILED','The café service is unavailable. Please try again.')}finally{clearTimeout(timer)}}
  let curatedPending=null;
- function curated(){if(!curatedPending)curatedPending=request(new URL('cafes.json?v=8',base)).then(v=>Array.isArray(v)?v:[]).catch(()=>[]);return curatedPending}
+ function curated(){if(!curatedPending)curatedPending=request(new URL('cafes.json?v=9',base)).then(v=>Array.isArray(v)?v:[]).catch(()=>[]);return curatedPending}
  async function configuration(){let c;try{c=await request(new URL('geoapify-config.json',base))}catch{throw fail('CONFIG_UNAVAILABLE','Café search configuration is unavailable.')}if(c?.enabled!==true||!tidy(c.apiKey))throw fail('NOT_CONFIGURED','Live café search is not connected yet.');return{apiKey:tidy(c.apiKey),maxResults:Number.isInteger(c.maxResults)?Math.max(1,Math.min(12,c.maxResults)):12}}
  const osmId=p=>{const r=p?.datasource?.raw;return r?.osm_type&&r?.osm_id?String(r.osm_type)+':'+String(r.osm_id):''};
  const norm=s=>tidy(s).normalize('NFKC').toLocaleLowerCase().replace(/\s+/g,' ');

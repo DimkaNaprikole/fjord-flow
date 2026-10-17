@@ -80,7 +80,7 @@ if (!await exists(path.join(root, 'catalog-rest.json'))) {
   console.log(JSON.stringify({status: 'cached-stays-only; catalog-rest.json not ready', stays: stays.length, downloaded, reused, bytes}));
   process.exit(0);
 }
-const additions = (await Promise.all(['catalog-new-venues.json', 'catalog-central.json', 'catalog-north.json', 'catalog-west-south.json', 'catalog-sorlandet.json', 'catalog-kristiansand.json', 'catalog-oslofjord.json', 'catalog-east-coast-places.json', 'catalog-east-coast-stays.json', 'catalog-east-coast-cafes.json'].map(read))).flat();
+const additions = (await Promise.all(['catalog-new-venues.json', 'catalog-central.json', 'catalog-north.json', 'catalog-west-south.json', 'catalog-sorlandet.json', 'catalog-kristiansand.json', 'catalog-oslofjord.json', 'catalog-east-coast-places.json', 'catalog-east-coast-stays.json', 'catalog-east-coast-cafes.json', 'catalog-telemark-places.json', 'catalog-telemark-stays.json', 'catalog-telemark-cafes.json'].map(read))).flat();
 const coordinateOverrides = await read('catalog-coordinates.json');
 const visitNotes = await read('catalog-visit-notes.json');
 const oldCafes = await read('cafes.json');

@@ -1,0 +1,211 @@
+[
+  {
+    "id": "lovisenberg-coastal-cabins",
+    "name": "Lovisenberg Familiecamping · hytter",
+    "town": "Kragerø",
+    "region": "Telemarkskysten",
+    "category": "cabin",
+    "address": "Lovisenbergveien 86, 3770 Kragerø, Norway",
+    "latitude": 58.901534883704954,
+    "longitude": 9.409070232415255,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Lovisenbergveien%2086&treffPerSide=3",
+    "website": "https://lovisenbergfamiliecamping.no/",
+    "bookingUrl": "https://online.bookvisit.com/accommodation?channelId=8d3970a8-dfc2-4c63-ade8-d04483f88a53",
+    "source": "https://lovisenbergfamiliecamping.no/",
+    "checked": "2026-10-18",
+    "phone": "+4735988777",
+    "description": {
+      "nb": "Campinghytter ved Kragerøs skjærgård. Standard-hyttene har kjøkkenkrok og felles sanitæranlegg; velg hyttetype ved bestilling.",
+      "en": "Camping cabins beside the Kragerø archipelago. Standard cabins have kitchenettes and shared washrooms; choose your cabin type when booking.",
+      "uk": "Кемпінгові будиночки біля шхер Kragerø. Тип Standard має мінікухню та спільні душові й туалети; оберіть тип під час бронювання.",
+      "sv": "Campingstugor vid Kragerøs skärgård. Standard har kokvrå och gemensamma sanitetsutrymmen; välj stugtyp vid bokning.",
+      "da": "Campinghytter ved Kragerøs skærgård. Standard har tekøkken og fælles bad og toilet; vælg hyttetype ved booking."
+    },
+    "hoursNote": {
+      "nb": "Vinterstengt 1. oktober–1. mai ifølge operatøren. Hytteinnsjekk fra 16. Bekreft sesong og tilgjengelighet. Bassengbildet viser fellesområdet.",
+      "en": "Operator lists winter closure 1 October–1 May. Cabin check-in from 16:00. Confirm season and availability. Pool photo shows the shared area.",
+      "uk": "За даними оператора, зачинено взимку 1 жовтня–1 травня. Заселення від 16:00. Уточніть сезон і наявність. Басейн — спільна зона.",
+      "sv": "Vinterstängt 1 oktober–1 maj enligt operatören. Stugincheckning från 16. Bekräfta säsong och tillgänglighet. Poolbilden visar gemensam yta.",
+      "da": "Vinterlukket 1. oktober–1. maj ifølge operatøren. Indtjekning fra 16. Bekræft sæson og ledighed. Poolfotoet viser fællesområdet."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://lovisenbergfamiliecamping.no/"
+    },
+    "image": "./images/catalog/telemark-stay-lovisenberg-exterior.webp",
+    "imageSource": "https://lovisenbergfamiliecamping.no/",
+    "photoAlt": "Lovisenberg Familiecamping — real red cabin beside coastal rocks",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-stay-lovisenberg-exterior.webp",
+        "kind": "facade",
+        "credit": "Lovisenberg Familiecamping · official website",
+        "source": "https://lovisenbergfamiliecamping.no/",
+        "original": "https://lovisenbergfamiliecamping.no/wp-content/uploads/2023/03/IMG_9535-1-scaled.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-stay-lovisenberg-surroundings.webp",
+        "kind": "surroundings",
+        "credit": "Lovisenberg Familiecamping · official website",
+        "source": "https://lovisenbergfamiliecamping.no/",
+        "original": "https://lovisenbergfamiliecamping.no/wp-content/uploads/2022/08/88A8005-scaled-e1673292508142.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Lovisenberg Familiecamping",
+      "en": "Real photograph · Lovisenberg Familiecamping",
+      "uk": "Справжнє фото · Lovisenberg Familiecamping",
+      "sv": "Äkta foto · Lovisenberg Familiecamping",
+      "da": "Ægte foto · Lovisenberg Familiecamping"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Lovisenberg%20Familiecamping%2C%20Lovisenbergveien%2086%2C%20Krager%C3%B8",
+    "descriptionSource": "https://online.bookvisit.com/accommodation/room-details?channelid=8d3970a8-dfc2-4c63-ade8-d04483f88a53&roomid=fc5282d6-10a8-4355-a183-3e7f650473d0",
+    "route": "telemarkcoast"
+  },
+  {
+    "id": "langesund-bad-coastal-cabins",
+    "name": "Langesund Bad · sjøhytter",
+    "town": "Langesund",
+    "region": "Telemarkskysten",
+    "category": "cabin",
+    "address": "Badeveien 5, 3970 Langesund, Norway",
+    "latitude": 58.998687305730215,
+    "longitude": 9.742841094056661,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Badeveien%205%20Langesund&treffPerSide=3",
+    "website": "https://www.langesundbad.no/",
+    "bookingUrl": "https://online.bookvisit.com/r?channelId=a1480bcd-4d23-4bf2-9cd2-5403b979fb54&initialPath=/accommodation",
+    "source": "https://www.langesundbad.no/",
+    "checked": "2026-10-18",
+    "phone": "+4735973529",
+    "description": {
+      "nb": "Fem sjøhytter ved kyststien. Foto: Mozart utvendig og utsikt fra Flagstad, ulike hytter.",
+      "en": "Five seaside cabins by the coastal path. Photos: Mozart exterior and Flagstad view, different cabins.",
+      "uk": "П’ять морських будиночків біля прибережної стежки. Фото: Mozart зовні та краєвид із Flagstad, різні будиночки.",
+      "sv": "Fem havsstugor vid kuststigen. Foto: Mozart utifrån och utsikt från Flagstad, olika stugor.",
+      "da": "Fem havhytter ved kyststien. Foto: Mozart udefra og udsigt fra Flagstad, forskellige hytter."
+    },
+    "hoursNote": {
+      "nb": "Resepsjon daglig 08–23; innsjekk fra 15, utsjekk innen 11. Hyttenes ledige datoer må bekreftes ved bestilling.",
+      "en": "Reception daily 08:00–23:00; check-in from 15:00, check-out by 11:00. Confirm available cabin dates when booking.",
+      "uk": "Рецепція щодня 08:00–23:00; заселення від 15:00, виїзд до 11:00. Вільні дати будиночків уточнюйте під час бронювання.",
+      "sv": "Reception dagligen 08–23; incheckning från 15, utcheckning senast 11. Bekräfta lediga stugdatum vid bokning.",
+      "da": "Reception dagligt 08–23; indtjekning fra 15, udtjekning senest 11. Bekræft ledige hyttedatoer ved booking."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://www.langesundbad.no/"
+    },
+    "image": "./images/catalog/telemark-stay-langesund-mozart.webp",
+    "imageSource": "https://www.langesundbad.no/",
+    "photoAlt": "Langesund Bad — actual Mozart seaside cabin",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-stay-langesund-mozart.webp",
+        "kind": "facade",
+        "credit": "Langesund Bad · official website",
+        "source": "https://www.langesundbad.no/",
+        "original": "https://static.wixstatic.com/media/85093f_f937cf10a8e64f40995cb749f7a3e020~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-stay-langesund-flagstad.webp",
+        "kind": "interior",
+        "credit": "Langesund Bad · Flagstad cabin · official website",
+        "source": "https://www.langesundbad.no/",
+        "original": "https://static.wixstatic.com/media/85093f_329489d1e842432e96baf2a08c77a415~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Langesund Bad",
+      "en": "Real photograph · Langesund Bad",
+      "uk": "Справжнє фото · Langesund Bad",
+      "sv": "Äkta foto · Langesund Bad",
+      "da": "Ægte foto · Langesund Bad"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Langesund%20Bad%2C%20Badeveien%205%2C%20Langesund",
+    "descriptionSource": "https://www.langesundbad.no/",
+    "route": "telemarkcoast"
+  },
+  {
+    "id": "oddane-sand-coastal-cabins",
+    "name": "KNA Oddane Sand · Utsikten 2",
+    "town": "Nevlunghavn · Stavern",
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "address": "Oddaneveien 73, 3296 Nevlunghavn, Norway",
+    "latitude": 58.96617015276401,
+    "longitude": 9.859454420569033,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Oddaneveien%2073&treffPerSide=3",
+    "website": "https://oddanesand.no/products/utsikten-2",
+    "bookingUrl": "https://www.easynetbooking.com/o/ob.php?uhr=ofj2rr",
+    "source": "https://oddanesand.no/products/utsikten-2",
+    "checked": "2026-10-18",
+    "phone": "+4733188270",
+    "description": {
+      "nb": "Utsikten 2: åtte sengeplasser, kjøkken, bad og havutsikt. Stranden ligger cirka 250 meter unna.",
+      "en": "Utsikten 2: eight beds, kitchen, bathroom and sea views. The beach is about 250 metres away.",
+      "uk": "Utsikten 2: вісім місць, кухня, ванна та морський краєвид. До пляжу приблизно 250 метрів.",
+      "sv": "Utsikten 2: åtta bäddar, kök, badrum och havsutsikt. Stranden ligger cirka 250 meter bort.",
+      "da": "Utsikten 2: otte sengepladser, køkken, bad og havudsigt. Stranden ligger cirka 250 meter væk."
+    },
+    "hoursNote": {
+      "nb": "Innsjekk fra 16, utsjekk innen 12. Ukesopphold i høysesong; bekreft datoer og ankomstdager ved bestilling.",
+      "en": "Check-in from 16:00, check-out by 12:00. Weekly stays in peak season; confirm dates and arrival days when booking.",
+      "uk": "Заселення від 16:00, виїзд до 12:00. Високий сезон — тижневі заїзди; уточніть дати й дні прибуття.",
+      "sv": "Incheckning från 16, utcheckning senast 12. Veckovistelse under högsäsong; bekräfta datum och ankomstdagar vid bokning.",
+      "da": "Indtjekning fra 16, udtjekning senest 12. Ugeophold i højsæson; bekræft datoer og ankomstdage ved booking."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://oddanesand.no/products/utsikten-2"
+    },
+    "image": "./images/catalog/telemark-stay-oddane-3.webp",
+    "imageSource": "https://oddanesand.no/products/utsikten-2",
+    "photoAlt": "Oddane Sand Utsikten 2 — actual cabin exterior",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-stay-oddane-3.webp",
+        "kind": "facade",
+        "credit": "KNA Oddane Sand · Utsikten 2 · official website",
+        "source": "https://oddanesand.no/products/utsikten-2",
+        "original": "https://oddanesand.no/cdn/shop/files/58ffd2_ce4eecbc29b545828b82576f1c05547b_mv2.jpg?v=1742819939",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-stay-oddane-exterior.webp",
+        "kind": "interior",
+        "credit": "KNA Oddane Sand · Utsikten 2 · official website",
+        "source": "https://oddanesand.no/products/utsikten-2",
+        "original": "https://oddanesand.no/cdn/shop/files/58ffd2_abc93e01c85b415cb9541f5f41e551a1_mv2.jpg?v=1742819943",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-stay-oddane-view.webp",
+        "kind": "surroundings",
+        "credit": "KNA Oddane Sand · Utsikten 2 · official website",
+        "source": "https://oddanesand.no/products/utsikten-2",
+        "original": "https://oddanesand.no/cdn/shop/files/58ffd2_6acd9b321cd64cb1a459290ade52e889_mv2.jpg?v=1742819943",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Oddane Sand · Utsikten 2",
+      "en": "Real photograph · Oddane Sand · Utsikten 2",
+      "uk": "Справжнє фото · Oddane Sand · Utsikten 2",
+      "sv": "Äkta foto · Oddane Sand · Utsikten 2",
+      "da": "Ægte foto · Oddane Sand · Utsikten 2"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=KNA%20Oddane%20Sand%20Camping%2C%20Oddaneveien%2073%2C%20Nevlunghavn",
+    "descriptionSource": "https://oddanesand.no/products/utsikten-2",
+    "route": "telemarkcoast"
+  }
+]

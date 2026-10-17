@@ -48,3 +48,20 @@ test('Browser registration retains existing local routes',()=>{
  vm.runInNewContext(readFileSync(new URL('./southern-routes.js',import.meta.url),'utf8'),context);
  assert.equal(context.window.FjordTripTools.localRoutes.hadeland,old);assert.ok(context.window.FjordTripTools.localRoutes.sorlandet);
 });
+
+test('Telemark continues from Risør to Stavern by realistic mainland stops',()=>{
+ const route=routes.telemarkcoast,points=route.points;
+ assert.deepEqual(points.map(p=>p.id),['telemarkcoast-risor','telemarkcoast-kragero','telemarkcoast-langesund','telemarkcoast-nevlunghavn','telemarkcoast-stavern']);
+ assert.equal(points[0].latitude,routes.agdercoast.points.at(-1).latitude);
+ assert.equal(points[0].longitude,routes.agdercoast.points.at(-1).longitude);
+ assert.deepEqual(route.optionalExperienceIds,[]);assert.notEqual(route.navigationOnly,true);
+ assert.match(route.summary.en,/3–4 days/);assert.equal(route.photos.length,4);
+ assert.match(points[2].description.en,/E18 and bridges, without the Langesund–Helgeroa ferry/);
+ assert.match(points[3].description.en,/mainland road around the fjord/);
+ assert.match(points.at(-1).description.en,/one-way.*return/);
+ for(let i=0;i<points.length;i++){
+  const p=points[i];assert.equal(p.coordinatePrecision,'area');assert.match(p.routeQuery,/sentrum, Norway$/);
+  assert.ok(p.latitude>58.7&&p.latitude<59.1);assert.ok(p.longitude>9.2&&p.longitude<10.1);
+  if(i)assert.ok(p.longitude>points[i-1].longitude,'The coastal towns stay in eastbound order');
+ }
+});

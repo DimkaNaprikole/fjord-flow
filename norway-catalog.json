@@ -1612,6 +1612,228 @@
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.72034215228381%2C9.232572560468363"
   },
   {
+    "id": "nordraak-kragero",
+    "name": "Nordraak · Kragerø",
+    "town": "Kragerø",
+    "region": "Telemark · Vestfold",
+    "route": "telemarkcoast",
+    "category": "cafe",
+    "address": "Nordraaks gate 4, 3770 Kragerø",
+    "latitude": 58.86964236946123,
+    "longitude": 9.41174054529421,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Nordraaks%20gate%204%2C%203770%20Krager%C3%B8&treffPerSide=3",
+    "website": "https://www.nordraakkragero.no/",
+    "source": "https://www.nordraakkragero.no/%C3%A5pningstider-om-oss",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Lunsjkafé i et trehus nær havna. Trapper ved inngangen: avtal tilrettelegging på forhånd.",
+      "en": "Lunch café in a wooden house near the harbour. Entrance steps: discuss access before visiting.",
+      "uk": "Обідня кав’ярня в дерев’яному будинку біля гавані. При вході сходи: доступність узгодьте заздалегідь.",
+      "sv": "Lunchkafé i ett trähus nära hamnen. Trappor vid entrén: fråga om tillgänglighet före besöket.",
+      "da": "Frokostcafé i et træhus nær havnen. Trapper ved indgangen: aftal adgang før besøget."
+    },
+    "hoursNote": {
+      "nb": "Høst/vinter/vår: ons–lør ankomst 11–21, søn 13–17 med søndagsmiddag. Sommer 10. juni–16. august: ankomst 12–21 daglig. Dette er ankomsttider, ikke bekreftet stengetid.",
+      "en": "Autumn/winter/spring arrivals: Wed–Sat 11–21, Sun 13–17 for Sunday dinner. Summer 10 June–16 August: daily arrivals 12–21. These are arrival windows, not confirmed closing times.",
+      "uk": "Восени/взимку/навесні прибуття: ср–сб 11–21, нд 13–17 на недільний обід. 10 червня–16 серпня щодня 12–21. Це час прибуття, не підтверджений час закриття.",
+      "sv": "Höst/vinter/vår ankomst: ons–lör 11–21, sön 13–17 för söndagsmiddag. Sommar 10 juni–16 augusti: dagligen 12–21. Ankomsttider, inte bekräftad stängningstid.",
+      "da": "Efterår/vinter/forår ankomst: ons–lør 11–21, søn 13–17 til søndagsmiddag. Sommer 10. juni–16. august: dagligt 12–21. Ankomsttider, ikke bekræftet lukketid."
+    },
+    "openingHours": {
+      "verified": false,
+      "timeZone": "Europe/Oslo",
+      "source": "https://www.nordraakkragero.no/%C3%A5pningstider-om-oss",
+      "checked": "2026-10-18"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-cafe-nordraak-outside.webp",
+        "kind": "facade",
+        "source": "https://www.nordraakkragero.no/",
+        "original": "https://static.wixstatic.com/media/a2f9d2_ebf089151e4d4219bb156c6684f4a6d3~mv2.jpg",
+        "credit": "Nordraak · Kragerø · official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-cafe-nordraak-inside.webp",
+        "kind": "cafeInside",
+        "source": "https://www.nordraakkragero.no/",
+        "original": "https://static.wixstatic.com/media/996267_4b15d9ece2e94407adfc458f4fd8c5f5~mv2.jpg",
+        "credit": "Nordraak · Kragerø · official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/telemark-cafe-nordraak-outside.webp",
+    "imageSource": "https://www.nordraakkragero.no/",
+    "photoAlt": "Nordraak · Kragerø — actual venue photograph",
+    "photoCaption": "Nordraak · Kragerø · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nordraak%20%C2%B7%20Krager%C3%B8%2C%20Nordraaks%20gate%204%2C%203770%20Krager%C3%B8"
+  },
+  {
+    "id": "langesund-bad-cafe",
+    "name": "Langesund Bad · kafé og kake",
+    "town": "Langesund",
+    "region": "Telemark · Vestfold",
+    "route": "telemarkcoast",
+    "category": "cafe",
+    "address": "Badeveien 5, 3970 Langesund",
+    "latitude": 58.998687305730215,
+    "longitude": 9.742841094056661,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Badeveien%205%2C%203970%20Langesund&treffPerSide=3",
+    "website": "https://www.langesundbad.no/restaurant",
+    "source": "https://www.langesundbad.no/restaurant",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Kaffe og kake på badehotellet, med havutsikt fra terrassen. Andre måltider serveres til egne tider.",
+      "en": "Coffee and cake at the seaside hotel, with sea views from the terrace. Other meals have separate service times.",
+      "uk": "Кава й тістечка в приморському готелі з морською терасою. Інші прийоми їжі мають окремий розклад.",
+      "sv": "Kaffe och kaka på badhotellet, med havsutsikt från terrassen. Andra måltider har egna serveringstider.",
+      "da": "Kaffe og kage på badehotellet med havudsigt fra terrassen. Andre måltider har egne serveringstider."
+    },
+    "hoursNote": {
+      "nb": "Kafé og kake daglig 15–17. Dette er kaffetiden; restaurantens øvrige serveringstider er annerledes. Bekreft ved høytider.",
+      "en": "Coffee and cake daily 15–17. This is the café service window; other restaurant services differ. Confirm holiday changes.",
+      "uk": "Кава й тістечка щодня 15–17. Це час кавового обслуговування; ресторан має інший розклад страв. У свята уточнюйте.",
+      "sv": "Kaffe och kaka dagligen 15–17. Detta är kaféserveringen; restaurangens övriga tider skiljer sig. Kontrollera helgdagar.",
+      "da": "Kaffe og kage dagligt 15–17. Dette er caféserveringen; restaurantens øvrige tider er anderledes. Tjek helligdage."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "source": "https://www.langesundbad.no/restaurant",
+      "checked": "2026-10-18",
+      "weekly": [
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "15:00",
+            "17:00"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-cafe-langesund-terrace.webp",
+        "kind": "view",
+        "source": "https://www.langesundbad.no/restaurant",
+        "original": "https://static.wixstatic.com/media/85093f_79cf84d553894cf998695d35831b426a~mv2.jpg",
+        "credit": "Langesund Bad · kafé og kake · official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-cafe-langesund-inside.webp",
+        "kind": "cafeInside",
+        "source": "https://www.langesundbad.no/restaurant",
+        "original": "https://static.wixstatic.com/media/85093f_eba2b014c36d4a6dad9e8fbe66b3b484~mv2.jpeg",
+        "credit": "Langesund Bad · kafé og kake · official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/telemark-cafe-langesund-terrace.webp",
+    "imageSource": "https://www.langesundbad.no/restaurant",
+    "photoAlt": "Langesund Bad · kafé og kake — actual venue photograph",
+    "photoCaption": "Langesund Bad · kafé og kake · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Langesund%20Bad%20%C2%B7%20kaf%C3%A9%20og%20kake%2C%20Badeveien%205%2C%203970%20Langesund"
+  },
+  {
+    "id": "nevlunghavn-bakeri",
+    "name": "Nevlunghavn Bakeri & Conditori",
+    "town": "Nevlunghavn",
+    "region": "Telemark · Vestfold",
+    "route": "telemarkcoast",
+    "category": "cafe",
+    "address": "Oddaneveien 2, 3296 Nevlunghavn",
+    "latitude": 58.971891106860944,
+    "longitude": 9.863106639440973,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Oddaneveien%202%2C%203296%20Nevlunghavn&treffPerSide=3",
+    "website": "https://www.nevlunghavnbakeri.no/",
+    "source": "https://www.nevlunghavnbakeri.no/kontakt/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Familiebakeri med kaffe og bakst nær Nevlunghavn og Mølen. Bildene viser bakeriets terrasse og havneomgivelsene.",
+      "en": "Family bakery for coffee and pastries near Nevlunghavn and Mølen. Photos show its terrace and harbour surroundings.",
+      "uk": "Сімейна пекарня з кавою й випічкою біля Nevlunghavn та Mølen. На фото — тераса пекарні та околиці гавані.",
+      "sv": "Familjebageri med kaffe och bakverk nära Nevlunghavn och Mølen. Bilderna visar bageriets terrass och hamnomgivningar.",
+      "da": "Familiebageri med kaffe og bagværk nær Nevlunghavn og Mølen. Billederne viser bageriets terrasse og havneomgivelser."
+    },
+    "hoursNote": {
+      "nb": "Butikkens kontaktside sier fra 06 på hverdager; nettbestilling oppgir 08–16 daglig. Dette er ulike opplysninger, ikke én bekreftet butikkplan. Ring 33 18 89 00 før avreise.",
+      "en": "The shop contact page says weekdays from 06; online ordering lists 08–16 daily. These differ and are not a confirmed shop timetable. Call +47 33 18 89 00 before travelling.",
+      "uk": "Сторінка магазину: у будні з 06; онлайн-замовлення: щодня 08–16. Дані відрізняються й не є підтвердженим розкладом магазину. Перед виїздом телефонуйте +47 33 18 89 00.",
+      "sv": "Butikens kontaktsida anger vardagar från 06; nätbeställning visar dagligen 08–16. Uppgifterna skiljer sig och är inte en bekräftad butiksplan. Ring +47 33 18 89 00 före avresa.",
+      "da": "Butikkens kontaktside siger hverdage fra 06; netbestilling viser dagligt 08–16. Oplysningerne er forskellige og er ikke en bekræftet butikstidsplan. Ring +47 33 18 89 00 før afrejse."
+    },
+    "sources": [
+      "https://www.nevlunghavnbakeri.no/kontakt/",
+      "https://bestill.nevlunghavnbakeri.no/"
+    ],
+    "openingHours": {
+      "verified": false,
+      "timeZone": "Europe/Oslo",
+      "source": "https://www.nevlunghavnbakeri.no/kontakt/",
+      "checked": "2026-10-18"
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-cafe-nevlunghavn-terrace.webp",
+        "kind": "terrace",
+        "source": "https://www.nevlunghavnbakeri.no/bakeriet/",
+        "original": "https://www.nevlunghavnbakeri.no/wp-content/uploads/2014/09/bakeriet6.png",
+        "credit": "Svenn Dvergastein · Nevlunghavn Bakeri official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-cafe-nevlunghavn-harbour.webp",
+        "kind": "view",
+        "source": "https://www.nevlunghavnbakeri.no/bakeriet/",
+        "original": "https://www.nevlunghavnbakeri.no/wp-content/uploads/2014/09/bakeriet1.png",
+        "credit": "Svenn Dvergastein · Nevlunghavn Bakeri official website",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/telemark-cafe-nevlunghavn-terrace.webp",
+    "imageSource": "https://www.nevlunghavnbakeri.no/bakeriet/",
+    "photoAlt": "Nevlunghavn Bakeri & Conditori — actual venue photograph",
+    "photoCaption": "Nevlunghavn Bakeri & Conditori · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nevlunghavn%20Bakeri%20%26%20Conditori%2C%20Oddaneveien%202%2C%203296%20Nevlunghavn"
+  },
+  {
     "id": "kinsarvik-heng",
     "name": "Kinsarvik Camping — Heng",
     "area": "Kinsarvik · Hardanger",
@@ -3377,6 +3599,407 @@
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Ris%C3%B8r%20Resort%20%C2%B7%20Sj%C3%B8hytta%2C%20Moensveien%2022%2C%204950%20Ris%C3%B8r%2C%20Norway",
     "route": "agdercoast"
+  },
+  {
+    "id": "kragero-waterfront",
+    "name": "Kragerø · brygger & trehus",
+    "town": "Kragerø",
+    "category": "rest",
+    "region": "Telemark · kysten",
+    "route": "telemarkcoast",
+    "address": "Kragerø sentrum, Norway",
+    "latitude": 58.8693,
+    "longitude": 9.41493,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Krager%C3%B8&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative town point; orientation only, not a parking entrance.",
+    "website": "https://www.visittelemark.com/kragero/kragero/information/customer-home",
+    "source": "https://www.visittelemark.com/kragero/kragero/information/customer-home",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Små smug, trehus og brygger mellom åser og skjærgård. Bruk Kragerø som en rolig bypause uten å være avhengig av øyferger.",
+      "en": "Lanes, wooden houses and quays between hills and coastal islands. Explore Kragerø at an easy pace without needing an island ferry.",
+      "uk": "Провулки, дерев’яні будинки й причали між пагорбами та шхерами. Неспішна зупинка в Краґере без обов’язкових поромів на острови.",
+      "sv": "Små gränder, trähus och bryggor mellan kullar och skärgård. Ta en lugn stadspaus i Kragerø utan att behöva ta öfärja.",
+      "da": "Små gyder, træhuse og brygger mellem bakker og skærgård. Hold en rolig bypause i Kragerø uden at være afhængig af øfærger."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider, noen er sesongåpne. Parker lovlig og gå videre til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep individual hours, some seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider, vissa säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Krager%C3%B8%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/telemark-place-kragero.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:130720086512kragerø_øya.jpg",
+    "photoAlt": "Wooden waterfront houses on Øya in Kragerø, photographed across the harbour in July 2008",
+    "photoCaption": "Bjoertvedt · CC BY-SA 3.0 · 2008-07-13 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-place-kragero.webp",
+        "kind": "view",
+        "credit": "Bjoertvedt",
+        "source": "https://commons.wikimedia.org/wiki/File:130720086512kragerø_øya.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/1/1a/130720086512krager%C3%B8_%C3%B8ya.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "langesund-harbour",
+    "name": "Langesund · havn & smågater",
+    "town": "Langesund",
+    "category": "rest",
+    "region": "Telemark · Bamble",
+    "route": "telemarkcoast",
+    "address": "Langesund sentrum, Norway",
+    "latitude": 59.00066,
+    "longitude": 9.74873,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Langesund&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative town point; orientation only, not a parking entrance.",
+    "website": "https://www.visittelemark.no/produkter/langesund",
+    "source": "https://www.visittelemark.no/produkter/langesund",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En liten kystby med trehus, havn og gater ned mot fjorden. Velg en kort spasertur i sentrum, eller følg kyststien et stykke når været passer.",
+      "en": "A compact coastal town with wooden houses, a harbour and streets leading to the fjord. Stroll around the centre or sample a section of coastal path in suitable weather.",
+      "uk": "Невелике приморське містечко з дерев’яними будинками, гаванню й вуличками до фіорду. Прогуляйтеся центром або частиною берегової стежки за доброї погоди.",
+      "sv": "En liten kuststad med trähus, hamn och gator ner mot fjorden. Promenera i centrum eller följ en bit av kuststigen när vädret passar.",
+      "da": "En lille kystby med træhuse, havn og gader ned mod fjorden. Gå en tur i centrum eller følg lidt af kyststien i passende vejr."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider, noen er sesongåpne. Parker lovlig og gå videre til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep individual hours, some seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider, vissa säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Langesund%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/telemark-place-langesund.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Fra_havnen_i_Langesund.jpg",
+    "photoAlt": "Red wooden waterfront building and public seating by Langesund harbour, 2026",
+    "photoCaption": "Orf3us · CC BY-SA 4.0 · 2026 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-place-langesund.webp",
+        "kind": "view",
+        "credit": "Orf3us",
+        "source": "https://commons.wikimedia.org/wiki/File:Fra_havnen_i_Langesund.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Fra_havnen_i_Langesund.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "nevlunghavn-harbour",
+    "name": "Nevlunghavn · fiskehavn",
+    "town": "Nevlunghavn",
+    "category": "rest",
+    "region": "Vestfold · Larvik",
+    "route": "telemarkcoast",
+    "address": "Nevlunghavn sentrum, Norway",
+    "latitude": 58.96741,
+    "longitude": 9.86748,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Nevlunghavn&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative town point; orientation only, not a parking entrance.",
+    "website": "https://visitvestfold.com/no/sted/nevlunghavn",
+    "source": "https://visitvestfold.com/no/sted/nevlunghavn",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En liten fiskehavn med hvite hus og åpne havutsikter. Ta en kort bryggepause; kyststien og Mølen er mulige tillegg når du har tid og været passer.",
+      "en": "A small fishing harbour with white houses and open sea views. Pause on the quay; the coastal path and Mølen are optional additions when time and weather allow.",
+      "uk": "Маленька рибальська гавань із білими будинками й відкритим морем. Відпочиньте на причалі; берегова стежка та Mølen — додаткові зупинки, якщо є час і дозволяє погода.",
+      "sv": "En liten fiskehamn med vita hus och öppna havsutsikter. Pausa vid bryggan; kuststigen och Mølen är möjliga tillägg om tid och väder tillåter.",
+      "da": "En lille fiskerhavn med hvide huse og åben havudsigt. Hold en pause på kajen; kyststien og Mølen er mulige ekstra stop, når tid og vejr tillader det."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider, noen er sesongåpne. Parker lovlig og gå videre til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep individual hours, some seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider, vissa säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Nevlunghavn%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/telemark-place-nevlunghavn.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg",
+    "photoAlt": "Fishing boats and red waterfront buildings at Nevlunghavn harbour in July 2005",
+    "photoCaption": "Dort~commonswiki (attributed on Commons) · Public domain · 2005-07-13 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-place-nevlunghavn.webp",
+        "kind": "view",
+        "credit": "Dort~commonswiki (attributed on Commons)",
+        "source": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Nevlunghavn_-_brygga.jpg",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg#Licensing",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "stavern-harbour-fredriksvern",
+    "name": "Stavern · havn & Fredriksvern",
+    "town": "Stavern",
+    "category": "rest",
+    "region": "Vestfold · Larvik",
+    "route": "telemarkcoast",
+    "address": "Stavern sentrum, Norway",
+    "latitude": 58.9983,
+    "longitude": 10.03557,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Stavern&treffPerSide=10",
+    "coordinateNote": "Kartverket SSR representative town point; orientation only, not a parking entrance.",
+    "website": "https://www.visitvestfold.com/no/larvik/artikler/Stavern",
+    "source": "https://www.visitvestfold.com/no/larvik/artikler/Stavern",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Havn, smågater og det historiske Fredriksvern Verft. Sett av tid til en rusletur mellom sjøen og kulturmiljøet; gallerier har egne åpningstider.",
+      "en": "Harbour lanes meet historic Fredriksvern Verft. Allow time for a gentle walk between the waterfront and heritage buildings; galleries keep their own opening hours.",
+      "uk": "Гавань, вулички й історична верф Fredriksvern. Залиште час на прогулянку між морем та старовинними будівлями; галереї мають власні години роботи.",
+      "sv": "Hamn, smågator och historiska Fredriksvern Verft. Avsätt tid för en promenad mellan vattnet och kulturmiljön; gallerier har egna öppettider.",
+      "da": "Havn, små gader og det historiske Fredriksvern Verft. Sæt tid af til en gåtur mellem vandet og kulturmiljøet; gallerier har egne åbningstider."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og butikker har egne åpningstider, noen er sesongåpne. Parker lovlig og gå videre til fots.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and shops keep individual hours, some seasonal. Park legally and continue on foot.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й магазини мають власні години, деякі сезонні. Паркуйтеся за правилами й далі йдіть пішки.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och butiker har egna öppettider, vissa säsongsöppna. Parkera lagligt och fortsätt till fots.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og butikker har egne åbningstider, nogle sæsonåbent. Parkér lovligt og fortsæt til fods."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Stavern%20sentrum%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/telemark-place-stavern.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Stavern_havn.jpg",
+    "photoAlt": "Sailing boats, small red boathouse and blue water in Stavern harbour in July 2008",
+    "photoCaption": "Eaglestein · CC BY-SA 3.0 · 2008-07-17 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-place-stavern.webp",
+        "kind": "view",
+        "credit": "Eaglestein",
+        "source": "https://commons.wikimedia.org/wiki/File:Stavern_havn.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/9/94/Stavern_havn.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "lovisenberg-coastal-cabins",
+    "name": "Lovisenberg Familiecamping · hytter",
+    "town": "Kragerø",
+    "region": "Telemarkskysten",
+    "category": "cabin",
+    "address": "Lovisenbergveien 86, 3770 Kragerø, Norway",
+    "latitude": 58.901534883704954,
+    "longitude": 9.409070232415255,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Lovisenbergveien%2086&treffPerSide=3",
+    "website": "https://lovisenbergfamiliecamping.no/",
+    "bookingUrl": "https://online.bookvisit.com/accommodation?channelId=8d3970a8-dfc2-4c63-ade8-d04483f88a53",
+    "source": "https://lovisenbergfamiliecamping.no/",
+    "checked": "2026-10-18",
+    "phone": "+4735988777",
+    "description": {
+      "nb": "Campinghytter ved Kragerøs skjærgård. Standard-hyttene har kjøkkenkrok og felles sanitæranlegg; velg hyttetype ved bestilling.",
+      "en": "Camping cabins beside the Kragerø archipelago. Standard cabins have kitchenettes and shared washrooms; choose your cabin type when booking.",
+      "uk": "Кемпінгові будиночки біля шхер Kragerø. Тип Standard має мінікухню та спільні душові й туалети; оберіть тип під час бронювання.",
+      "sv": "Campingstugor vid Kragerøs skärgård. Standard har kokvrå och gemensamma sanitetsutrymmen; välj stugtyp vid bokning.",
+      "da": "Campinghytter ved Kragerøs skærgård. Standard har tekøkken og fælles bad og toilet; vælg hyttetype ved booking."
+    },
+    "hoursNote": {
+      "nb": "Vinterstengt 1. oktober–1. mai ifølge operatøren. Hytteinnsjekk fra 16. Bekreft sesong og tilgjengelighet. Bassengbildet viser fellesområdet.",
+      "en": "Operator lists winter closure 1 October–1 May. Cabin check-in from 16:00. Confirm season and availability. Pool photo shows the shared area.",
+      "uk": "За даними оператора, зачинено взимку 1 жовтня–1 травня. Заселення від 16:00. Уточніть сезон і наявність. Басейн — спільна зона.",
+      "sv": "Vinterstängt 1 oktober–1 maj enligt operatören. Stugincheckning från 16. Bekräfta säsong och tillgänglighet. Poolbilden visar gemensam yta.",
+      "da": "Vinterlukket 1. oktober–1. maj ifølge operatøren. Indtjekning fra 16. Bekræft sæson og ledighed. Poolfotoet viser fællesområdet."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://lovisenbergfamiliecamping.no/"
+    },
+    "image": "./images/catalog/telemark-stay-lovisenberg-exterior.webp",
+    "imageSource": "https://lovisenbergfamiliecamping.no/",
+    "photoAlt": "Lovisenberg Familiecamping — real red cabin beside coastal rocks",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-stay-lovisenberg-exterior.webp",
+        "kind": "facade",
+        "credit": "Lovisenberg Familiecamping · official website",
+        "source": "https://lovisenbergfamiliecamping.no/",
+        "original": "https://lovisenbergfamiliecamping.no/wp-content/uploads/2023/03/IMG_9535-1-scaled.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-stay-lovisenberg-surroundings.webp",
+        "kind": "surroundings",
+        "credit": "Lovisenberg Familiecamping · official website",
+        "source": "https://lovisenbergfamiliecamping.no/",
+        "original": "https://lovisenbergfamiliecamping.no/wp-content/uploads/2022/08/88A8005-scaled-e1673292508142.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Lovisenberg Familiecamping",
+      "en": "Real photograph · Lovisenberg Familiecamping",
+      "uk": "Справжнє фото · Lovisenberg Familiecamping",
+      "sv": "Äkta foto · Lovisenberg Familiecamping",
+      "da": "Ægte foto · Lovisenberg Familiecamping"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Lovisenberg%20Familiecamping%2C%20Lovisenbergveien%2086%2C%20Krager%C3%B8",
+    "descriptionSource": "https://online.bookvisit.com/accommodation/room-details?channelid=8d3970a8-dfc2-4c63-ade8-d04483f88a53&roomid=fc5282d6-10a8-4355-a183-3e7f650473d0",
+    "route": "telemarkcoast"
+  },
+  {
+    "id": "langesund-bad-coastal-cabins",
+    "name": "Langesund Bad · sjøhytter",
+    "town": "Langesund",
+    "region": "Telemarkskysten",
+    "category": "cabin",
+    "address": "Badeveien 5, 3970 Langesund, Norway",
+    "latitude": 58.998687305730215,
+    "longitude": 9.742841094056661,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Badeveien%205%20Langesund&treffPerSide=3",
+    "website": "https://www.langesundbad.no/",
+    "bookingUrl": "https://online.bookvisit.com/r?channelId=a1480bcd-4d23-4bf2-9cd2-5403b979fb54&initialPath=/accommodation",
+    "source": "https://www.langesundbad.no/",
+    "checked": "2026-10-18",
+    "phone": "+4735973529",
+    "description": {
+      "nb": "Fem sjøhytter ved kyststien. Foto: Mozart utvendig og utsikt fra Flagstad, ulike hytter.",
+      "en": "Five seaside cabins by the coastal path. Photos: Mozart exterior and Flagstad view, different cabins.",
+      "uk": "П’ять морських будиночків біля прибережної стежки. Фото: Mozart зовні та краєвид із Flagstad, різні будиночки.",
+      "sv": "Fem havsstugor vid kuststigen. Foto: Mozart utifrån och utsikt från Flagstad, olika stugor.",
+      "da": "Fem havhytter ved kyststien. Foto: Mozart udefra og udsigt fra Flagstad, forskellige hytter."
+    },
+    "hoursNote": {
+      "nb": "Resepsjon daglig 08–23; innsjekk fra 15, utsjekk innen 11. Hyttenes ledige datoer må bekreftes ved bestilling.",
+      "en": "Reception daily 08:00–23:00; check-in from 15:00, check-out by 11:00. Confirm available cabin dates when booking.",
+      "uk": "Рецепція щодня 08:00–23:00; заселення від 15:00, виїзд до 11:00. Вільні дати будиночків уточнюйте під час бронювання.",
+      "sv": "Reception dagligen 08–23; incheckning från 15, utcheckning senast 11. Bekräfta lediga stugdatum vid bokning.",
+      "da": "Reception dagligt 08–23; indtjekning fra 15, udtjekning senest 11. Bekræft ledige hyttedatoer ved booking."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://www.langesundbad.no/"
+    },
+    "image": "./images/catalog/telemark-stay-langesund-mozart.webp",
+    "imageSource": "https://www.langesundbad.no/",
+    "photoAlt": "Langesund Bad — actual Mozart seaside cabin",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-stay-langesund-mozart.webp",
+        "kind": "facade",
+        "credit": "Langesund Bad · official website",
+        "source": "https://www.langesundbad.no/",
+        "original": "https://static.wixstatic.com/media/85093f_f937cf10a8e64f40995cb749f7a3e020~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-stay-langesund-flagstad.webp",
+        "kind": "interior",
+        "credit": "Langesund Bad · Flagstad cabin · official website",
+        "source": "https://www.langesundbad.no/",
+        "original": "https://static.wixstatic.com/media/85093f_329489d1e842432e96baf2a08c77a415~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Langesund Bad",
+      "en": "Real photograph · Langesund Bad",
+      "uk": "Справжнє фото · Langesund Bad",
+      "sv": "Äkta foto · Langesund Bad",
+      "da": "Ægte foto · Langesund Bad"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Langesund%20Bad%2C%20Badeveien%205%2C%20Langesund",
+    "descriptionSource": "https://www.langesundbad.no/",
+    "route": "telemarkcoast"
+  },
+  {
+    "id": "oddane-sand-coastal-cabins",
+    "name": "KNA Oddane Sand · Utsikten 2",
+    "town": "Nevlunghavn · Stavern",
+    "region": "Vestfoldkysten",
+    "category": "cabin",
+    "address": "Oddaneveien 73, 3296 Nevlunghavn, Norway",
+    "latitude": 58.96617015276401,
+    "longitude": 9.859454420569033,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Oddaneveien%2073&treffPerSide=3",
+    "website": "https://oddanesand.no/products/utsikten-2",
+    "bookingUrl": "https://www.easynetbooking.com/o/ob.php?uhr=ofj2rr",
+    "source": "https://oddanesand.no/products/utsikten-2",
+    "checked": "2026-10-18",
+    "phone": "+4733188270",
+    "description": {
+      "nb": "Utsikten 2: åtte sengeplasser, kjøkken, bad og havutsikt. Stranden ligger cirka 250 meter unna.",
+      "en": "Utsikten 2: eight beds, kitchen, bathroom and sea views. The beach is about 250 metres away.",
+      "uk": "Utsikten 2: вісім місць, кухня, ванна та морський краєвид. До пляжу приблизно 250 метрів.",
+      "sv": "Utsikten 2: åtta bäddar, kök, badrum och havsutsikt. Stranden ligger cirka 250 meter bort.",
+      "da": "Utsikten 2: otte sengepladser, køkken, bad og havudsigt. Stranden ligger cirka 250 meter væk."
+    },
+    "hoursNote": {
+      "nb": "Innsjekk fra 16, utsjekk innen 12. Ukesopphold i høysesong; bekreft datoer og ankomstdager ved bestilling.",
+      "en": "Check-in from 16:00, check-out by 12:00. Weekly stays in peak season; confirm dates and arrival days when booking.",
+      "uk": "Заселення від 16:00, виїзд до 12:00. Високий сезон — тижневі заїзди; уточніть дати й дні прибуття.",
+      "sv": "Incheckning från 16, utcheckning senast 12. Veckovistelse under högsäsong; bekräfta datum och ankomstdagar vid bokning.",
+      "da": "Indtjekning fra 16, udtjekning senest 12. Ugeophold i højsæson; bekræft datoer og ankomstdage ved booking."
+    },
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": false,
+      "checked": "2026-10-18",
+      "source": "https://oddanesand.no/products/utsikten-2"
+    },
+    "image": "./images/catalog/telemark-stay-oddane-3.webp",
+    "imageSource": "https://oddanesand.no/products/utsikten-2",
+    "photoAlt": "Oddane Sand Utsikten 2 — actual cabin exterior",
+    "gallery": [
+      {
+        "src": "./images/catalog/telemark-stay-oddane-3.webp",
+        "kind": "facade",
+        "credit": "KNA Oddane Sand · Utsikten 2 · official website",
+        "source": "https://oddanesand.no/products/utsikten-2",
+        "original": "https://oddanesand.no/cdn/shop/files/58ffd2_ce4eecbc29b545828b82576f1c05547b_mv2.jpg?v=1742819939",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-stay-oddane-exterior.webp",
+        "kind": "interior",
+        "credit": "KNA Oddane Sand · Utsikten 2 · official website",
+        "source": "https://oddanesand.no/products/utsikten-2",
+        "original": "https://oddanesand.no/cdn/shop/files/58ffd2_abc93e01c85b415cb9541f5f41e551a1_mv2.jpg?v=1742819943",
+        "license": "Operator-published photograph; no open licence claimed"
+      },
+      {
+        "src": "./images/catalog/telemark-stay-oddane-view.webp",
+        "kind": "surroundings",
+        "credit": "KNA Oddane Sand · Utsikten 2 · official website",
+        "source": "https://oddanesand.no/products/utsikten-2",
+        "original": "https://oddanesand.no/cdn/shop/files/58ffd2_6acd9b321cd64cb1a459290ade52e889_mv2.jpg?v=1742819943",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "photoCaption": {
+      "nb": "Ekte foto · Oddane Sand · Utsikten 2",
+      "en": "Real photograph · Oddane Sand · Utsikten 2",
+      "uk": "Справжнє фото · Oddane Sand · Utsikten 2",
+      "sv": "Äkta foto · Oddane Sand · Utsikten 2",
+      "da": "Ægte foto · Oddane Sand · Utsikten 2"
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=KNA%20Oddane%20Sand%20Camping%2C%20Oddaneveien%2073%2C%20Nevlunghavn",
+    "descriptionSource": "https://oddanesand.no/products/utsikten-2",
+    "route": "telemarkcoast"
   },
   {
     "id": "tusenfryd",

@@ -89,6 +89,163 @@
   ],
   sources:['https://www.visitsorlandet.com/destinasjoner/lillesand/','https://www.visitsorlandet.com/destinasjoner/grimstad/','https://www.visitsorlandet.com/destinasjoner/arendal/','https://www.visitsorlandet.com/destinasjoner/risor/',...['Lillesand','Grimstad','Arendal','Risør'].map(name=>'https://ws.geonorge.no/stedsnavn/v1/navn?sok='+encodeURIComponent(name)+'&treffPerSide=20')]
  };
+ routes.telemarkcoast={
+  "label": "TELEMARK · VESTFOLD",
+  "checkedAt": "2026-10-18",
+  "optionalExperienceIds": [],
+  "title": {
+    "en": "From white harbours to the open coast",
+    "nb": "Fra hvite havner til åpen kyst",
+    "uk": "Від білих гаваней до відкритого моря",
+    "sv": "Från vita hamnar till öppen kust",
+    "da": "Fra hvide havne til åben kyst"
+  },
+  "summary": {
+    "en": "Risør · Kragerø · Langesund · Nevlunghavn · Stavern · allow 3–4 days",
+    "nb": "Risør · Kragerø · Langesund · Nevlunghavn · Stavern · sett av 3–4 dager",
+    "uk": "Risør · Kragerø · Langesund · Nevlunghavn · Stavern · плануйте 3–4 дні",
+    "sv": "Risør · Kragerø · Langesund · Nevlunghavn · Stavern · avsätt 3–4 dagar",
+    "da": "Risør · Kragerø · Langesund · Nevlunghavn · Stavern · afsæt 3–4 dage"
+  },
+  "photos": [
+    {
+      "image": "./images/catalog/telemark-place-kragero.webp",
+      "title": "Kragerø · brygger & trehus",
+      "author": "Bjoertvedt",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:130720086512kragerø_øya.jpg"
+    },
+    {
+      "image": "./images/catalog/telemark-place-langesund.webp",
+      "title": "Langesund · havn & smågater",
+      "author": "Orf3us",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fra_havnen_i_Langesund.jpg"
+    },
+    {
+      "image": "./images/catalog/telemark-place-nevlunghavn.webp",
+      "title": "Nevlunghavn · fiskehavn",
+      "author": "Dort~commonswiki (attributed on Commons)",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg#Licensing",
+      "source": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg"
+    },
+    {
+      "image": "./images/catalog/telemark-place-stavern.webp",
+      "title": "Stavern · havn & Fredriksvern",
+      "author": "Eaglestein",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Stavern_havn.jpg"
+    }
+  ],
+  "points": [
+    {
+      "id": "telemarkcoast-risor",
+      "name": "Risør · videre langs kysten",
+      "latitude": 58.72058,
+      "longitude": 9.23421,
+      "extra": true,
+      "local": true,
+      "coordinatePrecision": "area",
+      "routeQuery": "Risør sentrum, Norway",
+      "website": "https://www.visitsorlandet.com/destinasjoner/risor/",
+      "description": {
+        "en": "Start where the previous coastal route ends: Risør. Enjoy a harbour walk before driving. City markers are orientation areas, not parking entrances. Plan three or four days; accommodation and meals are booked separately.",
+        "nb": "Start der forrige kystrute slutter: Risør. Ta en havnetur før kjøreturen. Bymarkørene er orienteringspunkter, ikke parkeringsinnkjørsler. Planlegg tre eller fire dager; overnatting og mat bestilles separat.",
+        "uk": "Почніть там, де закінчився попередній маршрут: у Risør. Прогуляйтеся гаванню перед дорогою. Міські позначки — орієнтири, не в’їзди на парковки. Плануйте три-чотири дні; житло та їжу бронюйте окремо.",
+        "sv": "Börja där förra kustrutten slutar: Risør. Ta en hamnpromenad före körningen. Stadsmarkörerna är orienteringsområden, inga parkeringsinfarter. Planera tre eller fyra dagar; boende och mat bokas separat.",
+        "da": "Start hvor forrige kystrute slutter: Risør. Gå en havnetur inden kørslen. Bymarkørerne er orienteringspunkter, ikke parkeringsindkørsler. Planlæg tre eller fire dage; overnatning og mad bestilles separat."
+      }
+    },
+    {
+      "id": "telemarkcoast-kragero",
+      "name": "Kragerø · trehusbyen",
+      "latitude": 58.8693,
+      "longitude": 9.41493,
+      "extra": true,
+      "local": true,
+      "coordinatePrecision": "area",
+      "routeQuery": "Kragerø sentrum, Norway",
+      "website": "https://www.visittelemark.no/produkter/kragero",
+      "description": {
+        "en": "Day 1: drive to Kragerø, choose signed public parking and explore the wooden streets and harbour on foot. Add a café stop and stay nearby. Island boat trips are separate, optional outings.",
+        "nb": "Dag 1: kjør til Kragerø, velg skiltet offentlig parkering og utforsk trehusgatene og havnen til fots. Ta en kafépause og overnatt i området. Båtturer til øyene er egne, valgfrie utflukter.",
+        "uk": "День 1: їдьте до Kragerø, оберіть громадську парковку за знаками та гуляйте дерев’яними вуличками й гаванню пішки. Зробіть кавову паузу й ночуйте поблизу. Човнові поїздки на острови — окремі необов’язкові екскурсії.",
+        "sv": "Dag 1: kör till Kragerø, välj skyltad allmän parkering och utforska trähusgatorna och hamnen till fots. Ta en kafépaus och övernatta nära staden. Båtturer till öarna är separata, valfria utflykter.",
+        "da": "Dag 1: kør til Kragerø, vælg skiltet offentlig parkering og udforsk træhusgaderne og havnen til fods. Tag en cafépause og overnat i området. Bådture til øerne er særskilte, valgfrie udflugter."
+      }
+    },
+    {
+      "id": "telemarkcoast-langesund",
+      "name": "Langesund · havnen",
+      "latitude": 59.00066,
+      "longitude": 9.74873,
+      "extra": true,
+      "local": true,
+      "coordinatePrecision": "area",
+      "routeQuery": "Langesund sentrum, Norway",
+      "website": "https://www.visittelemark.no/produkter/langesund",
+      "description": {
+        "en": "Day 2: visit Langesund harbour; optionally walk towards Tangen Fort for views towards Langøya. Park first and assess weather and footing. Stay nearby. The next driving leg goes inland via E18 and bridges, without the Langesund–Helgeroa ferry.",
+        "nb": "Dag 2: besøk Langesund havn; gå eventuelt mot Tangen fort med utsikt mot Langøya. Parker først og vurder vær og underlag. Overnatt i området. Neste kjøreetappe går via E18 og broer, uten Langesund–Helgeroa-fergen.",
+        "uk": "День 2: відвідайте гавань Langesund; за бажанням пройдіться до Tangen fort із видом на Langøya. Припаркуйтеся й оцініть погоду та стежку. Ночуйте поблизу. Наступний переїзд — через E18 і мости, без порома Langesund–Helgeroa.",
+        "sv": "Dag 2: besök Langesunds hamn; promenera gärna mot Tangen fort med utsikt mot Langøya. Parkera först och bedöm väder och underlag. Övernatta i området. Nästa köretapp går via E18 och broar, utan färjan Langesund–Helgeroa.",
+        "da": "Dag 2: besøg Langesunds havn; gå eventuelt mod Tangen fort med udsigt mod Langøya. Parker først og vurder vejr og underlag. Overnat i området. Næste køreetape går via E18 og broer, uden færgen Langesund–Helgeroa."
+      }
+    },
+    {
+      "id": "telemarkcoast-nevlunghavn",
+      "name": "Nevlunghavn · fiskehavnen",
+      "latitude": 58.96741,
+      "longitude": 9.86748,
+      "extra": true,
+      "local": true,
+      "coordinatePrecision": "area",
+      "routeQuery": "Nevlunghavn sentrum, Norway",
+      "website": "https://visitvestfold.com/no/sted/nevlunghavn",
+      "description": {
+        "en": "Day 3: take the mainland road around the fjord to Nevlunghavn, then walk to the fishing harbour. Driving is longer than crossing the water directly. Allow time for lunch and a short walk. The coastal footpath is not a car road.",
+        "nb": "Dag 3: følg fastlandsveien rundt fjorden til Nevlunghavn og gå til fiskehavnen. Kjøreturen er lengre enn avstanden over vannet. Sett av tid til lunsj og en kort tur. Kyststien er ikke en bilvei.",
+        "uk": "День 3: материковою дорогою навколо фіорду до Nevlunghavn, далі пішки до рибальської гавані. Автомобілем шлях довший, ніж напряму через воду. Залиште час на обід і коротку прогулянку. Прибережна пішохідна стежка — не автодорога.",
+        "sv": "Dag 3: följ fastlandsvägen runt fjorden till Nevlunghavn och gå till fiskehamnen. Körsträckan är längre än avståndet över vattnet. Avsätt tid för lunch och en kort promenad. Kuststigen är ingen bilväg.",
+        "da": "Dag 3: følg fastlandsvejen rundt om fjorden til Nevlunghavn og gå til fiskerihavnen. Køreturen er længere end afstanden over vandet. Afsæt tid til frokost og en kort tur. Kyststien er ingen bilvej."
+      }
+    },
+    {
+      "id": "telemarkcoast-stavern",
+      "name": "Stavern · havnen / Fredriksvern",
+      "latitude": 58.9983,
+      "longitude": 10.03557,
+      "extra": true,
+      "local": true,
+      "coordinatePrecision": "area",
+      "routeQuery": "Stavern sentrum, Norway",
+      "website": "https://www.visitvestfold.com/no/larvik/artikler/stavern",
+      "description": {
+        "en": "Day 3 or 4: finish at Stavern harbour and walk around Fredriksvern. Keep a fourth day for a slower visit. Find signed parking; the marker is not its entrance. Check venue hours outside summer. This one-way trip ends here; plan your return separately.",
+        "nb": "Dag 3 eller 4: avslutt ved Stavern havn og gå rundt Fredriksvern. Sett av en fjerde dag for roligere tempo. Finn skiltet parkering; markøren er ikke innkjørselen. Sjekk åpningstider utenom sommeren. Enveisruten slutter her; planlegg retur separat.",
+        "uk": "День 3 або 4: завершіть подорож гаванню Stavern і прогулянкою Fredriksvern. Четвертий день залиште для спокійнішого відпочинку. Знайдіть парковку за знаками: позначка не показує в’їзд. Перевірте години закладів поза літом. Маршрут в один бік; повернення плануйте окремо.",
+        "sv": "Dag 3 eller 4: avsluta vid Staverns hamn och promenera runt Fredriksvern. Avsätt en fjärde dag för lugnare tempo. Hitta skyltad parkering; markören är ingen infart. Kontrollera öppettider utanför sommaren. Enkelresan slutar här; planera retur separat.",
+        "da": "Dag 3 eller 4: slut ved Staverns havn og gå omkring Fredriksvern. Afsæt en fjerde dag til roligere tempo. Find skiltet parkering; markøren er ingen indkørsel. Tjek åbningstider uden for sommeren. Envejsruten slutter her; planlæg retur separat."
+      }
+    }
+  ],
+  "sources": [
+    "https://www.visitsorlandet.com/destinasjoner/risor/",
+    "https://www.visittelemark.no/produkter/kragero",
+    "https://www.visittelemark.no/produkter/langesund",
+    "https://www.visittelemark.com/things-to-do/tangen-fort-p502643",
+    "https://visitvestfold.com/no/sted/nevlunghavn",
+    "https://www.visitvestfold.com/no/larvik/artikler/stavern",
+    "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Krager%C3%B8&treffPerSide=10&utkoordsys=4258",
+    "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Langesund&treffPerSide=10&utkoordsys=4258",
+    "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Nevlunghavn&treffPerSide=10&utkoordsys=4258",
+    "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Stavern&treffPerSide=10&utkoordsys=4258"
+  ]
+};
  if(typeof module!=='undefined'&&module.exports)module.exports=routes;
  if(root.FjordTripTools)Object.assign(root.FjordTripTools.localRoutes,routes);
 })(typeof window!=='undefined'?window:globalThis);
