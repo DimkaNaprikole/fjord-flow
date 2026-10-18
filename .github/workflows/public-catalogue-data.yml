@@ -1,0 +1,34 @@
+name: Public catalogue database checks
+on:
+  push:
+    paths:
+      - 'norway-catalog.json'
+      - 'bua-locations.json'
+      - 'shopping-centres.json'
+      - 'data/**'
+      - 'scripts/public_catalogue_db.py'
+      - 'scripts/test_public_catalogue_db.py'
+      - '.github/workflows/public-catalogue-data.yml'
+  pull_request:
+    paths:
+      - 'norway-catalog.json'
+      - 'bua-locations.json'
+      - 'shopping-centres.json'
+      - 'data/**'
+      - 'scripts/public_catalogue_db.py'
+      - 'scripts/test_public_catalogue_db.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-public-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check committed data snapshot
+        run: python scripts/public_catalogue_db.py verify
+      - name: Test public search and geography
+        run: python scripts/test_public_catalogue_db.py
