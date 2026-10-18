@@ -6,7 +6,7 @@
     "catalogue": 96,
     "shopping": 6
   },
-  "photos": 159,
+  "photos": 165,
   "shops": 48,
   "review_queue": {
     "hours_not_verified": 11,
@@ -554,6 +554,6 @@
   "source_hashes": {
     "bua-locations.json": "1f4d3ab6c3332497724a1bb558f0512bfab40e563ec3635f877b53c4c3481225",
     "norway-catalog.json": "117d5d68b4a8ed56a9db76be73eedd5b843adec46f5da4b3ec106d4086500024",
-    "shopping-centres.json": "f36d6701737804fbab3dce5ed02ed45d5184c9ad3cdd450853c14acc4799b0fb"
+    "shopping-centres.json": "88b7ddaec4bc026e9650f0cd42e86ebc5377e8ca1d7d091a9d9e973270ddd103"
   }
 }
