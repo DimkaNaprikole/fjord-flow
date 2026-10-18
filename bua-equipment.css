@@ -33,6 +33,7 @@
 #buaEquipment .bua-map-wrap{position:relative;border:1px solid var(--ff-line-strong);border-radius:18px;overflow:hidden;background:var(--ff-field)}
 #buaEquipment .bua-map-canvas{height:460px;max-height:65vh;width:100%;color:#1f2937}
 #buaEquipment .bua-map-message:empty{display:none}
+#buaEquipment .bua-map-wrap:has(.bua-map-message button) .bua-map-canvas{height:180px;max-height:32vh}
 #buaEquipment .bua-map-message{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;padding:24px;background:var(--ff-field);text-align:center}
 #buaEquipment .bua-map-info{font:13px/1.6 Manrope,sans-serif;color:#153f4c;max-width:245px}
 #buaEquipment .bua-map-info strong{font-size:17px}#buaEquipment .bua-map-info .bua-actions a{font-size:12px;min-height:40px;padding:8px 10px}
@@ -42,3 +43,5 @@
 #buaEquipment .bua-unmapped a{display:block;color:var(--ff-ink);margin:10px 0}
 #buaEquipment .bua-pagination:empty{display:none}
 @media(max-width:700px){#buaEquipment .bua-map-canvas{height:360px;max-height:60vh}#buaEquipment .bua-map-search .bua-controls{grid-template-columns:1fr}#buaEquipment .bua-map-tools>button{flex:1 1 145px}}
+#buaEquipment .bua-result-choice{max-width:100%;min-width:0;margin:4px 0 6px}
+#buaEquipment .bua-result-choice select{width:100%;min-width:0;max-width:100%;text-overflow:ellipsis}

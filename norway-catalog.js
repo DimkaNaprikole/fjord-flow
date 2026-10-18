@@ -114,7 +114,7 @@
   setInterval(()=>{
     if(document.hidden||document.querySelector('dialog[open]')||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
     document.querySelectorAll('.catalogue-flip:not(.catalogue-flipped) img[data-slides]').forEach(img=>{
-      const rect=img.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return;
+      const rect=img.getBoundingClientRect();if(!rect.width||!rect.height||rect.bottom<0||rect.top>innerHeight)return;
       const sources=JSON.parse(img.dataset.slides), next=(Number(img.dataset.slide)+1)%sources.length;
       img.dataset.slide=String(next);img.src=sources[next];
       img.closest('.catalogue-flip').style.setProperty('--catalogue-photo',`url("${sources[next]}")`);

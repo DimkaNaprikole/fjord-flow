@@ -66,8 +66,11 @@ if(advertising){
  const adFilmUrl='media/eagle-ad-background.mp4';
  const backgroundVideo=document.createElement('video');backgroundVideo.className='advertising-background-film';backgroundVideo.muted=true;backgroundVideo.defaultMuted=true;backgroundVideo.loop=true;backgroundVideo.autoplay=true;backgroundVideo.playsInline=true;backgroundVideo.preload='none';backgroundVideo.poster='images/advertising-fjord-art.webp';backgroundVideo.setAttribute('aria-hidden','true');backgroundVideo.setAttribute('playsinline','');backgroundVideo.tabIndex=-1;advertising.prepend(backgroundVideo);
  let backgroundInView=false;const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
- const updateBackground=()=>{if(backgroundInView&&!reducedMotion.matches){if(!backgroundVideo.src)backgroundVideo.src=adFilmUrl;backgroundVideo.play().catch(()=>{});}else backgroundVideo.pause();};
+ const updateBackground=()=>{if(backgroundInView&&!reducedMotion.matches&&!document.hidden&&!advertising.closest('[hidden]')&&!navigator.connection?.saveData){if(!backgroundVideo.src)backgroundVideo.src=adFilmUrl;backgroundVideo.play().catch(()=>{});}else backgroundVideo.pause();};
  if('IntersectionObserver' in window){new IntersectionObserver(entries=>{backgroundInView=entries[0].isIntersecting;updateBackground();},{rootMargin:'200px'}).observe(advertising);}else{backgroundInView=true;updateBackground();}
  reducedMotion.addEventListener?.('change',updateBackground);
+ document.addEventListener('visibilitychange',updateBackground);
+ window.addEventListener('fjord:sections-changed',updateBackground);
+ navigator.connection?.addEventListener?.('change',updateBackground);
 }
 })();

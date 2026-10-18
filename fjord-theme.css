@@ -17,6 +17,8 @@
   --ff-shadow: 0 12px 30px #06212d1c;
   --fjord-focus: #e6c78c;
 }
+/* A section's own pager may change hidden; the active tab remains authoritative. */
+[data-site-tab][data-site-tab-active="false"] { display: none !important; }
 button, input, select, textarea { font-family: Manrope, 'Segoe UI', sans-serif; }
 /* Section panels and cards share the same cool fjord palette. */
 :is(.roadtrip-collection, .route-experiences, .stays-sauna, .cafe-nearby,

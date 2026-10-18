@@ -29,3 +29,28 @@ test('BUA equipment filter maps only published coordinates and keeps missing loc
  const map3d=require('./google-norway-map.js');
  assert.equal(map3d.filterPlaces(directory.locations,'equipment').length,visible.length);
 });
+import vm from 'node:vm';
+const flush = async () => {for(let i=0;i<30;i++)await Promise.resolve();};
+function overviewHarness(){
+ const nodes=[],events={},calls={create:0,geolocation:0,locations:[],fetches:[]};
+ let resolveCatalogue,resolveMap;
+ const catalogue=new Promise(resolve=>{resolveCatalogue=()=>resolve({ok:true,json:async()=>[]});});
+ const mapReady=new Promise(resolve=>{resolveMap=()=>resolve(map);});
+ const map={resize(){},render(){return 0;},locate(p){calls.locations.push(p);}};
+ function node(tag){const n={tag,children:[],listeners:{},style:{setProperty(){}},dataset:{},hidden:false,disabled:false,textContent:'',setAttribute(k,v){this[k]=v;},append(...v){this.children.push(...v);},replaceChildren(...v){this.children=v;},before(){},addEventListener(k,fn){this.listeners[k]=fn;},click(){if(!this.disabled)return this.listeners.click?.();}};nodes.push(n);return n;}
+ const footer=node('footer');
+ const window={FjordGoogleMapConfig:{enabled:true},FjordGoogleStandardMap:{create(){calls.create++;return mapReady;}},FjordBrowserGeolocation:{locate(){calls.geolocation++;return {promise:Promise.resolve({coords:{latitude:60.3592,longitude:10.5728}})};}},addEventListener(k,fn){events[k]=fn;}};
+ const document={documentElement:{lang:'en'},createElement:node,querySelector:s=>s==='footer'?footer:null};
+ vm.runInNewContext(readFileSync(new URL('./norway-overview-map.js',import.meta.url),'utf8'),{window,document,URL,AbortController,setTimeout,clearTimeout,fetch(url){calls.fetches.push(url);return url.includes('norway-catalog')?catalogue:Promise.resolve({ok:true,json:async()=>[]});}});
+ return {calls,resolveCatalogue,resolveMap,standard:nodes.find(n=>n.tag==='button'&&n.textContent==='Google Maps'),location:nodes.find(n=>n.tag==='button'&&n.textContent.includes('My location'))};
+}
+test('immediate cached GPS waits for shared deferred catalogue and map activation',async()=>{
+ const h=overviewHarness();
+ const first=h.standard.click(),second=h.standard.click(),location=h.location.click();
+ await flush();assert.equal(h.calls.geolocation,1);assert.equal(h.calls.create,0);assert.equal(h.calls.locations.length,0);
+ assert.equal(h.calls.fetches.filter(url=>url.includes('norway-catalog')).length,1);
+ h.resolveCatalogue();await flush();assert.equal(h.calls.create,1);assert.equal(h.calls.locations.length,0,'GPS must wait until map is ready');
+ h.resolveMap();await Promise.all([first,second,location]);
+ assert.equal(h.calls.create,1,'rapid actions share one map creation');
+ assert.equal(h.calls.locations.length,1);assert.equal(h.calls.locations[0].latitude,60.3592);assert.equal(h.location.disabled,false);
+});

@@ -39,9 +39,9 @@
   providerControls.append(standardButton,googleButton,locationButton);
   controls.append(filters,select,routeButton,allButton); section.append(eyebrow,title,intro,controls,providerControls,typeControls,status,canvas,standardCanvas,googleCanvas,details,note);
   const footer=document.querySelector('footer'); if(footer)footer.before(section); else document.querySelector('main')?.append(section);
-  let rows=[], category='all', routeKey='', loaded=false, loading=false;
+  let rows=[], category='all', routeKey='', loaded=false, loading=false, loadPromise=null;
   let googleMap=null, googleActive=false, googleLoading=false, googleGeneration=0;
-  let standardMap=null,standardActive=false,standardLoading=false,mapType='hybrid',standardGeneration=0;
+  let standardMap=null,standardActive=false,standardLoading=false,standardActivation=null,mapType='hybrid',standardGeneration=0;
   const ui={nb:['Kart','Satellitt','Terreng','Min posisjon','Vis meg på kartet','Kunne ikke finne posisjonen. Prøv Chrome eller velg en rute.','Zoom med + / −. Dra kartet for å flytte. Musehjulet ruller siden.'],en:['Map','Satellite','Terrain','My location','Show me on the map','Location unavailable. Try Chrome or choose a route.','Zoom with + / −. Drag to move the map. The mouse wheel scrolls the page.'],uk:['Карта','Супутник','Рельєф','Де я','Показати мене на карті','Не вдалося визначити місце. Спробуйте Chrome або оберіть маршрут.','Масштаб — кнопками + / −. Перетягуйте карту мишею. Колесо прокручує сторінку.'],sv:['Karta','Satellit','Terräng','Min position','Visa mig på kartan','Positionen kunde inte hittas. Prova Chrome eller välj en rutt.','Zooma med + / −. Dra för att flytta kartan. Mushjulet rullar sidan.'],da:['Kort','Satellit','Terræn','Min position','Vis mig på kortet','Positionen kunne ikke findes. Prøv Chrome eller vælg en rute.','Zoom med + / −. Træk for at flytte kortet. Musehjulet ruller siden.']};
   const googleCopy={nb:['Fullskjerm','Google 3D kunne ikke åpnes. Vanlig kart er fortsatt tilgjengelig.','Satellitt og 3D. Velg en markør for foto og informasjon.'],en:['Full screen','Google 3D could not open. The standard map is still available.','Satellite and 3D. Select a marker for photographs and details.'],uk:['На весь екран','Не вдалося відкрити Google 3D. Звичайна карта залишається доступною.','Супутник і 3D. Оберіть позначку для фото й інформації.'],sv:['Helskärm','Google 3D kunde inte öppnas. Den vanliga kartan finns kvar.','Satellit och 3D. Välj en markör för bilder och information.'],da:['Fuld skærm','Google 3D kunne ikke åbnes. Det almindelige kort er stadig tilgængeligt.','Satellit og 3D. Vælg en markør for billeder og oplysninger.']};
   const routes=()=>window.FjordTripTools?.localRoutes || {};
@@ -100,21 +100,31 @@
     finally{googleLoading=false;googleButton.disabled=false;}
   });
   flatButton.addEventListener('click',()=>flatView());
-  standardButton.addEventListener('click',async()=>{
-    if(googleConfig.enabled!==true||standardLoading)return;
-    if(!loaded){await load();if(!loaded)return;}
-    const generation=++standardGeneration;googleGeneration++;googleActive=false;googleCanvas.hidden=true;standardCanvas.hidden=false;standardLoading=true;standardButton.disabled=true;status.textContent=t()[12];
-    try{if(!standardMap)standardMap=await window.FjordGoogleStandardMap.create(standardCanvas,{...googleConfig,userActivated:true,scrollwheel:false,language:lang(),buildInfo:popup});if(generation!==standardGeneration)return;standardActive=true;canvas.hidden=true;details.hidden=true;standardMap.resize();labels();draw(true);finishShopping();}
-    catch{flatView(true);}finally{standardLoading=false;standardButton.disabled=false;}
-  });
+  function activateStandard(){
+    if(googleConfig.enabled!==true)return Promise.resolve(null);
+    if(standardActivation)return standardActivation;
+    standardActivation=Promise.resolve().then(async()=>{
+      await load();if(!loaded)return null;
+      const generation=++standardGeneration;googleGeneration++;googleActive=false;googleCanvas.hidden=true;standardCanvas.hidden=false;standardLoading=true;standardButton.disabled=true;status.textContent=t()[12];
+      try{if(!standardMap)standardMap=await window.FjordGoogleStandardMap.create(standardCanvas,{...googleConfig,userActivated:true,scrollwheel:false,language:lang(),buildInfo:popup});if(generation!==standardGeneration)return null;standardActive=true;canvas.hidden=true;details.hidden=true;standardMap.resize();labels();draw(true);finishShopping();return standardMap;}
+      catch{flatView(true);return null;}finally{standardLoading=false;standardButton.disabled=false;}
+    }).finally(()=>{standardActivation=null;});
+    return standardActivation;
+  }
+  standardButton.addEventListener('click',activateStandard);
   locationButton.addEventListener('click',async()=>{
-    if(!standardActive){standardButton.click();}
+    if(locationButton.disabled)return;
     locationButton.disabled=true;
-    try{if(!window.FjordBrowserGeolocation)throw Error('Location unavailable');const p=await window.FjordBrowserGeolocation.locate({userInitiated:true}).promise;if(!standardMap)throw Error('Map unavailable');standardMap.locate({latitude:p.coords.latitude,longitude:p.coords.longitude});}
+    try{if(!window.FjordBrowserGeolocation)throw Error('Location unavailable');const [map,p]=await Promise.all([activateStandard(),window.FjordBrowserGeolocation.locate({userInitiated:true}).promise]);if(!map||!standardActive)throw Error('Map unavailable');map.locate({latitude:p.coords.latitude,longitude:p.coords.longitude});}
     catch{status.textContent=ui[lang()][5];}finally{locationButton.disabled=false;}
   });
-  async function load() {
-    if(loading||loaded)return; loading=true;status.textContent=t()[12];
+  function load(){
+    if(loaded)return Promise.resolve();
+    if(!loadPromise)loadPromise=loadData().finally(()=>{loadPromise=null;});
+    return loadPromise;
+  }
+  async function loadData() {
+    loading=true;status.textContent=t()[12];
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),12000);
     try {
       const response=await fetch('./norway-catalog.json?v=10',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);

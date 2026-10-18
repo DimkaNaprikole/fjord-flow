@@ -17,9 +17,12 @@
     return u.href;
   }
   const filter = (rows, query, municipality) => rows.filter(r => (!municipality || r.municipality === municipality) && norm([r.name,r.municipality,r.county,r.town,r.address].join(' ')).includes(norm(query)));
+  function searchRank(row,query){const q=norm(query).trim();if(!q)return 0;const name=norm(row.name),municipality=norm(row.municipality),town=norm(row.town);if([name,municipality,town].includes(q))return 0;if([name,municipality,town].some(v=>v.split(/[^a-z0-9]+/).includes(q)))return 1;if([name,municipality,town].some(v=>v.startsWith(q)))return 2;if([name,municipality,town].some(v=>v.includes(q)))return 3;return 4;}
+  function resultRows(rows,query,municipality,origin){return filter(rows,query,municipality).map(r=>({...r,distance:distance(origin,r)})).sort((a,b)=>searchRank(a,query)-searchRank(b,query)||(origin?(a.distance??Infinity)-(b.distance??Infinity):0)||(a.municipality||'').localeCompare(b.municipality||'','nb')||a.name.localeCompare(b.name,'nb'));}
+  const selectedResult = (records, id) => records.some(r=>String(r.id)===String(id)) ? String(id) : String(records[0]?.id || '');
   const weeklyHours = row => (row.openingHours || []).filter(h=>h.isActive===true && !h.date && Number.isInteger(h.dayOfWeek) && h.dayOfWeek>=0 && h.dayOfWeek<7 && /^\d\d:\d\d/.test(h.openingTime || '') && /^\d\d:\d\d/.test(h.closingTime || ''));
   function nearestFrame(records,origin){if(!valid(origin))return null;return {points:[origin,...records.filter(valid).map(r=>({...r,distance:distance(origin,r)})).sort((a,b)=>a.distance-b.distance).slice(0,3)]};}
-  if(typeof window === 'undefined') {if(typeof module !== 'undefined') module.exports={norm,distance,directions,filter,weeklyHours,nearestFrame}; return;}
+  if(typeof window === 'undefined') {if(typeof module !== 'undefined') module.exports={norm,distance,directions,filter,weeklyHours,nearestFrame,selectedResult,searchRank,resultRows}; return;}
   const texts = {
     nb: ['BUA · utstyr på veien','BUA — lån av turutstyr','Finn BUA-utlån i norske kommuner. Sjekk hva som finnes og om du kan låne før du drar.','Søk etter sted, kommune eller adresse','Alle kommuner','Finn nærmeste BUA','Henter posisjon…','Posisjonen kunne ikke hentes. Søk etter kommune i stedet.','utlånssteder','Ingen treff. Prøv en annen kommune.','Åpningstider og informasjon','Offisiell side','Kjørerute','Vanligvis gratis','Sist kontrollert','Åpningstider er ikke publisert. Sjekk den offisielle siden.','Mandag|Tirsdag|Onsdag|Torsdag|Fredag|Lørdag|Søndag','Tidene kan endres, særlig i ferier. Ingen sanntidsstatus eller reservasjon.','Forrige','Neste','Side','Avstand i luftlinje fra posisjonen din. GPS brukes bare etter ditt klikk i denne økten.','Utstyrslån er vanligvis gratis. Lokale regler og eventuelle gebyrer for personer utenfor kommunen varierer; turister må avklare lånerett. Ansvarlig låntaker må normalt være minst 18 år og ha norsk adresse og telefonnummer. Utstyret er ikke til kommersiell turistvirksomhet. Sjekk tilgjengelighet og lever tilbake på samme utlånssted.','Slik låner du','Lånevilkår','Laster BUA-katalogen…','Kunne ikke laste BUA-katalogen.','Prøv igjen','Vis alle uten avstand','kommune','Timer i lokal norsk tid'],
     en: ['BUA · equipment along the way','BUA — outdoor equipment loans','Find BUA lending locations across Norwegian municipalities. Check available gear and your eligibility before travelling.','Search place, municipality or address','All municipalities','Find the nearest BUA','Getting your location…','Location could not be obtained. Search for a municipality instead.','lending locations','No matches. Try another municipality.','Hours and information','Official website','Driving directions','Usually free','Last checked','Hours are not published. Check the official website.','Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday','Hours may change, especially during holidays. Not a live status or a reservation.','Previous','Next','Page','Straight-line distance from your position. GPS is used only after your click, during this session.','Borrowing is usually free. Local rules and possible nonresident fees vary; tourists must confirm eligibility. The responsible borrower normally needs to be 18 or older, with a Norwegian address and phone number. Equipment is not for commercial tourism. Check availability and return it to the same lending location.','How to borrow','Borrowing terms','Loading the BUA directory…','Could not load the BUA directory.','Try again','Show all without distance','municipality','Hours in local Norwegian time'],
@@ -55,15 +58,19 @@
   }
   function renderRows() {
     if(!list)return;
-    let matches=filter(rows,query,municipality).map(r=>({...r,distance:distance(origin,r)}));
-    matches.sort((a,b)=>origin ? (a.distance??Infinity)-(b.distance??Infinity) || a.name.localeCompare(b.name,'nb') : a.municipality?.localeCompare(b.municipality || '','nb') || a.name.localeCompare(b.name,'nb'));
+    const matches=resultRows(rows,query,municipality,origin);
     page=Math.min(page,Math.max(0,Math.ceil(matches.length/8)-1)); list.replaceChildren();
     status.textContent=`${matches.length} ${t(8)}`;
     if(!matches.length)list.append(el('p','bua-empty',t(9)));
-    if(origin&&!selected&&matches.length)selected=String(matches[0].id);
-    if(!selected)list.append(el('p','bua-map-hint',mt(2)));
+    selected=selectedResult(matches,selected);
+    if(matches.length){
+      const labels={nb:'Velg utlånssted',en:'Choose a lending location',uk:'Оберіть пункт прокату',sv:'Välj utlåningsställe',da:'Vælg udlånssted'};
+      const choice=el('label','bua-result-choice',labels[lang()]),select=el('select');select.setAttribute('aria-controls','buaSelectedResult');
+      for(const row of matches){const option=el('option','',[row.name,row.municipality].filter(Boolean).join(' · ')+(row.distance!==null?' · '+new Intl.NumberFormat(lang(),{maximumFractionDigits:1}).format(row.distance)+' km':''));option.value=String(row.id);select.append(option);}
+      select.value=selected;select.onchange=()=>{selected=select.value;renderRows();list.querySelector('.bua-result-choice select')?.focus({preventScroll:true});};choice.append(select);list.append(choice);
+    }
     matches.filter(row=>String(row.id)===selected).forEach(row=>{
-      const item=el('article','bua-row');item.dataset.buaId=String(row.id);if(String(row.id)===selected)item.classList.add('is-selected');
+      const item=el('article','bua-row');item.id='buaSelectedResult';item.dataset.buaId=String(row.id);if(String(row.id)===selected)item.classList.add('is-selected');
       const heading=el('div','bua-row-heading'),copy=el('div');copy.append(el('p','bua-municipality',[row.municipality,row.county].filter(Boolean).join(' · ')),el('h3','',row.name));heading.append(copy,el('span','bua-price',t(13)));
       item.append(heading,el('p','bua-address',[row.address,row.town && !norm(row.address).includes(norm(row.town)) ? row.town : ''].filter(Boolean).join(' · ')));
       if(row.distance!==null)item.append(el('p','bua-distance',`${new Intl.NumberFormat(lang(),{maximumFractionDigits:1}).format(row.distance)} km · ${t(21).split('.')[0]}`));
