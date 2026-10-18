@@ -153,7 +153,7 @@ const route={
       "local": true,
       "coordinatePrecision": "area",
       "routeQuery": "Son sentrum, Norway",
-      "website": "https://visitgreateroslo.com/no/aktivitet/pilegrimsleden-gjennom-follo?__tlpdone=1&tlp=2262073",
+      "website": "https://www.visitgreateroslo.com/no/son-pa-oslofjordens-solside",
       "description": {
         "en": "Day 3 or 4: finish with a harbour walk and a café break. This is a one-way itinerary; arrange your return and accommodation separately. Leave the car and explore Son on foot: old wooden houses, narrow lanes and small boats along the harbour. Choose a short waterside stroll or a longer section of the Vestby coastal path.",
         "nb": "Dag 3 eller 4: avslutt med havnetur og kafépause. Dette er en enveisrute; planlegg retur og overnatting separat. Sett bilen fra deg og oppdag Son til fots: gamle trehus, smale smug og småbåter langs havnen. Velg en kort tur ved vannet eller en lengre etappe av kyststien gjennom Vestby.",
@@ -170,7 +170,7 @@ const route={
     "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Svelvik&treffPerSide=15",
     "https://www.visitgreateroslo.com/no/https%3A/www.visitgreateroslo.com/no/drobak-og-oscarsborg",
     "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Dr%C3%B8bak&treffPerSide=15",
-    "https://visitgreateroslo.com/no/aktivitet/pilegrimsleden-gjennom-follo?__tlpdone=1&tlp=2262073",
+    "https://www.visitgreateroslo.com/no/son-pa-oslofjordens-solside",
     "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Son&treffPerSide=15",
     "https://www.vegvesen.no/vegprosjekter/europaveg/oslofjordforbindelsen/status-pa-anleggsarbeidet/",
     "https://www.vegvesen.no/trafikk/",
