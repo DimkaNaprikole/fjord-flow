@@ -279,6 +279,7 @@
     catch {failed = true;} finally {loading = false; render();}
   }
   window.FjordCatalogueCards=Object.freeze({fold:foldCatalogue});
+  window.dispatchEvent(new CustomEvent('fjord:catalogue-cards-ready'));
   window.addEventListener('fjordlanguagechange', rebuild);
   window.addEventListener('fjord:catalogue-select', event => {
     const record = records.find(r => r.id === event.detail?.id);
