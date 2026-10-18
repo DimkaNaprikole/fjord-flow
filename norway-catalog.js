@@ -278,6 +278,7 @@
     try {const response = await fetch('./norway-catalog.json?v=8'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
     catch {failed = true;} finally {loading = false; render();}
   }
+  window.FjordCatalogueCards=Object.freeze({fold:foldCatalogue});
   window.addEventListener('fjordlanguagechange', rebuild);
   window.addEventListener('fjord:catalogue-select', event => {
     const record = records.find(r => r.id === event.detail?.id);
