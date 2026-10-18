@@ -19,3 +19,13 @@ test('every published catalogue place appears on the automatically populated map
  assert.equal(filterPlaces(rows).length,rows.length);
  for(const category of ['cafe','cabin','sauna','rest'])assert.equal(filterPlaces(rows,category).length,rows.filter(r=>r.category===category).length);
 });
+
+test('BUA equipment filter maps only published coordinates and keeps missing locations off the map',()=>{
+ const directory=JSON.parse(readFileSync(new URL('./bua-locations.json',import.meta.url)));
+ const visible=filterPlaces(directory.locations,'equipment');
+ assert.equal(visible.length,directory.mappedCount);
+ assert.equal(visible.length,filterPlaces(directory.locations).length);
+ assert.ok(directory.locations.length>visible.length,'Unmapped BUA stay in the directory without invented pins');
+ const map3d=require('./google-norway-map.js');
+ assert.equal(map3d.filterPlaces(directory.locations,'equipment').length,visible.length);
+});

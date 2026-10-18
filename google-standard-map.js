@@ -5,11 +5,12 @@
   'use strict';
   // Official Google category glyphs, displayed only on the Google map.
   const iconURLs={cafe:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet.svg',cabin:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet.svg',rest:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet.svg'};
-  const colors={cafe:'#FF9E67',cabin:'#909CE1',sauna:'#b76e9b',rest:'#4DB546'};
+  const colors={cafe:'#FF9E67',cabin:'#909CE1',sauna:'#b76e9b',rest:'#4DB546',equipment:'#119c96'};
   const valid=p=>!!p&&Number.isFinite(p.latitude)&&Number.isFinite(p.longitude)&&Math.abs(p.latitude)<=90&&Math.abs(p.longitude)<=180;
   function nativePin(record){
     const settings={background:colors[record.category]||colors.rest,borderColor:'#fff',scale:.75};
-    if(record.category==='sauna'){settings.glyphText='♨';settings.glyphColor='#fff';}
+    if(record.category==='equipment'){settings.glyphText='↔';settings.glyphColor='#fff';}
+    else if(record.category==='sauna'){settings.glyphText='♨';settings.glyphColor='#fff';}
     else settings.glyphSrc=iconURLs[record.category]||iconURLs.rest;
     return new google.maps.marker.PinElement(settings);
   }

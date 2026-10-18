@@ -1,0 +1,30 @@
+/* Compact BUA directory in the shared Fjord Flow palette. */
+#buaEquipment{margin:40px 5%;padding:32px;background:linear-gradient(135deg,var(--ff-card,#193f4b),var(--ff-panel,#123440));border:1px solid var(--ff-line,#b5d7d22e);border-radius:24px;color:var(--ff-ink,#edf6f4);scroll-margin-top:95px;box-sizing:border-box}
+#buaEquipment *{box-sizing:border-box}
+#buaEquipment h2{font-size:clamp(26px,3.2vw,40px);line-height:1.2;margin:8px 0 16px;color:var(--ff-ink,#edf6f4)}
+#buaEquipment h3{font-size:19px;line-height:1.35;margin:5px 0;color:var(--ff-ink,#edf6f4);overflow-wrap:anywhere}
+#buaEquipment .bua-eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:800;color:var(--ff-accent,#d0e7df)}
+#buaEquipment .bua-intro{max-width:800px;line-height:1.8;color:var(--ff-muted,#b8cecf)}
+#buaEquipment .bua-controls{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(150px,.8fr);gap:14px;align-items:end;margin:24px 0 10px}
+#buaEquipment label{display:flex;flex-direction:column;gap:9px;font-size:13px;font-weight:750;color:var(--ff-ink,#edf6f4)}
+#buaEquipment :is(input,select){width:100%;min-height:48px;padding:11px 13px;background:var(--ff-field,#0c2a36);color:var(--ff-ink,#edf6f4);border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);font-size:15px}
+#buaEquipment :is(button,.bua-actions a){display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);background:var(--ff-action,#255563);color:var(--ff-ink,#edf6f4);font:700 13px/1.5 Manrope,'Segoe UI',sans-serif;text-align:center;text-decoration:none;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+#buaEquipment button:disabled{opacity:.45;cursor:default}
+#buaEquipment :is(button,a,input,select,summary):focus-visible{outline:3px solid var(--fjord-focus,#e6c78c);outline-offset:3px}
+#buaEquipment :is(.bua-count,.bua-geo-note,.bua-hours-note,.bua-municipality,.bua-distance){font-size:12px;line-height:1.7;color:var(--ff-muted,#b8cecf)}
+#buaEquipment .bua-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+#buaEquipment .bua-row{padding:18px;background:var(--ff-field,#0c2a36);border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:16px;min-width:0}
+#buaEquipment .bua-row.is-selected{border-color:var(--fjord-focus,#e6c78c);box-shadow:0 0 0 2px #e6c78c33}
+#buaEquipment .bua-row-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+#buaEquipment .bua-municipality{margin:0;font-weight:700}
+#buaEquipment .bua-price{flex-shrink:0;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:10px;padding:6px 9px;font-size:11px;font-weight:800;color:var(--ff-accent,#d0e7df);white-space:nowrap}
+#buaEquipment .bua-address{font-size:13px;line-height:1.65;color:var(--ff-muted,#b8cecf);margin:8px 0;overflow-wrap:anywhere}
+#buaEquipment .bua-details{border-top:1px solid var(--ff-line,#b5d7d22e);margin-top:12px}
+#buaEquipment summary{min-height:44px;padding:12px 0;cursor:pointer;font-size:13px;font-weight:750;color:var(--ff-ink,#edf6f4)}
+#buaEquipment .bua-hours dl{display:grid;grid-template-columns:minmax(85px,.7fr) minmax(0,1fr);gap:7px 12px;font-size:13px;line-height:1.6;color:var(--ff-ink,#edf6f4)}
+#buaEquipment .bua-hours dd{margin:0;overflow-wrap:anywhere}
+#buaEquipment .bua-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+#buaEquipment .bua-pagination{display:flex;justify-content:center;gap:15px;align-items:center;margin-top:20px;font-size:13px;flex-wrap:wrap}
+#buaEquipment .bua-terms{border-top:1px solid var(--ff-line,#b5d7d22e);margin-top:24px}
+#buaEquipment .bua-terms p{max-width:950px;font-size:13px;line-height:1.8;color:var(--ff-muted,#b8cecf)}
+@media(max-width:700px){#buaEquipment{margin:24px 4%;padding:20px}#buaEquipment .bua-controls,#buaEquipment .bua-list{grid-template-columns:minmax(0,1fr)}#buaEquipment :is(input,select){font-size:16px}#buaEquipment .bua-row-heading{gap:8px}#buaEquipment .bua-price{font-size:10px;padding:5px 6px}#buaEquipment h3{font-size:18px}#buaEquipment .bua-controls>button{width:100%}}
