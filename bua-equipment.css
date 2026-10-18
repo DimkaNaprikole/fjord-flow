@@ -8,7 +8,7 @@
 #buaEquipment .bua-controls{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(150px,.8fr);gap:14px;align-items:end;margin:24px 0 10px}
 #buaEquipment label{display:flex;flex-direction:column;gap:9px;font-size:13px;font-weight:750;color:var(--ff-ink,#edf6f4)}
 #buaEquipment :is(input,select){width:100%;min-height:48px;padding:11px 13px;background:var(--ff-field,#0c2a36);color:var(--ff-ink,#edf6f4);border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);font-size:15px}
-#buaEquipment :is(button,.bua-actions a){display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);background:var(--ff-action,#255563);color:var(--ff-ink,#edf6f4);font:700 13px/1.5 Manrope,'Segoe UI',sans-serif;text-align:center;text-decoration:none;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
+#buaEquipment :is(button,.bua-actions a):not(.bua-map-canvas button){display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);background:var(--ff-action,#255563);color:var(--ff-ink,#edf6f4);font:700 13px/1.5 Manrope,'Segoe UI',sans-serif;text-align:center;text-decoration:none;cursor:pointer;white-space:normal;overflow-wrap:anywhere}
 #buaEquipment button:disabled{opacity:.45;cursor:default}
 #buaEquipment :is(button,a,input,select,summary):focus-visible{outline:3px solid var(--fjord-focus,#e6c78c);outline-offset:3px}
 #buaEquipment :is(.bua-count,.bua-geo-note,.bua-hours-note,.bua-municipality,.bua-distance){font-size:12px;line-height:1.7;color:var(--ff-muted,#b8cecf)}
@@ -28,3 +28,17 @@
 #buaEquipment .bua-terms{border-top:1px solid var(--ff-line,#b5d7d22e);margin-top:24px}
 #buaEquipment .bua-terms p{max-width:950px;font-size:13px;line-height:1.8;color:var(--ff-muted,#b8cecf)}
 @media(max-width:700px){#buaEquipment{margin:24px 4%;padding:20px}#buaEquipment .bua-controls,#buaEquipment .bua-list{grid-template-columns:minmax(0,1fr)}#buaEquipment :is(input,select){font-size:16px}#buaEquipment .bua-row-heading{gap:8px}#buaEquipment .bua-price{font-size:10px;padding:5px 6px}#buaEquipment h3{font-size:18px}#buaEquipment .bua-controls>button{width:100%}}
+
+#buaEquipment .bua-map-tools{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 10px}
+#buaEquipment .bua-map-wrap{position:relative;border:1px solid var(--ff-line-strong);border-radius:18px;overflow:hidden;background:var(--ff-field)}
+#buaEquipment .bua-map-canvas{height:460px;max-height:65vh;width:100%;color:#1f2937}
+#buaEquipment .bua-map-message:empty{display:none}
+#buaEquipment .bua-map-message{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;padding:24px;background:var(--ff-field);text-align:center}
+#buaEquipment .bua-map-info{font:13px/1.6 Manrope,sans-serif;color:#153f4c;max-width:245px}
+#buaEquipment .bua-map-info strong{font-size:17px}#buaEquipment .bua-map-info .bua-actions a{font-size:12px;min-height:40px;padding:8px 10px}
+#buaEquipment .bua-list{grid-template-columns:minmax(0,1fr)}
+#buaEquipment .bua-map-search .bua-controls{grid-template-columns:repeat(2,minmax(0,1fr));margin:8px 0 18px}
+#buaEquipment .bua-map-hint{margin:0;font-size:13px;color:var(--ff-muted)}
+#buaEquipment .bua-unmapped a{display:block;color:var(--ff-ink);margin:10px 0}
+#buaEquipment .bua-pagination:empty{display:none}
+@media(max-width:700px){#buaEquipment .bua-map-canvas{height:360px;max-height:60vh}#buaEquipment .bua-map-search .bua-controls{grid-template-columns:1fr}#buaEquipment .bua-map-tools>button{flex:1 1 145px}}
