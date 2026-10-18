@@ -65,6 +65,7 @@
     dialog.addEventListener('close', () => clearInterval(cafeTimer));
     dialog.addEventListener('click', e => {if (e.target === dialog) dialog.close();});
     dialog.addEventListener('keydown', e => {
+      if(e.target.closest?.('.google-place-map'))return;
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {e.preventDefault(); show(index + (e.key === 'ArrowRight' ? 1 : -1));}
     });
     stage.addEventListener('touchstart', e => {touchStart = e.touches.length === 1 ? [e.touches[0].clientX, e.touches[0].clientY] : null;}, {passive: true});
@@ -127,7 +128,7 @@
         cafeInfo.append(details);
       }
       if (refreshCafe) cafeTimer = setInterval(refreshCafe, 60000);
-      show(0); dialog.showModal();
+      show(0); dialog.showModal(); window.FjordPlaceMaps?.show(dialog,[venue]);
     }
   };
 })();

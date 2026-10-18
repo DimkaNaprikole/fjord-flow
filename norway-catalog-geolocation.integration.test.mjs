@@ -17,7 +17,7 @@ function harness({deferTowns = false} = {}) {
   const provider = {getCurrentPosition(success,failure,options) {calls.push({success,failure,options});}, watchPosition(success,failure,options) {calls.push({success,failure,options}); return 123;}, clearWatch(id) {cleared.push(id);}};
   const window = {addEventListener(name, callback) {events[name]=callback;}, FjordBrowserGeolocation:{locate(options) {return helper.locate({...options,geolocation:provider});}}};
   const document = {getElementById() {return null;},body:{},documentElement:{lang:'nb'}};
-  const context = {window,document,URL,Intl,AbortController,setTimeout,clearTimeout,MutationObserver:class {observe() {} disconnect() {}},fetch(url) {
+  const context = {window,document,URL,Intl,AbortController,setTimeout,clearTimeout,setInterval:()=>0,MutationObserver:class {observe() {} disconnect() {}},fetch(url) {
     fetches.push(url); const response = {ok:true,json:async()=>({towns:townRows})};
     return deferTowns ? new Promise(resolve=>{resolveTowns=()=>resolve(response);}) : Promise.resolve(response);
   }};

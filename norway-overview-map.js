@@ -32,11 +32,11 @@
   googleCanvas.id='norwayGoogleCanvas';googleCanvas.hidden=true;details.hidden=true;
   const googleConfig=window.FjordGoogleMapConfig || {};providerControls.hidden=googleConfig.enabled!==true;
   for(const button of [googleButton,flatButton,fullButton])button.type='button';
-  flatButton.textContent='OpenStreetMap';standardButton.type='button';locationButton.type='button';
+  standardButton.type='button';locationButton.type='button';
   providerControls.append(standardButton,googleButton,locationButton);
   controls.append(filters,select,routeButton,allButton); section.append(eyebrow,title,intro,controls,providerControls,typeControls,status,canvas,standardCanvas,googleCanvas,details,note);
   const footer=document.querySelector('footer'); if(footer)footer.before(section); else document.querySelector('main')?.append(section);
-  let rows=[], category='all', routeKey='', map=null, markers=null, lines=null, loaded=false, loading=false;
+  let rows=[], category='all', routeKey='', loaded=false, loading=false;
   let googleMap=null, googleActive=false, googleLoading=false, googleGeneration=0;
   let standardMap=null,standardActive=false,standardLoading=false,mapType='hybrid',standardGeneration=0;
   const ui={nb:['Kart','Satellitt','Terreng','Min posisjon','Vis meg på kartet','Kunne ikke finne posisjonen. Prøv Chrome eller velg en rute.','Zoom med musehjulet. Dra kartet for å flytte. Velg kartlag med knappene.'],en:['Map','Satellite','Terrain','My location','Show me on the map','Location unavailable. Try Chrome or choose a route.','Use the mouse wheel to zoom and drag to move. Change layers with the buttons.'],uk:['Карта','Супутник','Рельєф','Де я','Показати мене на карті','Не вдалося визначити місце. Спробуйте Chrome або оберіть маршрут.','Колесо миші — масштаб. Перетягніть карту, щоб пересунути. Шари перемикаються кнопками.'],sv:['Karta','Satellit','Terräng','Min position','Visa mig på kartan','Positionen kunde inte hittas. Prova Chrome eller välj en rutt.','Zooma med mushjulet och dra för att flytta kartan. Byt lager med knapparna.'],da:['Kort','Satellit','Terræn','Min position','Vis mig på kortet','Positionen kunne ikke findes. Prøv Chrome eller vælg en rute.','Zoom med musehjulet og træk for at flytte kortet. Skift lag med knapperne.']};
@@ -48,7 +48,7 @@
     googleButton.setAttribute('aria-pressed',String(googleActive));flatButton.setAttribute('aria-pressed',String(!googleActive));if(googleActive)note.textContent=googleCopy[lang()][2];
     standardButton.setAttribute('aria-pressed',String(standardActive));flatButton.setAttribute('aria-pressed',String(!googleActive&&!standardActive));locationButton.textContent='◎ '+ui[lang()][3];locationButton.title=ui[lang()][4];
     typeControls.hidden=!standardActive;typeControls.replaceChildren();['roadmap','hybrid','terrain'].forEach((type,i)=>{const b=el('button','',ui[lang()][i]);b.type='button';b.setAttribute('aria-pressed',String(mapType===type));b.addEventListener('click',()=>{mapType=type;standardMap?.setType(type);labels();});typeControls.append(b);});
-    if(standardActive)note.textContent=ui[lang()][6];
+    if(!googleActive)note.textContent=ui[lang()][6];
     filters.replaceChildren(); ['all',...categories].forEach((key,i)=>{const b=el('button','',a[i+3]);b.type='button';b.setAttribute('aria-pressed',String(category===key)); if(key!=='all')b.style.setProperty('--map-category',colors[key]); b.addEventListener('click',()=>{category=key;labels();if(loaded)draw(true);});filters.append(b);});
     select.replaceChildren(); const first=el('option','',a[8]);first.value='';select.append(first);
     Object.entries(routes()).filter(([,r])=>routePoints(r).length>1).forEach(([key,r])=>{const option=el('option','',localized(r.title)||r.label||key);option.value=key;select.append(option);});select.value=routeKey;
@@ -61,7 +61,7 @@
     if(credit){const caption=el('small','norway-overview__credit',[credit.credit,credit.license].filter(Boolean).join(' · ')),source=safeURL(credit.source);if(source){const a=el('a','',caption.textContent+' ↗');a.href=source;a.target='_blank';a.rel='noopener noreferrer';caption.replaceChildren(a);}box.append(caption);}
     box.append(el('strong','',p.name),el('p','',[p.town,t()[4+categories.indexOf(p.category)]].filter(Boolean).join(' · ')));
     if(p.coordinateLabel)box.append(el('p','norway-overview__access',p.coordinateLabel));
-    const open=el('button','',t()[10]);open.type='button';open.addEventListener('click',()=>{map?.closePopup();details.hidden=true;window.dispatchEvent(new CustomEvent(p.destinationId?'fjord:open-place':'fjord:catalogue-select',{detail:{id:p.destinationId||p.id}}));});box.append(open);
+    const open=el('button','',t()[10]);open.type='button';open.addEventListener('click',()=>{details.hidden=true;window.dispatchEvent(new CustomEvent(p.destinationId?'fjord:open-place':'fjord:catalogue-select',{detail:{id:p.destinationId||p.id}}));});box.append(open);
     const drive=el('a','',({nb:'Kjør hit',en:'Directions',uk:'Прокласти маршрут',sv:'Vägbeskrivning',da:'Rutevejledning'})[lang()]+' ↗');drive.href='https://www.google.com/maps/dir/?api=1&travelmode=driving&destination='+encodeURIComponent(p.latitude+','+p.longitude);drive.target='_blank';drive.rel='noopener noreferrer';box.append(drive);
     const website=safeURL(p.website);if(website){const link=el('a','',t()[11]+' ↗');link.href=website;link.target='_blank';link.rel='noopener noreferrer';box.append(link);}
     return box;
@@ -69,21 +69,14 @@
   function draw(fit) {
     if(standardActive&&standardMap){const route=routes()[routeKey],count=standardMap.render(rows,route,category,fit);status.textContent=count+' '+t()[17]+(route?' · '+localized(route.title):'');return;}
     if(googleActive && googleMap){const route=routes()[routeKey],count=googleMap.render(rows,route,category);status.textContent=count+' '+t()[17]+(route?' · '+localized(route.title):'');return;}
-    if(!map)return; markers.clearLayers();lines.clearLayers();
-    const visible=filterPlaces(rows,category); visible.forEach(p=>{
-      const icon=window.L.divIcon({className:'norway-overview__pin',html:'<span style="background:'+colors[p.category]+'"></span>',iconSize:[22,22],iconAnchor:[11,11]});
-      const marker=window.L.marker([p.latitude,p.longitude],{icon,keyboard:true,title:p.name,alt:p.name,riseOnHover:true}).bindPopup(()=>popup(p),{maxWidth:270,maxHeight:220,autoPanPadding:[15,15]});marker.addTo(markers);
-    });
-    let focus=[];
-    const route=routes()[routeKey];
-    if(route){focus=routePoints(route).map(p=>[p.latitude,p.longitude]);if(focus.length>1)window.L.polyline(focus,{color:'#d7ecf1',weight:3,opacity:.9,dashArray:'6 9',interactive:false}).addTo(lines);}
-    status.textContent=visible.length ? visible.length+' '+t()[17]+(route?' · '+localized(route.title):'') : t()[15];
-    if(fit){const points=focus.length?focus:visible.map(p=>[p.latitude,p.longitude]);if(points.length)map.fitBounds(points,{padding:[30,30],maxZoom:12});else map.setView([65,14],4);}
+
   }
   function flatView(error=false){
-    standardGeneration++;standardActive=false;standardCanvas.hidden=true;typeControls.hidden=true;
-    googleGeneration++;googleActive=false;googleCanvas.hidden=true;canvas.hidden=false;details.hidden=true;
-    labels();map?.invalidateSize();if(loaded)draw(true);if(error)status.textContent=googleCopy[lang()][1];
+    standardGeneration++;googleGeneration++;googleActive=false;googleCanvas.hidden=true;canvas.hidden=true;details.hidden=true;
+    standardActive=Boolean(standardMap);standardCanvas.hidden=!standardActive;
+    labels();
+    if(standardActive){standardMap.resize();draw(true);}
+    if(error){status.textContent=t()[13]+' ';const retry=el('button','',t()[14]);retry.type='button';retry.onclick=()=>standardButton.click();status.append(retry);}
   }
   googleButton.addEventListener('click',async()=>{
     if(googleConfig.enabled!==true||googleLoading)return;
@@ -111,17 +104,14 @@
     try{if(!window.FjordBrowserGeolocation)throw Error('Location unavailable');const p=await window.FjordBrowserGeolocation.locate({userInitiated:true}).promise;if(!standardMap)throw Error('Map unavailable');standardMap.locate({latitude:p.coords.latitude,longitude:p.coords.longitude});}
     catch{status.textContent=ui[lang()][5];}finally{locationButton.disabled=false;}
   });
-  fullButton.addEventListener('click',()=>{const target=standardActive?standardCanvas:googleActive?googleCanvas:canvas;const action=document.fullscreenElement?document.exitFullscreen?.():target.requestFullscreen?.();action?.catch?.(()=>{});});
   async function load() {
     if(loading||loaded)return; loading=true;status.textContent=t()[12];
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),12000);
     try {
-      if(!window.L)throw Error('Leaflet unavailable');
       const response=await fetch('./norway-catalog.json?v=8',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);
       const data=await response.json();if(!Array.isArray(data))throw Error('Invalid catalogue');rows=data;
       try{const extra=await fetch('./map-attractions.json?v=1',{signal:controller.signal});if(extra.ok){const attractions=await extra.json();if(Array.isArray(attractions))rows=rows.concat(attractions.filter(validPoint));}}catch{/* Catalogue remains available if attraction data cannot load. */}
-      if(!map){map=window.L.map(canvas,{scrollWheelZoom:true});window.L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);markers=window.L.layerGroup().addTo(map);lines=window.L.layerGroup().addTo(map);}
-      loaded=true; labels();map.invalidateSize();draw(true);
+      loaded=true; canvas.hidden=true; labels();draw(true);
     } catch {status.textContent=t()[13]+' ';const retry=el('button','',t()[14]);retry.type='button';retry.addEventListener('click',load);status.append(retry);}
     finally{clearTimeout(timeout);loading=false;}
   }

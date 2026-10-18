@@ -52,7 +52,7 @@
   let dialog=$('experiencePhotoDialog');
   if(!dialog){dialog=el('dialog');dialog.id='experiencePhotoDialog';document.body.append(dialog);dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});}
   dialog.replaceChildren();const close=el('button','×','experience-photo-close');close.type='button';close.setAttribute('aria-label',moreLabels[lang()][2]);close.onclick=()=>dialog.close();
-  const title=el('h2',v.name),figure=el('figure'),image=el('img');image.src=imageURL(v.image);image.alt=v.name;figure.append(image);appendPhotoCredit(figure,v);dialog.append(close,title,figure,el('p',text(v.description)));dialog.showModal();
+  const title=el('h2',v.name),figure=el('figure'),image=el('img');image.src=imageURL(v.image);image.alt=v.name;figure.append(image);appendPhotoCredit(figure,v);dialog.append(close,title,figure,el('p',text(v.description)));dialog.showModal();window.FjordPlaceMaps?.show(dialog,[v]);
  }
  function card(v){
   const article=el('article',undefined,'experience-card'),figure=el('figure',undefined,'experience-visual'),src=imageURL(v.image);

@@ -6,7 +6,7 @@
   dialog.innerHTML = `<header class="itinerary-header"><div><p class="eyebrow">YOUR JOURNEY, STOP BY STOP</p><h2 id="itineraryTitle"></h2><p id="itineraryOrder" data-i18n-ignore></p></div><button id="itineraryClose" type="button" aria-label="Close itinerary">×</button></header>
     <div class="itinerary-layout"><section class="itinerary-map-panel"><div id="itineraryMap" aria-label="Map of the whole itinerary"></div><p id="itineraryStatus" role="status"></p><p class="itinerary-notice">Driving estimates exclude visits, hikes, ferries and current road conditions. Check seasonal mountain-road closures before travelling.</p><a id="itineraryNavigation" class="button" target="_blank" rel="noopener noreferrer">Open full route in Google Maps ↗</a><button id="itineraryFit" class="text-link" type="button">Show the whole route</button></section><section><h3>All stops along the way</h3><ol id="itineraryStops"></ol></section></div>`;
   document.body.append(dialog);
-  let map, layer, routeLine, activePoints = [], requestId = 0, controller, activeKey, activeButton, experiences = [];
+  let map, mapLoading, infoWindow, routeLine, markers = [], activePoints = [], requestId = 0, controller, activeKey, activeButton, experiences = [];
   const chosen = new Set(), excludedStops = new Set();
   const languages = ['en','nb','uk','sv','da'];
   const extraText = new Map([
@@ -28,6 +28,7 @@
     'Through Østerdalen|Gjennom Østerdalen|Через Østerdalen|Genom Østerdalen|Gennem Østerdalen',
     'Driving only; visits and waiting are extra.|Kun kjøring; besøk og venting kommer i tillegg.|Лише їзда; відвідування й очікування додатково.|Endast körning; besök och väntan tillkommer.|Kun kørsel; besøg og ventetid kommer oveni.',
     'Required route coordinates are unavailable. No route was calculated.|Nødvendige rutekoordinater mangler. Ingen rute ble beregnet.|Відсутні необхідні координати. Маршрут не обчислено.|Nödvändiga koordinater saknas. Ingen rutt beräknades.|Nødvendige koordinater mangler. Ingen rute blev beregnet.',
+    'Google map unavailable. The stops and Google Maps navigation links are still available.|Google-kartet er utilgjengelig. Stoppene og navigasjonslenkene til Google Maps er fortsatt tilgjengelige.|Карта Google недоступна. Зупинки та посилання на навігацію Google Maps залишаються доступними.|Google-kartan är inte tillgänglig. Stoppen och navigeringslänkarna till Google Maps är fortfarande tillgängliga.|Google-kortet er utilgængeligt. Stoppene og navigationslinkene til Google Maps er stadig tilgængelige.',
     'Navigation leg|Navigasjonsetappe|Етап навігації|Navigeringsetapp|Navigationsetape',
     'Open driving directions in Google Maps; parking entrances are resolved there. Map markers show approximate visit areas, not vehicle entrances.|Åpne kjøreveiledning i Google Maps; parkeringsinnkjørslene finnes der. Kartmarkørene viser omtrentlige besøksområder, ikke bilinnkjørsler.|Відкрийте автомобільну навігацію в Google Maps: в’їзди на парковки визначаються там. Позначки на карті показують приблизні місця огляду, а не в’їзди для авто.|Öppna vägbeskrivningen i Google Maps; parkeringsinfarter hittas där. Kartmarkörerna visar ungefärliga besöksområden, inte bilinfarter.|Åbn kørselsvejledning i Google Maps; parkeringsindkørslerne findes der. Kortmarkørerne viser omtrentlige besøgsområder, ikke bilindkørsler.'
   ].map(row => {const values=row.split('|');return [values[0],values];}));
@@ -51,7 +52,7 @@
     requestId++;controller?.abort();
     document.getElementById('itineraryNavigation').removeAttribute('href');
     legLinks.replaceChildren();
-    if(routeLine){layer.removeLayer(routeLine);routeLine=null;}
+    if(routeLine){routeLine.setMap(null);routeLine=null;}
     document.getElementById('itineraryStatus').setAttribute('data-i18n-ignore','');
     document.getElementById('itineraryStatus').textContent=et('Selections changed — update the route.');
     document.getElementById('itineraryUpdate').classList.add('needs-update');
@@ -105,31 +106,66 @@
   const coords = p => [p.latitude, p.longitude];
   const query = p => p.routeQuery || coords(p).join(',');
   const find = id => data.destinations.find(p => p.id === id);
+  const position = p => ({lat:p.latitude,lng:p.longitude});
+  function clearMap(){markers.forEach(marker=>{marker.map=null;});markers=[];infoWindow?.close();if(routeLine){routeLine.setMap(null);routeLine=null;}}
   const fit = () => {
     if (!map || !dialog.open || !activePoints.length) return;
-    map.invalidateSize();
-    const bounds = L.latLngBounds(activePoints.map(coords));
-    if (routeLine) bounds.extend(routeLine.getBounds());
-    map.fitBounds(bounds, {padding: [35, 35], maxZoom: 11, animate: false});
+    const bounds = new google.maps.LatLngBounds();
+    activePoints.forEach(p=>bounds.extend(position(p)));
+    routeLine?.getPath().forEach(p=>bounds.extend(p));
+    map.fitBounds(bounds,35);
+    // A single point or a very short route must not zoom into an individual roof.
+    google.maps.event.addListenerOnce(map,'idle',()=>{if(map.getZoom()>14)map.setZoom(14);});
   };
+  async function ensureMap(){
+    if(map)return map;if(mapLoading)return mapLoading;
+    mapLoading=(async()=>{
+      const config=window.FjordGoogleMapConfig;
+      if(!config?.enabled||!window.FjordGoogleNorwayMap?.loadAPI)throw Error('GOOGLE_MAPS_NOT_ENABLED');
+      await window.FjordGoogleNorwayMap.loadAPI({...config,userActivated:true,language:language()});
+      const [{Map,InfoWindow}]=await Promise.all([google.maps.importLibrary('maps'),google.maps.importLibrary('marker')]);
+      map=new Map(document.getElementById('itineraryMap'),{center:{lat:60.37,lng:10.56},zoom:9,mapId:'DEMO_MAP_ID',mapTypeId:'roadmap',gestureHandling:'greedy',scrollwheel:true,zoomControl:true,cameraControl:true,mapTypeControl:true,mapTypeControlOptions:{mapTypeIds:['roadmap','hybrid','satellite','terrain']},fullscreenControl:false,streetViewControl:true,rotateControl:true,scaleControl:true,clickableIcons:true});
+      infoWindow=new InfoWindow({maxWidth:260});
+      new ResizeObserver(()=>{if(dialog.open)fit();}).observe(document.getElementById('itineraryMap'));
+      return map;
+    })().catch(error=>{mapLoading=null;throw error;});
+    return mapLoading;
+  }
+  function focusStop(p,index){
+    if(!map||!markers[index]){document.getElementById('itineraryNavigation').focus();return;}
+    map.setCenter(position(p));map.setZoom(13);markers[index].showStop();
+    document.getElementById('itineraryMap').scrollIntoView({block:'nearest',behavior:'smooth'});
+  }
+  function showMarkers(points){
+    clearMap();
+    markers=points.map((p,i)=>{
+      const pin=new google.maps.marker.PinElement({glyphText:String(i+1),glyphColor:'#fff',background:'#b70d35',borderColor:'#fff',scale:.9});
+      const marker=new google.maps.marker.AdvancedMarkerElement({map,position:position(p),title:`${i+1}. ${localized(p.name)}`,content:pin,gmpClickable:true});
+      const popup=node('div'),name=node('b',`${i+1}. ${localized(p.name)}`),action=node('button',text('View this stop'),'button');action.type='button';
+      action.onclick=()=>document.getElementById(`itinerary-stop-${i}`)?.scrollIntoView({block:'nearest',behavior:'smooth'});
+      popup.append(name,node('br'),action);
+      marker.showStop=()=>{infoWindow.setContent(popup);infoWindow.open({map,anchor:marker});};
+      marker.addListener('click',marker.showStop);return marker;
+    });
+    fit();
+  }
   document.getElementById('itineraryClose').onclick = () => dialog.close();
   document.getElementById('itineraryFit').onclick = fit;
   dialog.addEventListener('close', () => { requestId++; controller?.abort(); });
-  function stopCards(points, markers) {
+  function stopCards(points) {
     const list = document.getElementById('itineraryStops');
     list.replaceChildren();
     points.forEach((p, i) => {
       const item = document.createElement('li');
       item.id = `itinerary-stop-${i}`;
       if(p.extra){
-        item.dataset.i18nIgnore='';const title=node('div',undefined,'itinerary-stop-title');title.append(node('span',String(i+1).padStart(2,'0')),node('h4',localized(p.name)));const locate=node('button','⌖','stop-on-map');locate.type='button';locate.onclick=()=>{map.setView(coords(p),11);markers[i].openPopup();};title.append(locate);const illustration=node('figure',undefined,'itinerary-experience-photo');if(p.image){const image=node('img');image.src=safeURL(p.image);image.alt=localized(p.name);image.loading='lazy';illustration.append(image);window.FjordExperiences?.appendPhotoCredit?.(illustration,p);}else{illustration.className='itinerary-illustration';illustration.textContent='✦';illustration.setAttribute('aria-hidden','true');}item.append(title);if(!p.local)item.append(illustration);else item.classList.add('itinerary-stop-local');item.append(node('p',localized(p.description)),node('small',localized(p.season),'itinerary-access'));const url=official(p);if(url){const a=node('a',et('Official information ↗'),'itinerary-official');a.href=url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}window.FjordTripTools?.nearby(item,p);list.append(item);return;
+        item.dataset.i18nIgnore='';const title=node('div',undefined,'itinerary-stop-title');title.append(node('span',String(i+1).padStart(2,'0')),node('h4',localized(p.name)));const locate=node('button','⌖','stop-on-map');locate.type='button';locate.onclick=()=>{focusStop(p,i);};title.append(locate);const illustration=node('figure',undefined,'itinerary-experience-photo');if(p.image){const image=node('img');image.src=safeURL(p.image);image.alt=localized(p.name);image.loading='lazy';illustration.append(image);window.FjordExperiences?.appendPhotoCredit?.(illustration,p);}else{illustration.className='itinerary-illustration';illustration.textContent='✦';illustration.setAttribute('aria-hidden','true');}item.append(title);if(!p.local)item.append(illustration);else item.classList.add('itinerary-stop-local');item.append(node('p',localized(p.description)),node('small',localized(p.season),'itinerary-access'));const url=official(p);if(url){const a=node('a',et('Official information ↗'),'itinerary-official');a.href=url;a.target='_blank';a.rel='noopener noreferrer';item.append(a);}window.FjordTripTools?.nearby(item,p);list.append(item);return;
       }
       const photos = [...new Set([p.image, ...(p.gallery || []).map(g => g.image)])].filter(Boolean).slice(0, 3);
       item.innerHTML = `<div class="itinerary-stop-title"><span data-i18n-ignore>${String(i + 1).padStart(2, '0')}</span><div><small>${i === 0 ? 'Starting point' : i === points.length - 1 ? 'Final stop' : 'Along the way'}</small><h4 data-i18n-ignore>${esc(p.name)}</h4></div><button type="button" class="stop-on-map" aria-label="Show on map">⌖</button></div><button type="button" class="itinerary-main-photo" aria-label="View photo journal"><img src="${esc(safeURL(photos[0]))}" alt="${esc(p.name)}" loading="lazy"><span>View photo journal ↗</span></button><div class="itinerary-thumbnails">${photos.slice(1).map(src => `<img src="${esc(safeURL(src))}" alt="${esc(p.name)}" loading="lazy">`).join('')}</div><p>${esc(p.description || '')}</p><small class="itinerary-access">${esc(p.routeLabel || p.name)}</small>`;
       item.querySelector('.itinerary-main-photo').onclick = () => openGallery(p.id);
       item.querySelector('.stop-on-map').onclick = () => {
-        map.setView(coords(p), 11); markers[i].openPopup();
-        document.getElementById('itineraryMap').scrollIntoView({block: 'nearest', behavior: 'smooth'});
+        focusStop(p,i);
       };
       window.FjordTripTools?.nearby(item,p);list.append(item);
     });
@@ -148,7 +184,7 @@
     const base=local?local.points:custom?[origin,...custom.required.map(id=>experiences.find(p=>p.id===id)),...(custom.destination?[find(custom.destination)]:[])]:[origin,...config.stops.map(find),find(config.destination)];
     baseChoices(base);
     document.getElementById('itineraryUpdate').classList.remove('needs-update');
-    if(base.some(p=>!valid(p))){document.getElementById('itineraryTitle').textContent=custom?et(custom.title):button.querySelector('b').textContent;document.getElementById('itineraryOrder').textContent='';document.getElementById('itineraryStops').replaceChildren();document.getElementById('itineraryStatus').textContent=et('Required route coordinates are unavailable. No route was calculated.');document.getElementById('itineraryNavigation').removeAttribute('href');legLinks.replaceChildren();activePoints=[];layer?.clearLayers();routeLine=null;if(!dialog.open)dialog.showModal();return;}
+    if(base.some(p=>!valid(p))){document.getElementById('itineraryTitle').textContent=custom?et(custom.title):button.querySelector('b').textContent;document.getElementById('itineraryOrder').textContent='';document.getElementById('itineraryStops').replaceChildren();document.getElementById('itineraryStatus').textContent=et('Required route coordinates are unavailable. No route was calculated.');document.getElementById('itineraryNavigation').removeAttribute('href');legLinks.replaceChildren();activePoints=[];clearMap();if(!dialog.open)dialog.showModal();return;}
     const points=withExtras(base.filter((p,i)=>i===0||i===base.length-1||!excludedStops.has(p.id)));
     // Åndalsnes is represented by the catalogue's Rampestreken road access.
     activePoints = points;
@@ -157,25 +193,8 @@
     document.getElementById('itineraryOrder').textContent = points.map(p => localized(p.name)).join(' → ');
     document.getElementById('itineraryStatus').removeAttribute('data-i18n-ignore');
     document.getElementById('itineraryStatus').textContent = 'Calculating the road route…';
-    if (!map) {
-      map = L.map('itineraryMap', {scrollWheelZoom: false});
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>'
-      }).addTo(map);
-      layer = L.layerGroup().addTo(map);
-      new ResizeObserver(fit).observe(document.getElementById('itineraryMap'));
-    }
-    layer.clearLayers(); routeLine = null;
-    const markers = points.map((p, i) => {
-      const marker = L.marker(coords(p), {icon: L.divIcon({className: 'itinerary-pin', html: `<span>${i + 1}</span>`, iconSize: [30, 30], iconAnchor: [15, 15]})}).addTo(layer);
-      const popup = document.createElement('div');
-      const name = document.createElement('b'); name.textContent = `${i + 1}. ${localized(p.name)}`;
-      const action = document.createElement('button'); action.type = 'button'; action.textContent = text('View this stop');
-      action.onclick = () => document.getElementById(`itinerary-stop-${i}`).scrollIntoView({block: 'nearest', behavior: 'smooth'});
-      popup.append(name, document.createElement('br'), action); marker.bindPopup(popup);
-      return marker;
-    });
-    stopCards(points, markers);
+    clearMap();
+    stopCards(points);
     const navigation = new URL('https://www.google.com/maps/dir/');
     navigation.searchParams.set('api', '1'); navigation.searchParams.set('travelmode', 'driving');
     navigation.searchParams.set('origin', query(points[0]));
@@ -185,9 +204,14 @@
     legLinks.replaceChildren();if(points.length>5){for(let i=0;i<points.length-1;i+=4){const chunk=points.slice(i,i+5),url=new URL(navigation.href);url.searchParams.set('origin',query(chunk[0]));url.searchParams.set('destination',query(chunk.at(-1)));url.searchParams.set('waypoints',chunk.slice(1,-1).map(query).join('|'));const link=node('a',`${et('Navigation leg')} ${Math.floor(i/4)+1}: ${localized(chunk[0].name)} → ${localized(chunk.at(-1).name)} ↗`);link.href=url.href;link.target='_blank';link.rel='noopener noreferrer';legLinks.append(link);}}
     if(!dialog.open)dialog.showModal(); dialog.scrollTop = 0;
     window.FjordI18n?.apply(); requestAnimationFrame(fit);
+    let mapFailed=false;
+    if(!map){const loading=node('p',text('Loading…'));loading.style.padding='20px';document.getElementById('itineraryMap').replaceChildren(loading);}
+    try{await ensureMap();if(token!==requestId||!dialog.open)return;showMarkers(points);}
+    catch{if(token!==requestId||!dialog.open)return;mapFailed=true;const unavailable=node('p',et('Google map unavailable. The stops and Google Maps navigation links are still available.'));unavailable.style.padding='20px';const retry=node('button',text('Try again'),'button');retry.type='button';retry.onclick=()=>openItinerary(activeKey,activeButton);unavailable.append(node('br'),retry);document.getElementById('itineraryMap').replaceChildren(unavailable);}
+    const withMapStatus=value=>value+(mapFailed?' '+et('Google map unavailable. The stops and Google Maps navigation links are still available.'):'');
     if(local?.navigationOnly){
       document.getElementById('itineraryStatus').setAttribute('data-i18n-ignore','');
-      document.getElementById('itineraryStatus').textContent=et('Open driving directions in Google Maps; parking entrances are resolved there. Map markers show approximate visit areas, not vehicle entrances.');
+      document.getElementById('itineraryStatus').textContent=withMapStatus(et('Open driving directions in Google Maps; parking entrances are resolved there. Map markers show approximate visit areas, not vehicle entrances.'));
       fit();return;
     }
     try {
@@ -202,18 +226,18 @@
       }
       if (token !== requestId || !dialog.open) return;
       if (!result.geometry?.length) throw Error('Missing road geometry');
-      routeLine = L.polyline(result.geometry.map(p => [p[1], p[0]]), {color: '#bb1238', weight: 5, opacity: .9}).addTo(layer);
+      if(map&&!mapFailed)routeLine = new google.maps.Polyline({map,path:result.geometry.map(p=>({lat:p[1],lng:p[0]})),strokeColor:'#bb1238',strokeWeight:5,strokeOpacity:.9});
       const distance = Math.round(result.total_distance_km ?? result.distance_km);
       const minutes = Math.round(result.total_duration_minutes ?? result.duration_minutes);
       if(!Number.isFinite(distance)||!Number.isFinite(minutes))throw Error('Missing estimates');
       document.getElementById('itineraryStatus').setAttribute('data-i18n-ignore','');
-      document.getElementById('itineraryStatus').textContent = `${distance} km · ${Math.floor(minutes / 60)} h ${minutes % 60} min · ${et('Driving only; visits and waiting are extra.')}`;
+      document.getElementById('itineraryStatus').textContent = withMapStatus(`${distance} km · ${Math.floor(minutes / 60)} h ${minutes % 60} min · ${et('Driving only; visits and waiting are extra.')}`);
       fit();
     } catch {
       if (token !== requestId || !dialog.open) return;
-      if(routeLine){layer.removeLayer(routeLine);routeLine=null;}
+      if(routeLine){routeLine.setMap(null);routeLine=null;}
       document.getElementById('itineraryStatus').removeAttribute('data-i18n-ignore');
-      document.getElementById('itineraryStatus').textContent = 'Road calculation is unavailable. All stops are shown; open Google Maps for directions.';
+      document.getElementById('itineraryStatus').textContent = withMapStatus(text('Road calculation is unavailable. All stops are shown; open Google Maps for directions.'));
       window.FjordI18n?.apply();
     }
   }
