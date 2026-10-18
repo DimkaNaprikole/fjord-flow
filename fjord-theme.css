@@ -244,19 +244,17 @@ dialog.stay-gallery .stay-gallery-venue-actions a {
   #cafeNearby .cafe-result-links .cafe-route { flex: 1 1 100%; justify-content: center; }
 }
 
-/* Friendship artwork belongs to the header, with an equal half for each country. */
-body>header{position:relative;isolation:isolate;overflow:hidden;border-top:4px solid #224e48;background:#f8fbf7}
-body>header>.solidarity-art-pair{position:absolute;inset:0;z-index:-1;display:grid;grid-template-columns:1fr 1fr;gap:0;opacity:.22;pointer-events:none}
+/* Approved Ukraine/Norway composition remains a full-width header background. */
+body>header{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(260px,36.8vw,470px);align-content:space-between;border-top:4px solid #224e48;background:#f8fbf7}
+body>header>.solidarity-art-pair{position:absolute;inset:0;z-index:-1;display:block;opacity:.22;pointer-events:none}
 .solidarity-art-pair>.solidarity-art{display:block;width:100%;height:100%;min-height:0;min-width:0;object-fit:cover;object-position:center;border-radius:0}
-.solidarity-art-frame{position:relative;overflow:hidden}
-.solidarity-art-frame img{position:absolute;display:block;left:0;top:-22.619%;width:100%;height:155.714%;max-width:none;object-fit:cover}
 body>header>.brand{flex-shrink:0}
 .solidarity-banner{display:flex;flex:0 1 auto;align-items:center;box-sizing:border-box;padding:5px 10px;margin-right:auto;border-left:1px solid #204e4840;font:600 12px/1.4 Manrope,'Segoe UI',sans-serif;color:#173e49}
 .solidarity-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
 .solidarity-copy strong{font-size:14px;line-height:1.25;color:#173e49}
 .solidarity-message{color:#31565d;font-size:11px}
 .solidarity-pledge{align-self:flex-start;padding:3px 7px;border-radius:4px;background:#fff;color:#204b55;font-size:10px;letter-spacing:.025em}
-@media(max-width:650px){body>header{gap:12px}.solidarity-banner{padding:3px 8px;margin:0;flex:1}.solidarity-copy strong{font-size:12px}.solidarity-message{font-size:10px}.solidarity-pledge{font-size:9px}body>header>.solidarity-art-pair{opacity:.22}}
+@media(max-width:650px){body>header{gap:12px;min-height:0}body>header>.solidarity-art-pair>.solidarity-art{object-fit:contain}.solidarity-banner{padding:3px 8px;margin:0;flex:1}.solidarity-copy strong{font-size:12px}.solidarity-message{font-size:10px}.solidarity-pledge{font-size:9px}body>header>.solidarity-art-pair{opacity:.22}}
 
 /* A fine frame and the original Nordic typography throughout the header. */
 body::after{content:'';position:fixed;inset:0;border:2px solid #28574d;z-index:10000;pointer-events:none}
