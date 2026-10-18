@@ -1,23 +1,171 @@
 {
- "checked":"2026-10-18",
- "sources":{
-  "3446":{"name":"Gran kommune","news":"https://www.gran.kommune.no/"},
-  "0301":{"name":"Oslo kommune","news":"https://aktuelt.oslo.kommune.no/"},
-  "4601":{"name":"Bergen kommune","news":"https://www.bergen.kommune.no/hvaskjer","events":"https://billett.bergen.kommune.no/"},
-  "4204":{"name":"Kristiansand kommune","news":"https://www.kristiansand.kommune.no/","events":"https://www.kristiansand.kommune.no/kalender/","facebook":"https://www.facebook.com/kristiansand.kommune","facebookSource":"https://www.kristiansand.kommune.no/kalender/"}
- },
- "items":[
-  {"id":"gran-reuse-2026","municipality":"3446","category":"events","published":"2026-10-16","eventDate":"2026-10-26","expires":"2026-10-27T00:00:00+01:00","source":"Gran kommune / UngHadeland","url":"https://www.gran.kommune.no/tjenester/kultur-idrett-og-fritid/unghadeland/nyheter/2026-10-16-ballkjoledagen-26.-oktober-sjekk-nar-du-kan-levere-inn-kjoler-du-ikke-trenger","copy":{
-   "nb":["Gjenbruksmarked for ballkjoler","Hadeland videregående skole, 26. oktober kl. 18.00–19.30. Se innleveringssteder og vilkår hos arrangøren."],
-   "en":["Second-hand formal dress market","Hadeland upper secondary school, 26 October, 18:00–19:30. Check the organiser’s collection points and terms."],
-   "uk":["Ярмарок уживаних святкових суконь","Hadeland videregående skole, 26 жовтня, 18:00–19:30. Пункти приймання та умови — у організатора."],
-   "sv":["Återbruksmarknad för balklänningar","Hadeland vidaregående skola, 26 oktober kl. 18.00–19.30. Inlämningsställen och villkor finns hos arrangören."],
-   "da":["Genbrugsmarked for festkjoler","Hadeland videregående skole, 26. oktober kl. 18.00–19.30. Se afleveringssteder og vilkår hos arrangøren."]}},
-  {"id":"gran-preparedness-2026","municipality":"3446","category":"notice","published":"2026-10-12","eventDate":"2026-10-27","expires":"2026-10-29T00:00:00+01:00","source":"Gran kommune","url":"https://www.gran.kommune.no/tjenester/brann-beredskap-og-klima/aktuelt-fra-brann-beredskap-og-klima/2026-10-12-hele-gran-over-velkommen-til-beredskapsovelse-i-uke-44","copy":{
-   "nb":["Bli kjent med lokale informasjonspunkter","Beredskapsøvelser i Bjoneroa 27. oktober og på rådhuset i Jaren 28. oktober. Se program hos kommunen."],
-   "en":["Get to know local information points","Preparedness exercises in Bjoneroa on 27 October and Jaren town hall on 28 October. Programme on the municipality’s website."],
-   "uk":["Де отримати інформацію без мобільного зв’язку","Навчання в Bjoneroa 27 жовтня та ратуші Jaren 28 жовтня. Програма — на сайті комуни."],
-   "sv":["Lär känna lokala informationspunkter","Beredskapsövningar i Bjoneroa den 27 oktober och i Jarens rådhus den 28 oktober. Program hos kommunen."],
-   "da":["Lær de lokale informationspunkter at kende","Beredskabsøvelser i Bjoneroa 27. oktober og på rådhuset i Jaren 28. oktober. Program hos kommunen."]}}
- ]
+  "checked": "2026-10-18",
+  "sources": {
+    "3446": {
+      "name": "Gran kommune",
+      "news": "https://www.gran.kommune.no/",
+      "facebook": "https://www.facebook.com/grankommune",
+      "groups": [
+        {
+          "name": "Oppslagstavla for Hadeland",
+          "url": "https://www.facebook.com/groups/681820395175180/"
+        }
+      ]
+    },
+    "0301": {
+      "name": "Oslo kommune",
+      "news": "https://aktuelt.oslo.kommune.no/"
+    },
+    "4601": {
+      "name": "Bergen kommune",
+      "news": "https://www.bergen.kommune.no/hvaskjer",
+      "events": "https://billett.bergen.kommune.no/"
+    },
+    "4204": {
+      "name": "Kristiansand kommune",
+      "news": "https://www.kristiansand.kommune.no/",
+      "events": "https://www.kristiansand.kommune.no/kalender/",
+      "facebook": "https://www.facebook.com/kristiansand.kommune",
+      "facebookSource": "https://www.kristiansand.kommune.no/kalender/"
+    }
+  },
+  "items": [
+    {
+      "id": "gran-reuse-2026",
+      "municipality": "3446",
+      "category": "events",
+      "published": "2026-10-16",
+      "eventDate": "2026-10-26",
+      "expires": "2026-10-27T00:00:00+01:00",
+      "source": "Gran kommune / UngHadeland",
+      "url": "https://www.gran.kommune.no/tjenester/kultur-idrett-og-fritid/unghadeland/nyheter/2026-10-16-ballkjoledagen-26.-oktober-sjekk-nar-du-kan-levere-inn-kjoler-du-ikke-trenger",
+      "copy": {
+        "nb": [
+          "Gjenbruksmarked for ballkjoler",
+          "Hadeland videregående skole, 26. oktober kl. 18.00–19.30. Se innleveringssteder og vilkår hos arrangøren."
+        ],
+        "en": [
+          "Second-hand formal dress market",
+          "Hadeland upper secondary school, 26 October, 18:00–19:30. Check the organiser’s collection points and terms."
+        ],
+        "uk": [
+          "Ярмарок уживаних святкових суконь",
+          "Hadeland videregående skole, 26 жовтня, 18:00–19:30. Пункти приймання та умови — у організатора."
+        ],
+        "sv": [
+          "Återbruksmarknad för balklänningar",
+          "Hadeland vidaregående skola, 26 oktober kl. 18.00–19.30. Inlämningsställen och villkor finns hos arrangören."
+        ],
+        "da": [
+          "Genbrugsmarked for festkjoler",
+          "Hadeland videregående skole, 26. oktober kl. 18.00–19.30. Se afleveringssteder og vilkår hos arrangøren."
+        ]
+      },
+      "image": {
+        "url": "./images/news/gran-reuse-2026.jpg",
+        "alt": "Hadeland videregående skole",
+        "credit": "Gran kommune",
+        "source": "https://www.gran.kommune.no/tjenester/kultur-idrett-og-fritid/unghadeland/nyheter/2026-10-16-ballkjoledagen-26.-oktober-sjekk-nar-du-kan-levere-inn-kjoler-du-ikke-trenger",
+        "originalUrl": "https://www.gran.kommune.no/images/18.33f2362d1a12f57004c1d71/1792132666266/Hadeland%20videreg%C3%A5ende%20skole.jpg"
+      },
+      "facebookPost": "https://www.facebook.com/Lunnerkommune/posts/pfbid02Rbp1KkazCb6VdBkBTBuqkWT2GuoufKn8zBnctjBDHT6Wa2o2iEyNSXX5ykqKbtgUl",
+      "facebookAuthor": "Lunner kommune",
+      "discoveredIn": {
+        "name": "Oppslagstavla for Hadeland",
+        "url": "https://www.facebook.com/groups/681820395175180/posts/29148682134728959/"
+      },
+      "location": "Hadeland videregående skole, Gran",
+      "time": "18.00–19.30",
+      "mapQuery": "Hadeland videregående skole Gran",
+      "details": {
+        "nb": [
+          "Kjøp og salg av brukte ballkjoler, arrangert av frivilligsentralene på Hadeland.",
+          "Innlevering: Harestua 19. oktober 18–19; Gran og Roa 21. oktober; Jevnaker 23. oktober. Se nøyaktige tider og vilkår hos arrangøren."
+        ],
+        "en": [
+          "A second-hand formal dress market organised by Hadeland’s volunteer centres.",
+          "Drop-off: Harestua on 19 October, Gran and Roa on 21 October, Jevnaker on 23 October. Check exact times and conditions with the organiser."
+        ],
+        "uk": [
+          "Ярмарок уживаних святкових суконь від волонтерських центрів Hadeland.",
+          "Приймання: Harestua — 19 жовтня; Gran і Roa — 21 жовтня; Jevnaker — 23 жовтня. Точні години й умови — у організатора."
+        ],
+        "sv": [
+          "Marknad för begagnade balklänningar från Hadelands frivilligcentraler.",
+          "Inlämning: Harestua 19 oktober; Gran och Roa 21 oktober; Jevnaker 23 oktober. Exakta tider och villkor hos arrangören."
+        ],
+        "da": [
+          "Marked for brugte festkjoler fra Hadelands frivilligcentre.",
+          "Aflevering: Harestua 19. oktober; Gran og Roa 21. oktober; Jevnaker 23. oktober. Præcise tider og vilkår hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "gran-preparedness-2026",
+      "municipality": "3446",
+      "category": "notice",
+      "published": "2026-10-12",
+      "eventDate": "2026-10-27",
+      "expires": "2026-10-29T00:00:00+01:00",
+      "source": "Gran kommune",
+      "url": "https://www.gran.kommune.no/tjenester/brann-beredskap-og-klima/aktuelt-fra-brann-beredskap-og-klima/2026-10-12-hele-gran-over-velkommen-til-beredskapsovelse-i-uke-44",
+      "copy": {
+        "nb": [
+          "Bli kjent med lokale informasjonspunkter",
+          "Beredskapsøvelser i Bjoneroa 27. oktober og på rådhuset i Jaren 28. oktober. Se program hos kommunen."
+        ],
+        "en": [
+          "Get to know local information points",
+          "Preparedness exercises in Bjoneroa on 27 October and Jaren town hall on 28 October. Programme on the municipality’s website."
+        ],
+        "uk": [
+          "Де отримати інформацію без мобільного зв’язку",
+          "Навчання в Bjoneroa 27 жовтня та ратуші Jaren 28 жовтня. Програма — на сайті комуни."
+        ],
+        "sv": [
+          "Lär känna lokala informationspunkter",
+          "Beredskapsövningar i Bjoneroa den 27 oktober och i Jarens rådhus den 28 oktober. Program hos kommunen."
+        ],
+        "da": [
+          "Lær de lokale informationspunkter at kende",
+          "Beredskabsøvelser i Bjoneroa 27. oktober og på rådhuset i Jaren 28. oktober. Program hos kommunen."
+        ]
+      },
+      "image": {
+        "url": "./images/news/gran-preparedness-2026.jpg",
+        "alt": "Gran rådhus, Jaren",
+        "credit": "Gran kommune",
+        "source": "https://www.gran.kommune.no/tjenester/brann-beredskap-og-klima/aktuelt-fra-brann-beredskap-og-klima/2026-10-12-hele-gran-over-velkommen-til-beredskapsovelse-i-uke-44",
+        "originalUrl": "https://www.gran.kommune.no/images/18.33f2362d1a12f57004cd8/1791809698126/Hovedinngangen%20til%20Gran%20r%C3%A5dhus.jpg"
+      },
+      "location": "Bjoneroa kulturbygg · Gran rådhus, Jaren",
+      "eventDates": [
+        "2026-10-27",
+        "2026-10-28"
+      ],
+      "mapQuery": "Gran rådhus Jaren",
+      "details": {
+        "nb": [
+          "Åpne øvelser: Bjoneroa kulturbygg 27. oktober og Gran rådhus i Jaren 28. oktober.",
+          "Bli kjent med informasjonspunktene ved bortfall av mobilnett og internett. Tidspunkter og program oppdateres av kommunen."
+        ],
+        "en": [
+          "Open exercises at Bjoneroa kulturbygg on 27 October and Gran town hall in Jaren on 28 October.",
+          "Learn where to find municipal information if mobile networks or the internet fail. The municipality provides the programme and times."
+        ],
+        "uk": [
+          "Відкриті навчання: Bjoneroa kulturbygg — 27 жовтня, ратуша Gran у Jaren — 28 жовтня.",
+          "Дізнайтеся, де отримати інформацію без мобільного зв’язку й інтернету. Час і програму уточнює комуна."
+        ],
+        "sv": [
+          "Öppna övningar: Bjoneroa kulturbygg 27 oktober och Grans rådhus i Jaren 28 oktober.",
+          "Lär känna informationspunkterna vid avbrott i mobilnät och internet. Kommunen uppdaterar program och tider."
+        ],
+        "da": [
+          "Åbne øvelser: Bjoneroa kulturbygg 27. oktober og Grans rådhus i Jaren 28. oktober.",
+          "Lær informationspunkterne at kende ved udfald af mobilnet og internet. Kommunen opdaterer program og tider."
+        ]
+      }
+    }
+  ]
 }
