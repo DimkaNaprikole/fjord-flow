@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 data/*.building.sqlite
 data/*-journal
+
+# Local artwork comparison, not part of the public site.
+/_art-preview/
