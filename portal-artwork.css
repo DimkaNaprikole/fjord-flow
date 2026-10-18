@@ -27,32 +27,25 @@
 .friendship-alternating .hero-artwork-pair img{filter:none;object-position:center 42%}
 .friendship-alternating .hero-artwork-pair img:first-child{object-fit:fill;height:145%;transform:translateY(-15%)}
 .friendship-alternating:has(.hero-artwork-pair.is-visible)>.solidarity-art{opacity:0}
-/* Local brush lettering: Google Fonts Permanent Marker, license beside the font. */
-@font-face{font-family:'Friendship Marker';src:url('fonts/permanent-marker/PermanentMarker-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+/* Owner-matched painted lettering, stored as four transparent atlas cells. */
 body>header>.friendship-third-caption{position:absolute;inset:0;z-index:0;pointer-events:none}
 .friendship-third-caption[hidden]{display:none}
 .friendship-third-caption>span{
- position:absolute;width:44%;color:#fff;font:400 clamp(32px,5vw,76px)/1.12 'Friendship Marker',Manrope,sans-serif;
- text-align:center;text-transform:uppercase;letter-spacing:.02em;
- -webkit-text-stroke:1px #173b4aa6;paint-order:stroke fill;
- text-shadow:0 2px 2px #0b293d,0 4px 14px #0b293da8
+ position:absolute;width:46%;height:62%;top:12%;opacity:.28;
+ background-image:url('images/friendship-lettering-atlas.webp');background-size:200% 200%;background-repeat:no-repeat
 }
-.friendship-third-caption b{display:block;font-weight:400}
-.friendship-third-caption b:first-child{text-align:left}
-.friendship-third-caption b:last-child{text-align:right}
-.friendship-third-left{left:3%;top:25%;transform:rotate(-4deg)}
-.friendship-third-right{right:3%;top:33%;transform:rotate(3deg)}
-.friendship-third-caption>.friendship-support{top:21%;font-size:clamp(32px,4.7vw,70px);line-height:1.04}
-.friendship-support b:nth-child(2){text-align:center}
+.friendship-third-caption b{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.friendship-third-left{left:2%;background-position:0 100%}
+.friendship-third-right{right:2%;background-position:100% 100%}
+.friendship-third-caption[data-frame="0"]>.friendship-support{background-position:0 0}
+.friendship-third-caption[data-frame="1"]>.friendship-support{background-position:100% 0}
 body>header>#solidarityBanner{display:none}
 body>header>:is(.brand,.solidarity-banner,.header-tools,nav){position:relative;z-index:2}
-@media(min-width:651px) and (max-width:1000px){body>header{min-height:360px}.friendship-third-left{top:30%}.friendship-third-right{top:36%}}
+@media(min-width:651px) and (max-width:1000px){body>header{min-height:360px}.friendship-third-caption>span{top:17%;height:50%}}
 @media(max-width:650px){
  body>header{min-height:320px;grid-template-rows:auto 1fr auto}
- .friendship-third-caption>span{font-size:clamp(18px,5.8vw,34px);line-height:1.1;width:42%}
- .friendship-third-left{left:4%;top:47%}
- .friendship-third-right{right:4%;top:55%}
- .friendship-third-caption>.friendship-support{top:39%;font-size:clamp(21px,6.4vw,36px)}
+ .friendship-third-caption>span{top:33%;height:40%}
+ .friendship-third-caption[data-frame="2"]>.friendship-third-right{top:39%}
 }
 
 /* The second chapter uses a full-width scene, matching the opening screen. */
