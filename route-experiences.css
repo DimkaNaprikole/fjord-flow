@@ -39,8 +39,8 @@
 .experience-flip .experience-season{background:#082d3baa;color:#eff9f0;border:1px solid #cfe5d73b}
 .experience-flip .experience-address,.experience-flip .experience-credit{color:#dfede4}
 .experience-flip .experience-actions a{font-size:11px;min-height:40px}
-.experience-flip .experience-official{background:#e0eee4!important;color:#153c3e!important;border-color:#e0eee4!important}
-.experience-flip .experience-directions{background:#0a3242c9;color:#f2fbf6;border-color:#c1e0d275}
+.experience-flip .experience-official{background:var(--ff-action,#255563)!important;color:var(--ff-ink,#edf6f4)!important;border-color:var(--ff-line-strong,#b5d7d25c)!important}
+.experience-flip .experience-directions{background:var(--ff-action,#255563);color:var(--ff-ink,#edf6f4);border-color:var(--ff-line-strong,#b5d7d25c)}
 .experience-flip-toggle{position:absolute;right:10px;top:10px;z-index:4;min-height:38px;padding:9px 12px;border-radius:999px;border:1px solid #deefeb88;background:#0b3245e3;color:#fff;backdrop-filter:blur(12px);font:650 10px/1.4 Manrope,sans-serif;cursor:pointer}
 .experience-flip-toggle:focus-visible{outline:3px solid #f3d897;outline-offset:3px}
 .experience-flipped .experience-flip-toggle{animation:postcard-return-hint 1.2s ease-in-out 3}

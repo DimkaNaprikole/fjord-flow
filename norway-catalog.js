@@ -78,6 +78,50 @@
   let section, grid, status, search, select, more, records = [], query = '', category = 'all', limit = 12, loading = true, failed = false;
   function link(text, href, cls = '') { const a = node('a', cls, text); a.href = safe(href); a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; }
   function directions(r) { return routeUrl(r, originState.current); }
+  const flipCopy = {nb:['Om stedet','Til bildet'],en:['About this place','Back to photo'],uk:['Про місце','До фотографії'],sv:['Om platsen','Till bilden'],da:['Om stedet','Til billedet']};
+  let lastCardScroll = 0;
+  window.addEventListener('scroll', () => {lastCardScroll = performance.now();}, {passive:true});
+  function foldCatalogue(article, visual, body, r, image, photos) {
+    article.classList.add('catalogue-flip');
+    if (image) article.style.setProperty('--catalogue-photo', `url("${image}")`);
+    const caption = node('div','catalogue-front-caption');
+    caption.append(node('small','',[r.town,r.region].filter(Boolean).join(' · ')),node('strong','',r.name));
+    article.append(caption);
+    const labels = flipCopy[lang()];
+    const toggle = node('button','catalogue-flip-toggle',labels[0]+' ↻'); toggle.type='button';
+    let dwell, hoverOpened=false;
+    function side(open) {
+      clearTimeout(dwell); article.classList.toggle('catalogue-flipped',open);
+      visual.inert=open; body.inert=!open; caption.hidden=open;
+      toggle.setAttribute('aria-expanded',String(open)); toggle.textContent=labels[open?1:0]+(open?' ↶':' ↻');
+    }
+    toggle.onclick=()=>{hoverOpened=false;side(!article.classList.contains('catalogue-flipped'));};
+    for (const edge of ['left','right']) {
+      const button=node('button','catalogue-flip-edge catalogue-flip-edge--'+edge,'↻');
+      button.type='button';button.setAttribute('aria-label',labels[0]+' · '+r.name);
+      button.onclick=()=>{hoverOpened=false;side(!article.classList.contains('catalogue-flipped'));}; article.append(button);
+    }
+    article.addEventListener('pointerenter',event=>{
+      if(event.pointerType==='touch'||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+      dwell=setTimeout(()=>{if(article.isConnected&&article.matches(':hover')&&!article.matches(':focus-within')&&performance.now()-lastCardScroll>300&&!document.querySelector('dialog[open]')){hoverOpened=true;side(true);}},2000);
+    });
+    article.addEventListener('pointerleave',()=>{clearTimeout(dwell);if(hoverOpened&&!article.matches(':focus-within')){hoverOpened=false;side(false);}});
+    article.addEventListener('keydown',event=>{if(event.key==='Escape'){hoverOpened=false;side(false);toggle.focus({preventScroll:true});}});
+    article.append(toggle); side(false);
+    const img=visual.querySelector('img');
+    const sources=[...new Set([image,...photos.map(p=>safe(p.src))].filter(Boolean))];
+    if(img&&sources.length>1) {img.alt=r.name;img.dataset.slides=JSON.stringify(sources);img.dataset.slide='0';}
+  }
+  // One shared clock: pause offscreen cards, inactive tabs, open galleries and reduced motion.
+  setInterval(()=>{
+    if(document.hidden||document.querySelector('dialog[open]')||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    document.querySelectorAll('.catalogue-flip:not(.catalogue-flipped) img[data-slides]').forEach(img=>{
+      const rect=img.getBoundingClientRect();if(rect.bottom<0||rect.top>innerHeight)return;
+      const sources=JSON.parse(img.dataset.slides), next=(Number(img.dataset.slide)+1)%sources.length;
+      img.dataset.slide=String(next);img.src=sources[next];
+      img.closest('.catalogue-flip').style.setProperty('--catalogue-photo',`url("${sources[next]}")`);
+    });
+  },6500);
   function card(r) {
     const article = node('article', 'norway-catalog-card');
     const photos = (Array.isArray(r.gallery) ? r.gallery : []).filter(p => safe(p.src));
@@ -142,7 +186,10 @@
     if (checked) meta.append(node('span', '', `${t(18)}: ${checked}`));
     if (local(r.photoCaption)) meta.append(node('span', '', local(r.photoCaption)));
     if (safe(r.imageSource || photos[0]?.source)) meta.append(link(t(19) + ' ↗', r.imageSource || photos[0].source));
-    content.append(meta); article.append(body); return article;
+    content.append(meta); article.append(body);
+    about.open = true; content.querySelectorAll('details').forEach(detail => {detail.open=true;});
+    foldCatalogue(article,visual,body,r,image,photos);
+    return article;
   }
   function render() {
     if (!grid) return;
