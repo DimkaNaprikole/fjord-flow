@@ -242,11 +242,11 @@ dialog.stay-gallery .stay-gallery-venue-actions a {
   #cafeNearby .cafe-result-links .cafe-route { flex: 1 1 100%; justify-content: center; }
 }
 
-/* Compact street-art banner: white brick, blue/yellow paint, live translated text. */
-.solidarity-banner{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 16px;box-sizing:border-box;width:100%;min-height:46px;padding:7px 18px;background:#edf0e8 url('./images/solidarity-brick.svg') repeat;color:#101d23;border-bottom:1px solid #bcc6bd;font:600 12px/1.4 Manrope,'Segoe UI',sans-serif;text-align:center}
-.solidarity-banner::before{content:'';position:absolute;inset:0;z-index:-1;background:url('./images/solidarity-paint.svg') center/auto 100% no-repeat;opacity:.93;pointer-events:none}
-.solidarity-banner>strong,.solidarity-pledge{font-family:Impact,'Arial Black','Arial Narrow',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.045em;color:#0a1820;text-shadow:0 1px #ffffff45;line-height:1.1}
-.solidarity-banner>strong{font-size:19px;transform:rotate(-1deg)}.solidarity-pledge{font-size:20px;transform:rotate(.7deg)}
-.solidarity-flags{display:inline-flex;align-items:center;gap:6px;line-height:1;flex-shrink:0}.solidarity-flags svg{width:23px;height:17px;filter:drop-shadow(0 1px 1px #0003)}.solidarity-flags>span{color:#14262c;font-size:20px;font-weight:900}.solidarity-message{font-size:11px;color:#17363d;font-weight:800}
-@media(max-width:650px){.solidarity-banner{gap:4px 10px;padding:7px 10px;min-height:44px}.solidarity-message{display:none}.solidarity-banner>strong{font-size:16px}.solidarity-pledge{font-size:17px}.solidarity-flags{gap:4px}.solidarity-flags svg{width:20px;height:15px}}
-@media(max-width:380px){.solidarity-banner{gap:4px 8px}.solidarity-flags{gap:3px}.solidarity-flags svg{width:18px;height:13px}.solidarity-banner>strong{font-size:14px}.solidarity-pledge{font-size:15px}}
+/* Original friendship artwork stays whole, in a compact top banner. */
+.solidarity-banner{display:flex;align-items:center;justify-content:center;gap:20px;box-sizing:border-box;width:100%;padding:8px 18px;background:var(--ff-surface,#173e49);color:var(--ff-text,#eef7f8);border-bottom:1px solid #ffffff24;font:600 12px/1.4 Manrope,'Segoe UI',sans-serif;text-align:left}
+.solidarity-art{display:block;width:auto;height:104px;max-width:30%;object-fit:contain;flex:none;border-radius:3px}
+.solidarity-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.solidarity-copy strong{font-size:18px;line-height:1.25;color:#f2f8f8}
+.solidarity-message{color:#c0d6da;font-size:12px}
+.solidarity-pledge{color:#f4d96b;font-size:12px;letter-spacing:.05em}
+@media(max-width:650px){.solidarity-banner{gap:14px;padding:7px 12px}.solidarity-art{height:90px}.solidarity-copy strong{font-size:16px}.solidarity-message,.solidarity-pledge{font-size:11px}}
