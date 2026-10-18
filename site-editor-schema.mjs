@@ -1,4 +1,6 @@
 /* Public editor contract. No credentials, executable HTML or arbitrary CSS. */
+import {createElementDescriptors,resolveElementDescriptor,validateElements,validateElementStyle as validateStyle,validateFramePresets} from './element-design.mjs?v=1';
+export {ELEMENT_NUMBER_FIELDS,ELEMENT_SELECT_FIELDS} from './element-design.mjs?v=1';
 export const LANGUAGES=['nb','en','uk','sv','da'];
 export const PAGES=[
  {id:'home',name:'Главная',root:'#homePanel',title:'.hero h1',intro:'.hero .hero-copy'},
@@ -63,6 +65,9 @@ export const THEME_FIELDS={
  font:{type:'select',label:'Шрифт',options:['Manrope','DM Sans','Barlow Condensed'],default:'Manrope'}
 };
 export const MEDIA_FIELDS=[{id:'header',name:'Фон шапки — композиция Украина / Норвегия'},{id:'hero',name:'Главная — фоновое фото'},{id:'waterfall',name:'Главная — фото водопада'},{id:'cafes',name:'Кофейни — фоновое фото'}];
+export const ELEMENTS=createElementDescriptors({PAGES,BLOCKS,BUTTONS,SECTIONS});
+export const elementDescriptor=id=>resolveElementDescriptor(id,ELEMENTS);
+export const validateElementStyle=value=>validateStyle(value,safeMediaURL);
 const plain=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&[Object.prototype,null].includes(Object.getPrototypeOf(x));
 const keys=(x,allowed)=>{if(!plain(x)||Object.keys(x).some(k=>!allowed.includes(k)))throw new Error('invalid_editor_fields');};
 export function safeMediaURL(value){
@@ -88,8 +93,10 @@ export function validatePlace(value){
  return out;
 }
 export function validateDocument(value){
- keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue','buttons','headerButtonOrder','sectionOrder']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
- const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]},buttons:{},headerButtonOrder:[],sectionOrder:[]};
+ keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue','buttons','headerButtonOrder','sectionOrder','elements','framePresets']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
+ const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]},buttons:{},headerButtonOrder:[],sectionOrder:[],elements:{},framePresets:[]};
+ if(value.elements!==undefined)out.elements=validateElements(value.elements,elementDescriptor,safeMediaURL);
+ if(value.framePresets!==undefined)out.framePresets=validateFramePresets(value.framePresets,safeMediaURL);
  if(value.theme!==undefined){keys(value.theme,Object.keys(THEME_FIELDS));for(const [key,v]of Object.entries(value.theme)){const f=THEME_FIELDS[key];if(f.type==='color'&&!/^#[0-9a-f]{6}$/i.test(v)||f.type==='number'&&(!Number.isFinite(v)||v<f.min||v>f.max)||f.type==='select'&&!f.options.includes(v))throw new Error('invalid_editor_theme');out.theme[key]=v;}}
  if(value.pages!==undefined)out.pages=records(value.pages,PAGES);
  if(value.blocks!==undefined)out.blocks=records(value.blocks,BLOCKS);

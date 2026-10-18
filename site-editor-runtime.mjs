@@ -1,6 +1,7 @@
 /* Published, validated content only. Drafts enter solely through the same-origin editor preview. */
-import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=4';
-import {mountVisualBuilder} from './visual-builder.mjs?v=2';
+import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument,elementDescriptor} from './site-editor-schema.mjs?v=5';
+import {elementCSS,createElementMedia} from './element-design.mjs?v=1';
+import {mountVisualBuilder} from './visual-builder.mjs?v=3';
 import {createSectionOrder} from './section-order.mjs?v=1';
 import {mergeCatalogue} from './catalogue-content.mjs';
 let documentValue=emptyDocument(),scheduled=false,originalNavOrder=null,lastPreviewTarget='',lastCredits='';
@@ -10,6 +11,7 @@ const style=document.createElement('style');style.id='fjordPublishedDesign';docu
 const originals=new WeakMap(),mediaOriginals=new WeakMap(),buttonLinks=new WeakMap();
 let builder;
 const applySectionOrder=createSectionOrder(document);
+const applyElementMedia=createElementMedia(document,elementDescriptor,image);
 let activePlaces=[],lastPlaces='';
 window.FjordCatalogueContent=Object.freeze({merge:base=>mergeCatalogue(base,activePlaces),get places(){return activePlaces;}});
 const language=()=>window.FjordI18n?.language||document.documentElement.lang||'nb';
@@ -35,7 +37,7 @@ function themeCSS(theme){
  if(theme.headerPosition!==undefined)css+=`.solidarity-art-pair>.solidarity-art{object-position:50% ${theme.headerPosition}%!important}`;
  for(const button of BUTTONS){const value=documentValue.buttons[button.id];if(!value)continue;const rules=[];for(const [key,property]of Object.entries({fontSize:'font-size',padding:'padding',radius:'border-radius'}))if(value[key]!==undefined)rules.push(property+':'+value[key]+'px!important');for(const [key,property]of Object.entries({background:'background',color:'color'}))if(value[key])rules.push(property+':'+value[key]+'!important');if(rules.length)css+=button.selector+'{'+rules.join(';')+'}';}
  const hero=documentValue.media.hero;if(hero)css+=`#heroScenery{background-image:url("${hero.src}")!important}#heroScenery .hero-location-film{display:none!important}`;
- return css;
+ return css+elementCSS(documentValue.elements,elementDescriptor);
 }
 function apply(){
  scheduled=false;
@@ -62,17 +64,19 @@ function apply(){
   const sorted=[...controls].sort((a,b)=>order.indexOf(key(a))-order.indexOf(key(b)));
   if(sorted.some((n,i)=>n!==controls[i]))sorted.forEach(n=>nav.append(n));
  }
- image(select('.solidarity-art-pair>.solidarity-art'),documentValue.media.header);
- image(select('.waterfall-story>img'),documentValue.media.waterfall);
- image(select('#cafeStops > img'),documentValue.media.cafes);
- const creditJSON=JSON.stringify(documentValue.media);
- if(creditJSON!==lastCredits){const host=select('.photo-legal details');if(host){let credits=select('#editorPhotoCredits');if(!credits){credits=document.createElement('div');credits.id='editorPhotoCredits';host.append(credits);}credits.replaceChildren();for(const media of Object.values(documentValue.media)){if(!media.credit&&!media.source)continue;const row=document.createElement('p'),entry=document.createElement(media.source?'a':'span');entry.textContent=media.credit||media.source;if(media.source){entry.href=media.source;entry.target='_blank';entry.rel='noopener noreferrer';}row.append(entry);credits.append(row);}lastCredits=creditJSON;}}
+ // An element photo wins over the older media setting. Do not reset its src and set it
+ // again on every observer pass; restore normal media only after its overlay is removed.
+ applyElementMedia(documentValue.elements,documentValue.media);
+ const allMedia=[...Object.values(documentValue.media),...Object.values(documentValue.elements).flatMap(value=>[value.image,value.tablet?.image,value.mobile?.image]).filter(Boolean)];
+ const creditJSON=JSON.stringify(allMedia);
+ if(creditJSON!==lastCredits){const host=select('.photo-legal details');if(host){let credits=select('#editorPhotoCredits');if(!credits){credits=document.createElement('div');credits.id='editorPhotoCredits';host.append(credits);}credits.replaceChildren();for(const media of allMedia){if(!media.credit&&!media.source)continue;const row=document.createElement('p'),entry=document.createElement(media.source?'a':'span');entry.textContent=media.credit||media.source;if(media.source){entry.href=media.source;entry.target='_blank';entry.rel='noopener noreferrer';}row.append(entry);credits.append(row);}lastCredits=creditJSON;}}
  builder?.refresh();
  if(documentValue.pages[window.FjordTabs?.current]?.enabled===false)window.FjordTabs.activate('home');
 }
 function schedule(){if(!scheduled){scheduled=true;requestAnimationFrame(apply);}}
 new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true});
 window.addEventListener('fjordlanguagechange',schedule);
+window.addEventListener('resize',schedule);
 function inspect(){const values={pages:{},blocks:{}};for(const[kind,items]of [['pages',PAGES],['blocks',BLOCKS]])for(const item of items)values[kind][item.id]={title:select(item.title)?.textContent||'',intro:select(item.intro)?.textContent||''};return values;}
 if(preview){
  const reply=data=>parent.postMessage({...data,nonce:previewNonce},location.origin);
@@ -80,7 +84,8 @@ if(preview){
  window.addEventListener('message',event=>{
   if(event.source!==parent||event.origin!==location.origin||event.data?.nonce!==previewNonce)return;
   const message=event.data;
-  if(message.type==='fjord-editor:builder')builder.setEnabled(message.enabled===true);
+  if(message.type==='fjord-editor:builder')builder.setEnabled(message.enabled===true,message.breakpoint);
+  if(message.type==='fjord-editor:focus')builder.focus(message.id);
   if(message.type==='fjord-editor:apply'){try{const next=validateDocument(message.document);if(LANGUAGES.includes(message.language)&&language()!==message.language)window.FjordI18n?.setLanguage(message.language);documentValue=next;apply();if(PAGES.some(p=>p.id===message.pageId))window.FjordTabs?.activate(message.pageId);const target=BLOCKS.find(b=>b.id===message.blockId);if(target&&target.id!==lastPreviewTarget)select(target.root)?.scrollIntoView({block:'start'});lastPreviewTarget=target?.id||'';reply({type:'fjord-editor:applied'});}catch{reply({type:'fjord-editor:error',error:'invalid_document'});}}
   if(message.type==='fjord-editor:inspect')reply({type:'fjord-editor:inspected',requestId:message.requestId,values:inspect()});
  });

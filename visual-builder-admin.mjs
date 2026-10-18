@@ -1,13 +1,19 @@
-import {PAGES,BLOCKS,BUTTONS,SECTIONS,MEDIA_FIELDS,BUTTON_STYLE_FIELDS,LANGUAGES,safeButtonHref} from './site-editor-schema.mjs?v=4';
+import {renderElementInspector} from './element-inspector-admin.mjs?v=1';
+import {PAGES,BLOCKS,BUTTONS,SECTIONS,MEDIA_FIELDS,BUTTON_STYLE_FIELDS,LANGUAGES,safeButtonHref,ELEMENTS,elementDescriptor} from './site-editor-schema.mjs?v=5';
 
-export function mountVisualBuilderAdmin({frame,nonce,getDocument,changed,selectContent,selectMedia,selectPlace,onOrder,language}){
- let enabled=false,selected=null;
+export function mountVisualBuilderAdmin({frame,nonce,getDocument,changed,selectContent,selectMedia,selectPlace,onOrder,language,loadAssets}){
+ let enabled=false,selected=null,breakpoint="desktop",inspector=null;
  const toolbar=document.querySelector('.preview-toolbar > div'),toggle=document.createElement('button');toggle.type='button';toggle.id='visualBuilderToggle';toggle.textContent='Конструктор';toggle.setAttribute('aria-pressed','false');toolbar.prepend(toggle);
  const panel=document.createElement('section');panel.id='visualBuilderPanel';panel.className='editor-panel visual-builder-panel';panel.hidden=true;document.querySelector('.editor-tabs').after(panel);
  const controls=document.querySelector('.editor-controls');
  document.querySelector('.editor-tabs').addEventListener('click',()=>{delete controls.dataset.builderSelection;panel.hidden=true;selected=null;});
- function message(){frame.contentWindow.postMessage({type:'fjord-editor:builder',nonce,enabled},location.origin);}
- toggle.onclick=()=>{enabled=!enabled;toggle.setAttribute('aria-pressed',String(enabled));panel.hidden=!enabled;if(!enabled)delete controls.dataset.builderSelection;else if(selected?.group==='buttons')controls.dataset.builderSelection='buttons';if(enabled&&!selected){panel.replaceChildren(node('h2','Конструктор сайта'),node('p','Нажмите текст для редактирования. Нажмите фото для замены. Разделы перетаскивайте за ⠿ или переставляйте стрелками ↑ / ↓.','hint'));sectionList();picker();}message();};
+ function message(){frame.contentWindow.postMessage({type:'fjord-editor:builder',nonce,enabled,breakpoint},location.origin);}
+ toggle.onclick=()=>{enabled=!enabled;toggle.setAttribute('aria-pressed',String(enabled));panel.hidden=!enabled;if(!enabled)delete controls.dataset.builderSelection;else if(selected)controls.dataset.builderSelection=selected.group;if(enabled&&!selected){panel.replaceChildren(node('h2','Конструктор сайта'),node('p','Нажмите текст для редактирования. Нажмите фото для замены. Разделы перетаскивайте за ⠿ или переставляйте стрелками ↑ / ↓.','hint'));sectionList();elementPicker();picker();}message();};
+ const devices=document.createElement('div');devices.className='builder-devices';const tablet=document.createElement('button');tablet.type='button';tablet.id='tablet';tablet.textContent='Планшет';document.getElementById('mobile').before(tablet);
+ const fit=document.createElement('input');fit.type='checkbox';fit.checked=true;const fitLabel=document.createElement('label');fitLabel.textContent='Вместить';fitLabel.append(fit);devices.append(fitLabel);const stage=frame.parentElement;function fitFrame(){const width=Number(widthControl.value)||1280;frame.style.zoom=fit.checked?String(Math.min(1,Math.max(320,stage.clientWidth-16)/width)):'1';stage.style.overflowX=fit.checked?'hidden':'auto';}fit.onchange=fitFrame;new ResizeObserver(fitFrame).observe(stage);
+ const widthControl=document.createElement('input');widthControl.type='range';widthControl.min='320';widthControl.max='1440';widthControl.value='1280';widthControl.setAttribute('aria-label','Ширина адаптивного предпросмотра');const widthLabel=document.createElement('span');devices.append(widthControl,widthLabel);document.querySelector('.preview-toolbar').after(devices);
+ function resize(width,mode){breakpoint=mode;frame.classList.remove('mobile');frame.style.width=width+'px';frame.style.maxWidth='none';frame.parentElement.style.overflowX='auto';widthControl.value=String(width);fitFrame();widthLabel.textContent=width+' px · '+({desktop:'Компьютер',tablet:'Планшет',mobile:'Телефон'})[mode];for(const id of ['desktop','tablet','mobile'])document.getElementById(id).setAttribute('aria-pressed',String(id===mode));message();if(selected?.group==='elements')render(selected);}
+ document.getElementById('desktop').onclick=()=>resize(1280,'desktop');tablet.onclick=()=>resize(820,'tablet');document.getElementById('mobile').onclick=()=>resize(390,'mobile');widthControl.oninput=()=>{const width=Number(widthControl.value);resize(width,width<=680?'mobile':width<=1000?'tablet':'desktop');};resize(1280,'desktop');
  const node=(tag,text,cls)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;if(cls)el.className=cls;return el;};
  function field(title,input){const label=node('label',title);label.append(input);panel.append(label);return input;}
  function sectionList(){
@@ -21,9 +27,12 @@ export function mountVisualBuilderAdmin({frame,nonce,getDocument,changed,selectC
   });
   const reset=node('button','Вернуть исходный порядок разделов');reset.type='button';reset.onclick=()=>change([]);details.append(reset);
  }
+ function elementPicker(){const select=node('select');select.append(new Option('Выберите элемент…',''));for(const item of ELEMENTS)select.append(new Option(item.name,item.id));if(selected?.id?.startsWith('place_'))select.append(new Option(selected.name,selected.id));select.value=selected?.group==='elements'?selected.id:'';field('Элемент сайта',select);select.onchange=()=>{const item=elementDescriptor(select.value);if(item){render({group:'elements',id:item.id,name:item.name});frame.contentWindow.postMessage({type:'fjord-editor:focus',nonce,id:item.id},location.origin);}};}
  function picker(){const select=node('select'),empty=node('option','Нажмите элемент справа или выберите кнопку');empty.value='';select.append(empty);for(const item of BUTTONS){const option=node('option',item.name);option.value=item.id;select.append(option);}select.value=selected?.group==='buttons'?selected.id:'';field('Выбрать кнопку',select);select.onchange=()=>{const button=BUTTONS.find(item=>item.id===select.value);if(button)render({group:'buttons',id:button.id,name:button.name});};}
  function render(selection){
-  selected=selection;panel.hidden=!enabled;controls.dataset.builderSelection=selection.group;panel.replaceChildren(node('h2','Выбрано: '+selection.name));sectionList();picker();
+  selected=selection;panel.hidden=!enabled;controls.dataset.builderSelection=selection.group;panel.replaceChildren(node('h2','Выбрано: '+selection.name));inspector=null;
+  if(selection.group==='elements'){elementPicker();const host=node('div',undefined,'element-inspector');panel.append(host);const descriptor=elementDescriptor(selection.id);inspector=renderElementInspector({host,descriptor,getDocument,changed,language,setLanguage:lang=>{const source=document.getElementById('language');source.value=lang;source.dispatchEvent(new Event('change'));},loadAssets,breakpoint});return;}
+  sectionList();picker();
   if(selection.group!=='buttons'){panel.append(node('p','Настройки этого элемента открыты ниже. Изменения пока видны только в предпросмотре.','hint'));return;}
   const button=BUTTONS.find(item=>item.id===selection.id),value=getDocument().buttons[selection.id]||{},lang=language();
   const languageSelect=node('select');for(const id of LANGUAGES){const option=node('option',({nb:'Норвежский',en:'English',uk:'Українська',sv:'Svenska',da:'Dansk'})[id]);option.value=id;languageSelect.append(option);}languageSelect.value=lang;field('Язык надписи',languageSelect);languageSelect.onchange=()=>{const source=document.getElementById('language');source.value=languageSelect.value;source.dispatchEvent(new Event('change'));};
@@ -51,7 +60,12 @@ export function mountVisualBuilderAdmin({frame,nonce,getDocument,changed,selectC
    const record=getDocument()[data.group][data.id]??={};record[data.field]??={};if(data.value.trim())record[data.field][language()]=data.value;else delete record[data.field][language()];selectContent(data.group,data.id,data.field);changed();
   }
   if(data.type==='fjord-editor:place'&&typeof data.id==='string'&&data.id.length<150)selectPlace?.(data.id);
+  if(data.type==='fjord-editor:move'){
+   if(!elementDescriptor(data.id)||!['desktop','tablet','mobile'].includes(data.breakpoint)||!Number.isFinite(data.x)||!Number.isFinite(data.y)||Math.abs(data.x)>160||Math.abs(data.y)>160)return;
+   const base=getDocument().elements[data.id]??={};const target=data.breakpoint==='desktop'?base:(base[data.breakpoint]??={});target.offsetX=Math.round(data.x);target.offsetY=Math.round(data.y);changed();inspector?.sync?.();return;
+  }
   if(data.type==='fjord-editor:select'){
+   if(data.group==='elements'){const item=elementDescriptor(data.id);if(item)render({group:'elements',id:item.id,name:item.name});return;}
    const list=data.group==='buttons'?BUTTONS:data.group==='pages'?PAGES:data.group==='blocks'?BLOCKS:data.group==='sections'?SECTIONS:[],item=list.find(item=>item.id===data.id);
    if(item){render({group:data.group,id:item.id,name:item.name,label:typeof data.label==='string'?data.label.slice(0,240):''});if(['pages','blocks'].includes(data.group))selectContent(data.group,item.id);if(data.group==='sections')panel.querySelector('details').open=true;}
    else if(data.group==='media'&&MEDIA_FIELDS.some(m=>m.id===data.id)){render({group:'media',id:data.id,name:'Фото оформления'});selectMedia(data.id);}
@@ -62,5 +76,5 @@ export function mountVisualBuilderAdmin({frame,nonce,getDocument,changed,selectC
    getDocument()[data.group]=[...data.order];onOrder();if(data.group==='sectionOrder'&&!panel.hidden){const open=panel.querySelector('details')?.open;render(selected||{group:'sections',id:data.order[0],name:'Разделы главной'});panel.querySelector('details').open=!!open;}changed();
   }
  });
- return {refresh(){if(selected&&selected.group==='buttons')render(selected);}};
+ return {refresh(){if(selected&&['buttons','elements'].includes(selected.group))render(selected);}};
 }
