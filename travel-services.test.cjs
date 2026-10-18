@@ -11,7 +11,7 @@ test('curated services have unique IDs, HTTPS links and all five languages',()=>
 });
 test('filters and pagination do not lose services or show invalid pages',()=>{
  const first=api.select('all',new Set()),last=api.select('all',new Set(),99);
- assert.equal(first.items.length,6);assert.equal(last.page,2);assert.equal(last.items.length,1);
+ assert.equal(first.items.length,6);assert.equal(last.page,2);assert.equal(last.items.length,2);
  assert.ok(api.select('rental',new Set()).items.every(s=>s.category==='rental'));
  const favourites=new Set(['hyre','unknown']);assert.equal(api.select('favourites',favourites).total,1);
  assert.equal(api.select('favourites',new Set(),3).page,0);

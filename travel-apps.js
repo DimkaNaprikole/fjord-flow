@@ -10,5 +10,5 @@ function open(id,button){if(!apps.some(a=>a.id===id))return;selected=id;opener=b
 dialog.addEventListener('close',()=>{if(opener?.isConnected)opener.focus({preventScroll:true});});
 function attach(container,ids){const valid=ids.map(id=>apps.find(a=>a.id===id)).filter(Boolean);if(!valid.length)return;const actions=el('div',null,'travel-app-launchers');actions.dataset.i18nIgnore='';for(const app of valid){const b=el('button',`${app.name} · ${t(0)}`);b.type='button';b.setAttribute('aria-haspopup','dialog');b.onclick=()=>open(app.id,b);actions.append(b);}container.append(actions);}
 window.FjordApps={open,attach};window.addEventListener('fjordlanguagechange',()=>{if(dialog.open)render();});
-fetch('./travel-apps.json?v=1').then(r=>{if(!r.ok)throw Error('apps');return r.json();}).then(data=>{apps=data.apps;window.dispatchEvent(new Event('fjord:apps-ready'));}).catch(()=>{});
+fetch('./travel-apps.json?v=2').then(r=>{if(!r.ok)throw Error('apps');return r.json();}).then(data=>{apps=data.apps;window.dispatchEvent(new Event('fjord:apps-ready'));}).catch(()=>{});
 })();
