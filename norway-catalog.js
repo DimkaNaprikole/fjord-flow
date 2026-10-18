@@ -101,35 +101,15 @@
     const content = node('div', 'norway-catalog-about-content');
     content.append(node('p', 'norway-catalog-description', local(r.description)));
     about.append(summary, content);
-    // A hover preview stays open while moving through the card. Native summary
-    // controls remain available for touch and keyboard interaction.
-    let previewTimer, closeTimer, pinned = false, previewed = false;
-    const preview = () => {
-      if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches || about.open) return;
-      clearTimeout(previewTimer);
-      previewTimer = setTimeout(() => {about.open = true; previewed = true;}, 450);
-    };
-    title.addEventListener('pointerenter', preview); summary.addEventListener('pointerenter', preview);
-    summary.addEventListener('click', () => {clearTimeout(previewTimer); pinned = !about.open; previewed = false;});
-    content.addEventListener('click', () => {pinned = true; previewed = false;});
-    about.addEventListener('focusin', () => {pinned = true; previewed = false;});
-    article.addEventListener('pointerenter', () => clearTimeout(closeTimer));
-    article.addEventListener('pointerleave', () => {
-      clearTimeout(previewTimer);
-      closeTimer = setTimeout(() => {if (previewed && !pinned && !article.contains(document.activeElement)) {about.open = false; previewed = false;}}, 350);
+    // Only deliberate click/keyboard activation reveals details.
+    about.addEventListener('toggle', () => {
+      article.classList.toggle('is-expanded', about.open);
+      content.querySelectorAll('details').forEach(detail => {detail.open = about.open;});
     });
-    about.addEventListener('toggle', () => {article.classList.toggle('is-expanded', about.open);});
     if (r.address) {
       const address = node('details', 'norway-catalog-address-details');
       const addressSummary = node('summary', '', {nb:'Adresse',en:'Address',uk:'Адреса',sv:'Adress',da:'Adresse'}[lang()]);
       address.append(addressSummary, node('p', 'norway-catalog-address', r.address));
-      let addressTimer;
-      addressSummary.addEventListener('pointerenter', () => {
-        if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches || address.open) return;
-        addressTimer = setTimeout(() => {address.open = true; pinned = true; previewed = false;}, 450);
-      });
-      addressSummary.addEventListener('pointerleave', () => clearTimeout(addressTimer));
-      addressSummary.addEventListener('click', () => clearTimeout(addressTimer));
       content.append(address);
     }
     if (r.catalogueDistance !== null && r.catalogueDistance !== undefined) body.append(node('p', 'norway-catalog-distance', `${r.coordinatePrecision === 'area' ? '≈ ' : ''}${new Intl.NumberFormat(lang(), {maximumFractionDigits: 1}).format(r.catalogueDistance)} km ${g(10)}`));

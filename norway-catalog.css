@@ -15,7 +15,7 @@
 .norway-catalog-copy{padding:16px}
 .norway-catalog-location{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .norway-catalog-copy h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:21px;line-height:1.3;margin:8px 0 10px}
-.norway-catalog-card:is(.is-expanded,:focus-within) h3{-webkit-line-clamp:unset;display:block;overflow:visible}
+.norway-catalog-card.is-expanded h3{-webkit-line-clamp:unset;display:block;overflow:visible}
 .norway-catalog-about{margin:0 0 12px;border-top:1px solid var(--ff-line,#b5d7d22e);color:var(--ff-ink,#edf6f4);font-size:14px;line-height:1.7}
 .norway-catalog-about>summary,.norway-catalog-address-details>summary{min-height:44px;align-content:center;cursor:pointer;font-weight:700;color:var(--ff-ink,#edf6f4)}
 .norway-catalog-about>summary::marker,.norway-catalog-address-details>summary::marker{color:var(--ff-accent,#d0e7df)}
@@ -29,3 +29,13 @@
 .norway-catalog-actions{margin-top:auto}
 @media(max-width:650px){.norway-catalog-photo{height:190px}.norway-catalog-copy{padding:15px}.norway-catalog-copy h3{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.norway-catalog-photo:is(:hover,:focus-visible) img{transform:none}}
+
+/* Hover hints keep card geometry and content unchanged. */
+.norway-catalog-card{transition:border-color .2s ease,box-shadow .2s ease}
+.norway-catalog-about>summary{border-radius:8px;transition:background-color .2s ease,color .2s ease}
+@media(hover:hover) and (pointer:fine){
+.norway-catalog-card:hover{border-color:#8fc9cb;box-shadow:0 0 0 1px #8fc9cb33,0 8px 24px #061f2938}
+.norway-catalog-card:hover .norway-catalog-about>summary{background:#8fc9cb12;color:#e4fffa}
+.norway-catalog-about>summary:hover{background:#8fc9cb25}
+}
+@media(prefers-reduced-motion:reduce){.norway-catalog-card,.norway-catalog-about>summary{transition:none}}
