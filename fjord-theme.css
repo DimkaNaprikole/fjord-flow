@@ -313,3 +313,12 @@ body>header>.header-tools{grid-area:tools;margin:0;align-self:start;justify-self
 body .site-section-nav,body button.fjord-helper-launch{bottom:calc(var(--ff-ornament-width) + 10px + env(safe-area-inset-bottom,0px))}
 body button.fjord-helper-launch{right:calc(var(--ff-ornament-width) + 10px + env(safe-area-inset-right,0px))}
 @media(max-width:650px){body .site-section-nav{left:calc(var(--ff-ornament-width) + 8px);max-width:calc(100vw - var(--ff-ornament-width) * 2 - 96px)}}
+
+/* Soften only the outer edge; keep the selected botanical ornament crisp. */
+.portal-art-frame{opacity:1}
+.portal-art-frame::before,.portal-art-frame::after{content:'';position:absolute;top:0;bottom:0;width:calc(var(--ff-ornament-width) + 14px);z-index:0;pointer-events:none;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);background:#0a2c3b24}
+.portal-art-frame::before{left:0;-webkit-mask-image:linear-gradient(90deg,#000 40%,transparent);mask-image:linear-gradient(90deg,#000 40%,transparent)}
+.portal-art-frame::after{right:0;-webkit-mask-image:linear-gradient(270deg,#000 40%,transparent);mask-image:linear-gradient(270deg,#000 40%,transparent)}
+.portal-art-rail{z-index:1;filter:saturate(1.12) contrast(1.06) drop-shadow(0 -1px .5px #fff2cba6) drop-shadow(0 2px 1.4px #001f3aa1)}
+body>header>.portal-art-start,.portal-art-finish>.portal-art-end{opacity:1}
+@media(max-width:650px){.portal-art-frame{opacity:.92}.portal-art-frame::before,.portal-art-frame::after{width:22px;backdrop-filter:blur(2.5px);-webkit-backdrop-filter:blur(2.5px)}}
