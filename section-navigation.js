@@ -1,0 +1,24 @@
+/* Numbered shortcuts follow the page's real sections; no duplicate pages. */
+(() => {
+ 'use strict';
+ const ids=['journeys','about','scenicRoutes','collection','community','norwayCatalogue','routeExperiences','cafeStops','staysSauna','droneExperience','travelStories','advertising','contact','norwayOverview'];
+ const copy={nb:['Seksjoner','Forrige seksjon','Neste seksjon','Til toppen','Til bunnen','Åpne seksjonsliste','Start'],en:['Sections','Previous section','Next section','Back to top','Go to bottom','Open section list','Home'],uk:['Розділи','Попередній розділ','Наступний розділ','На початок','У кінець','Відкрити список розділів','Головна'],sv:['Avsnitt','Föregående avsnitt','Nästa avsnitt','Till toppen','Till botten','Öppna avsnittslistan','Start'],da:['Afsnit','Forrige afsnit','Næste afsnit','Til toppen','Til bunden','Åbn afsnitslisten','Start']};
+ const language=()=>copy[window.FjordI18n?.language||document.documentElement.lang]?window.FjordI18n?.language||document.documentElement.lang:'nb';
+ let sections=[],current=0,queued=false;
+ const rail=document.createElement('nav'),arrows=document.createElement('nav'),list=document.createElement('div'),toggle=document.createElement('button');
+ rail.className='site-section-nav';arrows.className='site-section-arrows';list.className='site-section-list';list.id='siteSectionList';rail.dataset.i18nIgnore=arrows.dataset.i18nIgnore='';
+ toggle.type='button';toggle.className='site-section-toggle';toggle.setAttribute('aria-controls',list.id);toggle.setAttribute('aria-expanded','false');
+ toggle.onclick=()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));rail.classList.toggle('is-open',open);};
+ rail.append(toggle,list);
+ const controls=[];
+ for(const [symbol,index] of [['⇈',3],['‹',1],['›',2],['⇊',4]]){const button=document.createElement('button');button.type='button';button.textContent=symbol;button.dataset.label=index;arrows.append(button);controls.push(button);}
+ const behavior=()=>matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth';
+ function go(index){const item=sections[index];if(!item)return;item.element.scrollIntoView({block:'start',behavior:behavior()});history.replaceState(null,'','#'+item.element.id);rail.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');}
+ controls[0].onclick=()=>window.scrollTo({top:0,behavior:behavior()});controls[1].onclick=()=>go(Math.max(0,current-1));controls[2].onclick=()=>go(Math.min(sections.length-1,current+1));controls[3].onclick=()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:behavior()});
+ function active(){queued=false;if(!sections.length)return;let next=0;const threshold=Math.min(200,innerHeight*.25);sections.forEach((item,index)=>{if(item.element.getBoundingClientRect().top<=threshold)next=index;});current=next;[...list.children].forEach((button,index)=>{if(index===current)button.setAttribute('aria-current','location');else button.removeAttribute('aria-current');});toggle.textContent=(current+1)+' / '+sections.length;controls[1].disabled=current===0;controls[2].disabled=current===sections.length-1;}
+ function render(){const words=copy[language()];sections=ids.map(id=>document.getElementById(id)).filter(element=>element&&element.getBoundingClientRect().height>0).map(element=>({element,label:element.id==='journeys'?words[6]:element.querySelector('h2,h1')?.textContent.trim()||element.id}));sections.sort((a,b)=>(a.element.compareDocumentPosition(b.element)&Node.DOCUMENT_POSITION_FOLLOWING)?-1:1);list.replaceChildren(...sections.map((item,index)=>{const button=document.createElement('button');button.type='button';button.textContent=String(index+1);button.title=(index+1)+'. '+item.label;button.setAttribute('aria-label',button.title);button.onclick=()=>go(index);return button;}));rail.setAttribute('aria-label',words[0]);arrows.setAttribute('aria-label',words[0]);toggle.setAttribute('aria-label',words[5]);controls.forEach(button=>{button.title=words[Number(button.dataset.label)];button.setAttribute('aria-label',button.title);});active();}
+ document.body.append(rail,arrows);render();window.addEventListener('fjordlanguagechange',render);
+ window.addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(active);}},{passive:true});window.addEventListener('resize',active);
+ rail.addEventListener('keydown',event=>{if(event.key==='Escape'){rail.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.focus();}});
+ document.addEventListener('click',event=>{if(!rail.contains(event.target)){rail.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');}});
+})();
