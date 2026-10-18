@@ -15,17 +15,11 @@
   const w = () => words[language()] || words.nb;
   const el = (tag, cls, text) => { const e = document.createElement(tag); e.className = cls || ''; if (text) e.textContent = text; return e; };
   const valid = value => { if (typeof value !== "string" || !value.trim()) return ""; try {const u = new URL(value, document.baseURI); return u.protocol === 'https:' || u.origin === location.origin ? u.href : '';} catch {return '';} };
-  let dialog, stage, photo, title, counter, caption, source, license, zoom, thumbs, error, previous, next, close;
-  let record, photos = [], index = 0, zoomed = false, touchStart, cafeInfo, cafeTimer, venueActions;
+  let dialog, stage, photo, title, counter, caption, source, license, thumbs, error, previous, next, close;
+  let record, photos = [], index = 0, touchStart, cafeInfo, cafeTimer, venueActions;
   function button(cls, text, handler) { const b = el('button', cls, text); b.type = 'button'; b.onclick = handler; return b; }
-  function toggleZoom() {
-    zoomed = !zoomed; stage.classList.toggle('is-zoomed', zoomed);
-    zoom.textContent = w()[zoomed ? 5 : 4]; zoom.setAttribute('aria-pressed', String(zoomed));
-    if (!zoomed) {stage.scrollLeft = 0; stage.scrollTop = 0;}
-  }
   function show(i) {
     index = (i + photos.length) % photos.length;
-    if (zoomed) toggleZoom();
     const p = photos[index], label = w()[kinds[p.kind] || 8];
     photo.hidden = false; error.hidden = true;
     photo.alt = record.name + ' — ' + label; photo.src = valid(p.src);
@@ -44,7 +38,6 @@
     header.append(title, close);
     const viewer = el('div', 'stay-gallery-viewer');
     stage = el('div', 'stay-gallery-stage'); photo = el('img'); photo.decoding = 'async';
-    photo.onclick = toggleZoom;
     photo.onerror = () => {photo.hidden = true; error.hidden = false;};
     error = el('p', 'stay-gallery-error'); error.setAttribute('role', 'status'); error.hidden = true;
     stage.append(photo, error);
@@ -54,10 +47,9 @@
     const meta = el('div', 'stay-gallery-meta');
     const details = el('div'); caption = el('strong'); counter = el('span', 'stay-gallery-counter');
     counter.setAttribute('aria-live', 'polite'); details.append(caption, counter);
-    zoom = button('stay-gallery-zoom', '', toggleZoom); zoom.setAttribute('aria-pressed', 'false');
     source = el('a', 'stay-gallery-source'); source.target = '_blank'; source.rel = 'noopener noreferrer';
     license = el('a', 'stay-gallery-source'); license.target = '_blank'; license.rel = 'noopener noreferrer'; license.hidden = true;
-    meta.append(details, zoom, source, license);
+    meta.append(details, source, license);
     thumbs = el('nav', 'stay-gallery-thumbs');
     cafeInfo = el('section', 'cafe-gallery-info'); cafeInfo.hidden = true;
     venueActions = el('nav', 'stay-gallery-venue-actions'); venueActions.hidden = true;
@@ -70,7 +62,7 @@
     });
     stage.addEventListener('touchstart', e => {touchStart = e.touches.length === 1 ? [e.touches[0].clientX, e.touches[0].clientY] : null;}, {passive: true});
     stage.addEventListener('touchend', e => {
-      if (!touchStart || zoomed) return;
+      if (!touchStart) return;
       const dx = e.changedTouches[0].clientX - touchStart[0], dy = e.changedTouches[0].clientY - touchStart[1];
       if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4) show(index + (dx < 0 ? 1 : -1));
       touchStart = null;
@@ -84,7 +76,7 @@
       if (!dialog) create();
       record = venue; photos = list; title.textContent = venue.name;
       close.setAttribute('aria-label', w()[1]); previous.setAttribute('aria-label', w()[2]); next.setAttribute('aria-label', w()[3]);
-      zoom.textContent = w()[4]; source.textContent = w()[6] + ' ↗'; error.textContent = w()[7];
+      source.textContent = w()[6] + ' ↗'; error.textContent = w()[7];
       thumbs.setAttribute('aria-label', w()[0]);
       thumbs.replaceChildren(...photos.map((p, i) => {
         const b = button('stay-gallery-thumb', '', () => show(i));
