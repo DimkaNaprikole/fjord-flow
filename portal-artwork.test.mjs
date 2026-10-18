@@ -27,7 +27,7 @@ function harness({header=false,explorer=false,reducedMotion=false}={}){
  const motion={...events(),matches:reducedMotion};
  const document={...events(),body,hidden:false,createElement:node,getElementById:id=>id==='journeys'?journeys:null,querySelector:s=>s==='#about'?about:s==='body>header>.solidarity-art-pair'?friendship:s==='#solidarityBanner .solidarity-pledge'?pledge:null,querySelectorAll:()=>sections};
  const window={...events(),innerWidth:1280,innerHeight:800,IntersectionObserver};
- vm.runInNewContext(source,{window,document,matchMedia:()=>motion,MutationObserver,IntersectionObserver,setInterval(fn,delay){assert.equal(delay,12000);const id=++timerId;timers.set(id,fn);return id;},clearInterval:id=>timers.delete(id)});
+ vm.runInNewContext(source,{window,document,matchMedia:()=>motion,MutationObserver,IntersectionObserver,setInterval(fn,delay){assert.equal(delay,8000);const id=++timerId;timers.set(id,fn);return id;},clearInterval:id=>timers.delete(id)});
  return {document,window,motion,sections,friendship,pledge,about,timers,node,
   near(target,visible=true){intersections[0].callback([{target,isIntersecting:visible}]);},
   tick(){for(const callback of [...timers.values()])callback();},
@@ -73,20 +73,20 @@ test('header cycles two wake-up pairs and a clean friendship frame, then resets 
  const captioned=new Set([first[0],second[1]]);
  const caption=h.friendship.parentNode.children.find(child=>child.className==='friendship-third-caption');
  assert.ok(caption,'third frame has its own sibling caption above the artwork');
- const captionText=caption.innerHTML.replace(/<br\s*\/?\s*>/gi,' ').replace(/<\/span>/gi,' ').replace(/<[^>]+>/g,'');
- assert.match(captionText,/Norge \+\s+Ukraina/);assert.match(captionText,/Sammen\s+for frihet/);
  const frames=[[first,'Stand with Norway'],[second,'Stand with Ukraine'],[third,null],[first,'Stand with Norway']];
  for(let i=0;i<frames.length;i++){
   const [expected,label]=frames[i],clean=expected===third;
   assert.deepEqual(pair(h.friendship),expected);assert.equal(pair(h.friendship).filter(path=>captioned.has(path)).length,clean?0:1);
-  assert.equal(caption.hidden,!clean);assert.equal(h.pledge.style.visibility,clean?'hidden':'');
-  if(label)assert.equal(h.pledge.textContent,label);
+  assert.equal(caption.hidden,false);assert.equal(caption.dataset.frame,String(i%3));
+  const captionText=caption.innerHTML.replace(/<[^>]+>/g,' ');
+  if(label)assert.match(captionText,new RegExp(label.split(' ').join('\\s+')));
+  else {assert.match(captionText,/Norge \+\s+Ukraina/);assert.match(captionText,/Sammen\s+for frihet/);}
   if(i<frames.length-1){h.tick();await flush();}
  }
  h.tick();await flush();h.tick();await flush();assert.deepEqual(pair(h.friendship),third);
  h.motion.matches=true;h.motion.emit('change');await flush();
- assert.deepEqual(pair(h.friendship),first);assert.equal(h.pledge.textContent,'Stand with Norway');
- assert.equal(h.pledge.style.visibility,'');assert.equal(caption.hidden,true);assert.equal(h.timers.size,0);
+ assert.deepEqual(pair(h.friendship),first);assert.match(caption.innerHTML,/Norway/);
+ assert.equal(caption.hidden,false);assert.equal(caption.dataset.frame,'0');assert.equal(h.timers.size,0);
 });
 
 test('explorer advances once on a committed photo, not on selection or language render events',async()=>{

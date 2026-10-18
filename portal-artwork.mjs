@@ -71,7 +71,7 @@ function synchronizeArtworkTimer(){
     for(const section of nearbySections){
       if(inViewport(section))sectionArtwork.get(section)?.advance?.();
     }
-  },12000);
+  },8000);
 }
 const artworkObserver='IntersectionObserver' in window?new IntersectionObserver(entries=>{
   for(const entry of entries){
@@ -108,15 +108,16 @@ function scanNearbySections(){
 /* Two wake-up pairs, then a clean pair with the shared friendship message. */
 const friendship=document.querySelector('body>header>.solidarity-art-pair');
 if(friendship){
-  const pledge=document.querySelector('#solidarityBanner .solidarity-pledge');
   const caption=document.createElement('div');
-  caption.className='friendship-third-caption';caption.hidden=true;caption.setAttribute('lang','nb');
-  caption.innerHTML='<span class="friendship-third-left">Norge +<br>Ukraina</span><span class="friendship-third-right">Sammen<br>for frihet</span>';
+  caption.className='friendship-third-caption';caption.hidden=true;caption.setAttribute('lang','nb');caption.setAttribute('data-i18n-ignore','');
   friendship.parentNode.append(caption);
   const updatePledge=index=>{
     const frame=index%3;
-    if(pledge){pledge.textContent=frame===0?'Stand with Norway':'Stand with Ukraine';pledge.style.visibility=frame===2?'hidden':'';}
-    caption.hidden=frame!==2;
+    caption.dataset.frame=String(frame);
+    caption.innerHTML=frame===2
+      ?'<span class="friendship-third-left"><b>Norge +</b><b>Ukraina</b></span><span class="friendship-third-right"><b>Sammen</b><b>for frihet</b></span>'
+      :`<span class="friendship-support ${frame===0?'friendship-third-right':'friendship-third-left'}" lang="en"><b>Stand</b><b>with</b><b>${frame===0?'Norway':'Ukraine'}</b></span>`;
+    caption.hidden=false;
   };
   const pairs=[
     ['images/ukraine-friendship-original.png',norwegian],
