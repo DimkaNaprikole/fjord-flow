@@ -244,7 +244,7 @@ dialog.stay-gallery .stay-gallery-venue-actions a {
 
 /* Matching square friendship artwork; Ukraine frame removes excess wall and pavement. */
 .solidarity-banner{display:flex;align-items:center;justify-content:center;gap:20px;box-sizing:border-box;width:100%;padding:8px 18px;background:var(--ff-surface,#173e49);color:var(--ff-text,#eef7f8);border-bottom:1px solid #ffffff24;font:600 12px/1.4 Manrope,'Segoe UI',sans-serif;text-align:left}
-.solidarity-art-pair{display:flex;align-items:center;gap:8px;flex:none}.solidarity-art{display:block;width:104px;height:104px;max-width:none;object-fit:contain;flex:none;border-radius:3px}
+.solidarity-art-pair{--solidarity-size:clamp(120px,calc(12.5vw - 4px),240px);display:flex;align-items:center;gap:8px;flex:none}.solidarity-art{display:block;width:var(--solidarity-size);height:var(--solidarity-size);max-width:none;object-fit:contain;flex:none;border-radius:3px}
 .solidarity-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
 .solidarity-copy strong{font-size:18px;line-height:1.25;color:#f2f8f8}
 .solidarity-message{color:#c0d6da;font-size:12px}
