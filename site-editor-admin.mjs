@@ -135,4 +135,4 @@ try{
   const state=await api('/cms/public',{auth:false});publishedRevision=Number(state.revision||0);if(state.document&&!dirty()){documentValue=validateDocument(state.document);savedJSON=JSON.stringify(documentValue);renderAll();}
   status('Предпросмотр готов. Войдите владельцем для сохранения и публикации.');
   if(await getVisitorToken(config.firebaseApiKey))await loadOwner();
-}catch{status('Предпросмотр доступен. Подключение к редактору или вход пока не подтверждены; изменения не сохранены.','error');}
+}catch(error){status(changeAccount?'Вы вошли как посетитель. Для сохранения и публикации войдите подтверждённым аккаунтом '+OWNER+'. Предпросмотр доступен.':'Предпросмотр доступен. Подключение к редактору или вход пока не подтверждены; изменения не сохранены.','error');}
