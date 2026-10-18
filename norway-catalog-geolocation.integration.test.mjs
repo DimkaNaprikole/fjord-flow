@@ -8,7 +8,7 @@ const helper = createRequire(import.meta.url)('./browser-geolocation.js');
 const source = await readFile(new URL('./norway-catalog.js', import.meta.url), 'utf8');
 const marker = "  window.addEventListener('fjordlanguagechange', rebuild);";
 assert.ok(source.includes(marker));
-const instrumented = source.replace(marker, `window.__test = {requestGPS, chooseCity, chooseCounty, setRecords: value => {records = value;}, snapshot: () => ({origin:originState.current, message:geoMessage, baseChoice, radius, category, county, query})};\n${marker}`);
+const instrumented = source.replace(marker, `window.__test = {requestGPS, chooseCity, chooseCounty, load, setRecords: value => {records = value;}, snapshot: () => ({records,origin:originState.current, message:geoMessage, baseChoice, radius, category, county, query})};\n${marker}`);
 const flush = async () => {for (let n=0;n<24;n++) await Promise.resolve();};
 function harness({deferTowns = false} = {}) {
   const calls = [], cleared = [], events = {}, fetches = [];
@@ -22,7 +22,7 @@ function harness({deferTowns = false} = {}) {
     return deferTowns ? new Promise(resolve=>{resolveTowns=()=>resolve(response);}) : Promise.resolve(response);
   }};
   vm.runInNewContext(instrumented,context);
-  return {api:window.__test,calls,cleared,events,fetches,resolveTowns:()=>resolveTowns()};
+  return {api:window.__test,window,calls,cleared,events,fetches,resolveTowns:()=>resolveTowns()};
 }
 const actual = {coords:{latitude:60.398,longitude:10.569,accuracy:418},timestamp:123};
 test('catalogue does not request GPS or settlement data on page load; actual GPS stays the origin',async()=>{
@@ -74,4 +74,27 @@ test('choosing a county cancels pending GPS and preserves the regional selection
 });
 test('fresh GPS and manual starting points clear an unrelated county filter',async()=>{
  const h=harness();h.api.setRecords([{countyId:'18'}]);h.api.chooseCounty('18');h.api.chooseCity('Gran');assert.equal(h.api.snapshot().county,'');h.api.chooseCounty('18');h.api.requestGPS();h.calls[0].success(actual);await flush();assert.equal(h.api.snapshot().county,'');assert.equal(h.api.snapshot().radius,'20');
+});
+
+test('published and preview catalogue snapshots update cards without replacing the visitor origin',async()=>{
+ const original=[{id:'original',name:'Original',category:'cafe',latitude:60,longitude:10}];
+ let overrides=[{id:'new',name:'New cafe',category:'cafe',latitude:61,longitude:11}];
+ const passedBaselines=[];
+ const catalogueContent={merge(rows){passedBaselines.push(rows);return [...rows,...overrides];}};
+ // The public catalogue request is independent of the local settlement lookup.
+ const rawSource=source.replace(marker,`window.__test={load,snapshot:()=>({records,origin:originState.current}),chooseCity};\n${marker}`);
+ const events={};
+ const window={FjordCatalogueContent:catalogueContent,addEventListener(k,fn){events[k]=fn;},dispatchEvent(){}};
+ const document={getElementById(){return null;},body:{},documentElement:{lang:'en'}};
+ vm.runInNewContext(rawSource,{window,document,CustomEvent:class{},URL,Intl,setInterval:()=>0,MutationObserver:class{observe(){}disconnect(){}},fetch:async()=>({ok:true,json:async()=>original})});
+ await window.__test.load();
+ assert.deepEqual(Array.from(window.__test.snapshot().records,r=>r.id),['original','new']);
+ window.__test.chooseCity('Oslo');
+ overrides=[{id:'sauna-new',name:'Sauna',category:'sauna',latitude:62,longitude:12}];
+ events['fjord:catalogue-content']();
+ assert.deepEqual(Array.from(window.__test.snapshot().records,r=>r.id),['original','sauna-new']);
+ assert.equal(window.__test.snapshot().origin.name,'Oslo');
+ assert.ok(passedBaselines.every(rows=>rows===original),'each snapshot merges the original data, never the last merged result');
+ overrides=[];events['fjord:catalogue-content']();
+ assert.deepEqual(Array.from(window.__test.snapshot().records,r=>r.id),['original'],'discarding preview removes preview-only cards');
 });

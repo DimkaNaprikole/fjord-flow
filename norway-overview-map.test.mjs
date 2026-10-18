@@ -31,18 +31,18 @@ test('BUA equipment filter maps only published coordinates and keeps missing loc
 });
 import vm from 'node:vm';
 const flush = async () => {for(let i=0;i<30;i++)await Promise.resolve();};
-function overviewHarness(){
- const nodes=[],events={},calls={create:0,geolocation:0,locations:[],fetches:[]};
+function overviewHarness({catalogueRows=[],extraRows=[],catalogueContent}={}){
+ const nodes=[],events={},calls={create:0,geolocation:0,locations:[],fetches:[],renders:[]};
  let resolveCatalogue,resolveMap;
- const catalogue=new Promise(resolve=>{resolveCatalogue=()=>resolve({ok:true,json:async()=>[]});});
+ const catalogue=new Promise(resolve=>{resolveCatalogue=()=>resolve({ok:true,json:async()=>catalogueRows});});
  const mapReady=new Promise(resolve=>{resolveMap=()=>resolve(map);});
- const map={resize(){},render(){return 0;},locate(p){calls.locations.push(p);}};
+ const map={resize(){},render(rows){calls.renders.push(rows);return rows.length;},locate(p){calls.locations.push(p);}};
  function node(tag){const n={tag,children:[],listeners:{},style:{setProperty(){}},dataset:{},hidden:false,disabled:false,textContent:'',setAttribute(k,v){this[k]=v;},append(...v){this.children.push(...v);},replaceChildren(...v){this.children=v;},before(){},addEventListener(k,fn){this.listeners[k]=fn;},click(){if(!this.disabled)return this.listeners.click?.();}};nodes.push(n);return n;}
  const footer=node('footer');
- const window={FjordGoogleMapConfig:{enabled:true},FjordGoogleStandardMap:{create(){calls.create++;return mapReady;}},FjordBrowserGeolocation:{locate(){calls.geolocation++;return {promise:Promise.resolve({coords:{latitude:60.3592,longitude:10.5728}})};}},addEventListener(k,fn){events[k]=fn;}};
+ const window={FjordCatalogueContent:catalogueContent,FjordGoogleMapConfig:{enabled:true},FjordGoogleStandardMap:{create(){calls.create++;return mapReady;}},FjordBrowserGeolocation:{locate(){calls.geolocation++;return {promise:Promise.resolve({coords:{latitude:60.3592,longitude:10.5728}})};}},addEventListener(k,fn){events[k]=fn;}};
  const document={documentElement:{lang:'en'},createElement:node,querySelector:s=>s==='footer'?footer:null};
- vm.runInNewContext(readFileSync(new URL('./norway-overview-map.js',import.meta.url),'utf8'),{window,document,URL,AbortController,setTimeout,clearTimeout,fetch(url){calls.fetches.push(url);return url.includes('norway-catalog')?catalogue:Promise.resolve({ok:true,json:async()=>[]});}});
- return {calls,resolveCatalogue,resolveMap,standard:nodes.find(n=>n.tag==='button'&&n.textContent==='Google Maps'),location:nodes.find(n=>n.tag==='button'&&n.textContent.includes('My location'))};
+ vm.runInNewContext(readFileSync(new URL('./norway-overview-map.js',import.meta.url),'utf8'),{window,document,URL,AbortController,setTimeout,clearTimeout,fetch(url){calls.fetches.push(url);return url.includes('norway-catalog')?catalogue:Promise.resolve({ok:true,json:async()=>url.includes('map-attractions')?extraRows:[]});}});
+ return {calls,events,window,resolveCatalogue,resolveMap,standard:nodes.find(n=>n.tag==='button'&&n.textContent==='Google Maps'),location:nodes.find(n=>n.tag==='button'&&n.textContent.includes('My location'))};
 }
 test('immediate cached GPS waits for shared deferred catalogue and map activation',async()=>{
  const h=overviewHarness();
@@ -53,4 +53,36 @@ test('immediate cached GPS waits for shared deferred catalogue and map activatio
  h.resolveMap();await Promise.all([first,second,location]);
  assert.equal(h.calls.create,1,'rapid actions share one map creation');
  assert.equal(h.calls.locations.length,1);assert.equal(h.calls.locations[0].latitude,60.3592);assert.equal(h.location.disabled,false);
+});
+
+test('CMS snapshots replace map catalogue markers and retain independent attractions',async()=>{
+ const catalogueRows=[{id:'base',name:'Base',category:'cafe',latitude:60,longitude:10}];
+ const extraRows=[{id:'attraction',name:'Attraction',category:'rest',latitude:61,longitude:11}];
+ let replacements=[{id:'custom',name:'Custom sauna',category:'sauna',latitude:62,longitude:12}];
+ const baselines=[];
+ const h=overviewHarness({catalogueRows,extraRows,catalogueContent:{merge(rows){baselines.push(rows);return replacements;}}});
+ // An early event before lazy data loading must not lose supplemental map entries.
+ h.events['fjord:catalogue-content']();
+ h.resolveCatalogue();h.resolveMap();await h.standard.click();
+ assert.deepEqual(Array.from(h.calls.renders.at(-1),r=>r.id),['custom','attraction']);
+ replacements=[];h.events['fjord:catalogue-content']();
+ assert.deepEqual(Array.from(h.calls.renders.at(-1),r=>r.id),['attraction'],'hidden catalogue records disappear, supplementary places remain');
+ replacements=catalogueRows;h.events['fjord:catalogue-content']();
+ assert.deepEqual(Array.from(h.calls.renders.at(-1),r=>r.id),['base','attraction']);
+ assert.ok(baselines.slice(1).every(rows=>rows===catalogueRows),'overrides are reapplied to raw catalogue only');
+ assert.equal(h.calls.geolocation,0,'catalogue publication does not request visitor location');
+ assert.equal(h.calls.fetches.filter(url=>url.includes('norway-catalog')).length,1);
+});
+
+test('a CMS runtime arriving after map activation refreshes markers without recreating the map',async()=>{
+ const base={id:'old',name:'Old',category:'cafe',latitude:60,longitude:10};
+ const updated={...base,name:'Updated',latitude:61,longitude:11};
+ const h=overviewHarness({catalogueRows:[base]});
+ h.resolveCatalogue();h.resolveMap();await h.standard.click();
+ assert.equal(h.calls.renders.at(-1)[0].name,'Old');
+ h.window.FjordCatalogueContent={merge(){return [updated];}};
+ h.events['fjord:catalogue-content']();
+ assert.equal(h.calls.renders.at(-1)[0].name,'Updated');
+ assert.equal(h.calls.renders.at(-1)[0].latitude,61);
+ assert.equal(h.calls.create,1);
 });

@@ -39,7 +39,13 @@
   providerControls.append(standardButton,googleButton,locationButton);
   controls.append(filters,select,routeButton,allButton); section.append(eyebrow,title,intro,controls,providerControls,typeControls,status,canvas,standardCanvas,googleCanvas,details,note);
   const footer=document.querySelector('footer'); if(footer)footer.before(section); else document.querySelector('main')?.append(section);
-  let rows=[], category='all', routeKey='', loaded=false, loading=false, loadPromise=null;
+  let rows=[], baseCatalogue=[], extraPlaces=[], category='all', routeKey='', loaded=false, loading=false, loadPromise=null;
+  function refreshCatalogue() {
+    rows=(window.FjordCatalogueContent?.merge(baseCatalogue)||baseCatalogue).concat(extraPlaces);
+    // Remove an open popup whose record may have been hidden or changed.
+    details.hidden=true;details.replaceChildren();
+    if(loaded)draw(false);
+  }
   let googleMap=null, googleActive=false, googleLoading=false, googleGeneration=0;
   let standardMap=null,standardActive=false,standardLoading=false,standardActivation=null,mapType='hybrid',standardGeneration=0;
   const ui={nb:['Kart','Satellitt','Terreng','Min posisjon','Vis meg på kartet','Kunne ikke finne posisjonen. Prøv Chrome eller velg en rute.','Zoom med + / −. Dra kartet for å flytte. Musehjulet ruller siden.'],en:['Map','Satellite','Terrain','My location','Show me on the map','Location unavailable. Try Chrome or choose a route.','Zoom with + / −. Drag to move the map. The mouse wheel scrolls the page.'],uk:['Карта','Супутник','Рельєф','Де я','Показати мене на карті','Не вдалося визначити місце. Спробуйте Chrome або оберіть маршрут.','Масштаб — кнопками + / −. Перетягуйте карту мишею. Колесо прокручує сторінку.'],sv:['Karta','Satellit','Terräng','Min position','Visa mig på kartan','Positionen kunde inte hittas. Prova Chrome eller välj en rutt.','Zooma med + / −. Dra för att flytta kartan. Mushjulet rullar sidan.'],da:['Kort','Satellit','Terræn','Min position','Vis mig på kortet','Positionen kunne ikke findes. Prøv Chrome eller vælg en rute.','Zoom med + / −. Træk for at flytte kortet. Musehjulet ruller siden.']};
@@ -63,7 +69,7 @@
   }
   function popup(p) {
     const box=el('div','norway-overview__popup');
-    if(/^\.\/images\/[a-z0-9_./% -]+$/i.test(p.image || '') && !p.image.includes('..')) {const img=el('img');img.src=p.image;img.alt=p.photoAlt||p.name;img.loading='lazy';box.append(img);if(p.photoCaption){const credit=el('small','norway-overview__credit',localized(p.photoCaption));box.append(credit);}}
+    if(safeURL(p.image)||(/^\.\/images\/[a-z0-9_./% -]+$/i.test(p.image || '') && !p.image.includes('..'))) {const img=el('img');img.src=p.image;img.alt=localized(p.photoAlt)||p.name;img.loading='lazy';box.append(img);if(p.photoCaption){const credit=el('small','norway-overview__credit',localized(p.photoCaption));box.append(credit);}}
     const credit=p.gallery?.find(g=>g.src===p.image)||p.gallery?.[0];
     if(credit){const caption=el('small','norway-overview__credit',[credit.credit,credit.license].filter(Boolean).join(' · ')),source=safeURL(credit.source);if(source){const a=el('a','',caption.textContent+' ↗');a.href=source;a.target='_blank';a.rel='noopener noreferrer';caption.replaceChildren(a);}box.append(caption);}
     box.append(el('strong','',p.name),el('p','',[p.municipality||p.town,p.category==='shopping'?shoppingLabels[lang()][0]:p.category==='equipment'?equipmentLabels[lang()][0]:t()[4+categories.indexOf(p.category)]].filter(Boolean).join(' · ')));
@@ -128,10 +134,11 @@
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),12000);
     try {
       const response=await fetch('./norway-catalog.json?v=10',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);
-      const data=await response.json();if(!Array.isArray(data))throw Error('Invalid catalogue');rows=data;
-      try{const extra=await fetch('./map-attractions.json?v=1',{signal:controller.signal});if(extra.ok){const attractions=await extra.json();if(Array.isArray(attractions))rows=rows.concat(attractions.filter(validPoint));}}catch{/* Catalogue remains available if attraction data cannot load. */}
-      try{const response=await fetch('./bua-locations.json?v=20261018',{signal:controller.signal});if(response.ok){const bua=await response.json();const entries=Array.isArray(bua)?bua:bua.locations||[];rows=rows.concat(entries.filter(p=>validPoint(p)&&p.category==='equipment'));}}catch{/* The travel map remains available if the BUA directory cannot load. */}
-      try{const r=await fetch('./shopping-centres.json?v=1',{signal:controller.signal});if(r.ok){const shopping=await r.json();rows=rows.concat(shopping.filter(p=>validPoint(p)&&p.category==='shopping'));}}catch{}
+      const data=await response.json();if(!Array.isArray(data))throw Error('Invalid catalogue');baseCatalogue=data;extraPlaces=[];
+      try{const extra=await fetch('./map-attractions.json?v=1',{signal:controller.signal});if(extra.ok){const attractions=await extra.json();if(Array.isArray(attractions))extraPlaces=extraPlaces.concat(attractions.filter(validPoint));}}catch{/* Catalogue remains available if attraction data cannot load. */}
+      try{const response=await fetch('./bua-locations.json?v=20261018',{signal:controller.signal});if(response.ok){const bua=await response.json();const entries=Array.isArray(bua)?bua:bua.locations||[];extraPlaces=extraPlaces.concat(entries.filter(p=>validPoint(p)&&p.category==='equipment'));}}catch{/* The travel map remains available if the BUA directory cannot load. */}
+      try{const r=await fetch('./shopping-centres.json?v=1',{signal:controller.signal});if(r.ok){const shopping=await r.json();extraPlaces=extraPlaces.concat(shopping.filter(p=>validPoint(p)&&p.category==='shopping'));}}catch{}
+      refreshCatalogue();
       loaded=true; canvas.hidden=true; labels();draw(true);
     } catch {status.textContent=t()[13]+' ';const retry=el('button','',t()[14]);retry.type='button';retry.addEventListener('click',load);status.append(retry);}
     finally{clearTimeout(timeout);loading=false;}
@@ -139,6 +146,7 @@
   routeButton.addEventListener('click',()=>{const trigger=[...document.querySelectorAll('[data-roadtrip]')].find(b=>b.dataset.roadtrip===routeKey);trigger?.click();});
   select.addEventListener('change',()=>{routeKey=select.value;routeButton.hidden=!routeKey;draw(true);});allButton.addEventListener('click',()=>{category='all';routeKey='';labels();if(loaded)draw(true);else load();});
   window.addEventListener('fjord:shopping-map',async e=>{await load();if(!loaded)return;const p=rows.find(p=>p.category==='shopping'&&p.id===e.detail?.id);if(!p)return;category='shopping';routeKey='';pendingShopping=p;labels();draw(true);if(standardActive)finishShopping();else standardButton.click();section.scrollIntoView({behavior:'smooth',block:'start'});});
+  window.addEventListener('fjord:catalogue-content',refreshCatalogue);
   window.addEventListener('fjordlanguagechange',labels);labels();
   async function loadDefault(){await load();if(loaded&&googleConfig.enabled===true&&!standardActive&&!standardLoading&&!googleActive)standardButton.click();}
   if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();loadDefault();}},{rootMargin:'100px'});observer.observe(section);} else load();

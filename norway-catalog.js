@@ -75,7 +75,14 @@
   const node = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
   const safe = value => { if (typeof value !== 'string' || !value.trim()) return ''; try { const u = new URL(value, document.baseURI); return u.protocol === 'https:' || (u.protocol === location.protocol && u.origin === location.origin) ? u.href : ''; } catch { return ''; } };
   const fold = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ø/g, 'o').replace(/æ/g, 'ae').toLowerCase();
-  let section, grid, status, search, select, more, records = [], query = '', category = 'all', county = '', limit = 12, loading = true, failed = false;
+  let section, grid, status, search, select, more, records = [], baseRecords = [], query = '', category = 'all', county = '', limit = 12, loading = true, failed = false;
+  function refreshCatalogue() {
+    const merged = window.FjordCatalogueContent?.merge(baseRecords) || baseRecords;
+    records = merged.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');
+    // Preserve the visitor's location, search and category when an editor publishes.
+    if (county && !records.some(r => r.countyId === county)) county = '';
+    rebuild();
+  }
   function link(text, href, cls = '') { const a = node('a', cls, text); a.href = safe(href); a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; }
   function directions(r) { return routeUrl(r, originState.current); }
   const flipCopy = {nb:['Om stedet','Til bildet'],en:['About this place','Back to photo'],uk:['Про місце','До фотографії'],sv:['Om platsen','Till bilden'],da:['Om stedet','Til billedet']};
@@ -157,7 +164,8 @@
     if (r.catalogueDistance !== null && r.catalogueDistance !== undefined) body.append(node('p', 'norway-catalog-distance', `${r.coordinatePrecision === 'area' ? '≈ ' : ''}${new Intl.NumberFormat(lang(), {maximumFractionDigits: 1}).format(r.catalogueDistance)} km ${g(10)}`));
     const hours = node('details', 'norway-catalog-hours'); hours.append(node('summary', '', t(15)));
     const note = local(r.hoursNote) || local(r.openingHours?.publishedText);
-    if (note && note !== local(r.description)) content.append(node('p', 'norway-catalog-hours-note', note));
+    const publishedHours=local(r.openingHours?.publishedText),extraNote=publishedHours&&note.startsWith(publishedHours)?note.slice(publishedHours.length).trim():note;
+    if (extraNote && extraNote !== local(r.description)) content.append(node('p', 'norway-catalog-hours-note', extraNote));
     const weekly = r.openingHours?.verified === true && r.openingHours?.weekly;
     if (Array.isArray(weekly) && weekly.length === 7) {
       const list = node('ul'); const days = t(25).split('|');
@@ -280,12 +288,13 @@
   }
   async function load() {
     loading = true; failed = false; render();
-    try {const response = await fetch('./norway-catalog.json?v=10'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
+    try {const response = await fetch('./norway-catalog.json?v=10'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); baseRecords = data; refreshCatalogue();}
     catch {failed = true;} finally {loading = false; rebuild();}
   }
   window.FjordCatalogueCards=Object.freeze({fold:foldCatalogue});
   window.dispatchEvent(new CustomEvent('fjord:catalogue-cards-ready'));
   window.addEventListener('fjordlanguagechange', rebuild);
+  window.addEventListener('fjord:catalogue-content', refreshCatalogue);
   window.addEventListener('fjord:catalogue-select', event => {
     const record = records.find(r => r.id === event.detail?.id);
     if (!record || !validPoint(record)) return;

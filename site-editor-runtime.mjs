@@ -1,10 +1,13 @@
 /* Published, validated content only. Drafts enter solely through the same-origin editor preview. */
-import {PAGES,BLOCKS,LANGUAGES,validateDocument,emptyDocument} from './site-editor-schema.mjs';
+import {PAGES,BLOCKS,LANGUAGES,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=2';
+import {mergeCatalogue} from './catalogue-content.mjs';
 let documentValue=emptyDocument(),scheduled=false,originalNavOrder=null,lastPreviewTarget='',lastCredits='';
 const previewNonce=new URL(location.href).searchParams.get('editorPreview');
 const preview=!!previewNonce&&window.parent!==window;
 const style=document.createElement('style');style.id='fjordPublishedDesign';document.head.append(style);
 const originals=new WeakMap(),mediaOriginals=new WeakMap();
+let activePlaces=[],lastPlaces='';
+window.FjordCatalogueContent=Object.freeze({merge:base=>mergeCatalogue(base,activePlaces),get places(){return activePlaces;}});
 const language=()=>window.FjordI18n?.language||document.documentElement.lang||'nb';
 let lastLanguage=language();
 const select=s=>s?document.querySelector(s):null;
@@ -31,6 +34,7 @@ function themeCSS(theme){
 }
 function apply(){
  scheduled=false;
+ const placesJSON=JSON.stringify(documentValue.catalogue.places);if(placesJSON!==lastPlaces){activePlaces=documentValue.catalogue.places;lastPlaces=placesJSON;style.dataset.catalogueCount=String(activePlaces.length);window.dispatchEvent(new CustomEvent('fjord:catalogue-content'));}
  if(language()!==lastLanguage){
   for(const item of [...PAGES,...BLOCKS])for(const field of ['title','intro']){const node=select(item[field]),state=node&&originals.get(node);if(node?.dataset.cmsText&&state&&node.innerHTML===state.last){const native=state.versions.get(lastLanguage);if(native!==undefined){node.innerHTML=native;delete node.dataset.cmsText;if(!state.ignore)delete node.dataset.i18nIgnore;state.last=null;}}}
   window.FjordI18n?.apply();lastLanguage=language();

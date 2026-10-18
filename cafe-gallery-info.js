@@ -55,12 +55,15 @@
       const label = new Intl.DateTimeFormat(lang || 'nb', {weekday: 'long', timeZone: 'UTC'}).format(new Date(Date.UTC(2026, 9, 12 + day)));
       row.append(node('dt', '', label), node('dd', '', times(periods))); table.append(row);
     });
-    details.append(table); if (hours.publishedText) details.append(node('p', '', hours.publishedText)); const hoursNote = typeof venue.hoursNote === 'string' ? venue.hoursNote : venue.hoursNote?.[lang] || venue.hoursNote?.en; if (hoursNote) details.append(node('p', 'cafe-gallery-hours-note', hoursNote)); details.append(node('p', 'cafe-gallery-address', venue.address));
+    const local=value=>typeof value==='string'?value:value?.[lang]||value?.nb||value?.en||'';
+    const published=local(hours.publishedText),rawNote=local(venue.hoursNote),hoursNote=published&&rawNote.startsWith(published)?rawNote.slice(published.length).trim():rawNote;
+    details.append(table); if(published)details.append(node('p','',published));if(hoursNote)details.append(node('p','cafe-gallery-hours-note',hoursNote));if(venue.address)details.append(node('p','cafe-gallery-address',venue.address));
     const source = node('a', '', (hours.sourceLabel || venue.name) + ' ↗');
     try {const url = new URL(hours.source); if (url.protocol === 'https:') source.href = url.href;} catch {}
     source.target = '_blank'; source.rel = 'noopener noreferrer';
-    const date = new Intl.DateTimeFormat(lang || 'nb').format(new Date(hours.checked + 'T12:00:00Z'));
-    details.append(source, node('span', 'cafe-gallery-checked', `${w[9]}: ${date}`));
+    if(source.href)details.append(source);
+    const checked=new Date((hours.checked||'')+'T12:00:00Z');
+    if(Number.isFinite(checked.getTime()))details.append(node('span','cafe-gallery-checked',`${w[9]}: ${new Intl.DateTimeFormat(lang||'nb').format(checked)}`));
     const note = node('p', 'cafe-gallery-hours-note', hours.verified ? w[6] : w[7]);
     host.append(line, note, details);
     return () => {

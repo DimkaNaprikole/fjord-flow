@@ -41,18 +41,34 @@ const keys=(x,allowed)=>{if(!plain(x)||Object.keys(x).some(k=>!allowed.includes(
 export function safeMediaURL(value){
  if(typeof value!=='string'||value.length>1000||/[\u0000-\u0020<>"'`{}\\]/.test(value))return false;
  if(/^\.?\/?images\/[\w./%+-]+$/i.test(value)&&!value.includes('..'))return true;
+ if(/^\.?\/?[\w-]+\.(?:jpe?g|png|webp)$/i.test(value))return true;
  try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!/^(localhost|127\.|10\.|192\.168\.|169\.254\.|\[)/i.test(u.hostname);}catch{return false;}
 }
 function translated(value,max){keys(value,LANGUAGES);const out={};for(const lang of LANGUAGES)if(value[lang]!==undefined){if(typeof value[lang]!=='string'||value[lang].length>max||/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(value[lang]))throw new Error('invalid_editor_text');if(value[lang].trim())out[lang]=value[lang].trim();}return out;}
 function records(value,descriptors){keys(value,descriptors.map(x=>x.id));const out={};for(const [id,item]of Object.entries(value)){keys(item,['title','intro','enabled']);const clean={};if(item.title!==undefined)clean.title=translated(item.title,240);if(item.intro!==undefined)clean.intro=translated(item.intro,1800);if(item.enabled!==undefined){if(typeof item.enabled!=='boolean'||id==='home'&&item.enabled===false)throw new Error('invalid_editor_visibility');clean.enabled=item.enabled;}out[id]=clean;}return out;}
+export function validatePlace(value){
+ keys(value,['id','name','category','town','county','countyId','region','address','lat','lon','description','hours','hoursSource','website','bookingUrl','source','checked','season','photos','enabled']);
+ if(typeof value.id!=='string'||!/^[a-z0-9][a-z0-9-]{0,79}$/.test(value.id))throw new Error('invalid_place_id');
+ const out={id:value.id,enabled:value.enabled!==false};if(value.enabled!==undefined&&typeof value.enabled!=='boolean')throw new Error('invalid_place_visibility');
+ for(const key of ['name','town','county','countyId','region','address'])if(value[key]!==undefined){if(typeof value[key]!=='string'||value[key].length>(key==='address'?500:200)||/[\u0000-\u001f]/.test(value[key]))throw new Error('invalid_place_text');out[key]=value[key].trim();}
+ if(value.category!==undefined){if(!['cafe','cabin','sauna','rest'].includes(value.category))throw new Error('invalid_place_category');out.category=value.category;}
+ for(const [key,max]of [['lat',90],['lon',180]])if(value[key]!==undefined){if(!Number.isFinite(value[key])||Math.abs(value[key])>max)throw new Error('invalid_place_coordinates');out[key]=value[key];}
+ if(out.enabled&&(!out.name||!out.category||!Number.isFinite(out.lat)||!Number.isFinite(out.lon)))throw new Error('place_name_category_coordinates_required');
+ for(const key of ['description','hours','season'])if(value[key]!==undefined)out[key]=translated(value[key],key==='description'?1800:1000);
+ for(const key of ['hoursSource','website','bookingUrl','source'])if(value[key]!==undefined){if(value[key]!==''&&(!safeMediaURL(value[key])||!value[key].startsWith('https://')))throw new Error('invalid_place_url');out[key]=value[key];}
+ if(value.checked!==undefined){if(typeof value.checked!=='string'||value.checked!==''&&(!/^\d{4}-\d{2}-\d{2}$/.test(value.checked)||!Number.isFinite(Date.parse(value.checked))||new Date(value.checked).toISOString().slice(0,10)!==value.checked))throw new Error('invalid_place_date');out.checked=value.checked;}
+ if(value.photos!==undefined){if(!Array.isArray(value.photos)||value.photos.length>12)throw new Error('invalid_place_photos');out.photos=value.photos.map(photo=>{keys(photo,['src','alt','credit','source','license','licenseUrl','kind']);if(!safeMediaURL(photo.src))throw new Error('invalid_place_photo');const image={src:photo.src};for(const key of ['alt','credit','source','license','licenseUrl','kind'])if(photo[key]!==undefined){if(typeof photo[key]!=='string'||photo[key].length>1000)throw new Error('invalid_place_photo');image[key]=photo[key];}for(const key of ['source','licenseUrl'])if(image[key]&&!safeMediaURL(image[key]))throw new Error('invalid_place_photo_source');return image;});}
+ return out;
+}
 export function validateDocument(value){
- keys(value,['schemaVersion','theme','pages','blocks','media','navOrder']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
- const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[]};
+ keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
+ const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]}};
  if(value.theme!==undefined){keys(value.theme,Object.keys(THEME_FIELDS));for(const [key,v]of Object.entries(value.theme)){const f=THEME_FIELDS[key];if(f.type==='color'&&!/^#[0-9a-f]{6}$/i.test(v)||f.type==='number'&&(!Number.isFinite(v)||v<f.min||v>f.max)||f.type==='select'&&!f.options.includes(v))throw new Error('invalid_editor_theme');out.theme[key]=v;}}
  if(value.pages!==undefined)out.pages=records(value.pages,PAGES);
  if(value.blocks!==undefined)out.blocks=records(value.blocks,BLOCKS);
  if(value.media!==undefined){keys(value.media,MEDIA_FIELDS.map(x=>x.id));for(const[id,m]of Object.entries(value.media)){keys(m,['src','alt','credit','source']);if(!safeMediaURL(m.src))throw new Error('invalid_editor_image');const image={src:m.src};for(const field of ['alt','credit','source'])if(m[field]!==undefined){if(typeof m[field]!=='string'||m[field].length>1000)throw new Error('invalid_editor_image');image[field]=m[field];}if(image.source&&!safeMediaURL(image.source))throw new Error('invalid_editor_source');out.media[id]=image;}}
  if(value.navOrder!==undefined){const ids=PAGES.map(p=>p.id);if(!Array.isArray(value.navOrder)||value.navOrder.length>ids.length||new Set(value.navOrder).size!==value.navOrder.length||value.navOrder.some(x=>!ids.includes(x)))throw new Error('invalid_editor_order');out.navOrder=[...value.navOrder];}
- if(JSON.stringify(out).length>42000)throw new Error('editor_document_too_large');return out;
+ if(value.catalogue!==undefined){keys(value.catalogue,['places']);if(!Array.isArray(value.catalogue.places)||value.catalogue.places.length>200)throw new Error('invalid_catalogue');out.catalogue.places=value.catalogue.places.map(validatePlace);if(new Set(out.catalogue.places.map(r=>r.id)).size!==out.catalogue.places.length)throw new Error('duplicate_place_id');}
+ if(JSON.stringify(out).length>200000)throw new Error('editor_document_too_large');return out;
 }
 export const emptyDocument=()=>validateDocument({schemaVersion:1});

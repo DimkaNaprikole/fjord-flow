@@ -22,10 +22,11 @@
     index = (i + photos.length) % photos.length;
     const p = photos[index], label = w()[kinds[p.kind] || 8];
     photo.hidden = false; error.hidden = true;
-    photo.alt = record.name + ' — ' + label; photo.src = valid(p.src);
+    photo.alt = typeof p.alt==='string'&&p.alt?p.alt:record.name + ' — ' + label; photo.src = valid(p.src);
     caption.textContent = label; counter.textContent = `${index + 1} / ${photos.length}`;
-    source.href = valid(p.source || record.imageSource || record.website);
-    source.textContent = [p.credit, w()[6] + ' ↗'].filter(Boolean).join(' · ');
+    const photoSource=valid(p.source||record.imageSource||record.website);source.hidden=!photoSource&&!p.credit;
+    if(photoSource)source.href=photoSource;else source.removeAttribute('href');
+    source.textContent=[p.credit,photoSource?w()[6]+' ↗':''].filter(Boolean).join(' · ');
     license.hidden = !valid(p.licenseUrl); license.textContent = p.license || ''; if (!license.hidden) license.href = valid(p.licenseUrl);
     [...thumbs.children].forEach((b, n) => {b.setAttribute('aria-current', String(n === index));});
   }
@@ -84,7 +85,7 @@
         const img = el('img'); img.src = valid(p.src); img.alt = ''; img.loading = 'lazy'; b.append(img); return b;
       }));
       previous.hidden = next.hidden = photos.length < 2;
-      venueActions.replaceChildren(); venueActions.hidden = !venue.website || Boolean(venue.openingHours && !venue.bookingUrl);
+      venueActions.replaceChildren(); venueActions.hidden = Boolean(venue.openingHours && !venue.bookingUrl);
       if (!venueActions.hidden) {
         const labels = {nb:['Nettsted','Bestill','Finn veien'],en:['Website','Book a stay','Get directions'],uk:['Сайт','Забронювати','Прокласти маршрут'],sv:['Webbplats','Boka','Hitta hit'],da:['Hjemmeside','Book','Find vej']}[language()] || ['Website','Book a stay','Get directions'];
         if (venue.category && venue.category !== 'cabin') labels[1] = {nb:'Bestill',en:'Book',uk:'Забронювати',sv:'Boka',da:'Book'}[language()] || 'Book';

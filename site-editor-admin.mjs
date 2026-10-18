@@ -1,4 +1,5 @@
-import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs';
+import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=2';
+import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=2';
 import {getVisitorToken,ensureVerified} from './afonya-auth.js';
 
 const $=id=>document.getElementById(id);
@@ -6,6 +7,7 @@ const OWNER='laurkent123@gmail.com';
 const nonce=crypto.randomUUID();
 const frame=$('sitePreview');
 let documentValue=emptyDocument(),savedJSON=JSON.stringify(documentValue),draftVersion=0,publishedRevision=0,authorized=false,busy=false,config=null,previewReady=false,inspected={},changeAccount=false;
+let catalogueEditor;
 let chosen={group:'pages',id:'home'},previewTimer,inspectSequence=0;
 const create=(tag,text,cls)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(cls)node.className=cls;return node;};
 const dirty=()=>JSON.stringify(documentValue)!==savedJSON;
@@ -21,7 +23,7 @@ function checkContrast(){
 function previewPage(){return chosen.group==='blocks'?'home':chosen.id;}
 function sendPreview(){if(!previewReady)return;let clean;try{clean=validateDocument(documentValue);}catch{status('Проверьте заполненные ссылки и значения. Последние корректные настройки остаются в предпросмотре; изменения не сохранены.','error');return;}frame.contentWindow.postMessage({type:'fjord-editor:apply',nonce,document:clean,language:$('language').value,pageId:previewPage()},location.origin);}
 function inspect(){if(previewReady)frame.contentWindow.postMessage({type:'fjord-editor:inspect',nonce,requestId:String(++inspectSequence)},location.origin);}
-function openPreview(){previewReady=false;frame.src='./index.html?editorPreview='+encodeURIComponent(nonce);}
+function openPreview(){previewReady=false;frame.src='./index.html?editorPreview='+encodeURIComponent(nonce)+'&editorBuild=4&reload='+Date.now();}
 window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.nonce!==nonce)return;
   if(event.data.type==='fjord-editor:ready'){previewReady=true;sendPreview();setTimeout(inspect,200);setTimeout(inspect,2000);setTimeout(inspect,5000);}
@@ -73,7 +75,7 @@ function renderMedia(){
     }host.append(section);
   }
 }
-function renderAll(){renderContent();renderOrder();renderTheme();renderMedia();checkContrast();controls();}
+function renderAll({resetForm=false}={}){renderContent();renderOrder();renderTheme();renderMedia();checkContrast();controls();catalogueEditor?.refresh({resetForm});}
 function renderHistory(history=[]){
   const host=$('historyList');host.replaceChildren();if(!history.length){host.textContent='Опубликованных версий пока нет.';return;}
   for(const item of history){const row=create('div',undefined,'history-item'),label=create('div','Версия '+item.revision),date=create('small',item.createdAt?new Date(item.createdAt).toLocaleString('ru-RU'):'');label.append(date);const button=create('button',Number(item.revision)===publishedRevision?'Текущая':'Восстановить');button.type='button';button.disabled=Number(item.revision)===publishedRevision;button.addEventListener('click',()=>rollback(item.revision));row.append(label,button);host.append(row);}
@@ -93,7 +95,7 @@ async function api(path,{method='GET',body,auth=true}={}){
 async function loadOwner({keepPreview=false}={}){
   const state=await api('/cms/admin/state');authorized=true;changeAccount=false;publishedRevision=Number(state.published?.revision||0);draftVersion=Number(state.draft?.version||0);
   if(!dirty()&&!keepPreview){documentValue=validateDocument(state.draft?.document||state.published?.document||emptyDocument());savedJSON=JSON.stringify(documentValue);renderAll();}
-  $('identity').textContent=OWNER;$('login').textContent='Проверить вход';renderHistory(state.history);controls();
+  catalogueEditor?.refresh();$('identity').textContent=OWNER;$('login').textContent='Проверить вход';renderHistory(state.history);controls();
   status(dirty()?'Владелец вошёл. Изменения в предпросмотре ещё не сохранены.':state.draft&&!keepPreview?`Открыт сохранённый черновик. На сайте опубликована версия ${publishedRevision||'исходная'}.`:`Вход владельца подтверждён. Публикация: ${publishedRevision||'исходный сайт'}.`,'success');
 }
 async function signIn(){
@@ -103,6 +105,7 @@ async function signIn(){
   try{const result=await ensureVerified(dialog,config.firebaseApiKey,'ru',{heading:'Вход владельца — '+OWNER});if(!result)return;if(dialog.open)dialog.close();await loadOwner();}catch(error){status(error.message||'Не удалось проверить вход. Предпросмотр доступен, публикация не выполнена.','error');}
 }
 async function saveDraft(){
+  if(catalogueEditor?.hasUnapplied())throw new Error('Сначала нажмите «Применить в черновик» в форме места.');
   const clean=validateDocument(documentValue);
   const result=await api('/cms/admin/draft',{method:'PUT',body:{document:clean,expectedDraftVersion:draftVersion}}),draft=result.draft||result;
   draftVersion=Number(draft.version);documentValue=validateDocument(draft.document||clean);savedJSON=JSON.stringify(documentValue);status('Черновик сохранён. Публичный сайт ещё не изменён.','success');
@@ -115,19 +118,20 @@ async function publish(){await run(async()=>{
 });}
 async function rollback(revision){
   if(!confirm('Опубликовать содержимое версии '+revision+'? Текущая публикация останется в истории.'))return;
-  if(dirty()&&!confirm('В предпросмотре есть несохранённые правки. Отменить их и восстановить выбранную версию?'))return;
-  await run(async()=>{const result=await api('/cms/admin/rollback',{method:'POST',body:{revision:Number(revision),expectedPublishedRevision:publishedRevision}}),published=result.published||result;documentValue=validateDocument(published.document);savedJSON=JSON.stringify(documentValue);publishedRevision=Number(published.revision);renderAll();await loadOwner({keepPreview:true});status('Версия '+revision+' восстановлена новой публикацией '+publishedRevision+'. Она показана в предпросмотре. Прежний черновик сохранён на сервере отдельно до следующего сохранения.','success');});
+  if((dirty()||catalogueEditor?.hasUnapplied())&&!confirm('В предпросмотре есть несохранённые правки. Отменить их и восстановить выбранную версию?'))return;
+  await run(async()=>{const result=await api('/cms/admin/rollback',{method:'POST',body:{revision:Number(revision),expectedPublishedRevision:publishedRevision}}),published=result.published||result;documentValue=validateDocument(published.document);savedJSON=JSON.stringify(documentValue);publishedRevision=Number(published.revision);renderAll({resetForm:true});await loadOwner({keepPreview:true});status('Версия '+revision+' восстановлена новой публикацией '+publishedRevision+'. Она показана в предпросмотре. Прежний черновик сохранён на сервере отдельно до следующего сохранения.','success');});
 }
 
 for(const [group,heading,descriptors]of [['pages','Страницы',PAGES],['blocks','Блоки главной',BLOCKS]]){const options=create('optgroup');options.label=heading;for(const descriptor of descriptors){const option=create('option',descriptor.name);option.value=group+':'+descriptor.id;options.append(option);}$('contentTarget').append(options);}
 $('contentTarget').onchange=()=>{const[group,id]=$('contentTarget').value.split(':');chosen={group,id};inspected={};renderContent();};
 $('language').onchange=()=>{inspected={};renderContent();};
-for(const button of document.querySelectorAll('[data-tab]'))button.onclick=()=>{for(const peer of document.querySelectorAll('[data-tab]'))peer.setAttribute('aria-pressed',String(peer===button));for(const name of ['content','theme','media','history'])$(name+'Panel').hidden=name!==button.dataset.tab;};
+for(const button of document.querySelectorAll('[data-tab]'))button.onclick=()=>{for(const peer of document.querySelectorAll('[data-tab]'))peer.setAttribute('aria-pressed',String(peer===button));for(const name of ['content','theme','media','catalogue','library','history'])$(name+'Panel').hidden=name!==button.dataset.tab;catalogueEditor?.open(button.dataset.tab);};
 $('desktop').onclick=()=>{frame.classList.remove('mobile');$('desktop').setAttribute('aria-pressed','true');$('mobile').setAttribute('aria-pressed','false');};
 $('mobile').onclick=()=>{frame.classList.add('mobile');$('mobile').setAttribute('aria-pressed','true');$('desktop').setAttribute('aria-pressed','false');};
 $('reloadPreview').onclick=openPreview;$('login').onclick=()=>void signIn();$('closeAuth').onclick=()=>$('authDialog').close();$('save').onclick=()=>void run(saveDraft);$('publish').onclick=()=>void publish();
 $('resetTheme').onclick=()=>{documentValue.theme={};renderTheme();changed();};
-window.addEventListener('beforeunload',event=>{if(dirty()){event.preventDefault();event.returnValue='';}});
+window.addEventListener('beforeunload',event=>{if(dirty()||catalogueEditor?.hasUnapplied()){event.preventDefault();event.returnValue='';}});
+catalogueEditor=mountCatalogueEditor({getDocument:()=>documentValue,changed:(catalogueChanged=false)=>{validateDocument(documentValue);if(catalogueChanged){chosen={group:'pages',id:'catalogue'};$('contentTarget').value='pages:catalogue';renderContent();}changed();},api,isAuthorized:()=>authorized,status});
 renderAll();openPreview();
 try{
   const response=await fetch('./chat-config.json',{cache:'no-store'});if(!response.ok)throw new Error();config=await response.json();
