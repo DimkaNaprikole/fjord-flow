@@ -10,5 +10,7 @@
 
 # Public catalogue data
 
+- Owner workflow: keep the existing HTML/CSS/JS website and ordinary catalogue/photo administration. Make requested design changes directly in code, using visible browser screenshots and before/after comparison with the owner. Do not reintroduce the custom visual constructor or migrate to another builder without a new request.
+
 - After changing norway-catalog.json, bua-locations.json or shopping-centres.json, rebuild with `python scripts/public_catalogue_db.py build` and run `python scripts/test_public_catalogue_db.py` before publishing.
 - Public SQLite/report exports accept only those reviewed public sources. Never add visitor accounts, transcripts, private chat skills, tokens or Worker configuration to them.

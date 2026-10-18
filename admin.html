@@ -5,27 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
   <meta name="referrer" content="same-origin">
-  <title>Редактор сайта · FJORD / FLOW</title>
-  <link rel="stylesheet" href="site-editor-admin.css?v=7">
-  <script type="module" src="site-editor-admin.mjs?v=10"></script>
+  <title>Администрирование · FJORD / FLOW</title>
+  <link rel="stylesheet" href="site-editor-admin.css?v=8">
+  <script type="module" src="site-editor-admin.mjs?v=11"></script>
 </head>
 <body>
   <header class="editor-header">
-    <div><a href="./" class="brand">FJORD / FLOW</a><h1>Редактор сайта</h1></div>
+    <div><a href="./" class="brand">FJORD / FLOW</a><h1>Администрирование</h1></div>
     <div class="header-actions"><span id="identity">Предпросмотр без входа</span><button id="login" type="button">Войти владельцу</button><a href="./" target="_blank" rel="noopener">Открыть сайт ↗</a></div>
   </header>
   <div class="editor-status"><p id="status" role="status" aria-live="polite">Загружаем опубликованную версию…</p><div><button id="save" type="button" disabled>Сохранить черновик</button><button id="publish" type="button" disabled>Опубликовать</button></div></div>
   <main class="editor-layout">
-    <section class="editor-controls" aria-label="Настройки сайта">
-      <nav class="editor-tabs" aria-label="Разделы редактора"><button type="button" data-tab="content" aria-pressed="true">Страницы</button><button type="button" data-tab="theme" aria-pressed="false">Оформление</button><button type="button" data-tab="media" aria-pressed="false">Фото оформления</button><button type="button" data-tab="catalogue" aria-pressed="false">Каталог мест</button><button type="button" data-tab="library" aria-pressed="false">Фотобиблиотека</button><button type="button" data-tab="history" aria-pressed="false">История</button></nav>
-      <section id="contentPanel" class="editor-panel"><p class="hint">Здесь меняются заголовки и описания существующих разделов, их видимость и порядок. Отдельные места и галереи редактируются во вкладке «Каталог мест».</p><label>Язык содержимого<select id="language"><option value="nb">Норвежский</option><option value="en">English</option><option value="uk">Українська</option><option value="sv">Svenska</option><option value="da">Dansk</option></select></label><p class="hint">Пустое поле сохраняет исходный текст сайта. Переводы редактируются отдельно.</p><label>Страница или блок<select id="contentTarget"></select></label><div id="contentFields"></div><details><summary>Порядок вкладок</summary><p class="hint">Меняйте порядок кнопками. Отключённые страницы скрываются на сайте.</p><ol id="navOrder"></ol></details></section>
-      <section id="themePanel" class="editor-panel" hidden><p class="hint">Изменения сразу видны в предпросмотре. Посетители увидят их после публикации.</p><p id="contrastWarning" role="status" class="hint" hidden></p><div id="themeFields"></div><button id="resetTheme" type="button">Вернуть исходное оформление</button></section>
-      <section id="mediaPanel" class="editor-panel" hidden><p class="hint">Используйте ссылку HTTPS или файл из images/ сайта. Добавляйте только фотографии, которые разрешено публиковать. Пустая ссылка возвращает исходное изображение.</p><div id="mediaFields"></div></section>
-      <section id="cataloguePanel" class="editor-panel" hidden></section>
+    <section class="editor-controls" aria-label="Управление содержимым">
+      <nav class="editor-tabs" aria-label="Разделы администрирования"><button type="button" data-tab="catalogue" aria-pressed="true">Каталог мест</button><button type="button" data-tab="library" aria-pressed="false">Фотобиблиотека</button><button type="button" data-tab="history" aria-pressed="false">История</button></nav>
+      <section id="cataloguePanel" class="editor-panel"></section>
       <section id="libraryPanel" class="editor-panel" hidden></section>
       <section id="historyPanel" class="editor-panel" hidden><h2>Опубликованные версии</h2><p class="hint">Откат создаёт новую публикацию. Предыдущие версии сохраняются.</p><div id="historyList">Войдите владельцем, чтобы увидеть историю.</div></section>
     </section>
-    <section class="preview" aria-label="Предпросмотр сайта"><div class="preview-toolbar"><strong>Предпросмотр черновика</strong><div><button id="desktop" type="button" aria-pressed="true">Компьютер</button><button id="mobile" type="button" aria-pressed="false">Телефон</button><button id="reloadPreview" type="button">Обновить</button></div></div><p class="preview-note">Это предпросмотр. Несохранённые изменения исчезнут после закрытия редактора.</p><div id="previewStage"><iframe id="sitePreview" title="Предпросмотр Fjord Flow" referrerpolicy="same-origin"></iframe></div></section>
+    <section class="preview" aria-label="Предпросмотр сайта">
+      <div class="preview-toolbar"><strong>Предпросмотр каталога</strong><div><button id="desktop" type="button" aria-pressed="true">Компьютер</button><button id="mobile" type="button" aria-pressed="false">Телефон</button><button id="reloadPreview" type="button">Обновить</button></div></div>
+      <label class="preview-language" for="previewLanguage">Язык предпросмотра<select id="previewLanguage"><option value="nb">Норвежский</option><option value="en">English</option><option value="uk">Українська</option><option value="sv">Svenska</option><option value="da">Dansk</option></select></label>
+      <p class="preview-note" id="previewStatus" role="status" aria-live="polite">Загружаем предпросмотр…</p>
+      <p class="preview-note">Примените форму места в черновик, чтобы увидеть результат здесь. Посетители увидят изменения после публикации.</p>
+      <div id="previewStage"><iframe id="sitePreview" title="Предпросмотр Fjord Flow" referrerpolicy="same-origin"></iframe></div>
+    </section>
   </main>
   <dialog id="authDialog"><button id="closeAuth" type="button" aria-label="Закрыть вход">×</button><h2>Вход владельца</h2><p>Редактировать и публиковать может только подтверждённый аккаунт laurkent123@gmail.com.</p></dialog>
 </body>
