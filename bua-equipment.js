@@ -81,7 +81,7 @@
     const title=el('h2','',t(1));title.id='buaEquipmentTitle';
     const controls=el('div','bua-controls'), searchLabel=el('label','',t(3)),search=el('input');search.type='search';search.maxLength=120;search.value=query;search.placeholder='Gran, Oslo, Bergen…';search.oninput=()=>{query=search.value;page=0;selected='';fitMap=true;renderRows();};searchLabel.append(search);
     const municipalityLabel=el('label','',t(29)),select=el('select'),all=el('option','',t(4));all.value='';select.append(all);[...new Set(rows.map(r=>r.municipality).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'nb')).forEach(name=>{const option=el('option','',name);option.value=name;select.append(option);});select.value=municipality;select.onchange=()=>{municipality=select.value;page=0;selected='';fitMap=true;renderRows();};municipalityLabel.append(select);
-    geoButton=button(t(5),locate);const primary=el('div','bua-map-tools');primary.append(geoButton,button(mt(1),()=>openMap()));controls.append(searchLabel,municipalityLabel);geoStatus=el('p','bua-geo-note',origin?t(21):'');geoStatus.setAttribute('role','status');
+    geoButton=button(t(5),locate);const primary=el('div','bua-map-tools');primary.append(geoButton,button(mt(1),()=>openMap()));window.FjordApps?.attach(primary,['bua']);controls.append(searchLabel,municipalityLabel);geoStatus=el('p','bua-geo-note',origin?t(21):'');geoStatus.setAttribute('role','status');
 
     status=el('p','bua-count');status.setAttribute('role','status');status.setAttribute('aria-live','polite');list=el('div','bua-list');pager=el('nav','bua-pagination');pager.setAttribute('aria-label',t(20));
     const terms=el('details','bua-terms');terms.append(el('summary','',t(24)),el('p','',t(22)));const sources=el('div','bua-actions');sources.append(link(t(23),'https://www.bua.no/hvordan-lane'),link(t(24),'https://www.bua.no/laanevilkaar'));terms.append(sources);
@@ -91,7 +91,7 @@
     section.replaceChildren(el('p','bua-eyebrow',t(0)),title,el('p','bua-intro',mt(2)),primary,geoStatus,mapWrap,el('p','bua-geo-note',mt(5)),searchTools,status,list,pager,missing,terms);renderRows();buaMap?.resize();window.dispatchEvent(new Event("fjord:sections-changed"));
   }
   async function start(){section=document.getElementById('buaEquipment');if(!section){const anchor=document.getElementById('norwayCatalogue');if(!anchor)return;section=el('section','bua-equipment');section.id='buaEquipment';section.dataset.i18nIgnore='';section.setAttribute('aria-labelledby','buaEquipmentTitle');anchor.after(section);}section.append(el('p','',t(25)));try{rows=await load();build();}catch{section.replaceChildren(el('p','',t(26)),button(t(27),start));}}
-  window.addEventListener('fjordlanguagechange',build);
+  window.addEventListener('fjordlanguagechange',build);window.addEventListener('fjord:apps-ready',build);
   window.addEventListener('fjord:bua-select',async event=>{const id=String(event.detail?.id||'');if(!id)return;try{rows=await load();const row=rows.find(r=>String(r.id)===id);if(!row)return;query='';municipality=row.municipality||'';selected=id;page=0;const matches=filter(rows,query,municipality).sort((a,b)=>origin ? (distance(origin,a)??Infinity)-(distance(origin,b)??Infinity) || a.name.localeCompare(b.name,'nb') : a.name.localeCompare(b.name,'nb'));page=Math.floor(matches.findIndex(r=>String(r.id)===id)/8);build();section?.scrollIntoView({behavior:'smooth',block:'start'});}catch{}});
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();
 })();
