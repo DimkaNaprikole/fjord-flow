@@ -1,7 +1,7 @@
 /* Numbered shortcuts follow the page's real sections; no duplicate pages. */
 (() => {
  'use strict';
- const ids=['journeys','about','scenicRoutes','collection','community','norwayCatalogue','buaEquipment','norwayWebcams','municipalNews','travelUpdates','travelServices','routeExperiences','cafeStops','staysSauna','droneExperience','travelStories','advertising','contact','norwayOverview'];
+ const ids=['journeys','about','scenicRoutes','collection','community','norwayCatalogue','buaEquipment','norwayWebcams','municipalNews','travelUpdates','travelServices','shoppingCentres','routeExperiences','cafeStops','staysSauna','droneExperience','travelStories','advertising','contact','norwayOverview'];
  const copy={nb:['Seksjoner','Forrige seksjon','Neste seksjon','Til toppen','Til bunnen','Åpne seksjonsliste','Start'],en:['Sections','Previous section','Next section','Back to top','Go to bottom','Open section list','Home'],uk:['Розділи','Попередній розділ','Наступний розділ','На початок','У кінець','Відкрити список розділів','Головна'],sv:['Avsnitt','Föregående avsnitt','Nästa avsnitt','Till toppen','Till botten','Öppna avsnittslistan','Start'],da:['Afsnit','Forrige afsnit','Næste afsnit','Til toppen','Til bunden','Åbn afsnitslisten','Start']};
  const language=()=>copy[window.FjordI18n?.language||document.documentElement.lang]?window.FjordI18n?.language||document.documentElement.lang:'nb';
  let sections=[],current=0,queued=false;

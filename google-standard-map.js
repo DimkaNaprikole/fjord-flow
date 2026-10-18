@@ -4,8 +4,8 @@
 (() => {
   'use strict';
   // Official Google category glyphs, displayed only on the Google map.
-  const iconURLs={cafe:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet.svg',cabin:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet.svg',rest:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet.svg'};
-  const colors={cafe:'#FF9E67',cabin:'#909CE1',sauna:'#b76e9b',rest:'#4DB546',equipment:'#119c96'};
+  const iconURLs={shopping:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/shopping_pinlet.svg',cafe:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet.svg',cabin:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet.svg',rest:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet.svg'};
+  const colors={shopping:'#B58A40',cafe:'#FF9E67',cabin:'#909CE1',sauna:'#b76e9b',rest:'#4DB546',equipment:'#119c96'};
   const valid=p=>!!p&&Number.isFinite(p.latitude)&&Number.isFinite(p.longitude)&&Math.abs(p.latitude)<=90&&Math.abs(p.longitude)<=180;
   function nativePin(record){
     const settings={background:colors[record.category]||colors.rest,borderColor:'#fff',scale:.75};

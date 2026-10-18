@@ -4,7 +4,7 @@
  */
 (() => {
   'use strict';
-  const categories=['cafe','cabin','sauna','rest','equipment'];
+  const categories=['cafe','cabin','sauna','rest','equipment','shopping'];
   const symbols={cafe:'☕',cabin:'⌂',sauna:'♨',rest:'◇',equipment:'↔'};
   const validPoint=p=>!!p && Number.isFinite(p.latitude) && Number.isFinite(p.longitude) && Math.abs(p.latitude)<=90 && Math.abs(p.longitude)<=180;
   const filterPlaces=(rows,category='all')=>Array.isArray(rows)?rows.filter(p=>validPoint(p)&&categories.includes(p.category)&&(category==='all'||p.category===category)):[];

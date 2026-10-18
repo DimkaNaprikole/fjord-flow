@@ -1,0 +1,317 @@
+[
+  {
+    "id": "granstunet",
+    "name": "Granstunet",
+    "town": "Gran",
+    "address": "Storgata 10, 2750 Gran",
+    "website": "https://granstunet.no/",
+    "storesURL": "https://granstunet.no/butikker/",
+    "latitude": 60.35631099185805,
+    "longitude": 10.572258045261144,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Gran&adressenavn=Storgata&nummer=10",
+    "stores": [
+      {
+        "name": "Cubus",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Lindex",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Dressmann",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Eurosko",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Apotek 1",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "POWER",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "ARK Bokhandel",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Kid",
+        "url": "https://granstunet.no/butikker/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18"
+  },
+  {
+    "id": "smietorget",
+    "name": "Smietorget",
+    "town": "Gran",
+    "address": "Smiegata 17, 2750 Gran",
+    "website": "https://smietorget.no/",
+    "storesURL": "https://smietorget.no/",
+    "latitude": 60.35643336702773,
+    "longitude": 10.571112685368758,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Gran&adressenavn=Smiegata&nummer=17",
+    "addressSource": "https://data.brreg.no/enhetsregisteret/api/enheter?navn=Smietorget&size=4",
+    "stores": [
+      {
+        "name": "SPAR",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "KappAhl",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Sport 1",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Norli Hadeland",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Normal",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Nille",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Mester Grønn",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Traktøren",
+        "url": "https://smietorget.no/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18"
+  },
+  {
+    "id": "storo",
+    "name": "Thon Senter Storo",
+    "town": "Oslo",
+    "address": "Vitaminveien 7–9, 0485 Oslo",
+    "website": "https://thonsenter.no/storo/",
+    "storesURL": "https://thonsenter.no/storo/butikker/",
+    "latitude": 59.94684205812542,
+    "longitude": 10.77538723559638,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Oslo&adressenavn=Vitaminveien&nummer=7",
+    "stores": [
+      {
+        "name": "ARK Bokhandel",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/storo/ark-bokhandel/"
+      },
+      {
+        "name": "Clas Ohlson",
+        "location": "3. etasje",
+        "url": "https://thonsenter.no/storo/clas-ohlson/"
+      },
+      {
+        "name": "Cubus",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/storo/cubus/"
+      },
+      {
+        "name": "H&M",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/storo/hm/"
+      },
+      {
+        "name": "Jernia",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/storo/jernia/"
+      },
+      {
+        "name": "Kid Interiør",
+        "location": "3. etasje",
+        "url": "https://thonsenter.no/storo/kid-interior/"
+      },
+      {
+        "name": "Normal",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/storo/normal/"
+      },
+      {
+        "name": "XXL",
+        "location": "Gunnar Schjelderups vei 2",
+        "url": "https://thonsenter.no/storo/xxl/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18"
+  },
+  {
+    "id": "sandvika",
+    "name": "Thon Senter Sandvika",
+    "town": "Sandvika",
+    "address": "Brodtkorbsgate 7, 1338 Sandvika",
+    "website": "https://thonsenter.no/sandvika/",
+    "storesURL": "https://thonsenter.no/sandvika/butikker/",
+    "latitude": 59.89058289376388,
+    "longitude": 10.519495516273063,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=B%C3%A6rum&adressenavn=Brodtkorbsgate&nummer=7",
+    "stores": [
+      {
+        "name": "Apotek 1 Inforama Sandvika",
+        "location": "1. etasje, Nytorget - ny del",
+        "url": "https://thonsenter.no/sandvika/apotek-1-inforama-sandvika/"
+      },
+      {
+        "name": "Apotek 1 Sandvika",
+        "location": "Underetasje, Elvetorget - gammel del",
+        "url": "https://thonsenter.no/sandvika/apotek-1-sandvika/"
+      },
+      {
+        "name": "ARK Bokhandel",
+        "location": "2. etasje, Elvetorget – gammel del",
+        "url": "https://thonsenter.no/sandvika/ark-bokhandel/"
+      },
+      {
+        "name": "Clas Ohlson",
+        "location": "Underetasje, Lilletorget - gammel del",
+        "url": "https://thonsenter.no/sandvika/clas-ohlson/"
+      },
+      {
+        "name": "Cubus",
+        "location": "1. og 2. etasje, Lilletorget - gammel del",
+        "url": "https://thonsenter.no/sandvika/cubus/"
+      },
+      {
+        "name": "H&M",
+        "location": "2. etasje, Stortorget",
+        "url": "https://thonsenter.no/sandvika/hm/"
+      },
+      {
+        "name": "Jernia",
+        "location": "1. etasje, Stortorget",
+        "url": "https://thonsenter.no/sandvika/jernia/"
+      },
+      {
+        "name": "Kid Interiør",
+        "location": "1. etasje, Stortorget – gammel del",
+        "url": "https://thonsenter.no/sandvika/kid-interior/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18"
+  },
+  {
+    "id": "sorlandssenteret",
+    "name": "Thon Sørlandssenteret",
+    "town": "Kristiansand",
+    "address": "Barstølveien 35, 4636 Kristiansand",
+    "website": "https://thonsenter.no/sorlandssenteret/",
+    "storesURL": "https://thonsenter.no/sorlandssenteret/butikker/",
+    "latitude": 58.17940181078332,
+    "longitude": 8.133820529955338,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Kristiansand&adressenavn=Barst%C3%B8lveien&nummer=35",
+    "stores": [
+      {
+        "name": "Apotek 1 ved Hovedinngang",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/apotek-1-ved-hovedinngang/"
+      },
+      {
+        "name": "ARK Bokhandel",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/ark-bokhandel/"
+      },
+      {
+        "name": "Clas Ohlson",
+        "location": "1. etasje v. Norli og Synsam",
+        "url": "https://thonsenter.no/sorlandssenteret/clas-ohlson/"
+      },
+      {
+        "name": "Cubus",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/cubus/"
+      },
+      {
+        "name": "H&M",
+        "location": "1. og 2. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/hm/"
+      },
+      {
+        "name": "H&M Home",
+        "location": "2. etg i samme lokale som H&M",
+        "url": "https://thonsenter.no/sorlandssenteret/hm-home/"
+      },
+      {
+        "name": "Jernia",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/jernia/"
+      },
+      {
+        "name": "Kid Interiør",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/kid-interior/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18"
+  },
+  {
+    "id": "lagunen",
+    "name": "Thon Senter Lagunen",
+    "town": "Bergen",
+    "address": "Laguneveien 1, 5239 Rådal",
+    "website": "https://thonsenter.no/lagunen/",
+    "storesURL": "https://thonsenter.no/lagunen/butikker/",
+    "latitude": 60.29686524470207,
+    "longitude": 5.331154048866262,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Bergen&adressenavn=Laguneveien&nummer=1",
+    "stores": [
+      {
+        "name": "Apotek 1",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/lagunen/apotek-1/"
+      },
+      {
+        "name": "ARK Bokhandel",
+        "location": "4. etasje",
+        "url": "https://thonsenter.no/lagunen/ark-bokhandel/"
+      },
+      {
+        "name": "Clas Ohlson",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/lagunen/clas-ohlson/"
+      },
+      {
+        "name": "Cubus",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/lagunen/cubus/"
+      },
+      {
+        "name": "H&M",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/lagunen/hm/"
+      },
+      {
+        "name": "Jernia",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/lagunen/jernia/"
+      },
+      {
+        "name": "Kid Interiør",
+        "location": "4. etasje",
+        "url": "https://thonsenter.no/lagunen/kid-interior/"
+      },
+      {
+        "name": "Kids Outlet",
+        "location": "3. etasje, gågaten",
+        "url": "https://thonsenter.no/lagunen/kids-outlet/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18"
+  }
+]
