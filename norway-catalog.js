@@ -88,15 +88,15 @@
     caption.append(node('small','',[r.town,r.region].filter(Boolean).join(' · ')),node('strong','',r.name));
     article.append(caption);
     const labels = flipCopy[lang()];
-    const prompts={nb:['Trykk: bilder','Trykk: om stedet'],en:['Click: photos','Click: about this place'],uk:['Натисніть: фото','Натисніть: про місце'],sv:['Tryck: bilder','Tryck: om platsen'],da:['Tryk: billeder','Tryk: om stedet']}[lang()];
+    const prompts={nb:['Foto','Informasjon og adresse'],en:['Photos','Information & address'],uk:['Фото','Інформація та адреса'],sv:['Foto','Information och adress'],da:['Foto','Information og adresse']}[lang()];
     const photoLabel=visual.querySelector('.norway-catalog-photo-label');
-    if(photoLabel)photoLabel.textContent=prompts[0]+' ↗';
+    if(photoLabel)photoLabel.textContent=prompts[0];
     const toggle = node('button','catalogue-flip-toggle',labels[0]+' ↻'); toggle.type='button';
     let dwell, hoverOpened=false;
     function side(open) {
       clearTimeout(dwell); article.classList.toggle('catalogue-flipped',open);
       visual.inert=open; body.inert=!open; caption.hidden=open;
-      toggle.setAttribute('aria-expanded',String(open)); toggle.textContent=(open?labels[1]:prompts[1])+(open?' ↶':' ↻');
+      toggle.setAttribute('aria-expanded',String(open)); toggle.textContent=open?labels[1]+' ↶':prompts[1];
     }
     toggle.onclick=()=>{hoverOpened=false;side(!article.classList.contains('catalogue-flipped'));};
     for (const edge of ['left','right']) {
