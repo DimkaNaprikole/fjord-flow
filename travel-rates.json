@@ -1,7 +1,7 @@
 {
   "source": "https://data.norges-bank.no/api/data/EXR/B.EUR+USD+GBP+SEK+DKK+PLN.NOK.SP?format=csv&lastNObservations=30",
   "provider": "Norges Bank",
-  "retrievedAt": "2026-10-18T03:47:00.853Z",
+  "retrievedAt": "2026-10-18T03:49:44.461Z",
   "unit": "NOK per 1 foreign currency unit",
   "series": {
     "DKK": [
