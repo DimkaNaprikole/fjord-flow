@@ -32,22 +32,22 @@ export async function getVisitorToken(apiKey){
   return saved.idToken;
 }
 const authFlows=new WeakMap();
-export function ensureVerified(dialog,apiKey,language='en'){
+export function ensureVerified(dialog,apiKey,language='en',options={}){
   const existing=authFlows.get(dialog);if(existing)return existing.promise;
   const flow={cancelled:false,promise:null};
   const onClose=()=>{flow.cancelled=true;if(authFlows.get(dialog)===flow)authFlows.delete(dialog)};
   dialog.addEventListener('close',onClose);
-  flow.promise=runVerification(dialog,apiKey,language,()=>!flow.cancelled&&dialog.open).finally(()=>{dialog.removeEventListener('close',onClose);if(authFlows.get(dialog)===flow)authFlows.delete(dialog)});
+  flow.promise=runVerification(dialog,apiKey,language,()=>!flow.cancelled&&dialog.open,options).finally(()=>{dialog.removeEventListener('close',onClose);if(authFlows.get(dialog)===flow)authFlows.delete(dialog)});
   authFlows.set(dialog,flow);return flow.promise;
 }
-async function runVerification(dialog,apiKey,language,isActive){
+async function runVerification(dialog,apiKey,language,isActive,options){
   const w=copy[language]||copy.en;
   let previous=null;try{await getVisitorToken(apiKey);previous=JSON.parse(sessionStorage.getItem(cacheKey)||'null')}catch{}
   if(previous?.idToken&&previous?.email){try{const profile=await lookup(apiKey,previous.idToken);if(profile?.emailVerified&&profile.email===previous.email)return previous}catch{sessionStorage.removeItem(cacheKey)}}
   if(!isActive())return null;
   return new Promise(resolve=>{
     const gate=make('section','fjord-ai-auth'),heading=make('h3'),form=make('form'),email=make('input'),password=make('input'),buttons=make('div','fjord-ai-auth-buttons'),create=make('button'),signIn=make('button'),verified=make('button'),resend=make('button'),message=make('p');
-    heading.textContent=w[0];email.type='email';email.required=true;email.autocomplete='email';email.placeholder=w[1];password.type='password';password.required=true;password.minLength=6;password.autocomplete='current-password';password.placeholder=w[2];create.type=signIn.type=verified.type=resend.type='button';create.textContent=w[3];signIn.textContent=w[4];verified.textContent=w[6];resend.textContent=w[7];verified.hidden=resend.hidden=true;message.setAttribute('role','status');message.textContent=w[8];buttons.append(create,signIn,verified,resend);form.append(email,password,buttons,message);gate.append(heading,form);dialog.insertBefore(gate,dialog.querySelector('.fjord-ai-portrait'));dialog.classList.add('fjord-ai-auth-pending');
+    heading.textContent=options.heading||w[0];email.type='email';email.required=true;email.autocomplete='email';email.placeholder=w[1];password.type='password';password.required=true;password.minLength=6;password.autocomplete='current-password';password.placeholder=w[2];create.type=signIn.type=verified.type=resend.type='button';create.textContent=w[3];signIn.textContent=w[4];verified.textContent=w[6];resend.textContent=w[7];verified.hidden=resend.hidden=true;message.setAttribute('role','status');message.textContent=w[8];buttons.append(create,signIn,verified,resend);form.append(email,password,buttons,message);gate.append(heading,form);dialog.insertBefore(gate,dialog.querySelector('.fjord-ai-portrait'));dialog.classList.add('fjord-ai-auth-pending');
     const recovery=recoveryCopy[language]||recoveryCopy.en,forgot=make('button');forgot.type='button';forgot.textContent=recovery[0];forgot.className='fjord-ai-forgot';buttons.append(forgot);
     forgot.onclick=async()=>{if(!email.reportValidity())return;forgot.disabled=true;message.textContent='…';try{await requestPasswordReset(apiKey,email.value);message.textContent=recovery[1]}catch{message.textContent=recovery[2]}finally{forgot.disabled=false}};
     let token=previous?.idToken||'',address=previous?.email||'';if(address)email.value=address;

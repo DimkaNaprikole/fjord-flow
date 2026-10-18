@@ -57,6 +57,12 @@ test('deep links, cross-section links, and map events reveal the right panel',()
 test('unknown activation keys fall back to visible home content',()=>{
  const h=harness();h.api.activate('missing',{historyMode:'push'});assert.equal(h.api.current,'home');assert.ok(h.visible().includes('homePanel'));assert.equal(h.home.getAttribute('aria-selected'),'true');
 });
+test('editor-disabled tabs are skipped by keyboard and cannot be reopened by deep-link activation',()=>{
+ const h=harness();h.cat.dataset.cmsDisabled='true';
+ h.fire('nav','keydown',h.event(h.home,{key:'ArrowRight'}));assert.equal(h.focused(),h.newsTab);
+ h.api.activate('catalogue');assert.equal(h.api.current,'home');
+ h.cat.dataset.cmsDisabled='false';h.api.activate('catalogue');assert.equal(h.api.current,'catalogue');
+});
 test('overflow selection scrolls only inside tab navigation',()=>{
  const h=harness();h.api.activate('news');assert.ok(h.navScrolls.length>0);assert.ok(h.nav.scrollLeft>0);assert.deepEqual(h.scrolls,[]);assert.equal(h.api.current,'news');
 });

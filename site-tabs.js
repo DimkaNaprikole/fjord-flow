@@ -5,7 +5,7 @@
  if(!nav||!main)return;
  const groups={travelStories:'journal',community:'community',norwayCatalogue:'catalogue',buaEquipment:'bua',norwayWebcams:'webcams',municipalNews:'news',travelUpdates:'useful',travelServices:'services',shoppingCentres:'shopping'};
  let current='home',refreshing=false;
- const controls=()=>[...nav.children].filter(el=>el.matches('a,button'));
+ const controls=()=>[...nav.children].filter(el=>el.matches('a,button')&&el.dataset.cmsDisabled!=='true');
  const keyFor=el=>groups[(el.getAttribute('href')||'').replace(/^#/,'')]||'home';
  const modified=event=>event.ctrlKey||event.metaKey||event.shiftKey||event.altKey||(typeof event.button==='number'&&event.button!==0);
  const motion=()=>matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth';
@@ -18,6 +18,7 @@
  }
  function activate(key,{historyMode='',scroll=false}={}){
   if(key!=='home'&&!Object.values(groups).includes(key))key='home';
+  if(controls().every(el=>keyFor(el)!==key))key='home';
   current=key;
   document.querySelectorAll('[data-site-tab]').forEach(el=>{const selected=el.dataset.siteTab===key;el.dataset.siteTabActive=String(selected);el.hidden=!selected;});
   controls().forEach(el=>{const selected=keyFor(el)===key;el.setAttribute('aria-selected',String(selected));el.tabIndex=selected?0:-1;el.classList.toggle('active',selected);});
