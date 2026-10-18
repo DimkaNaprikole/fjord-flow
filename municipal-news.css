@@ -6,3 +6,18 @@
 @media(prefers-reduced-motion:reduce){.news-card{transition:none}}
 
 body:has(#newsDialog[open]){overflow:hidden}#newsDialog{overscroll-behavior:contain}
+
+/* Compact catalogue: one clear target opens the full story, without hover expansion. */
+.news-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.news-card{border-radius:16px}
+.municipal-news .news-card-open{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;width:100%;height:100%;padding:0;border:0;border-radius:0;background:var(--ff-card);text-align:left;color:var(--ff-ink);font:inherit}
+.news-card-photo{aspect-ratio:3/2;flex-shrink:0}
+.news-card-body{width:100%;box-sizing:border-box;padding:16px;gap:7px}
+.news-card-category{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--ff-accent)}
+.news-card h3{font:750 17px/1.35 Manrope,sans-serif;min-height:4.05em;letter-spacing:-.3px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.news-card-location{color:var(--ff-muted);font-size:12px;line-height:1.5;min-height:3em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.news-card-more{margin-top:auto;padding-top:10px;font:650 12px/1.5 Manrope,sans-serif;color:var(--ff-ink)}
+.municipal-news .news-card-open:hover{background:var(--ff-field)}
+.municipal-news .news-card-open:focus-visible{outline-offset:-4px;outline-width:3px}
+@media(max-width:1100px){.news-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.news-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.news-card-body{padding:12px;gap:6px}.news-card h3{font-size:14px;line-height:1.4}.news-card-category{font-size:9px}.news-card .news-date{font-size:11px}.news-card-location{font-size:11px}.news-topics button{flex:1 1 40%}.news-card-photo{aspect-ratio:4/3}}
