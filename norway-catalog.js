@@ -128,7 +128,7 @@
     });
   },6500);
   function card(r) {
-    const article = node('article', 'norway-catalog-card');
+    const article = node('article', 'norway-catalog-card'); article.dataset.cmsPlaceId=r.id;
     const photos = (Array.isArray(r.gallery) ? r.gallery : []).filter(p => safe(p.src));
     const image = safe(r.image) || safe(photos[0]?.src);
     const visual = node(image ? 'button' : 'div', 'norway-catalog-photo');

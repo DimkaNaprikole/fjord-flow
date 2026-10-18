@@ -3,3 +3,7 @@
 
 .visual-builder-panel{border:1px solid #8bcbb7;border-radius:12px;padding:14px;margin:0 0 18px;background:#102f3d}.visual-builder-panel h2{font-size:17px;margin:0 0 12px}.visual-builder-panel input[type=color]{display:block;width:100%;height:36px;margin-top:7px;border:1px solid #62828d;border-radius:6px;background:transparent}.visual-builder-panel[hidden]{display:none}#visualBuilderToggle[aria-pressed=true]{background:#337565;border-color:#b4e1d0}
 .editor-controls[data-builder-selection=buttons]>.editor-panel:not(#visualBuilderPanel){display:none}
+
+.builder-section-list{list-style:none;padding:0;margin:12px 0}.builder-section-list li{display:flex;align-items:center;gap:5px;border:1px solid #62828d;border-radius:8px;padding:7px;margin:5px 0;background:#193f4b;cursor:grab}.builder-section-list li span{flex:1;font-size:12px}.builder-section-list button{padding:5px 9px}.builder-section-list li:focus-visible{outline:3px solid #f8d87b}.visual-builder-panel details{margin:8px 0 18px;padding:0 0 10px}
+
+.media-group[hidden],.media-group select[hidden]{display:none!important}

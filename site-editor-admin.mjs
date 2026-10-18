@@ -1,6 +1,6 @@
-import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=3';
-import {mountVisualBuilderAdmin} from './visual-builder-admin.mjs?v=1';
-import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=3';
+import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=4';
+import {mountVisualBuilderAdmin} from './visual-builder-admin.mjs?v=2';
+import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=4';
 import {getVisitorToken,ensureVerified} from './afonya-auth.js';
 
 const $=id=>document.getElementById(id);
@@ -24,7 +24,7 @@ function checkContrast(){
 function previewPage(){return chosen.group==='blocks'?'home':chosen.id;}
 function sendPreview(){if(!previewReady)return;let clean;try{clean=validateDocument(documentValue);}catch{status('Проверьте заполненные ссылки и значения. Последние корректные настройки остаются в предпросмотре; изменения не сохранены.','error');return;}frame.contentWindow.postMessage({type:'fjord-editor:apply',nonce,document:clean,language:$('language').value,pageId:previewPage(),blockId:chosen.group==='blocks'?chosen.id:undefined},location.origin);}
 function inspect(){if(previewReady)frame.contentWindow.postMessage({type:'fjord-editor:inspect',nonce,requestId:String(++inspectSequence)},location.origin);}
-function openPreview(){previewReady=false;frame.src='./index.html?editorPreview='+encodeURIComponent(nonce)+'&editorBuild=5&reload='+Date.now();}
+function openPreview(){previewReady=false;frame.src='./index.html?editorPreview='+encodeURIComponent(nonce)+'&editorBuild=6&reload='+Date.now();}
 window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.nonce!==nonce)return;
   if(event.data.type==='fjord-editor:ready'){previewReady=true;sendPreview();setTimeout(inspect,200);setTimeout(inspect,2000);setTimeout(inspect,5000);}
@@ -70,10 +70,15 @@ function renderTheme(){
 function renderMedia(){
   const host=$('mediaFields');host.replaceChildren();
   for(const media of MEDIA_FIELDS){const section=create('section',undefined,'media-group');section.dataset.mediaId=media.id;section.append(create('h3',media.name));
+    const thumb=create('img');thumb.alt='Предпросмотр выбранной фотографии';thumb.hidden=!documentValue.media[media.id]?.src;if(!thumb.hidden)thumb.src=documentValue.media[media.id].src;section.append(thumb);
     for(const [field,title]of [['src','Ссылка на изображение'],['alt','Что изображено'],['credit','Автор / лицензия'],['source','Ссылка на источник']]){
       const label=create('label',title),input=document.createElement('input');input.type='text';input.maxLength=1000;input.value=documentValue.media[media.id]?.[field]||'';input.placeholder=field==='src'?'images/… или https://…':'';label.append(input);section.append(label);
       input.addEventListener('input',()=>{const record=documentValue.media[media.id]??={src:''};record[field]=input.value.trim();if(field==='src'&&!record.src){delete documentValue.media[media.id];for(const peer of section.querySelectorAll('input'))if(peer!==input)peer.value='';}changed();});
-    }host.append(section);
+    }
+    const choose=create('button','Выбрать из фотобиблиотеки');choose.type='button';const picker=create('select');picker.hidden=true;picker.setAttribute('aria-label','Фото для '+media.name);
+    choose.onclick=async()=>{choose.disabled=true;try{const assets=await catalogueEditor.loadLibrary();picker.replaceChildren(new Option('Выберите фотографию…',''),...assets.map(asset=>new Option(asset.name||asset.id,asset.url)));picker.hidden=false;if(!assets.length)status('Библиотека пуста. Загрузите фото во вкладке «Фотобиблиотека».');}catch{status('Для фотобиблиотеки нужен вход владельца.','error');}finally{choose.disabled=false;}};
+    picker.onchange=()=>{if(!picker.value)return;const input=section.querySelector('input');input.value=picker.value;input.dispatchEvent(new Event('input'));thumb.src=picker.value;thumb.hidden=false;};
+    section.append(choose,picker,create('p','Нажмите фото на сайте, затем укажите ссылку или выберите загруженный файл. При замене проверьте автора и источник.','hint'));host.append(section);
   }
 }
 function renderAll({resetForm=false}={}){renderContent();renderOrder();renderTheme();renderMedia();checkContrast();controls();catalogueEditor?.refresh({resetForm});visualBuilder?.refresh();}
@@ -126,14 +131,14 @@ async function rollback(revision){
 for(const [group,heading,descriptors]of [['pages','Страницы',PAGES],['blocks','Блоки главной',BLOCKS]]){const options=create('optgroup');options.label=heading;for(const descriptor of descriptors){const option=create('option',descriptor.name);option.value=group+':'+descriptor.id;options.append(option);}$('contentTarget').append(options);}
 $('contentTarget').onchange=()=>{const[group,id]=$('contentTarget').value.split(':');chosen={group,id};inspected={};renderContent();};
 $('language').onchange=()=>{inspected={};renderContent();visualBuilder?.refresh();};
-for(const button of document.querySelectorAll('[data-tab]'))button.onclick=()=>{for(const peer of document.querySelectorAll('[data-tab]'))peer.setAttribute('aria-pressed',String(peer===button));for(const name of ['content','theme','media','catalogue','library','history'])$(name+'Panel').hidden=name!==button.dataset.tab;catalogueEditor?.open(button.dataset.tab);};
+for(const button of document.querySelectorAll('[data-tab]'))button.onclick=()=>{if(button.dataset.tab==='media')for(const group of document.querySelectorAll('[data-media-id]'))group.hidden=false;for(const peer of document.querySelectorAll('[data-tab]'))peer.setAttribute('aria-pressed',String(peer===button));for(const name of ['content','theme','media','catalogue','library','history'])$(name+'Panel').hidden=name!==button.dataset.tab;catalogueEditor?.open(button.dataset.tab);};
 $('desktop').onclick=()=>{frame.classList.remove('mobile');$('desktop').setAttribute('aria-pressed','true');$('mobile').setAttribute('aria-pressed','false');};
 $('mobile').onclick=()=>{frame.classList.add('mobile');$('mobile').setAttribute('aria-pressed','true');$('desktop').setAttribute('aria-pressed','false');};
 $('reloadPreview').onclick=openPreview;$('login').onclick=()=>void signIn();$('closeAuth').onclick=()=>$('authDialog').close();$('save').onclick=()=>void run(saveDraft);$('publish').onclick=()=>void publish();
 $('resetTheme').onclick=()=>{documentValue.theme={};renderTheme();changed();};
 window.addEventListener('beforeunload',event=>{if(dirty()||catalogueEditor?.hasUnapplied()){event.preventDefault();event.returnValue='';}});
 catalogueEditor=mountCatalogueEditor({getDocument:()=>documentValue,changed:(catalogueChanged=false)=>{validateDocument(documentValue);if(catalogueChanged){chosen={group:'pages',id:'catalogue'};$('contentTarget').value='pages:catalogue';renderContent();}changed();},api,isAuthorized:()=>authorized,status});
-visualBuilder=mountVisualBuilderAdmin({frame,nonce,getDocument:()=>documentValue,changed,language:()=>$('language').value,onOrder:renderOrder,selectContent:(group,id)=>{chosen={group,id};$('contentTarget').value=group+':'+id;document.querySelector('[data-tab=content]').click();renderContent();$('contentFields').scrollIntoView({block:'nearest',behavior:'smooth'});},selectMedia:id=>{document.querySelector('[data-tab=media]').click();document.querySelector('[data-media-id="'+id+'"] input')?.focus();}});
+visualBuilder=mountVisualBuilderAdmin({frame,nonce,getDocument:()=>documentValue,changed,language:()=>$('language').value,onOrder:renderOrder,selectContent:(group,id,field)=>{chosen={group,id};$('contentTarget').value=group+':'+id;document.querySelector('[data-tab=content]').click();renderContent();$('contentFields').scrollIntoView({block:'nearest',behavior:'smooth'});if(field)$('content-'+field)?.focus();},selectPlace:id=>{document.querySelector('[data-tab=catalogue]').click();catalogueEditor.selectPlace(id);},selectMedia:id=>{document.querySelector('[data-tab=media]').click();for(const group of document.querySelectorAll('[data-media-id]'))group.hidden=group.dataset.mediaId!==id;document.querySelector('[data-media-id="'+id+'"] input')?.focus();}});
 renderAll();openPreview();
 try{
   const response=await fetch('./chat-config.json',{cache:'no-store'});if(!response.ok)throw new Error();config=await response.json();

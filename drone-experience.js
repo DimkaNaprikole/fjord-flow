@@ -14,7 +14,7 @@
     const anchor=document.getElementById('staysSauna');
     if(!anchor) return;
     if(!section) { section=node('section', '', 'drone-experience'); section.id='droneExperience'; section.dataset.i18nIgnore=''; }
-    if(anchor.nextElementSibling!==section) anchor.after(section);
+    if(!section.dataset.cmsSectionManaged&&anchor.nextElementSibling!==section) anchor.after(section);
     const lang=copy[window.FjordI18n?.language] ? window.FjordI18n.language : 'nb';
     if(language===lang) return;
     language=lang;

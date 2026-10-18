@@ -1,6 +1,7 @@
 /* Published, validated content only. Drafts enter solely through the same-origin editor preview. */
-import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=3';
-import {mountVisualBuilder} from './visual-builder.mjs?v=1';
+import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=4';
+import {mountVisualBuilder} from './visual-builder.mjs?v=2';
+import {createSectionOrder} from './section-order.mjs?v=1';
 import {mergeCatalogue} from './catalogue-content.mjs';
 let documentValue=emptyDocument(),scheduled=false,originalNavOrder=null,lastPreviewTarget='',lastCredits='';
 const previewNonce=new URL(location.href).searchParams.get('editorPreview');
@@ -8,6 +9,7 @@ const preview=!!previewNonce&&window.parent!==window;
 const style=document.createElement('style');style.id='fjordPublishedDesign';document.head.append(style);
 const originals=new WeakMap(),mediaOriginals=new WeakMap(),buttonLinks=new WeakMap();
 let builder;
+const applySectionOrder=createSectionOrder(document);
 let activePlaces=[],lastPlaces='';
 window.FjordCatalogueContent=Object.freeze({merge:base=>mergeCatalogue(base,activePlaces),get places(){return activePlaces;}});
 const language=()=>window.FjordI18n?.language||document.documentElement.lang||'nb';
@@ -37,6 +39,7 @@ function themeCSS(theme){
 }
 function apply(){
  scheduled=false;
+ applySectionOrder(documentValue.sectionOrder);
  const placesJSON=JSON.stringify(documentValue.catalogue.places);if(placesJSON!==lastPlaces){activePlaces=documentValue.catalogue.places;lastPlaces=placesJSON;style.dataset.catalogueCount=String(activePlaces.length);window.dispatchEvent(new CustomEvent('fjord:catalogue-content'));}
  if(language()!==lastLanguage){
   for(const item of [...PAGES,...BLOCKS,...BUTTONS.map(b=>({title:b.selector}))])for(const field of ['title','intro']){const node=select(item[field]),state=node&&originals.get(node);if(node?.dataset.cmsText&&state&&node.innerHTML===state.last){const native=state.versions.get(lastLanguage);if(native!==undefined){node.innerHTML=native;delete node.dataset.cmsText;if(!state.ignore)delete node.dataset.i18nIgnore;state.last=null;}}}
@@ -61,6 +64,7 @@ function apply(){
  }
  image(select('.solidarity-art-pair>.solidarity-art'),documentValue.media.header);
  image(select('.waterfall-story>img'),documentValue.media.waterfall);
+ image(select('#cafeStops > img'),documentValue.media.cafes);
  const creditJSON=JSON.stringify(documentValue.media);
  if(creditJSON!==lastCredits){const host=select('.photo-legal details');if(host){let credits=select('#editorPhotoCredits');if(!credits){credits=document.createElement('div');credits.id='editorPhotoCredits';host.append(credits);}credits.replaceChildren();for(const media of Object.values(documentValue.media)){if(!media.credit&&!media.source)continue;const row=document.createElement('p'),entry=document.createElement(media.source?'a':'span');entry.textContent=media.credit||media.source;if(media.source){entry.href=media.source;entry.target='_blank';entry.rel='noopener noreferrer';}row.append(entry);credits.append(row);}lastCredits=creditJSON;}}
  builder?.refresh();

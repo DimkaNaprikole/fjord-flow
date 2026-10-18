@@ -12,7 +12,24 @@ export const PAGES=[
  {id:'services',name:'Сервисы для путешествий',root:'#travelServices',title:'#travelServices h2',intro:null},
  {id:'shopping',name:'Торговые центры',root:'#shoppingCentres',title:'#shoppingCentres h2',intro:null}
 ];
+export const SECTIONS=[
+ {id:'hero',name:'Первый экран',root:'#homePanel, #journeys > .hero',selectors:['#homePanel, #journeys > .hero']},
+ {id:'about',name:'Как открыть Норвегию',root:'#about',selectors:['#about']},
+ {id:'regions',name:'Регионы',root:'.region-section',selectors:['#journeys > .region-section']},
+ {id:'scenic',name:'Готовые маршруты',root:'#scenicRoutes, .roadtrip-collection',selectors:['#scenicRoutes, #journeys > .roadtrip-collection']},
+ {id:'collection',name:'Места · поиск и карточки',root:'#collection',selectors:['#collection','#journeys > .collection-search','#journeys > .filterline','#cards','#journeys > .place-pagination','#journeys > .place-pagination-status']},
+ {id:'waterfall',name:'Водопады',root:'.waterfall-story',selectors:['#journeys > .waterfall-story']},
+ {id:'experiences',name:'Впечатления',root:'#routeExperiences',selectors:['#routeExperiences']},
+ {id:'cafes',name:'Кофейни',root:'#cafeStops',selectors:['#cafeStops']},
+ {id:'stays',name:'Домики и сауны',root:'#staysSauna',selectors:['#staysSauna']},
+ {id:'film',name:'Видео',root:'#droneExperience',selectors:['#droneExperience']},
+ {id:'advertising',name:'Реклама',root:'#advertising',selectors:['#advertising']},
+ {id:'contact',name:'Контакты',root:'#contact',selectors:['#contact']},
+ {id:'map',name:'Карта Норвегии',root:'#norwayOverview',selectors:['#norwayOverview']}
+];
 export const BLOCKS=[
+ {id:'about',name:'Главная · как открыть Норвегию',root:'#about',title:'#about h2',intro:'#about .explorer-intro'},
+ {id:'collection',name:'Главная · места',root:'#collection',title:'#collection h2',intro:'#collection > p'},
  {id:'scenic',name:'Главная · готовые маршруты',root:'#scenicRoutes',title:'#scenicRoutes h2',intro:'#scenicRoutes .roadtrip-intro'},
  {id:'waterfall',name:'Главная · водопад',root:'.waterfall-story',title:'.waterfall-story h2',intro:'.waterfall-story p:not(.eyebrow)'},
  {id:'experiences',name:'Главная · впечатления',root:'#routeExperiences',title:'#routeExperiences h2',intro:'#routeExperiences .experiences-intro'},
@@ -45,7 +62,7 @@ export const THEME_FIELDS={
  headerPosition:{type:'number',label:'Положение фона шапки, %',min:0,max:100,step:1,default:50},
  font:{type:'select',label:'Шрифт',options:['Manrope','DM Sans','Barlow Condensed'],default:'Manrope'}
 };
-export const MEDIA_FIELDS=[{id:'header',name:'Фон шапки — композиция Украина / Норвегия'},{id:'hero',name:'Главная — фоновое фото'},{id:'waterfall',name:'Главная — фото водопада'}];
+export const MEDIA_FIELDS=[{id:'header',name:'Фон шапки — композиция Украина / Норвегия'},{id:'hero',name:'Главная — фоновое фото'},{id:'waterfall',name:'Главная — фото водопада'},{id:'cafes',name:'Кофейни — фоновое фото'}];
 const plain=x=>x!==null&&typeof x==='object'&&!Array.isArray(x)&&[Object.prototype,null].includes(Object.getPrototypeOf(x));
 const keys=(x,allowed)=>{if(!plain(x)||Object.keys(x).some(k=>!allowed.includes(k)))throw new Error('invalid_editor_fields');};
 export function safeMediaURL(value){
@@ -71,8 +88,8 @@ export function validatePlace(value){
  return out;
 }
 export function validateDocument(value){
- keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue','buttons','headerButtonOrder']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
- const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]},buttons:{},headerButtonOrder:[]};
+ keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue','buttons','headerButtonOrder','sectionOrder']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
+ const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]},buttons:{},headerButtonOrder:[],sectionOrder:[]};
  if(value.theme!==undefined){keys(value.theme,Object.keys(THEME_FIELDS));for(const [key,v]of Object.entries(value.theme)){const f=THEME_FIELDS[key];if(f.type==='color'&&!/^#[0-9a-f]{6}$/i.test(v)||f.type==='number'&&(!Number.isFinite(v)||v<f.min||v>f.max)||f.type==='select'&&!f.options.includes(v))throw new Error('invalid_editor_theme');out.theme[key]=v;}}
  if(value.pages!==undefined)out.pages=records(value.pages,PAGES);
  if(value.blocks!==undefined)out.blocks=records(value.blocks,BLOCKS);
@@ -80,6 +97,7 @@ export function validateDocument(value){
  if(value.navOrder!==undefined){const ids=PAGES.map(p=>p.id);if(!Array.isArray(value.navOrder)||value.navOrder.length>ids.length||new Set(value.navOrder).size!==value.navOrder.length||value.navOrder.some(x=>!ids.includes(x)))throw new Error('invalid_editor_order');out.navOrder=[...value.navOrder];}
  if(value.buttons!==undefined){keys(value.buttons,BUTTONS.map(b=>b.id));for(const [id,item]of Object.entries(value.buttons)){keys(item,['label','fontSize','padding','radius','background','color','href']);const button={};if(item.label!==undefined)button.label=translated(item.label,120);for(const [key,field]of Object.entries(BUTTON_STYLE_FIELDS))if(item[key]!==undefined){if(!Number.isFinite(item[key])||item[key]<field.min||item[key]>field.max)throw new Error('invalid_button_style');button[key]=item[key];}for(const key of ['background','color'])if(item[key]!==undefined){if(typeof item[key]!=='string'||!/^#[0-9a-f]{6}$/i.test(item[key]))throw new Error('invalid_button_color');button[key]=item[key];}if(item.href!==undefined){if(id!=='hero'||!safeButtonHref(item.href))throw new Error('invalid_button_link');button.href=item.href;}out.buttons[id]=button;}}
  if(value.headerButtonOrder!==undefined){if(!Array.isArray(value.headerButtonOrder)||value.headerButtonOrder.length>2||new Set(value.headerButtonOrder).size!==value.headerButtonOrder.length||value.headerButtonOrder.some(id=>!['signIn','register'].includes(id)))throw new Error('invalid_header_button_order');out.headerButtonOrder=[...value.headerButtonOrder];}
+ if(value.sectionOrder!==undefined){const ids=SECTIONS.map(s=>s.id);if(!Array.isArray(value.sectionOrder)||value.sectionOrder.length>ids.length||new Set(value.sectionOrder).size!==value.sectionOrder.length||value.sectionOrder.some(id=>!ids.includes(id)))throw new Error('invalid_section_order');out.sectionOrder=[...value.sectionOrder];}
  if(value.catalogue!==undefined){keys(value.catalogue,['places']);if(!Array.isArray(value.catalogue.places)||value.catalogue.places.length>200)throw new Error('invalid_catalogue');out.catalogue.places=value.catalogue.places.map(validatePlace);if(new Set(out.catalogue.places.map(r=>r.id)).size!==out.catalogue.places.length)throw new Error('duplicate_place_id');}
  if(JSON.stringify(out).length>200000)throw new Error('editor_document_too_large');return out;
 }
