@@ -1,5 +1,5 @@
 import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=2';
-import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=2';
+import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=3';
 import {getVisitorToken,ensureVerified} from './afonya-auth.js';
 
 const $=id=>document.getElementById(id);
