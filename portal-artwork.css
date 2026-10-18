@@ -27,6 +27,27 @@
 .friendship-alternating .hero-artwork-pair img{filter:none;object-position:center 42%}
 .friendship-alternating .hero-artwork-pair img:first-child{object-fit:fill;height:145%;transform:translateY(-15%)}
 .friendship-alternating:has(.hero-artwork-pair.is-visible)>.solidarity-art{opacity:0}
+/* Local brush lettering: Google Fonts Permanent Marker, license beside the font. */
+@font-face{font-family:'Friendship Marker';src:url('fonts/permanent-marker/PermanentMarker-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
+body>header>.friendship-third-caption{position:absolute;inset:0;z-index:0;pointer-events:none}
+.friendship-third-caption[hidden]{display:none}
+.friendship-third-caption>span{
+ position:absolute;width:38%;color:#fff;font:400 clamp(24px,3.6vw,56px)/1.12 'Friendship Marker',Manrope,sans-serif;
+ text-align:center;text-transform:uppercase;letter-spacing:.02em;
+ -webkit-text-stroke:1px #173b4aa6;paint-order:stroke fill;
+ text-shadow:0 2px 2px #0b293d,0 4px 14px #0b293da8
+}
+.friendship-third-left{left:6%;top:33%;transform:rotate(-4deg)}
+.friendship-third-right{right:6%;top:40%;transform:rotate(3deg)}
+body>header:has(.friendship-third-caption:not([hidden]))>#solidarityBanner{visibility:hidden}
+body>header>:is(.brand,.solidarity-banner,.header-tools,nav){position:relative;z-index:2}
+@media(min-width:651px) and (max-width:1000px){body>header{min-height:360px}.friendship-third-left{top:30%}.friendship-third-right{top:36%}}
+@media(max-width:650px){
+ body>header{min-height:320px;grid-template-rows:auto 1fr auto}
+ .friendship-third-caption>span{font-size:clamp(18px,4.6vw,28px);line-height:1.1;width:42%}
+ .friendship-third-left{left:4%;top:47%}
+ .friendship-third-right{right:4%;top:55%}
+}
 
 /* The second chapter uses a full-width scene, matching the opening screen. */
 #journeys>#about.about-explorer{position:relative;isolation:isolate;width:100%;max-width:none;margin:0;padding:0;background:#103343;overflow:hidden;border-radius:0}

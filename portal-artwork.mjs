@@ -10,7 +10,7 @@ const artworkContentObserver=new MutationObserver(records=>{
     if(host.isConnected&&mounted&&mounted.art.parentNode!==host)host.prepend(mounted.art);
   }
 });
-function mountArtwork(host,initialStep=0,canAdvance=null,resolvePair=null){
+function mountArtwork(host,initialStep=0,canAdvance=null,resolvePair=null,onShow=null){
   if(!host)return null;
   const mounted=mountedArtwork.get(host);
   if(mounted){if(mounted.art.parentNode!==host)host.prepend(mounted.art);return mounted.advance;}
@@ -31,6 +31,7 @@ function mountArtwork(host,initialStep=0,canAdvance=null,resolvePair=null){
     incoming.layer.style.setProperty('--artwork-right',`url("${pair[1]}")`);
     incoming.layer.classList.add('is-visible');layers[active].layer.classList.remove('is-visible');active=1-active;
     art.dataset.step=String(index);art.dataset.left=pair[0];art.dataset.right=pair[1];
+    onShow?.(index);
   }
   reduced.addEventListener('change',()=>void show());void show();
   const advance=()=>{if(!reduced.matches&&(!canAdvance||canAdvance())){step++;void show(true);}};
@@ -104,15 +105,26 @@ function scanNearbySections(){
   }
   synchronizeArtworkTimer();
 }
-/* Only one country carries the painted slogan in each header frame. */
+/* Two wake-up pairs, then a clean pair with the shared friendship message. */
 const friendship=document.querySelector('body>header>.solidarity-art-pair');
 if(friendship){
+  const pledge=document.querySelector('#solidarityBanner .solidarity-pledge');
+  const caption=document.createElement('div');
+  caption.className='friendship-third-caption';caption.hidden=true;caption.setAttribute('lang','nb');
+  caption.innerHTML='<span class="friendship-third-left">Norge +<br>Ukraina</span><span class="friendship-third-right">Sammen<br>for frihet</span>';
+  friendship.parentNode.append(caption);
+  const updatePledge=index=>{
+    const frame=index%3;
+    if(pledge){pledge.textContent=frame===0?'Stand with Norway':'Stand with Ukraine';pledge.style.visibility=frame===2?'hidden':'';}
+    caption.hidden=frame!==2;
+  };
   const pairs=[
     ['images/ukraine-friendship-original.png',norwegian],
-    ['images/ukraine-friendship-clean.webp','images/norway-wake-up.webp']
+    ['images/ukraine-friendship-clean.webp','images/norway-wake-up.webp'],
+    ['images/ukraine-friendship-clean.webp',norwegian]
   ];
   friendship.classList.add('friendship-alternating');
-  sectionArtwork.set(friendship,{offset:0,advance:mountArtwork(friendship,0,()=>!document.hidden&&!reduced.matches&&inViewport(friendship),index=>pairs[index%2])});
+  sectionArtwork.set(friendship,{offset:0,advance:mountArtwork(friendship,0,()=>!document.hidden&&!reduced.matches&&inViewport(friendship),index=>pairs[index%3],updatePledge)});
   artworkObserver?.observe(friendship);
 }
 discoverArtworkSections();

@@ -23,12 +23,12 @@ function harness({header=false,explorer=false,reducedMotion=false}={}){
  class IntersectionObserver{constructor(callback){this.callback=callback;this.targets=new Set();intersections.push(this);}observe(target){this.targets.add(target);}unobserve(target){this.targets.delete(target);}}
  const body=node('body');body.connected=true;const journeys=node('main');body.append(journeys);
  const sections=[node(),node()];journeys.append(...sections);
- const friendship=header?node('div'):null,about=explorer?node():null;if(friendship)body.append(friendship);if(about)journeys.append(about);
+ const friendship=header?node('div'):null,pledge=header?node('a'):null,about=explorer?node():null;if(friendship)body.append(friendship);if(about)journeys.append(about);
  const motion={...events(),matches:reducedMotion};
- const document={...events(),body,hidden:false,createElement:node,getElementById:id=>id==='journeys'?journeys:null,querySelector:s=>s==='#about'?about:s==='body>header>.solidarity-art-pair'?friendship:null,querySelectorAll:()=>sections};
+ const document={...events(),body,hidden:false,createElement:node,getElementById:id=>id==='journeys'?journeys:null,querySelector:s=>s==='#about'?about:s==='body>header>.solidarity-art-pair'?friendship:s==='#solidarityBanner .solidarity-pledge'?pledge:null,querySelectorAll:()=>sections};
  const window={...events(),innerWidth:1280,innerHeight:800,IntersectionObserver};
  vm.runInNewContext(source,{window,document,matchMedia:()=>motion,MutationObserver,IntersectionObserver,setInterval(fn,delay){assert.equal(delay,12000);const id=++timerId;timers.set(id,fn);return id;},clearInterval:id=>timers.delete(id)});
- return {document,window,motion,sections,friendship,about,timers,node,
+ return {document,window,motion,sections,friendship,pledge,about,timers,node,
   near(target,visible=true){intersections[0].callback([{target,isIntersecting:visible}]);},
   tick(){for(const callback of [...timers.values()])callback();},
   deliverMutations(){for(let turn=0;turn<20;turn++){const pending=mutations.filter(o=>o.pending.length);if(!pending.length)return turn;for(const observer of pending)observer.callback(observer.pending.splice(0));}assert.fail('Mutation observer loop');}
@@ -65,12 +65,28 @@ test('offscreen and hidden sections, hidden document and reduced motion do not r
  h.motion.matches=false;h.motion.emit('change');await flush();assert.equal(h.timers.size,1);
 });
 
-test('header alternates the two approved pairs with exactly one painted caption',async()=>{
+test('header cycles two wake-up pairs and a clean friendship frame, then resets with reduced motion',async()=>{
  const h=harness({header:true});h.near(h.friendship);await flush();
  const first=['images/ukraine-friendship-original.png','images/norway-friendship-original.png'];
  const second=['images/ukraine-friendship-clean.webp','images/norway-wake-up.webp'];
+ const third=['images/ukraine-friendship-clean.webp','images/norway-friendship-original.png'];
  const captioned=new Set([first[0],second[1]]);
- for(const expected of [first,second,first]){assert.deepEqual(pair(h.friendship),expected);assert.equal(pair(h.friendship).filter(path=>captioned.has(path)).length,1);h.tick();await flush();}
+ const caption=h.friendship.parentNode.children.find(child=>child.className==='friendship-third-caption');
+ assert.ok(caption,'third frame has its own sibling caption above the artwork');
+ const captionText=caption.innerHTML.replace(/<br\s*\/?\s*>/gi,' ').replace(/<\/span>/gi,' ').replace(/<[^>]+>/g,'');
+ assert.match(captionText,/Norge \+\s+Ukraina/);assert.match(captionText,/Sammen\s+for frihet/);
+ const frames=[[first,'Stand with Norway'],[second,'Stand with Ukraine'],[third,null],[first,'Stand with Norway']];
+ for(let i=0;i<frames.length;i++){
+  const [expected,label]=frames[i],clean=expected===third;
+  assert.deepEqual(pair(h.friendship),expected);assert.equal(pair(h.friendship).filter(path=>captioned.has(path)).length,clean?0:1);
+  assert.equal(caption.hidden,!clean);assert.equal(h.pledge.style.visibility,clean?'hidden':'');
+  if(label)assert.equal(h.pledge.textContent,label);
+  if(i<frames.length-1){h.tick();await flush();}
+ }
+ h.tick();await flush();h.tick();await flush();assert.deepEqual(pair(h.friendship),third);
+ h.motion.matches=true;h.motion.emit('change');await flush();
+ assert.deepEqual(pair(h.friendship),first);assert.equal(h.pledge.textContent,'Stand with Norway');
+ assert.equal(h.pledge.style.visibility,'');assert.equal(caption.hidden,true);assert.equal(h.timers.size,0);
 });
 
 test('explorer advances once on a committed photo, not on selection or language render events',async()=>{
