@@ -32,17 +32,17 @@ test('BUA equipment filter maps only published coordinates and keeps missing loc
 import vm from 'node:vm';
 const flush = async () => {for(let i=0;i<30;i++)await Promise.resolve();};
 function overviewHarness({catalogueRows=[],extraRows=[],catalogueContent}={}){
- const nodes=[],events={},calls={create:0,geolocation:0,locations:[],fetches:[],renders:[]};
+ const nodes=[],events={},calls={create:0,geolocation:0,locations:[],fetches:[],renders:[],selections:[]};
  let resolveCatalogue,resolveMap;
  const catalogue=new Promise(resolve=>{resolveCatalogue=()=>resolve({ok:true,json:async()=>catalogueRows});});
  const mapReady=new Promise(resolve=>{resolveMap=()=>resolve(map);});
- const map={resize(){},render(rows){calls.renders.push(rows);return rows.length;},locate(p){calls.locations.push(p);}};
+ const map={resize(){},render(rows,route,category,fit){calls.renders.push(rows);calls.selections.push({route,category,fit,ids:filterPlaces(rows,category).map(p=>p.id)});return rows.length;},locate(p){calls.locations.push(p);}};
  function node(tag){const n={tag,children:[],listeners:{},style:{setProperty(){}},dataset:{},hidden:false,disabled:false,textContent:'',setAttribute(k,v){this[k]=v;},append(...v){this.children.push(...v);},replaceChildren(...v){this.children=v;},before(){},addEventListener(k,fn){this.listeners[k]=fn;},click(){if(!this.disabled)return this.listeners.click?.();}};nodes.push(n);return n;}
  const footer=node('footer');
  const window={FjordCatalogueContent:catalogueContent,FjordGoogleMapConfig:{enabled:true},FjordGoogleStandardMap:{create(){calls.create++;return mapReady;}},FjordBrowserGeolocation:{locate(){calls.geolocation++;return {promise:Promise.resolve({coords:{latitude:60.3592,longitude:10.5728}})};}},addEventListener(k,fn){events[k]=fn;}};
  const document={documentElement:{lang:'en'},createElement:node,querySelector:s=>s==='footer'?footer:null};
  vm.runInNewContext(readFileSync(new URL('./norway-overview-map.js',import.meta.url),'utf8'),{window,document,URL,AbortController,setTimeout,clearTimeout,fetch(url){calls.fetches.push(url);return url.includes('norway-catalog')?catalogue:Promise.resolve({ok:true,json:async()=>url.includes('map-attractions')?extraRows:[]});}});
- return {calls,events,window,resolveCatalogue,resolveMap,standard:nodes.find(n=>n.tag==='button'&&n.textContent==='Google Maps'),location:nodes.find(n=>n.tag==='button'&&n.textContent.includes('My location'))};
+ return {calls,events,window,resolveCatalogue,resolveMap,filters:nodes.find(n=>n.className==='norway-overview__filters'),fit:nodes.find(n=>n.tag==='button'&&n.textContent==='Show selection'),standard:nodes.find(n=>n.tag==='button'&&n.textContent==='Google Maps'),location:nodes.find(n=>n.tag==='button'&&n.textContent.includes('My location'))};
 }
 test('immediate cached GPS waits for shared deferred catalogue and map activation',async()=>{
  const h=overviewHarness();
@@ -85,4 +85,21 @@ test('a CMS runtime arriving after map activation refreshes markers without recr
  assert.equal(h.calls.renders.at(-1)[0].name,'Updated');
  assert.equal(h.calls.renders.at(-1)[0].latitude,61);
  assert.equal(h.calls.create,1);
+});
+
+test('overview starts with cafes and fitting a category does not restore all markers',async()=>{
+ const cafe={id:'cafe',category:'cafe',latitude:60,longitude:10};
+ const sauna={id:'sauna',category:'sauna',latitude:61,longitude:11};
+ const h=overviewHarness({catalogueRows:[cafe,sauna]});
+ h.resolveCatalogue();h.resolveMap();await h.standard.click();
+ assert.equal(h.calls.selections.at(-1).category,'cafe');
+ assert.deepEqual(h.calls.selections.at(-1).ids,['cafe']);
+ assert.deepEqual(Array.from(h.filters.children,b=>b.textContent),['Cafés','Cabins','Saunas','Places to unwind','BUA · equipment loans','Shopping centres']);
+ h.filters.children.find(b=>b.textContent==='Saunas').click();
+ assert.equal(h.calls.selections.at(-1).category,'sauna');
+ h.fit.click();
+ assert.equal(h.calls.selections.at(-1).category,'sauna');
+ assert.deepEqual(h.calls.selections.at(-1).ids,['sauna']);
+ assert.equal(h.calls.selections.at(-1).fit,true);
+ assert.equal(h.filters.children.find(b=>b.textContent==='Saunas')['aria-pressed'],'true');
 });
