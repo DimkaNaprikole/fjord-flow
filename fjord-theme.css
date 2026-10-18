@@ -245,11 +245,11 @@ dialog.stay-gallery .stay-gallery-venue-actions a {
 }
 
 /* Approved Ukraine/Norway composition remains a full-width header background. */
-body>header{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(260px,36.8vw,470px);align-content:space-between;border-top:4px solid #224e48;background:#f8fbf7}
+body>header{position:relative;isolation:isolate;overflow:hidden;min-height:clamp(260px,36.8vw,470px);display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:'brand pledge tools' 'tabs tabs tabs';grid-template-rows:auto 1fr;align-content:normal;column-gap:12px;row-gap:16px;align-items:start;border-top:4px solid #224e48;background:#f8fbf7}
 body>header>.solidarity-art-pair{position:absolute;inset:0;z-index:-1;display:block;opacity:.22;pointer-events:none}
 .solidarity-art-pair>.solidarity-art{display:block;width:100%;height:100%;min-height:0;min-width:0;object-fit:cover;object-position:center;border-radius:0}
-body>header>.brand{flex-shrink:0}
-.solidarity-banner{display:flex;flex:0 1 auto;align-items:center;box-sizing:border-box;padding:5px 10px;margin-right:auto;border-left:1px solid #204e4840;font:600 12px/1.4 Manrope,'Segoe UI',sans-serif;color:#173e49}
+body>header>.brand{grid-area:brand;flex-shrink:0}
+.solidarity-banner{grid-area:pledge;min-width:0;display:flex;flex:0 1 auto;align-items:center;box-sizing:border-box;padding:5px 10px;margin-right:auto;border-left:1px solid #204e4840;font:600 12px/1.4 Manrope,'Segoe UI',sans-serif;color:#173e49}
 .solidarity-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
 .solidarity-copy strong{font-size:14px;line-height:1.25;color:#173e49}
 .solidarity-message{color:#31565d;font-size:11px}
@@ -264,7 +264,7 @@ header .brand{font-family:Manrope,'Segoe UI',sans-serif;font-size:25px;font-weig
 .solidarity-copy strong{font-family:Manrope,'Segoe UI',sans-serif;font-size:18px;font-weight:800;letter-spacing:0}
 .solidarity-message{font-size:12px}.solidarity-pledge{font-size:11px}
 body>header>.solidarity-art-pair{opacity:.22}
-body>header>nav.site-tabs{order:3;width:100%;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px;margin:0;padding:5px;background:#ffffffb8;border-radius:14px;font-family:Manrope,'Segoe UI',sans-serif}
+body>header>nav.site-tabs{grid-area:tabs;align-self:end;order:3;width:100%;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px;margin:0;padding:5px;background:transparent;border-radius:14px;font-family:Manrope,'Segoe UI',sans-serif}
 header nav.site-tabs [role=tab]{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:9px 13px;border:1px solid #28574d4a;border-radius:9px;background:#193f4b;color:#edf6f4;font:700 12px/1.3 Manrope,'Segoe UI',sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;box-shadow:none;transition:background .18s,border-color .18s}
 header nav.site-tabs [role=tab]:hover{background:#2a5a63;border-color:#28574d}
 header nav.site-tabs [role=tab][aria-selected=true]{background:#28574d;color:#fff;border-color:#28574d;box-shadow:inset 0 -3px #b9dbcc}
@@ -279,3 +279,8 @@ body>:is(#advertising,#contact,#norwayOverview){box-sizing:border-box;width:calc
 body>:is(#contact,#norwayOverview){padding-inline:var(--ff-panel-inset)}
 /* Headings, filters and grids share the panels' inner text rail. */
 #journeys>:is(#about,.region-section,#collection,#cards,.searchline,.filterline,.place-pagination){box-sizing:border-box;width:calc(100% - 2 * var(--ff-page-gutter));max-width:var(--ff-content-max);margin-inline:auto;padding-inline:var(--ff-panel-inset)}
+
+/* Keep account controls in the upper-right, independent of menu wrapping. */
+body>header>.header-tools{grid-area:tools;margin:0;align-self:start;justify-self:end;flex-wrap:nowrap;min-width:0}
+@media(min-width:651px) and (max-width:1000px){body>header>.brand{font-size:23px}.solidarity-banner{padding-inline:8px}.solidarity-copy strong{font-size:16px}}
+@media(max-width:650px){body>header{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'brand tools' 'pledge tools' 'tabs tabs';grid-template-rows:auto auto auto;row-gap:10px;column-gap:10px}body>header>.brand{font-size:clamp(18px,5vw,22px);align-self:start}.solidarity-banner{padding:0;border:0;margin:0;align-self:start}body>header>.header-tools{width:auto;max-width:175px;flex-direction:column;align-items:stretch;gap:8px}.header-tools .language-control select{width:100%;max-width:none}.header-tools #headerAccount{justify-content:flex-end;gap:5px}.header-tools .header-account-button{font-size:11px;padding:8px;min-height:40px}body>header>nav.site-tabs{min-width:0}}
