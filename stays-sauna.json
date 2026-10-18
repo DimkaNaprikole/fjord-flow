@@ -79,7 +79,10 @@
       }
     ],
     "routeQuery": "Kinsarvik Camping, Sandvikvegen 17, 5780 Kinsarvik, Norway",
-    "imageOriginal": "https://images.bookvisit.com/img/1b8f5e6d-9333-4239-ac2c-6aed89ff2504.jpg"
+    "imageOriginal": "https://images.bookvisit.com/img/1b8f5e6d-9333-4239-ac2c-6aed89ff2504.jpg",
+    "latitude": 60.374461,
+    "longitude": 6.719237,
+    "coordinatePrecision": "property-access"
   },
   {
     "id": "luster-fjordhytter",
@@ -161,7 +164,10 @@
       }
     ],
     "routeQuery": "Luster Fjordhytter, Lustravegen 2623, 6875 Høyheimsvik, Norway",
-    "imageOriginal": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957ce59806898a97ee40d9_Hytter1.jpg"
+    "imageOriginal": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957ce59806898a97ee40d9_Hytter1.jpg",
+    "latitude": 61.39969592552051,
+    "longitude": 7.395916039941032,
+    "coordinatePrecision": "area"
   },
   {
     "id": "kilsti-compact-lodge",
@@ -243,6 +249,9 @@
       }
     ],
     "routeQuery": "Kilsti Compact Lodge, Eidsdal, Norway",
-    "imageOriginal": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1674564152851-K59Z0KXD2M6S2V0Z1LVF/PRINT_2021-05-31%2BReklamefoto%2BKilsti-5497.JPG?format=1000w"
+    "imageOriginal": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1674564152851-K59Z0KXD2M6S2V0Z1LVF/PRINT_2021-05-31%2BReklamefoto%2BKilsti-5497.JPG?format=1000w",
+    "latitude": 62.25882889455008,
+    "longitude": 7.153376458356803,
+    "coordinatePrecision": "area"
   }
 ]
