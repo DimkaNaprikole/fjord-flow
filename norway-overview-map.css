@@ -26,8 +26,9 @@
 .norway-overview__standard .gm-style-iw-tc::after{background:#123440}
 .norway-overview__standard .gm-ui-hover-effect[aria-label="Закрити"],.norway-overview__standard .gm-style-iw .gm-ui-hover-effect{filter:invert(1)}
 .norway-overview__standard .norway-overview__popup{max-height:280px;overflow:auto;padding:5px;box-sizing:border-box}
-.fjord-google-marker{display:flex;align-items:center;gap:4px;cursor:pointer;filter:drop-shadow(0 2px 3px #0007);transform:translateY(3px)}
+.fjord-google-marker{display:flex;align-items:center;gap:3px;cursor:pointer;filter:drop-shadow(0 1px 2px #0007);transform:translateY(3px)}
 .fjord-google-marker img{display:block;width:36px;height:42px;flex-shrink:0}
-.fjord-google-marker span{background:#123440ed;color:#fff;border:1px solid #ffffff9c;border-radius:7px;font:600 12px/1.25 Arial,sans-serif;padding:5px 8px;max-width:160px;white-space:normal;text-align:left}
+.fjord-google-marker>span{background:#123440ed;color:#fff;border:1px solid #ffffff9c;border-radius:6px;font:600 11px/1.25 Arial,sans-serif;padding:4px 6px;max-width:112px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;transition:max-width .2s}
+.fjord-google-marker:is(:hover,:focus-within)>span{max-width:240px;white-space:normal}
 .norway-overview__standard .gm-style .norway-overview__popup :is(button,a){background:#173f4c;color:#edf6f8;border:1px solid #5a7c87;border-radius:9px;padding:9px 12px;min-height:38px}
-@media(max-width:600px){.norway-overview__standard{height:520px}.fjord-google-marker span{max-width:110px;font-size:11px}}
+@media(max-width:600px){.norway-overview__standard{height:520px}.fjord-google-marker>span{max-width:90px;font-size:11px}}

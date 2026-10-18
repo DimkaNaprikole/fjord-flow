@@ -3,17 +3,15 @@
  */
 (() => {
   'use strict';
-  const colors={cafe:'#9c592b',cabin:'#28745d',sauna:'#a54255',rest:'#246ca0'};
-  const paths={
-    cafe:'M7 9h13v8a5 5 0 0 1-5 5h-3a5 5 0 0 1-5-5z M20 10h2a4 4 0 0 1 0 8h-2 M5 25h18 M10 3v3 M15 3v3',
-    cabin:'M3 14 15 4l12 10 M7 12v14h16V12 M12 26v-9h6v9',
-    sauna:'M5 24h20 M7 27h16 M9 5c-5 5 5 5 0 10 M16 3c-5 5 5 5 0 10 M23 5c-5 5 5 5 0 10',
-    rest:'M2 25 12 7l6 10 4-7 7 15z M9 13l3 3 3-3'
-  };
+  // Official Google category glyphs, displayed only on the Google map.
+  const iconURLs={cafe:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet.svg',cabin:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/hotel_pinlet.svg',rest:'https://maps.gstatic.com/mapfiles/place_api/icons/v2/tree_pinlet.svg'};
+  const colors={cafe:'#FF9E67',cabin:'#909CE1',sauna:'#b76e9b',rest:'#4DB546'};
   const valid=p=>!!p&&Number.isFinite(p.latitude)&&Number.isFinite(p.longitude)&&Math.abs(p.latitude)<=90&&Math.abs(p.longitude)<=180;
-  function iconSVG(category='rest') {
-    const color=colors[category]||colors.rest,path=paths[category]||paths.rest;
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="44" height="50" viewBox="0 0 44 50"><path d="M22 48 14 36H30Z" fill="${color}" stroke="white" stroke-width="2"/><circle cx="22" cy="21" r="19" fill="${color}" stroke="white" stroke-width="3"/><g transform="translate(7 6)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${path.split(' M').map((p,i)=>`<path d="${i?'M':''}${p}"/>`).join('')}</g></svg>`;
+  function nativePin(record){
+    const settings={background:colors[record.category]||colors.rest,borderColor:'#fff',scale:.75};
+    if(record.category==='sauna'){settings.glyphText='♨';settings.glyphColor='#fff';}
+    else settings.glyphSrc=iconURLs[record.category]||iconURLs.rest;
+    return new google.maps.marker.PinElement(settings);
   }
   async function create(container,options={}) {
     if(options.enabled!==true||options.userActivated!==true)throw Error('GOOGLE_MAPS_NOT_ENABLED');
@@ -29,8 +27,8 @@
         if(next!==signature){markers.forEach(m=>{m.map=null;});markers=[];signature=next;
           visible.forEach(p=>{
             const badge=document.createElement('div');badge.className='fjord-google-marker';
-            const image=document.createElement('img');image.src='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(iconSVG(p.category));image.width=36;image.height=42;image.alt='';
-            const label=document.createElement('span');label.textContent=p.name;badge.append(image,label);
+            const pin=nativePin(p);
+            const label=document.createElement('span');label.textContent=p.name;badge.append(pin,label);
             const marker=new AdvancedMarkerElement({map,position:{lat:p.latitude,lng:p.longitude},title:p.name,content:badge,collisionBehavior:p.kind==='attraction'?'REQUIRED_AND_HIDES_OPTIONAL':'OPTIONAL_AND_HIDES_LOWER_PRIORITY',zIndex:p.kind==='attraction'?100:10,gmpClickable:true});
             marker.addListener('click',()=>{info.setContent(options.buildInfo(p));info.open({map,anchor:marker});options.onPlaceClick?.(p);});markers.push(marker);
           });
@@ -44,6 +42,6 @@
       destroy(){info.close();markers.forEach(m=>{m.map=null;});userMarker?.setMap(null);container.replaceChildren();}
     };
   }
-  if(typeof module!=='undefined')module.exports={iconSVG,valid};
-  if(typeof window!=='undefined')window.FjordGoogleStandardMap={create,iconSVG};
+  if(typeof module!=='undefined')module.exports={iconURLs,valid};
+  if(typeof window!=='undefined')window.FjordGoogleStandardMap={create,nativePin};
 })();

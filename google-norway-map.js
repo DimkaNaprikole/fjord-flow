@@ -48,10 +48,7 @@
         filterPlaces(lastRows,category).forEach(record=>{
           const name=String(record.name||record.town||record.id||'').slice(0,140);
           const marker=new library.Marker3DInteractiveElement({position:{lat:record.latitude,lng:record.longitude,altitude:0},altitudeMode:'CLAMP_TO_GROUND',title:name,collisionBehavior:'OPTIONAL_AND_HIDES_LOWER_PRIORITY',sizePreserved:true});
-          if(typeof window!=='undefined'&&window.FjordGoogleStandardMap?.iconSVG){
-            const template=document.createElement('template'),image=document.createElement('img');
-            image.src='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(window.FjordGoogleStandardMap.iconSVG(record.category));image.width=44;image.height=50;template.content.append(image);marker.append(template);
-          }
+          if(typeof window!=='undefined'&&window.FjordGoogleStandardMap?.nativePin)marker.append(window.FjordGoogleStandardMap.nativePin(record));
           const click=()=>{if(!destroyed)options.onPlaceClick?.(record);};
           marker.addEventListener('gmp-click',click);map.append(marker);markers.push({marker,click});
         });
@@ -91,6 +88,7 @@
     let timer;
     try {
       const library=await Promise.race([load(options.apiKey,options.language||window.FjordI18n?.language||document.documentElement.lang),new Promise((_,reject)=>{timer=setTimeout(()=>reject(Error('GOOGLE_MAPS_LOAD_TIMEOUT')),18000);})]);
+      await window.google.maps.importLibrary('marker');
       return createWithLibrary(container,options,library);
     } finally {clearTimeout(timer);}
   }

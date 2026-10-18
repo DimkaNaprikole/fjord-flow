@@ -8,7 +8,7 @@ test('full Google canvas enables wheel zoom and retains camera during label refr
   class InfoWindow {setContent(c){popup=c;}open(){}close(){}}
   class AdvancedMarkerElement {constructor(o){Object.assign(this,o);markers.push(this);}addListener(name,fn){this.click=fn;}}
   class LatLngBounds {extend(){}}
-  const context={window:{FjordGoogleNorwayMap:{loadAPI:async()=>{}}},document:{createElement:()=>({append(){}})},google:{maps:{importLibrary:async name=>name==='maps'?{Map,InfoWindow}:{AdvancedMarkerElement},LatLngBounds,event:{trigger(){}}}},module:undefined};
+  const context={window:{FjordGoogleNorwayMap:{loadAPI:async()=>{}}},document:{createElement:()=>({append(){}})},google:{maps:{marker:{PinElement:class{constructor(options){this.options=options;}}},importLibrary:async name=>name==='maps'?{Map,InfoWindow}:{AdvancedMarkerElement},LatLngBounds,event:{trigger(){}}}},module:undefined};
   vm.runInNewContext(readFileSync(new URL('./google-standard-map.js',import.meta.url),'utf8'),context);
   await assert.rejects(context.window.FjordGoogleStandardMap.create({},{}),/NOT_ENABLED/);
   const adapter=await context.window.FjordGoogleStandardMap.create({replaceChildren(){}},{enabled:true,userActivated:true,buildInfo:r=>r.id});

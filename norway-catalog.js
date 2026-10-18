@@ -92,31 +92,69 @@
     } else visual.append(node('p', 'norway-catalog-no-photo', t(20)));
     article.append(visual);
     const body = node('div', 'norway-catalog-copy');
-    body.append(node('p', 'norway-catalog-location', [t(4 + Math.max(1, categories.indexOf(r.category))), r.town, r.region].filter(Boolean).join(' · ')), node('h3', '', r.name), node('p', 'norway-catalog-description', local(r.description)));
-    if (r.address) body.append(node('p', 'norway-catalog-address', r.address));
+    const locationLabel = node('p', 'norway-catalog-location', [t(4 + Math.max(1, categories.indexOf(r.category))), r.town, r.region].filter(Boolean).join(' · '));
+    locationLabel.title = locationLabel.textContent;
+    const title = node('h3', '', r.name); title.title = r.name;
+    body.append(locationLabel, title);
+    const about = node('details', 'norway-catalog-about');
+    const summary = node('summary', '', {nb:'Om stedet',en:'About this place',uk:'Про місце',sv:'Om platsen',da:'Om stedet'}[lang()]);
+    const content = node('div', 'norway-catalog-about-content');
+    content.append(node('p', 'norway-catalog-description', local(r.description)));
+    about.append(summary, content);
+    // A hover preview stays open while moving through the card. Native summary
+    // controls remain available for touch and keyboard interaction.
+    let previewTimer, closeTimer, pinned = false, previewed = false;
+    const preview = () => {
+      if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches || about.open) return;
+      clearTimeout(previewTimer);
+      previewTimer = setTimeout(() => {about.open = true; previewed = true;}, 450);
+    };
+    title.addEventListener('pointerenter', preview); summary.addEventListener('pointerenter', preview);
+    summary.addEventListener('click', () => {clearTimeout(previewTimer); pinned = !about.open; previewed = false;});
+    content.addEventListener('click', () => {pinned = true; previewed = false;});
+    about.addEventListener('focusin', () => {pinned = true; previewed = false;});
+    article.addEventListener('pointerenter', () => clearTimeout(closeTimer));
+    article.addEventListener('pointerleave', () => {
+      clearTimeout(previewTimer);
+      closeTimer = setTimeout(() => {if (previewed && !pinned && !article.contains(document.activeElement)) {about.open = false; previewed = false;}}, 350);
+    });
+    about.addEventListener('toggle', () => {article.classList.toggle('is-expanded', about.open);});
+    if (r.address) {
+      const address = node('details', 'norway-catalog-address-details');
+      const addressSummary = node('summary', '', {nb:'Adresse',en:'Address',uk:'Адреса',sv:'Adress',da:'Adresse'}[lang()]);
+      address.append(addressSummary, node('p', 'norway-catalog-address', r.address));
+      let addressTimer;
+      addressSummary.addEventListener('pointerenter', () => {
+        if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches || address.open) return;
+        addressTimer = setTimeout(() => {address.open = true; pinned = true; previewed = false;}, 450);
+      });
+      addressSummary.addEventListener('pointerleave', () => clearTimeout(addressTimer));
+      addressSummary.addEventListener('click', () => clearTimeout(addressTimer));
+      content.append(address);
+    }
     if (r.catalogueDistance !== null && r.catalogueDistance !== undefined) body.append(node('p', 'norway-catalog-distance', `${r.coordinatePrecision === 'area' ? '≈ ' : ''}${new Intl.NumberFormat(lang(), {maximumFractionDigits: 1}).format(r.catalogueDistance)} km ${g(10)}`));
     const hours = node('details', 'norway-catalog-hours'); hours.append(node('summary', '', t(15)));
     const note = local(r.hoursNote) || local(r.openingHours?.publishedText);
-    if (note && note !== local(r.description)) body.append(node('p', 'norway-catalog-hours-note', note));
+    if (note && note !== local(r.description)) content.append(node('p', 'norway-catalog-hours-note', note));
     const weekly = r.openingHours?.verified === true && r.openingHours?.weekly;
     if (Array.isArray(weekly) && weekly.length === 7) {
       const list = node('ul'); const days = t(25).split('|');
       weekly.forEach((periods, index) => {const display = Array.isArray(periods) && periods.length ? periods.map(p => Array.isArray(p) ? p.join('–') : String(p)).join(', ') : t(24); list.append(node('li', '', `${days[index]}: ${display}`));});
-      hours.append(list, node('p', 'norway-catalog-muted', t(26))); body.append(hours);
+      hours.append(list, node('p', 'norway-catalog-muted', t(26))); content.append(hours);
     } else if (local(r.openingHours?.publishedText)) {
-      hours.append(node('p', '', local(r.openingHours.publishedText)), node('p', 'norway-catalog-muted', t(26))); body.append(hours);
-    } else if (!note) body.append(node('p', 'norway-catalog-hours-note', t(16)));
+      hours.append(node('p', '', local(r.openingHours.publishedText)), node('p', 'norway-catalog-muted', t(26))); content.append(hours);
+    } else if (!note) content.append(node('p', 'norway-catalog-hours-note', t(16)));
     const actions = node('nav', 'norway-catalog-actions'); actions.setAttribute('aria-label', r.name);
     if (local(r.visitInfo?.text)) {
       const visit = node('details', 'norway-catalog-hours');
       visit.append(node('summary', '', {nb:'Før du drar',en:'Before you go',uk:'Перед поїздкою',sv:'Före besöket',da:'Før afrejse'}[lang()]), node('p', '', local(r.visitInfo.text)));
       if (safe(r.visitInfo.source)) visit.append(link(t(17) + ' ↗', r.visitInfo.source));
       if (r.visitInfo.checked) visit.append(node('p', 'norway-catalog-muted', `${t(18)}: ${r.visitInfo.checked}`));
-      body.append(visit);
+      content.append(visit);
     }
     if (safe(r.website)) actions.append(link(t(13) + ' ↗', r.website));
     if (safe(r.bookingUrl)) actions.append(link(({nb:'Bestill',en:'Book',uk:'Забронювати',sv:'Boka',da:'Book'})[lang()] + ' ↗', r.bookingUrl));
-    actions.append(link(t(14) + ' ↗', directions(r))); body.append(actions);
+    actions.append(link(t(14) + ' ↗', directions(r))); body.append(about, actions);
     const meta = node('div', 'norway-catalog-meta');
     const infoSource = safe(r.source) || safe(r.openingHours?.source) || safe(r.website);
     if (infoSource) meta.append(link(t(17) + ' ↗', infoSource));
@@ -124,7 +162,7 @@
     if (checked) meta.append(node('span', '', `${t(18)}: ${checked}`));
     if (local(r.photoCaption)) meta.append(node('span', '', local(r.photoCaption)));
     if (safe(r.imageSource || photos[0]?.source)) meta.append(link(t(19) + ' ↗', r.imageSource || photos[0].source));
-    body.append(meta); article.append(body); return article;
+    content.append(meta); article.append(body); return article;
   }
   function render() {
     if (!grid) return;
