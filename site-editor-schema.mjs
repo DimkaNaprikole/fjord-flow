@@ -22,6 +22,16 @@ export const BLOCKS=[
  {id:'contact',name:'Главная · контакты',root:'#contact',title:'#contact h2',intro:'#contact p'},
  {id:'map',name:'Главная · карта',root:'#norwayOverview',title:'#norwayOverview h2',intro:'#norwayOverview .norway-overview__intro'}
 ];
+export const BUTTONS=[
+ {id:'signIn',name:'Войти',selector:'#headerSignIn',action:'Вход в аккаунт'},
+ {id:'register',name:'Регистрация',selector:'#headerRegister',action:'Регистрация посетителя'},
+ {id:'account',name:'Мой аккаунт',selector:'#headerMyAccount',action:'Открыть аккаунт'},
+ {id:'hero',name:'Главная · открыть места',selector:'.hero-content > a.button',action:'Перейти по ссылке',link:true},
+ {id:'waterfall',name:'Открыть водопады',selector:'#waterfallExplore',action:'Открыть галерею водопадов'},
+ ...PAGES.map(page=>({id:'nav_'+page.id,name:'Вкладка · '+page.name,selector:page.id==='home'?'body > header > nav > button[data-tab=journeys]':'body > header > nav > [href="'+page.root+'"]',action:'Открыть раздел '+page.name}))
+];
+export const BUTTON_STYLE_FIELDS={fontSize:{name:'Размер текста, px',min:11,max:32,default:14},padding:{name:'Отступ кнопки, px',min:4,max:28,default:12},radius:{name:'Скругление, px',min:0,max:50,default:12}};
+export function safeButtonHref(value){return typeof value==='string'&&(PAGES.some(p=>value===p.root)||BLOCKS.some(p=>value===p.root&&value.startsWith('#'))||value.startsWith('https://')&&safeMediaURL(value));}
 export const THEME_FIELDS={
  panel:{type:'color',label:'Фон разделов',default:'#123440'},card:{type:'color',label:'Фон карточек',default:'#193f4b'},
  action:{type:'color',label:'Кнопки',default:'#255563'},ink:{type:'color',label:'Основной текст',default:'#edf6f4'},
@@ -61,13 +71,15 @@ export function validatePlace(value){
  return out;
 }
 export function validateDocument(value){
- keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
- const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]}};
+ keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue','buttons','headerButtonOrder']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
+ const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]},buttons:{},headerButtonOrder:[]};
  if(value.theme!==undefined){keys(value.theme,Object.keys(THEME_FIELDS));for(const [key,v]of Object.entries(value.theme)){const f=THEME_FIELDS[key];if(f.type==='color'&&!/^#[0-9a-f]{6}$/i.test(v)||f.type==='number'&&(!Number.isFinite(v)||v<f.min||v>f.max)||f.type==='select'&&!f.options.includes(v))throw new Error('invalid_editor_theme');out.theme[key]=v;}}
  if(value.pages!==undefined)out.pages=records(value.pages,PAGES);
  if(value.blocks!==undefined)out.blocks=records(value.blocks,BLOCKS);
  if(value.media!==undefined){keys(value.media,MEDIA_FIELDS.map(x=>x.id));for(const[id,m]of Object.entries(value.media)){keys(m,['src','alt','credit','source']);if(!safeMediaURL(m.src))throw new Error('invalid_editor_image');const image={src:m.src};for(const field of ['alt','credit','source'])if(m[field]!==undefined){if(typeof m[field]!=='string'||m[field].length>1000)throw new Error('invalid_editor_image');image[field]=m[field];}if(image.source&&!safeMediaURL(image.source))throw new Error('invalid_editor_source');out.media[id]=image;}}
  if(value.navOrder!==undefined){const ids=PAGES.map(p=>p.id);if(!Array.isArray(value.navOrder)||value.navOrder.length>ids.length||new Set(value.navOrder).size!==value.navOrder.length||value.navOrder.some(x=>!ids.includes(x)))throw new Error('invalid_editor_order');out.navOrder=[...value.navOrder];}
+ if(value.buttons!==undefined){keys(value.buttons,BUTTONS.map(b=>b.id));for(const [id,item]of Object.entries(value.buttons)){keys(item,['label','fontSize','padding','radius','background','color','href']);const button={};if(item.label!==undefined)button.label=translated(item.label,120);for(const [key,field]of Object.entries(BUTTON_STYLE_FIELDS))if(item[key]!==undefined){if(!Number.isFinite(item[key])||item[key]<field.min||item[key]>field.max)throw new Error('invalid_button_style');button[key]=item[key];}for(const key of ['background','color'])if(item[key]!==undefined){if(typeof item[key]!=='string'||!/^#[0-9a-f]{6}$/i.test(item[key]))throw new Error('invalid_button_color');button[key]=item[key];}if(item.href!==undefined){if(id!=='hero'||!safeButtonHref(item.href))throw new Error('invalid_button_link');button.href=item.href;}out.buttons[id]=button;}}
+ if(value.headerButtonOrder!==undefined){if(!Array.isArray(value.headerButtonOrder)||value.headerButtonOrder.length>2||new Set(value.headerButtonOrder).size!==value.headerButtonOrder.length||value.headerButtonOrder.some(id=>!['signIn','register'].includes(id)))throw new Error('invalid_header_button_order');out.headerButtonOrder=[...value.headerButtonOrder];}
  if(value.catalogue!==undefined){keys(value.catalogue,['places']);if(!Array.isArray(value.catalogue.places)||value.catalogue.places.length>200)throw new Error('invalid_catalogue');out.catalogue.places=value.catalogue.places.map(validatePlace);if(new Set(out.catalogue.places.map(r=>r.id)).size!==out.catalogue.places.length)throw new Error('duplicate_place_id');}
  if(JSON.stringify(out).length>200000)throw new Error('editor_document_too_large');return out;
 }

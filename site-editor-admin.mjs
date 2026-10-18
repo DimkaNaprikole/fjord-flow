@@ -1,4 +1,5 @@
-import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=2';
+import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=3';
+import {mountVisualBuilderAdmin} from './visual-builder-admin.mjs?v=1';
 import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=3';
 import {getVisitorToken,ensureVerified} from './afonya-auth.js';
 
@@ -7,7 +8,7 @@ const OWNER='laurkent123@gmail.com';
 const nonce=crypto.randomUUID();
 const frame=$('sitePreview');
 let documentValue=emptyDocument(),savedJSON=JSON.stringify(documentValue),draftVersion=0,publishedRevision=0,authorized=false,busy=false,config=null,previewReady=false,inspected={},changeAccount=false;
-let catalogueEditor;
+let catalogueEditor,visualBuilder;
 let chosen={group:'pages',id:'home'},previewTimer,inspectSequence=0;
 const create=(tag,text,cls)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(cls)node.className=cls;return node;};
 const dirty=()=>JSON.stringify(documentValue)!==savedJSON;
@@ -21,9 +22,9 @@ function checkContrast(){
   $('contrastWarning').hidden=!poor.length;$('contrastWarning').textContent=poor.length?'Текст плохо читается на '+poor.join(', ')+'. Сделайте фон темнее или текст светлее.':'';
 }
 function previewPage(){return chosen.group==='blocks'?'home':chosen.id;}
-function sendPreview(){if(!previewReady)return;let clean;try{clean=validateDocument(documentValue);}catch{status('Проверьте заполненные ссылки и значения. Последние корректные настройки остаются в предпросмотре; изменения не сохранены.','error');return;}frame.contentWindow.postMessage({type:'fjord-editor:apply',nonce,document:clean,language:$('language').value,pageId:previewPage()},location.origin);}
+function sendPreview(){if(!previewReady)return;let clean;try{clean=validateDocument(documentValue);}catch{status('Проверьте заполненные ссылки и значения. Последние корректные настройки остаются в предпросмотре; изменения не сохранены.','error');return;}frame.contentWindow.postMessage({type:'fjord-editor:apply',nonce,document:clean,language:$('language').value,pageId:previewPage(),blockId:chosen.group==='blocks'?chosen.id:undefined},location.origin);}
 function inspect(){if(previewReady)frame.contentWindow.postMessage({type:'fjord-editor:inspect',nonce,requestId:String(++inspectSequence)},location.origin);}
-function openPreview(){previewReady=false;frame.src='./index.html?editorPreview='+encodeURIComponent(nonce)+'&editorBuild=4&reload='+Date.now();}
+function openPreview(){previewReady=false;frame.src='./index.html?editorPreview='+encodeURIComponent(nonce)+'&editorBuild=5&reload='+Date.now();}
 window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.nonce!==nonce)return;
   if(event.data.type==='fjord-editor:ready'){previewReady=true;sendPreview();setTimeout(inspect,200);setTimeout(inspect,2000);setTimeout(inspect,5000);}
@@ -68,14 +69,14 @@ function renderTheme(){
 }
 function renderMedia(){
   const host=$('mediaFields');host.replaceChildren();
-  for(const media of MEDIA_FIELDS){const section=create('section',undefined,'media-group');section.append(create('h3',media.name));
+  for(const media of MEDIA_FIELDS){const section=create('section',undefined,'media-group');section.dataset.mediaId=media.id;section.append(create('h3',media.name));
     for(const [field,title]of [['src','Ссылка на изображение'],['alt','Что изображено'],['credit','Автор / лицензия'],['source','Ссылка на источник']]){
       const label=create('label',title),input=document.createElement('input');input.type='text';input.maxLength=1000;input.value=documentValue.media[media.id]?.[field]||'';input.placeholder=field==='src'?'images/… или https://…':'';label.append(input);section.append(label);
       input.addEventListener('input',()=>{const record=documentValue.media[media.id]??={src:''};record[field]=input.value.trim();if(field==='src'&&!record.src){delete documentValue.media[media.id];for(const peer of section.querySelectorAll('input'))if(peer!==input)peer.value='';}changed();});
     }host.append(section);
   }
 }
-function renderAll({resetForm=false}={}){renderContent();renderOrder();renderTheme();renderMedia();checkContrast();controls();catalogueEditor?.refresh({resetForm});}
+function renderAll({resetForm=false}={}){renderContent();renderOrder();renderTheme();renderMedia();checkContrast();controls();catalogueEditor?.refresh({resetForm});visualBuilder?.refresh();}
 function renderHistory(history=[]){
   const host=$('historyList');host.replaceChildren();if(!history.length){host.textContent='Опубликованных версий пока нет.';return;}
   for(const item of history){const row=create('div',undefined,'history-item'),label=create('div','Версия '+item.revision),date=create('small',item.createdAt?new Date(item.createdAt).toLocaleString('ru-RU'):'');label.append(date);const button=create('button',Number(item.revision)===publishedRevision?'Текущая':'Восстановить');button.type='button';button.disabled=Number(item.revision)===publishedRevision;button.addEventListener('click',()=>rollback(item.revision));row.append(label,button);host.append(row);}
@@ -124,7 +125,7 @@ async function rollback(revision){
 
 for(const [group,heading,descriptors]of [['pages','Страницы',PAGES],['blocks','Блоки главной',BLOCKS]]){const options=create('optgroup');options.label=heading;for(const descriptor of descriptors){const option=create('option',descriptor.name);option.value=group+':'+descriptor.id;options.append(option);}$('contentTarget').append(options);}
 $('contentTarget').onchange=()=>{const[group,id]=$('contentTarget').value.split(':');chosen={group,id};inspected={};renderContent();};
-$('language').onchange=()=>{inspected={};renderContent();};
+$('language').onchange=()=>{inspected={};renderContent();visualBuilder?.refresh();};
 for(const button of document.querySelectorAll('[data-tab]'))button.onclick=()=>{for(const peer of document.querySelectorAll('[data-tab]'))peer.setAttribute('aria-pressed',String(peer===button));for(const name of ['content','theme','media','catalogue','library','history'])$(name+'Panel').hidden=name!==button.dataset.tab;catalogueEditor?.open(button.dataset.tab);};
 $('desktop').onclick=()=>{frame.classList.remove('mobile');$('desktop').setAttribute('aria-pressed','true');$('mobile').setAttribute('aria-pressed','false');};
 $('mobile').onclick=()=>{frame.classList.add('mobile');$('mobile').setAttribute('aria-pressed','true');$('desktop').setAttribute('aria-pressed','false');};
@@ -132,6 +133,7 @@ $('reloadPreview').onclick=openPreview;$('login').onclick=()=>void signIn();$('c
 $('resetTheme').onclick=()=>{documentValue.theme={};renderTheme();changed();};
 window.addEventListener('beforeunload',event=>{if(dirty()||catalogueEditor?.hasUnapplied()){event.preventDefault();event.returnValue='';}});
 catalogueEditor=mountCatalogueEditor({getDocument:()=>documentValue,changed:(catalogueChanged=false)=>{validateDocument(documentValue);if(catalogueChanged){chosen={group:'pages',id:'catalogue'};$('contentTarget').value='pages:catalogue';renderContent();}changed();},api,isAuthorized:()=>authorized,status});
+visualBuilder=mountVisualBuilderAdmin({frame,nonce,getDocument:()=>documentValue,changed,language:()=>$('language').value,onOrder:renderOrder,selectContent:(group,id)=>{chosen={group,id};$('contentTarget').value=group+':'+id;document.querySelector('[data-tab=content]').click();renderContent();$('contentFields').scrollIntoView({block:'nearest',behavior:'smooth'});},selectMedia:id=>{document.querySelector('[data-tab=media]').click();document.querySelector('[data-media-id="'+id+'"] input')?.focus();}});
 renderAll();openPreview();
 try{
   const response=await fetch('./chat-config.json',{cache:'no-store'});if(!response.ok)throw new Error();config=await response.json();
