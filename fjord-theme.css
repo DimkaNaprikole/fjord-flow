@@ -242,7 +242,11 @@ dialog.stay-gallery .stay-gallery-venue-actions a {
   #cafeNearby .cafe-result-links .cafe-route { flex: 1 1 100%; justify-content: center; }
 }
 
-/* Norway–Ukraine friendship: always readable, with no moving controls. */
-.solidarity-banner{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 18px;box-sizing:border-box;width:100%;padding:10px 20px;background:var(--ff-deep);color:var(--ff-ink);border-bottom:1px solid var(--ff-line-strong);font:500 12px/1.5 Manrope,'Segoe UI',sans-serif;text-align:center}
-.solidarity-flags{display:inline-flex;align-items:center;gap:8px;font-size:20px;line-height:1.2}.solidarity-flags>span{color:#d0e7df;font-size:18px}.solidarity-banner strong{font-weight:800;letter-spacing:.04em}.solidarity-message{color:var(--ff-muted)}.solidarity-pledge{color:#f3d875;font-weight:700;border-left:1px solid var(--ff-line-strong);padding-left:18px}
-@media(max-width:600px){.solidarity-banner{gap:4px 10px;padding:9px 12px;font-size:11px}.solidarity-message{flex-basis:100%;order:3}.solidarity-pledge{border:0;padding:0}.solidarity-flags{font-size:18px}}
+/* Compact street-art banner: white brick, blue/yellow paint, live translated text. */
+.solidarity-banner{position:relative;isolation:isolate;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 16px;box-sizing:border-box;width:100%;min-height:46px;padding:7px 18px;background:#edf0e8 url('./images/solidarity-brick.svg') repeat;color:#101d23;border-bottom:1px solid #bcc6bd;font:600 12px/1.4 Manrope,'Segoe UI',sans-serif;text-align:center}
+.solidarity-banner::before{content:'';position:absolute;inset:0;z-index:-1;background:url('./images/solidarity-paint.svg') center/auto 100% no-repeat;opacity:.93;pointer-events:none}
+.solidarity-banner>strong,.solidarity-pledge{font-family:Impact,'Arial Black','Arial Narrow',sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.045em;color:#0a1820;text-shadow:0 1px #ffffff45;line-height:1.1}
+.solidarity-banner>strong{font-size:19px;transform:rotate(-1deg)}.solidarity-pledge{font-size:20px;transform:rotate(.7deg)}
+.solidarity-flags{display:inline-flex;align-items:center;gap:6px;line-height:1;flex-shrink:0}.solidarity-flags svg{width:23px;height:17px;filter:drop-shadow(0 1px 1px #0003)}.solidarity-flags>span{color:#14262c;font-size:20px;font-weight:900}.solidarity-message{font-size:11px;color:#17363d;font-weight:800}
+@media(max-width:650px){.solidarity-banner{gap:4px 10px;padding:7px 10px;min-height:44px}.solidarity-message{display:none}.solidarity-banner>strong{font-size:16px}.solidarity-pledge{font-size:17px}.solidarity-flags{gap:4px}.solidarity-flags svg{width:20px;height:15px}}
+@media(max-width:380px){.solidarity-banner{gap:4px 8px}.solidarity-flags{gap:3px}.solidarity-flags svg{width:18px;height:13px}.solidarity-banner>strong{font-size:14px}.solidarity-pledge{font-size:15px}}
