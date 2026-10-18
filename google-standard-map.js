@@ -19,7 +19,7 @@
     const [{Map,InfoWindow},{AdvancedMarkerElement}]=await Promise.all([google.maps.importLibrary('maps'),google.maps.importLibrary('marker')]);
     const map=new Map(container,{center:{lat:60.37,lng:10.56},zoom:10,mapId:'DEMO_MAP_ID',mapTypeId:'hybrid',gestureHandling:'greedy',scrollwheel:true,zoomControl:true,cameraControl:true,mapTypeControl:true,mapTypeControlOptions:{mapTypeIds:['roadmap','hybrid','satellite','terrain']},fullscreenControl:false,streetViewControl:true,rotateControl:true,keyboardShortcuts:true,scaleControl:true,clickableIcons:true});
     const info=new InfoWindow({maxWidth:280});let markers=[],signature='',first=true,userMarker=null,routeLine=null;
-    function frame(rows,route){const points=Array.isArray(route?.points)?route.points.filter(valid):rows;if(!points.length)return;const bounds=new google.maps.LatLngBounds();points.forEach(p=>bounds.extend({lat:p.latitude,lng:p.longitude}));map.fitBounds(bounds,45);}
+    function frame(rows,route){const points=Array.isArray(route?.points)?route.points.filter(valid):rows;if(!points.length)return;if(points.length===1){map.setCenter({lat:points[0].latitude,lng:points[0].longitude});map.setZoom(14);return;}const bounds=new google.maps.LatLngBounds();points.forEach(p=>bounds.extend({lat:p.latitude,lng:p.longitude}));map.fitBounds(bounds,45);}
     return {
       render(rows,route,category='all',fit=false){
         const visible=rows.filter(p=>valid(p)&&(category==='all'||p.category===category));
