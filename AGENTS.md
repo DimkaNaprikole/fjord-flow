@@ -1,6 +1,7 @@
 # Visual consistency
 
 - Use `fjord-theme.css` as the shared visual system; it loads after feature CSS.
+- Align top-level content sections with the shared `--ff-page-gutter`, `--ff-content-max` and `--ff-panel-inset` rails; avoid separate percentage side margins for new sections.
 - Reuse `--ff-*` tokens for panels, cards, typography, controls and dialogs. Text buttons use a dark teal background and a light label; do not introduce cream, white or pink button variants.
 - Keep scenic page backgrounds, photographs, flip-card imagery and map tiles intact. Do not replace their background images when changing text surfaces.
 - Keep the approved Ukraine/Norway composition as a full-width header background behind branding and navigation; do not turn it into standalone image cards. Preserve the complete “Wake Up Ukraine” framing.

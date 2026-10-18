@@ -270,3 +270,12 @@ header nav.site-tabs [role=tab]:hover{background:#2a5a63;border-color:#28574d}
 header nav.site-tabs [role=tab][aria-selected=true]{background:#28574d;color:#fff;border-color:#28574d;box-shadow:inset 0 -3px #b9dbcc}
 [data-site-tab][hidden]{display:none!important}
 @media(max-width:650px){header .brand{font-size:22px}.solidarity-copy strong{font-size:13px}.solidarity-message{font-size:10px}.solidarity-pledge{font-size:10px}body>header>nav.site-tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;width:100%;padding:5px;scrollbar-width:thin}header nav.site-tabs [role=tab]{flex:none;min-height:44px;font-size:11px;padding:9px 11px}}
+
+/* One outer rail for page sections; nested cards/dialogs keep their own layout. */
+:root{--ff-page-gutter:clamp(12px,3vw,40px);--ff-content-max:1440px;--ff-panel-inset:clamp(16px,2.5vw,32px)}
+#journeys>:is(#homePanel,#scenicRoutes,.waterfall-story,#routeExperiences,#cafeStops,#staysSauna,#droneExperience,#travelStories,#community,#norwayCatalogue,#buaEquipment,#norwayWebcams,#municipalNews,#travelUpdates,#travelServices,#shoppingCentres),
+body>:is(#advertising,#contact,#norwayOverview){box-sizing:border-box;width:calc(100% - 2 * var(--ff-page-gutter));max-width:var(--ff-content-max);margin-inline:auto}
+#journeys>:is(#scenicRoutes,#routeExperiences,#cafeStops,#staysSauna,#travelStories,#community,#norwayCatalogue,#buaEquipment,#norwayWebcams,#municipalNews,#travelUpdates,#travelServices,#shoppingCentres),
+body>:is(#contact,#norwayOverview){padding-inline:var(--ff-panel-inset)}
+/* Headings, filters and grids share the panels' inner text rail. */
+#journeys>:is(#about,.region-section,#collection,#cards,.searchline,.filterline,.place-pagination){box-sizing:border-box;width:calc(100% - 2 * var(--ff-page-gutter));max-width:var(--ff-content-max);margin-inline:auto;padding-inline:var(--ff-panel-inset)}
