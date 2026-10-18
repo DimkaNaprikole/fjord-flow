@@ -16,6 +16,16 @@
 #community .community-group-pages{justify-content:center;margin-top:18px;color:var(--ff-ink,#edf6f4);font-size:13px}
 #community .community-group-pages button:disabled{opacity:.5;cursor:default}
 #community .community-group-empty{grid-column:1/-1;color:var(--ff-muted,#b8cecf)}
+#community .community-hub{margin:24px 0;padding:22px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:16px;background:var(--ff-field,#0c2a36);color:var(--ff-ink,#edf6f4)}
+#community .community-hub h3{margin:0;font-size:clamp(22px,3vw,30px);line-height:1.3}
+#community .community-hub p{color:var(--ff-muted,#b8cecf);line-height:1.7}
+#community .community-hub ul{display:flex;gap:8px;flex-wrap:wrap;list-style:none;padding:0;margin:16px 0}
+#community .community-hub li{font-size:13px;padding:6px 10px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:20px;overflow-wrap:anywhere}
+#community .community-hub nav{display:flex;flex-wrap:wrap;gap:10px}
+#community .community-hub a{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box;padding:10px 14px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:12px;background:var(--ff-action,#255563);color:var(--ff-ink,#edf6f4);font:700 13px/1.5 Manrope,sans-serif;text-decoration:none}
+#community .community-hub li{padding:0}
+#community .community-hub li a{padding:8px 12px;border:0;border-radius:20px;background:transparent;font:inherit}
+#community .community-hub a:focus-visible{outline:3px solid var(--fjord-focus,#e6c78c);outline-offset:3px}
 #community :is(.community-group-tools input,.community-group-links a,.community-group-card a,.community-group-pages button,.community-group-grid>button):focus-visible{outline:3px solid var(--fjord-focus,#e6c78c);outline-offset:3px}
 @media(max-width:900px){#community .community-group-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){#community .community-group-grid{grid-template-columns:minmax(0,1fr)}#community .community-group-tools input{font-size:16px}#community .community-group-links{width:100%}}
