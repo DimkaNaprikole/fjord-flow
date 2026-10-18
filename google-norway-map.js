@@ -43,6 +43,7 @@
       applyCamera(cameraForPoints(routePoints.length?routePoints:filterPlaces(rows,category)));
     };
     return {
+      zoom(direction){if(!destroyed)applyCamera({range:Math.max(250,Math.min(15000000,map.range*(direction>0?.65:1.5)))});},
       render(rows,route=null,category='all') {
         if(destroyed)return 0;clear();lastRows=Array.isArray(rows)?rows:[];lastRoute=route;lastCategory=category;
         filterPlaces(lastRows,category).forEach(record=>{

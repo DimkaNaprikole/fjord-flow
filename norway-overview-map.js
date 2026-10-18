@@ -30,6 +30,8 @@
   const standardCanvas=el('div','norway-overview__canvas norway-overview__standard'),standardButton=el('button','','Google Maps'),locationButton=el('button','','◎'),typeControls=el('div','norway-overview__providers');
   standardCanvas.id='norwayStandardCanvas';standardCanvas.hidden=true;typeControls.hidden=true;
   googleCanvas.id='norwayGoogleCanvas';googleCanvas.hidden=true;details.hidden=true;
+  // Let the page scroll over the map; keep click-and-drag panning.
+  [standardCanvas,googleCanvas].forEach(host=>host.addEventListener('wheel',event=>event.stopImmediatePropagation(),{capture:true,passive:true}));
   const googleConfig=window.FjordGoogleMapConfig || {};providerControls.hidden=googleConfig.enabled!==true;
   for(const button of [googleButton,flatButton,fullButton])button.type='button';
   standardButton.type='button';locationButton.type='button';
@@ -39,7 +41,7 @@
   let rows=[], category='all', routeKey='', loaded=false, loading=false;
   let googleMap=null, googleActive=false, googleLoading=false, googleGeneration=0;
   let standardMap=null,standardActive=false,standardLoading=false,mapType='hybrid',standardGeneration=0;
-  const ui={nb:['Kart','Satellitt','Terreng','Min posisjon','Vis meg på kartet','Kunne ikke finne posisjonen. Prøv Chrome eller velg en rute.','Zoom med musehjulet. Dra kartet for å flytte. Velg kartlag med knappene.'],en:['Map','Satellite','Terrain','My location','Show me on the map','Location unavailable. Try Chrome or choose a route.','Use the mouse wheel to zoom and drag to move. Change layers with the buttons.'],uk:['Карта','Супутник','Рельєф','Де я','Показати мене на карті','Не вдалося визначити місце. Спробуйте Chrome або оберіть маршрут.','Колесо миші — масштаб. Перетягніть карту, щоб пересунути. Шари перемикаються кнопками.'],sv:['Karta','Satellit','Terräng','Min position','Visa mig på kartan','Positionen kunde inte hittas. Prova Chrome eller välj en rutt.','Zooma med mushjulet och dra för att flytta kartan. Byt lager med knapparna.'],da:['Kort','Satellit','Terræn','Min position','Vis mig på kortet','Positionen kunne ikke findes. Prøv Chrome eller vælg en rute.','Zoom med musehjulet og træk for at flytte kortet. Skift lag med knapperne.']};
+  const ui={nb:['Kart','Satellitt','Terreng','Min posisjon','Vis meg på kartet','Kunne ikke finne posisjonen. Prøv Chrome eller velg en rute.','Zoom med + / −. Dra kartet for å flytte. Musehjulet ruller siden.'],en:['Map','Satellite','Terrain','My location','Show me on the map','Location unavailable. Try Chrome or choose a route.','Zoom with + / −. Drag to move the map. The mouse wheel scrolls the page.'],uk:['Карта','Супутник','Рельєф','Де я','Показати мене на карті','Не вдалося визначити місце. Спробуйте Chrome або оберіть маршрут.','Масштаб — кнопками + / −. Перетягуйте карту мишею. Колесо прокручує сторінку.'],sv:['Karta','Satellit','Terräng','Min position','Visa mig på kartan','Positionen kunde inte hittas. Prova Chrome eller välj en rutt.','Zooma med + / −. Dra för att flytta kartan. Mushjulet rullar sidan.'],da:['Kort','Satellit','Terræn','Min position','Vis mig på kortet','Positionen kunne ikke findes. Prøv Chrome eller vælg en rute.','Zoom med + / −. Træk for at flytte kortet. Musehjulet ruller siden.']};
   const googleCopy={nb:['Fullskjerm','Google 3D kunne ikke åpnes. Vanlig kart er fortsatt tilgjengelig.','Satellitt og 3D. Velg en markør for foto og informasjon.'],en:['Full screen','Google 3D could not open. The standard map is still available.','Satellite and 3D. Select a marker for photographs and details.'],uk:['На весь екран','Не вдалося відкрити Google 3D. Звичайна карта залишається доступною.','Супутник і 3D. Оберіть позначку для фото й інформації.'],sv:['Helskärm','Google 3D kunde inte öppnas. Den vanliga kartan finns kvar.','Satellit och 3D. Välj en markör för bilder och information.'],da:['Fuld skærm','Google 3D kunne ikke åbnes. Det almindelige kort er stadig tilgængeligt.','Satellit og 3D. Vælg en markør for billeder og oplysninger.']};
   const routes=()=>window.FjordTripTools?.localRoutes || {};
   function labels() {
@@ -48,6 +50,7 @@
     googleButton.setAttribute('aria-pressed',String(googleActive));flatButton.setAttribute('aria-pressed',String(!googleActive));if(googleActive)note.textContent=googleCopy[lang()][2];
     standardButton.setAttribute('aria-pressed',String(standardActive));flatButton.setAttribute('aria-pressed',String(!googleActive&&!standardActive));locationButton.textContent='◎ '+ui[lang()][3];locationButton.title=ui[lang()][4];
     typeControls.hidden=!standardActive;typeControls.replaceChildren();['roadmap','hybrid','terrain'].forEach((type,i)=>{const b=el('button','',ui[lang()][i]);b.type='button';b.setAttribute('aria-pressed',String(mapType===type));b.addEventListener('click',()=>{mapType=type;standardMap?.setType(type);labels();});typeControls.append(b);});
+    if(googleActive){typeControls.hidden=false;typeControls.replaceChildren();[1,-1].forEach(direction=>{const b=el('button','',direction>0?'+':'−');b.type='button';b.setAttribute('aria-label',direction>0?'Zoom in':'Zoom out');b.addEventListener('click',()=>googleMap?.zoom(direction));typeControls.append(b);});}
     if(!googleActive)note.textContent=ui[lang()][6];
     filters.replaceChildren(); ['all',...categories].forEach((key,i)=>{const b=el('button','',a[i+3]);b.type='button';b.setAttribute('aria-pressed',String(category===key)); if(key!=='all')b.style.setProperty('--map-category',colors[key]); b.addEventListener('click',()=>{category=key;labels();if(loaded)draw(true);});filters.append(b);});
     select.replaceChildren(); const first=el('option','',a[8]);first.value='';select.append(first);
@@ -95,7 +98,7 @@
     if(googleConfig.enabled!==true||standardLoading)return;
     if(!loaded){await load();if(!loaded)return;}
     const generation=++standardGeneration;googleGeneration++;googleActive=false;googleCanvas.hidden=true;standardCanvas.hidden=false;standardLoading=true;standardButton.disabled=true;status.textContent=t()[12];
-    try{if(!standardMap)standardMap=await window.FjordGoogleStandardMap.create(standardCanvas,{...googleConfig,userActivated:true,language:lang(),buildInfo:popup});if(generation!==standardGeneration)return;standardActive=true;canvas.hidden=true;details.hidden=true;standardMap.resize();labels();draw(true);}
+    try{if(!standardMap)standardMap=await window.FjordGoogleStandardMap.create(standardCanvas,{...googleConfig,userActivated:true,scrollwheel:false,language:lang(),buildInfo:popup});if(generation!==standardGeneration)return;standardActive=true;canvas.hidden=true;details.hidden=true;standardMap.resize();labels();draw(true);}
     catch{flatView(true);}finally{standardLoading=false;standardButton.disabled=false;}
   });
   locationButton.addEventListener('click',async()=>{
