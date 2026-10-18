@@ -293,6 +293,7 @@ body>:is(#contact,#norwayOverview){padding-inline:var(--ff-panel-inset)}
 .portal-art-rail.left{left:0}.portal-art-rail.right{right:0;transform:scaleX(-1)}
 .portal-art-rail.top,.portal-art-rail.bottom{left:0;right:0;height:var(--ff-ornament-width);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent);mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent)}
 .portal-art-rail.top{top:0}.portal-art-rail.bottom{bottom:0;transform:scaleY(-1)}
+body>header>.portal-art-start{position:absolute;top:2px;left:2px;right:2px;width:auto;max-width:none;z-index:5;opacity:.88}
 .portal-art-finish{position:relative;width:100%;height:var(--ff-ornament-width);margin:0;padding:0;pointer-events:none;overflow:hidden}
 .portal-art-finish>.portal-art-end{display:block;position:absolute;left:0;right:0;bottom:0;top:auto;width:100%;max-width:none;height:var(--ff-ornament-width);margin:0;padding:0;z-index:1;opacity:.88}
 .portal-art-rail.top::before,.portal-art-rail.bottom::before{content:'';position:absolute;left:50%;top:50%;width:var(--ff-ornament-width);height:calc(100vw - 4px);transform:translate(-50%,-50%) rotate(90deg)}

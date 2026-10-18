@@ -3,11 +3,18 @@
   'use strict';
   if(document.querySelector('.portal-art-frame'))return;
   const frame=document.createElement('div');frame.className='portal-art-frame';frame.setAttribute('aria-hidden','true');
-  for(const side of ['left','right','top']){
+  for(const side of ['left','right']){
     const rail=document.createElement('span');rail.className='portal-art-rail '+side;
     frame.append(rail);
   }
   document.body.append(frame);
+  const header=document.querySelector('body>header');
+  if(header){
+    const top=document.createElement('span');
+    top.className='portal-art-rail top portal-art-start';
+    top.setAttribute('aria-hidden','true');
+    header.append(top);
+  }
   {
     const end=document.createElement('div');
     end.className='portal-art-finish';
