@@ -1,4 +1,4 @@
-/* Two sides of one postcard, with the existing gallery and booking actions. */
+/* Two sides of one postcard, with the existing gallery and place information. */
 (() => {
   const grid = document.querySelector('#cards');
   if (!grid) return;
@@ -28,7 +28,7 @@
       region.textContent = heading.querySelector('.region')?.textContent || '';
       const title = document.createElement('strong');
       title.textContent = heading.querySelector('h3')?.textContent || '';
-      caption.append(window.FjordDemoPrices.badge(title.textContent),region,title);
+      caption.append(region,title);
       caption.addEventListener('click', () => heading.querySelector('[data-gallery]').click());
       card.append(caption);
       const toggle = document.createElement('button');

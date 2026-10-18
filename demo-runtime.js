@@ -1,24 +1,57 @@
-/* Static public preview. No accounts, remote bookings or personal-data storage. */
+/* Static informational guide: public place data and road planning, without trip orders. */
 (()=>{'use strict';
 const nativeFetch=window.fetch.bind(window),copy=v=>JSON.parse(JSON.stringify(v));
 // Resolve against this script so a project Pages subdirectory and a domain root both work.
 const publicBase=new URL('.',document.currentScript?.src||document.baseURI);
 const apiPrefix=new URL('api/',publicBase).pathname;
 const messages={
- en:{blocked:'Public demo: accounts and posts are not enabled. No information was submitted.',book:'Demo reservation only. No payment or real booking was made.',bad:'Check the selected departure and number of seats.',route:'The road service is unavailable. Try a featured itinerary or open the route in Google Maps.',origin:'Enter an unambiguous Norwegian town or latitude,longitude.',access:'Choose a mainland road access point within 2 km of a mapped road.',invalid:'Choose valid destinations, stops and a detour between 0 and 240 minutes.'},
- nb:{blocked:'Offentlig demo: kontoer og innlegg er ikke aktivert. Ingen opplysninger ble sendt.',book:'Kun demoreservasjon. Ingen betaling eller faktisk bestilling er gjennomført.',bad:'Kontroller avgang og antall plasser.',route:'Rutetjenesten er utilgjengelig. Prøv en foreslått tur eller åpne ruten i Google Maps.',origin:'Skriv et entydig norsk stedsnavn eller breddegrad,lengdegrad.',access:'Velg et startpunkt på fastlandet innen 2 km fra en kartlagt vei.',invalid:'Velg gyldige reisemål, stopp og en omvei mellom 0 og 240 minutter.'},
- uk:{blocked:'Публічне демо: облікові записи й дописи не активовані. Жодних даних не надіслано.',book:'Лише демонстрація бронювання. Оплати чи справжнього бронювання не було.',bad:'Перевірте поїздку та кількість місць.',route:'Сервіс маршрутів недоступний. Оберіть готову подорож або відкрийте маршрут у Google Maps.',origin:'Уведіть однозначну назву міста Норвегії або широту,довготу.',access:'Оберіть точку на материку не далі 2 км від дороги.',invalid:'Оберіть чинні місця, зупинки та об’їзд від 0 до 240 хвилин.'},
- sv:{blocked:'Offentlig demo: konton och inlägg är inte aktiverade. Inga uppgifter skickades.',book:'Endast demobokning. Ingen betalning eller riktig bokning gjordes.',bad:'Kontrollera avgång och antal platser.',route:'Ruttjänsten är otillgänglig. Prova en föreslagen resa eller öppna rutten i Google Maps.',origin:'Ange en entydig norsk ort eller latitud,longitud.',access:'Välj en plats på fastlandet inom 2 km från en kartlagd väg.',invalid:'Välj giltiga resmål, stopp och en omväg mellan 0 och 240 minuter.'},
- da:{blocked:'Offentlig demo: konti og indlæg er ikke aktiveret. Ingen oplysninger blev sendt.',book:'Kun demoreservation. Ingen betaling eller rigtig booking blev foretaget.',bad:'Kontrollér afgang og antal pladser.',route:'Rutetjenesten er utilgængelig. Prøv en foreslået tur eller åbn ruten i Google Maps.',origin:'Indtast et entydigt norsk stednavn eller breddegrad,længdegrad.',access:'Vælg et sted på fastlandet højst 2 km fra en kortlagt vej.',invalid:'Vælg gyldige rejsemål, stop og en omvej mellem 0 og 240 minutter.'}
+  "en": {
+    "blocked": "Community posting is not available yet. You can still explore the guide.",
+    "bookingDisabled": "This guide does not sell or reserve trips. Accommodation is booked with the provider.",
+    "route": "The road service is unavailable. Try a featured itinerary or open the route in Google Maps.",
+    "origin": "Enter an unambiguous Norwegian town or latitude,longitude.",
+    "access": "Choose a mainland road access point within 2 km of a mapped road.",
+    "invalid": "Choose valid destinations, stops and a detour between 0 and 240 minutes."
+  },
+  "nb": {
+    "blocked": "Innlegg i fellesskapet er ikke tilgjengelig ennå. Du kan fortsatt utforske guiden.",
+    "bookingDisabled": "Denne guiden selger eller bestiller ikke reiser. Overnatting bestilles hos tilbyderen.",
+    "route": "Rutetjenesten er utilgjengelig. Prøv en foreslått tur eller åpne ruten i Google Maps.",
+    "origin": "Skriv et entydig norsk stedsnavn eller breddegrad,lengdegrad.",
+    "access": "Velg et startpunkt på fastlandet innen 2 km fra en kartlagt vei.",
+    "invalid": "Velg gyldige reisemål, stopp og en omvei mellom 0 og 240 minutter."
+  },
+  "uk": {
+    "blocked": "Дописи спільноти ще недоступні. Путівником можна користуватися.",
+    "bookingDisabled": "Цей путівник не продає й не бронює поїздки. Житло бронюють у постачальника.",
+    "route": "Сервіс маршрутів недоступний. Оберіть готову подорож або відкрийте маршрут у Google Maps.",
+    "origin": "Уведіть однозначну назву міста Норвегії або широту,довготу.",
+    "access": "Оберіть точку на материку не далі 2 км від дороги.",
+    "invalid": "Оберіть чинні місця, зупинки та об’їзд від 0 до 240 хвилин."
+  },
+  "sv": {
+    "blocked": "Inlägg i gemenskapen är inte tillgängliga än. Du kan fortfarande utforska guiden.",
+    "bookingDisabled": "Guiden säljer eller bokar inte resor. Boende bokas hos leverantören.",
+    "route": "Ruttjänsten är otillgänglig. Prova en föreslagen resa eller öppna rutten i Google Maps.",
+    "origin": "Ange en entydig norsk ort eller latitud,longitud.",
+    "access": "Välj en plats på fastlandet inom 2 km från en kartlagd väg.",
+    "invalid": "Välj giltiga resmål, stopp och en omväg mellan 0 och 240 minuter."
+  },
+  "da": {
+    "blocked": "Indlæg i fællesskabet er ikke tilgængelige endnu. Du kan stadig udforske guiden.",
+    "bookingDisabled": "Guiden sælger eller booker ikke rejser. Overnatning bookes hos udbyderen.",
+    "route": "Rutetjenesten er utilgængelig. Prøv en foreslået tur eller åbn ruten i Google Maps.",
+    "origin": "Indtast et entydigt norsk stednavn eller breddegrad,længdegrad.",
+    "access": "Vælg et sted på fastlandet højst 2 km fra en kortlagt vej.",
+    "invalid": "Vælg gyldige rejsemål, stop og en omvej mellem 0 og 240 minutter."
+  }
 };
 const msg=k=>(messages[window.FjordI18n?.language||document.documentElement.lang]||messages.en)[k];
 const fail=k=>{throw Error(msg(k))},response=(v,status=200)=>new Response(JSON.stringify(v),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'}});
 window.FjordPublicDemo=Object.freeze({accountMessage:()=>msg('blocked')});
-const unpaidMessages={en:'Unpaid demo event recorded. No seats reserved and no payment made.',nb:'Ubetalt demohendelse registrert. Ingen plasser er reservert og ingen betaling er utført.',uk:'Неоплачену демоподію записано. Місця не зарезервовано, оплату не здійснено.',sv:'Obetald demohändelse registrerad. Inga platser reserverade och ingen betalning gjord.',da:'Ubetalt demohændelse registreret. Ingen pladser reserveret og ingen betaling foretaget.'};
-const unpaidMessage=()=>unpaidMessages[window.FjordI18n?.language||document.documentElement.lang]||unpaidMessages.en;
-let statePromise,routesPromise;const orders=new Map();
+let statePromise,routesPromise;
 async function asset(path){const r=await nativeFetch(new URL('demo-data/'+path,publicBase));if(!r.ok)fail('route');return r.json()}
-async function state(){return statePromise||(statePromise=asset('state.json?v=3').then(s=>{s.destinations.forEach(p=>{if(p.price!=null)p.price=window.FjordDemoPrices.priceFor(p.name);});return s;}).catch(e=>{statePromise=null;throw e}))}
+async function state(){return statePromise||(statePromise=asset('state.json?v=4').catch(e=>{statePromise=null;throw e}))}
 const norm=s=>String(s??'').normalize('NFC').trim().toLocaleLowerCase();
 const point=p=>{const a=[Number(p.latitude),Number(p.longitude)];if(!a.every(Number.isFinite)||a[0]<57||a[0]>72||a[1]<3||a[1]>33)fail('access');return a};
 const coords=s=>/^\s*[+-]?\d+(?:\.\d+)?\s*,\s*[+-]?\d+(?:\.\d+)?\s*$/.test(s)?s.split(',').map(Number):null;
@@ -52,7 +85,7 @@ window.fetch=async function(input,init={}){const url=new URL(input instanceof Re
  if(path.startsWith('community'))return response({error:msg('blocked')},403);
  let payload={};if(init.body)payload=JSON.parse(init.body);else if(input instanceof Request&&method!=='GET')payload=await input.clone().json();
  if(path==='route'&&method==='POST')return response(await route(payload,signal));
- if(path==='book'&&method==='POST'){const s=await state(),key=String(payload.event_id||'');if(!key||key.length>100)return response({error:msg('bad')},400);const fingerprint=JSON.stringify([payload.departure,payload.seats,payload.paid,payload.payment_method]);if(orders.has(key)){const prev=orders.get(key);if(prev.fingerprint!==fingerprint)return response({error:msg('bad')},409);return response({...prev.result,duplicate:true,message:prev.result.status==='awaiting_payment'?unpaidMessage():msg('book')})}const d=s.destinations.find(x=>x.id===payload.departure),seats=payload.seats;if(!d||!Number.isInteger(seats)||seats<1||seats>12||!['vipps','card','manual'].includes(payload.payment_method??'vipps'))return response({error:msg('bad')},400);if(payload.paid!==true){const result={status:'awaiting_payment',demo:true,message:unpaidMessage()};orders.set(key,{fingerprint,result});return response(result)}if(seats>d.available)return response({error:msg('bad')},400);d.available-=seats;const result={id:'demo-'+crypto.randomUUID().slice(0,8),duplicate:false,demo:true,message:msg('book')};orders.set(key,{fingerprint,result});return response(result)}
+ if(path==='book')return response({error:msg('bookingDisabled')},410);
  return response({error:msg('blocked')},403);
  }catch(e){checkAbort(signal);return response({error:e instanceof Error?e.message:msg('route')},400)}};
 })();

@@ -16,5 +16,5 @@
   }
  }
  window.addEventListener('fjord:state',apply);
- fetch('./scenic-additions.json?v=1').then(r=>{if(!r.ok)throw Error('Catalogue');return r.json();}).then(rows=>{additions=rows;apply();}).catch(()=>{});
+ fetch('./scenic-additions.json?v=2').then(r=>{if(!r.ok)throw Error('Catalogue');return r.json();}).then(rows=>{additions=rows;apply();}).catch(()=>{});
 })();

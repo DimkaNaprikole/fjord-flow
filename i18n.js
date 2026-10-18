@@ -331,13 +331,26 @@ Too many login attempts. Try again in 15 minutes.|For mange innloggingsforsøk. 
 Please log in first.|Logg inn først.|Спочатку увійдіть.|Logga in först.|Log ind først.
 Password must contain 8–256 characters.|Passordet må ha 8–256 tegn.|Пароль має містити 8–256 символів.|Lösenordet måste innehålla 8–256 tecken.|Adgangskoden skal indeholde 8–256 tegn.
 `);
+/* Guide vocabulary; accommodation reservations remain with external providers. */
+addRows(`
+Places|Steder|Місця|Platser|Steder
+External search. Choose dates and check prices and availability with the provider. Reservations are completed on their website.|Eksternt søk. Velg datoer og sjekk priser og tilgjengelighet hos tilbyderen. Bestillingen gjennomføres på deres nettside.|Зовнішній пошук. Оберіть дати й перевірте ціни та наявність у постачальника. Бронювання завершується на його сайті.|Extern sökning. Välj datum och kontrollera priser och tillgänglighet hos leverantören. Bokningen slutförs på deras webbplats.|Ekstern søgning. Vælg datoer og tjek priser og ledighed hos udbyderen. Bookingen afsluttes på deres hjemmeside.
+All places|Alle steder|Усі місця|Alla platser|Alle steder
+Explore this place|Utforsk dette stedet|Дізнатися про місце|Utforska denna plats|Udforsk dette sted
+NORWAY GUIDE|NORGESGUIDE|ПУТІВНИК НОРВЕГІЄЮ|NORGEGUIDE|NORGESGUIDE
+DISCOVER NORWAY · NEAR & FAR|OPPDAG NORGE · NÆRT OG FJERNT|ВІДКРИЙТЕ НОРВЕГІЮ · ПОРУЧ І ДАЛІ|UPPTÄCK NORGE · NÄRA OCH LÅNGT BORT|OPLEV NORGE · NÆRT OG FJERNT
+Discover places nearby|Oppdag steder i nærheten|Відкрийте місця поруч|Upptäck platser i närheten|Opdag steder i nærheden
+PLACES TO DISCOVER / NORWAY|STEDER Å OPPDAGE / NORGE|МІСЦЯ ДЛЯ ВІДКРИТТІВ / НОРВЕГІЯ|PLATSER ATT UPPTÄCKA / NORGE|STEDER AT OPDAGE / NORGE
+Choose a place, then plan your own visit.|Velg et sted, og planlegg ditt eget besøk.|Оберіть місце та сплануйте власну подорож.|Välj en plats och planera ditt eget besök.|Vælg et sted, og planlæg dit eget besøg.
+No places match this selection. Try another name or choose All places.|Ingen steder passer med dette utvalget. Prøv et annet navn eller velg Alle steder.|За цим запитом місць не знайдено. Спробуйте іншу назву або оберіть Усі місця.|Inga platser matchar detta urval. Prova ett annat namn eller välj Alla platser.|Ingen steder matcher dette udvalg. Prøv et andet navn, eller vælg Alle steder.
+`);
 let language='nb';try{const saved=localStorage.getItem('fjordflow.language');if(dictionaries[saved])language=saved}catch{}
 const originals=new WeakMap(),attributes=new WeakMap(),reverse=new Map();
 function rebuildReverse(){reverse.clear();for(const d of Object.values(dictionaries))for(const [en,value] of Object.entries(d))if(!reverse.has(value))reverse.set(value,en)}rebuildReverse();
 const skip='script,style,textarea,input,[data-i18n-ignore],[translate="no"],.post-body,.post-meta,.community-post h3,.creator-credit a';
 function t(text){const raw=String(text??''),key=raw.trim(),source=reverse.get(key)||key;let out=dictionaries[language][source];if(out===undefined){out=dynamic(source,language);if(out===undefined)return raw}return raw.slice(0,raw.indexOf(key))+out+raw.slice(raw.indexOf(key)+key.length)}
 function dynamic(s,l){const vals=(en,nb,uk,sv,da)=>({en,nb,uk,sv,da}[l]);let m;
-if(m=s.match(/^(\d+) journeys$/))return vals(s,`${m[1]} reiser`,`${m[1]} подорожей`,`${m[1]} resor`,`${m[1]} rejser`);
+if(m=s.match(/^(\d+) (?:places|journeys)$/))return vals(`${m[1]} places`,`${m[1]} steder`,`${m[1]} місць`,`${m[1]} platser`,`${m[1]} steder`);
 if(m=s.match(/^(.*?)(\d+) of (\d+) seats$/))return vals(s,`${m[1]}${m[2]} av ${m[3]} plasser`,`${m[1]}${m[2]} з ${m[3]} місць`,`${m[1]}${m[2]} av ${m[3]} platser`,`${m[1]}${m[2]} af ${m[3]} pladser`);
 if(m=s.match(/^(\d+) selected stops · \+(\d+) min vs\. direct · driving only$/))return vals(s,`${m[1]} valgte stopp · +${m[2]} min mot direkte rute · kun kjøring`,`${m[1]} зупинок · +${m[2]} хв проти прямого шляху · лише їзда`,`${m[1]} valda stopp · +${m[2]} min mot direkt rutt · endast körning`,`${m[1]} valgte stop · +${m[2]} min mod direkte rute · kun kørsel`);
 if(m=s.match(/^(\d+) stops selected$/))return vals(s,`${m[1]} stopp valgt`,`${m[1]} зупинок вибрано`,`${m[1]} stopp valda`,`${m[1]} stop valgt`);

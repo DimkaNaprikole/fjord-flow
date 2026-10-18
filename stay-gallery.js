@@ -74,7 +74,7 @@
       const list = (Array.isArray(venue.gallery) ? venue.gallery : [{src: venue.image, kind: 'grounds'}]).filter(p => valid(p.src));
       if (!list.length) return;
       if (!dialog) create();
-      record = venue; photos = list; title.textContent = venue.name; window.FjordDemoPrices.gallery(dialog,venue.name);
+      record = venue; photos = list; title.textContent = venue.name;
       close.setAttribute('aria-label', w()[1]); previous.setAttribute('aria-label', w()[2]); next.setAttribute('aria-label', w()[3]);
       source.textContent = w()[6] + ' ↗'; error.textContent = w()[7];
       thumbs.setAttribute('aria-label', w()[0]);

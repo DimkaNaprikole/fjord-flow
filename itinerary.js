@@ -171,7 +171,7 @@
     });
   }
   async function openItinerary(key, button) {
-    if(key!==activeKey){chosen.clear();excludedStops.clear();}activeKey=key;activeButton=button;window.FjordDemoPrices?.gallery(dialog,key);
+    if(key!==activeKey){chosen.clear();excludedStops.clear();}activeKey=key;activeButton=button;
     const token = ++requestId;controller?.abort();controller=new AbortController();const localController=controller,signal=localController.signal;
     let failed=false;try{const loaded=await window.FjordExperiences.load();if(!Array.isArray(loaded))throw Error();experiences=loaded.map(p=>({...p,latitude:p.latitude??p.lat,longitude:p.longitude??p.lon,extra:true}));}catch{experiences=[];failed=true;}
     if(token!==requestId)return;

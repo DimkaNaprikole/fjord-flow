@@ -85,7 +85,6 @@
     article.classList.add('catalogue-flip');
     if (image) article.style.setProperty('--catalogue-photo', `url("${image}")`);
     const caption = node('div','catalogue-front-caption');
-    caption.append(window.FjordDemoPrices.badge(r.name));
     caption.append(node('small','',[r.town,r.region].filter(Boolean).join(' · ')),node('strong','',r.name));
     article.append(caption);
     const labels = flipCopy[lang()];
@@ -142,7 +141,6 @@
     const about = node('details', 'norway-catalog-about');
     const summary = node('summary', '', {nb:'Om stedet',en:'About this place',uk:'Про місце',sv:'Om platsen',da:'Om stedet'}[lang()]);
     const content = node('div', 'norway-catalog-about-content');
-    content.append(window.FjordDemoPrices.badge(r.name));
     content.append(node('p', 'norway-catalog-description', local(r.description)));
     about.append(summary, content);
     // Only deliberate click/keyboard activation reveals details.

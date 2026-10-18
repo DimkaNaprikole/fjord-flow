@@ -19,7 +19,7 @@ class Element {
 const flush=async()=>{for(let n=0;n<8;n++)await new Promise(resolve=>setImmediate(resolve))};
 function boot(config={enabled:true,endpoint:'https://chat.example.test',paidVoice:true},voice=false){
  const dialog=new Element('dialog'),launch=new Element('button'),events={},calls=[];const sentinel=new Element('p');dialog.append(sentinel);
- const sections=Object.fromEntries(['collection','scenicRoutes','staysSauna','cafeNearby','routeExperiences','travelStories','about','placeSearch','explorerTab0','explorerTab1','explorerTab2','explorerTab3'].map(id=>[id,new Element('section')]));
+ const sections=Object.fromEntries(['collection','scenicRoutes','staysSauna','cafeNearby','routeExperiences','travelStories','norwayCatalogue','buaEquipment','about','placeSearch','explorerTab0','explorerTab1','explorerTab2','explorerTab3'].map(id=>[id,new Element('section')]));
  const documentEvents={};
  const document={readyState:'complete',hidden:false,documentElement:{lang:'en'},activeElement:launch,createElement:tag=>new Element(tag),getElementById:id=>id==='fjordHelper'?dialog:sections[id]||null,querySelector:()=>launch,addEventListener:(key,fn)=>documentEvents[key]=fn,emit:key=>documentEvents[key]?.()};
  let chatReply={answer:'<img src=x onerror=alert(1)>',needs_human:false},chatStatus=200;let contactReply={recorded:true,ticket_id:'a'.repeat(64)},replyResult={status:'pending'},moderateReply={severe:false,warnings:0,banned:false},skillReply={matched:false};
@@ -187,4 +187,16 @@ console.log('PASS: manual Send and Contact owner cancel in-flight dictation and 
 {
  const app=boot(undefined,true);await flush();app.launch.onclick();await app.find('fjord-ai-record-fallback').emit('click');app.voiceState.recordTimer();await flush();assert.equal(app.calls.filter(c=>c.url.endsWith('/transcribe')).length,1);assert.equal(chatCalls(app).length,1,'The 30-second stop sends the captured question once instead of discarding it');app.dialog.close();console.log('PASS: reaching the recording deadline preserves and processes the question.');
  const recovering=boot({enabled:true,endpoint:'https://chat.example.test',healthFailures:1});await flush();assert.equal(recovering.dialog.children[0],recovering.sentinel);assert.ok(recovering.voiceState.initRetry);recovering.voiceState.initRetry();await flush();assert.ok(recovering.find('fjord-ai-compose'),'Chat initializes after a transient health failure');assert.equal(chatCalls(recovering).length,0,'Health recovery never submits a question');console.log('PASS: bounded initialization retry recovers from a transient health failure without GPT requests.');
+}
+
+
+{
+ const guide=boot();await flush();guide.launch.onclick();
+ const form=guide.find('fjord-ai-compose'),input=form.children.find(n=>n.tag==='textarea');
+ guide.setChat({answer:'Откройте каталог и BUA.',navigation:['norwayCatalogue','buaEquipment']});
+ input.value='Покажи места рядом и снаряжение BUA';await form.emit('submit');await flush();
+ const buttons=guide.find('fjord-ai-log').children.filter(n=>n.className==='fjord-ai-guide');
+ assert.deepEqual(buttons.map(n=>n.textContent),['Открыть: Места рядом ↗','Открыть: Снаряжение BUA ↗']);
+ buttons[1].onclick();assert.equal(guide.sections.buaEquipment.focused,true);
+ console.log('PASS: informational guide offers real local-catalogue and BUA navigation with local translated labels.');
 }
