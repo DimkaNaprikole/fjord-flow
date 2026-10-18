@@ -67,3 +67,7 @@
 @media(max-width:650px){.catalogue-front-caption strong{font-size:23px}.catalogue-flip>.norway-catalog-copy{padding-left:15px;padding-right:15px}}
 @media(prefers-reduced-motion:reduce){.catalogue-flip>.norway-catalog-photo,.catalogue-flip>.norway-catalog-copy{transition:none}}
 .catalogue-flip>.norway-catalog-photo{border-radius:17px!important}
+
+/* Two clear targets: photo in the centre, information at the side. */
+.catalogue-flip .norway-catalog-photo-label{left:50%;right:auto;top:43%;bottom:auto;transform:translate(-50%,-50%);width:max-content;max-width:calc(100% - 90px);padding:12px 16px;border-radius:999px;background:#0b3245e8;border-color:#deefeb88;font-size:12px;box-shadow:0 4px 18px #00131e38}
+.catalogue-flip-toggle{max-width:calc(100% - 20px);font-size:10px}
