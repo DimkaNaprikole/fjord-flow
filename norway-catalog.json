@@ -2188,6 +2188,189 @@
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Traktern%20Kaffebar%20%C2%B7%20Horten%2C%20Falsens%20gate%2011%2C%203187%20Horten"
   },
   {
+    "id": "godt-hjemmelaget-holmestrand",
+    "name": "Godt og Hjemmelaget · Kafé og Landhandel",
+    "town": "Holmestrand",
+    "region": "Oslofjorden · Indre fjord",
+    "route": "innerfjordcoast",
+    "category": "cafe",
+    "address": "Hvittingfossveien 123, 3085 Holmestrand",
+    "latitude": 59.48975661210078,
+    "longitude": 10.295133536990503,
+    "website": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+    "source": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Hvittingfossveien+123%2C+3085+Holmestrand&treffPerSide=3",
+    "description": {
+      "nb": "Kafé og landhandel ved Holmestrandtoppen med egne bakevarer og hjemmelaget mat.",
+      "en": "Café and country shop at Holmestrandtoppen with homemade food and baking.",
+      "uk": "Кав’ярня та крамниця на Holmestrandtoppen з домашньою їжею й власною випічкою.",
+      "sv": "Kafé och lanthandel vid Holmestrandtoppen med hemlagad mat och eget bakverk.",
+      "da": "Café og landhandel ved Holmestrandtoppen med hjemmelavet mad og eget bagværk."
+    },
+    "hoursNote": {
+      "nb": "Man–tor og lør 10–18; fre 10–21; søn 12–18. Sjekk helligdager.",
+      "en": "Mon–Thu and Sat 10–18; Fri 10–21; Sun 12–18. Check holidays.",
+      "uk": "Пн–чт і сб 10–18; пт 10–21; нд 12–18. Уточнюйте свята.",
+      "sv": "Mån–tor och lör 10–18; fre 10–21; sön 12–18. Kontrollera helgdagar.",
+      "da": "Man–tor og lør 10–18; fre 10–21; søn 12–18. Tjek helligdage."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+      "weekly": [
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "18:00"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-godt-cafe.webp",
+        "kind": "cafeInside",
+        "credit": "Godt og Hjemmelaget · Kafé og Landhandel · official website",
+        "source": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+        "original": "https://godtoghjemmelaget.no/images/2026/03/24/_r6_9638.jpeg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/innerfjord-godt-cafe.webp",
+    "imageSource": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+    "photoAlt": "Godt og Hjemmelaget · Kafé og Landhandel — real official venue photograph",
+    "photoCaption": "Godt og Hjemmelaget · Kafé og Landhandel · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Godt%20og%20Hjemmelaget%20%C2%B7%20Kaf%C3%A9%20og%20Landhandel%2C%20Hvittingfossveien%20123%2C%203085%20Holmestrand"
+  },
+  {
+    "id": "teskje-drobak",
+    "name": "Galleri Café Teskje",
+    "town": "Drøbak",
+    "region": "Oslofjorden · Indre fjord",
+    "route": "innerfjordcoast",
+    "category": "cafe",
+    "address": "Niels Carlsens gate 7, 1440 Drøbak",
+    "latitude": 59.66452093723958,
+    "longitude": 10.629917179098081,
+    "website": "https://www.teskje.no/",
+    "source": "https://www.teskje.no/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Niels+Carlsens+gate+7%2C+1440+Dr%C3%B8bak&treffPerSide=3",
+    "description": {
+      "nb": "Kafé, tapas og kunst i et verneverdig hus fra 1800-tallet.",
+      "en": "Café, tapas and art in a listed nineteenth-century house.",
+      "uk": "Кав’ярня, тапас і мистецтво в історичному будинку XIX століття.",
+      "sv": "Kafé, tapas och konst i ett kulturminnesskyddat 1800-talshus.",
+      "da": "Café, tapas og kunst i et bevaringsværdigt hus fra 1800-tallet."
+    },
+    "hoursNote": {
+      "nb": "Man stengt; tir–fre 11:30–17; lør–søn 12–17. Sjekk helligdager.",
+      "en": "Mon closed; Tue–Fri 11:30–17; Sat–Sun 12–17. Check holidays.",
+      "uk": "Пн зачинено; вт–пт 11:30–17; сб–нд 12–17. Уточнюйте свята.",
+      "sv": "Mån stängt; tis–fre 11:30–17; lör–sön 12–17. Kontrollera helgdagar.",
+      "da": "Man lukket; tir–fre 11:30–17; lør–søn 12–17. Tjek helligdage."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://www.teskje.no/",
+      "weekly": [
+        [],
+        [
+          [
+            "11:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "17:00"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-teskje-inside.webp",
+        "kind": "cafeInside",
+        "credit": "Galleri Café Teskje · official website",
+        "source": "https://www.teskje.no/bilder-av-kunst-interior.html",
+        "original": "https://www.teskje.no/media/yootheme/cache/9a/01-9a3b598c.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/innerfjord-teskje-inside.webp",
+    "imageSource": "https://www.teskje.no/",
+    "photoAlt": "Galleri Café Teskje — real official venue photograph",
+    "photoCaption": "Galleri Café Teskje · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Galleri%20Caf%C3%A9%20Teskje%2C%20Niels%20Carlsens%20gate%207%2C%201440%20Dr%C3%B8bak"
+  },
+  {
     "id": "kinsarvik-heng",
     "name": "Kinsarvik Camping — Heng",
     "area": "Kinsarvik · Hardanger",
@@ -2268,6 +2451,9 @@
     ],
     "routeQuery": "Kinsarvik Camping, Sandvikvegen 17, 5780 Kinsarvik, Norway",
     "imageOriginal": "https://images.bookvisit.com/img/1b8f5e6d-9333-4239-ac2c-6aed89ff2504.jpg",
+    "latitude": 60.374461,
+    "longitude": 6.719237,
+    "coordinatePrecision": "property-access",
     "hoursNote": {
       "nb": "Tilgjengelighet, innsjekking og badstutider må avtales med verten. Se bestillingskalenderen før avreise. Privat badstue inne i Heng-hyttene nr. 15–16. Opplysningen gjelder denne hyttetypen, ikke alle hyttene på campingplassen.",
       "en": "Availability, check-in and sauna times must be confirmed with the host. Check the booking calendar before travelling. Private sauna inside Heng cabins nos. 15–16. This applies to this cabin category, not every cabin at the campsite.",
@@ -2280,7 +2466,7 @@
     "town": "Kinsarvik",
     "address": "Sandvikvegen 17, 5780 Kinsarvik, Norway",
     "source": "https://www.kinsarvikcamping.no/overnatting/heng",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Kinsarvik%20Camping%2C%20Sandvikvegen%2017%2C%205780%20Kinsarvik%2C%20Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.374461%2C6.719237",
     "photoCaption": {
       "nb": "Foto fra Kinsarvik Camping · stedets nettside",
       "en": "Photo from Kinsarvik Camping · venue website",
@@ -2288,9 +2474,6 @@
       "sv": "Foto från Kinsarvik Camping · anläggningens webbplats",
       "da": "Foto fra Kinsarvik Camping · stedets hjemmeside"
     },
-    "latitude": 60.374461,
-    "longitude": 6.719237,
-    "coordinatePrecision": "property-access",
     "coordinatesSource": "https://online.camping.no/visit/?id=1447874&lang=en"
   },
   {
@@ -2374,6 +2557,9 @@
     ],
     "routeQuery": "Luster Fjordhytter, Lustravegen 2623, 6875 Høyheimsvik, Norway",
     "imageOriginal": "https://cdn.prod.website-files.com/608be60fd9fb38425337c73c/60957ce59806898a97ee40d9_Hytter1.jpg",
+    "latitude": 61.39969592552051,
+    "longitude": 7.395916039941032,
+    "coordinatePrecision": "area",
     "hoursNote": {
       "nb": "Tilgjengelighet, innsjekking og badstutider må avtales med verten. Se bestillingskalenderen før avreise. Separat vedfyrt badstue med fjordutsikt for 8–10 personer og vedfyrt badestamp. Drop-in og privat bestilling tilbys. Badstue er ikke bekreftet inkludert i hytteleien; avtal pris og tidspunkt med verten.",
       "en": "Availability, check-in and sauna times must be confirmed with the host. Check the booking calendar before travelling. Separate wood-fired sauna with fjord views for 8–10 people, plus a wood-fired hot tub. Drop-in and private bookings are offered. Sauna access is not confirmed as included in the cottage rate; arrange price and timing with the host.",
@@ -2394,9 +2580,6 @@
       "sv": "Foto från Luster Fjordhytter · anläggningens webbplats",
       "da": "Foto fra Luster Fjordhytter · stedets hjemmeside"
     },
-    "latitude": 61.39969592552051,
-    "longitude": 7.395916039941032,
-    "coordinatePrecision": "area",
     "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Lustravegen%202623&treffPerSide=5&utkoordsys=4258",
     "coordinatesAddressSource": "https://www.luster-fjordhytter.com/en",
     "coordinatesChecked": "2026-10-18",
@@ -2483,6 +2666,9 @@
     ],
     "routeQuery": "Kilsti Compact Lodge, Eidsdal, Norway",
     "imageOriginal": "https://images.squarespace-cdn.com/content/v1/5ec3dabf40074e0960a94b6e/1674564152851-K59Z0KXD2M6S2V0Z1LVF/PRINT_2021-05-31%2BReklamefoto%2BKilsti-5497.JPG?format=1000w",
+    "latitude": 62.25882889455008,
+    "longitude": 7.153376458356803,
+    "coordinatePrecision": "area",
     "hoursNote": {
       "nb": "Tilgjengelighet, innsjekking og badstutider må avtales med verten. Se bestillingskalenderen før avreise. Separat vedfyrt badstue med utedusj. Den er oppført som del av pakken når hele lodgen leies, med minst to netter. Ved bestilling av én hytte må tilgang, eventuell privat bruk og tillegg bekreftes.",
       "en": "Availability, check-in and sauna times must be confirmed with the host. Check the booking calendar before travelling. Separate wood-fired sauna with an outdoor shower. It is listed in the whole-lodge rental package, with a two-night minimum. For an individual cottage, confirm access, any private-use arrangements and extra charges.",
@@ -2503,9 +2689,6 @@
       "sv": "Foto från Kilsti Compact Lodge · anläggningens webbplats",
       "da": "Foto fra Kilsti Compact Lodge · stedets hjemmeside"
     },
-    "latitude": 62.25882889455008,
-    "longitude": 7.153376458356803,
-    "coordinatePrecision": "area",
     "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Kilstivegen%20333%20Eidsdal&treffPerSide=3",
     "coordinatesNote": "Property address; park above the lodge on Kilstivegen and walk down. Driving to the cottages is prohibited. Follow operator arrival instructions."
   },
@@ -4847,6 +5030,293 @@
       "da": "Ægte operatørfoto"
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=L%C3%B8v%C3%B8ya%20Oslofjord%2C%20L%C3%B8v%C3%B8yveien%2054%2C%203189%20Horten%2C%20Norway"
+  },
+  {
+    "id": "holmestrand-waterfront",
+    "name": "Holmestrand · havn & brygge",
+    "town": "Holmestrand",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "innerfjordcoast",
+    "address": "Holmestrand, Norway",
+    "latitude": 59.48761,
+    "longitude": 10.31758,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Holmestrand&treffPerSide=15",
+    "coordinateNote": "Kartverket SSR representative town area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/Holmestrand/",
+    "source": "https://www.visitvestfold.com/no/Holmestrand/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En rolig kystpause i byen under fjellet: rusle ved småbåthavnen, se over Oslofjorden og fortsett inn i sentrum for kaffe. Kyststien gir mulighet for en lengre tur.",
+      "en": "A quiet coastal stop in the town below the cliff: stroll by the marina, look across the Oslofjord and continue into the centre for coffee. The coastal path offers a longer walk.",
+      "uk": "Спокійна зупинка в місті під скелею: прогуляйтеся біля човнової гавані, помилуйтеся Осло-фіордом і зайдіть на каву до центру. Берегова стежка підійде для довшої прогулянки.",
+      "sv": "En lugn kustpaus i staden under berget: promenera vid småbåtshamnen, se över Oslofjorden och fortsätt in till centrum för kaffe. Kuststigen ger möjlighet till en längre tur.",
+      "da": "En rolig kystpause i byen under fjeldet: gå ved lystbådehavnen, se over Oslofjorden og fortsæt ind til centrum for kaffe. Kyststien giver mulighed for en længere tur."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og museer har egne åpningstider. Parker lovlig og fortsett til fots. Punktet viser tettstedet, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and museums keep their own hours. Park legally and continue on foot. The marker represents the town area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й музеї мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район міста, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och museer har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar tätorten, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og museer har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser byområdet, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Holmestrand%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/innerfjord-place-holmestrand.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Holmestrand_havn.jpg",
+    "photoAlt": "Boats and red waterfront buildings in Holmestrand harbour",
+    "photoCaption": "Helga · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-place-holmestrand.webp",
+        "kind": "view",
+        "credit": "Helga",
+        "source": "https://commons.wikimedia.org/wiki/File:Holmestrand_havn.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/7/74/Holmestrand_havn.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "svelvik-old-town",
+    "name": "Svelvik · trehus ved fjorden",
+    "town": "Svelvik",
+    "category": "rest",
+    "region": "Buskerud · Drammensfjorden",
+    "route": "innerfjordcoast",
+    "address": "Svelvik, Norway",
+    "latitude": 59.61368,
+    "longitude": 10.40875,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Svelvik&treffPerSide=15",
+    "coordinateNote": "Kartverket SSR representative town area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitdrammen.no/aktiviteter/svelvik-sorlandsidyll-ved-fjorden",
+    "source": "https://www.visitdrammen.no/aktiviteter/svelvik-sorlandsidyll-ved-fjorden",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Hvite trehus, små gater og båtliv ved Drammensfjorden. Ta en rolig runde gjennom gamle Svelvik og ned til kaia; fortsett gjerne til Batteriøya for en pause ved vannet.",
+      "en": "White wooden houses, small streets and boat life beside Drammensfjorden. Wander through old Svelvik down to the quay; continue to Batteriøya for a quiet break by the water.",
+      "uk": "Білі дерев’яні будиночки, маленькі вулиці й човни на Драмменс-фіорді. Прогуляйтеся старим Свельвіком до причалу, а за бажанням — далі до Batteriøya для відпочинку біля води.",
+      "sv": "Vita trähus, små gator och båtliv vid Drammensfjorden. Gå genom gamla Svelvik ner till kajen; fortsätt gärna till Batteriøya för en paus vid vattnet.",
+      "da": "Hvide træhuse, små gader og bådliv ved Drammensfjorden. Gå gennem gamle Svelvik ned til kajen; fortsæt gerne til Batteriøya for en pause ved vandet."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og museer har egne åpningstider. Parker lovlig og fortsett til fots. Punktet viser tettstedet, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and museums keep their own hours. Park legally and continue on foot. The marker represents the town area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й музеї мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район міста, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och museer har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar tätorten, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og museer har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser byområdet, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Svelvik%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/innerfjord-place-svelvik.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Svelvik-Drammen-02-31-08-2023-huskerdu.jpg",
+    "photoAlt": "White wooden houses along a quiet street in old Svelvik",
+    "photoCaption": "Huskerdu.no · CC BY-SA 4.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-place-svelvik.webp",
+        "kind": "view",
+        "credit": "Huskerdu.no",
+        "source": "https://commons.wikimedia.org/wiki/File:Svelvik-Drammen-02-31-08-2023-huskerdu.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/1/11/Svelvik-Drammen-02-31-08-2023-huskerdu.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "drobak-waterfront",
+    "name": "Drøbak · gamlebyen & havnen",
+    "town": "Drøbak",
+    "category": "rest",
+    "region": "Akershus · Oslofjorden",
+    "route": "innerfjordcoast",
+    "address": "Drøbak, Norway",
+    "latitude": 59.66332,
+    "longitude": 10.62974,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Dr%C3%B8bak&treffPerSide=15",
+    "coordinateNote": "Kartverket SSR representative town area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitgreateroslo.com/no/https%3A/www.visitgreateroslo.com/no/drobak-og-oscarsborg",
+    "source": "https://www.visitgreateroslo.com/no/https%3A/www.visitgreateroslo.com/no/drobak-og-oscarsborg",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En liten fjordby med bevarte trehus, gallerier og en trivelig båthavn. Kombiner en rusletur i Gamle Drøbak med sjøutsikt og en pause i Badeparken. Oscarsborg er en egen båttur, ikke et stopp med bil.",
+      "en": "A small fjord town with preserved wooden houses, galleries and a welcoming marina. Combine old Drøbak with sea views and a pause in Badeparken. Oscarsborg is a separate boat trip, not a driving stop.",
+      "uk": "Маленьке місто біля фіорду зі старими дерев’яними будинками, галереями та затишною гаванню. Поєднайте старий Дрьобак із видами на воду й відпочинком у Badeparken. Oscarsborg — окрема поїздка човном, не автомобільна зупинка.",
+      "sv": "En liten fjordstad med bevarade trähus, gallerier och en trivsam småbåtshamn. Kombinera gamla Drøbak med havsutsikt och en paus i Badeparken. Oscarsborg är en separat båttur, inte ett bilstopp.",
+      "da": "En lille fjordby med bevarede træhuse, gallerier og en hyggelig lystbådehavn. Kombinér gamle Drøbak med havudsigt og en pause i Badeparken. Oscarsborg er en separat bådtur, ikke et bilstop."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og museer har egne åpningstider. Parker lovlig og fortsett til fots. Punktet viser tettstedet, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and museums keep their own hours. Park legally and continue on foot. The marker represents the town area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й музеї мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район міста, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och museer har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar tätorten, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og museer har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser byområdet, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Dr%C3%B8bak%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/innerfjord-place-drobak.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Dr%C3%B8bak_harbour.jpg",
+    "photoAlt": "Wooden fishing boat, marina and waterfront buildings in Drøbak",
+    "photoCaption": "Góngora · CC BY-SA 4.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-place-drobak.webp",
+        "kind": "view",
+        "credit": "Góngora",
+        "source": "https://commons.wikimedia.org/wiki/File:Dr%C3%B8bak_harbour.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Dr%C3%B8bak_harbour.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "son-waterfront",
+    "name": "Son · småbåthavn & trehus",
+    "town": "Son",
+    "category": "rest",
+    "region": "Akershus · Oslofjorden",
+    "route": "innerfjordcoast",
+    "address": "Son, Norway",
+    "latitude": 59.52313,
+    "longitude": 10.68592,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Son&treffPerSide=15",
+    "coordinateNote": "Kartverket SSR representative town area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://visitgreateroslo.com/no/aktivitet/pilegrimsleden-gjennom-follo?__tlpdone=1&tlp=2262073",
+    "source": "https://visitgreateroslo.com/no/aktivitet/pilegrimsleden-gjennom-follo?__tlpdone=1&tlp=2262073",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Sett bilen fra deg og oppdag Son til fots: gamle trehus, smale smug og småbåter langs havnen. Velg en kort tur ved vannet eller en lengre etappe av kyststien gjennom Vestby.",
+      "en": "Leave the car and explore Son on foot: old wooden houses, narrow lanes and small boats along the harbour. Choose a short waterside stroll or a longer section of the Vestby coastal path.",
+      "uk": "Залиште автомобіль і відкрийте Сон пішки: старі дерев’яні будинки, вузькі провулки й човни в гавані. Оберіть коротку прогулянку біля води або довшу частину берегової стежки Vestby.",
+      "sv": "Lämna bilen och upptäck Son till fots: gamla trähus, smala gränder och småbåtar längs hamnen. Välj en kort tur vid vattnet eller en längre del av kuststigen genom Vestby.",
+      "da": "Lad bilen stå og oplev Son til fods: gamle træhuse, smalle stræder og småbåde langs havnen. Vælg en kort tur ved vandet eller en længere del af kyststien gennem Vestby."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og museer har egne åpningstider. Parker lovlig og fortsett til fots. Punktet viser tettstedet, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and museums keep their own hours. Park legally and continue on foot. The marker represents the town area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й музеї мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район міста, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och museer har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar tätorten, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og museer har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser byområdet, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Son%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/innerfjord-place-son.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Son_Harbour01.JPG",
+    "photoAlt": "Sailing boats and moorings in Son marina",
+    "photoCaption": "Chris Nyborg · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-place-son.webp",
+        "kind": "view",
+        "credit": "Chris Nyborg",
+        "source": "https://commons.wikimedia.org/wiki/File:Son_Harbour01.JPG",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Son_Harbour01.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "nordre-jarlsberg-sauna",
+    "name": "Nordre Jarlsberg Badstue",
+    "town": "Sande",
+    "region": "Oslofjorden · Indre fjord",
+    "route": "innerfjordcoast",
+    "category": "sauna",
+    "address": "Willem Stibolts vei 20, 3070 Sande i Vestfold",
+    "latitude": 59.56337605127164,
+    "longitude": 10.26684400812212,
+    "website": "https://www.nordrejarlsbergbadstue.no/",
+    "source": "https://www.nordrejarlsbergbadstue.no/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Willem+Stibolts+vei+20%2C+3070+Sande+i+Vestfold&treffPerSide=3",
+    "description": {
+      "nb": "Flåtebadstue ved Sandebukta med felles eller privat økt på 75 minutter.",
+      "en": "Floating sauna at Sandebukta with shared or private 75-minute sessions.",
+      "uk": "Плавуча сауна біля Sandebukta: спільні або приватні сеанси по 75 хвилин.",
+      "sv": "Flytande bastu vid Sandebukta med gemensamma eller privata 75-minuterspass.",
+      "da": "Flydende sauna ved Sandebukta med fælles eller private sessioner på 75 minutter."
+    },
+    "hoursNote": {
+      "nb": "Man 07–21:30; tir–fre 07–22:15; lør 08:15–22:15; søn 08:15–21:30. Bestill økt.",
+      "en": "Mon 07–21:30; Tue–Fri 07–22:15; Sat 08:15–22:15; Sun 08:15–21:30. Book a session.",
+      "uk": "Пн 07–21:30; вт–пт 07–22:15; сб 08:15–22:15; нд 08:15–21:30. Бронюйте сеанс.",
+      "sv": "Mån 07–21:30; tis–fre 07–22:15; lör 08:15–22:15; sön 08:15–21:30. Boka tid.",
+      "da": "Man 07–21:30; tir–fre 07–22:15; lør 08:15–22:15; søn 08:15–21:30. Book en tid."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://www.nordrejarlsbergbadstue.no/",
+      "weekly": [
+        [
+          [
+            "07:00",
+            "21:30"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "22:15"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "22:15"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "22:15"
+          ]
+        ],
+        [
+          [
+            "07:00",
+            "22:15"
+          ]
+        ],
+        [
+          [
+            "08:15",
+            "22:15"
+          ]
+        ],
+        [
+          [
+            "08:15",
+            "21:30"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-jarlsberg-sauna.webp",
+        "kind": "sauna",
+        "credit": "Nordre Jarlsberg Badstue · official website",
+        "source": "https://www.nordrejarlsbergbadstue.no/",
+        "original": "https://static.wixstatic.com/media/02dd03_cdcd637b7f674f5e96c8293190c5bc73~mv2.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/innerfjord-jarlsberg-sauna.webp",
+    "imageSource": "https://www.nordrejarlsbergbadstue.no/",
+    "photoAlt": "Nordre Jarlsberg Badstue — real official venue photograph",
+    "photoCaption": "Nordre Jarlsberg Badstue · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nordre%20Jarlsberg%20Badstue%2C%20Willem%20Stibolts%20vei%2020%2C%203070%20Sande%20i%20Vestfold",
+    "bookingUrl": "https://www.nordrejarlsbergbadstue.no/"
   },
   {
     "id": "tusenfryd",

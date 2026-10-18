@@ -81,6 +81,7 @@ if (!await exists(path.join(root, 'catalog-rest.json'))) {
   process.exit(0);
 }
 const additions = (await Promise.all(['catalog-new-venues.json', 'catalog-central.json', 'catalog-north.json', 'catalog-west-south.json', 'catalog-sorlandet.json', 'catalog-kristiansand.json', 'catalog-oslofjord.json', 'catalog-east-coast-places.json', 'catalog-east-coast-stays.json', 'catalog-east-coast-cafes.json', 'catalog-telemark-places.json', 'catalog-telemark-stays.json', 'catalog-telemark-cafes.json', 'catalog-vestfold-places.json', 'catalog-vestfold-stays.json', 'catalog-vestfold-cafes.json'].map(read))).flat();
+additions.push(...await read('catalog-innerfjord-places.json'), ...await read('catalog-innerfjord-venues.json'));
 const coordinateOverrides = await read('catalog-coordinates.json');
 const visitNotes = await read('catalog-visit-notes.json');
 const oldCafes = await read('cafes.json');

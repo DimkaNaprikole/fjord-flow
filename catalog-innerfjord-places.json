@@ -1,0 +1,194 @@
+[
+  {
+    "id": "holmestrand-waterfront",
+    "name": "Holmestrand · havn & brygge",
+    "town": "Holmestrand",
+    "category": "rest",
+    "region": "Vestfold · Oslofjorden",
+    "route": "innerfjordcoast",
+    "address": "Holmestrand, Norway",
+    "latitude": 59.48761,
+    "longitude": 10.31758,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Holmestrand&treffPerSide=15",
+    "coordinateNote": "Kartverket SSR representative town area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitvestfold.com/no/Holmestrand/",
+    "source": "https://www.visitvestfold.com/no/Holmestrand/",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En rolig kystpause i byen under fjellet: rusle ved småbåthavnen, se over Oslofjorden og fortsett inn i sentrum for kaffe. Kyststien gir mulighet for en lengre tur.",
+      "en": "A quiet coastal stop in the town below the cliff: stroll by the marina, look across the Oslofjord and continue into the centre for coffee. The coastal path offers a longer walk.",
+      "uk": "Спокійна зупинка в місті під скелею: прогуляйтеся біля човнової гавані, помилуйтеся Осло-фіордом і зайдіть на каву до центру. Берегова стежка підійде для довшої прогулянки.",
+      "sv": "En lugn kustpaus i staden under berget: promenera vid småbåtshamnen, se över Oslofjorden och fortsätt in till centrum för kaffe. Kuststigen ger möjlighet till en längre tur.",
+      "da": "En rolig kystpause i byen under fjeldet: gå ved lystbådehavnen, se over Oslofjorden og fortsæt ind til centrum for kaffe. Kyststien giver mulighed for en længere tur."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og museer har egne åpningstider. Parker lovlig og fortsett til fots. Punktet viser tettstedet, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and museums keep their own hours. Park legally and continue on foot. The marker represents the town area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й музеї мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район міста, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och museer har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar tätorten, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og museer har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser byområdet, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Holmestrand%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/innerfjord-place-holmestrand.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Holmestrand_havn.jpg",
+    "photoAlt": "Boats and red waterfront buildings in Holmestrand harbour",
+    "photoCaption": "Helga · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-place-holmestrand.webp",
+        "kind": "view",
+        "credit": "Helga",
+        "source": "https://commons.wikimedia.org/wiki/File:Holmestrand_havn.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/7/74/Holmestrand_havn.jpg",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "svelvik-old-town",
+    "name": "Svelvik · trehus ved fjorden",
+    "town": "Svelvik",
+    "category": "rest",
+    "region": "Buskerud · Drammensfjorden",
+    "route": "innerfjordcoast",
+    "address": "Svelvik, Norway",
+    "latitude": 59.61368,
+    "longitude": 10.40875,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Svelvik&treffPerSide=15",
+    "coordinateNote": "Kartverket SSR representative town area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitdrammen.no/aktiviteter/svelvik-sorlandsidyll-ved-fjorden",
+    "source": "https://www.visitdrammen.no/aktiviteter/svelvik-sorlandsidyll-ved-fjorden",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Hvite trehus, små gater og båtliv ved Drammensfjorden. Ta en rolig runde gjennom gamle Svelvik og ned til kaia; fortsett gjerne til Batteriøya for en pause ved vannet.",
+      "en": "White wooden houses, small streets and boat life beside Drammensfjorden. Wander through old Svelvik down to the quay; continue to Batteriøya for a quiet break by the water.",
+      "uk": "Білі дерев’яні будиночки, маленькі вулиці й човни на Драмменс-фіорді. Прогуляйтеся старим Свельвіком до причалу, а за бажанням — далі до Batteriøya для відпочинку біля води.",
+      "sv": "Vita trähus, små gator och båtliv vid Drammensfjorden. Gå genom gamla Svelvik ner till kajen; fortsätt gärna till Batteriøya för en paus vid vattnet.",
+      "da": "Hvide træhuse, små gader og bådliv ved Drammensfjorden. Gå gennem gamle Svelvik ned til kajen; fortsæt gerne til Batteriøya for en pause ved vandet."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og museer har egne åpningstider. Parker lovlig og fortsett til fots. Punktet viser tettstedet, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and museums keep their own hours. Park legally and continue on foot. The marker represents the town area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й музеї мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район міста, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och museer har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar tätorten, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og museer har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser byområdet, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Svelvik%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/innerfjord-place-svelvik.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Svelvik-Drammen-02-31-08-2023-huskerdu.jpg",
+    "photoAlt": "White wooden houses along a quiet street in old Svelvik",
+    "photoCaption": "Huskerdu.no · CC BY-SA 4.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-place-svelvik.webp",
+        "kind": "view",
+        "credit": "Huskerdu.no",
+        "source": "https://commons.wikimedia.org/wiki/File:Svelvik-Drammen-02-31-08-2023-huskerdu.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/1/11/Svelvik-Drammen-02-31-08-2023-huskerdu.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "drobak-waterfront",
+    "name": "Drøbak · gamlebyen & havnen",
+    "town": "Drøbak",
+    "category": "rest",
+    "region": "Akershus · Oslofjorden",
+    "route": "innerfjordcoast",
+    "address": "Drøbak, Norway",
+    "latitude": 59.66332,
+    "longitude": 10.62974,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Dr%C3%B8bak&treffPerSide=15",
+    "coordinateNote": "Kartverket SSR representative town area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://www.visitgreateroslo.com/no/https%3A/www.visitgreateroslo.com/no/drobak-og-oscarsborg",
+    "source": "https://www.visitgreateroslo.com/no/https%3A/www.visitgreateroslo.com/no/drobak-og-oscarsborg",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "En liten fjordby med bevarte trehus, gallerier og en trivelig båthavn. Kombiner en rusletur i Gamle Drøbak med sjøutsikt og en pause i Badeparken. Oscarsborg er en egen båttur, ikke et stopp med bil.",
+      "en": "A small fjord town with preserved wooden houses, galleries and a welcoming marina. Combine old Drøbak with sea views and a pause in Badeparken. Oscarsborg is a separate boat trip, not a driving stop.",
+      "uk": "Маленьке місто біля фіорду зі старими дерев’яними будинками, галереями та затишною гаванню. Поєднайте старий Дрьобак із видами на воду й відпочинком у Badeparken. Oscarsborg — окрема поїздка човном, не автомобільна зупинка.",
+      "sv": "En liten fjordstad med bevarade trähus, gallerier och en trivsam småbåtshamn. Kombinera gamla Drøbak med havsutsikt och en paus i Badeparken. Oscarsborg är en separat båttur, inte ett bilstopp.",
+      "da": "En lille fjordby med bevarede træhuse, gallerier og en hyggelig lystbådehavn. Kombinér gamle Drøbak med havudsigt og en pause i Badeparken. Oscarsborg er en separat bådtur, ikke et bilstop."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og museer har egne åpningstider. Parker lovlig og fortsett til fots. Punktet viser tettstedet, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and museums keep their own hours. Park legally and continue on foot. The marker represents the town area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й музеї мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район міста, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och museer har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar tätorten, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og museer har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser byområdet, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Dr%C3%B8bak%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/innerfjord-place-drobak.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Dr%C3%B8bak_harbour.jpg",
+    "photoAlt": "Wooden fishing boat, marina and waterfront buildings in Drøbak",
+    "photoCaption": "Góngora · CC BY-SA 4.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-place-drobak.webp",
+        "kind": "view",
+        "credit": "Góngora",
+        "source": "https://commons.wikimedia.org/wiki/File:Dr%C3%B8bak_harbour.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Dr%C3%B8bak_harbour.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  },
+  {
+    "id": "son-waterfront",
+    "name": "Son · småbåthavn & trehus",
+    "town": "Son",
+    "category": "rest",
+    "region": "Akershus · Oslofjorden",
+    "route": "innerfjordcoast",
+    "address": "Son, Norway",
+    "latitude": 59.52313,
+    "longitude": 10.68592,
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Son&treffPerSide=15",
+    "coordinateNote": "Kartverket SSR representative town area point; orientation only, not a vehicle entrance or parking space.",
+    "website": "https://visitgreateroslo.com/no/aktivitet/pilegrimsleden-gjennom-follo?__tlpdone=1&tlp=2262073",
+    "source": "https://visitgreateroslo.com/no/aktivitet/pilegrimsleden-gjennom-follo?__tlpdone=1&tlp=2262073",
+    "checked": "2026-10-18",
+    "description": {
+      "nb": "Sett bilen fra deg og oppdag Son til fots: gamle trehus, smale smug og småbåter langs havnen. Velg en kort tur ved vannet eller en lengre etappe av kyststien gjennom Vestby.",
+      "en": "Leave the car and explore Son on foot: old wooden houses, narrow lanes and small boats along the harbour. Choose a short waterside stroll or a longer section of the Vestby coastal path.",
+      "uk": "Залиште автомобіль і відкрийте Сон пішки: старі дерев’яні будинки, вузькі провулки й човни в гавані. Оберіть коротку прогулянку біля води або довшу частину берегової стежки Vestby.",
+      "sv": "Lämna bilen och upptäck Son till fots: gamla trähus, smala gränder och småbåtar längs hamnen. Välj en kort tur vid vattnet eller en längre del av kuststigen genom Vestby.",
+      "da": "Lad bilen stå og oplev Son til fods: gamle træhuse, smalle stræder og småbåde langs havnen. Vælg en kort tur ved vandet eller en længere del af kyststien gennem Vestby."
+    },
+    "hoursNote": {
+      "nb": "Utendørs byvandring hele året; velg dagslys. Kafeer og museer har egne åpningstider. Parker lovlig og fortsett til fots. Punktet viser tettstedet, ikke en parkeringsinnkjøring.",
+      "en": "Outdoor town walk year-round; choose daylight. Cafés and museums keep their own hours. Park legally and continue on foot. The marker represents the town area, not a parking entrance.",
+      "uk": "Прогулянка містом можлива цілий рік; обирайте світлу пору. Кав’ярні й музеї мають власні години. Паркуйтеся за правилами й далі йдіть пішки. Позначка вказує район міста, а не в’їзд на паркінг.",
+      "sv": "Utomhuspromenad året runt; välj dagsljus. Kaféer och museer har egna öppettider. Parkera lagligt och fortsätt till fots. Punkten visar tätorten, inte en parkeringsinfart.",
+      "da": "Udendørs byvandring året rundt; vælg dagslys. Caféer og museer har egne åbningstider. Parkér lovligt og fortsæt til fods. Punktet viser byområdet, ikke en parkeringsindkørsel."
+    },
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Son%2C%20Norway&travelmode=driving",
+    "image": "./images/catalog/innerfjord-place-son.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Son_Harbour01.JPG",
+    "photoAlt": "Sailing boats and moorings in Son marina",
+    "photoCaption": "Chris Nyborg · CC BY-SA 3.0 · resized / WebP",
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-place-son.webp",
+        "kind": "view",
+        "credit": "Chris Nyborg",
+        "source": "https://commons.wikimedia.org/wiki/File:Son_Harbour01.JPG",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Son_Harbour01.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ]
+  }
+]

@@ -2119,5 +2119,188 @@
     "photoAlt": "Traktern Kaffebar · Horten — actual venue photograph",
     "photoCaption": "Traktern Kaffebar · Horten · official website photograph",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Traktern%20Kaffebar%20%C2%B7%20Horten%2C%20Falsens%20gate%2011%2C%203187%20Horten"
+  },
+  {
+    "id": "godt-hjemmelaget-holmestrand",
+    "name": "Godt og Hjemmelaget · Kafé og Landhandel",
+    "town": "Holmestrand",
+    "region": "Oslofjorden · Indre fjord",
+    "route": "innerfjordcoast",
+    "category": "cafe",
+    "address": "Hvittingfossveien 123, 3085 Holmestrand",
+    "latitude": 59.48975661210078,
+    "longitude": 10.295133536990503,
+    "website": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+    "source": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Hvittingfossveien+123%2C+3085+Holmestrand&treffPerSide=3",
+    "description": {
+      "nb": "Kafé og landhandel ved Holmestrandtoppen med egne bakevarer og hjemmelaget mat.",
+      "en": "Café and country shop at Holmestrandtoppen with homemade food and baking.",
+      "uk": "Кав’ярня та крамниця на Holmestrandtoppen з домашньою їжею й власною випічкою.",
+      "sv": "Kafé och lanthandel vid Holmestrandtoppen med hemlagad mat och eget bakverk.",
+      "da": "Café og landhandel ved Holmestrandtoppen med hjemmelavet mad og eget bagværk."
+    },
+    "hoursNote": {
+      "nb": "Man–tor og lør 10–18; fre 10–21; søn 12–18. Sjekk helligdager.",
+      "en": "Mon–Thu and Sat 10–18; Fri 10–21; Sun 12–18. Check holidays.",
+      "uk": "Пн–чт і сб 10–18; пт 10–21; нд 12–18. Уточнюйте свята.",
+      "sv": "Mån–tor och lör 10–18; fre 10–21; sön 12–18. Kontrollera helgdagar.",
+      "da": "Man–tor og lør 10–18; fre 10–21; søn 12–18. Tjek helligdage."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+      "weekly": [
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "21:00"
+          ]
+        ],
+        [
+          [
+            "10:00",
+            "18:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "18:00"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-godt-cafe.webp",
+        "kind": "cafeInside",
+        "credit": "Godt og Hjemmelaget · Kafé og Landhandel · official website",
+        "source": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+        "original": "https://godtoghjemmelaget.no/images/2026/03/24/_r6_9638.jpeg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/innerfjord-godt-cafe.webp",
+    "imageSource": "https://godtoghjemmelaget.no/cafe-og-landhandel",
+    "photoAlt": "Godt og Hjemmelaget · Kafé og Landhandel — real official venue photograph",
+    "photoCaption": "Godt og Hjemmelaget · Kafé og Landhandel · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Godt%20og%20Hjemmelaget%20%C2%B7%20Kaf%C3%A9%20og%20Landhandel%2C%20Hvittingfossveien%20123%2C%203085%20Holmestrand"
+  },
+  {
+    "id": "teskje-drobak",
+    "name": "Galleri Café Teskje",
+    "town": "Drøbak",
+    "region": "Oslofjorden · Indre fjord",
+    "route": "innerfjordcoast",
+    "category": "cafe",
+    "address": "Niels Carlsens gate 7, 1440 Drøbak",
+    "latitude": 59.66452093723958,
+    "longitude": 10.629917179098081,
+    "website": "https://www.teskje.no/",
+    "source": "https://www.teskje.no/",
+    "checked": "2026-10-18",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Niels+Carlsens+gate+7%2C+1440+Dr%C3%B8bak&treffPerSide=3",
+    "description": {
+      "nb": "Kafé, tapas og kunst i et verneverdig hus fra 1800-tallet.",
+      "en": "Café, tapas and art in a listed nineteenth-century house.",
+      "uk": "Кав’ярня, тапас і мистецтво в історичному будинку XIX століття.",
+      "sv": "Kafé, tapas och konst i ett kulturminnesskyddat 1800-talshus.",
+      "da": "Café, tapas og kunst i et bevaringsværdigt hus fra 1800-tallet."
+    },
+    "hoursNote": {
+      "nb": "Man stengt; tir–fre 11:30–17; lør–søn 12–17. Sjekk helligdager.",
+      "en": "Mon closed; Tue–Fri 11:30–17; Sat–Sun 12–17. Check holidays.",
+      "uk": "Пн зачинено; вт–пт 11:30–17; сб–нд 12–17. Уточнюйте свята.",
+      "sv": "Mån stängt; tis–fre 11:30–17; lör–sön 12–17. Kontrollera helgdagar.",
+      "da": "Man lukket; tir–fre 11:30–17; lør–søn 12–17. Tjek helligdage."
+    },
+    "openingHours": {
+      "verified": true,
+      "timeZone": "Europe/Oslo",
+      "checked": "2026-10-18",
+      "source": "https://www.teskje.no/",
+      "weekly": [
+        [],
+        [
+          [
+            "11:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "11:30",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "17:00"
+          ]
+        ],
+        [
+          [
+            "12:00",
+            "17:00"
+          ]
+        ]
+      ]
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/innerfjord-teskje-inside.webp",
+        "kind": "cafeInside",
+        "credit": "Galleri Café Teskje · official website",
+        "source": "https://www.teskje.no/bilder-av-kunst-interior.html",
+        "original": "https://www.teskje.no/media/yootheme/cache/9a/01-9a3b598c.jpg",
+        "license": "Operator-published photograph; no open licence claimed"
+      }
+    ],
+    "image": "./images/catalog/innerfjord-teskje-inside.webp",
+    "imageSource": "https://www.teskje.no/",
+    "photoAlt": "Galleri Café Teskje — real official venue photograph",
+    "photoCaption": "Galleri Café Teskje · official website photograph",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Galleri%20Caf%C3%A9%20Teskje%2C%20Niels%20Carlsens%20gate%207%2C%201440%20Dr%C3%B8bak"
   }
 ]

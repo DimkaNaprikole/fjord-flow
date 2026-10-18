@@ -65,7 +65,7 @@
     box.append(el('strong','',p.name),el('p','',[p.town,t()[4+categories.indexOf(p.category)]].filter(Boolean).join(' · ')));
     if(p.coordinateLabel)box.append(el('p','norway-overview__access',p.coordinateLabel));
     const open=el('button','',t()[10]);open.type='button';open.addEventListener('click',()=>{details.hidden=true;window.dispatchEvent(new CustomEvent(p.destinationId?'fjord:open-place':'fjord:catalogue-select',{detail:{id:p.destinationId||p.id}}));});box.append(open);
-    const drive=el('a','',({nb:'Kjør hit',en:'Directions',uk:'Прокласти маршрут',sv:'Vägbeskrivning',da:'Rutevejledning'})[lang()]+' ↗');drive.href='https://www.google.com/maps/dir/?api=1&travelmode=driving&destination='+encodeURIComponent(p.latitude+','+p.longitude);drive.target='_blank';drive.rel='noopener noreferrer';box.append(drive);
+    const drive=el('a','',({nb:'Kjør hit',en:'Directions',uk:'Прокласти маршрут',sv:'Vägbeskrivning',da:'Rutevejledning'})[lang()]+' ↗');drive.href=safeURL(p.directionsUrl)||'https://www.google.com/maps/dir/?api=1&travelmode=driving&destination='+encodeURIComponent(p.routeQuery||p.latitude+','+p.longitude);drive.target='_blank';drive.rel='noopener noreferrer';box.append(drive);
     const website=safeURL(p.website);if(website){const link=el('a','',t()[11]+' ↗');link.href=website;link.target='_blank';link.rel='noopener noreferrer';box.append(link);}
     return box;
   }
@@ -111,7 +111,7 @@
     if(loading||loaded)return; loading=true;status.textContent=t()[12];
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),12000);
     try {
-      const response=await fetch('./norway-catalog.json?v=8',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);
+      const response=await fetch('./norway-catalog.json?v=9',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);
       const data=await response.json();if(!Array.isArray(data))throw Error('Invalid catalogue');rows=data;
       try{const extra=await fetch('./map-attractions.json?v=1',{signal:controller.signal});if(extra.ok){const attractions=await extra.json();if(Array.isArray(attractions))rows=rows.concat(attractions.filter(validPoint));}}catch{/* Catalogue remains available if attraction data cannot load. */}
       loaded=true; canvas.hidden=true; labels();draw(true);
