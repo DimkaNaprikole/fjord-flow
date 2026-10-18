@@ -182,3 +182,6 @@ dialog.fjord-helper .fjord-helper-close:hover {
   #galleryDialog :is(#galleryClose, #galleryPrev, #galleryNext, .gallery-quick-actions button, #galleryBook),
   .fjord-ai :is(.fjord-helper-close, .fjord-ai-primary, .fjord-ai-human, .fjord-ai-guide) { transition: none; }
 }
+
+/* Keep the assistant close to the bottom-right edge, clear of device safe areas. */
+button.fjord-helper-launch{top:auto;left:auto;right:calc(env(safe-area-inset-right,0px) + 4px);bottom:calc(env(safe-area-inset-bottom,0px) + 4px)}
