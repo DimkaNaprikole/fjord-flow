@@ -241,3 +241,8 @@ dialog.stay-gallery .stay-gallery-venue-actions a {
 @media (max-width:400px) {
   #cafeNearby .cafe-result-links .cafe-route { flex: 1 1 100%; justify-content: center; }
 }
+
+/* Norway–Ukraine friendship: always readable, with no moving controls. */
+.solidarity-banner{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 18px;box-sizing:border-box;width:100%;padding:10px 20px;background:var(--ff-deep);color:var(--ff-ink);border-bottom:1px solid var(--ff-line-strong);font:500 12px/1.5 Manrope,'Segoe UI',sans-serif;text-align:center}
+.solidarity-flags{display:inline-flex;align-items:center;gap:8px;font-size:20px;line-height:1.2}.solidarity-flags>span{color:#d0e7df;font-size:18px}.solidarity-banner strong{font-weight:800;letter-spacing:.04em}.solidarity-message{color:var(--ff-muted)}.solidarity-pledge{color:#f3d875;font-weight:700;border-left:1px solid var(--ff-line-strong);padding-left:18px}
+@media(max-width:600px){.solidarity-banner{gap:4px 10px;padding:9px 12px;font-size:11px}.solidarity-message{flex-basis:100%;order:3}.solidarity-pledge{border:0;padding:0}.solidarity-flags{font-size:18px}}
