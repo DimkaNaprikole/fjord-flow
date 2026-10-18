@@ -28,7 +28,7 @@
       region.textContent = heading.querySelector('.region')?.textContent || '';
       const title = document.createElement('strong');
       title.textContent = heading.querySelector('h3')?.textContent || '';
-      caption.append(region,title);
+      caption.append(window.FjordDemoPrices.badge(title.textContent),region,title);
       caption.addEventListener('click', () => heading.querySelector('[data-gallery]').click());
       card.append(caption);
       const toggle = document.createElement('button');

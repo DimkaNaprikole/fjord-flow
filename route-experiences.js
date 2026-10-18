@@ -29,6 +29,7 @@
   article.classList.add('experience-flip');article.dataset.experienceId=v.id;
   article.style.setProperty('--experience-photo',`url("${src}")`);
   const caption=el('div',undefined,'experience-front-caption');
+  caption.append(window.FjordDemoPrices.badge(v.name));
   caption.append(el('small',v.area||'Norge'),el('strong',v.name));figure.append(caption);
   const toggle=el('button',flipLabels[lang()][0]+' ↻','experience-flip-toggle');toggle.type='button';toggle.setAttribute('aria-expanded','false');
   let dwell=0,returnTimer=0;
@@ -52,14 +53,14 @@
   let dialog=$('experiencePhotoDialog');
   if(!dialog){dialog=el('dialog');dialog.id='experiencePhotoDialog';document.body.append(dialog);dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});}
   dialog.replaceChildren();const close=el('button','×','experience-photo-close');close.type='button';close.setAttribute('aria-label',moreLabels[lang()][2]);close.onclick=()=>dialog.close();
-  const title=el('h2',v.name),figure=el('figure'),image=el('img');image.src=imageURL(v.image);image.alt=v.name;figure.append(image);appendPhotoCredit(figure,v);dialog.append(close,title,figure,el('p',text(v.description)));dialog.showModal();window.FjordPlaceMaps?.show(dialog,[v]);
+  const title=el('h2',v.name),figure=el('figure'),image=el('img');image.src=imageURL(v.image);image.alt=v.name;figure.append(image);appendPhotoCredit(figure,v);dialog.append(close,title,figure,el('p',text(v.description)));dialog.showModal();window.FjordDemoPrices.gallery(dialog,v.name);window.FjordPlaceMaps?.show(dialog,[v]);
  }
  function card(v){
   const article=el('article',undefined,'experience-card'),figure=el('figure',undefined,'experience-visual'),src=imageURL(v.image);
   if(src){const button=el('button',undefined,'experience-photo-button'),img=el('img');button.type='button';button.setAttribute('aria-label',moreLabels[lang()][1]+' · '+v.name);button.onclick=()=>showPhoto(v);img.src=src;img.alt=v.name;img.loading='lazy';img.decoding='async';button.append(img,el('span','↗','experience-photo-expand'));figure.append(button);article.append(figure);}
   else article.classList.add('experience-no-photo');
   const body=el('div',undefined,'experience-body'),kicker=el('p',undefined,'experience-area'),area=el('span',v.area||'Norge');area.translate=false;kicker.append(area,document.createTextNode(' · '+(categories[lang()][v.category]||categories[lang()].landmark)));
-  const title=el('h3',v.name);title.translate=false;body.append(kicker,title,el('p',text(v.description),'experience-description'));
+  const title=el('h3',v.name);title.translate=false;body.append(kicker,title,window.FjordDemoPrices.badge(v.name),el('p',text(v.description),'experience-description'));
   const details=el('details',undefined,'experience-details');details.append(el('summary',moreLabels[lang()][0]));
   const season=text(v.season);if(season){const p=el('p',undefined,'experience-season');p.append(el('strong',t(10)+' · '),document.createTextNode(season));details.append(p);}
   if(v.address){const address=el('p',undefined,'experience-address');address.append(el('span',t(21)+': '));const literal=el('span',v.address);literal.translate=false;address.append(literal);details.append(address);}
