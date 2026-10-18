@@ -1,0 +1,1788 @@
+[
+  {
+    "query": "Gamlebyen Fredrikstad -intitle:Flea",
+    "files": [
+      {
+        "title": "File:Gamlebyen i Fredrikstad.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Gamlebyen_i_Fredrikstad.jpg/1280px-Gamlebyen_i_Fredrikstad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 1615,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Gamlebyen_i_Fredrikstad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Gamlebyen_i_Fredrikstad.jpg/1280px-Gamlebyen_i_Fredrikstad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 1615,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Gamlebyen_i_Fredrikstad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Gamlebyen_i_Fredrikstad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gamlebyen_i_Fredrikstad.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=26480849",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2013-06-04 10:29:20",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Gamlebyen i Fredrikstad",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Fredrikstad festning|Gamlebyen, Fredrikstad",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Kart over Gamlebyen i Fredrikstad.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2008-10-15 23:37:18",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://lokalhistoriewiki.no/index.php/Fil:Gamlebyen_i_Fredrikstad.jpg\">http://lokalhistoriewiki.no/index.php/Fil:Gamlebyen_i_Fredrikstad.jpg</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Finn Bjørklid",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 3.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 3.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/3.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-3.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Gamlebyen Fredrikstad - panoramio.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Gamlebyen_Fredrikstad_-_panoramio.jpg/1280px-Gamlebyen_Fredrikstad_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 960,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Gamlebyen_Fredrikstad_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Gamlebyen_Fredrikstad_-_panoramio.jpg/1280px-Gamlebyen_Fredrikstad_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 960,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Gamlebyen_Fredrikstad_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Gamlebyen_Fredrikstad_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gamlebyen_Fredrikstad_-_panoramio.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=52769161",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2016-11-03 17:41:49",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Gamlebyen Fredrikstad - panoramio",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Gamlebyen, Fredrikstad|Panoramio files uploaded by Panoramio upload bot|Panoramio images reviewed by trusted users|Photos from Panoramio|Files with coordinates missing SDC location of creation|Norway photographs taken on 2009-11-27|2009 in Fredrikstad|Photos from Panoramio ID 3773936",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "GPSLatitude": {
+            "value": "59.203943",
+            "source": "commons-desc-page"
+          },
+          "GPSLongitude": {
+            "value": "10.952489",
+            "source": "commons-desc-page"
+          },
+          "GPSMapDatum": {
+            "value": "WGS-84",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Gamlebyen Fredrikstad",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "27 November 2009 (according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://web.archive.org/web/20161015094041/http://www.panoramio.com/photo/32072995\">https://web.archive.org/web/20161015094041/http://www.panoramio.com/photo/32072995</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://web.archive.org/web/20161015094044/http://www.panoramio.com/user/3773936?with_photo_id=32072995\">TomasEE</a>",
+            "source": "commons-desc-page"
+          },
+          "Permission": {
+            "value": "<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by/3.0/deed.en\" class=\"extiw\" title=\"creativecommons:by/3.0/deed.en\">Attribution 3.0 Unported</a> license.</div><div class=\"rlicense-attr\" style=\"font-weight: bold;\">Attribution: <div style=\"display:inline;font-size:larger;\" class=\"licensetpl_attr\">TomasEE</div></div><div class=\"rlicense-desc\" style=\"text-align:start;\" dir=\"ltr\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li></ul></dd></dl>\n</div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by/3.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY 3.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution 3.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>\n<style data-mw-deduplicate=\"TemplateStyles:r901585720\">.mw-parser-output .panoramioreview{width:100%;margin:0.5em 0;background-color:var(--background-color-warning-subtle,#fffff0);padding:5px;border:1px solid var(--border-color-warning,#aa8);color:inherit}.mw-parser-output .panoramioreview-failed{background-color:var(--background-color-error-subtle,#fcc);color:inherit}.mw-parser-output .panoramioreview-passed{background-color:var(--background-color-success-subtle,#efe);color:inherit}</style>\n<table class=\"panoramioreview panoramioreview-passed\" lang=\"en\" dir=\"ltr\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img alt=\"\" src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Panoramio\" class=\"extiw\" title=\"en:Panoramio\">Panoramio</a></span></b>, was automatically reviewed on 3 November 2016 by <b><a href=\"//commons.wikimedia.org/wiki/User:Panoramio_upload_bot\" title=\"User:Panoramio upload bot\">Panoramio upload bot</a></b>, who confirmed that it was available on Panoramio under the above license on that date.\n</td>\n<td><span typeof=\"mw:File\"><a href=\"//commons.wikimedia.org/wiki/File:Star_and_ring.svg\" class=\"mw-file-description\"><img src=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Star_and_ring.svg/60px-Star_and_ring.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Star_and_ring.svg/120px-Star_and_ring.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"75\" data-file-height=\"75\"></a></span>\n</td></tr></tbody></table>",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseShortName": {
+            "value": "CC BY 3.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution 3.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Attribution": {
+            "value": "TomasEE",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by/3.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-3.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Gamlebyen Fredrikstad Voldegaten 8 og 9 Torvgaten 67 og 68.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg/1280px-Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 854,
+        "responsiveUrls": {
+          "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg/3840px-Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg/1280px-Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 854,
+          "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg/3840px-Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=75332065",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2018-12-26 14:18:26",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Gamlebyen Fredrikstad Voldegaten 8 og 9 Torvgaten 67 og 68",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Gamlebyen, Fredrikstad|Self-published work",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Gamlebyen Fredrikstad, Voldegaten 9 nærmest og 8, ved krysset Torvgaten 67 og 68",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2015-06-21 12:37:34",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Helge_H%C3%B8if%C3%B8dt\" title=\"User:Helge Høifødt\">Helge Høifødt</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    ]
+  },
+  {
+    "query": "Torghatten -intitle:MF",
+    "files": [
+      {
+        "title": "File:Torghatten 1.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Torghatten_1.jpg/1280px-Torghatten_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 960,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Torghatten_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Torghatten_1.jpg/1280px-Torghatten_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 960,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Torghatten_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Torghatten_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Torghatten_1.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=9448528",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2010-02-10 23:13:11",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Torghatten 1",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Torghatten|Taken with Canon PowerShot A70|Flickr images uploaded by Flickr upload bot|Photographs by Rosino",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Torghatten",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2004-08-03 16:44:18",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "originally posted to <b><a href=\"//commons.wikimedia.org/wiki/Flickr\" class=\"mw-redirect\" title=\"Flickr\">Flickr</a></b> as <a rel=\"nofollow\" class=\"external autonumber\" href=\"https://www.flickr.com/photos/84301190@N00/4318965951\">[1]</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/84301190@N00\">Rosino</a>",
+            "source": "commons-desc-page"
+          },
+          "Permission": {
+            "value": "<table id=\"FlickrReview\" style=\"width:100%; margin:0.3em auto; text-align:start; background-color:var(--background-color-success-subtle,#d5fdf4); padding: 3px; border:1px solid var(--border-color-base,#a2a9b1); color:inherit;\" dir=\"ltr\" lang=\"en\">\n\n<tbody><tr>\n<td><span typeof=\"mw:File\"><span><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/60px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"48\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Checked_copyright_icon.svg/120px-Checked_copyright_icon.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"160\" data-file-height=\"153\"></span></span>\n</td>\n<td>This image, which was originally posted to <b><a href=\"https://en.wikipedia.org/wiki/Flickr\" class=\"extiw\" title=\"en:Flickr\">Flickr</a></b>, was uploaded to Commons using <b><a href=\"//commons.wikimedia.org/wiki/User:Flickr_upload_bot\" title=\"User:Flickr upload bot\">Flickr upload bot</a></b> on 10 February 2010, 23:13 by <span id=\"flickr_upload_bot_reviewer\"><b><a href=\"//commons.wikimedia.org/wiki/User:Jorunn\" title=\"User:Jorunn\">Jorunn</a></b></span>. On that date, it was confirmed to be licensed under the terms of the license indicated.\n</td>\n<td><span typeof=\"mw:File\"><span><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/60px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"50\" height=\"50\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Flickr_dots.svg/120px-Flickr_dots.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"512\" data-file-height=\"512\"></span></span>\n</td></tr></tbody></table>\n<div class=\"responsive-license-cc layouttemplate licensetpl\" dir=\"ltr\" lang=\"en\"><div class=\"rlicense-icons\"><span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"w:en:Creative Commons\"><img alt=\"w:en:Creative Commons\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/120px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"90\" height=\"36\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/250px-CC_some_rights_reserved.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"744\" data-file-height=\"300\"></span></span><br>\n<span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"attribution\"><img alt=\"attribution\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/40px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/60px-Cc-by_new_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span> <span class=\"skin-invert\" typeof=\"mw:File\"><span title=\"share alike\"><img alt=\"share alike\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/40px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" decoding=\"async\" loading=\"lazy\" width=\"24\" height=\"24\" class=\"mw-file-element\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Cc-sa_white.svg/60px-Cc-sa_white.svg.png?utm_source=commons.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail 2x\" data-file-width=\"64\" data-file-height=\"64\"></span></span></div><div class=\"rlicense-text\"><div class=\"rlicense-declaration\">This file is licensed under the <a href=\"https://en.wikipedia.org/wiki/en:Creative_Commons\" class=\"extiw\" title=\"w:en:Creative Commons\">Creative Commons</a> <a href=\"//creativecommons.org/licenses/by-sa/2.0/deed.en\" class=\"extiw\" title=\"creativecommons:by-sa/2.0/deed.en\">Attribution-Share Alike 2.0 Generic</a> license.</div><div class=\"rlicense-desc\" style=\"text-align:start;\" lang=\"en\">\n<dl><dd>You are free:\n<ul><li><b>to share</b> – to copy, distribute and transmit the work</li>\n<li><b>to remix</b> – to adapt the work</li></ul></dd>\n<dd>Under the following conditions:\n<ul><li><b>attribution</b> – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</li>\n<li><b>share alike</b> – If you remix, transform, or build upon the material, you must distribute your contributions under the <a href=\"https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses\" class=\"extiw\" title=\"ccorg:share-your-work/licensing-considerations/compatible-licenses\">same or compatible license</a> as the original.</li></ul></dd></dl></div><span class=\"licensetpl_link\" style=\"display:none;\">https://creativecommons.org/licenses/by-sa/2.0</span><span class=\"licensetpl_short\" style=\"display:none;\">CC BY-SA 2.0 </span><span class=\"licensetpl_long\" style=\"display:none;\">Creative Commons Attribution-Share Alike 2.0 </span><span class=\"licensetpl_link_req\" style=\"display:none;\">true</span><span class=\"licensetpl_attr_req\" style=\"display:none;\">true</span></div></div>",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 2.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 2.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/2.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-2.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Torghatten Mountain, Southwest view 20150606 1.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg/1280px-Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 960,
+        "responsiveUrls": {
+          "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg/3840px-Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg/1280px-Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 960,
+          "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg/3840px-Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Torghatten_Mountain,_Southwest_view_20150606_1.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=41582146",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2015-07-14 14:08:37",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Torghatten Mountain, Southwest view 20150606 1",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Torghatten|Uploads by User:DXR|Uploads by User:DXR in 2015|Uploads by User:DXR in Nordland|Uploaded with LrMediaWiki|Files with coordinates missing SDC location of creation",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "quality",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "GPSLatitude": {
+            "value": "65.392298",
+            "source": "commons-desc-page"
+          },
+          "GPSLongitude": {
+            "value": "12.076982",
+            "source": "commons-desc-page"
+          },
+          "GPSMapDatum": {
+            "value": "WGS-84",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "A southwest view of Torghatten mountain. Some huts are visible in front of the mountain.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2015-06-06",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:DXR\" title=\"User:DXR\">DXR</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Torghatten logo.png",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Torghatten_logo.png/1280px-Torghatten_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 469,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/9/97/Torghatten_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Torghatten_logo.png/1280px-Torghatten_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 469,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/9/97/Torghatten_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Torghatten_logo.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Torghatten_logo.png",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=194535049",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2026-06-25 15:28:31",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Torghatten logo",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Text logos|Torghatten (transport company)|PD textlogo|Unknown date|Template Unknown (author)|Logos of companies associated with transport in Norway",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Corporate logo of Torghatten, a Norwegian transport company",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "Unknown date",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external free\" href=\"https://www.torghatten.no/about/press\">https://www.torghatten.no/about/press</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Unknown author<span style=\"display: none;\">Unknown author</span>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "Public domain",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Public domain",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "false",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Copyrighted": {
+            "value": "False",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "pd",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    ]
+  },
+  {
+    "query": "Nidaros Cathedral -detail",
+    "files": [
+      {
+        "title": "File:Die Nidaros Kathedrale in Trondheim. 05.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Die_Nidaros_Kathedrale_in_Trondheim._05.jpg/1280px-Die_Nidaros_Kathedrale_in_Trondheim._05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 1494,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Die_Nidaros_Kathedrale_in_Trondheim._05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Die_Nidaros_Kathedrale_in_Trondheim._05.jpg/1280px-Die_Nidaros_Kathedrale_in_Trondheim._05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 1494,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Die_Nidaros_Kathedrale_in_Trondheim._05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Die_Nidaros_Kathedrale_in_Trondheim._05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Die_Nidaros_Kathedrale_in_Trondheim._05.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=50667492",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2016-08-14 12:55:31",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Die Nidaros Kathedrale in Trondheim. 05",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "West front of Nidaros Cathedral|Self-published work|Churches in Trondheim photographed in 2016|July 2016 in Trondheim",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "The Trondheim Cathedral.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2016-07-18 14:43:24",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Holger_Uwe_Schmitt\" title=\"User:Holger Uwe Schmitt\">Holger Uwe Schmitt</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Nidaros Cathedral.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Nidaros_Cathedral.jpg/1280px-Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 1707,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Nidaros_Cathedral.jpg/1280px-Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 1707,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Nidaros_Cathedral.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=124304989",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2022-10-17 18:47:46",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Nidaros Cathedral",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Nidaros Cathedral|Self-published work|Cultural heritage monuments in Norway with known IDs|Uploaded via Campaign:wlm-no|Images from Wiki Loves Monuments 2022 in Norway|Images from Wiki Loves Monuments 2022",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "The Nidaros Cathedral from the back. Trondheim, Norway.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2021-07-13 13:04:21",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Rytalias&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Rytalias (page does not exist)\">Rytalias</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Historical images of the Nidaros Cathedral.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Historical_images_of_the_Nidaros_Cathedral.jpg/1280px-Historical_images_of_the_Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 1250,
+        "responsiveUrls": {
+          "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Historical_images_of_the_Nidaros_Cathedral.jpg/3840px-Historical_images_of_the_Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Historical_images_of_the_Nidaros_Cathedral.jpg/1280px-Historical_images_of_the_Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 1250,
+          "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Historical_images_of_the_Nidaros_Cathedral.jpg/3840px-Historical_images_of_the_Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Historical_images_of_the_Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Historical_images_of_the_Nidaros_Cathedral.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=136191980",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2023-08-19 10:22:37",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Historical images of the Nidaros Cathedral",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Photographs of Norway by Peter Elfelt|Historical images of the Nidaros Cathedral",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Historical images of the Nidaros Cathedral",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2023-08-19 14:18:52",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external free\" href=\"http://www5.kb.dk/images/billed/2010/okt/billeder/object2176636/da/\">http://www5.kb.dk/images/billed/2010/okt/billeder/object2176636/da/</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "Peter Elfelt",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    ]
+  },
+  {
+    "query": "Alta rock carvings",
+    "files": [
+      {
+        "title": "File:Alta rock carvings 06.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Alta_rock_carvings_06.jpg/1280px-Alta_rock_carvings_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 853,
+        "responsiveUrls": {
+          "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Alta_rock_carvings_06.jpg/3840px-Alta_rock_carvings_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Alta_rock_carvings_06.jpg/1280px-Alta_rock_carvings_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 853,
+          "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Alta_rock_carvings_06.jpg/3840px-Alta_rock_carvings_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Alta_rock_carvings_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Alta_rock_carvings_06.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=9786794",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2010-03-20 16:31:43",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Alta rock carvings 06",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "GFDL|Taken with Canon EOS 50D|Rock art of Alta|License migration redundant|Self-published work",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "The Rock carvings at Alta are part of an archaeological site near the town of Alta  in the county of Finnmark in northern Norway.",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jensvins\" title=\"User:Jensvins\">Jensvins</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 3.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 3.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/3.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-3.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Alta-Carvings-2012-07-17-12-15-018.jpg",
+        "thumburl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Alta-Carvings-2012-07-17-12-15-018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "thumbwidth": 1280,
+        "thumbheight": 1920,
+        "thumbattribs": {
+          "src": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Alta-Carvings-2012-07-17-12-15-018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 1920
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Alta-Carvings-2012-07-17-12-15-018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Alta-Carvings-2012-07-17-12-15-018.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=24034497",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2013-01-20 22:04:54",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Alta-Carvings-2012-07-17-12-15-018",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Rock art of Alta|Self-published work",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Rock carvings near Alta (Norway)",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2012-07-17",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Karl_Brodowsky\" title=\"User:Karl Brodowsky\">Karl Brodowsky</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 3.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 3.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/3.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-3.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Alta banner Rock carvings.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Alta_banner_Rock_carvings.jpg/1280px-Alta_banner_Rock_carvings.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 183,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Alta_banner_Rock_carvings.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Alta_banner_Rock_carvings.jpg/1280px-Alta_banner_Rock_carvings.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 183,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Alta_banner_Rock_carvings.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Alta_banner_Rock_carvings.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Alta_banner_Rock_carvings.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=26192739",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2013-05-20 11:42:45",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Alta banner Rock carvings",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Taken with Canon EOS 50D|Rock art of Alta|Wikivoyage banners of Norway",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "The Rock carvings at Alta are part of an archaeological site near the town of Alta in the county of Finnmark in northern Norway.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2009-07-29 15:17:25",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/File:Alta_rock_carvings_01.jpg\" title=\"File:Alta rock carvings 01.jpg\">File:Alta rock carvings 01.jpg</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Jensvins\" title=\"User:Jensvins\">Jensvins</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 3.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 3.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/3.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-3.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    ]
+  },
+  {
+    "query": "Saltstraumen -intitle:kirke",
+    "files": [
+      {
+        "title": "File:Saltstraumen quiet.JPG",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Saltstraumen_quiet.JPG/1280px-Saltstraumen_quiet.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 960,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/0/08/Saltstraumen_quiet.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Saltstraumen_quiet.JPG/1280px-Saltstraumen_quiet.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 960,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/0/08/Saltstraumen_quiet.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Saltstraumen_quiet.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Saltstraumen_quiet.JPG",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=219305",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2005-07-10 18:46:37",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Saltstraumen quiet",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Taken with Casio QV-R40|3-clause BSD License|Files with no machine-readable source|Saltstraumen bru|Self-published work|Assumed own work|Photographs taken on 2004-05-29",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "<p>Saltstraumen, Bodø, Norway. \n</p>\nPhoto by Guttorm Raknes (drguttorm) May 2004.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "29 May 2004 (according to <span lang=\"en\" dir=\"ltr\"><a href=\"https://en.wikipedia.org/wiki/Exif\" class=\"extiw\" title=\"en:Exif\">Exif</a></span> data)",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "No machine-readable author provided. <a href=\"//commons.wikimedia.org/w/index.php?title=User:Drguttorm&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Drguttorm (page does not exist)\">Drguttorm</a> assumed (based on copyright claims).",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "BSD",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "BSD license",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "http://opensource.org/licenses/bsd-license.php",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Saltstraumen-58-Kirche-2019-gje.jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Saltstraumen-58-Kirche-2019-gje.jpg/1280px-Saltstraumen-58-Kirche-2019-gje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 1725,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Saltstraumen-58-Kirche-2019-gje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Saltstraumen-58-Kirche-2019-gje.jpg/1280px-Saltstraumen-58-Kirche-2019-gje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 1725,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Saltstraumen-58-Kirche-2019-gje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Saltstraumen-58-Kirche-2019-gje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Saltstraumen-58-Kirche-2019-gje.jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=82535075",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2019-09-25 17:59:36",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Saltstraumen-58-Kirche-2019-gje",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Saltstraumen kirke|Self-published work|Images by Gerd Eichmann|Images by Gerd Eichmann/FI.Wikipedia|Images by Gerd Eichmann/JV.Wikipedia|Images by Gerd Eichmann/Norwegen/Saltstraumen",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Saltstraumen, Norwegen",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2019-07-08 16:56:49",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Gerd_Eichmann\" title=\"User:Gerd Eichmann\">Gerd Eichmann</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Saltstraumen 20170722 133203 (cropped).jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Saltstraumen_20170722_133203_%28cropped%29.jpg/1280px-Saltstraumen_20170722_133203_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 960,
+        "responsiveUrls": {
+          "2": "https://upload.wikimedia.org/wikipedia/commons/1/18/Saltstraumen_20170722_133203_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Saltstraumen_20170722_133203_%28cropped%29.jpg/1280px-Saltstraumen_20170722_133203_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 960,
+          "srcset": "https://upload.wikimedia.org/wikipedia/commons/1/18/Saltstraumen_20170722_133203_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Saltstraumen_20170722_133203_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Saltstraumen_20170722_133203_(cropped).jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=144823589",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2024-01-31 14:06:06",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Saltstraumen 20170722 133203 (cropped)",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Saltstraumen|Media lacking a description|Extracted images|Files with coordinates missing SDC location of creation|Norway photographs taken on 2017-07-22|Photographs by Sergei Gussev",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "GPSLatitude": {
+            "value": "67.215477",
+            "source": "commons-desc-page"
+          },
+          "GPSLongitude": {
+            "value": "14.618863",
+            "source": "commons-desc-page"
+          },
+          "GPSMapDatum": {
+            "value": "WGS-84",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "DateTimeOriginal": {
+            "value": "2017-07-22 13:32",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/photos/sergeigussev/35921781100/\">Flickr</a>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a rel=\"nofollow\" class=\"external text\" href=\"https://www.flickr.com/people/133200397@N03\">Sergei Gussev</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY 2.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution 2.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by/2.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-2.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    ]
+  },
+  {
+    "query": "Røros",
+    "files": [
+      {
+        "title": "File:Bergstaden Røros Røros kirke Bergstadens Ziir Slegghaugan Smelthytta Trøndelag Norway (2022.08.04).jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg/1280px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 812,
+        "responsiveUrls": {
+          "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg/3840px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg/1280px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 812,
+          "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg/3840px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_(2022.08.04).jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128595721",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2023-02-10 18:57:34",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Bergstaden Røros Røros kirke Bergstadens Ziir Slegghaugan Smelthytta Trøndelag Norway (2022.08.04)",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Røros|Røros (town)|Mining towns|Self-published work",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Bergstaden Røros - med Røros kirke (Bergstadens Ziir) fra 1784 til venstre og Slegghaugan med Smelthytta (opprinnelig fra 1888) til høyre.",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2022-08-04 14:04:10",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Macwhale\" title=\"User:Macwhale\">Geir Hval (www.MacWhale.eu)</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Bergstaden Røros Røros kirke Bergstadens Ziir Hyttklokka Trøndelag Norway (2022.08.04).jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg/1280px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 960,
+        "responsiveUrls": {
+          "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg/3840px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg/1280px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 960,
+          "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c7/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg/3840px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_(2022.08.04).jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128596195",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2023-02-10 19:18:38",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Bergstaden Røros Røros kirke Bergstadens Ziir Hyttklokka Trøndelag Norway (2022.08.04)",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Røros kirke|Røros (town)|Self-published work|Files with coordinates missing SDC location of creation",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "GPSLatitude": {
+            "value": "62.577283",
+            "source": "commons-desc-page"
+          },
+          "GPSLongitude": {
+            "value": "11.390332",
+            "source": "commons-desc-page"
+          },
+          "GPSMapDatum": {
+            "value": "WGS-84",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Røros med Hyttklokka og Bergstadens Ziir, Trøndelag",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2022-08-04 13:54:07",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Macwhale\" title=\"User:Macwhale\">Geir Hval (www.MacWhale.eu)</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      },
+      {
+        "title": "File:Bergstaden Røros Røros kirke Bergstadens Ziir Hyttklokka Trøndelag Norway (2022.10.01).jpg",
+        "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg/1280px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumbwidth": 1280,
+        "thumbheight": 658,
+        "responsiveUrls": {
+          "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg/3840px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+        },
+        "thumbattribs": {
+          "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg/1280px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "decoding": "async",
+          "loading": "lazy",
+          "width": 1280,
+          "height": 658,
+          "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg/3840px-Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+        },
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.10.01%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "descriptionurl": "https://commons.wikimedia.org/wiki/File:Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_(2022.10.01).jpg",
+        "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=128597110",
+        "extmetadata": {
+          "DateTime": {
+            "value": "2023-02-10 19:59:55",
+            "source": "mediawiki-metadata",
+            "hidden": ""
+          },
+          "ObjectName": {
+            "value": "Bergstaden Røros Røros kirke Bergstadens Ziir Hyttklokka Trøndelag Norway (2022.10.01)",
+            "source": "mediawiki-metadata"
+          },
+          "CommonsMetadataExtension": {
+            "value": 1.2,
+            "source": "extension",
+            "hidden": ""
+          },
+          "Categories": {
+            "value": "Røros kirke|Røros (town)|Self-published work",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "Assessments": {
+            "value": "",
+            "source": "commons-categories",
+            "hidden": ""
+          },
+          "ImageDescription": {
+            "value": "Høst på Røros, Trøndelag",
+            "source": "commons-desc-page"
+          },
+          "DateTimeOriginal": {
+            "value": "2022-10-01 12:32:39",
+            "source": "commons-desc-page"
+          },
+          "Credit": {
+            "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+            "source": "commons-desc-page"
+          },
+          "Artist": {
+            "value": "<a href=\"//commons.wikimedia.org/wiki/User:Macwhale\" title=\"User:Macwhale\">Geir Hval (www.MacWhale.eu)</a>",
+            "source": "commons-desc-page"
+          },
+          "LicenseShortName": {
+            "value": "CC BY-SA 4.0",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "UsageTerms": {
+            "value": "Creative Commons Attribution-Share Alike 4.0",
+            "source": "commons-desc-page"
+          },
+          "AttributionRequired": {
+            "value": "true",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "LicenseUrl": {
+            "value": "https://creativecommons.org/licenses/by-sa/4.0",
+            "source": "commons-desc-page"
+          },
+          "Copyrighted": {
+            "value": "True",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "Restrictions": {
+            "value": "",
+            "source": "commons-desc-page",
+            "hidden": ""
+          },
+          "License": {
+            "value": "cc-by-sa-4.0",
+            "source": "commons-templates",
+            "hidden": ""
+          }
+        }
+      }
+    ]
+  }
+]

@@ -56,7 +56,13 @@
     "region": "Hadeland",
     "source": "https://www.granavolden.no/om-oss/restaurant-og-kafe/",
     "checked": "2026-10-17",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.36657375848351%2C10.52822551268278"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.36657375848351%2C10.52822551268278",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.36657375848351&ost=10.52822551268278&koordsys=4258",
+    "coordinateKey": "60.36657375848351,10.52822551268278"
   },
   {
     "id": "cafe-opera-bergen",
@@ -179,7 +185,13 @@
     "category": "cafe",
     "region": "Hardanger",
     "source": "https://cafeopera.org/",
-    "checked": "2026-10-17"
+    "checked": "2026-10-17",
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Bergen",
+    "municipalityId": "4601",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.391826703790635&ost=5.319807757621106&koordsys=4258",
+    "coordinateKey": "60.391826703790635,5.319807757621106"
   },
   {
     "id": "flam-bakery",
@@ -307,6 +319,12 @@
     "region": "Aurland",
     "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery",
     "checked": "2026-10-17",
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Aurland",
+    "municipalityId": "4641",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.86197584258663&ost=7.112441541309992&koordsys=4258",
+    "coordinateKey": "60.86197584258663,7.112441541309992",
     "latitude": 60.86197584258663,
     "longitude": 7.112441541309992,
     "coordinatePrecision": "area",
@@ -429,7 +447,13 @@
     "category": "cafe",
     "region": "Sunnmøre",
     "source": "https://no.tripadvisor.com/Restaurant_Review-g642196-d2186167-Reviews-CafeOle-Geiranger_Stranda_More_og_Romsdal_Western_Norway.html",
-    "checked": "2026-10-17"
+    "checked": "2026-10-17",
+    "county": "Møre og Romsdal",
+    "countyId": "15",
+    "municipality": "Stranda",
+    "municipalityId": "1525",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.10188295945076&ost=7.206619328358421&koordsys=4258",
+    "coordinateKey": "62.10188295945076,7.206619328358421"
   },
   {
     "id": "sagvollstallen-gran",
@@ -494,7 +518,13 @@
     "region": "Hadeland",
     "source": "https://www.granil.no/sagvollstallen",
     "checked": "2026-10-17",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.3762074%2C10.7146382"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.3762074%2C10.7146382",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.3762074&ost=10.7146382&koordsys=4258",
+    "coordinateKey": "60.3762074,10.7146382"
   },
   {
     "id": "cafe-oscar-ii-gran",
@@ -561,7 +591,13 @@
     "region": "Hadeland",
     "source": "https://vika-uteliv.no/cafe-oscar-ii/",
     "checked": "2026-10-17",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.4306152%2C10.4690111"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.4306152%2C10.4690111",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.4306152&ost=10.4690111&koordsys=4258",
+    "coordinateKey": "60.4306152,10.4690111"
   },
   {
     "id": "hadeland-gjestegard-jaren",
@@ -672,6 +708,12 @@
     "source": "https://www.hadelandgjestegard.no/",
     "checked": "2026-10-17",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.398304261601396%2C10.552818172677284",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.398304261601396&ost=10.552818172677284&koordsys=4258",
+    "coordinateKey": "60.398304261601396,10.552818172677284",
     "visitInfo": {
       "checked": "2026-10-18",
       "source": "https://www.hadelandgjestegard.no/",
@@ -757,7 +799,13 @@
     "region": "Hadeland",
     "source": "https://www.lupro.no/lupro-hj%C3%B8rnet",
     "checked": "2026-10-17",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.35747702970864%2C10.571360315913346"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.35747702970864%2C10.571360315913346",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.35747702970864&ost=10.571360315913346&koordsys=4258",
+    "coordinateKey": "60.35747702970864,10.571360315913346"
   },
   {
     "id": "tim-wendelboe-oslo",
@@ -858,6 +906,12 @@
     "photoVerified": true,
     "coordinatesNote": "Operator publishes Grüners gate 1. Kartverket returns 1A and 1B about 5 metres apart; 1A represents the address area, not a verified café door or parking entrance.",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Tim%20Wendelboe%20Espresso%20Bar%2C%20Gr%C3%BCners%20gate%201%2C%20Oslo%2C%20Norway&travelmode=driving",
+    "county": "Oslo",
+    "countyId": "03",
+    "municipality": "Oslo",
+    "municipalityId": "0301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.92331840109198&ost=10.75581858290532&koordsys=4258",
+    "coordinateKey": "59.92331840109198,10.75581858290532",
     "latitude": 59.92331840109198,
     "longitude": 10.75581858290532,
     "coordinatePrecision": "area",
@@ -966,7 +1020,13 @@
     "source": "https://dromedar.no/kaffebarer/",
     "photoVerified": true,
     "coordinatesNote": "Kartverket address point; entrance/pier position may differ.",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=63.43084605760483%2C10.397489205732526"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=63.43084605760483%2C10.397489205732526",
+    "county": "Trøndelag",
+    "countyId": "50",
+    "municipality": "Trondheim",
+    "municipalityId": "5001",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=63.43084605760483&ost=10.397489205732526&koordsys=4258",
+    "coordinateKey": "63.43084605760483,10.397489205732526"
   },
   {
     "id": "smortorget-tromso",
@@ -1066,7 +1126,13 @@
         ]
       ]
     },
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=69.64955436441228%2C18.959189119291192"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=69.64955436441228%2C18.959189119291192",
+    "county": "Troms",
+    "countyId": "55",
+    "municipality": "Tromsø",
+    "municipalityId": "5501",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.64955436441228&ost=18.959189119291192&koordsys=4258",
+    "coordinateKey": "69.64955436441228,18.959189119291192"
   },
   {
     "id": "dromedar-moxness-trondheim",
@@ -1166,7 +1232,13 @@
         ]
       ]
     },
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=63.43342507642698%2C10.399037956615386"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=63.43342507642698%2C10.399037956615386",
+    "county": "Trøndelag",
+    "countyId": "50",
+    "municipality": "Trondheim",
+    "municipalityId": "5001",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=63.43342507642698&ost=10.399037956615386&koordsys=4258",
+    "coordinateKey": "63.43342507642698,10.399037956615386"
   },
   {
     "id": "boker-og-borst-stavanger",
@@ -1223,7 +1295,13 @@
       "uk": "Справжнє фото · Bøker og Børst",
       "sv": "Äkta foto · Bøker og Børst",
       "da": "Ægte foto · Bøker og Børst"
-    }
+    },
+    "county": "Rogaland",
+    "countyId": "11",
+    "municipality": "Stavanger",
+    "municipalityId": "1103",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.972792701286615&ost=5.7335055781026645&koordsys=4258",
+    "coordinateKey": "58.972792701286615,5.7335055781026645"
   },
   {
     "id": "drommeplassen-kristiansand",
@@ -1323,7 +1401,13 @@
       "uk": "Справжнє фото · Drømmeplassen",
       "sv": "Äkta foto · Drømmeplassen",
       "da": "Ægte foto · Drømmeplassen"
-    }
+    },
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Kristiansand",
+    "municipalityId": "4204",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.1470891219409&ost=7.993821312245067&koordsys=4258",
+    "coordinateKey": "58.1470891219409,7.993821312245067"
   },
   {
     "id": "strandhaven-lillesand",
@@ -1389,7 +1473,13 @@
         "license": "Operator-published photograph; no open licence claimed"
       }
     ],
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.24872908235062%2C8.378005412060075"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.24872908235062%2C8.378005412060075",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lillesand",
+    "municipalityId": "4215",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.24872908235062&ost=8.378005412060075&koordsys=4258",
+    "coordinateKey": "58.24872908235062,8.378005412060075"
   },
   {
     "id": "herlighed-grimstad",
@@ -1483,7 +1573,13 @@
         "license": "Operator-published photograph; no open licence claimed"
       }
     ],
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.34069660932937%2C8.593075663056158"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.34069660932937%2C8.593075663056158",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Grimstad",
+    "municipalityId": "4202",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.34069660932937&ost=8.593075663056158&koordsys=4258",
+    "coordinateKey": "58.34069660932937,8.593075663056158"
   },
   {
     "id": "tyholmen-arendal",
@@ -1533,7 +1629,13 @@
         "license": "Operator-published photograph; no open licence claimed"
       }
     ],
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.458361861705846%2C8.767058180361452"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.458361861705846%2C8.767058180361452",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Arendal",
+    "municipalityId": "4203",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.458361861705846&ost=8.767058180361452&koordsys=4258",
+    "coordinateKey": "58.458361861705846,8.767058180361452"
   },
   {
     "id": "stavelin-risor",
@@ -1622,7 +1724,13 @@
         "license": "Operator-published photograph; no open licence claimed"
       }
     ],
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.72034215228381%2C9.232572560468363"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.72034215228381%2C9.232572560468363",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Risør",
+    "municipalityId": "4201",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.72034215228381&ost=9.232572560468363&koordsys=4258",
+    "coordinateKey": "58.72034215228381,9.232572560468363"
   },
   {
     "id": "nordraak-kragero",
@@ -1680,7 +1788,13 @@
     "imageSource": "https://www.nordraakkragero.no/",
     "photoAlt": "Nordraak · Kragerø — actual venue photograph",
     "photoCaption": "Nordraak · Kragerø · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nordraak%20%C2%B7%20Krager%C3%B8%2C%20Nordraaks%20gate%204%2C%203770%20Krager%C3%B8"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nordraak%20%C2%B7%20Krager%C3%B8%2C%20Nordraaks%20gate%204%2C%203770%20Krager%C3%B8",
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Kragerø",
+    "municipalityId": "4014",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.86964236946123&ost=9.41174054529421&koordsys=4258",
+    "coordinateKey": "58.86964236946123,9.41174054529421"
   },
   {
     "id": "langesund-bad-cafe",
@@ -1782,7 +1896,13 @@
     "imageSource": "https://www.langesundbad.no/restaurant",
     "photoAlt": "Langesund Bad · kafé og kake — actual venue photograph",
     "photoCaption": "Langesund Bad · kafé og kake · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Langesund%20Bad%20%C2%B7%20kaf%C3%A9%20og%20kake%2C%20Badeveien%205%2C%203970%20Langesund"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Langesund%20Bad%20%C2%B7%20kaf%C3%A9%20og%20kake%2C%20Badeveien%205%2C%203970%20Langesund",
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Bamble",
+    "municipalityId": "4012",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.998687305730215&ost=9.742841094056661&koordsys=4258",
+    "coordinateKey": "58.998687305730215,9.742841094056661"
   },
   {
     "id": "nevlunghavn-bakeri",
@@ -1844,7 +1964,13 @@
     "imageSource": "https://www.nevlunghavnbakeri.no/bakeriet/",
     "photoAlt": "Nevlunghavn Bakeri & Conditori — actual venue photograph",
     "photoCaption": "Nevlunghavn Bakeri & Conditori · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nevlunghavn%20Bakeri%20%26%20Conditori%2C%20Oddaneveien%202%2C%203296%20Nevlunghavn"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nevlunghavn%20Bakeri%20%26%20Conditori%2C%20Oddaneveien%202%2C%203296%20Nevlunghavn",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.971891106860944&ost=9.863106639440973&koordsys=4258",
+    "coordinateKey": "58.971891106860944,9.863106639440973"
   },
   {
     "id": "teaterkafeen-larvik",
@@ -1928,7 +2054,13 @@
     "imageSource": "https://teaterhusetmunken.no/teaterkafeen/",
     "photoAlt": "Teaterkafeen · Munken — actual venue photograph",
     "photoCaption": "Teaterkafeen · Munken · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Teaterkafeen%20%C2%B7%20Munken%2C%20Storgata%2055%2C%203256%20Larvik"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Teaterkafeen%20%C2%B7%20Munken%2C%20Storgata%2055%2C%203256%20Larvik",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.05006017648498&ost=10.033635284856123&koordsys=4258",
+    "coordinateKey": "59.05006017648498,10.033635284856123"
   },
   {
     "id": "bare-beppe-sandefjord",
@@ -2025,7 +2157,13 @@
     "imageSource": "https://www.barebeppe.no/finn-oss",
     "photoAlt": "Bare Beppe · Sandefjord — actual venue photograph",
     "photoCaption": "Bare Beppe · Sandefjord · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Bare%20Beppe%20%C2%B7%20Sandefjord%2C%20Kongens%20gate%2010%2C%203210%20Sandefjord"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Bare%20Beppe%20%C2%B7%20Sandefjord%2C%20Kongens%20gate%2010%2C%203210%20Sandefjord",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Sandefjord",
+    "municipalityId": "3907",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.13195569639583&ost=10.223259392190384&koordsys=4258",
+    "coordinateKey": "59.13195569639583,10.223259392190384"
   },
   {
     "id": "bare-barista-tonsberg",
@@ -2127,7 +2265,13 @@
     "imageSource": "https://barebarista.no/",
     "photoAlt": "Bare Barista · Øvre Langgate — actual venue photograph",
     "photoCaption": "Bare Barista · Øvre Langgate · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Bare%20Barista%20%C2%B7%20%C3%98vre%20Langgate%2C%20%C3%98vre%20Langgate%2044%2C%203110%20T%C3%B8nsberg"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Bare%20Barista%20%C2%B7%20%C3%98vre%20Langgate%2C%20%C3%98vre%20Langgate%2044%2C%203110%20T%C3%B8nsberg",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Tønsberg",
+    "municipalityId": "3905",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.26803460942821&ost=10.407852234544498&koordsys=4258",
+    "coordinateKey": "59.26803460942821,10.407852234544498"
   },
   {
     "id": "traktern-horten",
@@ -2185,7 +2329,13 @@
     "imageSource": "https://www.traktern.no/",
     "photoAlt": "Traktern Kaffebar · Horten — actual venue photograph",
     "photoCaption": "Traktern Kaffebar · Horten · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Traktern%20Kaffebar%20%C2%B7%20Horten%2C%20Falsens%20gate%2011%2C%203187%20Horten"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Traktern%20Kaffebar%20%C2%B7%20Horten%2C%20Falsens%20gate%2011%2C%203187%20Horten",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Horten",
+    "municipalityId": "3901",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.41379472344568&ost=10.481495556308307&koordsys=4258",
+    "coordinateKey": "59.41379472344568,10.481495556308307"
   },
   {
     "id": "godt-hjemmelaget-holmestrand",
@@ -2279,7 +2429,13 @@
     "imageSource": "https://godtoghjemmelaget.no/cafe-og-landhandel",
     "photoAlt": "Godt og Hjemmelaget · Kafé og Landhandel — real official venue photograph",
     "photoCaption": "Godt og Hjemmelaget · Kafé og Landhandel · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Godt%20og%20Hjemmelaget%20%C2%B7%20Kaf%C3%A9%20og%20Landhandel%2C%20Hvittingfossveien%20123%2C%203085%20Holmestrand"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Godt%20og%20Hjemmelaget%20%C2%B7%20Kaf%C3%A9%20og%20Landhandel%2C%20Hvittingfossveien%20123%2C%203085%20Holmestrand",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Holmestrand",
+    "municipalityId": "3903",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.48975661210078&ost=10.295133536990503&koordsys=4258",
+    "coordinateKey": "59.48975661210078,10.295133536990503"
   },
   {
     "id": "teskje-drobak",
@@ -2368,7 +2524,13 @@
     "imageSource": "https://www.teskje.no/",
     "photoAlt": "Galleri Café Teskje — real official venue photograph",
     "photoCaption": "Galleri Café Teskje · official website photograph",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Galleri%20Caf%C3%A9%20Teskje%2C%20Niels%20Carlsens%20gate%207%2C%201440%20Dr%C3%B8bak"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Galleri%20Caf%C3%A9%20Teskje%2C%20Niels%20Carlsens%20gate%207%2C%201440%20Dr%C3%B8bak",
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Frogn",
+    "municipalityId": "3214",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.66452093723958&ost=10.629917179098081&koordsys=4258",
+    "coordinateKey": "59.66452093723958,10.629917179098081"
   },
   {
     "id": "kinsarvik-heng",
@@ -2474,6 +2636,12 @@
       "sv": "Foto från Kinsarvik Camping · anläggningens webbplats",
       "da": "Foto fra Kinsarvik Camping · stedets hjemmeside"
     },
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Ullensvang",
+    "municipalityId": "4618",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.374461&ost=6.719237&koordsys=4258",
+    "coordinateKey": "60.374461,6.719237",
     "coordinatesSource": "https://online.camping.no/visit/?id=1447874&lang=en"
   },
   {
@@ -2580,6 +2748,12 @@
       "sv": "Foto från Luster Fjordhytter · anläggningens webbplats",
       "da": "Foto fra Luster Fjordhytter · stedets hjemmeside"
     },
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Luster",
+    "municipalityId": "4644",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.39969592552051&ost=7.395916039941032&koordsys=4258",
+    "coordinateKey": "61.39969592552051,7.395916039941032",
     "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Lustravegen%202623&treffPerSide=5&utkoordsys=4258",
     "coordinatesAddressSource": "https://www.luster-fjordhytter.com/en",
     "coordinatesChecked": "2026-10-18",
@@ -2689,6 +2863,12 @@
       "sv": "Foto från Kilsti Compact Lodge · anläggningens webbplats",
       "da": "Foto fra Kilsti Compact Lodge · stedets hjemmeside"
     },
+    "county": "Møre og Romsdal",
+    "countyId": "15",
+    "municipality": "Fjord",
+    "municipalityId": "1578",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.25882889455008&ost=7.153376458356803&koordsys=4258",
+    "coordinateKey": "62.25882889455008,7.153376458356803",
     "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Kilstivegen%20333%20Eidsdal&treffPerSide=3",
     "coordinatesNote": "Property address; park above the lodge on Kilstivegen and walk down. Driving to the cottages is prohibited. Follow operator arrival instructions."
   },
@@ -2749,7 +2929,13 @@
     "source": "https://oslobadstuforening.no/en/lokasjon-langkaia/",
     "photoVerified": true,
     "coordinatesNote": "Kartverket address point; entrance/pier position may differ.",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=59.90760281927637%2C10.746880614147818"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=59.90760281927637%2C10.746880614147818",
+    "county": "Oslo",
+    "countyId": "03",
+    "municipality": "Oslo",
+    "municipalityId": "0301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.90760281927637&ost=10.746880614147818&koordsys=4258",
+    "coordinateKey": "59.90760281927637,10.746880614147818"
   },
   {
     "id": "fjordsauna-flam",
@@ -2815,6 +3001,12 @@
     "photoVerified": true,
     "coordinatesNote": "Visit Sognefjord publishes these coordinates for FjordSauna Flåm. Floating sauna at piers 10/11: area marker only. Operator requires public paid parking in Flåm centre followed by a walk; the nearby marina lot is reserved for marina guests.",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Fl%C3%A5m%20public%20parking%2C%20Fl%C3%A5m%20sentrum%2C%20Norway&travelmode=driving",
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Aurland",
+    "municipalityId": "4641",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.86208&ost=7.11445&koordsys=4258",
+    "coordinateKey": "60.86208,7.11445",
     "latitude": 60.86208,
     "longitude": 7.11445,
     "coordinatePrecision": "area",
@@ -2879,7 +3071,13 @@
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.36572106156721%2C10.537541749560843",
     "imageSource": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.36572106156721&ost=10.537541749560843&koordsys=4258",
+    "coordinateKey": "60.36572106156721,10.537541749560843"
   },
   {
     "id": "flyt-fjordsauna-jevnaker",
@@ -2935,7 +3133,13 @@
       "https://www.jevnaker.kommune.no/organisasjon/om-kommunen/oppdag-og-opplev-jevnaker"
     ],
     "imageSource": "https://www.flytfjordsauna.no/",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Jevnaker",
+    "municipalityId": "3236",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.23503&ost=10.3724&koordsys=4258",
+    "coordinateKey": "60.23503,10.3724"
   },
   {
     "id": "pust-bodo",
@@ -3036,7 +3240,13 @@
       ]
     },
     "bookingUrl": "https://www.pust.io/en/badstue/bodo/",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=67.28241423374155%2C14.374830301601746"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=67.28241423374155%2C14.374830301601746",
+    "county": "Nordland",
+    "countyId": "18",
+    "municipality": "Bodø",
+    "municipalityId": "1804",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=67.28241423374155&ost=14.374830301601746&koordsys=4258",
+    "coordinateKey": "67.28241423374155,14.374830301601746"
   },
   {
     "id": "pust-lavvo-tromso",
@@ -3138,6 +3348,12 @@
     },
     "bookingUrl": "https://www.pust.io/badstue/lavvo-badstue/",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=Pust+Lavvo+sauna,+Tromso,+Norway",
+    "county": "Troms",
+    "countyId": "55",
+    "municipality": "Tromsø",
+    "municipalityId": "5501",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.65080943665976&ost=18.959983296350845&koordsys=4258",
+    "coordinateKey": "69.65080943665976,18.959983296350845",
     "coordinatePrecision": "area"
   },
   {
@@ -3195,7 +3411,13 @@
       "timeZone": "Europe/Oslo"
     },
     "bookingUrl": "https://www.svinoya.no/overnatting/",
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=68.2343431517136%2C14.579670824627401"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=68.2343431517136%2C14.579670824627401",
+    "county": "Nordland",
+    "countyId": "18",
+    "municipality": "Vågan",
+    "municipalityId": "1865",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=68.2343431517136&ost=14.579670824627401&koordsys=4258",
+    "coordinateKey": "68.2343431517136,14.579670824627401"
   },
   {
     "id": "gamme-cabins-kirkenes",
@@ -3252,7 +3474,13 @@
       "sourceLabel": "Snow Resort Kirkenes / Vecora",
       "timeZone": "Europe/Oslo"
     },
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=69.6770295173222%2C29.9044350651093"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=69.6770295173222%2C29.9044350651093",
+    "county": "Finnmark",
+    "countyId": "56",
+    "municipality": "Sør-Varanger",
+    "municipalityId": "5605",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.6770295173222&ost=29.9044350651093&koordsys=4258",
+    "coordinateKey": "69.6770295173222,29.9044350651093"
   },
   {
     "id": "heit-sandviken-bergen",
@@ -3311,7 +3539,13 @@
       "uk": "Справжнє фото · Heit Bergen · Sandviken",
       "sv": "Äkta foto · Heit Bergen · Sandviken",
       "da": "Ægte foto · Heit Bergen · Sandviken"
-    }
+    },
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Bergen",
+    "municipalityId": "4601",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.412825415730005&ost=5.320733551917008&koordsys=4258",
+    "coordinateKey": "60.412825415730005,5.320733551917008"
   },
   {
     "id": "damp-venla-stavanger",
@@ -3368,7 +3602,13 @@
       "uk": "Справжнє фото · Damp Sauna · Venla",
       "sv": "Äkta foto · Damp Sauna · Venla",
       "da": "Ægte foto · Damp Sauna · Venla"
-    }
+    },
+    "county": "Rogaland",
+    "countyId": "11",
+    "municipality": "Stavanger",
+    "municipalityId": "1103",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.97155073966166&ost=5.750923362896597&koordsys=4258",
+    "coordinateKey": "58.97155073966166,5.750923362896597"
   },
   {
     "id": "sande-camping-loen",
@@ -3425,7 +3665,13 @@
       "uk": "Справжнє фото · Sande Camping",
       "sv": "Äkta foto · Sande Camping",
       "da": "Ægte foto · Sande Camping"
-    }
+    },
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Stryn",
+    "municipalityId": "4651",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.851037111&ost=6.9121813773&koordsys=4258",
+    "coordinateKey": "61.851037111,6.9121813773"
   },
   {
     "id": "tjugen-camping-cabins",
@@ -3482,7 +3728,13 @@
       "uk": "Справжнє фото · Tjugen Camping · hytter",
       "sv": "Äkta foto · Tjugen Camping · hytter",
       "da": "Ægte foto · Tjugen Camping · hytter"
-    }
+    },
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Stryn",
+    "municipalityId": "4651",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.868104462093136&ost=6.875634534850351&koordsys=4258",
+    "coordinateKey": "61.868104462093136,6.875634534850351"
   },
   {
     "id": "lindesnes-fyr-coast",
@@ -3548,7 +3800,13 @@
         "original": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Lindesnes_fyr_-_utsikt_%284%29.jpg"
       }
     ],
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=57.98229486990713%2C7.047650772711434"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=57.98229486990713%2C7.047650772711434",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lindesnes",
+    "municipalityId": "4205",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=57.98229486990713&ost=7.047650772711434&koordsys=4258",
+    "coordinateKey": "57.98229486990713,7.047650772711434"
   },
   {
     "id": "sjosanden-mandal",
@@ -3605,7 +3863,13 @@
         "original": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Sjosanden_fra_piren.JPG"
       }
     ],
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.02057%2C7.45045"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.02057%2C7.45045",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lindesnes",
+    "municipalityId": "4205",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.02057&ost=7.45045&koordsys=4258",
+    "coordinateKey": "58.02057,7.45045"
   },
   {
     "id": "odderoya-kristiansand",
@@ -3649,7 +3913,13 @@
         "original": "https://tellusdmsmedia.newmindmedia.com/wsimgs/Odder_ya-Kristiansand-Foto-Erik-Engenes_2__174120410.jpg",
         "license": "Tourism-board-published photograph; no open licence claimed"
       }
-    ]
+    ],
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Kristiansand",
+    "municipalityId": "4204",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.13318&ost=8.00546&koordsys=4258",
+    "coordinateKey": "58.13318,8.00546"
   },
   {
     "id": "oslo-opera-waterfront",
@@ -3701,7 +3971,13 @@
         "original": "https://upload.wikimedia.org/wikipedia/commons/3/39/Oslo_Opera_House_-_2025.jpg"
       }
     ],
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Oslo",
+    "countyId": "03",
+    "municipality": "Oslo",
+    "municipalityId": "0301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.90777660297918&ost=10.752057851974856&koordsys=4258",
+    "coordinateKey": "59.90777660297918,10.752057851974856"
   },
   {
     "id": "huk-bygdoy-beach",
@@ -3753,7 +4029,13 @@
         "original": "https://upload.wikimedia.org/wikipedia/commons/4/42/Huk_-_Oslo%2C_Norway_2020-08-12.jpg"
       }
     ],
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Oslo",
+    "countyId": "03",
+    "municipality": "Oslo",
+    "municipalityId": "0301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.89536&ost=10.67666&koordsys=4258",
+    "coordinateKey": "59.89536,10.67666"
   },
   {
     "id": "lillesand-harbour",
@@ -3801,7 +4083,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lillesand",
+    "municipalityId": "4215",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.24945&ost=8.37719&koordsys=4258",
+    "coordinateKey": "58.24945,8.37719"
   },
   {
     "id": "grimstad-harbour",
@@ -3849,7 +4137,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Grimstad",
+    "municipalityId": "4202",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.34046&ost=8.59337&koordsys=4258",
+    "coordinateKey": "58.34046,8.59337"
   },
   {
     "id": "arendal-pollen-tyholmen",
@@ -3897,7 +4191,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Arendal",
+    "municipalityId": "4203",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.46121&ost=8.76695&koordsys=4258",
+    "coordinateKey": "58.46121,8.76695"
   },
   {
     "id": "risor-harbour-oldtown",
@@ -3945,7 +4245,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Risør",
+    "municipalityId": "4201",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.72058&ost=9.23421&koordsys=4258",
+    "coordinateKey": "58.72058,9.23421"
   },
   {
     "id": "skottevik-coastal-cabins",
@@ -4012,7 +4318,13 @@
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Skottevik%20Feriesenter%20%C2%B7%20hytter%2C%20Sandeveien%2035%2C%204770%20H%C3%B8v%C3%A5g%2C%20Norway",
     "descriptionSource": "https://skottevik.no/overnatting/hytter/4-personer-h4/",
-    "route": "agdercoast"
+    "route": "agdercoast",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lillesand",
+    "municipalityId": "4215",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.12528488601606&ost=8.230686057212504&koordsys=4258",
+    "coordinateKey": "58.12528488601606,8.230686057212504"
   },
   {
     "id": "moysand-coastal-cabins",
@@ -4080,7 +4392,13 @@
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Moysand%20Familiecamping%20%C2%B7%20hytter%2C%20Moysandveien%2095%2C%204885%20Grimstad%2C%20Norway",
     "descriptionSource": "https://www.moysand-familiecamping.no/opphold-hos-oss/",
     "seasonSource": "https://www.moysand-familiecamping.no/sesongplass/",
-    "route": "agdercoast"
+    "route": "agdercoast",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Grimstad",
+    "municipalityId": "4202",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.353920242727106&ost=8.6518392822684&koordsys=4258",
+    "coordinateKey": "58.353920242727106,8.6518392822684"
   },
   {
     "id": "risor-resort-seaside-cabin",
@@ -4147,7 +4465,13 @@
       "da": "Ægte foto · Risør Resort · Sjøhytta"
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Ris%C3%B8r%20Resort%20%C2%B7%20Sj%C3%B8hytta%2C%20Moensveien%2022%2C%204950%20Ris%C3%B8r%2C%20Norway",
-    "route": "agdercoast"
+    "route": "agdercoast",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Risør",
+    "municipalityId": "4201",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.72600306127953&ost=9.06883323502367&koordsys=4258",
+    "coordinateKey": "58.72600306127953,9.06883323502367"
   },
   {
     "id": "kragero-waterfront",
@@ -4195,7 +4519,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Kragerø",
+    "municipalityId": "4014",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.8693&ost=9.41493&koordsys=4258",
+    "coordinateKey": "58.8693,9.41493"
   },
   {
     "id": "langesund-harbour",
@@ -4243,7 +4573,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Bamble",
+    "municipalityId": "4012",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.00066&ost=9.74873&koordsys=4258",
+    "coordinateKey": "59.00066,9.74873"
   },
   {
     "id": "nevlunghavn-harbour",
@@ -4291,7 +4627,13 @@
         "licenseUrl": "https://commons.wikimedia.org/wiki/File:Nevlunghavn_-_brygga.jpg#Licensing",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.96741&ost=9.86748&koordsys=4258",
+    "coordinateKey": "58.96741,9.86748"
   },
   {
     "id": "stavern-harbour-fredriksvern",
@@ -4339,7 +4681,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.9983&ost=10.03557&koordsys=4258",
+    "coordinateKey": "58.9983,10.03557"
   },
   {
     "id": "lovisenberg-coastal-cabins",
@@ -4406,7 +4754,13 @@
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Lovisenberg%20Familiecamping%2C%20Lovisenbergveien%2086%2C%20Krager%C3%B8",
     "descriptionSource": "https://online.bookvisit.com/accommodation/room-details?channelid=8d3970a8-dfc2-4c63-ade8-d04483f88a53&roomid=fc5282d6-10a8-4355-a183-3e7f650473d0",
-    "route": "telemarkcoast"
+    "route": "telemarkcoast",
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Kragerø",
+    "municipalityId": "4014",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.901534883704954&ost=9.409070232415255&koordsys=4258",
+    "coordinateKey": "58.901534883704954,9.409070232415255"
   },
   {
     "id": "langesund-bad-coastal-cabins",
@@ -4473,7 +4827,13 @@
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Langesund%20Bad%2C%20Badeveien%205%2C%20Langesund",
     "descriptionSource": "https://www.langesundbad.no/",
-    "route": "telemarkcoast"
+    "route": "telemarkcoast",
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Bamble",
+    "municipalityId": "4012",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.998687305730215&ost=9.742841094056661&koordsys=4258",
+    "coordinateKey": "58.998687305730215,9.742841094056661"
   },
   {
     "id": "oddane-sand-coastal-cabins",
@@ -4548,7 +4908,13 @@
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=KNA%20Oddane%20Sand%20Camping%2C%20Oddaneveien%2073%2C%20Nevlunghavn",
     "descriptionSource": "https://oddanesand.no/products/utsikten-2",
-    "route": "telemarkcoast"
+    "route": "telemarkcoast",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.96617015276401&ost=9.859454420569033&koordsys=4258",
+    "coordinateKey": "58.96617015276401,9.859454420569033"
   },
   {
     "id": "larvik-bokeskogen",
@@ -4596,7 +4962,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.05833&ost=10.02404&koordsys=4258",
+    "coordinateKey": "59.05833,10.02404"
   },
   {
     "id": "sandefjord-waterfront",
@@ -4644,7 +5016,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Sandefjord",
+    "municipalityId": "3907",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.13133&ost=10.22234&koordsys=4258",
+    "coordinateKey": "59.13133,10.22234"
   },
   {
     "id": "tonsberg-brygga",
@@ -4692,7 +5070,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Tønsberg",
+    "municipalityId": "3905",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.26753&ost=10.40763&koordsys=4258",
+    "coordinateKey": "59.26753,10.40763"
   },
   {
     "id": "horten-karljohansvern",
@@ -4740,7 +5124,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Horten",
+    "municipalityId": "3901",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.43159&ost=10.49163&koordsys=4258",
+    "coordinateKey": "59.43159,10.49163"
   },
   {
     "id": "gon-vestfold-cabins",
@@ -4810,7 +5200,13 @@
       "sv": "Äkta operatörsfoto",
       "da": "Ægte operatørfoto"
     },
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Gon%20Camping%2C%20Gonveien%20100%2C%203260%20Larvik%2C%20Norway"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Gon%20Camping%2C%20Gonveien%20100%2C%203260%20Larvik%2C%20Norway",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.021967330209264&ost=10.071814403762271&koordsys=4258",
+    "coordinateKey": "59.021967330209264,10.071814403762271"
   },
   {
     "id": "vora-vestfold-cabins",
@@ -4888,7 +5284,13 @@
       "sv": "Äkta operatörsfoto",
       "da": "Ægte operatørfoto"
     },
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=V%C3%B8ra%20Camping%2C%20Vester%C3%B8yveien%20401%2C%203234%20Sandefjord%2C%20Norway"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=V%C3%B8ra%20Camping%2C%20Vester%C3%B8yveien%20401%2C%203234%20Sandefjord%2C%20Norway",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Sandefjord",
+    "municipalityId": "3907",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.07151306773833&ost=10.259563814693815&koordsys=4258",
+    "coordinateKey": "59.07151306773833,10.259563814693815"
   },
   {
     "id": "furustrand-vestfold-cabins",
@@ -4959,7 +5361,13 @@
       "sv": "Äkta operatörsfoto",
       "da": "Ægte operatørfoto"
     },
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Furustrand%2C%20Tareveien%2011%2C%203150%20Tolvsr%C3%B8d%2C%20Norway"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Furustrand%2C%20Tareveien%2011%2C%203150%20Tolvsr%C3%B8d%2C%20Norway",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Tønsberg",
+    "municipalityId": "3905",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.27306578432201&ost=10.491603724325007&koordsys=4258",
+    "coordinateKey": "59.27306578432201,10.491603724325007"
   },
   {
     "id": "lovoya-vestfold-cabins",
@@ -5029,7 +5437,13 @@
       "sv": "Äkta operatörsfoto",
       "da": "Ægte operatørfoto"
     },
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=L%C3%B8v%C3%B8ya%20Oslofjord%2C%20L%C3%B8v%C3%B8yveien%2054%2C%203189%20Horten%2C%20Norway"
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=L%C3%B8v%C3%B8ya%20Oslofjord%2C%20L%C3%B8v%C3%B8yveien%2054%2C%203189%20Horten%2C%20Norway",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Horten",
+    "municipalityId": "3901",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.44667591465805&ost=10.439962197147036&koordsys=4258",
+    "coordinateKey": "59.44667591465805,10.439962197147036"
   },
   {
     "id": "holmestrand-waterfront",
@@ -5077,7 +5491,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Holmestrand",
+    "municipalityId": "3903",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.48761&ost=10.31758&koordsys=4258",
+    "coordinateKey": "59.48761,10.31758"
   },
   {
     "id": "svelvik-old-town",
@@ -5125,7 +5545,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Buskerud",
+    "countyId": "33",
+    "municipality": "Drammen",
+    "municipalityId": "3301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.61368&ost=10.40875&koordsys=4258",
+    "coordinateKey": "59.61368,10.40875"
   },
   {
     "id": "drobak-waterfront",
@@ -5173,7 +5599,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Frogn",
+    "municipalityId": "3214",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.66332&ost=10.62974&koordsys=4258",
+    "coordinateKey": "59.66332,10.62974"
   },
   {
     "id": "son-waterfront",
@@ -5221,7 +5653,13 @@
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "modification": "Resized and converted to WebP; composition unchanged."
       }
-    ]
+    ],
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Vestby",
+    "municipalityId": "3216",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.52313&ost=10.68592&koordsys=4258",
+    "coordinateKey": "59.52313,10.68592"
   },
   {
     "id": "nordre-jarlsberg-sauna",
@@ -5316,7 +5754,405 @@
     "photoAlt": "Nordre Jarlsberg Badstue — real official venue photograph",
     "photoCaption": "Nordre Jarlsberg Badstue · official website photograph",
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nordre%20Jarlsberg%20Badstue%2C%20Willem%20Stibolts%20vei%2020%2C%203070%20Sande%20i%20Vestfold",
-    "bookingUrl": "https://www.nordrejarlsbergbadstue.no/"
+    "bookingUrl": "https://www.nordrejarlsbergbadstue.no/",
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Holmestrand",
+    "municipalityId": "3903",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.56337605127164&ost=10.26684400812212&koordsys=4258",
+    "coordinateKey": "59.56337605127164,10.26684400812212"
+  },
+  {
+    "id": "gamlebyen-fredrikstad",
+    "name": "Gamlebyen · Fredrikstad",
+    "town": "Fredrikstad",
+    "region": "Østfold",
+    "routeQuery": "Gamlebyen parkering Fredrikstad",
+    "website": "https://www.visitfredrikstadhvaler.com/en/the-fortified-town",
+    "description": {
+      "nb": "Brosteinsgater, voller og trehus i den historiske festningsbyen ved Glomma.",
+      "en": "Cobbled streets, ramparts and old houses in the fortified town beside the Glomma.",
+      "uk": "Бруковані вулички, вали й старі будинки укріпленого міста біля Glomma.",
+      "sv": "Kullerstensgator, vallar och gamla hus i fästningsstaden vid Glomma.",
+      "da": "Brostensgader, volde og gamle huse i fæstningsbyen ved Glomma."
+    },
+    "hoursNote": {
+      "nb": "Bydelen kan utforskes hele året. Butikker, kafeer og museer har egne åpningstider.",
+      "en": "Explore the neighbourhood year-round. Shops, cafés and museums keep separate opening hours.",
+      "uk": "Район можна оглядати цілий рік. Магазини, кав’ярні й музеї мають окремі години роботи.",
+      "sv": "Stadsdelen kan utforskas året runt. Butiker, kaféer och museer har egna öppettider.",
+      "da": "Bydelen kan udforskes året rundt. Butikker, caféer og museer har egne åbningstider."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/national-gamlebyen-fredrikstad-1.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Gamlebyen_Fredrikstad_-_panoramio.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Gamlebyen_Fredrikstad_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "TomasEE",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+      },
+      {
+        "src": "./images/catalog/national-gamlebyen-fredrikstad-2.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/1/11/Gamlebyen_Fredrikstad_Voldegaten_8_og_9_Torvgaten_67_og_68.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Helge Høifødt",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "image": "./images/catalog/national-gamlebyen-fredrikstad-1.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Gamlebyen_Fredrikstad_-_panoramio.jpg",
+    "photoCaption": {
+      "nb": "TomasEE · CC BY 3.0 · Wikimedia Commons",
+      "en": "TomasEE · CC BY 3.0 · Wikimedia Commons",
+      "uk": "TomasEE · CC BY 3.0 · Wikimedia Commons",
+      "sv": "TomasEE · CC BY 3.0 · Wikimedia Commons",
+      "da": "TomasEE · CC BY 3.0 · Wikimedia Commons"
+    },
+    "category": "rest",
+    "source": "https://www.visitfredrikstadhvaler.com/en/the-fortified-town",
+    "checked": "2026-10-18",
+    "coordinatePrecision": "area",
+    "latitude": 59.2032,
+    "longitude": 10.95299,
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Gamlebyen&utkoordsys=4258&treffPerSide=10",
+    "address": "Gamlebyen, Fredrikstad, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Gamlebyen+parkering+Fredrikstad",
+    "county": "Østfold",
+    "countyId": "31",
+    "municipality": "Fredrikstad",
+    "municipalityId": "3107",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.2032&ost=10.95299&koordsys=4258",
+    "coordinateKey": "59.2032,10.95299"
+  },
+  {
+    "id": "torghatten-bronnoy",
+    "name": "Torghatten · hullet gjennom fjellet",
+    "town": "Brønnøysund",
+    "region": "Nordland · Helgeland",
+    "routeQuery": "Torghatten besøkssenter Brønnøy",
+    "website": "https://visithelgeland.com/en/torghatten-en/",
+    "description": {
+      "nb": "Steintrapper fører mot hullet gjennom fjellet på Torget, sør for Brønnøysund.",
+      "en": "Stone steps lead towards the hole through the mountain on Torget, south of Brønnøysund.",
+      "uk": "Кам’яні сходи ведуть до отвору в горі на Torget, південніше Brønnøysund.",
+      "sv": "Stentrappor leder mot hålet genom berget på Torget, söder om Brønnøysund.",
+      "da": "Stentrapper fører mod hullet gennem fjeldet på Torget, syd for Brønnøysund."
+    },
+    "hoursNote": {
+      "nb": "Utendørs tur, ikke faste åpningstider. Vurder vær og føre. Kjøreruten går til besøkssenteret, ikke fjelltoppen.",
+      "en": "Outdoor walk without fixed hours. Check weather and footing. Driving directions lead to the visitor centre, not the summit.",
+      "uk": "Прогулянка просто неба без фіксованих годин. Враховуйте погоду й стан стежки. Автомаршрут — до візит-центру, не вершини.",
+      "sv": "Utomhustur utan fasta öppettider. Bedöm väder och underlag. Bilvägen går till besökscentret, inte toppen.",
+      "da": "Udendørstur uden faste åbningstider. Vurder vejr og underlag. Bilruten går til besøgscentret, ikke toppen."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/national-torghatten-bronnoy-1.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Torghatten_1.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Torghatten_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Rosino",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+      },
+      {
+        "src": "./images/catalog/national-torghatten-bronnoy-2.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Torghatten_Mountain,_Southwest_view_20150606_1.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/7/73/Torghatten_Mountain%2C_Southwest_view_20150606_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "DXR",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "image": "./images/catalog/national-torghatten-bronnoy-1.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Torghatten_1.jpg",
+    "photoCaption": {
+      "nb": "Rosino · CC BY-SA 2.0 · Wikimedia Commons",
+      "en": "Rosino · CC BY-SA 2.0 · Wikimedia Commons",
+      "uk": "Rosino · CC BY-SA 2.0 · Wikimedia Commons",
+      "sv": "Rosino · CC BY-SA 2.0 · Wikimedia Commons",
+      "da": "Rosino · CC BY-SA 2.0 · Wikimedia Commons"
+    },
+    "category": "rest",
+    "source": "https://visithelgeland.com/en/torghatten-en/",
+    "checked": "2026-10-18",
+    "coordinatePrecision": "area",
+    "latitude": 65.39829,
+    "longitude": 12.09072,
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Torghatten&utkoordsys=4258&treffPerSide=10",
+    "address": "Torghatten, Brønnøy, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Torghatten+bes%C3%B8kssenter+Br%C3%B8nn%C3%B8y",
+    "county": "Nordland",
+    "countyId": "18",
+    "municipality": "Brønnøy",
+    "municipalityId": "1813",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=65.39829&ost=12.09072&koordsys=4258",
+    "coordinateKey": "65.39829,12.09072"
+  },
+  {
+    "id": "nidarosdomen-trondheim",
+    "name": "Nidarosdomen · Trondheim",
+    "town": "Trondheim",
+    "region": "Trøndelag",
+    "website": "https://www.nidarosdomen.no/",
+    "description": {
+      "nb": "Domkirken ved Nidelva er et kulturstopp i Trondheim, nær Bakklandet og sentrum.",
+      "en": "The cathedral beside the Nidelva is a cultural stop near central Trondheim and Bakklandet.",
+      "uk": "Собор біля Nidelva — культурна зупинка поруч із центром Trondheim та Bakklandet.",
+      "sv": "Domkyrkan vid Nidelva är ett kulturstopp nära Trondheims centrum och Bakklandet.",
+      "da": "Domkirken ved Nidelva er et kulturstop nær Trondheims centrum og Bakklandet."
+    },
+    "hoursNote": {
+      "nb": "Oppgitt nå: man–fre 09–14, lør 09–13, søn 13–16. Gudstjenester og helligdager kan endre tidene.",
+      "en": "Currently published: Mon–Fri 09–14, Sat 09–13, Sun 13–16. Services and holidays may change access.",
+      "uk": "Зараз опубліковано: пн–пт 09–14, сб 09–13, нд 13–16. Служби й свята можуть змінити доступ.",
+      "sv": "Angivet nu: mån–fre 09–14, lör 09–13, sön 13–16. Gudstjänster och helgdagar kan ändra tiderna.",
+      "da": "Oplyst nu: man–fre 09–14, lør 09–13, søn 13–16. Gudstjenester og helligdage kan ændre tiderne."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/national-nidarosdomen-trondheim-1.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Die_Nidaros_Kathedrale_in_Trondheim._05.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Die_Nidaros_Kathedrale_in_Trondheim._05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Holger Uwe Schmitt",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "src": "./images/catalog/national-nidarosdomen-trondheim-2.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Nidaros_Cathedral.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Nidaros_Cathedral.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Rytalias",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "image": "./images/catalog/national-nidarosdomen-trondheim-1.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Die_Nidaros_Kathedrale_in_Trondheim._05.jpg",
+    "photoCaption": {
+      "nb": "Holger Uwe Schmitt · CC BY-SA 4.0 · Wikimedia Commons",
+      "en": "Holger Uwe Schmitt · CC BY-SA 4.0 · Wikimedia Commons",
+      "uk": "Holger Uwe Schmitt · CC BY-SA 4.0 · Wikimedia Commons",
+      "sv": "Holger Uwe Schmitt · CC BY-SA 4.0 · Wikimedia Commons",
+      "da": "Holger Uwe Schmitt · CC BY-SA 4.0 · Wikimedia Commons"
+    },
+    "category": "rest",
+    "source": "https://www.nidarosdomen.no/",
+    "checked": "2026-10-18",
+    "coordinatePrecision": "feature",
+    "latitude": 63.42691,
+    "longitude": 10.39691,
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Nidarosdomen&utkoordsys=4258&treffPerSide=10",
+    "address": "Nidarosdomen, Trondheim, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=63.42691%2C10.39691",
+    "openingHours": {
+      "timeZone": "Europe/Oslo",
+      "verified": true,
+      "checked": "2026-10-18",
+      "source": "https://www.nidarosdomen.no/",
+      "publishedText": "Mo-Fr 09:00-14:00; Sa 09:00-13:00; Su 13:00-16:00"
+    },
+    "county": "Trøndelag",
+    "countyId": "50",
+    "municipality": "Trondheim",
+    "municipalityId": "5001",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=63.42691&ost=10.39691&koordsys=4258",
+    "coordinateKey": "63.42691,10.39691"
+  },
+  {
+    "id": "alta-museum-rock-art",
+    "name": "Alta Museum · bergkunst",
+    "town": "Alta",
+    "region": "Finnmark",
+    "address": "Altaveien 19, 9512 Alta",
+    "website": "https://www.altamuseum.no/en/",
+    "source": "https://www.altamuseum.no/en/visit/hva-kan-du-se-og-gjore/helleristningsomr%C3%A5det",
+    "description": {
+      "nb": "Bergkunst ved Hjemmeluft, med innendørs museum og utendørs stier når bakken er snøfri.",
+      "en": "Rock art at Hjemmeluft, with an indoor museum and outdoor paths in the snow-free season.",
+      "uk": "Наскельні зображення в Hjemmeluft, музей усередині й стежки надворі в безсніжний сезон.",
+      "sv": "Hällristningar vid Hjemmeluft, med inomhusmuseum och stigar under den snöfria säsongen.",
+      "da": "Helleristninger ved Hjemmeluft med indendørsmuseum og stier i den snefri sæson."
+    },
+    "hoursNote": {
+      "nb": "Bergkunststiene stenger ved snø eller is, vanligvis i oktober/november. Gjenåpning avhenger av snøsmelting i mai. Se museets kalender.",
+      "en": "Rock-art paths close with snow or ice, usually October/November. May reopening depends on snowmelt. Check the museum calendar.",
+      "uk": "Стежки закривають зі снігом чи льодом, зазвичай у жовтні/листопаді. Відкриття в травні залежить від танення снігу. Перевірте календар музею.",
+      "sv": "Stigarna stänger vid snö eller is, vanligtvis oktober/november. Öppning i maj beror på snösmältningen. Se museets kalender.",
+      "da": "Stierne lukker ved sne eller is, normalt oktober/november. Genåbning i maj afhænger af snesmeltning. Se museets kalender."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/national-alta-museum-rock-art-1.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Alta_rock_carvings_06.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/3/38/Alta_rock_carvings_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Jensvins",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      {
+        "src": "./images/catalog/national-alta-museum-rock-art-2.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Alta-Carvings-2012-07-17-12-15-018.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Alta-Carvings-2012-07-17-12-15-018.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Karl Brodowsky",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+      }
+    ],
+    "image": "./images/catalog/national-alta-museum-rock-art-2.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Alta-Carvings-2012-07-17-12-15-018.jpg",
+    "photoCaption": {
+      "nb": "Karl Brodowsky · CC BY-SA 3.0 · Wikimedia Commons",
+      "en": "Karl Brodowsky · CC BY-SA 3.0 · Wikimedia Commons",
+      "uk": "Karl Brodowsky · CC BY-SA 3.0 · Wikimedia Commons",
+      "sv": "Karl Brodowsky · CC BY-SA 3.0 · Wikimedia Commons",
+      "da": "Karl Brodowsky · CC BY-SA 3.0 · Wikimedia Commons"
+    },
+    "category": "rest",
+    "checked": "2026-10-18",
+    "coordinatePrecision": "property-access",
+    "latitude": 69.9474397212738,
+    "longitude": 23.187012421022295,
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Altaveien%2019%209512&treffPerSide=3",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=69.9474397212738%2C23.187012421022295",
+    "county": "Finnmark",
+    "countyId": "56",
+    "municipality": "Alta",
+    "municipalityId": "5601",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.9474397212738&ost=23.187012421022295&koordsys=4258",
+    "coordinateKey": "69.9474397212738,23.187012421022295"
+  },
+  {
+    "id": "saltstraumen-bodo",
+    "name": "Saltstraumen · tidevannsstrømmen",
+    "town": "Bodø",
+    "region": "Nordland · Salten",
+    "routeQuery": "Saltstraumen parkering Bodø",
+    "website": "https://nordnorge.com/utforsk/hoydepunkter/saltstraumen/",
+    "description": {
+      "nb": "Se strømvirvlene i sundet mellom fjordene, med fjellene som bakgrunn.",
+      "en": "Watch the tidal eddies in the strait between the fjords, framed by mountains.",
+      "uk": "Спостерігайте за припливними вирами у протоці між фіордами на тлі гір.",
+      "sv": "Se tidvattenvirvlarna i sundet mellan fjordarna med bergen i bakgrunden.",
+      "da": "Se tidevandshvirvlerne i sundet mellem fjordene med fjeldene som baggrund."
+    },
+    "hoursNote": {
+      "nb": "Utendørs stopp. Sjekk dagens tidevannstabell hos Visit Bodø; virkningen varierer gjennom døgnet. Hold avstand til vannkanten.",
+      "en": "Outdoor stop. Check today’s tide table with Visit Bodø; conditions vary throughout the day. Stay clear of the water’s edge.",
+      "uk": "Зупинка просто неба. Перевірте сьогоднішню таблицю припливів Visit Bodø: сила течії змінюється. Тримайтеся подалі від краю води.",
+      "sv": "Utomhusstopp. Kontrollera dagens tidvattentabell hos Visit Bodø; effekten varierar under dygnet. Håll avstånd till vattenkanten.",
+      "da": "Udendørs stop. Tjek dagens tidevandstabel hos Visit Bodø; virkningen varierer i døgnet. Hold afstand til vandkanten."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/national-saltstraumen-bodo-1.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Saltstraumen_20170722_133203_(cropped).jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/1/18/Saltstraumen_20170722_133203_%28cropped%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Sergei Gussev",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+      }
+    ],
+    "image": "./images/catalog/national-saltstraumen-bodo-1.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Saltstraumen_20170722_133203_(cropped).jpg",
+    "photoCaption": {
+      "nb": "Sergei Gussev · CC BY 2.0 · Wikimedia Commons",
+      "en": "Sergei Gussev · CC BY 2.0 · Wikimedia Commons",
+      "uk": "Sergei Gussev · CC BY 2.0 · Wikimedia Commons",
+      "sv": "Sergei Gussev · CC BY 2.0 · Wikimedia Commons",
+      "da": "Sergei Gussev · CC BY 2.0 · Wikimedia Commons"
+    },
+    "category": "rest",
+    "source": "https://nordnorge.com/utforsk/hoydepunkter/saltstraumen/",
+    "checked": "2026-10-18",
+    "coordinatePrecision": "area",
+    "latitude": 67.22805,
+    "longitude": 14.61635,
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Saltstraumen&utkoordsys=4258&treffPerSide=10",
+    "address": "Saltstraumen, Bodø, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Saltstraumen+parkering+Bod%C3%B8",
+    "county": "Nordland",
+    "countyId": "18",
+    "municipality": "Bodø",
+    "municipalityId": "1804",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=67.22805&ost=14.61635&koordsys=4258",
+    "coordinateKey": "67.22805,14.61635"
+  },
+  {
+    "id": "roros-heritage-town",
+    "name": "Røros · bergstaden",
+    "town": "Røros",
+    "region": "Trøndelag · Røros",
+    "routeQuery": "Røros parkering sentrum",
+    "website": "https://en.roros.no/about-us/information-about-roros",
+    "description": {
+      "nb": "Gamle trehus og spor etter kobbergruvene i verdensarvbyen på fjellvidda.",
+      "en": "Historic wooden houses and traces of copper mining in the highland World Heritage town.",
+      "uk": "Старі дерев’яні будинки й сліди мідних копалень у гірському місті зі списку світової спадщини.",
+      "sv": "Gamla trähus och spår av koppargruvorna i världsarvsstaden på höglandet.",
+      "da": "Gamle træhuse og spor efter kobberminerne i verdensarvsbyen på højlandet."
+    },
+    "hoursNote": {
+      "nb": "Byvandring hele året. Museer, gruver og serveringssteder har egne tider. Beregn vinterføre på veiene.",
+      "en": "Town walks year-round. Museums, mines and cafés keep their own hours. Allow for winter road conditions.",
+      "uk": "Містом можна гуляти цілий рік. Музеї, шахти й кафе мають окремий графік. Враховуйте зимові умови на дорогах.",
+      "sv": "Stadsvandring året runt. Museer, gruvor och kaféer har egna tider. Räkna med vinterväglag.",
+      "da": "Byvandring året rundt. Museer, miner og caféer har egne tider. Tag højde for vinterføre på vejene."
+    },
+    "gallery": [
+      {
+        "src": "./images/catalog/national-roros-heritage-town-1.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_(2022.08.04).jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Geir Hval (www.MacWhale.eu)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      },
+      {
+        "src": "./images/catalog/national-roros-heritage-town-2.jpg",
+        "kind": "place",
+        "source": "https://commons.wikimedia.org/wiki/File:Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_(2022.08.04).jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Hyttklokka_Tr%C3%B8ndelag_Norway_%282022.08.04%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+        "credit": "Geir Hval (www.MacWhale.eu)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "image": "./images/catalog/national-roros-heritage-town-1.jpg",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Bergstaden_R%C3%B8ros_R%C3%B8ros_kirke_Bergstadens_Ziir_Slegghaugan_Smelthytta_Tr%C3%B8ndelag_Norway_(2022.08.04).jpg",
+    "photoCaption": {
+      "nb": "Geir Hval (www.MacWhale.eu) · CC BY-SA 4.0 · Wikimedia Commons",
+      "en": "Geir Hval (www.MacWhale.eu) · CC BY-SA 4.0 · Wikimedia Commons",
+      "uk": "Geir Hval (www.MacWhale.eu) · CC BY-SA 4.0 · Wikimedia Commons",
+      "sv": "Geir Hval (www.MacWhale.eu) · CC BY-SA 4.0 · Wikimedia Commons",
+      "da": "Geir Hval (www.MacWhale.eu) · CC BY-SA 4.0 · Wikimedia Commons"
+    },
+    "category": "rest",
+    "source": "https://en.roros.no/about-us/information-about-roros",
+    "checked": "2026-10-18",
+    "coordinatePrecision": "area",
+    "latitude": 62.57427,
+    "longitude": 11.38339,
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=R%C3%B8ros&utkoordsys=4258&treffPerSide=10",
+    "address": "Røros, Røros, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=R%C3%B8ros+parkering+sentrum",
+    "county": "Trøndelag",
+    "countyId": "50",
+    "municipality": "Rosse",
+    "municipalityId": "5025",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.57427&ost=11.38339&koordsys=4258",
+    "coordinateKey": "62.57427,11.38339"
   },
   {
     "id": "tusenfryd",
@@ -5384,7 +6220,13 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:ThunderCoaster_p%C3%A5_TusenFryd.JPG",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Ås",
+    "municipalityId": "3218",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.748197673776765&ost=10.778811625913628&koordsys=4258",
+    "coordinateKey": "59.748197673776765,10.778811625913628"
   },
   {
     "id": "hunderfossen",
@@ -5452,7 +6294,13 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Eventyrslottet_i_Hunderfossen_Familiepark.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Lillehammer",
+    "municipalityId": "3405",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.225736&ost=10.4361101&koordsys=4258",
+    "coordinateKey": "61.225736,10.4361101"
   },
   {
     "id": "lilleputthammer",
@@ -5519,7 +6367,13 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:2010-08-07_Lilleputthammer.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Øyer",
+    "municipalityId": "3440",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.2389&ost=10.4391&koordsys=4258",
+    "coordinateKey": "61.2389,10.4391"
   },
   {
     "id": "kistefos",
@@ -5587,6 +6441,12 @@
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:%27The_Twist%27_bridge_at_Kistefos_Museum.jpg",
     "photoCaption": "",
+    "county": "Buskerud",
+    "countyId": "33",
+    "municipality": "Ringerike",
+    "municipalityId": "3305",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.2197945&ost=10.3666135&koordsys=4258",
+    "coordinateKey": "60.2197945,10.3666135",
     "visitInfo": {
       "checked": "2026-10-18",
       "source": "https://www.kistefosmuseum.com/visit-kistefos/parking-at-kistefos",
@@ -5662,7 +6522,13 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Storelgen_i_Stor-Elvdal_2.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Stor-Elvdal",
+    "municipalityId": "3423",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.6679224&ost=10.8843343&koordsys=4258",
+    "coordinateKey": "61.6679224,10.8843343"
   },
   {
     "id": "voss-gondol",
@@ -5727,7 +6593,13 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Voss_Gondol_Passenger_lift_cableway_(taubane)_to_Hanguren_View_from_gondola_cabin_towards_Vossavangen_Vangsvatnet_November_afternoon_sunset_Snow_etc_Voss_Norway_2019-11-20_0582.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Voss",
+    "municipalityId": "4621",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.6291914&ost=6.4111488&koordsys=4258",
+    "coordinateKey": "60.6291914,6.4111488"
   },
   {
     "id": "loen-skylift",
@@ -5793,6 +6665,12 @@
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:LoenSky117BG23.jpg",
     "photoCaption": "",
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Stryn",
+    "municipalityId": "4651",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.8751453&ost=6.8393478&koordsys=4258",
+    "coordinateKey": "61.8751453,6.8393478",
     "visitInfo": {
       "checked": "2026-10-18",
       "source": "https://en.loenskylift.no/faq",
@@ -5868,7 +6746,13 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Lehrreich,_unterhaltsam_und_sehr_spannend,_das_Hardangervidda_Naturzentrum._03.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Eidfjord",
+    "municipalityId": "4619",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.4228413&ost=7.135783&koordsys=4258",
+    "coordinateKey": "60.4228413,7.135783"
   },
   {
     "id": "akvariet-bergen",
@@ -5932,6 +6816,12 @@
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Akvariet_i_Bergen_penguin.JPG",
     "photoCaption": "",
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Bergen",
+    "municipalityId": "4601",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.39953338901728&ost=5.303672853123771&koordsys=4258",
+    "coordinateKey": "60.39953338901728,5.303672853123771",
     "latitude": 60.39953338901728,
     "longitude": 5.303672853123771,
     "coordinatePrecision": "property-access",
@@ -6001,7 +6891,13 @@
       }
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Humboldtpinguine_Atlanterhavsparken_Norway.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Møre og Romsdal",
+    "countyId": "15",
+    "municipality": "Ålesund",
+    "municipalityId": "1508",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.4655165&ost=6.0957797&koordsys=4258",
+    "coordinateKey": "62.4655165,6.0957797"
   },
   {
     "id": "dyreparken-kristiansand",
@@ -6065,6 +6961,12 @@
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_kristiansand_dyrepark_IMG_4044.JPG",
     "photoCaption": "",
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Kristiansand",
+    "municipalityId": "4204",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.18165754225514&ost=8.145859544812948&koordsys=4258",
+    "coordinateKey": "58.18165754225514,8.145859544812948",
     "latitude": 58.18165754225514,
     "longitude": 8.145859544812948,
     "coordinatePrecision": "property-access",
@@ -6132,6 +7034,12 @@
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:2012-07_Bj%C3%B8rneparken_02.jpg",
     "photoCaption": "",
+    "county": "Buskerud",
+    "countyId": "33",
+    "municipality": "Flå",
+    "municipalityId": "3320",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.43389430090762&ost=9.447833999880439&koordsys=4258",
+    "coordinateKey": "60.43389430090762,9.447833999880439",
     "latitude": 60.43389430090762,
     "longitude": 9.447833999880439,
     "coordinatePrecision": "area",
@@ -6203,6 +7111,12 @@
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Norsk_Skogmuseum.jpg",
     "photoCaption": "",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Elverum",
+    "municipalityId": "3420",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.87012197240354&ost=11.559864165903274&koordsys=4258",
+    "coordinateKey": "60.87012197240354,11.559864165903274",
     "latitude": 60.87012197240354,
     "longitude": 11.559864165903274,
     "coordinatePrecision": "property-access",
@@ -6269,6 +7183,12 @@
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Polaria_(62458).jpg",
     "photoCaption": "",
+    "county": "Troms",
+    "countyId": "55",
+    "municipality": "Tromsø",
+    "municipalityId": "5501",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.64389074850263&ost=18.949387020457127&koordsys=4258",
+    "coordinateKey": "69.64389074850263,18.949387020457127",
     "latitude": 69.64389074850263,
     "longitude": 18.949387020457127,
     "coordinatePrecision": "property-access",
@@ -6336,6 +7256,12 @@
     ],
     "imageSource": "https://commons.wikimedia.org/wiki/File:Viewpoint_Sn%C3%B8hetta.jpg",
     "photoCaption": "",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Dovre",
+    "municipalityId": "3431",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.221369748446335&ost=9.545710818134248&koordsys=4258",
+    "coordinateKey": "62.221369748446335,9.545710818134248",
     "latitude": 62.221369748446335,
     "longitude": 9.545710818134248,
     "coordinatePrecision": "area",
@@ -6383,6 +7309,12 @@
     ],
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=60.36677%2C10.5295",
     "imageSource": "https://commons.wikimedia.org/wiki/File:Gran1.jpg",
-    "photoCaption": ""
+    "photoCaption": "",
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.36677&ost=10.5295&koordsys=4258",
+    "coordinateKey": "60.36677,10.5295"
   }
 ]

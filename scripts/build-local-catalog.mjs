@@ -81,7 +81,8 @@ if (!await exists(path.join(root, 'catalog-rest.json'))) {
   process.exit(0);
 }
 const additions = (await Promise.all(['catalog-new-venues.json', 'catalog-central.json', 'catalog-north.json', 'catalog-west-south.json', 'catalog-sorlandet.json', 'catalog-kristiansand.json', 'catalog-oslofjord.json', 'catalog-east-coast-places.json', 'catalog-east-coast-stays.json', 'catalog-east-coast-cafes.json', 'catalog-telemark-places.json', 'catalog-telemark-stays.json', 'catalog-telemark-cafes.json', 'catalog-vestfold-places.json', 'catalog-vestfold-stays.json', 'catalog-vestfold-cafes.json'].map(read))).flat();
-additions.push(...await read('catalog-innerfjord-places.json'), ...await read('catalog-innerfjord-venues.json'));
+additions.push(...await read('catalog-innerfjord-places.json'), ...await read('catalog-innerfjord-venues.json'), ...await read('catalog-national-expansion.json'));
+const countyOverrides = await exists(path.join(root, 'catalog-counties.json')) ? await read('catalog-counties.json') : {};
 const coordinateOverrides = await read('catalog-coordinates.json');
 const visitNotes = await read('catalog-visit-notes.json');
 const oldCafes = await read('cafes.json');
@@ -97,7 +98,7 @@ const entries = [
   ...newNonCafes.map(r => normalized(r, r.category)),
   ...experiences.map(r => normalized({...r, subcategory: r.category, hoursNote: r.hoursNote || r.season}, 'rest')),
   ...rest.map(r => normalized(r, r.category || 'rest'))
-].map(record => ({...record, ...(coordinateOverrides[record.id] || {}), ...(visitNotes[record.id] ? {visitInfo: visitNotes[record.id]} : {})}));
+].map(record => ({...record, ...(countyOverrides[record.id] || {}), ...(coordinateOverrides[record.id] || {}), ...(visitNotes[record.id] ? {visitInfo: visitNotes[record.id]} : {})}));
 const ids = new Set();
 for (const entry of entries) {
   if (!entry.id || ids.has(entry.id)) throw Error('Duplicate or empty ID: ' + entry.id);

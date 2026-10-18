@@ -37,7 +37,7 @@
  document.addEventListener('click',event=>{const a=event.target.closest('a[href^="#"]');if(!a||nav.contains(a))return;const target=document.getElementById(a.hash.slice(1));if(target)reveal(target);},true);
  const fromHash=()=>{const target=document.getElementById(location.hash.slice(1));if(target)reveal(target);else activate('home');};
  window.addEventListener('hashchange',fromHash);window.addEventListener('popstate',fromHash);
- for(const [name,id] of Object.entries({'fjord:bua-select':'buaEquipment','fjord:shopping-select':'shoppingCentres','fjord:catalogue-select':'norwayCatalogue','fjord:shopping-map':'norwayOverview','fjord:open-place':'collection'}))window.addEventListener(name,()=>reveal(id),true);
+ for(const [name,id] of Object.entries({'fjord:bua-select':'buaEquipment','fjord:shopping-select':'shoppingCentres','fjord:catalogue-select':'norwayCatalogue','fjord:catalogue-nearby':'norwayCatalogue','fjord:shopping-map':'norwayOverview','fjord:open-place':'collection'}))window.addEventListener(name,()=>reveal(id),true);
  window.FjordTabs={reveal,activate,get current(){return current;}};
  new MutationObserver(refresh).observe(main,{childList:true});
  new MutationObserver(refresh).observe(nav,{childList:true});

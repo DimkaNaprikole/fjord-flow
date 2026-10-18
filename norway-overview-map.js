@@ -117,7 +117,7 @@
     if(loading||loaded)return; loading=true;status.textContent=t()[12];
     const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),12000);
     try {
-      const response=await fetch('./norway-catalog.json?v=9',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);
+      const response=await fetch('./norway-catalog.json?v=10',{signal:controller.signal});if(!response.ok)throw Error('Catalogue '+response.status);
       const data=await response.json();if(!Array.isArray(data))throw Error('Invalid catalogue');rows=data;
       try{const extra=await fetch('./map-attractions.json?v=1',{signal:controller.signal});if(extra.ok){const attractions=await extra.json();if(Array.isArray(attractions))rows=rows.concat(attractions.filter(validPoint));}}catch{/* Catalogue remains available if attraction data cannot load. */}
       try{const response=await fetch('./bua-locations.json?v=20261018',{signal:controller.signal});if(response.ok){const bua=await response.json();const entries=Array.isArray(bua)?bua:bua.locations||[];rows=rows.concat(entries.filter(p=>validPoint(p)&&p.category==='equipment'));}}catch{/* The travel map remains available if the BUA directory cannot load. */}

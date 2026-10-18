@@ -8,7 +8,7 @@ const helper = createRequire(import.meta.url)('./browser-geolocation.js');
 const source = await readFile(new URL('./norway-catalog.js', import.meta.url), 'utf8');
 const marker = "  window.addEventListener('fjordlanguagechange', rebuild);";
 assert.ok(source.includes(marker));
-const instrumented = source.replace(marker, `window.__test = {requestGPS, chooseCity, setRecords: value => {records = value;}, snapshot: () => ({origin:originState.current, message:geoMessage, baseChoice, radius, category, query})};\n${marker}`);
+const instrumented = source.replace(marker, `window.__test = {requestGPS, chooseCity, chooseCounty, setRecords: value => {records = value;}, snapshot: () => ({origin:originState.current, message:geoMessage, baseChoice, radius, category, county, query})};\n${marker}`);
 const flush = async () => {for (let n=0;n<24;n++) await Promise.resolve();};
 function harness({deferTowns = false} = {}) {
   const calls = [], cleared = [], events = {}, fetches = [];
@@ -67,4 +67,11 @@ test('overview map selection opens the exact catalogue record and rejects unknow
   h.events['fjord:catalogue-select']({detail:{id:'cafe-test'}}); h.calls[1].success(actual); await flush();
   const s=h.api.snapshot(); assert.equal(s.origin.name,'Coastal Café'); assert.equal(s.baseChoice,'stop'); assert.equal(s.category,'cafe'); assert.equal(s.query,'Coastal Café'); assert.deepEqual(h.cleared,[123]);
   h.events['fjord:catalogue-select']({detail:{id:'missing'}}); assert.equal(h.api.snapshot().origin.name,'Coastal Café');
+});
+
+test('choosing a county cancels pending GPS and preserves the regional selection',async()=>{
+ const h=harness();h.api.setRecords([{countyId:'18'}]);h.api.requestGPS();h.calls[0].failure({code:3});h.api.chooseCounty('18');h.calls[1].success(actual);await flush();assert.equal(h.api.snapshot().county,'18');assert.equal(h.api.snapshot().radius,'all');assert.deepEqual(h.cleared,[123]);
+});
+test('fresh GPS and manual starting points clear an unrelated county filter',async()=>{
+ const h=harness();h.api.setRecords([{countyId:'18'}]);h.api.chooseCounty('18');h.api.chooseCity('Gran');assert.equal(h.api.snapshot().county,'');h.api.chooseCounty('18');h.api.requestGPS();h.calls[0].success(actual);await flush();assert.equal(h.api.snapshot().county,'');assert.equal(h.api.snapshot().radius,'20');
 });

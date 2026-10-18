@@ -1,0 +1,298 @@
+{
+  "checked": "2026-10-18",
+  "source": "https://www.kartverket.no/en/on-land/fakta-om-norge/norske-fylke-og-kommunar",
+  "total": 96,
+  "counties": [
+    {
+      "id": "03",
+      "name": "Oslo",
+      "total": 4,
+      "categories": {
+        "cafe": 1,
+        "cabin": 0,
+        "sauna": 1,
+        "rest": 2
+      },
+      "ids": [
+        "tim-wendelboe-oslo",
+        "oslo-badstuforening-langkaia",
+        "oslo-opera-waterfront",
+        "huk-bygdoy-beach"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Rogaland",
+      "total": 2,
+      "categories": {
+        "cafe": 1,
+        "cabin": 0,
+        "sauna": 1,
+        "rest": 0
+      },
+      "ids": [
+        "boker-og-borst-stavanger",
+        "damp-venla-stavanger"
+      ]
+    },
+    {
+      "id": "15",
+      "name": "Møre og Romsdal",
+      "total": 3,
+      "categories": {
+        "cafe": 1,
+        "cabin": 1,
+        "sauna": 0,
+        "rest": 1
+      },
+      "ids": [
+        "cafe-ole-geiranger",
+        "kilsti-compact-lodge",
+        "atlanterhavsparken"
+      ]
+    },
+    {
+      "id": "18",
+      "name": "Nordland",
+      "total": 4,
+      "categories": {
+        "cafe": 0,
+        "cabin": 1,
+        "sauna": 1,
+        "rest": 2
+      },
+      "ids": [
+        "pust-bodo",
+        "svinoya-rorbuer-svolvaer",
+        "torghatten-bronnoy",
+        "saltstraumen-bodo"
+      ]
+    },
+    {
+      "id": "31",
+      "name": "Østfold",
+      "total": 1,
+      "categories": {
+        "cafe": 0,
+        "cabin": 0,
+        "sauna": 0,
+        "rest": 1
+      },
+      "ids": [
+        "gamlebyen-fredrikstad"
+      ]
+    },
+    {
+      "id": "32",
+      "name": "Akershus",
+      "total": 5,
+      "categories": {
+        "cafe": 1,
+        "cabin": 0,
+        "sauna": 1,
+        "rest": 3
+      },
+      "ids": [
+        "teskje-drobak",
+        "flyt-fjordsauna-jevnaker",
+        "drobak-waterfront",
+        "son-waterfront",
+        "tusenfryd"
+      ]
+    },
+    {
+      "id": "33",
+      "name": "Buskerud",
+      "total": 3,
+      "categories": {
+        "cafe": 0,
+        "cabin": 0,
+        "sauna": 0,
+        "rest": 3
+      },
+      "ids": [
+        "svelvik-old-town",
+        "kistefos",
+        "bjorneparken-fla"
+      ]
+    },
+    {
+      "id": "34",
+      "name": "Innlandet",
+      "total": 12,
+      "categories": {
+        "cafe": 5,
+        "cabin": 1,
+        "sauna": 0,
+        "rest": 6
+      },
+      "ids": [
+        "granavolden-cafe",
+        "sagvollstallen-gran",
+        "cafe-oscar-ii-gran",
+        "hadeland-gjestegard-jaren",
+        "luprohjornet-gran",
+        "sanner-dukkestua-gran",
+        "hunderfossen",
+        "lilleputthammer",
+        "storelgen",
+        "norsk-skogmuseum",
+        "dovrefjell-wild-reindeer-centre",
+        "granavollen-rest"
+      ]
+    },
+    {
+      "id": "39",
+      "name": "Vestfold",
+      "total": 19,
+      "categories": {
+        "cafe": 6,
+        "cabin": 5,
+        "sauna": 1,
+        "rest": 7
+      },
+      "ids": [
+        "nevlunghavn-bakeri",
+        "teaterkafeen-larvik",
+        "bare-beppe-sandefjord",
+        "bare-barista-tonsberg",
+        "traktern-horten",
+        "godt-hjemmelaget-holmestrand",
+        "nevlunghavn-harbour",
+        "stavern-harbour-fredriksvern",
+        "oddane-sand-coastal-cabins",
+        "larvik-bokeskogen",
+        "sandefjord-waterfront",
+        "tonsberg-brygga",
+        "horten-karljohansvern",
+        "gon-vestfold-cabins",
+        "vora-vestfold-cabins",
+        "furustrand-vestfold-cabins",
+        "lovoya-vestfold-cabins",
+        "holmestrand-waterfront",
+        "nordre-jarlsberg-sauna"
+      ]
+    },
+    {
+      "id": "40",
+      "name": "Telemark",
+      "total": 6,
+      "categories": {
+        "cafe": 2,
+        "cabin": 2,
+        "sauna": 0,
+        "rest": 2
+      },
+      "ids": [
+        "nordraak-kragero",
+        "langesund-bad-cafe",
+        "kragero-waterfront",
+        "langesund-harbour",
+        "lovisenberg-coastal-cabins",
+        "langesund-bad-coastal-cabins"
+      ]
+    },
+    {
+      "id": "42",
+      "name": "Agder",
+      "total": 16,
+      "categories": {
+        "cafe": 5,
+        "cabin": 3,
+        "sauna": 0,
+        "rest": 8
+      },
+      "ids": [
+        "drommeplassen-kristiansand",
+        "strandhaven-lillesand",
+        "herlighed-grimstad",
+        "tyholmen-arendal",
+        "stavelin-risor",
+        "lindesnes-fyr-coast",
+        "sjosanden-mandal",
+        "odderoya-kristiansand",
+        "lillesand-harbour",
+        "grimstad-harbour",
+        "arendal-pollen-tyholmen",
+        "risor-harbour-oldtown",
+        "skottevik-coastal-cabins",
+        "moysand-coastal-cabins",
+        "risor-resort-seaside-cabin",
+        "dyreparken-kristiansand"
+      ]
+    },
+    {
+      "id": "46",
+      "name": "Vestland",
+      "total": 12,
+      "categories": {
+        "cafe": 2,
+        "cabin": 4,
+        "sauna": 2,
+        "rest": 4
+      },
+      "ids": [
+        "cafe-opera-bergen",
+        "flam-bakery",
+        "kinsarvik-heng",
+        "luster-fjordhytter",
+        "fjordsauna-flam",
+        "heit-sandviken-bergen",
+        "sande-camping-loen",
+        "tjugen-camping-cabins",
+        "voss-gondol",
+        "loen-skylift",
+        "norsk-natursenter",
+        "akvariet-bergen"
+      ]
+    },
+    {
+      "id": "50",
+      "name": "Trøndelag",
+      "total": 4,
+      "categories": {
+        "cafe": 2,
+        "cabin": 0,
+        "sauna": 0,
+        "rest": 2
+      },
+      "ids": [
+        "dromedar-nordre-trondheim",
+        "dromedar-moxness-trondheim",
+        "nidarosdomen-trondheim",
+        "roros-heritage-town"
+      ]
+    },
+    {
+      "id": "55",
+      "name": "Troms",
+      "total": 3,
+      "categories": {
+        "cafe": 1,
+        "cabin": 0,
+        "sauna": 1,
+        "rest": 1
+      },
+      "ids": [
+        "smortorget-tromso",
+        "pust-lavvo-tromso",
+        "polaria-tromso"
+      ]
+    },
+    {
+      "id": "56",
+      "name": "Finnmark",
+      "total": 2,
+      "categories": {
+        "cafe": 0,
+        "cabin": 1,
+        "sauna": 0,
+        "rest": 1
+      },
+      "ids": [
+        "gamme-cabins-kirkenes",
+        "alta-museum-rock-art"
+      ]
+    }
+  ]
+}

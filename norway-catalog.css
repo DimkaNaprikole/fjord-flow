@@ -74,3 +74,7 @@
 @keyframes catalogue-control-glow{0%,100%{background-color:#0b3245ed;border-color:#a8d9d38c;box-shadow:0 0 0 0 #8ddbd000}50%{background-color:#285e69f5;border-color:#c9fff0;box-shadow:0 0 14px 2px #8ddbd04a}}
 .catalogue-flip:focus-within .catalogue-flip-toggle,.catalogue-flip-toggle:hover,.catalogue-flip .norway-catalog-photo:hover .norway-catalog-photo-label{animation:none;background:#285e69f5;border-color:#c9fff0}
 @media(prefers-reduced-motion:reduce){.catalogue-flip .norway-catalog-photo-label,.catalogue-flip-toggle{animation:none}}
+
+/* Region selection fits beside search and category without a spare row. */
+.norway-catalog-controls{grid-template-columns:minmax(0,2fr) repeat(2,minmax(140px,1fr))}
+@media(max-width:650px){.norway-catalog-controls{grid-template-columns:minmax(0,1fr)}}

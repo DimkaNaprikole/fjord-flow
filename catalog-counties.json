@@ -1,0 +1,770 @@
+{
+  "akvariet-bergen": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Bergen",
+    "municipalityId": "4601",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.39953338901728&ost=5.303672853123771&koordsys=4258",
+    "coordinateKey": "60.39953338901728,5.303672853123771"
+  },
+  "alta-museum-rock-art": {
+    "county": "Finnmark",
+    "countyId": "56",
+    "municipality": "Alta",
+    "municipalityId": "5601",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.9474397212738&ost=23.187012421022295&koordsys=4258",
+    "coordinateKey": "69.9474397212738,23.187012421022295"
+  },
+  "arendal-pollen-tyholmen": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Arendal",
+    "municipalityId": "4203",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.46121&ost=8.76695&koordsys=4258",
+    "coordinateKey": "58.46121,8.76695"
+  },
+  "atlanterhavsparken": {
+    "county": "Møre og Romsdal",
+    "countyId": "15",
+    "municipality": "Ålesund",
+    "municipalityId": "1508",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.4655165&ost=6.0957797&koordsys=4258",
+    "coordinateKey": "62.4655165,6.0957797"
+  },
+  "bare-barista-tonsberg": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Tønsberg",
+    "municipalityId": "3905",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.26803460942821&ost=10.407852234544498&koordsys=4258",
+    "coordinateKey": "59.26803460942821,10.407852234544498"
+  },
+  "bare-beppe-sandefjord": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Sandefjord",
+    "municipalityId": "3907",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.13195569639583&ost=10.223259392190384&koordsys=4258",
+    "coordinateKey": "59.13195569639583,10.223259392190384"
+  },
+  "bjorneparken-fla": {
+    "county": "Buskerud",
+    "countyId": "33",
+    "municipality": "Flå",
+    "municipalityId": "3320",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.43389430090762&ost=9.447833999880439&koordsys=4258",
+    "coordinateKey": "60.43389430090762,9.447833999880439"
+  },
+  "boker-og-borst-stavanger": {
+    "county": "Rogaland",
+    "countyId": "11",
+    "municipality": "Stavanger",
+    "municipalityId": "1103",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.972792701286615&ost=5.7335055781026645&koordsys=4258",
+    "coordinateKey": "58.972792701286615,5.7335055781026645"
+  },
+  "cafe-ole-geiranger": {
+    "county": "Møre og Romsdal",
+    "countyId": "15",
+    "municipality": "Stranda",
+    "municipalityId": "1525",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.10188295945076&ost=7.206619328358421&koordsys=4258",
+    "coordinateKey": "62.10188295945076,7.206619328358421"
+  },
+  "cafe-opera-bergen": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Bergen",
+    "municipalityId": "4601",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.391826703790635&ost=5.319807757621106&koordsys=4258",
+    "coordinateKey": "60.391826703790635,5.319807757621106"
+  },
+  "cafe-oscar-ii-gran": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.4306152&ost=10.4690111&koordsys=4258",
+    "coordinateKey": "60.4306152,10.4690111"
+  },
+  "damp-venla-stavanger": {
+    "county": "Rogaland",
+    "countyId": "11",
+    "municipality": "Stavanger",
+    "municipalityId": "1103",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.97155073966166&ost=5.750923362896597&koordsys=4258",
+    "coordinateKey": "58.97155073966166,5.750923362896597"
+  },
+  "dovrefjell-wild-reindeer-centre": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Dovre",
+    "municipalityId": "3431",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.221369748446335&ost=9.545710818134248&koordsys=4258",
+    "coordinateKey": "62.221369748446335,9.545710818134248"
+  },
+  "drobak-waterfront": {
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Frogn",
+    "municipalityId": "3214",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.66332&ost=10.62974&koordsys=4258",
+    "coordinateKey": "59.66332,10.62974"
+  },
+  "dromedar-moxness-trondheim": {
+    "county": "Trøndelag",
+    "countyId": "50",
+    "municipality": "Trondheim",
+    "municipalityId": "5001",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=63.43342507642698&ost=10.399037956615386&koordsys=4258",
+    "coordinateKey": "63.43342507642698,10.399037956615386"
+  },
+  "dromedar-nordre-trondheim": {
+    "county": "Trøndelag",
+    "countyId": "50",
+    "municipality": "Trondheim",
+    "municipalityId": "5001",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=63.43084605760483&ost=10.397489205732526&koordsys=4258",
+    "coordinateKey": "63.43084605760483,10.397489205732526"
+  },
+  "drommeplassen-kristiansand": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Kristiansand",
+    "municipalityId": "4204",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.1470891219409&ost=7.993821312245067&koordsys=4258",
+    "coordinateKey": "58.1470891219409,7.993821312245067"
+  },
+  "dyreparken-kristiansand": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Kristiansand",
+    "municipalityId": "4204",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.18165754225514&ost=8.145859544812948&koordsys=4258",
+    "coordinateKey": "58.18165754225514,8.145859544812948"
+  },
+  "fjordsauna-flam": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Aurland",
+    "municipalityId": "4641",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.86208&ost=7.11445&koordsys=4258",
+    "coordinateKey": "60.86208,7.11445"
+  },
+  "flam-bakery": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Aurland",
+    "municipalityId": "4641",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.86197584258663&ost=7.112441541309992&koordsys=4258",
+    "coordinateKey": "60.86197584258663,7.112441541309992"
+  },
+  "flyt-fjordsauna-jevnaker": {
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Jevnaker",
+    "municipalityId": "3236",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.23503&ost=10.3724&koordsys=4258",
+    "coordinateKey": "60.23503,10.3724"
+  },
+  "furustrand-vestfold-cabins": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Tønsberg",
+    "municipalityId": "3905",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.27306578432201&ost=10.491603724325007&koordsys=4258",
+    "coordinateKey": "59.27306578432201,10.491603724325007"
+  },
+  "gamlebyen-fredrikstad": {
+    "county": "Østfold",
+    "countyId": "31",
+    "municipality": "Fredrikstad",
+    "municipalityId": "3107",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.2032&ost=10.95299&koordsys=4258",
+    "coordinateKey": "59.2032,10.95299"
+  },
+  "gamme-cabins-kirkenes": {
+    "county": "Finnmark",
+    "countyId": "56",
+    "municipality": "Sør-Varanger",
+    "municipalityId": "5605",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.6770295173222&ost=29.9044350651093&koordsys=4258",
+    "coordinateKey": "69.6770295173222,29.9044350651093"
+  },
+  "godt-hjemmelaget-holmestrand": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Holmestrand",
+    "municipalityId": "3903",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.48975661210078&ost=10.295133536990503&koordsys=4258",
+    "coordinateKey": "59.48975661210078,10.295133536990503"
+  },
+  "gon-vestfold-cabins": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.021967330209264&ost=10.071814403762271&koordsys=4258",
+    "coordinateKey": "59.021967330209264,10.071814403762271"
+  },
+  "granavolden-cafe": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.36657375848351&ost=10.52822551268278&koordsys=4258",
+    "coordinateKey": "60.36657375848351,10.52822551268278"
+  },
+  "granavollen-rest": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.36677&ost=10.5295&koordsys=4258",
+    "coordinateKey": "60.36677,10.5295"
+  },
+  "grimstad-harbour": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Grimstad",
+    "municipalityId": "4202",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.34046&ost=8.59337&koordsys=4258",
+    "coordinateKey": "58.34046,8.59337"
+  },
+  "hadeland-gjestegard-jaren": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.398304261601396&ost=10.552818172677284&koordsys=4258",
+    "coordinateKey": "60.398304261601396,10.552818172677284"
+  },
+  "heit-sandviken-bergen": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Bergen",
+    "municipalityId": "4601",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.412825415730005&ost=5.320733551917008&koordsys=4258",
+    "coordinateKey": "60.412825415730005,5.320733551917008"
+  },
+  "herlighed-grimstad": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Grimstad",
+    "municipalityId": "4202",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.34069660932937&ost=8.593075663056158&koordsys=4258",
+    "coordinateKey": "58.34069660932937,8.593075663056158"
+  },
+  "holmestrand-waterfront": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Holmestrand",
+    "municipalityId": "3903",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.48761&ost=10.31758&koordsys=4258",
+    "coordinateKey": "59.48761,10.31758"
+  },
+  "horten-karljohansvern": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Horten",
+    "municipalityId": "3901",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.43159&ost=10.49163&koordsys=4258",
+    "coordinateKey": "59.43159,10.49163"
+  },
+  "huk-bygdoy-beach": {
+    "county": "Oslo",
+    "countyId": "03",
+    "municipality": "Oslo",
+    "municipalityId": "0301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.89536&ost=10.67666&koordsys=4258",
+    "coordinateKey": "59.89536,10.67666"
+  },
+  "hunderfossen": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Lillehammer",
+    "municipalityId": "3405",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.225736&ost=10.4361101&koordsys=4258",
+    "coordinateKey": "61.225736,10.4361101"
+  },
+  "kilsti-compact-lodge": {
+    "county": "Møre og Romsdal",
+    "countyId": "15",
+    "municipality": "Fjord",
+    "municipalityId": "1578",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.25882889455008&ost=7.153376458356803&koordsys=4258",
+    "coordinateKey": "62.25882889455008,7.153376458356803"
+  },
+  "kinsarvik-heng": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Ullensvang",
+    "municipalityId": "4618",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.374461&ost=6.719237&koordsys=4258",
+    "coordinateKey": "60.374461,6.719237"
+  },
+  "kistefos": {
+    "county": "Buskerud",
+    "countyId": "33",
+    "municipality": "Ringerike",
+    "municipalityId": "3305",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.2197945&ost=10.3666135&koordsys=4258",
+    "coordinateKey": "60.2197945,10.3666135"
+  },
+  "kragero-waterfront": {
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Kragerø",
+    "municipalityId": "4014",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.8693&ost=9.41493&koordsys=4258",
+    "coordinateKey": "58.8693,9.41493"
+  },
+  "langesund-bad-cafe": {
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Bamble",
+    "municipalityId": "4012",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.998687305730215&ost=9.742841094056661&koordsys=4258",
+    "coordinateKey": "58.998687305730215,9.742841094056661"
+  },
+  "langesund-bad-coastal-cabins": {
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Bamble",
+    "municipalityId": "4012",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.998687305730215&ost=9.742841094056661&koordsys=4258",
+    "coordinateKey": "58.998687305730215,9.742841094056661"
+  },
+  "langesund-harbour": {
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Bamble",
+    "municipalityId": "4012",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.00066&ost=9.74873&koordsys=4258",
+    "coordinateKey": "59.00066,9.74873"
+  },
+  "larvik-bokeskogen": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.05833&ost=10.02404&koordsys=4258",
+    "coordinateKey": "59.05833,10.02404"
+  },
+  "lilleputthammer": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Øyer",
+    "municipalityId": "3440",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.2389&ost=10.4391&koordsys=4258",
+    "coordinateKey": "61.2389,10.4391"
+  },
+  "lillesand-harbour": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lillesand",
+    "municipalityId": "4215",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.24945&ost=8.37719&koordsys=4258",
+    "coordinateKey": "58.24945,8.37719"
+  },
+  "lindesnes-fyr-coast": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lindesnes",
+    "municipalityId": "4205",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=57.98229486990713&ost=7.047650772711434&koordsys=4258",
+    "coordinateKey": "57.98229486990713,7.047650772711434"
+  },
+  "loen-skylift": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Stryn",
+    "municipalityId": "4651",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.8751453&ost=6.8393478&koordsys=4258",
+    "coordinateKey": "61.8751453,6.8393478"
+  },
+  "lovisenberg-coastal-cabins": {
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Kragerø",
+    "municipalityId": "4014",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.901534883704954&ost=9.409070232415255&koordsys=4258",
+    "coordinateKey": "58.901534883704954,9.409070232415255"
+  },
+  "lovoya-vestfold-cabins": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Horten",
+    "municipalityId": "3901",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.44667591465805&ost=10.439962197147036&koordsys=4258",
+    "coordinateKey": "59.44667591465805,10.439962197147036"
+  },
+  "luprohjornet-gran": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.35747702970864&ost=10.571360315913346&koordsys=4258",
+    "coordinateKey": "60.35747702970864,10.571360315913346"
+  },
+  "luster-fjordhytter": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Luster",
+    "municipalityId": "4644",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.39969592552051&ost=7.395916039941032&koordsys=4258",
+    "coordinateKey": "61.39969592552051,7.395916039941032"
+  },
+  "moysand-coastal-cabins": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Grimstad",
+    "municipalityId": "4202",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.353920242727106&ost=8.6518392822684&koordsys=4258",
+    "coordinateKey": "58.353920242727106,8.6518392822684"
+  },
+  "nevlunghavn-bakeri": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.971891106860944&ost=9.863106639440973&koordsys=4258",
+    "coordinateKey": "58.971891106860944,9.863106639440973"
+  },
+  "nevlunghavn-harbour": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.96741&ost=9.86748&koordsys=4258",
+    "coordinateKey": "58.96741,9.86748"
+  },
+  "nidarosdomen-trondheim": {
+    "county": "Trøndelag",
+    "countyId": "50",
+    "municipality": "Trondheim",
+    "municipalityId": "5001",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=63.42691&ost=10.39691&koordsys=4258",
+    "coordinateKey": "63.42691,10.39691"
+  },
+  "nordraak-kragero": {
+    "county": "Telemark",
+    "countyId": "40",
+    "municipality": "Kragerø",
+    "municipalityId": "4014",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.86964236946123&ost=9.41174054529421&koordsys=4258",
+    "coordinateKey": "58.86964236946123,9.41174054529421"
+  },
+  "nordre-jarlsberg-sauna": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Holmestrand",
+    "municipalityId": "3903",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.56337605127164&ost=10.26684400812212&koordsys=4258",
+    "coordinateKey": "59.56337605127164,10.26684400812212"
+  },
+  "norsk-natursenter": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Eidfjord",
+    "municipalityId": "4619",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.4228413&ost=7.135783&koordsys=4258",
+    "coordinateKey": "60.4228413,7.135783"
+  },
+  "norsk-skogmuseum": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Elverum",
+    "municipalityId": "3420",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.87012197240354&ost=11.559864165903274&koordsys=4258",
+    "coordinateKey": "60.87012197240354,11.559864165903274"
+  },
+  "oddane-sand-coastal-cabins": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.96617015276401&ost=9.859454420569033&koordsys=4258",
+    "coordinateKey": "58.96617015276401,9.859454420569033"
+  },
+  "odderoya-kristiansand": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Kristiansand",
+    "municipalityId": "4204",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.13318&ost=8.00546&koordsys=4258",
+    "coordinateKey": "58.13318,8.00546"
+  },
+  "oslo-badstuforening-langkaia": {
+    "county": "Oslo",
+    "countyId": "03",
+    "municipality": "Oslo",
+    "municipalityId": "0301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.90760281927637&ost=10.746880614147818&koordsys=4258",
+    "coordinateKey": "59.90760281927637,10.746880614147818"
+  },
+  "oslo-opera-waterfront": {
+    "county": "Oslo",
+    "countyId": "03",
+    "municipality": "Oslo",
+    "municipalityId": "0301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.90777660297918&ost=10.752057851974856&koordsys=4258",
+    "coordinateKey": "59.90777660297918,10.752057851974856"
+  },
+  "polaria-tromso": {
+    "county": "Troms",
+    "countyId": "55",
+    "municipality": "Tromsø",
+    "municipalityId": "5501",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.64389074850263&ost=18.949387020457127&koordsys=4258",
+    "coordinateKey": "69.64389074850263,18.949387020457127"
+  },
+  "pust-bodo": {
+    "county": "Nordland",
+    "countyId": "18",
+    "municipality": "Bodø",
+    "municipalityId": "1804",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=67.28241423374155&ost=14.374830301601746&koordsys=4258",
+    "coordinateKey": "67.28241423374155,14.374830301601746"
+  },
+  "pust-lavvo-tromso": {
+    "county": "Troms",
+    "countyId": "55",
+    "municipality": "Tromsø",
+    "municipalityId": "5501",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.65080943665976&ost=18.959983296350845&koordsys=4258",
+    "coordinateKey": "69.65080943665976,18.959983296350845"
+  },
+  "risor-harbour-oldtown": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Risør",
+    "municipalityId": "4201",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.72058&ost=9.23421&koordsys=4258",
+    "coordinateKey": "58.72058,9.23421"
+  },
+  "risor-resort-seaside-cabin": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Risør",
+    "municipalityId": "4201",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.72600306127953&ost=9.06883323502367&koordsys=4258",
+    "coordinateKey": "58.72600306127953,9.06883323502367"
+  },
+  "roros-heritage-town": {
+    "county": "Trøndelag",
+    "countyId": "50",
+    "municipality": "Rosse",
+    "municipalityId": "5025",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.57427&ost=11.38339&koordsys=4258",
+    "coordinateKey": "62.57427,11.38339"
+  },
+  "sagvollstallen-gran": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.3762074&ost=10.7146382&koordsys=4258",
+    "coordinateKey": "60.3762074,10.7146382"
+  },
+  "saltstraumen-bodo": {
+    "county": "Nordland",
+    "countyId": "18",
+    "municipality": "Bodø",
+    "municipalityId": "1804",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=67.22805&ost=14.61635&koordsys=4258",
+    "coordinateKey": "67.22805,14.61635"
+  },
+  "sande-camping-loen": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Stryn",
+    "municipalityId": "4651",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.851037111&ost=6.9121813773&koordsys=4258",
+    "coordinateKey": "61.851037111,6.9121813773"
+  },
+  "sandefjord-waterfront": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Sandefjord",
+    "municipalityId": "3907",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.13133&ost=10.22234&koordsys=4258",
+    "coordinateKey": "59.13133,10.22234"
+  },
+  "sanner-dukkestua-gran": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Gran",
+    "municipalityId": "3446",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.36572106156721&ost=10.537541749560843&koordsys=4258",
+    "coordinateKey": "60.36572106156721,10.537541749560843"
+  },
+  "sjosanden-mandal": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lindesnes",
+    "municipalityId": "4205",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.02057&ost=7.45045&koordsys=4258",
+    "coordinateKey": "58.02057,7.45045"
+  },
+  "skottevik-coastal-cabins": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lillesand",
+    "municipalityId": "4215",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.12528488601606&ost=8.230686057212504&koordsys=4258",
+    "coordinateKey": "58.12528488601606,8.230686057212504"
+  },
+  "smortorget-tromso": {
+    "county": "Troms",
+    "countyId": "55",
+    "municipality": "Tromsø",
+    "municipalityId": "5501",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=69.64955436441228&ost=18.959189119291192&koordsys=4258",
+    "coordinateKey": "69.64955436441228,18.959189119291192"
+  },
+  "son-waterfront": {
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Vestby",
+    "municipalityId": "3216",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.52313&ost=10.68592&koordsys=4258",
+    "coordinateKey": "59.52313,10.68592"
+  },
+  "stavelin-risor": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Risør",
+    "municipalityId": "4201",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.72034215228381&ost=9.232572560468363&koordsys=4258",
+    "coordinateKey": "58.72034215228381,9.232572560468363"
+  },
+  "stavern-harbour-fredriksvern": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.9983&ost=10.03557&koordsys=4258",
+    "coordinateKey": "58.9983,10.03557"
+  },
+  "storelgen": {
+    "county": "Innlandet",
+    "countyId": "34",
+    "municipality": "Stor-Elvdal",
+    "municipalityId": "3423",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.6679224&ost=10.8843343&koordsys=4258",
+    "coordinateKey": "61.6679224,10.8843343"
+  },
+  "strandhaven-lillesand": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Lillesand",
+    "municipalityId": "4215",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.24872908235062&ost=8.378005412060075&koordsys=4258",
+    "coordinateKey": "58.24872908235062,8.378005412060075"
+  },
+  "svelvik-old-town": {
+    "county": "Buskerud",
+    "countyId": "33",
+    "municipality": "Drammen",
+    "municipalityId": "3301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.61368&ost=10.40875&koordsys=4258",
+    "coordinateKey": "59.61368,10.40875"
+  },
+  "svinoya-rorbuer-svolvaer": {
+    "county": "Nordland",
+    "countyId": "18",
+    "municipality": "Vågan",
+    "municipalityId": "1865",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=68.2343431517136&ost=14.579670824627401&koordsys=4258",
+    "coordinateKey": "68.2343431517136,14.579670824627401"
+  },
+  "teaterkafeen-larvik": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Larvik",
+    "municipalityId": "3909",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.05006017648498&ost=10.033635284856123&koordsys=4258",
+    "coordinateKey": "59.05006017648498,10.033635284856123"
+  },
+  "teskje-drobak": {
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Frogn",
+    "municipalityId": "3214",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.66452093723958&ost=10.629917179098081&koordsys=4258",
+    "coordinateKey": "59.66452093723958,10.629917179098081"
+  },
+  "tim-wendelboe-oslo": {
+    "county": "Oslo",
+    "countyId": "03",
+    "municipality": "Oslo",
+    "municipalityId": "0301",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.92331840109198&ost=10.75581858290532&koordsys=4258",
+    "coordinateKey": "59.92331840109198,10.75581858290532"
+  },
+  "tjugen-camping-cabins": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Stryn",
+    "municipalityId": "4651",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=61.868104462093136&ost=6.875634534850351&koordsys=4258",
+    "coordinateKey": "61.868104462093136,6.875634534850351"
+  },
+  "tonsberg-brygga": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Tønsberg",
+    "municipalityId": "3905",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.26753&ost=10.40763&koordsys=4258",
+    "coordinateKey": "59.26753,10.40763"
+  },
+  "torghatten-bronnoy": {
+    "county": "Nordland",
+    "countyId": "18",
+    "municipality": "Brønnøy",
+    "municipalityId": "1813",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=65.39829&ost=12.09072&koordsys=4258",
+    "coordinateKey": "65.39829,12.09072"
+  },
+  "traktern-horten": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Horten",
+    "municipalityId": "3901",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.41379472344568&ost=10.481495556308307&koordsys=4258",
+    "coordinateKey": "59.41379472344568,10.481495556308307"
+  },
+  "tusenfryd": {
+    "county": "Akershus",
+    "countyId": "32",
+    "municipality": "Ås",
+    "municipalityId": "3218",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.748197673776765&ost=10.778811625913628&koordsys=4258",
+    "coordinateKey": "59.748197673776765,10.778811625913628"
+  },
+  "tyholmen-arendal": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Arendal",
+    "municipalityId": "4203",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.458361861705846&ost=8.767058180361452&koordsys=4258",
+    "coordinateKey": "58.458361861705846,8.767058180361452"
+  },
+  "vora-vestfold-cabins": {
+    "county": "Vestfold",
+    "countyId": "39",
+    "municipality": "Sandefjord",
+    "municipalityId": "3907",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=59.07151306773833&ost=10.259563814693815&koordsys=4258",
+    "coordinateKey": "59.07151306773833,10.259563814693815"
+  },
+  "voss-gondol": {
+    "county": "Vestland",
+    "countyId": "46",
+    "municipality": "Voss",
+    "municipalityId": "4621",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.6291914&ost=6.4111488&koordsys=4258",
+    "coordinateKey": "60.6291914,6.4111488"
+  }
+}

@@ -75,7 +75,7 @@
   const node = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; };
   const safe = value => { if (typeof value !== 'string' || !value.trim()) return ''; try { const u = new URL(value, document.baseURI); return u.protocol === 'https:' || (u.protocol === location.protocol && u.origin === location.origin) ? u.href : ''; } catch { return ''; } };
   const fold = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ø/g, 'o').replace(/æ/g, 'ae').toLowerCase();
-  let section, grid, status, search, select, more, records = [], query = '', category = 'all', limit = 12, loading = true, failed = false;
+  let section, grid, status, search, select, more, records = [], query = '', category = 'all', county = '', limit = 12, loading = true, failed = false;
   function link(text, href, cls = '') { const a = node('a', cls, text); a.href = safe(href); a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; }
   function directions(r) { return routeUrl(r, originState.current); }
   const flipCopy = {nb:['Om stedet','Til bildet'],en:['About this place','Back to photo'],uk:['Про місце','До фотографії'],sv:['Om platsen','Till bilden'],da:['Om stedet','Til billedet']};
@@ -191,7 +191,7 @@
   }
   function render() {
     if (!grid) return;
-    const filtered = nearby(records.filter(r => (category === 'all' || r.category === category) && (!query || fold([r.name, r.town, r.region, r.address].join(' ')).includes(fold(query)))), originState.current, radius);
+    const filtered = nearby(records.filter(r => (category === 'all' || r.category === category) && (!county || r.countyId === county) && (!query || fold([r.name, r.town, r.region, r.county, r.municipality, r.address].join(' ')).includes(fold(query)))), originState.current, radius);
     grid.replaceChildren(...filtered.slice(0, limit).map(card));
     status.textContent = loading ? t(21) : failed ? t(22) : filtered.length ? `${Math.min(limit, filtered.length)} / ${filtered.length} ${t(9)}` : radius !== 'all' && !originState.current ? g(11) : radius !== 'all' ? g(12) : t(11);
     renderGeoStatus();
@@ -214,10 +214,13 @@
   }
   function cancelGPS() {gpsRequest?.cancel(); gpsRequest = null;}
   function chooseCity(value) {
-    baseChoice = value; geoMessage = ''; originState.set(cities.find(c => c.name === value));
+    baseChoice = value; county = ''; geoMessage = ''; originState.set(cities.find(c => c.name === value));
     cancelGPS();
     if (value && radius === 'all') radius = '50';
     limit = 12; rebuild();
+  }
+  function chooseCounty(value) {
+    county=records.some(r=>r.countyId===value)?value:'';cancelGPS();geoMessage='';radius='all';query='';category='all';limit=12;rebuild();
   }
   function requestGPS() {
     cancelGPS();
@@ -235,7 +238,7 @@
       if (!originState.isCurrent(token)) return;
       point.nearestTown = nearestCity(point, towns, 50)?.name || '';
       if (!originState.acceptGPS(token, point)) {geoMessage = '8'; renderGeoStatus(); return;}
-      baseChoice = 'gps'; geoMessage = ''; if (radius === 'all') radius = '20'; limit = 12; rebuild();
+      baseChoice = 'gps'; county = ''; query = ''; geoMessage = ''; if (radius === 'all') radius = '20'; limit = 12; rebuild();
     }).catch(error => {
       if (!originState.isCurrent(token)) return;
       if (error.code === 'cancelled') return;
@@ -252,7 +255,11 @@
     const searchLabel = node('label', '', t(3)); search = node('input'); search.type = 'search'; search.maxLength = 120; search.value = query; search.placeholder = 'Gran, Bergen, Hardanger…'; search.autocomplete = 'off'; searchLabel.append(search);
     const categoryLabel = node('label', '', t(4)); select = node('select');
     categories.forEach((value, index) => {const option = node('option', '', t(4 + index)); option.value = value; select.append(option);}); select.value = category; categoryLabel.append(select);
-    controls.append(searchLabel, categoryLabel); status = node('p', 'norway-catalog-status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
+    const countyLabel = node('label', '', {nb:'Fylke',en:'County',uk:'Фюльке',sv:'Fylke',da:'Fylke'}[lang()]), countySelect = node('select'); countySelect.id='norwayCatalogueCounty';
+    const allCounty=node('option','',{nb:'Hele Norge',en:'All Norway',uk:'Уся Норвегія',sv:'Hela Norge',da:'Hele Norge'}[lang()]);allCounty.value='';countySelect.append(allCounty);
+    [...new Map(records.filter(r=>r.countyId&&r.county).map(r=>[r.countyId,r.county])).entries()].sort((a,b)=>a[1].localeCompare(b[1],'nb')).forEach(([id,name])=>{const option=node('option','',name+' · '+records.filter(r=>r.countyId===id).length);option.value=id;countySelect.append(option);});countySelect.value=county;
+    countySelect.onchange=()=>chooseCounty(countySelect.value);countyLabel.append(countySelect);
+    controls.append(searchLabel, categoryLabel,countyLabel); status = node('p', 'norway-catalog-status'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
     geoControls = node('div', 'norway-catalog-geo-controls');
     const baseLabel = node('label', '', g(0)), baseSelect = node('select'); baseSelect.id = 'norwayCatalogueOrigin';
     const defaultOption = node('option', '', g(1)); defaultOption.value = ''; baseSelect.append(defaultOption);
@@ -273,8 +280,8 @@
   }
   async function load() {
     loading = true; failed = false; render();
-    try {const response = await fetch('./norway-catalog.json?v=9'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
-    catch {failed = true;} finally {loading = false; render();}
+    try {const response = await fetch('./norway-catalog.json?v=10'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); records = data.filter(r => r && typeof r.name === 'string' && categories.includes(r.category) && r.category !== 'all');}
+    catch {failed = true;} finally {loading = false; rebuild();}
   }
   window.FjordCatalogueCards=Object.freeze({fold:foldCatalogue});
   window.dispatchEvent(new CustomEvent('fjord:catalogue-cards-ready'));
@@ -283,13 +290,13 @@
     const record = records.find(r => r.id === event.detail?.id);
     if (!record || !validPoint(record)) return;
     originState.set({latitude:record.latitude, longitude:record.longitude, name:record.name}); cancelGPS();
-    baseChoice = 'stop'; category = record.category; radius = '20'; query = record.name; geoMessage = ''; manualOpen = false; limit = 12; rebuild();
+    baseChoice = 'stop'; county = ''; category = record.category; radius = '20'; query = record.name; geoMessage = ''; manualOpen = false; limit = 12; rebuild();
     section?.scrollIntoView({block:'start',behavior:'smooth'}); search?.focus({preventScroll:true});
   });
   window.addEventListener('fjord:catalogue-nearby', event => {
     const detail = event.detail || {}, point = {latitude:detail.lat, longitude:detail.lng, name:String(detail.name || '').slice(0,160)};
     if (!validPoint(point) || !['cabin','sauna'].includes(detail.category)) return;
-    originState.set(point); cancelGPS(); baseChoice = 'stop'; category = detail.category; radius = '20'; query = ''; geoMessage = ''; manualOpen = false; limit = 12; rebuild();
+    originState.set(point); cancelGPS(); baseChoice = 'stop'; county = ''; category = detail.category; radius = '20'; query = ''; geoMessage = ''; manualOpen = false; limit = 12; rebuild();
     section?.scrollIntoView({block:'start',behavior:'smooth'}); select?.focus({preventScroll:true});
   });
   window.addEventListener('pagehide', () => {originState.set(originState.current); cancelGPS(); if (geoMessage === '6' || geoMessage === '17') geoMessage = ''; renderGeoStatus();});
