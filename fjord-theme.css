@@ -281,6 +281,9 @@ body>:is(#contact,#norwayOverview){padding-inline:var(--ff-panel-inset)}
 #journeys>:is(#about,.region-section,#collection,#cards,.searchline,.filterline,.place-pagination){box-sizing:border-box;width:calc(100% - 2 * var(--ff-page-gutter));max-width:var(--ff-content-max);margin-inline:auto;padding-inline:var(--ff-panel-inset)}
 
 /* Keep account controls in the upper-right, independent of menu wrapping. */
+/* The opening photograph meets the header edge to edge. */
+#journeys>#homePanel{width:100%;max-width:none;margin:0;border-radius:0}
+
 body>header>.header-tools{grid-area:tools;margin:0;align-self:start;justify-self:end;flex-wrap:nowrap;min-width:0}
 @media(min-width:651px) and (max-width:1000px){body>header>.brand{font-size:23px}.solidarity-banner{padding-inline:8px}.solidarity-copy strong{font-size:16px}}
 @media(max-width:650px){body>header{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'brand tools' 'pledge tools' 'tabs tabs';grid-template-rows:auto auto auto;row-gap:10px;column-gap:10px}body>header>.brand{font-size:clamp(18px,5vw,22px);align-self:start}.solidarity-banner{padding:0;border:0;margin:0;align-self:start}body>header>.header-tools{width:auto;max-width:175px;flex-direction:column;align-items:stretch;gap:8px}.header-tools .language-control select{width:100%;max-width:none}.header-tools #headerAccount{justify-content:flex-end;gap:5px}.header-tools .header-account-button{font-size:11px;padding:8px;min-height:40px}body>header>nav.site-tabs{min-width:0}}
