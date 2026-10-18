@@ -9,5 +9,11 @@
   function badge(name){const host=document.createElement('span');host.innerHTML=markup(name);return host.firstElementChild;}
   function gallery(host,name){let price=host.querySelector('.demo-gallery-price');if(!price){price=document.createElement('div');price.className='demo-gallery-price';let anchor=host.querySelector('h2');while(anchor?.parentElement&&anchor.parentElement!==host)anchor=anchor.parentElement;if(anchor)anchor.after(price);else host.prepend(price);}price.replaceChildren(badge(name));}
   window.FjordDemoPrices={priceFor,markup,badge,gallery};
+  document.addEventListener('DOMContentLoaded',()=>{
+    const routeHost=document.querySelector('.roadtrip-presets');
+    const routes=()=>document.querySelectorAll('[data-roadtrip]').forEach(button=>{if(!button.querySelector('.demo-price'))button.append(badge(button.dataset.roadtrip));});
+    routes();if(routeHost)new MutationObserver(routes).observe(routeHost,{childList:true,subtree:true});
+    const drone=document.getElementById('droneExperience');if(drone)drone.querySelector('h2')?.after(badge('drone-filming'));
+  });
   window.addEventListener('fjordlanguagechange',()=>document.querySelectorAll('.demo-price small').forEach(el=>{el.textContent=labels[language()];}));
 })();
