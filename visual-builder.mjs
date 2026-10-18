@@ -1,8 +1,37 @@
-import {PAGES,BLOCKS,BUTTONS,SECTIONS,MEDIA_FIELDS,ELEMENTS,elementDescriptor} from './site-editor-schema.mjs?v=5';
+import {PAGES,BLOCKS,BUTTONS,SECTIONS,MEDIA_FIELDS,ELEMENTS,elementDescriptor} from './site-editor-schema.mjs?v=6';
 
 export function reorderIDs(ids,sourceId,targetId){
  if(!ids.includes(sourceId)||!ids.includes(targetId)||sourceId===targetId)return [...ids];
  const index=ids.indexOf(targetId),order=ids.filter(id=>id!==sourceId);order.splice(index,0,sourceId);return order;
+}
+
+// Prefer the actual image/text/button over its large containing section.
+export function resolveVisualSelection(node,resolve=elementDescriptor){
+ if(!node?.closest)return null;
+ const directImage=node.closest('img');
+ const atomic=node.closest('[data-builder-element]'),atomicItem=atomic&&resolve(atomic.dataset.builderElement);
+ if(!directImage&&atomicItem&&['text','button'].includes(atomicItem.kind))return {item:atomicItem,target:atomic};
+ const image=directImage||node.closest('.norway-catalog-photo,.discovery-cafe-photo')?.querySelector('img');
+ if(image){const id=image.closest('[data-cms-place-id]')?.dataset.cmsPlaceId,item=id&&resolve('image_place_'+id)||resolve(image.dataset.builderElement);if(item?.kind==='photo')return {item,target:image};}
+ const precise=node.closest('[data-builder-element]');
+ if(precise){const item=resolve(precise.dataset.builderElement);if(item&&['text','button','photo'].includes(item.kind))return {item,target:precise};}
+ // The first-screen background used to have pointer-events:none; its empty
+ // visual area now selects the photo rather than the whole hero section.
+ const hero=node.closest('#heroScenery');if(hero){const item=resolve('photo_hero');if(item)return {item,target:hero};}
+ if(precise){const item=resolve(precise.dataset.builderElement);if(item)return {item,target:precise};}
+ return null;
+}
+export function captureSelectionValues(target,item){
+ const result={text:(target.innerText||target.textContent||'').trim().slice(0,1800)},view=target.ownerDocument?.defaultView,style=view?.getComputedStyle(target),rect=target.getBoundingClientRect?.();
+ if(item.kind==='photo'){
+  const image=target.tagName==='IMG'?target:target.querySelector?.('img');
+  const source=image?.getAttribute('src')||style?.backgroundImage?.match(/^url\(["']?(.*?)["']?\)$/)?.[1];
+  if(typeof source==='string'&&source.length<=2000&&!/[\u0000-\u001f]/.test(source))result.src=source;
+  result.alt=(image?.getAttribute('alt')||target.getAttribute?.('aria-label')||'').slice(0,1000);
+ }
+ const metrics={};for(const [key,value]of Object.entries({width:rect?.width,height:rect?.height,fontSize:parseFloat(style?.fontSize),padding:parseFloat(style?.paddingTop),borderRadius:parseFloat(style?.borderTopLeftRadius)}))if(Number.isFinite(value))metrics[key]=Math.max(0,Math.min(10000,Math.round(value*100)/100));
+ if(style?.backgroundColor&&style.backgroundColor.length<100)metrics.backgroundColor=style.backgroundColor;
+ result.metrics=metrics;return result;
 }
 
 // Runs only in the nonce-protected editor iframe. No credentials enter this module.
@@ -10,6 +39,7 @@ export function mountVisualBuilder({reply,getDocument}){
  let enabled=false,selected=null,dragged=null,breakpoint="desktop",selectedDescriptor=null,pointerMove=null;
  const editor=document.createElement('dialog');editor.id='builderTextEditor';editor.setAttribute('aria-label','Редактировать текст');document.body.append(editor);
  const css=document.createElement('style');css.textContent=`
+ html[data-builder=true] #heroScenery{pointer-events:auto!important}
  html[data-builder=true] [data-builder-target]{cursor:pointer!important}
  html[data-builder=true] [data-builder-target]:hover:not(:has([data-builder-target]:hover)){outline:2px dashed #8ce5cd!important;outline-offset:3px}
  html[data-builder=true] [data-builder-selected]{outline:3px solid #f8d87b!important;outline-offset:4px}
@@ -34,7 +64,7 @@ export function mountVisualBuilder({reply,getDocument}){
  function sendMove(x,y){if(selectedDescriptor)reply({type:'fjord-editor:move',id:selectedDescriptor.id,breakpoint,x:clamp(x),y:clamp(y)});}
  function cancelMove(){if(!pointerMove)return;selected.style.setProperty('translate',pointerMove.translate,pointerMove.priority);pointerMove=null;positionTools();}
  for(const[label,dx,dy]of [['✥',0,0],['←',-8,0],['↑',0,-8],['↓',0,8],['→',8,0]]){const b=document.createElement('button');b.type='button';b.textContent=label;b.style.cssText='min-width:30px;padding:6px;border:1px solid #8bb7b7;border-radius:6px;background:#255563;color:#edf6f4;touch-action:none';b.setAttribute('aria-label',label==='✥'?'Перетянуть выбранный элемент':'Сдвинуть '+label);floating.append(b);if(dx||dy)b.onclick=()=>{const v=activeStyle();sendMove((v.offsetX||0)+dx,(v.offsetY||0)+dy);};else{b.style.cursor='grab';b.onpointerdown=e=>{if(e.button!==0||!selected)return;e.preventDefault();const v=activeStyle();pointerMove={pointerId:e.pointerId,clientX:e.clientX,clientY:e.clientY,x:breakpoint==='desktop'?v.offsetX||0:getDocument().elements?.[selectedDescriptor.id]?.[breakpoint]?.offsetX||0,y:breakpoint==='desktop'?v.offsetY||0:getDocument().elements?.[selectedDescriptor.id]?.[breakpoint]?.offsetY||0,translate:selected.style.translate,priority:selected.style.getPropertyPriority('translate')};b.setPointerCapture(e.pointerId);};b.onpointermove=e=>{if(!pointerMove||e.pointerId!==pointerMove.pointerId)return;selected.style.setProperty('translate',clamp(pointerMove.x+e.clientX-pointerMove.clientX)+'px '+clamp(pointerMove.y+e.clientY-pointerMove.clientY)+'px','important');positionTools();};b.onpointerup=e=>{if(!pointerMove||e.pointerId!==pointerMove.pointerId)return;const move=pointerMove;selected.style.setProperty('translate',move.translate,move.priority);pointerMove=null;sendMove(move.x+e.clientX-move.clientX,move.y+e.clientY-move.clientY);};b.onpointercancel=cancelMove;b.onlostpointercapture=cancelMove;}}
- const photoButton=document.createElement('button');photoButton.type='button';photoButton.textContent='Фото';photoButton.onclick=()=>{const id=selectedDescriptor?.kind==='photo'?selectedDescriptor.itemId:selectedDescriptor?.itemId;const item=elementDescriptor('photo_'+id);const target=item&&document.querySelector(item.selector);if(target)selectElement(item,target);};floating.append(photoButton);
+ const photoButton=document.createElement('button');photoButton.type='button';photoButton.textContent='Фото';photoButton.onclick=()=>{const id=selectedDescriptor?.kind==='photo'?selectedDescriptor.itemId:selectedDescriptor?.itemId;const item=elementDescriptor(selectedDescriptor?.group==='catalogue'?'image_place_'+id:'photo_'+id);const target=item&&document.querySelector(item.selector);if(target)selectElement(item,target);};floating.append(photoButton);
  const textButton=document.createElement('button');textButton.type='button';textButton.textContent='Текст';textButton.onclick=()=>{if(selectedDescriptor?.kind==='text'){const d=selectedDescriptor;editText((d.group==='pages'?PAGES:BLOCKS).find(i=>i.id===d.itemId),d.group,d.field,selected);}};floating.append(textButton);
  window.addEventListener('blur',cancelMove);window.addEventListener('scroll',positionTools,true);window.addEventListener('resize',positionTools);
  const mediaTargets=()=>MEDIA_FIELDS.map(item=>({...item,group:'media',root:item.selector||({header:'body > header',hero:'.hero',waterfall:'.waterfall-story',cafes:'#cafeStops'})[item.id]})).filter(item=>item.root);
@@ -55,8 +85,9 @@ export function mountVisualBuilder({reply,getDocument}){
  function refresh(){
   for(const [group,items]of [['pages',PAGES],['blocks',BLOCKS]])for(const item of items)for(const field of ['title','intro']){const n=item[field]&&document.querySelector(item[field]);if(n)n.dataset.builderText=group+':'+item.id+':'+field;}
   for(const item of SECTIONS){const root=document.querySelector(item.root);if(!root)continue;root.dataset.builderSection=item.id;let tools=[...root.children].find(n=>n.classList.contains('builder-section-tools'));if(!tools){tools=document.createElement('div');tools.className='builder-section-tools';tools.dataset.i18nIgnore='';for(const [text,step]of [['⠿ '+item.name,0],['↑',-1],['↓',1]]){const b=document.createElement('button');b.type='button';b.textContent=text;b.setAttribute('aria-label',step?(step<0?'Выше: ':'Ниже: ')+item.name:'Перетащить раздел: '+item.name);if(step)b.onclick=()=>sectionMove(item.id,step);else{b.dataset.builderSectionHandle=item.id;b.draggable=true;b.onclick=()=>reply({type:'fjord-editor:select',group:'sections',id:item.id});}tools.append(b);}root.prepend(tools);}}
-  for(const item of ELEMENTS){const node=document.querySelector(item.selector);if(node)node.dataset.builderElement=item.id;}
-  for(const node of document.querySelectorAll('[data-cms-place-id]')){const item=elementDescriptor('place_'+node.dataset.cmsPlaceId);if(item)node.dataset.builderElement=item.id;}
+  for(const item of ELEMENTS)for(const node of document.querySelectorAll(item.selector))node.dataset.builderElement=item.id;
+  for(const node of document.querySelectorAll('[data-cms-place-id]')){const item=elementDescriptor('place_'+node.dataset.cmsPlaceId);if(item)node.dataset.builderElement=item.id;const photo=elementDescriptor('image_place_'+node.dataset.cmsPlaceId);if(photo)for(const image of node.querySelectorAll('.norway-catalog-photo img'))image.dataset.builderElement=photo.id;}
+  for(const [attribute,key,prefix,selector]of [['data-discovery-story','discoveryStory','image_story_','.discovery-story-image img'],['data-experience-id','experienceId','image_experience_','.experience-visual img']])for(const node of document.querySelectorAll('['+attribute+']')){const photo=elementDescriptor(prefix+node.dataset[key]);if(photo)for(const image of node.querySelectorAll(selector))image.dataset.builderElement=photo.id;}
   positionTools();
   for(const target of targets()){const node=document.querySelector(target.root);if(node&&node.dataset.builderTarget!==target.group+':'+target.id)node.dataset.builderTarget=target.group+':'+target.id;}
   for(const node of [...navControls(),...document.querySelectorAll('#headerSignIn,#headerRegister')]){node.dataset.builderDrag='true';if(node.draggable!==enabled)node.draggable=enabled;}
@@ -65,7 +96,7 @@ export function mountVisualBuilder({reply,getDocument}){
   for(const item of targets()){const target=document.querySelector(item.root);if(target&&(target===node||target.contains(node)))return {item,target};}
   return null;
  }
- function selectElement(item,target){cancelMove();selected?.removeAttribute('data-builder-selected');selected=target;selectedDescriptor=item;selected.dataset.builderSelected='true';textButton.hidden=item.kind!=='text';photoButton.hidden=!elementDescriptor('photo_'+item.itemId);notice.textContent=item.name+' · Оформление слева; ✥ — перемещение. '+(breakpoint==='desktop'?'Компьютер':breakpoint==='mobile'?'Телефон':'Планшет');reply({type:'fjord-editor:select',group:'elements',id:item.id,label:target.textContent.trim().slice(0,240)});positionTools();}
+ function selectElement(item,target){cancelMove();selected?.removeAttribute('data-builder-selected');selected=target;selectedDescriptor=item;selected.dataset.builderSelected='true';textButton.hidden=item.kind!=='text';photoButton.hidden=!elementDescriptor(item.group==='catalogue'?'image_place_'+item.itemId:'photo_'+item.itemId);notice.textContent=item.name+' · Оформление слева; ✥ — перемещение. '+(breakpoint==='desktop'?'Компьютер':breakpoint==='mobile'?'Телефон':'Планшет');reply({type:'fjord-editor:select',group:'elements',id:item.id,label:target.textContent.trim().slice(0,240),...captureSelectionValues(target,item)});positionTools();}
  function selectTarget(found){
   selected?.removeAttribute('data-builder-selected');selected=found.target;selected.dataset.builderSelected='true';
   notice.textContent=found.item.name+' · Настройки открыты слева. Значок ⠿ — перетаскивание кнопки; Shift + ← / → — с клавиатуры.';
@@ -80,7 +111,7 @@ export function mountVisualBuilder({reply,getDocument}){
  }
  window.addEventListener('click',event=>{if(!enabled||editor.contains(event.target)||event.target.closest('.builder-section-tools'))return;
   if(floating.contains(event.target))return;
-  const generic=event.target.closest('[data-builder-element]');if(generic){const item=elementDescriptor(generic.dataset.builderElement);if(item){event.preventDefault();event.stopImmediatePropagation();selectElement(item,generic);return;}}
+  const precise=resolveVisualSelection(event.target);if(precise){event.preventDefault();event.stopImmediatePropagation();selectElement(precise.item,precise.target);return;}
   const found=selection(event.target);if(!found)return;event.preventDefault();event.stopImmediatePropagation();selectTarget(found);},true);
  window.addEventListener('dblclick',event=>{if(!enabled||floating.contains(event.target)||editor.contains(event.target))return;const n=event.target.closest('[data-builder-text]');if(!n)return;event.preventDefault();event.stopImmediatePropagation();const[group,id,field]=n.dataset.builderText.split(':');editText((group==='pages'?PAGES:BLOCKS).find(i=>i.id===id),group,field,n);},true);
  document.addEventListener('dragstart',event=>{if(!enabled)return;dragged=dragInfo(event.target);if(!dragged)return;event.stopPropagation();event.dataTransfer.effectAllowed='move';event.dataTransfer.setData('text/plain',dragged.id);},true);
@@ -89,5 +120,5 @@ export function mountVisualBuilder({reply,getDocument}){
  document.addEventListener('drop',event=>{if(!enabled||!dragged)return;event.preventDefault();event.stopImmediatePropagation();move(dragged,dragInfo(event.target,dragged.group==='sectionOrder'));dragged=null;document.querySelectorAll('[data-builder-drop]').forEach(node=>node.removeAttribute('data-builder-drop'));},true);
  document.addEventListener('dragend',()=>{dragged=null;document.querySelectorAll('[data-builder-drop]').forEach(node=>node.removeAttribute('data-builder-drop'));},true);
  window.addEventListener('keydown',event=>{if(!enabled)return;if(event.key==='Escape'){if(pointerMove){cancelMove();return;}floating.hidden=true;selectedDescriptor=null;selected?.removeAttribute('data-builder-selected');selected=null;notice.textContent='Конструктор: нажмите на кнопку, заголовок или фото. Перетаскивайте кнопки за ⠿.';return;}if(!event.shiftKey||!['ArrowLeft','ArrowRight'].includes(event.key))return;const source=dragInfo(event.target);if(!source)return;event.preventDefault();event.stopImmediatePropagation();const peers=source.group==='navOrder'?navControls():[...document.querySelectorAll('#headerSignIn,#headerRegister')].sort((a,b)=>Number(a.style.order||0)-Number(b.style.order||0)),i=peers.indexOf(source.control),j=i+(event.key==='ArrowLeft'?-1:1);if(j<0||j>=peers.length)return;const target=dragInfo(peers[j]);if(j>i){const base=source.group==='navOrder'?peers.map(navID):peers.map(headerID);[base[i],base[j]]=[base[j],base[i]];reply({type:'fjord-editor:reorder',group:source.group,order:base});}else move(source,target);},true);
- return {refresh,focus(id){const item=elementDescriptor(id),target=item&&document.querySelector(item.selector);if(!enabled||!target)return;if(item.kind==='place')window.FjordTabs?.activate('catalogue');else if(item.group==='pages')window.FjordTabs?.activate(item.itemId);else if(['sections','blocks'].includes(item.group)||item.group==='media'&&item.itemId!=='header')window.FjordTabs?.activate('home');selectElement(item,target);target.scrollIntoView({block:'nearest',inline:'nearest'});positionTools();},setEnabled(value,nextBreakpoint){if(["desktop","tablet","mobile"].includes(nextBreakpoint))breakpoint=nextBreakpoint;enabled=value;document.documentElement.dataset.builder=String(value);notice.hidden=!value;notice.textContent='Конструктор: нажмите на кнопку, заголовок или фото. Перетаскивайте кнопки за ⠿. Для обычного просмотра выключите конструктор.';if(!value){cancelMove();floating.hidden=true;selectedDescriptor=null;editor.close();selected?.removeAttribute('data-builder-selected');selected=null;}refresh();}};
+ return {refresh,focus(id){const item=elementDescriptor(id),target=item&&document.querySelector(item.selector);if(!enabled||!target)return;if(item.kind==='place'||item.group==='catalogue')window.FjordTabs?.activate('catalogue');else if(item.group==='pages')window.FjordTabs?.activate(item.itemId);else if(['sections','blocks'].includes(item.group)||item.group==='media'&&item.itemId!=='header')window.FjordTabs?.activate('home');selectElement(item,target);target.scrollIntoView({block:'nearest',inline:'nearest'});positionTools();},setEnabled(value,nextBreakpoint){if(["desktop","tablet","mobile"].includes(nextBreakpoint))breakpoint=nextBreakpoint;enabled=value;document.documentElement.dataset.builder=String(value);notice.hidden=!value;notice.textContent='Конструктор: нажмите на кнопку, заголовок или фото. Перетаскивайте кнопки за ⠿. Для обычного просмотра выключите конструктор.';if(!value){cancelMove();floating.hidden=true;selectedDescriptor=null;editor.close();selected?.removeAttribute('data-builder-selected');selected=null;}refresh();}};
 }

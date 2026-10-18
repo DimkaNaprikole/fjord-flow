@@ -1,7 +1,8 @@
 /* Published, validated content only. Drafts enter solely through the same-origin editor preview. */
-import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument,elementDescriptor} from './site-editor-schema.mjs?v=5';
-import {elementCSS,createElementMedia} from './element-design.mjs?v=1';
-import {mountVisualBuilder} from './visual-builder.mjs?v=3';
+import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument,elementDescriptor} from './site-editor-schema.mjs?v=6';
+import {globalDesignCSS,individualDesignDescriptor,DESIGN_SCOPE} from './global-design.mjs?v=1';
+import {elementCSS,createElementMedia} from './element-design.mjs?v=2';
+import {mountVisualBuilder} from './visual-builder.mjs?v=4';
 import {createSectionOrder} from './section-order.mjs?v=1';
 import {mergeCatalogue} from './catalogue-content.mjs';
 let documentValue=emptyDocument(),scheduled=false,originalNavOrder=null,lastPreviewTarget='',lastCredits='';
@@ -35,9 +36,10 @@ function themeCSS(theme){
  if(theme.headerOpacity!==undefined)css+=`body>header>.solidarity-art-pair{opacity:${theme.headerOpacity}!important}`;
  if(theme.headerHeight!==undefined)css+=`@media(min-width:651px){body>header{min-height:${theme.headerHeight}px!important}}`;
  if(theme.headerPosition!==undefined)css+=`.solidarity-art-pair>.solidarity-art{object-position:50% ${theme.headerPosition}%!important}`;
- for(const button of BUTTONS){const value=documentValue.buttons[button.id];if(!value)continue;const rules=[];for(const [key,property]of Object.entries({fontSize:'font-size',padding:'padding',radius:'border-radius'}))if(value[key]!==undefined)rules.push(property+':'+value[key]+'px!important');for(const [key,property]of Object.entries({background:'background',color:'color'}))if(value[key])rules.push(property+':'+value[key]+'!important');if(rules.length)css+=button.selector+'{'+rules.join(';')+'}';}
+ css+=globalDesignCSS(documentValue.globalDesign);
+ for(const button of BUTTONS){const value=documentValue.buttons[button.id];if(!value)continue;const rules=[];for(const [key,property]of Object.entries({fontSize:'font-size',padding:'padding',radius:'border-radius'}))if(value[key]!==undefined)rules.push(property+':'+value[key]+'px!important');for(const [key,property]of Object.entries({background:'background',color:'color'}))if(value[key])rules.push(property+':'+value[key]+'!important');if(rules.length)css+=DESIGN_SCOPE+' :is('+button.selector+'){'+rules.join(';')+'}';}
  const hero=documentValue.media.hero;if(hero)css+=`#heroScenery{background-image:url("${hero.src}")!important}#heroScenery .hero-location-film{display:none!important}`;
- return css+elementCSS(documentValue.elements,elementDescriptor);
+ return css+elementCSS(documentValue.elements,id=>individualDesignDescriptor(elementDescriptor(id)));
 }
 function apply(){
  scheduled=false;

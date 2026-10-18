@@ -1,6 +1,8 @@
 /* Public editor contract. No credentials, executable HTML or arbitrary CSS. */
-import {createElementDescriptors,resolveElementDescriptor,validateElements,validateElementStyle as validateStyle,validateFramePresets} from './element-design.mjs?v=1';
-export {ELEMENT_NUMBER_FIELDS,ELEMENT_SELECT_FIELDS} from './element-design.mjs?v=1';
+import {createElementDescriptors,resolveElementDescriptor,validateElements,validateElementStyle as validateStyle,validateFramePresets} from './element-design.mjs?v=2';
+import {validateGlobalDesign} from './global-design.mjs?v=1';
+export {GLOBAL_DESIGN_GROUPS,GLOBAL_DESIGN_FIELDS} from './global-design.mjs?v=1';
+export {ELEMENT_NUMBER_FIELDS,ELEMENT_SELECT_FIELDS} from './element-design.mjs?v=2';
 export const LANGUAGES=['nb','en','uk','sv','da'];
 export const PAGES=[
  {id:'home',name:'Главная',root:'#homePanel',title:'.hero h1',intro:'.hero .hero-copy'},
@@ -93,8 +95,9 @@ export function validatePlace(value){
  return out;
 }
 export function validateDocument(value){
- keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue','buttons','headerButtonOrder','sectionOrder','elements','framePresets']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
- const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]},buttons:{},headerButtonOrder:[],sectionOrder:[],elements:{},framePresets:[]};
+ keys(value,['schemaVersion','theme','pages','blocks','media','navOrder','catalogue','buttons','headerButtonOrder','sectionOrder','elements','framePresets','globalDesign']);if(value.schemaVersion!==1)throw new Error('invalid_editor_schema');
+ const out={schemaVersion:1,theme:{},pages:{},blocks:{},media:{},navOrder:[],catalogue:{places:[]},buttons:{},headerButtonOrder:[],sectionOrder:[],elements:{},framePresets:[],globalDesign:{}};
+ if(value.globalDesign!==undefined)out.globalDesign=validateGlobalDesign(value.globalDesign,validateElementStyle);
  if(value.elements!==undefined)out.elements=validateElements(value.elements,elementDescriptor,safeMediaURL);
  if(value.framePresets!==undefined)out.framePresets=validateFramePresets(value.framePresets,safeMediaURL);
  if(value.theme!==undefined){keys(value.theme,Object.keys(THEME_FIELDS));for(const [key,v]of Object.entries(value.theme)){const f=THEME_FIELDS[key];if(f.type==='color'&&!/^#[0-9a-f]{6}$/i.test(v)||f.type==='number'&&(!Number.isFinite(v)||v<f.min||v>f.max)||f.type==='select'&&!f.options.includes(v))throw new Error('invalid_editor_theme');out.theme[key]=v;}}

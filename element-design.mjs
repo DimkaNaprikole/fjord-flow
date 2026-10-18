@@ -1,6 +1,6 @@
 /* Bounded editor styles for reviewed targets; never accepts selectors or CSS from content. */
-export const ELEMENT_NUMBER_FIELDS={borderWidth:{min:0,max:12},radius:{min:0,max:64},padding:{min:0,max:64},fontSize:{min:11,max:96},widthPercent:{min:30,max:100},offsetX:{min:-160,max:160},offsetY:{min:-160,max:160},opacity:{min:0,max:1},backgroundOpacity:{min:0,max:1},borderOpacity:{min:0,max:1},...Object.fromEntries(['TopLeft','TopRight','BottomLeft','BottomRight'].map(corner=>['radius'+corner,{min:0,max:160}])),...Object.fromEntries(['Top','Right','Bottom','Left'].map(side=>['border'+side+'Width',{min:0,max:16}]))};
-export const ELEMENT_SELECT_FIELDS={borderStyle:['none','solid','dashed','dotted','double','groove','ridge','inset','outset'],align:['left','center','right'],textAlign:['left','center','right'],fontWeight:['400','500','600','700','800'],shadow:['none','soft','deep']};
+export const ELEMENT_NUMBER_FIELDS={heightPx:{min:16,max:1200},objectPositionX:{min:0,max:100},objectPositionY:{min:0,max:100},...Object.fromEntries(['Top','Right','Bottom','Left'].map(side=>['margin'+side,{min:-160,max:160}])),borderWidth:{min:0,max:12},radius:{min:0,max:64},padding:{min:0,max:64},fontSize:{min:11,max:96},widthPercent:{min:30,max:100},offsetX:{min:-160,max:160},offsetY:{min:-160,max:160},opacity:{min:0,max:1},backgroundOpacity:{min:0,max:1},borderOpacity:{min:0,max:1},...Object.fromEntries(['TopLeft','TopRight','BottomLeft','BottomRight'].map(corner=>['radius'+corner,{min:0,max:160}])),...Object.fromEntries(['Top','Right','Bottom','Left'].map(side=>['border'+side+'Width',{min:0,max:16}]))};
+export const ELEMENT_SELECT_FIELDS={objectFit:['cover','contain','fill'],borderStyle:['none','solid','dashed','dotted','double','groove','ridge','inset','outset'],align:['left','center','right'],textAlign:['left','center','right'],fontWeight:['400','500','600','700','800'],shadow:['none','soft','deep']};
 export function createElementDescriptors({PAGES,BLOCKS,BUTTONS,SECTIONS}){
  const out=SECTIONS.map(item=>({id:'section_'+item.id,name:item.name,selector:item.root,kind:'section',group:'sections',itemId:item.id}));
  for(const page of PAGES)if(page.id!=='home')out.push({id:'page_'+page.id,name:page.name,selector:page.root,kind:'section',group:'pages',itemId:page.id});
@@ -10,19 +10,22 @@ export function createElementDescriptors({PAGES,BLOCKS,BUTTONS,SECTIONS}){
   {id:'header',name:'Фон шапки',selector:'.solidarity-art-pair>.solidarity-art',imageSelector:'.solidarity-art-pair>.solidarity-art'},
   {id:'hero',name:'Фото первого экрана',selector:'#heroScenery'},
   {id:'waterfall',name:'Фото водопада',selector:'.waterfall-story>img',imageSelector:'.waterfall-story>img'},
-  {id:'cafes',name:'Фото кофеен',selector:'#cafeStops > img',imageSelector:'#cafeStops > img'}
+  {id:'cafes',name:'Фото кофеен',selector:'#cafeStops .discovery-cafe-photo img',imageSelector:'#cafeStops .discovery-cafe-photo img'}
  ])out.push({...item,id:'photo_'+item.id,itemId:item.id,kind:'photo',group:'media'});
  return out;
 }
 export function resolveElementDescriptor(id,elements){
  const fixed=elements.find(item=>item.id===id);if(fixed)return fixed;
+ for(const [prefix,attribute,imageClass,group,itemId]of [['image_story_','data-discovery-story','.discovery-story-image','pages','journal'],['image_experience_','data-experience-id','.experience-visual','blocks','experiences']])if(typeof id==='string'&&id.startsWith(prefix)&&/^[a-z0-9][a-z0-9-]{0,79}$/.test(id.slice(prefix.length))){const imageId=id.slice(prefix.length),selector=`[${attribute}="${imageId}"] ${imageClass} img`;return {id,name:imageId+' · фото',selector,imageSelector:selector,kind:'photo',group,itemId};}
+ if(typeof id==='string'&&/^image_place_[a-z0-9][a-z0-9-]{0,79}$/.test(id)){const placeId=id.slice(12),selector=`[data-cms-place-id="${placeId}"] .norway-catalog-photo img`;return {id,name:placeId+' · фото',selector,imageSelector:selector,kind:'photo',group:'catalogue',itemId:placeId};}
  if(typeof id==='string'&&/^place_[a-z0-9][a-z0-9-]{0,79}$/.test(id)){const placeId=id.slice(6);return {id,name:placeId,selector:`[data-cms-place-id="${placeId}"]`,imageSelector:`[data-cms-place-id="${placeId}"] .norway-catalog-photo img`,kind:'place',group:'catalogue',itemId:placeId};}
  return null;
 }
 const plain=value=>value!==null&&typeof value==='object'&&!Array.isArray(value)&&[Object.prototype,null].includes(Object.getPrototypeOf(value));
 export function validateElementStyle(record,safeMediaURL){
-  if(!plain(record)||Object.keys(record).some(key=>!['background','color','borderColor','image','borderImage',...Object.keys(ELEMENT_NUMBER_FIELDS),...Object.keys(ELEMENT_SELECT_FIELDS)].includes(key)))throw new Error('invalid_editor_element_style');
+  if(!plain(record)||Object.keys(record).some(key=>!['background','color','borderColor','image','borderImage','hidden',...Object.keys(ELEMENT_NUMBER_FIELDS),...Object.keys(ELEMENT_SELECT_FIELDS)].includes(key)))throw new Error('invalid_editor_element_style');
   const clean={};
+  if(record.hidden!==undefined){if(typeof record.hidden!=='boolean')throw new Error('invalid_element_hidden');clean.hidden=record.hidden;}
   for(const key of ['background','color','borderColor'])if(record[key]!==undefined){if(typeof record[key]!=='string'||!/^#[0-9a-f]{6}$/i.test(record[key]))throw new Error('invalid_element_color');clean[key]=record[key];}
   for(const [key,bounds]of Object.entries(ELEMENT_NUMBER_FIELDS))if(record[key]!==undefined){if(!Number.isFinite(record[key])||record[key]<bounds.min||record[key]>bounds.max)throw new Error('invalid_element_number');clean[key]=record[key];}
   for(const [key,allowed]of Object.entries(ELEMENT_SELECT_FIELDS))if(record[key]!==undefined){if(!allowed.includes(record[key]))throw new Error('invalid_element_option');clean[key]=record[key];}
@@ -42,6 +45,11 @@ export function validateElements(value,resolve,safeMediaURL){
 }
 export function elementCSS(elements,resolve){
  function rulesFor(value,item,responsive=false){const rules=[];
+  if(value.hidden!==undefined)rules.push('display:'+(value.hidden?'none':'revert')+'!important');
+  if(value.heightPx!==undefined)rules.push('height:'+value.heightPx+'px!important');
+  if(value.objectFit!==undefined)rules.push('object-fit:'+value.objectFit+'!important');
+  if(value.objectPositionX!==undefined||value.objectPositionY!==undefined)rules.push('object-position:'+(value.objectPositionX??50)+'% '+(value.objectPositionY??50)+'%!important');
+  for(const side of ['Top','Right','Bottom','Left'])if(value['margin'+side]!==undefined)rules.push('margin-'+side.toLowerCase()+':'+value['margin'+side]+'px!important');
   const alpha=(color,opacity)=>opacity===undefined?color:`rgba(${[1,3,5].map(index=>parseInt(color.slice(index,index+2),16)).join(',')},${opacity})`;
   if(value.background!==undefined)rules.push('background-color:'+alpha(value.background,value.backgroundOpacity)+'!important');
   if(value.borderColor!==undefined)rules.push('border-color:'+alpha(value.borderColor,value.borderOpacity)+'!important');
@@ -67,6 +75,7 @@ export function elementCSS(elements,resolve){
   if(id==='photo_hero'&&value.image)css+='#heroScenery .hero-location-film{display:none!important}';
   for(const [mode,query]of [['tablet','(min-width:681px) and (max-width:1000px)'],['mobile','(max-width:680px)']])if(value[mode]){
    const override=value[mode],effective={...value,...override},rules=rulesFor(override,item,true);let scoped=rules?selector+'{'+rules+'}':'';
+   if(override.objectPositionX!==undefined||override.objectPositionY!==undefined)scoped+=selector+'{object-position:'+(effective.objectPositionX??50)+'% '+(effective.objectPositionY??50)+'%!important}';
    // Alpha overrides use the inherited desktop colour without forcing any other desktop property.
    for(const [alphaKey,colorKey,property]of [['backgroundOpacity','background','background-color'],['borderOpacity','borderColor','border-color']])if(override[alphaKey]!==undefined&&override[colorKey]===undefined&&effective[colorKey]){const color=effective[colorKey];scoped+=selector+'{'+property+`:rgba(${[1,3,5].map(index=>parseInt(color.slice(index,index+2),16)).join(',')},${override[alphaKey]})!important}`;}
    if(override.offsetX!==undefined||override.offsetY!==undefined)scoped+=`${selector}{translate:${override.offsetX||0}px ${override.offsetY||0}px!important}`;
