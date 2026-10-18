@@ -242,13 +242,15 @@ dialog.stay-gallery .stay-gallery-venue-actions a {
   #cafeNearby .cafe-result-links .cafe-route { flex: 1 1 100%; justify-content: center; }
 }
 
-/* Original friendship artwork stays whole, in a compact top banner. */
+/* Matching square friendship artwork; Ukraine frame removes excess wall and pavement. */
 .solidarity-banner{display:flex;align-items:center;justify-content:center;gap:20px;box-sizing:border-box;width:100%;padding:8px 18px;background:var(--ff-surface,#173e49);color:var(--ff-text,#eef7f8);border-bottom:1px solid #ffffff24;font:600 12px/1.4 Manrope,'Segoe UI',sans-serif;text-align:left}
-.solidarity-art-pair{display:flex;align-items:center;gap:8px;flex:none}.solidarity-art{display:block;width:auto;height:104px;max-width:none;object-fit:contain;flex:none;border-radius:3px}
+.solidarity-art-pair{display:flex;align-items:center;gap:8px;flex:none}.solidarity-art{display:block;width:104px;height:104px;max-width:none;object-fit:contain;flex:none;border-radius:3px}
 .solidarity-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
 .solidarity-copy strong{font-size:18px;line-height:1.25;color:#f2f8f8}
 .solidarity-message{color:#c0d6da;font-size:12px}
 .solidarity-pledge{color:#f4d96b;font-size:12px;letter-spacing:.05em}
-@media(max-width:650px){.solidarity-banner{gap:14px;padding:7px 12px}.solidarity-art{height:90px}.solidarity-copy strong{font-size:16px}.solidarity-message,.solidarity-pledge{font-size:11px}}
+@media(max-width:650px){.solidarity-banner{gap:14px;padding:7px 12px}.solidarity-art{width:90px;height:90px}.solidarity-copy strong{font-size:16px}.solidarity-message,.solidarity-pledge{font-size:11px}}
 
-@media(max-width:650px){.solidarity-art-pair{gap:6px}.solidarity-banner{gap:12px}.solidarity-art{height:82px}.solidarity-copy strong{font-size:14px}.solidarity-message,.solidarity-pledge{font-size:10px}}
+@media(max-width:650px){.solidarity-art-pair{gap:6px}.solidarity-banner{gap:12px}.solidarity-art{width:82px;height:82px}.solidarity-copy strong{font-size:14px}.solidarity-message,.solidarity-pledge{font-size:10px}}
+
+.solidarity-art-frame{position:relative;overflow:hidden}.solidarity-art-frame img{position:absolute;display:block;left:0;top:-22.619%;width:100%;height:155.714%;max-width:none;object-fit:fill}
