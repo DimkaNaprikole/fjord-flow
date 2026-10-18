@@ -116,16 +116,12 @@ if(friendship){
     caption.dataset.frame=String(frame);
     caption.innerHTML=frame===2
       ?'<span class="friendship-third-left"><b>Norge +</b><b>Ukraina</b></span><span class="friendship-third-right"><b>Sammen</b><b>for frihet</b></span>'
-      :`<span class="friendship-support ${frame===0?'friendship-third-right':'friendship-third-left'}" lang="en"><b>Stand</b><b>with</b><b>${frame===0?'Norway':'Ukraine'}</b></span>`;
+      :`<span class="friendship-third-left" lang="en">${frame===0?'<b>Wake</b><b>up</b><b>Ukraine</b>':'<b>Stand</b><b>with</b><b>Ukraine</b>'}</span><span class="friendship-third-right" lang="en">${frame===0?'<b>Stand</b><b>with</b><b>Norway</b>':'<b>Wake</b><b>up</b><b>Norway</b>'}</span>`;
     caption.hidden=false;
   };
-  const pairs=[
-    ['images/ukraine-friendship-original.png',norwegian],
-    ['images/ukraine-friendship-clean.webp','images/norway-wake-up.webp'],
-    ['images/ukraine-friendship-clean.webp',norwegian]
-  ];
+  const cleanPair=['images/ukraine-friendship-clean.webp',norwegian];
   friendship.classList.add('friendship-alternating');
-  sectionArtwork.set(friendship,{offset:0,advance:mountArtwork(friendship,0,()=>!document.hidden&&!reduced.matches&&inViewport(friendship),index=>pairs[index%3],updatePledge)});
+  sectionArtwork.set(friendship,{offset:0,advance:mountArtwork(friendship,0,()=>!document.hidden&&!reduced.matches&&inViewport(friendship),()=>cleanPair,updatePledge)});
   artworkObserver?.observe(friendship);
 }
 discoverArtworkSections();

@@ -65,28 +65,22 @@ test('offscreen and hidden sections, hidden document and reduced motion do not r
  h.motion.matches=false;h.motion.emit('change');await flush();assert.equal(h.timers.size,1);
 });
 
-test('header cycles two wake-up pairs and a clean friendship frame, then resets with reduced motion',async()=>{
+test('header keeps both artworks clean and cycles all six live slogans with reduced-motion reset',async()=>{
  const h=harness({header:true});h.near(h.friendship);await flush();
- const first=['images/ukraine-friendship-original.png','images/norway-friendship-original.png'];
- const second=['images/ukraine-friendship-clean.webp','images/norway-wake-up.webp'];
- const third=['images/ukraine-friendship-clean.webp','images/norway-friendship-original.png'];
- const captioned=new Set([first[0],second[1]]);
+ const clean=['images/ukraine-friendship-clean.webp','images/norway-friendship-original.png'];
  const caption=h.friendship.parentNode.children.find(child=>child.className==='friendship-third-caption');
- assert.ok(caption,'third frame has its own sibling caption above the artwork');
- const frames=[[first,'Stand with Norway'],[second,'Stand with Ukraine'],[third,null],[first,'Stand with Norway']];
- for(let i=0;i<frames.length;i++){
-  const [expected,label]=frames[i],clean=expected===third;
-  assert.deepEqual(pair(h.friendship),expected);assert.equal(pair(h.friendship).filter(path=>captioned.has(path)).length,clean?0:1);
+ assert.ok(caption);assert.equal(caption.getAttribute('data-i18n-ignore'),'');
+ const frames=[[/Wake\s+up\s+Ukraine/,/Stand\s+with\s+Norway/],[/Stand\s+with\s+Ukraine/,/Wake\s+up\s+Norway/],[/Norge \+\s+Ukraina/,/Sammen\s+for frihet/]];
+ for(let i=0;i<4;i++){
+  assert.deepEqual(pair(h.friendship),clean,'no baked-in slogans in any frame');
   assert.equal(caption.hidden,false);assert.equal(caption.dataset.frame,String(i%3));
-  const captionText=caption.innerHTML.replace(/<[^>]+>/g,' ');
-  if(label)assert.match(captionText,new RegExp(label.split(' ').join('\\s+')));
-  else {assert.match(captionText,/Norge \+\s+Ukraina/);assert.match(captionText,/Sammen\s+for frihet/);}
-  if(i<frames.length-1){h.tick();await flush();}
+  const text=caption.innerHTML.replace(/<[^>]+>/g,' ');
+  for(const phrase of frames[i%3])assert.match(text,phrase);
+  if(i<3){h.tick();await flush();}
  }
- h.tick();await flush();h.tick();await flush();assert.deepEqual(pair(h.friendship),third);
+ h.tick();await flush();h.tick();await flush();assert.equal(caption.dataset.frame,'2');
  h.motion.matches=true;h.motion.emit('change');await flush();
- assert.deepEqual(pair(h.friendship),first);assert.match(caption.innerHTML,/Norway/);
- assert.equal(caption.hidden,false);assert.equal(caption.dataset.frame,'0');assert.equal(h.timers.size,0);
+ assert.equal(caption.dataset.frame,'0');assert.deepEqual(pair(h.friendship),clean);assert.equal(h.timers.size,0);
 });
 
 test('explorer advances once on a committed photo, not on selection or language render events',async()=>{
