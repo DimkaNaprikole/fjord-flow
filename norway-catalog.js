@@ -99,11 +99,6 @@
       toggle.setAttribute('aria-expanded',String(open)); toggle.textContent=open?labels[1]+' ↶':prompts[1];
     }
     toggle.onclick=()=>{hoverOpened=false;side(!article.classList.contains('catalogue-flipped'));};
-    for (const edge of ['left','right']) {
-      const button=node('button','catalogue-flip-edge catalogue-flip-edge--'+edge,'↻');
-      button.type='button';button.setAttribute('aria-label',labels[0]+' · '+r.name);
-      button.onclick=()=>{hoverOpened=false;side(!article.classList.contains('catalogue-flipped'));}; article.append(button);
-    }
     article.addEventListener('pointerenter',event=>{
       if(event.pointerType==='touch'||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
       dwell=setTimeout(()=>{if(article.isConnected&&article.matches(':hover')&&!article.matches(':focus-within')&&performance.now()-lastCardScroll>300&&!document.querySelector('dialog[open]')){hoverOpened=true;side(true);}},2000);

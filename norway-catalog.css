@@ -59,11 +59,7 @@
 .catalogue-flip .norway-catalog-description,.catalogue-flip .norway-catalog-address{font-size:13px}
 .catalogue-flip .norway-catalog-actions a{background:#255563!important;color:#edf6f4!important;border-color:#a9d4cd80!important;font-size:12px;padding:9px}
 .catalogue-flip-toggle{position:absolute;right:10px;top:10px;z-index:4;min-height:38px;padding:9px 12px;border-radius:999px;border:1px solid #deefeb88;background:#0b3245ed;color:#fff;backdrop-filter:blur(12px);font:650 11px/1.4 Manrope,sans-serif;cursor:pointer;max-width:calc(100% - 20px)}
-.catalogue-flip-edge{position:absolute;z-index:3;top:65px;bottom:75px;width:32px;padding:0;border:0;background:transparent;color:#fff;font-size:21px;cursor:pointer;text-shadow:0 1px 5px #000}
-.catalogue-flip-edge--left{left:0;border-radius:17px 0 0 17px}.catalogue-flip-edge--right{right:0;border-radius:0 17px 17px 0}
-.catalogue-flip-edge:hover{background:#082b3b66}
-.catalogue-flipped>.catalogue-flip-edge{display:none}
-.catalogue-flip-toggle:focus-visible,.catalogue-flip-edge:focus-visible{outline:3px solid #e6c78c;outline-offset:2px}
+.catalogue-flipped>.catalogue-flip-toggle:focus-visible{outline:3px solid #e6c78c;outline-offset:2px}
 @media(max-width:650px){.catalogue-front-caption strong{font-size:23px}.catalogue-flip>.norway-catalog-copy{padding-left:15px;padding-right:15px}}
 @media(prefers-reduced-motion:reduce){.catalogue-flip>.norway-catalog-photo,.catalogue-flip>.norway-catalog-copy{transition:none}}
 .catalogue-flip>.norway-catalog-photo{border-radius:17px!important}
