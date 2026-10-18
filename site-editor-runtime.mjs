@@ -1,8 +1,8 @@
 /* Published, validated content only. Drafts enter solely through the same-origin editor preview. */
-import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument,elementDescriptor} from './site-editor-schema.mjs?v=6';
-import {globalDesignCSS,individualDesignDescriptor,DESIGN_SCOPE} from './global-design.mjs?v=1';
-import {elementCSS,createElementMedia} from './element-design.mjs?v=2';
-import {mountVisualBuilder} from './visual-builder.mjs?v=4';
+import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument,elementDescriptor} from './site-editor-schema.mjs?v=7';
+import {globalDesignCSS,individualDesignDescriptor,DESIGN_SCOPE} from './global-design.mjs?v=2';
+import {elementCSS,createElementMedia} from './element-design.mjs?v=3';
+import {mountVisualBuilder} from './visual-builder.mjs?v=5';
 import {createSectionOrder} from './section-order.mjs?v=1';
 import {mergeCatalogue} from './catalogue-content.mjs';
 let documentValue=emptyDocument(),scheduled=false,originalNavOrder=null,lastPreviewTarget='',lastCredits='';

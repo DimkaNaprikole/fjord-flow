@@ -1,4 +1,4 @@
-import {GLOBAL_DESIGN_GROUPS,GLOBAL_DESIGN_FIELDS,elementDescriptor} from './site-editor-schema.mjs?v=6';
+import {GLOBAL_DESIGN_GROUPS,GLOBAL_DESIGN_FIELDS,elementDescriptor} from './site-editor-schema.mjs?v=7';
 const node=(tag,text)=>{const el=document.createElement(tag);if(text!==undefined)el.textContent=text;return el;};
 
 export function renderGlobalDesign({host,getDocument,changed,breakpoint='desktop',groupId='buttons',rerender}){

@@ -1,8 +1,8 @@
 /* Public editor contract. No credentials, executable HTML or arbitrary CSS. */
-import {createElementDescriptors,resolveElementDescriptor,validateElements,validateElementStyle as validateStyle,validateFramePresets} from './element-design.mjs?v=2';
-import {validateGlobalDesign} from './global-design.mjs?v=1';
-export {GLOBAL_DESIGN_GROUPS,GLOBAL_DESIGN_FIELDS} from './global-design.mjs?v=1';
-export {ELEMENT_NUMBER_FIELDS,ELEMENT_SELECT_FIELDS} from './element-design.mjs?v=2';
+import {createElementDescriptors,resolveElementDescriptor,validateElements,validateElementStyle as validateStyle,validateFramePresets} from './element-design.mjs?v=3';
+import {validateGlobalDesign} from './global-design.mjs?v=2';
+export {GLOBAL_DESIGN_GROUPS,GLOBAL_DESIGN_FIELDS} from './global-design.mjs?v=2';
+export {ELEMENT_NUMBER_FIELDS,ELEMENT_SELECT_FIELDS} from './element-design.mjs?v=3';
 export const LANGUAGES=['nb','en','uk','sv','da'];
 export const PAGES=[
  {id:'home',name:'Главная',root:'#homePanel',title:'.hero h1',intro:'.hero .hero-copy'},

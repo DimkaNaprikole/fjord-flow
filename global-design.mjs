@@ -1,5 +1,5 @@
 /* Reviewed global groups, never selectors or executable CSS from saved content. */
-import {elementCSS} from './element-design.mjs?v=2';
+import {elementCSS} from './element-design.mjs?v=3';
 export const DESIGN_SCOPE=':is(#fjordGlobalDesignScope,:root):is(#fjordGlobalDesignOverride,:root)';
 export const GLOBAL_DESIGN_GROUPS=[
  {id:'buttons',name:'Все текстовые кнопки',selector:'body>header>nav>a,body>header>nav>button,.header-account-button,.hero-content>a.button,#waterfallExplore,.button,.text-link,.stay-booking,.stay-link,.stay-links>a,.cafe-route,.cafe-gallery-route,.cafe-gallery-website,.stay-gallery-venue-actions>a,.experience-actions>a,.experience-official,.experience-filters>button,.roadtrip-presets>button,.discovery-cafe-links>a,.discovery-cafe-links>button,.norway-catalog-actions>a,.norway-catalog-gps,.norway-catalog-retry,#cafeNearbySearch,#cafeNearbyOnline,#cafeNearbyTownForm button,.catalogue-flip-toggle'},

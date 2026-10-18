@@ -7,7 +7,7 @@ import {resolveVisualSelection,captureSelectionValues} from './visual-builder.mj
 test('photo descriptors stay inside safe known card cover selectors',()=>{
  const photo=elementDescriptor('image_place_granavolden-cafe');
  assert.equal(photo.kind,'photo');assert.equal(photo.group,'catalogue');assert.equal(photo.itemId,'granavolden-cafe');
- assert.equal(photo.imageSelector,'[data-cms-place-id="granavolden-cafe"] .norway-catalog-photo img');
+ assert.equal(photo.imageSelector,'[data-cms-place-id="granavolden-cafe"] :is(.norway-catalog-photo,.stay-photo-open) img');
  assert.equal(elementDescriptor('image_story_bergen').imageSelector,'[data-discovery-story="bergen"] .discovery-story-image img');
  assert.equal(elementDescriptor('image_experience_tusenfryd').group,'blocks');
  assert.equal(elementDescriptor('image_story_x"] body'),null);

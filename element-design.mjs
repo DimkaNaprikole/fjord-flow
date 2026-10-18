@@ -17,8 +17,8 @@ export function createElementDescriptors({PAGES,BLOCKS,BUTTONS,SECTIONS}){
 export function resolveElementDescriptor(id,elements){
  const fixed=elements.find(item=>item.id===id);if(fixed)return fixed;
  for(const [prefix,attribute,imageClass,group,itemId]of [['image_story_','data-discovery-story','.discovery-story-image','pages','journal'],['image_experience_','data-experience-id','.experience-visual','blocks','experiences']])if(typeof id==='string'&&id.startsWith(prefix)&&/^[a-z0-9][a-z0-9-]{0,79}$/.test(id.slice(prefix.length))){const imageId=id.slice(prefix.length),selector=`[${attribute}="${imageId}"] ${imageClass} img`;return {id,name:imageId+' · фото',selector,imageSelector:selector,kind:'photo',group,itemId};}
- if(typeof id==='string'&&/^image_place_[a-z0-9][a-z0-9-]{0,79}$/.test(id)){const placeId=id.slice(12),selector=`[data-cms-place-id="${placeId}"] .norway-catalog-photo img`;return {id,name:placeId+' · фото',selector,imageSelector:selector,kind:'photo',group:'catalogue',itemId:placeId};}
- if(typeof id==='string'&&/^place_[a-z0-9][a-z0-9-]{0,79}$/.test(id)){const placeId=id.slice(6);return {id,name:placeId,selector:`[data-cms-place-id="${placeId}"]`,imageSelector:`[data-cms-place-id="${placeId}"] .norway-catalog-photo img`,kind:'place',group:'catalogue',itemId:placeId};}
+ if(typeof id==='string'&&/^image_place_[a-z0-9][a-z0-9-]{0,79}$/.test(id)){const placeId=id.slice(12),selector=`[data-cms-place-id="${placeId}"] :is(.norway-catalog-photo,.stay-photo-open) img`;return {id,name:placeId+' · фото',selector,imageSelector:selector,kind:'photo',group:'catalogue',itemId:placeId};}
+ if(typeof id==='string'&&/^place_[a-z0-9][a-z0-9-]{0,79}$/.test(id)){const placeId=id.slice(6);return {id,name:placeId,selector:`[data-cms-place-id="${placeId}"]`,imageSelector:`[data-cms-place-id="${placeId}"] :is(.norway-catalog-photo,.stay-photo-open) img`,kind:'place',group:'catalogue',itemId:placeId};}
  return null;
 }
 const plain=value=>value!==null&&typeof value==='object'&&!Array.isArray(value)&&[Object.prototype,null].includes(Object.getPrototypeOf(value));

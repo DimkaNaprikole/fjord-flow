@@ -1,6 +1,7 @@
-import {renderElementInspector} from './element-inspector-admin.mjs?v=2';
-import {renderGlobalDesign} from './global-design-admin.mjs?v=1';
-import {PAGES,BLOCKS,BUTTONS,SECTIONS,MEDIA_FIELDS,BUTTON_STYLE_FIELDS,LANGUAGES,safeButtonHref,ELEMENTS,elementDescriptor} from './site-editor-schema.mjs?v=6';
+import {mountBuilderContext} from './builder-context-admin.mjs?v=1';
+import {renderElementInspector} from './element-inspector-admin.mjs?v=3';
+import {renderGlobalDesign} from './global-design-admin.mjs?v=2';
+import {PAGES,BLOCKS,BUTTONS,SECTIONS,MEDIA_FIELDS,BUTTON_STYLE_FIELDS,LANGUAGES,safeButtonHref,ELEMENTS,elementDescriptor} from './site-editor-schema.mjs?v=7';
 
 export function mountVisualBuilderAdmin({frame,nonce,getDocument,changed,selectContent,selectMedia,selectPlace,onOrder,language,loadAssets}){
  let enabled=false,selected=null,breakpoint="desktop",inspector=null;
@@ -8,9 +9,10 @@ export function mountVisualBuilderAdmin({frame,nonce,getDocument,changed,selectC
  const globalButton=document.createElement('button');globalButton.type='button';globalButton.textContent='Стиль сайта';globalButton.id='globalDesignToggle';toggle.after(globalButton);globalButton.onclick=()=>{if(!enabled)toggle.click();render({group:'global',id:'buttons',name:'Стиль сайта'});};
  const panel=document.createElement('section');panel.id='visualBuilderPanel';panel.className='editor-panel visual-builder-panel';panel.hidden=true;document.querySelector('.editor-tabs').after(panel);
  const controls=document.querySelector('.editor-controls');
+ const context=mountBuilderContext({frame,getDocument,changed,language,setLanguage:lang=>{const source=document.getElementById('language');source.value=lang;source.dispatchEvent(new Event('change'));},loadAssets,selectPlace,getBreakpoint:()=>breakpoint});
  document.querySelector('.editor-tabs').addEventListener('click',()=>{delete controls.dataset.builderSelection;panel.hidden=true;selected=null;});
  function message(){frame.contentWindow.postMessage({type:'fjord-editor:builder',nonce,enabled,breakpoint},location.origin);}
- toggle.onclick=()=>{enabled=!enabled;toggle.setAttribute('aria-pressed',String(enabled));panel.hidden=!enabled;if(!enabled)delete controls.dataset.builderSelection;else if(selected)controls.dataset.builderSelection=selected.group;if(enabled&&!selected){panel.replaceChildren(node('h2','Конструктор сайта'),node('p','Нажмите текст для редактирования. Нажмите фото для замены. Разделы перетаскивайте за ⠿ или переставляйте стрелками ↑ / ↓.','hint'));sectionList();elementPicker();picker();}message();};
+ toggle.onclick=()=>{enabled=!enabled;context.close();toggle.setAttribute('aria-pressed',String(enabled));panel.hidden=!enabled;if(!enabled)delete controls.dataset.builderSelection;else if(selected)controls.dataset.builderSelection=selected.group;if(enabled&&!selected){panel.replaceChildren(node('h2','Конструктор сайта'),node('p','Нажмите текст для редактирования. Нажмите фото для замены. Разделы перетаскивайте за ⠿ или переставляйте стрелками ↑ / ↓.','hint'));sectionList();elementPicker();picker();}message();};
  const devices=document.createElement('div');devices.className='builder-devices';const tablet=document.createElement('button');tablet.type='button';tablet.id='tablet';tablet.textContent='Планшет';document.getElementById('mobile').before(tablet);
  const fit=document.createElement('input');fit.type='checkbox';fit.checked=true;const fitLabel=document.createElement('label');fitLabel.textContent='Вместить';fitLabel.append(fit);devices.append(fitLabel);const stage=frame.parentElement;function fitFrame(){const width=Number(widthControl.value)||1280;frame.style.zoom=fit.checked?String(Math.min(1,Math.max(320,stage.clientWidth-16)/width)):'1';stage.style.overflowX=fit.checked?'hidden':'auto';}fit.onchange=fitFrame;new ResizeObserver(fitFrame).observe(stage);
  const widthControl=document.createElement('input');widthControl.type='range';widthControl.min='320';widthControl.max='1440';widthControl.value='1280';widthControl.setAttribute('aria-label','Ширина адаптивного предпросмотра');const widthLabel=document.createElement('span');devices.append(widthControl,widthLabel);document.querySelector('.preview-toolbar').after(devices);
@@ -58,7 +60,7 @@ export function mountVisualBuilderAdmin({frame,nonce,getDocument,changed,selectC
  }
  window.addEventListener('message',event=>{
   if(event.origin!==location.origin||event.source!==frame.contentWindow||event.data?.nonce!==nonce)return;
-  const data=event.data;if(data.type==='fjord-editor:ready'){message();return;}if(!enabled)return;
+  const data=event.data;if(data.type==='fjord-editor:context-close'){context.close();return;}if(data.type==='fjord-editor:context'){if(!enabled)toggle.click();context.open(data);return;}if(data.type==='fjord-editor:ready'){message();return;}if(!enabled)return;
   if(data.type==='fjord-editor:text'){
    const item=(data.group==='pages'?PAGES:data.group==='blocks'?BLOCKS:[]).find(i=>i.id===data.id);if(!item||!['title','intro'].includes(data.field)||!item[data.field]||typeof data.value!=='string'||data.value.length>(data.field==='title'?240:1800))return;
    const record=getDocument()[data.group][data.id]??={};record[data.field]??={};if(data.value.trim())record[data.field][language()]=data.value;else delete record[data.field][language()];selectContent(data.group,data.id,data.field);changed();

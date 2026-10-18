@@ -1,5 +1,5 @@
-import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=6';
-import {mountVisualBuilderAdmin} from './visual-builder-admin.mjs?v=4';
+import {PAGES,BLOCKS,LANGUAGES,THEME_FIELDS,MEDIA_FIELDS,validateDocument,emptyDocument} from './site-editor-schema.mjs?v=7';
+import {mountVisualBuilderAdmin} from './visual-builder-admin.mjs?v=5';
 import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=5';
 import {getVisitorToken,ensureVerified} from './afonya-auth.js';
 

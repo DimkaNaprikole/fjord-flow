@@ -1,4 +1,4 @@
-import {LANGUAGES,safeMediaURL} from './site-editor-schema.mjs?v=6';
+import {LANGUAGES,safeMediaURL} from './site-editor-schema.mjs?v=7';
 
 const el=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n;};
 const numbers={fontSize:['Размер текста, px',11,96,1],padding:['Внутренний отступ, px',0,64,1],widthPercent:['Ширина, %',30,100,1],offsetX:['Сдвиг по горизонтали, px',-160,160,1],offsetY:['Сдвиг по вертикали, px',-160,160,1],opacity:['Прозрачность блока · 0 невидим, 1 непрозрачен',0,1,.05],backgroundOpacity:['Непрозрачность фона',0,1,.05],borderOpacity:['Непрозрачность рамки',0,1,.05],borderWidth:['Толщина рамки, px',0,12,1],radius:['Все углы, px',0,64,1],radiusTopLeft:['Верхний левый угол, px',0,160,1],radiusTopRight:['Верхний правый угол, px',0,160,1],radiusBottomLeft:['Нижний левый угол, px',0,160,1],radiusBottomRight:['Нижний правый угол, px',0,160,1]};
