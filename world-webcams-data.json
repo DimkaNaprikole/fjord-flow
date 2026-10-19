@@ -99,7 +99,14 @@
       "url": "https://www.usgs.gov/volcanoes/kilauea/summit-webcams",
       "checked": "2026-10-19",
       "verification": "embedded-visual",
-      "evidence": "Official current stream; overlay2026-10-18 22:16:14HST matched19Oct08:16UTC; night crater with glowing vents."
+      "evidence": "Official current stream; overlay2026-10-18 22:16:14HST matched19Oct08:16UTC; night crater with glowing vents.",
+      "note": {
+        "nb": "Nattbildet kan være mørkt.",
+        "en": "The night view may be dark.",
+        "uk": "Уночі зображення може бути темним.",
+        "sv": "Nattbilden kan vara mörk.",
+        "da": "Natbilledet kan være mørkt."
+      }
     },
     {
       "id": "kilauea-v3",
@@ -109,7 +116,14 @@
       "url": "https://url.usgs.gov/v3cam",
       "checked": "2026-10-19",
       "verification": "embedded-visual",
-      "evidence": "Official current stream; overlay2026-10-18 22:16:29HST matched19Oct08:16UTC; moving live nighttime crater view."
+      "evidence": "Official current stream; overlay2026-10-18 22:16:29HST matched19Oct08:16UTC; moving live nighttime crater view.",
+      "note": {
+        "nb": "Nattbildet kan være mørkt.",
+        "en": "The night view may be dark.",
+        "uk": "Уночі зображення може бути темним.",
+        "sv": "Nattbilden kan vara mörk.",
+        "da": "Natbilledet kan være mørkt."
+      }
     },
     {
       "id": "taipei-xiangshan",

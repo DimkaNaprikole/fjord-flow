@@ -27,7 +27,7 @@ function render(){
  if(existing){world.querySelector('h2').textContent=t[0];world.querySelector('p').textContent=t[1];grid.replaceChildren();}
  else{world=el('section',null,'webcam-world');world.id='worldWebcams';world.append(el('h2',t[0]),el('p',t[1]));grid=el('div',null,'webcam-grid');}
  for(const camera of select(items)){
-  const card=el('article',null,'webcam-card'),visual=el('div',null,'webcam-visual');card.append(visual,el('h3',camera.name),el('p',camera.operator,'webcam-operator'),el('small',t[3]+': '+camera.checked,'webcam-checked'));
+  const card=el('article',null,'webcam-card'),visual=el('div',null,'webcam-visual');card.append(visual,el('h3',camera.name),el('p',camera.operator,'webcam-operator'),el('small',t[3]+': '+camera.checked,'webcam-checked'));if(camera.note)card.append(el('small',camera.note[lang]||camera.note.nb));
   let frame=null,api=null;
   const unavailable=()=>{if(!frame||!visible())return;blocked.set(camera.id,Date.now()+300000);player.stop();card.hidden=true;};
   card.hidden=(blocked.get(camera.id)||0)>Date.now();
@@ -41,6 +41,6 @@ function render(){
  if(!existing)window.dispatchEvent(new Event('fjord:sections-changed'));refresh();
 }
 function retryUnavailable(){if(!visible())return;for(const player of players){const until=blocked.get(player.id);if(until&&until<=Date.now()){blocked.delete(player.id);player.card.hidden=false;}}refresh();}
-async function load(){try{const response=await fetch('./world-webcams-data.json?v=2');if(!response.ok)throw Error('camera registry');const data=await response.json();if(!Array.isArray(data.cameras))throw Error('camera data');items=data.cameras;failed=false;}catch{items=[];failed=true;}render();if(!cycle)cycle=setInterval(retryUnavailable,30000);}
+async function load(){try{const response=await fetch('./world-webcams-data.json?v=3');if(!response.ok)throw Error('camera registry');const data=await response.json();if(!Array.isArray(data.cameras))throw Error('camera data');items=data.cameras;failed=false;}catch{items=[];failed=true;}render();if(!cycle)cycle=setInterval(retryUnavailable,30000);}
 window.FjordWebcams={ready:load()};document.addEventListener('visibilitychange',refresh);window.addEventListener('fjord:sections-changed',refresh);window.addEventListener('fjordlanguagechange',render);
 })();
