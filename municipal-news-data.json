@@ -809,6 +809,72 @@
       "catalogueId": "cafe-oscar-ii-gran",
       "phone": "+4761334560",
       "season": "summer"
+    },
+    {
+      "id": "lysfest-glassverk-2026",
+      "municipality": "3236",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-24",
+      "time": "17:00",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "source": "Hadeland Glassverk · Jevnaker kommune",
+      "url": "https://www.hadeland.com/pages/lysfest",
+      "website": "https://www.hadeland.com/pages/jul-pa-hadeland-glassverk",
+      "verificationUrls": [
+        "https://www.hadeland.com/pages/lysfest",
+        "https://www.hadeland.com/pages/jul-pa-hadeland-glassverk",
+        "https://www.jevnaker.kommune.no/organisasjon/fjordlandsbyen-jevnaker/hva-skjer/fjordlandsbyen-2026"
+      ],
+      "location": "Hadeland Glassverk, Jevnaker",
+      "mapQuery": "Hadeland Glassverk Jevnaker",
+      "copy": {
+        "nb": ["Lysfest på Hadeland Glassverk", "24. oktober kl. 17.00: lys, musikk og åpning av julemarkedet i Jevnaker."],
+        "en": ["Festival of lights at Hadeland Glassverk", "24 October at 17:00: lights, music and the opening of Jevnaker’s Christmas market."],
+        "uk": ["Свято світла на Hadeland Glassverk", "24 жовтня о 17:00: світло, музика та відкриття різдвяного ярмарку в Jevnaker."],
+        "sv": ["Ljusfest på Hadeland Glassverk", "24 oktober kl. 17.00: ljus, musik och invigning av julmarknaden i Jevnaker."],
+        "da": ["Lysfest på Hadeland Glassverk", "24. oktober kl. 17.00: lys, musik og åbning af julemarkedet i Jevnaker."]
+      },
+      "details": {
+        "nb": ["Programmet omfatter Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet og lysshow.", "Et nytt julemarked åpner samme dag. Billettpris er ikke bekreftet; sjekk arrangørens oppdaterte program og vilkår før besøket."],
+        "en": ["The programme includes Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet and a light show.", "A new Christmas market opens that day. Admission price is unconfirmed; check the organiser’s latest programme and terms before visiting."],
+        "uk": ["У програмі — Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet та світлове шоу.", "Цього ж дня відкривається новий різдвяний ярмарок. Вартість входу не підтверджена; перед відвідуванням перевірте актуальну програму й умови організатора."],
+        "sv": ["Programmet omfattar Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet och en ljusshow.", "En ny julmarknad öppnar samma dag. Entrépriset är inte bekräftat; kontrollera arrangörens aktuella program och villkor före besöket."],
+        "da": ["Programmet omfatter Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet og et lysshow.", "Et nyt julemarked åbner samme dag. Entréprisen er ikke bekræftet; tjek arrangørens aktuelle program og vilkår før besøget."]
+      }
+    },
+    {
+      "id": "halloween-jevnaker-2026",
+      "municipality": "3236",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-30",
+      "expires": "2026-10-31T00:00:00+01:00",
+      "source": "Jevnaker kommune · Fjordlandsbyen 2026",
+      "url": "https://www.jevnaker.kommune.no/organisasjon/fjordlandsbyen-jevnaker/hva-skjer/fjordlandsbyen-2026",
+      "verificationUrls": ["https://www.jevnaker.kommune.no/organisasjon/fjordlandsbyen-jevnaker/hva-skjer/fjordlandsbyen-2026"],
+      "location": "Bergergata 4 · Hønefossvegen 14 · Røde Kors-huset, Jevnaker",
+      "mapQuery": "Bergergata 4 Jevnaker",
+      "copy": {
+        "nb": ["Halloween i Jevnaker", "30. oktober: skumle hager, kasseklatring og servering."],
+        "en": ["Halloween in Jevnaker", "30 October: spooky gardens, crate climbing and refreshments."],
+        "uk": ["Гелловін у Jevnaker", "30 жовтня: моторошні сади, лазіння по ящиках і частування."],
+        "sv": ["Halloween i Jevnaker", "30 oktober: kusliga trädgårdar, lådklättring och servering."],
+        "da": ["Halloween i Jevnaker", "30. oktober: uhyggelige haver, kasseklatring og servering."]
+      },
+      "details": {
+        "nb": ["Hager: Bergergata 4 og Hønefossvegen 14 (inngang Bakkelivegen). Jevnaker Klatreklubb ved Røde Kors-huset; servering fra Frivilligsentralen. Tid/pris: spør arrangøren."],
+        "en": ["Gardens: Bergergata 4 and Hønefossvegen 14 (Bakkelivegen entrance). Jevnaker Klatreklubb near Røde Kors-huset; Frivilligsentralen refreshments. Time/price: ask the organiser."],
+        "uk": ["Сади: Bergergata 4 і Hønefossvegen 14 (вхід Bakkelivegen). Jevnaker Klatreklubb біля Røde Kors-huset; частування Frivilligsentralen. Час/ціна: уточнюйте в організатора."],
+        "sv": ["Trädgårdar: Bergergata 4 och Hønefossvegen 14 (ingång Bakkelivegen). Jevnaker Klatreklubb vid Røde Kors-huset; servering från Frivilligsentralen. Tid/pris: fråga arrangören."],
+        "da": ["Haver: Bergergata 4 og Hønefossvegen 14 (indgang Bakkelivegen). Jevnaker Klatreklubb ved Røde Kors-huset; servering fra Frivilligsentralen. Tid/pris: spørg arrangøren."]
+      }
     }
   ]
 }

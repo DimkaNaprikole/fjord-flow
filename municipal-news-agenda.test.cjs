@@ -20,3 +20,16 @@ test('regional announcements are included only for explicitly related municipali
  const rows=[row('regional','2026-10-26',{relatedMunicipalities:['3234','3236']})];
  assert.equal(upcomingItems(rows,'3234',now).length,1);assert.equal(upcomingItems(rows,'0301',now).length,0);
 });
+
+
+test('local editorial announcements keep source publication unknown and show actual event dates',()=>{
+ const {publicationLabel}=require('./municipal-news.js');const data=require('./municipal-news-data.json');
+ const now=Date.parse('2026-10-19T10:00:00Z');
+ for(const id of ['lysfest-glassverk-2026','halloween-jevnaker-2026']){
+  const item=data.items.find(x=>x.id===id);assert.ok(item);assert.equal(item.publishedKind,'editorial');assert.equal(item.sourcePublished,null);
+  assert.equal(publicationLabel(item,'uk'),'Додано до Fjord Flow');assert.ok(upcomingItems(data.items,'3236',now).includes(item));assert.ok(!upcomingItems(data.items,'0301',now).includes(item));
+  for(const l of ['nb','en','uk','sv','da'])assert.ok(item.copy[l][1]&&item.details[l].length);
+ }
+ assert.equal(publicationLabel(data.items[0],'en'),'Published');
+ assert.equal(upcomingItems(data.items,'3236',Date.parse('2026-10-31T12:00:00Z')).some(x=>x.id==='halloween-jevnaker-2026'),false);
+});
