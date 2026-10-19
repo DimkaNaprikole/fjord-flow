@@ -1,0 +1,16 @@
+/* The official Page is optional; surrounding copy remains readable when Meta is unavailable. */
+.municipal-facebook-stream{box-sizing:border-box;max-width:760px;margin:24px 0;padding:clamp(18px,3vw,28px);border:1px solid #113b4626;border-radius:18px;background:#fffdf6eb;color:#113b46;font-family:var(--ff-font-body,Manrope,'Segoe UI',sans-serif)}
+.municipal-facebook-stream .municipal-facebook-stream__eyebrow{margin:0 0 8px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#4a6167}
+.municipal-facebook-stream h3{margin:0 0 12px;font-size:clamp(20px,3vw,28px);line-height:1.25;font-weight:850;color:#113b46;overflow-wrap:anywhere}
+.municipal-facebook-stream :is(.municipal-facebook-stream__privacy,.municipal-facebook-stream__note){margin:10px 0 16px;font-size:13px;line-height:1.65;color:#4a6167}
+.municipal-facebook-stream .municipal-facebook-stream__load{min-height:44px;max-width:100%;padding:11px 18px;border:1px solid #113b46;border-radius:10px;background:#163f4b;color:#fffdf6;font:800 14px/1.5 Manrope,'Segoe UI',sans-serif;white-space:normal;cursor:pointer}
+.municipal-facebook-stream__stage{max-width:500px;width:100%;margin:14px 0 0;overflow:hidden}
+.municipal-facebook-stream__stage:empty{display:none}
+.municipal-facebook-stream__frame{display:block;max-width:500px;width:100%;height:600px;max-height:75dvh;border:0;background:#fff;border-radius:10px}
+.municipal-facebook-stream :is(.municipal-facebook-stream__actions,.municipal-facebook-stream__groups){display:flex;align-items:center;flex-wrap:wrap;gap:4px 22px;margin-top:14px}
+.municipal-facebook-stream :is(.municipal-facebook-stream__actions,.municipal-facebook-stream__groups) a{display:inline-flex;align-items:center;min-height:44px;padding:6px 0;border:0;border-radius:0;background:none;color:#123e4b;font-size:14px;font-weight:850;line-height:1.5;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
+.municipal-facebook-stream__groups{padding-top:12px;border-top:1px solid #113b4626}
+.municipal-facebook-stream__groups strong{flex-basis:100%;font-size:13px;color:#113b46}
+.municipal-facebook-stream :is(a,button):focus-visible{outline:3px solid #21769b;outline-offset:4px}
+.municipal-facebook-stream [hidden]{display:none!important}
+@media(max-width:550px){.municipal-facebook-stream{padding:18px;margin:18px 0;border-radius:14px}.municipal-facebook-stream__frame{max-height:70dvh}}

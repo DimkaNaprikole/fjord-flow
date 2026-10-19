@@ -1,0 +1,6 @@
+.municipal-news .news-location{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;max-width:760px;margin:12px 0 18px}
+.municipal-news .news-location button{background:var(--ff-ink,#073c49);color:#fff;font:inherit;font-weight:800;border:0;border-radius:var(--ff-radius-control,10px);padding:10px 16px;cursor:pointer}
+.municipal-news .news-location button:disabled{opacity:.65;cursor:wait}
+.municipal-news .news-location button:focus-visible{outline:3px solid #148cb2;outline-offset:3px}
+.municipal-news .news-location p{margin:0;font-weight:700;color:var(--ff-ink,#073c49)}
+.municipal-news .news-location small{flex-basis:100%;font-size:.82rem;line-height:1.45;color:var(--ff-ink,#073c49)}

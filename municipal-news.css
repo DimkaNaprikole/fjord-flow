@@ -43,3 +43,25 @@ body:has(#newsDialog[open]){overflow:hidden}#newsDialog{overscroll-behavior:cont
 #newsDialog .news-share-status:empty{display:none;}
 #newsDialog :is(a,button,summary):focus-visible{outline:3px solid #21769b;outline-offset:3px;}
 @media(max-width:550px){#newsDialog{width:calc(100vw - 16px)}#newsDialog .news-story-photo img{height:180px}#newsDialog .news-story-body{padding:20px}#newsDialog .news-story-body h2{font-size:26px}}
+
+/* Real dated event feed; preserve the full-photo card style without truncating the list. */
+#municipalNews.ref-chapter .ref-panel .news-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+#municipalNews.ref-chapter .news-card{height:390px;position:relative;isolation:isolate;border:0;border-radius:12px;overflow:hidden;background:#123b46;box-shadow:none}
+#municipalNews.ref-chapter .news-card-open{position:relative;display:block;padding:0;width:100%;height:100%;background:none;border:0;border-radius:0;text-align:left}
+#municipalNews.ref-chapter .news-card-photo{position:absolute;inset:0;aspect-ratio:auto;height:100%;width:100%}
+#municipalNews.ref-chapter .news-card-photo img{width:100%;height:100%;object-fit:cover}
+#municipalNews.ref-chapter .news-card-body{position:absolute;left:0;bottom:0;width:100%;padding:64px 20px 20px;background:linear-gradient(transparent,#062a36f5 36%);display:flex;flex-direction:column;gap:7px;color:white}
+#municipalNews.ref-chapter .news-card-body h3{display:block;min-height:0;color:white;font:850 22px/1.25 Manrope,sans-serif;letter-spacing:-.4px;margin:0;text-shadow:0 1px 3px #071f28}
+#municipalNews.ref-chapter .news-card-body :is(p,small,.news-card-category){color:#fff;font-size:12px;line-height:1.5;min-height:0;margin:0}
+#municipalNews.ref-chapter .news-card-body .news-date{color:#ffe98c;font-weight:850;font-size:14px}
+#municipalNews.ref-chapter .news-card-source{opacity:.85}
+#municipalNews.ref-chapter .news-card-more{color:#ffe98c;font-weight:850;text-decoration:underline;text-underline-offset:4px;padding-top:4px;font-size:14px}
+#municipalNews.ref-chapter .news-card-no-image .news-card-body{position:static;height:100%;justify-content:flex-end;padding:24px;background:linear-gradient(140deg,#174b5d,#082934)}
+#municipalNews.ref-chapter .news-card-no-image .news-card-photo{display:none}
+#newsDialog .news-story-photo:empty{display:none}
+#municipalNews.ref-chapter .news-policy{color:#344f56;font-size:12px;line-height:1.7}
+@media(max-width:650px){#municipalNews.ref-chapter .ref-panel .news-grid{grid-template-columns:1fr}#municipalNews.ref-chapter .news-card{height:360px}}
+
+#municipalNews .news-agenda-period{font:850 16px/1.5 Manrope,sans-serif;color:#113b46;margin:12px 0}
+
+#municipalNews.ref-chapter .news-card-facebook{position:absolute;right:20px;bottom:16px;z-index:2;padding:4px 0;min-height:32px;border:0;border-radius:0;background:none;color:#ffe98c;font:850 14px/1.5 Manrope,sans-serif;text-decoration:underline;text-underline-offset:4px}

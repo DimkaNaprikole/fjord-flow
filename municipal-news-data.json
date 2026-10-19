@@ -30,7 +30,27 @@
     },
     "3236": {
       "name": "Jevnaker kommune",
-      "news": "https://www.jevnaker.kommune.no/"
+      "news": "https://www.jevnaker.kommune.no/",
+      "facebook": "https://www.facebook.com/jevnakerkommune",
+      "facebookSource": "https://www.jevnaker.kommune.no/",
+      "groups": [
+        {
+          "name": "Jevnakerportalen",
+          "url": "https://www.facebook.com/groups/323976547647027/"
+        }
+      ]
+    },
+    "3234": {
+      "name": "Lunner kommune",
+      "news": "https://www.lunner.kommune.no/",
+      "facebook": "https://www.facebook.com/Lunnerkommune",
+      "facebookSource": "https://www.lunner.kommune.no/",
+      "groups": [
+        {
+          "name": "Lunner Historielag",
+          "url": "https://www.facebook.com/groups/256137362789/"
+        }
+      ]
     }
   },
   "items": [
@@ -41,7 +61,7 @@
       "published": "2026-10-16",
       "eventDate": "2026-10-26",
       "expires": "2026-10-27T00:00:00+01:00",
-      "source": "Gran kommune / UngHadeland",
+      "source": "Gran kommune / UngHadeland · Lunner kommune (Facebook)",
       "url": "https://www.gran.kommune.no/tjenester/kultur-idrett-og-fritid/unghadeland/nyheter/2026-10-16-ballkjoledagen-26.-oktober-sjekk-nar-du-kan-levere-inn-kjoler-du-ikke-trenger",
       "copy": {
         "nb": [
@@ -102,7 +122,12 @@
           "Marked for brugte festkjoler fra Hadelands frivilligcentre.",
           "Aflevering: Harestua 19. oktober; Gran og Roa 21. oktober; Jevnaker 23. oktober. Præcise tider og vilkår hos arrangøren."
         ]
-      }
+      },
+      "checked": "2026-10-19",
+      "relatedMunicipalities": [
+        "3234",
+        "3236"
+      ]
     },
     {
       "id": "gran-preparedness-2026",
@@ -169,7 +194,8 @@
           "Åbne øvelser: Bjoneroa kulturbygg 27. oktober og Grans rådhus i Jaren 28. oktober.",
           "Lær informationspunkterne at kende ved udfald af mobilnet og internet. Kommunen opdaterer program og tider."
         ]
-      }
+      },
+      "checked": "2026-10-18"
     },
     {
       "id": "local-granavolden-cafe",

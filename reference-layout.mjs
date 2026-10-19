@@ -20,7 +20,7 @@ const copy={
  around:()=>tr('ALT RUNDT DEG','AROUND YOU','УСЕ НАВКОЛО','ALLT OMKRING DIG','ALT OMKRING DIG'),
  shops:()=>tr('KJØPESENTRE OG BUTIKKER','SHOPPING CENTRES & SHOPS','ТОРГОВІ ЦЕНТРИ ТА МАГАЗИНИ','KÖPCENTRUM OCH BUTIKER','INDKØBSCENTRE OG BUTIKKER'),
  cams:()=>tr('WEBKAMERAER','WEBCAMS','ВЕБКАМЕРИ','WEBBKAMEROR','WEBKAMERAER'),
- news:()=>tr('NYHETER FRA KOMMUNENE','LOCAL NEWS','НОВИНИ ГРОМАД','KOMMUNNYHETER','KOMMUNENYT'),
+ news:()=>tr('DET SKJER NÆR DEG','WHAT’S ON NEAR YOU','АФІША ПОРУЧ','DET HÄNDER NÄRA DIG','DET SKER NÆR DIG'),
  community:()=>tr('FACEBOOK OG REISEJOURNAL','FACEBOOK & TRAVEL JOURNAL','FACEBOOK І ЩОДЕННИК','FACEBOOK OCH RESEDAGBOK','FACEBOOK OG REJSEDAGBOG'),
  services:()=>tr('TJENESTER FOR REISEN','TRAVEL SERVICES','СЕРВІСИ ДЛЯ ПОДОРОЖЕЙ','TJÄNSTER FÖR RESAN','TJENESTER TIL REJSEN'),
  road:()=>tr('PÅ VEIEN','ON THE ROAD','У ДОРОЗІ','PÅ VÄGEN','PÅ VEJEN'),
@@ -188,7 +188,7 @@ function renderAll(){
  });
  mount('shoppingCentres',(p,r)=>{title(p,'shops','',shops[0]?.image?.url);grid(p,shops.slice(0,3).map((x,i)=>({name:x.name,photo:src(x),caption:x.address,onInfo:()=>originalQuery(r,'.shopping-card-open')[i]?.click()})),true);});
  mount('norwayWebcams',(p,r)=>{title(p,'cams',tr('Se været og landskapet før turen.','See the weather and scenery before your trip.','Подивіться на погоду й краєвиди перед поїздкою.','Se vädret och landskapet före resan.','Se vejret og landskabet før turen.'),'./images/hero-bergen.jpg');const cards=originalQuery(r,'.webcam-card');grid(p,cards.slice(0,3).map(c=>({name:c.querySelector('h3')?.textContent||'',photo:c.querySelector('img')?.src,caption:c.querySelector('.webcam-photo-note')?.textContent,url:[...c.querySelectorAll('a[href^="http"]')].at(-1)?.href})),true);});
- mount('municipalNews',(p,r)=>{title(p,'news','', './images/hero-bergen.jpg');const filters=take(r,'.news-filters');if(filters)p.append(filters);const cards=originalQuery(r,'.news-card');grid(p,cards.slice(0,3).map(c=>({name:c.querySelector('h3')?.textContent||'',photo:c.querySelector('img')?.src,caption:c.querySelector('.news-card-location')?.textContent,onInfo:()=>c.querySelector('button')?.click()})),true);});
+ mount('municipalNews',(p,r)=>{title(p,'news','', './images/hero-bergen.jpg');for(const selector of ['.news-filters','.news-agenda-period','.news-location','.news-grid','.news-empty','.municipal-facebook','.news-sources','.news-policy']){const node=take(r,selector);if(node)p.append(node);}});
  mount('community',(p,r)=>{title(p,'community','', './images/hero-lofoten.jpg');p.append(link(tr('Facebook-gruppen vår','Our Facebook group','Наша група у Facebook','Vår Facebookgrupp','Vores Facebookgruppe')+' ›','https://www.facebook.com/groups/1579898770109095/'));const stories=document.querySelector('#travelStories');if(stories){preserve(stories);const cards=originalQuery(stories,'.discovery-story-card');grid(p,cards.map((c,i)=>({name:c.querySelector('h3')?.textContent||'',photo:state.find(x=>x.id===['bergen','flam','geiranger'][i])?.image||c.querySelector('img')?.src,onInfo:()=>c.querySelector('button')?.click()})),true);}});
  mount('travelServices',p=>{
  const emergency=el('section','ref-emergency');emergency.setAttribute('aria-label',tr('Nødnumre i Norge','Emergency numbers in Norway','Екстрені номери в Норвегії','Nödnummer i Norge','Alarmnumre i Norge'));

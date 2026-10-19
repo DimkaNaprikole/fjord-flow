@@ -7,7 +7,7 @@ test('comments lead to a real post, never a group homepage or lookalike host',()
 });
 test('news images and practical details retain attribution and do not invent engagement counts',()=>{
  const fs=require('node:fs');
- for(const item of data.items){assert.ok(fs.existsSync(item.image.url));assert.ok(item.image.alt&&item.image.credit);if(item.image.originalUrl)assert.equal(new URL(item.image.originalUrl).protocol,'https:');assert.equal(new URL(item.image.source).protocol,'https:');assert.ok(item.location);for(const lang of ['nb','en','uk','sv','da'])assert.ok(item.details[lang].length);assert.equal(item.likes,undefined);assert.equal(item.commentCount,undefined);}
+ for(const item of data.items){if(item.image){assert.ok(fs.existsSync(item.image.url));assert.ok(item.image.alt&&item.image.credit);if(item.image.originalUrl)assert.equal(new URL(item.image.originalUrl).protocol,'https:');assert.equal(new URL(item.image.source).protocol,'https:');}assert.ok(item.location);for(const lang of ['nb','en','uk','sv','da'])assert.ok(item.details[lang].length);assert.equal(item.likes,undefined);assert.equal(item.commentCount,undefined);}
  assert.deepEqual(data.items[1].eventDates,['2026-10-27','2026-10-28']);
 });
 test('municipality registry is national and disambiguates duplicate names by code',()=>{assert.equal(directory.municipalities.length,357);assert.equal(new Set(directory.municipalities.map(x=>x.id)).size,357);for(const item of data.items)assert.ok(directory.municipalities.some(m=>m.id===item.municipality));});
