@@ -42,7 +42,7 @@
 #fjordSiteAccount .fjord-ai-auth h3{margin:0 0 12px}
 #fjordSiteAccount .fjord-ai-auth-buttons{margin-top:0}
 #fjordSiteAccount .fjord-social-divider{margin:10px 0}
-#fjordSiteAccount .site-account-cover[data-language=en]{background:#123643 url('images/account-usa-woodpecker-v1.webp') center 18%/cover no-repeat}
+#fjordSiteAccount .site-account-cover[data-language=en]{background:#123643 url('images/account-usa-woodpecker-v1.webp') center top/cover no-repeat}
 #fjordSiteAccount .site-account-cover[data-language=en]::before{display:none}
 
 @font-face{font-family:'Fjord Account Ink';src:url('fonts/chewy/Chewy-Regular.ttf') format('truetype');font-display:swap}
