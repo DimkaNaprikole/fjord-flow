@@ -17,3 +17,37 @@
 #fjordSiteAccount .fjord-ai-auth [hidden]{display:none!important}
 @media(max-width:480px){#fjordSiteAccount{padding:26px 18px 18px}#fjordSiteAccount .fjord-ai-auth-buttons>*{flex:1 1 45%}}
 .fjord-social-buttons{display:grid;gap:10px;margin:16px 0}.fjord-social-buttons button{background:var(--ff-action,#255563)!important;color:var(--ff-ink,#edf6f4)!important;border:1px solid #9cbbc577;border-radius:14px;min-height:46px;padding:10px 16px;font:inherit;cursor:pointer}.fjord-social-buttons button:disabled{opacity:.55;cursor:wait}.fjord-social-divider{color:var(--ff-muted,#b8cecf);text-align:center;font-size:13px}.fjord-social-buttons button:focus-visible{outline:3px solid #ffdc91;outline-offset:3px}
+.fjord-auth-modes{display:flex;gap:6px;padding:5px;border:1px solid #8db2b744;border-radius:14px;background:#092a3540;margin:16px 0}.fjord-auth-modes button{flex:1;min-height:44px!important;background:transparent!important;border-color:transparent!important;font-size:13px!important}.fjord-auth-modes button[aria-pressed=true]{background:#355e6c!important;border-color:#9fc5ca80!important;box-shadow:0 2px 8px #001d2926}.fjord-auth-intro{font-size:13px!important;line-height:1.65!important;margin:0 0 18px!important;color:#cde3e6!important}.fjord-auth-field{display:block;font-size:12px;line-height:1.6;font-weight:650;color:#e3eff0}.fjord-auth-field>span{display:block}.fjord-auth-field input{margin-top:6px!important}.fjord-ai-auth-buttons>.fjord-ai-forgot{background:transparent!important;border-color:transparent!important;text-decoration:underline;text-underline-offset:4px;min-height:44px}.fjord-ai-auth-buttons>[hidden]{display:none!important}
+.fjord-ai-auth-buttons>button[type=submit]{flex:1 1 100%;min-height:46px!important;font-size:14px;font-weight:750}
+
+#fjordSiteAccount .site-account-brand{display:block;width:200px;max-width:calc(100% - 42px);height:auto;margin:0 0 18px;padding:10px 12px;box-sizing:border-box;border-radius:10px;background:#fffbed}
+#fjordSiteAccount .fjord-ai-auth a{color:#bcebe9;text-decoration:underline;font-weight:700}
+
+/* Account artwork follows only the selected interface language; USA artwork is original. */
+#fjordSiteAccount .site-account-cover{position:relative;isolation:isolate;height:132px;margin:-30px -24px 20px;overflow:hidden;border-bottom:1px solid #8bb6bc66;background:#102e39}
+#fjordSiteAccount .site-account-art{position:absolute;inset:0 auto 0 0;width:50%;height:100%;object-fit:cover;object-position:center 40%;opacity:.48}
+#fjordSiteAccount .site-account-art-norway{left:50%}
+#fjordSiteAccount .site-account-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#071e2b11,#0b273b99);z-index:0;pointer-events:none}
+#fjordSiteAccount .site-account-cover[data-language=uk] .site-account-art-ukraine,#fjordSiteAccount .site-account-cover[data-language=nb] .site-account-art-norway{left:0;width:100%;object-position:center 43%}
+#fjordSiteAccount .site-account-cover[data-language=uk] .site-account-art-norway,#fjordSiteAccount .site-account-cover[data-language=nb] .site-account-art-ukraine{display:none}
+#fjordSiteAccount .site-account-cover[data-language=en] .site-account-art{display:none}
+#fjordSiteAccount .site-account-cover .site-account-brand{position:relative;z-index:1;width:184px;max-width:calc(100% - 110px);margin:18px auto 0;padding:8px 12px;box-shadow:0 3px 14px #00182240}
+#fjordSiteAccount .site-account-pledge{position:absolute;z-index:1;inset:auto 12px 12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:5px 8px;text-align:center;color:#fff;font-size:13px;font-weight:750;line-height:1.4;text-shadow:0 1px 6px #001c2d}
+#fjordSiteAccount .site-account-forever{width:76px;height:20px;object-fit:contain;filter:invert(1)}
+#fjordSiteAccount .site-account-forever[hidden]{display:none}
+#fjordSiteAccount .site-account-close{z-index:2;background:#123643e6}
+@media(max-width:480px){#fjordSiteAccount .site-account-cover{margin:-26px -18px 18px;height:128px}#fjordSiteAccount .site-account-pledge{font-size:12px}}
+#fjordSiteAccount .fjord-auth-field{margin:0}
+#fjordSiteAccount .fjord-ai-auth form>p:empty{display:none}
+#fjordSiteAccount .fjord-ai-auth h3{margin:0 0 12px}
+#fjordSiteAccount .fjord-ai-auth-buttons{margin-top:0}
+#fjordSiteAccount .fjord-social-divider{margin:10px 0}
+#fjordSiteAccount .site-account-cover[data-language=en]{background:#123643 url('images/account-usa-woodpecker-v1.webp') center 18%/cover no-repeat}
+#fjordSiteAccount .site-account-cover[data-language=en]::before{display:none}
+
+@font-face{font-family:'Fjord Account Ink';src:url('fonts/chewy/Chewy-Regular.ttf') format('truetype');font-display:swap}
+#fjordSiteAccount .site-account-pledge{font-family:'Fjord Account Ink','Manrope',sans-serif;font-size:24px;letter-spacing:.02em;font-weight:750}
+#fjordSiteAccount .site-account-cover[data-language=en] .site-account-brand{width:164px;margin:14px 0 0 20px;max-width:48%}
+#fjordSiteAccount .site-account-cover[data-language=en] .site-account-pledge{inset:auto auto 12px 20px;max-width:55%;font-size:25px;justify-content:flex-start;text-align:left}
+@media(max-width:480px){#fjordSiteAccount .site-account-pledge{font-size:21px}#fjordSiteAccount .site-account-cover[data-language=en] .site-account-brand{width:145px;margin-left:14px}#fjordSiteAccount .site-account-cover[data-language=en] .site-account-pledge{left:14px;font-size:22px;max-width:55%}}
+#fjordSiteAccount .site-account-cover:not([data-language=uk]):not([data-language=nb]):not([data-language=en]) .site-account-pledge{font-family:inherit;font-size:13px;letter-spacing:0}
