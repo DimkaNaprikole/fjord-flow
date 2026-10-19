@@ -13,7 +13,7 @@ function fixture({voices=[russian,norwegian,english],page='nb',heard='',conversa
  const timers=new Map(),listeners=new Map(),played=[],attributes={},events={},calls={resume:0,stop:0,pin:0},pets=[];let nextTimer=1;
  const synth={voices,paused:false,cancel(){},getVoices(){return this.voices},resume(){this.paused=false;calls.unpause=(calls.unpause||0)+1},addEventListener(name,fn){(listeners.get(name)||listeners.set(name,new Set()).get(name)).add(fn)},removeEventListener(name,fn){listeners.get(name)?.delete(fn)},speak(utterance){played.push(utterance);if(blocked)utterance.onerror?.({error:'not-allowed'});else utterance.onstart?.()}};
  const sandbox={window:{speechSynthesis:synth,SpeechSynthesisUtterance:class{constructor(text){this.text=text}}},config:{voiceConversation:true},dialog:{open:true},speaker:{setAttribute(){},addEventListener(name,fn){events[name]=fn}},status:{setAttribute(name,value){attributes[name]=value},getAttribute(name){return attributes[name]??null},textContent:''},lang:()=>page,clearTimeout:id=>timers.delete(id),setTimeout:(fn,ms)=>{const id=nextTimer++;timers.set(id,{fn,ms});return id},setPet:value=>pets.push(value),refreshCompact(){},microphoneMuted:value=>calls.muted=value,pinAssistant:()=>calls.pin++,resumeLiveConversation:()=>calls.resume++,stopLive:()=>{calls.stop++;sandbox.voiceMode=false},endVoice:()=>{sandbox.voiceMode=false;vm.runInContext('cancelSpeech()',context)},speechGeneration:0,speakingAnswer:false,activeUtterance:null,lastHeardLanguage:heard,ttsStartTimer:null,liveDeadline:null,voiceMode:conversation,liveMode:'conversation'};
- const context=vm.createContext(sandbox);vm.runInContext(languageCode+'\n'+speechCode+'\nthis.api={speakAnswer,answerVoiceLanguage,questionLanguage,cancelSpeech};',context);
+ const context=vm.createContext(sandbox);vm.runInContext(languageCode+'\n'+speechCode+'\nthis.api={speakAnswer,answerVoiceLanguage,questionLanguage,translationVoiceLanguage,cancelSpeech};',context);
  return{...sandbox,api:sandbox.api,synth,played,attributes,timers,listeners,calls,events,pets,get speaking(){return sandbox.speakingAnswer},setPage(value){page=value},setVoices(value){synth.voices=value;for(const fn of [...(listeners.get('voiceschanged')||[])])fn()},fire(ms){const entry=[...timers].find(([,v])=>v.ms===ms);assert.ok(entry,'Pending timer '+ms);timers.delete(entry[0]);entry[1].fn()},state:()=>({answer:vm.runInContext('lastVoiceAnswer',context),hint:vm.runInContext('lastVoiceHint',context)})};
 }
 
@@ -21,6 +21,16 @@ test('actual Russian answer wins over Norwegian page, hint and default voice',()
  const app=fixture({heard:'no'});app.api.speakAnswer('Привет! Я Осирис. Чем могу помочь?','no');
  assert.equal(app.played.length,1);assert.equal(app.played[0].voice,russian);assert.equal(app.played[0].lang,'ru-RU');assert.equal(app.attributes['data-tts-language'],'ru-RU');assert.equal(app.attributes['data-tts-voice-language'],'ru-RU');
  assert.equal(app.speaker.hidden,true,'No routine replay button while voice works');app.played[0].onend();assert.equal(app.attributes['data-tts-state'],'ended');assert.equal(app.speaker.hidden,true,'No routine replay button after success');
+});
+
+test('explicit translation direction selects the translated language voice rather than the question language',()=>{
+ const app=fixture({page:'nb'});
+ app.api.speakAnswer('God morgen. Møtet er i morgen klokken fem.',app.api.translationVoiceLanguage('Переведи на норвежский: Доброе утро.','ru'));
+ assert.equal(app.played[0].voice,norwegian);assert.equal(app.played[0].lang,'nb-NO');
+ app.api.cancelSpeech();app.api.speakAnswer('Доброе утро.',app.api.translationVoiceLanguage('Oversett til russisk: God morgen.','nb'));
+ assert.equal(app.played[1].voice,russian);assert.equal(app.played[1].lang,'ru-RU');
+ assert.equal(app.api.translationVoiceLanguage('Translate from Norwegian to Russian','nb'),'ru');
+ assert.equal(app.api.translationVoiceLanguage('Хочу поехать на русский остров','nb'),'nb');
 });
 
 test('Russian text never falls back to a Norwegian-only voice',()=>{
