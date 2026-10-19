@@ -19,7 +19,7 @@ test('swept path cannot jump across a narrow link or media',()=>{
 });
 function fixture(){
  class Node {
-  constructor(){this.dataset={};this.listeners={};this.children=[];this.style={removeProperty:key=>delete this.style[key]};this.open=false}
+  constructor(){this.dataset={};this.listeners={};this.children=[];this.style={removeProperty:key=>delete this.style[key]};this.open=false;this.classes=new Set();this.classList={contains:key=>this.classes.has(key),add:key=>this.classes.add(key),remove:key=>this.classes.delete(key)}}
   addEventListener(type,fn){(this.listeners[type]??=[]).push(fn)}
   removeEventListener(){}
   emit(type,props={}){for(const fn of this.listeners[type]||[])fn({type,...props})}
@@ -40,34 +40,40 @@ function fixture(){
  let now=0,frame,plays=0,pauses=0;
  const context={document:doc,window:win,innerWidth:390,innerHeight:800,matchMedia:()=>motion,Date:{now:()=>now},requestAnimationFrame:fn=>{frame=fn;return 1},cancelAnimationFrame(){},MutationObserver:class{observe(){}disconnect(){}},Audio:class{play(){plays++;return Promise.resolve()}pause(){pauses++}}};
  vm.runInNewContext(readFileSync(new URL('./osiris-presence.js',import.meta.url),'utf8'),context);
- return {launch,dialog,pet,doc,win,motion,about,plays:()=>plays,pauses:()=>pauses,tick(time){now=time;frame(time)}};
+ return {launch,dialog,pet,doc,win,motion,about,toggle:about.children[0].children[0],plays:()=>plays,pauses:()=>pauses,tick(time){now=time;frame(time)}};
 }
-test('no audio before trusted gesture; dialogue, voice and hidden states suppress it',()=>{
- const f=fixture();
+test('opening the cat never opts into sound or schedules a delayed meow',()=>{
+ const f=fixture();assert.equal(f.toggle.checked,false);
  f.tick(100000);assert.equal(f.plays(),0);
  f.launch.emit('keydown',{isTrusted:false,key:'Enter'});f.tick(200000);assert.equal(f.plays(),0);
- f.launch.emit('keydown',{isTrusted:true,key:'Enter'});
- f.dialog.open=true;f.tick(300000);assert.equal(f.plays(),0);
- f.dialog.open=false;f.pet.dataset.state='listening';f.tick(400000);assert.equal(f.plays(),0);
- f.pet.dataset.state='idle';f.doc.hidden=true;f.tick(500000);assert.equal(f.plays(),0);
- f.doc.hidden=false;f.tick(600000);assert.equal(f.plays(),1);
- f.tick(601000);assert.equal(f.plays(),1);
- f.tick(690000);assert.equal(f.plays(),2);
+ f.launch.emit('keydown',{isTrusted:true,key:'Enter'});f.launch.emit('pointerdown',{isTrusted:true});f.win.emit('pointerup');
+ f.tick(300000);f.tick(690000);assert.equal(f.plays(),0);
+ assert.equal(f.launch.style.translate,undefined,'inactive Osiris is stationary');
 });
-test('hover, focus and reduced motion freeze movement and never open the menu',()=>{
- const f=fixture();f.launch.emit('pointerenter');f.tick(13000);assert.equal(f.launch.style.translate,undefined);
+test('only a trusted sound toggle previews a meow, and never during voice or speech',()=>{
+ const f=fixture();f.toggle.checked=true;f.toggle.emit('change',{isTrusted:false});assert.equal(f.plays(),0);assert.equal(f.toggle.checked,false);
+ f.toggle.checked=true;f.toggle.emit('change',{isTrusted:true});assert.equal(f.plays(),1);
+ f.tick(90000);f.tick(180000);assert.equal(f.plays(),1,'no periodic sound');
+ f.win.emit('fjord:voice-activity',{detail:{active:true}});assert.ok(f.pauses()>0);
+ f.toggle.checked=true;f.toggle.emit('change',{isTrusted:true});assert.equal(f.plays(),1);
+ f.win.emit('fjord:voice-activity',{detail:{active:false}});f.tick(300000);assert.equal(f.plays(),1,'ending voice never replays a meow');
+ f.pet.dataset.state='speaking';f.toggle.emit('change',{isTrusted:true});assert.equal(f.plays(),1);
+ f.pet.dataset.state='idle';f.doc.hidden=true;f.toggle.emit('change',{isTrusted:true});assert.equal(f.plays(),1);
+ f.doc.hidden=false;f.toggle.checked=false;f.toggle.emit('change',{isTrusted:true});assert.equal(f.toggle.checked,false);
+});
+test('active compact voice can move; hover, focus and reduced motion freeze it',()=>{
+ const f=fixture();f.dialog.open=true;f.dialog.classList.add('osiris-compact');f.win.emit('fjord:voice-activity',{detail:{active:true}});
+ f.launch.emit('pointerenter');f.tick(13000);assert.equal(f.launch.style.translate,undefined);
  f.launch.emit('pointerleave');f.launch.focusVisible=true;f.launch.emit('focusin');f.tick(14000);assert.equal(f.launch.style.translate,undefined);
  f.launch.emit('focusout');f.motion.matches=true;f.tick(15000);assert.equal(f.launch.style.translate,undefined);
- assert.equal(f.dialog.open,false);
+ f.motion.matches=false;f.pet.dataset.state='listening';f.tick(16000);assert.notEqual(f.launch.style.translate,undefined);
+ const position=f.launch.style.translate;f.win.emit('fjord:voice-activity',{detail:{active:false}});f.tick(20000);assert.equal(f.launch.style.translate,position,'stopping voice freezes the cat');
 });
-test('returned pointer focus after closing does not prevent idle; keyboard focus does',()=>{
- const f=fixture();
- f.launch.emit('keydown',{isTrusted:true,key:'Enter'});
- f.dialog.open=true;f.tick(1000);
- f.dialog.open=false;f.dialog.emit('close');
+test('expanded chat pauses movement; compact voice stays within a 36 pixel drift',()=>{
+ const f=fixture();f.dialog.open=true;f.win.emit('fjord:voice-activity',{detail:{active:true}});
+ f.tick(1000);assert.equal(f.launch.style.translate,undefined,'expanded reader is stationary');f.dialog.classList.add('osiris-compact');
  f.launch.focusVisible=false;f.launch.emit('focusin');
- f.tick(92000);assert.equal(f.plays(),1);assert.notEqual(f.launch.style.translate,undefined);
- const position=f.launch.style.translate;
- f.launch.focusVisible=true;f.launch.emit('focusin');
- f.tick(200000);assert.equal(f.plays(),1);assert.equal(f.launch.style.translate,position);
+ for(let time=1100;time<120000;time+=100){f.tick(time);if(f.launch.style.translate)assert.ok(Math.abs(parseFloat(f.launch.style.translate))<=36);}
+ assert.notEqual(f.launch.style.translate,undefined);assert.equal(f.plays(),0);
+ const position=f.launch.style.translate;f.launch.focusVisible=true;f.launch.emit('focusin');f.tick(200000);assert.equal(f.launch.style.translate,position);
 });

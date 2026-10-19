@@ -99,3 +99,28 @@ body .fjord-ai-pet.osiris-pet[data-state=speaking]{animation:osiris-attend 1.8s 
 #fjordHelper.fjord-ai .fjord-ai-record-fallback:focus-visible{outline:3px solid #ffde94;outline-offset:3px}
 
 .fjord-ai .fjord-ai-mode-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:6px 0;font-size:12px}.fjord-ai .fjord-ai-input-mode{max-width:60%;min-height:40px;padding:6px 10px;border:1px solid #6c919b;border-radius:12px;background:#103947;color:#fff;font:inherit}.fjord-ai .fjord-ai-input-mode:focus-visible{outline:3px solid #ffde94;outline-offset:3px}
+
+/* The same conversation can remain open as a small voice companion. */
+#fjordHelper.fjord-ai .osiris-minimize{position:absolute;right:62px;top:16px;width:36px;height:36px;padding:0;border:1px solid #a9c9cb66;border-radius:50%;background:var(--ff-action,#164957);color:#f3fcfc;font:700 24px/1 Manrope,sans-serif;cursor:pointer}
+#fjordHelper.fjord-ai .osiris-minimize[hidden],.osiris-compact-controls[hidden],.osiris-compact-reply[hidden]{display:none!important}
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending)[open]{inset:auto 24px 142px auto;width:min(300px,calc(100vw - 32px));height:auto;max-height:min(330px,calc(100dvh - 170px));display:flex;flex-direction:column;gap:8px;padding:12px!important;border:1px solid #b6d9da66;border-radius:22px;background:linear-gradient(145deg,#123b48e6,#173c46bd)!important;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 12px 40px #031d2c40;color:#f5fbff;overflow:auto}
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending)>.fjord-helper-close{top:8px;right:9px;width:30px;height:30px;font-size:23px}
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending) .fjord-ai-portrait{min-height:28px;margin:0;padding-right:32px;gap:0}
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending) .fjord-ai-portrait h2{font:700 15px/1.4 Manrope,sans-serif;margin:0}
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending) .fjord-ai-portrait .fjord-ai-pet,
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending)>.fjord-ai-compose,
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending)>.fjord-ai-footer,
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending) .fjord-ai-log,
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending) .fjord-ai-about{display:none!important}
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending) .fjord-ai-conversation{overflow:auto;margin:0;max-height:180px;padding:0;min-height:0}
+#fjordHelper.fjord-ai.osiris-compact .fjord-ai-status{font:500 12px/1.5 Manrope,sans-serif;margin:3px 0;color:#e3f4f5;overflow-wrap:anywhere}
+#fjordHelper.fjord-ai.osiris-compact .fjord-ai-status:empty{display:none}
+.osiris-compact-reply{font:500 13px/1.5 Manrope,sans-serif;margin:0 0 7px;color:#fff;max-height:100px;overflow:auto;overflow-wrap:anywhere}
+.osiris-compact-controls{display:flex;flex-wrap:wrap;gap:7px}
+#fjordHelper.fjord-ai .osiris-compact-controls button{border:1px solid #a2cccf88;background:var(--ff-action,#164957);color:#f5fbff;border-radius:12px;font:700 12px/1.4 Manrope,sans-serif;padding:8px 10px;min-height:40px;cursor:pointer}
+#fjordHelper.fjord-ai .osiris-compact-controls button:focus-visible,#fjordHelper.fjord-ai .osiris-minimize:focus-visible{outline:3px solid #ffde94;outline-offset:2px}
+.osiris-compact-replay{flex-basis:100%}.osiris-compact-replay[hidden]{display:none!important}
+#fjordHelper.fjord-ai.fjord-ai-auth-pending>.osiris-compact-controls,#fjordHelper.fjord-ai.fjord-ai-auth-pending>.osiris-minimize{display:none!important}
+body .osiris-launch[data-osiris-active=false] .fjord-ai-pet{animation:none!important}
+@media(max-width:500px){#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending)[open]{right:12px;bottom:132px;width:min(280px,calc(100vw - 24px));max-height:calc(100dvh - 154px)}.osiris-compact-controls button{flex:1}}
+@media(max-height:440px){#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending)[open]{right:116px;bottom:12px;max-height:calc(100dvh - 24px)}}

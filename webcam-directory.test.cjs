@@ -20,6 +20,11 @@ test('all cameras have permanent cards without search, filters, source buttons o
  const h=await harness();assert.equal(h.all('article').length,cameraCount);assert.equal(h.all('iframe').length,cameraCount);for(const tag of ['input','select','button','a'])assert.equal(h.all(tag).length,0);
  for(const frame of h.all('iframe')){const params=new URL(frame.src).searchParams;for(const [key,value]of Object.entries({autoplay:'1',mute:'1',controls:'0',disablekb:'1',fs:'0',iv_load_policy:'3',enablejsapi:'1'}))assert.equal(params.get(key),value);}
 });
+test('webcam playback and buffering transitions reapply silent playback',async()=>{
+ const h=await harness();let mutes=0,plays=0;const target={mute(){mutes++;},playVideo(){plays++;}};
+ h.instances[0].events.onReady({target});assert.equal(mutes,1);assert.equal(plays,1);
+ h.instances[0].events.onStateChange({target,data:3});h.instances[0].events.onStateChange({target,data:1});assert.equal(mutes,3);
+});
 test('background tab and hidden section unload video; returning restores visible players',async()=>{
  const h=await harness();h.document.hidden=true;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,0);h.document.hidden=false;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,cameraCount);
  h.section.hidden=true;h.events['fjord:sections-changed']();assert.equal(h.all('iframe').length,0);h.section.hidden=false;h.events['fjord:sections-changed']();assert.equal(h.all('iframe').length,cameraCount);

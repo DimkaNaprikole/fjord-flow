@@ -13,7 +13,11 @@ const icon=document.createElement('span');icon.className='welcome-film-play';ico
 const text=document.createElement('span'),label=document.createElement('strong'),hint=document.createElement('small');text.append(label,hint);trigger.append(icon,text);
 const dialog=document.createElement('dialog');dialog.id='welcomeFilmDialog';dialog.className='welcome-film-dialog';dialog.dataset.i18nIgnore='';dialog.setAttribute('aria-labelledby','welcomeFilmTitle');
 const top=document.createElement('div');top.className='welcome-film-heading';const title=document.createElement('h2');title.id='welcomeFilmTitle';const close=document.createElement('button');close.type='button';close.className='welcome-film-close';close.textContent='×';top.append(title,close);
-const video=document.createElement('video');video.id='welcomeFilmVideo';video.controls=true;video.playsInline=true;video.preload='none';video.poster='images/fjord-flow-welcome-poster.jpg';video.setAttribute('aria-describedby','welcomeFilmIntro');
+const video=document.createElement('video');video.id='welcomeFilmVideo';video.controls=true;video.muted=true;video.defaultMuted=true;video.playsInline=true;video.preload='none';video.poster='images/fjord-flow-welcome-poster.jpg';video.setAttribute('aria-describedby','welcomeFilmIntro');
+let voiceActive=false;
+window.addEventListener('fjord:voice-activity',event=>{voiceActive=event.detail?.active===true;if(voiceActive){video.muted=true;video.pause();}});
+video.addEventListener('volumechange',()=>{if(voiceActive&&!video.muted)video.muted=true;});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();});
 const captionTracks=[];for(const [lang,name] of Object.entries({nb:'Norsk bokmål',en:'English',uk:'Українська',sv:'Svenska',da:'Dansk'})){const track=document.createElement('track');track.kind='captions';track.srclang=lang;track.label=name;track.src=`media/welcome-film-${lang}.vtt`;video.append(track);captionTracks.push(track);}
 function selectCaptions(){const lang=window.FjordI18n?.language||document.documentElement.lang;for(const track of captionTracks){const selected=lang!=='uk'&&track.srclang===(copy[lang]?lang:'en');track.default=selected;if(track.track)track.track.mode=selected?'showing':'disabled';}}
 const bottom=document.createElement('div');bottom.className='welcome-film-bottom';const intro=document.createElement('p');intro.id='welcomeFilmIntro';const explore=document.createElement('a');explore.href='#collection';const credits=document.createElement('a');credits.className='welcome-film-credits';credits.href='media/welcome-film-credits.html';credits.target='_blank';credits.rel='noopener noreferrer';const links=document.createElement('div');links.className='welcome-film-links';links.append(credits,explore);bottom.append(intro,links);
@@ -34,7 +38,7 @@ if(heroScenery){
   if(!wanted){locationFilm.pause();locationFilm.classList.remove('is-visible');heroScenery.dataset.videoActive='false';return;}
   if(!locationFilm.src)locationFilm.src=filmUrl;
   if(locationFilm.readyState<1||locationFilm.seeking)return;
-  locationFilm.play().catch(()=>{/* The moving photograph remains visible. */});
+  locationFilm.muted=true;locationFilm.play().catch(()=>{/* The moving photograph remains visible. */});
  };
  locationFilm.addEventListener('loadedmetadata',()=>{locationFilm.currentTime=60});
  locationFilm.addEventListener('seeked',updateLocationFilm);
@@ -46,7 +50,7 @@ if(heroScenery){
  const credits=document.getElementById('sceneryCredits');if(credits){const p=document.createElement('p');p.append('Lofoten location film — Danny Rest · ');for(const [label,href] of [['CC BY 3.0','https://creativecommons.org/licenses/by/3.0/'],['Original video','https://commons.wikimedia.org/wiki/File:LOFOTEN_ISLANDS_-_NORWAY_-_4K_FILM.webm']]){const a=document.createElement('a');a.textContent=label;a.href=href;a.target='_blank';a.rel='noopener noreferrer';p.append(a,' · ')}p.append('Muted, cropped preview.');credits.append(p)}
 }
 let previousOverflow='';
-trigger.addEventListener('click',()=>{error.hidden=true;previousOverflow=document.body.style.overflow;dialog.showModal();document.body.style.overflow='hidden';if(!video.getAttribute('src'))video.src='media/fjord-flow-welcome.mp4';video.play().catch(()=>{/* Native controls remain available if playback is blocked. */});});
+trigger.addEventListener('click',()=>{error.hidden=true;previousOverflow=document.body.style.overflow;dialog.showModal();document.body.style.overflow='hidden';if(!video.getAttribute('src'))video.src='media/fjord-flow-welcome.mp4';video.muted=true;video.play().catch(()=>{/* Native controls remain available if playback is blocked. */});});
 function stop(){video.pause();document.body.style.overflow=previousOverflow;trigger.focus({preventScroll:true});}
 close.addEventListener('click',()=>dialog.close());dialog.addEventListener('close',stop);
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
@@ -58,7 +62,7 @@ if(advertising){
  const adFilmUrl='media/eagle-ad-background.mp4';
  const backgroundVideo=document.createElement('video');backgroundVideo.className='advertising-background-film';backgroundVideo.muted=true;backgroundVideo.defaultMuted=true;backgroundVideo.loop=true;backgroundVideo.autoplay=true;backgroundVideo.playsInline=true;backgroundVideo.preload='none';backgroundVideo.poster='images/advertising-fjord-art.webp';backgroundVideo.setAttribute('aria-hidden','true');backgroundVideo.setAttribute('playsinline','');backgroundVideo.tabIndex=-1;advertising.prepend(backgroundVideo);
  let backgroundInView=false,autoplayBlocked=false;const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
- const updateBackground=()=>{const box=advertising.getBoundingClientRect();backgroundInView=box.bottom>0&&box.top<innerHeight&&box.width>0;if(backgroundInView&&!reducedMotion.matches&&!document.hidden&&!advertising.closest('[hidden]')&&!navigator.connection?.saveData){if(!backgroundVideo.src)backgroundVideo.src=adFilmUrl;autoplayBlocked=false;backgroundVideo.play().catch(error=>{autoplayBlocked=error?.name==='NotAllowedError';});}else backgroundVideo.pause();};
+ const updateBackground=()=>{const box=advertising.getBoundingClientRect();backgroundInView=box.bottom>0&&box.top<innerHeight&&box.width>0;if(backgroundInView&&!reducedMotion.matches&&!document.hidden&&!advertising.closest('[hidden]')&&!navigator.connection?.saveData){if(!backgroundVideo.src)backgroundVideo.src=adFilmUrl;autoplayBlocked=false;backgroundVideo.muted=true;backgroundVideo.play().catch(error=>{autoplayBlocked=error?.name==='NotAllowedError';});}else backgroundVideo.pause();};
  // Match the strict viewport check above: an expanded margin can fire too early
  // and leave a paused film without another callback when it reaches the screen.
  if('IntersectionObserver' in window){new IntersectionObserver(entries=>{backgroundInView=entries[0].isIntersecting;updateBackground();},{rootMargin:'0px'}).observe(advertising);}else{backgroundInView=true;updateBackground();}

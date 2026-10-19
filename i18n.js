@@ -217,6 +217,7 @@ Unmute|Slå på lyd|Увімкнути звук|Slå på ljud|Slå lyd til
 Full screen|Fullskjerm|На весь екран|Helskärm|Fuld skærm
 Loading video controls…|Laster videokontroller…|Завантаження керування відео…|Laddar videokontroller…|Indlæser videoknapper…
 Ready — press play for sound.|Klar — trykk spill av for lyd.|Готово — натисніть відтворення для звуку.|Redo — tryck spela för ljud.|Klar — tryk afspil for lyd.
+Ready — press play. Sound is off.|Klar — trykk spill av. Lyden er av.|Готово — натисніть відтворення. Звук вимкнено.|Redo — tryck spela. Ljudet är av.|Klar — tryk afspil. Lyden er slået fra.
 Playing|Spiller av|Відтворення|Spelar|Afspiller
 Paused|Pauset|Призупинено|Pausad|Sat på pause
 Film ended|Filmen er ferdig|Відео завершено|Filmen är slut|Filmen er slut

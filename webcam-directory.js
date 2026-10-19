@@ -34,7 +34,7 @@ function render(){
   const unavailable=()=>{if(!frame||!visible())return;blocked.set(camera.id,Date.now()+300000);player.stop();card.hidden=true;};
   card.hidden=(blocked.get(camera.id)||0)>Date.now();
   const player={card,id:camera.id,start(){if(frame||card.hidden)return;frame=el('iframe');const currentFrame=frame;frame.title=camera.name;frame.allow='autoplay; encrypted-media';frame.referrerPolicy='strict-origin-when-cross-origin';frame.src='https://www.youtube-nocookie.com/embed/'+camera.youtube+'?autoplay=1&mute=1&playsinline=1&rel=0&controls=0&disablekb=1&fs=0&iv_load_policy=3&enablejsapi=1&origin='+encodeURIComponent(location.origin);visual.replaceChildren(frame,caption);
-   loadAPI().then(YT=>{if(frame!==currentFrame)return;api=new YT.Player(frame,{events:{onReady:event=>{if(frame!==currentFrame)return;event.target.mute();event.target.playVideo();},onError:()=>{if(frame===currentFrame)unavailable();},onAutoplayBlocked:()=>{if(frame===currentFrame)unavailable();},onStateChange:event=>{if(frame===currentFrame&&event.data===0)unavailable();}}});}).catch(()=>{});
+   loadAPI().then(YT=>{if(frame!==currentFrame)return;api=new YT.Player(frame,{events:{onReady:event=>{if(frame!==currentFrame)return;event.target.mute();event.target.playVideo();},onError:()=>{if(frame===currentFrame)unavailable();},onAutoplayBlocked:()=>{if(frame===currentFrame)unavailable();},onStateChange:event=>{if(frame!==currentFrame)return;event.target?.mute();if(event.data===0)unavailable();}}});}).catch(()=>{});
   },stop(){if(!frame)return;frame=null;api?.destroy?.();api=null;visual.replaceChildren(caption);}};
   players.push(player);grid.append(card);
  }
