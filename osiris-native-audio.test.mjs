@@ -26,8 +26,8 @@ function drained(channel,id='r1'){channel.message({type:'output_audio_buffer.sto
 
 test('native audio opts in explicitly, renders Russian transcript once and waits for audible drain',async()=>{
  const {app,channel,track,audio}=await start();assert.ok(app.calls.some(call=>call.url.endsWith('/live-session?output=audio')));assert.equal(audio.muted,false);assert.equal(audio.autoplay,true);
- await askVoice(channel);created(channel);assert.equal(track.enabled,false);text(channel);text(channel);done(channel);
- assert.equal(track.enabled,false,'Generation completion is not playback completion');assert.equal(app.voiceState.peer.closed,undefined);assert.equal(app.voiceState.spoken.length,0,'Native audio never invokes browser TTS');
+ await askVoice(channel);created(channel);assert.equal(track.enabled,true);text(channel);text(channel);done(channel);
+ assert.equal(track.enabled,true,'Capture remains open for barge-in while output drains');assert.equal(app.voiceState.peer.closed,undefined);assert.equal(app.voiceState.spoken.length,0,'Native audio never invokes browser TTS');
  assert.equal(app.find('fjord-ai-log').children.filter(item=>item.textContent==='Привет! Рядом есть музей.').length,1);assert.equal(app.find('fjord-ai-status').attrs['data-tts-language'],'ru-RU');
  drained(channel);assert.equal(track.enabled,true);assert.equal(app.find('fjord-ai-status').attrs['data-tts-state'],'ended');
  await askVoice(channel,'А где находится этот музей?','q2');created(channel,'r2');text(channel,'Музей находится рядом с городом.','r2');done(channel,'r2');drained(channel,'r2');assert.equal(app.calls.filter(call=>call.url.includes('/live-session')).length,1);assert.equal(track.enabled,true);app.dialog.close();
@@ -102,9 +102,9 @@ test('native pet waits for actual playback and stops speaking at audio drain',as
  const {app,channel,audio,track}=await start();let resolvePlay;
  audio.play=()=>new Promise(resolve=>{resolvePlay=resolve});
  await askVoice(channel);created(channel);
- assert.equal(app.dialog.attrs['data-osiris-state'],'thinking');assert.equal(app.find('fjord-ai-status').attrs['data-tts-state'],'queued');assert.equal(track.enabled,false);
+ assert.equal(app.dialog.attrs['data-osiris-state'],'thinking');assert.equal(app.find('fjord-ai-status').attrs['data-tts-state'],'queued');assert.equal(track.enabled,true);
  resolvePlay();await flush();assert.equal(app.dialog.attrs['data-osiris-state'],'speaking');
- drained(channel);assert.equal(app.dialog.attrs['data-osiris-state'],'thinking','Audio has ended even if generation completion is delayed');assert.equal(track.enabled,false);
+ drained(channel);assert.equal(app.dialog.attrs['data-osiris-state'],'thinking','Audio has ended even if generation completion is delayed');assert.equal(track.enabled,true);
  done(channel);assert.equal(track.enabled,true);app.dialog.close();
 });
 
@@ -129,4 +129,41 @@ test('local native replay also waits for play success and clears its state after
  const replay=app.dialog.children.find(item=>item.tag==='audio');replay.onended();assert.equal(app.dialog.attrs['data-osiris-state'],'idle');
  // Simulate retry after another browser denial; no new model call is involved.
  await app.find('fjord-ai-voice fjord-ai-read-answer').emit('click');rejectPlay(new Error('blocked'));await flush();assert.equal(app.dialog.attrs['data-osiris-state'],'idle');app.dialog.close();
+});
+
+
+test('speech interrupts native output immediately and late cancelled events cannot kill the next turn',async()=>{
+ const {app,channel,track,audio}=await start();await askVoice(channel);created(channel,'r1');
+ assert.equal(track.enabled,true);const requests=app.calls.length;
+ channel.message({type:'input_audio_buffer.speech_started'});
+ assert.equal(audio.paused,true);assert.equal(track.enabled,true);assert.equal(app.dialog.attrs['data-osiris-state'],'listening');
+ assert.equal(channel.sent.filter(event=>event.type==='output_audio_buffer.clear').length,1);
+ assert.equal(channel.sent.filter(event=>event.type==='response.cancel').length,0,'Server VAD already cancels generation');
+ assert.equal(app.calls.length,requests,'Speech start does not issue another paid request');
+ await askVoice(channel,'Другой вопрос','q2');created(channel,'r2');
+ channel.message({type:'response.done',response:{id:'r1',status:'cancelled'}});
+ channel.message({type:'output_audio_buffer.cleared',response_id:'r1'});
+ text(channel,'Новый ответ.','r2');done(channel,'r2');drained(channel,'r2');
+ assert.equal(app.voiceState.peer.closed,undefined);assert.equal(track.enabled,true);
+ assert.equal(app.find('fjord-ai-log').children.filter(item=>item.textContent==='Новый ответ.').length,1);app.dialog.close();
+});
+
+test('server cancellation before speech_started leaves a usable session without duplicate cancellation',async()=>{
+ const {app,channel,track}=await start();await askVoice(channel);created(channel);
+ channel.message({type:'response.done',response:{id:'r1',status:'cancelled'}});
+ channel.message({type:'output_audio_buffer.cleared'});
+ channel.message({type:'input_audio_buffer.speech_started'});
+ assert.equal(channel.sent.filter(event=>event.type==='response.cancel').length,0);assert.equal(app.voiceState.peer.closed,undefined);assert.equal(track.enabled,true);
+ await askVoice(channel,'Продолжим','q2');created(channel,'r2');text(channel,'Продолжаем.','r2');done(channel,'r2');drained(channel,'r2');assert.equal(track.enabled,true);app.dialog.close();
+});
+
+for(const command of ['Осирис, подожди','Осирис, стоять!','Osiris, wait','Osiris, stopp'])test('local pause command: '+command,async()=>{
+ const {app,channel,track}=await start();await askVoice(channel);created(channel);channel.message({type:'input_audio_buffer.speech_started'});const requests=app.calls.length,responses=channel.sent.filter(event=>event.type==='response.create').length;
+ await askVoice(channel,command,'q2');assert.equal(app.calls.length,requests,'Pause bypasses moderation and model calls');assert.equal(channel.sent.filter(event=>event.type==='response.create').length,responses);assert.equal(track.enabled,true);assert.equal(app.dialog.attrs['data-osiris-state'],'listening');assert.equal(app.voiceState.peer.closed,undefined);app.dialog.close();
+});
+
+test('addressed goodbye after interruption closes capture immediately without moderation or a new chat request',async()=>{
+ const {app,channel,track}=await start();await askVoice(channel);created(channel);channel.message({type:'input_audio_buffer.speech_started'});const requests=app.calls.length;
+ await askVoice(channel,'Осирис, всё, пока.','q2');assert.equal(track.readyState,'ended');assert.equal(track.enabled,false);assert.equal(app.calls.length,requests);
+ created(channel,'farewell');done(channel,'farewell');drained(channel,'farewell');assert.equal(app.voiceState.peer.closed,true);app.dialog.close();
 });

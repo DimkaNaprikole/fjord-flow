@@ -137,13 +137,15 @@ let livePeer=null,liveChannel=null,liveStream=null,liveAudio=null,liveDeadline=n
 speaker.hidden=true;
 let speechGeneration=0,speakingAnswer=false,activeUtterance=null,lastHeardLanguage='',liveGeneration=0,liveSessionDeadline=null,livePhraseDeadline=null,liveInputComplete=false,liveAbort=null,liveQuestionReceived=false,ttsStartTimer=null,liveMode='dictation',autoDictationDraft=null,autoDictationAnswerReady=false;
 const completedVoiceItems=new Set();
+let liveTurnGeneration=0,expectedNativeClears=0;
+const interruptedNativeReplies=new Set();
 function microphoneMuted(value){liveStream?.getAudioTracks().forEach(track=>{if(track.readyState!=='ended')track.enabled=!value})}
 function liveHistory(){const history=[];let size=0;for(const previous of messages.slice(-20).reverse()){if(!['user','assistant'].includes(previous.role)||typeof previous.content!=='string')continue;const content=previous.content.slice(0,2000);if(size+content.length>12000)break;history.unshift({role:previous.role,content});size+=content.length}while(history[0]?.role==='assistant')history.shift();return history}
 function rememberLocalVoiceAnswer(answer){messages.push({role:'assistant',content:answer});if(liveChannel?.readyState==='open')liveChannel.send(JSON.stringify({type:'conversation.item.create',item:{type:'message',role:'assistant',content:[{type:'output_text',text:answer.slice(0,2000)}]}}))}
 let liveNativeAudio=false,nativeReply=null,nativeRecorder=null,nativeReplay=null,lastNativeAudioUrl='',nativeReplayGeneration=0,nativeFarewellTimer=null;
 function clearNativeReplay(){if(lastNativeAudioUrl){URL.revokeObjectURL?.(lastNativeAudioUrl);lastNativeAudioUrl=''}}
 function stopNativeReplay(){nativeReplayGeneration++;if(nativeReplay){nativeReplay.onended=null;nativeReplay.onerror=null;nativeReplay.pause();nativeReplay.removeAttribute?.('src');nativeReplay.remove();nativeReplay=null}}
-function resetNativeVoice(){if(nativeFarewellTimer){clearTimeout(nativeFarewellTimer);nativeFarewellTimer=null}if(nativeRecorder){nativeRecorder.ondataavailable=null;nativeRecorder.onstop=null;try{if(nativeRecorder.state!=='inactive')nativeRecorder.stop()}catch{}nativeRecorder=null}nativeReply=null;liveNativeAudio=false;liveAudio?.srcObject?.getTracks?.().forEach(track=>track.stop())}
+function resetNativeVoice(){if(nativeFarewellTimer){clearTimeout(nativeFarewellTimer);nativeFarewellTimer=null}if(nativeRecorder){nativeRecorder.ondataavailable=null;nativeRecorder.onstop=null;try{if(nativeRecorder.state!=='inactive')nativeRecorder.stop()}catch{}nativeRecorder=null}nativeReply=null;liveNativeAudio=false;interruptedNativeReplies.clear();expectedNativeClears=0;liveTurnGeneration++;liveAudio?.srcObject?.getTracks?.().forEach(track=>track.stop())}
 function recordNativeReply(){
  if(nativeRecorder||!liveAudio?.srcObject||!window.MediaRecorder||!URL.createObjectURL)return;
  const reply=nativeReply,generation=liveGeneration,parts=[];let size=0;
@@ -158,7 +160,7 @@ function beginNativeReply(id=''){
  if(!liveNativeAudio)return;
  if(!nativeReply||nativeReply.finished){clearNativeReplay();lastVoiceAnswer='';lastVoiceHint='';refreshSpeaker();nativeReply={id,done:false,drained:false,started:false,blocked:false,finished:false,localText:'',transcript:''}}
  if(id)nativeReply.id=id;
- speakingAnswer=true;microphoneMuted(true);setPet('thinking');ttsDiagnostic('queued');
+ speakingAnswer=true;microphoneMuted(liveMode!=='conversation');setPet('thinking');ttsDiagnostic('queued');
 }
 function completeNativeReply(){
  const reply=nativeReply;if(!reply||reply.finished||!reply.done||!reply.drained||nativeRecorder)return;
@@ -175,13 +177,27 @@ function replayNativeAnswer(){
  endVoice();const generation=++nativeReplayGeneration,audio=make('audio');nativeReplay=audio;audio.src=lastNativeAudioUrl;audio.setAttribute('playsinline','');dialog.append(audio);speakingAnswer=true;setPet('thinking');ttsDiagnostic('queued');
  const finish=error=>{if(generation!==nativeReplayGeneration)return;stopNativeReplay();speakingAnswer=false;setPet('idle');ttsDiagnostic(error?'error':'ended',error);if(error)status.textContent=(ttsCopy[lang()]||ttsCopy.en)[1]};audio.onended=()=>finish('');audio.onerror=()=>finish('synthesis-failed');try{audio.play()?.then?.(()=>{if(generation===nativeReplayGeneration){setPet('speaking');ttsDiagnostic('speaking')}},()=>finish('not-allowed'))}catch{finish('not-allowed')}return true;
 }
+// Native RTC capture stays open with echo cancellation for interruption.
+function interruptNativeReply(){
+ const reply=nativeReply;if(reply?.disconnectAfter)return;
+ if(reply?.started)liveAudio?.pause();
+ if(reply?.id)interruptedNativeReplies.add(reply.id);
+ if(voiceAnswerTimer){clearTimeout(voiceAnswerTimer);voiceAnswerTimer=null}
+ if(liveSessionDeadline){clearTimeout(liveSessionDeadline);liveSessionDeadline=null}
+ if(nativeRecorder){nativeRecorder.ondataavailable=null;nativeRecorder.onstop=null;nativeRecorder.onerror=null;try{if(nativeRecorder.state!=='inactive')nativeRecorder.stop()}catch{}nativeRecorder=null}
+ // Server VAD interrupt_response cancels generation; only flush queued playback here.
+ if(reply?.started&&!reply.drained&&liveChannel?.readyState==='open'){expectedNativeClears++;liveChannel.send(JSON.stringify({type:'output_audio_buffer.clear'}))}
+ nativeReply=null;responseActive=false;speakingAnswer=false;liveTextBubble=null;autoDictationAnswerReady=false;clearNativeReplay();lastVoiceAnswer='';lastVoiceHint='';refreshSpeaker();ttsDiagnostic('canceled');resumeLiveConversation();
+}
 function nativeVoiceEvent(message){
- const type=message.type;
+ const type=message.type,id=message.response_id||message.response?.id;
+ if(type==='output_audio_buffer.cleared'&&expectedNativeClears>0){expectedNativeClears--;return true}
+ if(id&&interruptedNativeReplies.has(id))return true;
  if(type==='response.created'){autoDictationAnswerReady=false;responseActive=true;beginNativeReply(message.response?.id||'');waitForVoiceReply();return true}
- if(!nativeReply)return false;
- if(message.response_id&&nativeReply.id&&message.response_id!==nativeReply.id)return type.startsWith('response.')||type.startsWith('output_audio_buffer.');
+ if(!nativeReply)return type.startsWith('response.')||type.startsWith('output_audio_buffer.');
+ if(id&&nativeReply.id&&id!==nativeReply.id)return type.startsWith('response.')||type.startsWith('output_audio_buffer.');
  if(type==='output_audio_buffer.started'){
-  nativeReply.started=true;nativeReply.drained=false;if(liveSessionDeadline){clearTimeout(liveSessionDeadline);liveSessionDeadline=null}speakingAnswer=true;microphoneMuted(true);recordNativeReply();playNativeStream();return true;
+  nativeReply.started=true;nativeReply.drained=false;if(liveSessionDeadline){clearTimeout(liveSessionDeadline);liveSessionDeadline=null}speakingAnswer=true;microphoneMuted(liveMode!=='conversation');recordNativeReply();playNativeStream();return true;
  }
  if(type==='response.output_audio_transcript.delta'&&typeof message.delta==='string'){if(!nativeReply.localText){if(!liveTextBubble)liveTextBubble=bubble('assistant','');liveTextBubble.textContent+=message.delta;compactReply.textContent=liveTextBubble.textContent;refreshCompact();conversation.scrollTop=conversation.scrollHeight}return true}
  if(type==='response.output_audio_transcript.done'&&typeof message.transcript==='string'){
@@ -192,6 +208,7 @@ function nativeVoiceEvent(message){
  }
  if(type==='response.done'){
   responseActive=false;const outcome=message.response?.status;
+  if(outcome==='cancelled'&&liveMode==='conversation'&&!nativeReply.disconnectAfter){interruptNativeReply();return true}
   if(['failed','incomplete','cancelled'].includes(outcome)){voiceDiagnostic('connected','response_'+outcome);stopLive((voiceReplyFailureCopy[lang()]||voiceReplyFailureCopy.en)[1]);return true}
   if(outcome==='completed'){
    if(nativeReply.done)return true;nativeReply.done=true;
@@ -258,7 +275,9 @@ function clearAnsweredDictationDraft(){if(!autoDictationDraft)return;if(input.va
 function finishVoiceAnswer(answer,language,completed=false){if(completed)clearAnsweredDictationDraft();if(liveSessionDeadline)clearTimeout(liveSessionDeadline);liveSessionDeadline=null;speakAnswer(answer,language);if(!speakingAnswer)stopLive()}
 
 const wantsOwner=value=>/(?:свяж|связ(?:аться|и)|написать|напиши|передай|позови|соедини|контакт).{0,60}(?:владельц|хозя|дим(?:а|е|ой|у|к)|автор|разработчик|человек|администрат|админ)|(?:owner|human|person|contact|message|email|e-mail|write to|call|tell).{0,60}(?:owner|human|person|site|you|admin|\bdim(?:a|ka)\b)|(?:kontakt|snakk|skriv|melding|e-post|prata|besked|tal).{0,60}(?:eier|deg|menneske|administrator|\bdim(?:a|ka)\b)|(?:зв.?яж|напиш|передай|поклич).{0,60}(?:власник|людин|дім(?:а|і|ою|у|к)|дим(?:а|е|ой|у|к)|адміністратор)/iu.test(value);
-const wantsGoodbye=value=>/^(?:ну\s+)?(?:всё[,!. ]*)?(?:пока|до\s+свидания|до\s+завтра|закончи(?:м|ли)|заверши\s+разговор|отключайся|заканчивай|goodbye|bye|see\s+you|ha\s+det|ha det bra|adjø|farvel)(?:[,!. ]*)$/iu.test(value.trim());
+const voiceCommand=value=>value.trim().replace(/^(?:осирис|osiris)[,!: .—-]*/iu,'').trim();
+const wantsPause=value=>/^(?:стой|стоять|стоп|подожди|погоди|остановись|пауза|stop|wait|pause|vent|stopp|vänta|vent lidt)[.! ]*$/iu.test(voiceCommand(value));
+const wantsGoodbye=value=>/^(?:ну\s+)?(?:всё[,!. ]*)?(?:пока|до\s+свидания|до\s+завтра|закончи(?:м|ли)|заверши\s+разговор|отключайся|заканчивай|goodbye|bye|see\s+you|ha\s+det|ha det bra|adjø|farvel)(?:[,!. ]*)$/iu.test(voiceCommand(value));
 function farewell(language){return language==='ru'?'Давай, до свидания. Связь окончена. Спасибо за внимание, обращайтесь завтра.':language==='uk'?'До побачення. Розмову завершено. Дякую за увагу, звертайтеся завтра.':language==='nb'||language==='no'?'Ha det bra. Samtalen er avsluttet. Takk for praten, kom gjerne tilbake i morgen.':'Goodbye. The conversation is over. Thank you for chatting; come back tomorrow.'}
 function abuseFarewell(language){return language==='ru'?'До свидания. С вами больше не намерен общаться. Связь окончена.':language==='uk'?'До побачення. Я не продовжуватиму цю розмову. Зв’язок завершено.':language==='nb'||language==='no'?'Ha det. Jeg ønsker ikke å fortsette denne samtalen. Samtalen er avsluttet.':'Goodbye. I will not continue this conversation. The chat is closed.'}
 function finishConversation(language,override){
@@ -274,8 +293,9 @@ function finishConversation(language,override){
 }
 async function prepareHandoff(heard){if(handoff.hidden===false)return;handoffWasVoice=true;pendingQuestion=heard;stopLive();status.textContent=words()[15];try{const data=await post('/chat',{messages:[...messages.slice(-6),{role:'user',content:heard}],language:questionLanguage(heard),request_human:true});if(data.needs_human!==true||typeof data.escalation_token!=='string')throw new Error('handoff unavailable');token=data.escalation_token;handoff.hidden=false;conversation.scrollTop=conversation.scrollHeight;consent.checked=false;consent.focus({preventScroll:true});status.textContent='';bubble('assistant',data.answer)}catch{status.textContent=words()[19]}}
 async function handleHeard(heard){
- const generation=liveGeneration,language=questionLanguage(heard,lastHeardLanguage),current=()=>generation===liveGeneration&&voiceMode&&dialog.open;
+ const generation=liveGeneration,turn=liveTurnGeneration,language=questionLanguage(heard,lastHeardLanguage),current=()=>generation===liveGeneration&&turn===liveTurnGeneration&&voiceMode&&dialog.open;
  if(wantsGoodbye(heard)){finishConversation(language);return}
+ if(wantsPause(heard)){if(liveNativeAudio)interruptNativeReply();else cancelSpeech();resumeLiveConversation();return}
  let result;try{result=await post('/moderate',{text:heard,language})}catch{if(!current())return;stopLive(language==='ru'?'Не удалось проверить сообщение. Разговор завершён.':'Could not check this message. The conversation has ended.');return}
  if(!current())return;if(result.disconnect){finishConversation(language,result.warning_text||abuseFarewell(language));return}
  if(result.warned&&typeof result.warning_text==='string'&&result.warning_text.trim()){const warning=result.warning_text;voiceActions.replaceChildren();bubble('assistant',warning);rememberLocalVoiceAnswer(warning);status.textContent=warning;finishVoiceAnswer(warning,language,true);return}
@@ -370,8 +390,8 @@ async function startLive(){
     channel.onmessage=event=>{if(generation!==liveGeneration||!voiceMode||!dialog.open)return;let message;try{message=JSON.parse(event.data)}catch{return}
       if(liveNativeAudio&&nativeVoiceEvent(message))return;
       if(message.type==='session.created'){}
-      else if(message.type==='input_audio_buffer.speech_started'){if(liveMode==='dictation')return;if(liveInputComplete||speakingAnswer)return;if(voiceAnswerTimer){clearTimeout(voiceAnswerTimer);voiceAnswerTimer=null}setPet('listening');status.textContent=voiceWords().listen}
-      else if(message.type==='input_audio_buffer.speech_stopped'){if(liveMode==='dictation'||liveInputComplete)return;liveInputComplete=true;microphoneMuted(true);waitForVoiceReply();setPet('thinking');status.textContent=words()[5]}
+      else if(message.type==='input_audio_buffer.speech_started'){if(liveMode==='dictation')return;if(liveNativeAudio){if(nativeReply?.disconnectAfter)return;liveTurnGeneration++;if(nativeReply||responseActive||speakingAnswer||liveInputComplete)interruptNativeReply();liveInputComplete=false;liveQuestionReceived=false}else if(liveInputComplete||speakingAnswer)return;if(voiceAnswerTimer){clearTimeout(voiceAnswerTimer);voiceAnswerTimer=null}setPet('listening');status.textContent=voiceWords().listen}
+      else if(message.type==='input_audio_buffer.speech_stopped'){if(liveMode==='dictation'||liveInputComplete)return;liveInputComplete=true;microphoneMuted(!liveNativeAudio);waitForVoiceReply();setPet('thinking');status.textContent=words()[5]}
       else if(message.type==='conversation.item.input_audio_transcription.failed'){voiceDiagnostic('connected','transcription_failed');stopLive((voiceReplyFailureCopy[lang()]||voiceReplyFailureCopy.en)[0])}
       else if(message.type==='conversation.item.input_audio_transcription.completed'&&typeof message.transcript==='string'&&message.transcript.trim()){if(speakingAnswer||liveQuestionReceived||(liveMode==='dictation'&&!liveInputComplete))return;const key=message.item_id;if(key&&completedVoiceItems.has('user:'+key))return;if(key)completedVoiceItems.add('user:'+key);liveQuestionReceived=true;const heard=message.transcript.trim();if(heard.length>input.maxLength){input.value=heard;stopLive();status.textContent=longDictationCopy[lang()]||longDictationCopy.en;input.focus({preventScroll:true});return}lastHeardLanguage=['ru','uk','en','nb','no','sv','da'].includes(message.language)?message.language:questionLanguage(heard);if(liveMode==='dictation'){input.value=heard;fallbackMail();if(!autoSend.checked){stopLive();status.textContent=(modeCopy[lang()]||modeCopy.en)[8];input.focus({preventScroll:true});return}autoDictationDraft=heard}bubble('user',heard);void handleHeard(heard)}
       else if(message.type==='response.output_text.delta'&&typeof message.delta==='string'){if(!liveTextBubble)liveTextBubble=bubble('assistant','');liveTextBubble.textContent+=message.delta;conversation.scrollTop=conversation.scrollHeight}
