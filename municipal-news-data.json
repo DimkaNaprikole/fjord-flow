@@ -879,6 +879,30 @@
           "Programmet omfatter Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet og et lysshow.",
           "Et nyt julemarked åbner samme dag. Entréprisen er ikke bekræftet; tjek arrangørens aktuelle program og vilkår før besøget."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/hadeland-glassverk.webp",
+        "alt": {
+          "nb": "Hadeland Glassverk · 2026-01-02",
+          "en": "Hadeland Glassverk · 2026-01-02",
+          "uk": "Hadeland Glassverk · 2026-01-02",
+          "sv": "Hadeland Glassverk · 2026-01-02",
+          "da": "Hadeland Glassverk · 2026-01-02"
+        },
+        "credit": "Ssu",
+        "source": "https://commons.wikimedia.org/wiki/File:Hadeland_Glassverk,_2026.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; displayed with responsive cropping."
       }
     },
     {
@@ -936,6 +960,30 @@
         "da": [
           "Haver: Bergergata 4 og Hønefossvegen 14 (indgang Bakkelivegen). Jevnaker Klatreklubb ved Røde Kors-huset; servering fra Frivilligsentralen. Tid/pris: spørg arrangøren."
         ]
+      },
+      "image": {
+        "url": "./images/news/topics/halloween.webp",
+        "alt": {
+          "nb": "Halloween · Jack-o’-lantern",
+          "en": "Halloween · Jack-o’-lantern",
+          "uk": "Halloween · Jack-o’-lantern",
+          "sv": "Halloween · Jack-o’-lantern",
+          "da": "Halloween · Jack-o’-lantern"
+        },
+        "credit": "Achat1999",
+        "source": "https://commons.wikimedia.org/wiki/File:Jack-O-Lantern.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; responsive cropping."
       }
     },
     {
@@ -994,6 +1042,30 @@
         "da": [
           "RIFF med introduktion. 2 t 39 min. Pris og ændringer: se biografens hjemmeside."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/honefoss-kino.webp",
+        "alt": {
+          "nb": "Hønefoss kino · 2022",
+          "en": "Hønefoss kino · 2022",
+          "uk": "Hønefoss kino · 2022",
+          "sv": "Hønefoss kino · 2022",
+          "da": "Hønefoss kino · 2022"
+        },
+        "credit": "Ssu",
+        "source": "https://commons.wikimedia.org/wiki/File:H%C3%B8nefoss_kino_(storsalen).jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; displayed with responsive cropping."
       }
     },
     {
@@ -1055,7 +1127,31 @@
       },
       "verificationUrls": [
         "https://ofo.no/no/konserter/2026-10-21/fra-bratsjgruppen-til-hovedrollen"
-      ]
+      ],
+      "image": {
+        "url": "./images/news/topics/classical-piano.webp",
+        "alt": {
+          "nb": "Piano",
+          "en": "Piano",
+          "uk": "Piano",
+          "sv": "Piano",
+          "da": "Piano"
+        },
+        "credit": "Dejan Krsmanovic",
+        "source": "https://commons.wikimedia.org/wiki/File:Piano_on_Stage_(28780084327).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
+      }
     },
     {
       "id": "oslo-petrushka-20261022",
@@ -1117,7 +1213,31 @@
       },
       "verificationUrls": [
         "https://ofo.no/no/konserter/2026-10-22/petrenko-dirigerer-petrushka"
-      ]
+      ],
+      "image": {
+        "url": "./images/news/venues/oslo-konserthus.webp",
+        "alt": {
+          "nb": "Oslo Konserthus · 2024",
+          "en": "Oslo Konserthus · 2024",
+          "uk": "Oslo Konserthus · 2024",
+          "sv": "Oslo Konserthus · 2024",
+          "da": "Oslo Konserthus · 2024"
+        },
+        "credit": "Ssu",
+        "source": "https://commons.wikimedia.org/wiki/File:Oslo_konserthus,_2024.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
+      }
     },
     {
       "id": "oslo-nyhus-20261024",
@@ -1178,7 +1298,31 @@
       },
       "verificationUrls": [
         "https://ofo.no/no/konserter/2026-10-24/tradisjon-i-bevegelse"
-      ]
+      ],
+      "image": {
+        "url": "./images/news/topics/classical-piano.webp",
+        "alt": {
+          "nb": "Piano",
+          "en": "Piano",
+          "uk": "Piano",
+          "sv": "Piano",
+          "da": "Piano"
+        },
+        "credit": "Dejan Krsmanovic",
+        "source": "https://commons.wikimedia.org/wiki/File:Piano_on_Stage_(28780084327).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
+      }
     },
     {
       "id": "oslo-halloween-philharmonic-20261030",
@@ -1240,7 +1384,31 @@
       },
       "verificationUrls": [
         "https://ofo.no/no/konserter/2026-10-30/halloweenkonsert-en-fest-for-hele-familien"
-      ]
+      ],
+      "image": {
+        "url": "./images/news/venues/oslo-konserthus.webp",
+        "alt": {
+          "nb": "Oslo Konserthus · 2024",
+          "en": "Oslo Konserthus · 2024",
+          "uk": "Oslo Konserthus · 2024",
+          "sv": "Oslo Konserthus · 2024",
+          "da": "Oslo Konserthus · 2024"
+        },
+        "credit": "Ssu",
+        "source": "https://commons.wikimedia.org/wiki/File:Oslo_konserthus,_2024.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
+      }
     },
     {
       "id": "drammen-svendsens-catering-20261022",
@@ -1303,7 +1471,31 @@
       },
       "verificationUrls": [
         "https://www.brageteatret.no/forestilling/svendsens-catering/"
-      ]
+      ],
+      "image": {
+        "url": "./images/news/venues/union-scene-drammen.webp",
+        "alt": {
+          "nb": "Union Scene, Drammen",
+          "en": "Union Scene, Drammen",
+          "uk": "Union Scene, Drammen",
+          "sv": "Union Scene, Drammen",
+          "da": "Union Scene, Drammen"
+        },
+        "credit": "Lars Haugan",
+        "source": "https://commons.wikimedia.org/wiki/File:Unionscene.jpg",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; no content alteration."
+      }
     },
     {
       "id": "lillehammer-bondens-marked-20261023",
@@ -1365,7 +1557,31 @@
       "verificationUrls": [
         "https://lillehammersentrum.no/arrangement/bondens-marked-pa-lilletorget-2/2026-10-23/",
         "https://lillehammersentrum.no/arrangementer/"
-      ]
+      ],
+      "image": {
+        "url": "./images/news/topics/bread-basket.webp",
+        "alt": {
+          "nb": "Bakervarer / Bread",
+          "en": "Bakervarer / Bread",
+          "uk": "Bakervarer / Bread",
+          "sv": "Bakervarer / Bread",
+          "da": "Bakervarer / Bread"
+        },
+        "credit": "Adnergje",
+        "source": "https://commons.wikimedia.org/wiki/File:Bread_in_basket.jpg",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
+      }
     },
     {
       "id": "lillehammer-hockey-classic-20261024",
@@ -1426,7 +1642,31 @@
       "verificationUrls": [
         "https://lillehammersentrum.no/arrangement/hockey-classic-2026/",
         "https://lillehammersentrum.no/arrangementer/"
-      ]
+      ],
+      "image": {
+        "url": "./images/news/venues/hakons-hall-lillehammer.webp",
+        "alt": {
+          "nb": "Håkons Hall · 2006",
+          "en": "Håkons Hall · 2006",
+          "uk": "Håkons Hall · 2006",
+          "sv": "Håkons Hall · 2006",
+          "da": "Håkons Hall · 2006"
+        },
+        "credit": "Tokle",
+        "source": "https://commons.wikimedia.org/wiki/File:H%C3%A5kons_hall.JPG",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:H%C3%A5kons_hall.JPG#Licensing",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; no content alteration."
+      }
     },
     {
       "id": "lillehammer-heidal-bakery-20261031",
@@ -1487,7 +1727,31 @@
       },
       "verificationUrls": [
         "https://lillehammersentrum.no/arrangement/heidal-hjemmebakeri-pa-lilletorget-2/2026-10-31/"
-      ]
+      ],
+      "image": {
+        "url": "./images/news/topics/bread-basket.webp",
+        "alt": {
+          "nb": "Bakervarer / Bread",
+          "en": "Bakervarer / Bread",
+          "uk": "Bakervarer / Bread",
+          "sv": "Bakervarer / Bread",
+          "da": "Bakervarer / Bread"
+        },
+        "credit": "Adnergje",
+        "source": "https://commons.wikimedia.org/wiki/File:Bread_in_basket.jpg",
+        "license": "CC BY-SA 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
+      }
     },
     {
       "id": "bergen-kjott-festival-2026",
@@ -1546,6 +1810,30 @@
         "da": [
           "Musikfestival med nye udtryk. Fredag begynder kl. 18; se lørdagens program hos arrangøren."
         ]
+      },
+      "image": {
+        "url": "./images/news/topics/concert-lights.webp",
+        "alt": {
+          "nb": "Konsertlys / Concert lights",
+          "en": "Konsertlys / Concert lights",
+          "uk": "Konsertlys / Concert lights",
+          "sv": "Konsertlys / Concert lights",
+          "da": "Konsertlys / Concert lights"
+        },
+        "credit": "veeterzy",
+        "source": "https://commons.wikimedia.org/wiki/File:Recording_a_concert_(Unsplash).jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -1605,6 +1893,30 @@
         "da": [
           "Koncerter og aktiviteter i flere rum. Lørdag 12–15, søndag 12–16."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/usf-verftet.webp",
+        "alt": {
+          "nb": "USF Verftet, Bergen",
+          "en": "USF Verftet, Bergen",
+          "uk": "USF Verftet, Bergen",
+          "sv": "USF Verftet, Bergen",
+          "da": "USF Verftet, Bergen"
+        },
+        "credit": "Reinhardheydt",
+        "source": "https://commons.wikimedia.org/wiki/File:USF_Verftet.JPG",
+        "license": "Public domain (PD-self)",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-self",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -1660,6 +1972,30 @@
         "da": [
           "Livssynsåben mindestund med musik, dans og poesi. Gratis for alle aldre; lystænding fra kl. 17."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/nygardsparken.webp",
+        "alt": {
+          "nb": "Nygårdsparken, Bergen",
+          "en": "Nygårdsparken, Bergen",
+          "uk": "Nygårdsparken, Bergen",
+          "sv": "Nygårdsparken, Bergen",
+          "da": "Nygårdsparken, Bergen"
+        },
+        "credit": "MAKY.OREL",
+        "source": "https://commons.wikimedia.org/wiki/File:Nyg%C3%A5rdsparken_fountain.jpg",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -1715,6 +2051,30 @@
         "da": [
           "Nye sange og velkendt repertoire. Cirka 90 minutter uden pause; billetoplysninger hos koncerthuset."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/kuppelhallen.webp",
+        "alt": {
+          "nb": "Kuppelhallen, Stavanger",
+          "en": "Kuppelhallen, Stavanger",
+          "uk": "Kuppelhallen, Stavanger",
+          "sv": "Kuppelhallen, Stavanger",
+          "da": "Kuppelhallen, Stavanger"
+        },
+        "credit": "AFNDG",
+        "source": "https://commons.wikimedia.org/wiki/File:Kuppelhallen_i_Bjergsted.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -1770,6 +2130,30 @@
         "da": [
           "Prøv instrumenter, hør orkestret og deltag i aktiviteter. Gratis adgang, ingen tilmelding."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/stavanger-konserthus.webp",
+        "alt": {
+          "nb": "Stavanger Konserthus",
+          "en": "Stavanger Konserthus",
+          "uk": "Stavanger Konserthus",
+          "sv": "Stavanger Konserthus",
+          "da": "Stavanger Konserthus"
+        },
+        "credit": "Olaf Meister",
+        "source": "https://commons.wikimedia.org/wiki/File:Konzerthaus_Stavanger_2017.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -1829,6 +2213,30 @@
         "da": [
           "Uhyggelig filmmusik med Rolf Kristian Larsen. Anbefalet fra 12 år; cirka to timer inklusive pause."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/stavanger-konserthus.webp",
+        "alt": {
+          "nb": "Stavanger Konserthus",
+          "en": "Stavanger Konserthus",
+          "uk": "Stavanger Konserthus",
+          "sv": "Stavanger Konserthus",
+          "da": "Stavanger Konserthus"
+        },
+        "credit": "Olaf Meister",
+        "source": "https://commons.wikimedia.org/wiki/File:Konzerthaus_Stavanger_2017.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -1884,6 +2292,30 @@
         "da": [
           "Del af sæsonen 2026/27. Program og billetter hos Kilden."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/kilden.webp",
+        "alt": {
+          "nb": "Kilden, Kristiansand · 2016",
+          "en": "Kilden, Kristiansand · 2016",
+          "uk": "Kilden, Kristiansand · 2016",
+          "sv": "Kilden, Kristiansand · 2016",
+          "da": "Kilden, Kristiansand · 2016"
+        },
+        "credit": "Carsten R D",
+        "source": "https://commons.wikimedia.org/wiki/File:Kilden_Performing_Arts_Centre_2016.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -1939,6 +2371,30 @@
         "da": [
           "SeniorKilden er åbent for alle, med program tilpasset personer over 60. Tjek billetstatus."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/kilden.webp",
+        "alt": {
+          "nb": "Kilden, Kristiansand · 2016",
+          "en": "Kilden, Kristiansand · 2016",
+          "uk": "Kilden, Kristiansand · 2016",
+          "sv": "Kilden, Kristiansand · 2016",
+          "da": "Kilden, Kristiansand · 2016"
+        },
+        "credit": "Carsten R D",
+        "source": "https://commons.wikimedia.org/wiki/File:Kilden_Performing_Arts_Centre_2016.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -1993,6 +2449,30 @@
         "da": [
           "Siden angiver forskellige åbningstider; bekræft tidspunktet hos arrangøren."
         ]
+      },
+      "image": {
+        "url": "./images/news/topics/concert-lights.webp",
+        "alt": {
+          "nb": "Konsertlys / Concert lights",
+          "en": "Konsertlys / Concert lights",
+          "uk": "Konsertlys / Concert lights",
+          "sv": "Konsertlys / Concert lights",
+          "da": "Konsertlys / Concert lights"
+        },
+        "credit": "veeterzy",
+        "source": "https://commons.wikimedia.org/wiki/File:Recording_a_concert_(Unsplash).jpg",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     },
     {
@@ -2048,6 +2528,30 @@
         "da": [
           "Billetter og aktuelle oplysninger findes hos korforbundet."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/rockheim-trondheim.webp",
+        "alt": {
+          "nb": "Rockheim, Trondheim",
+          "en": "Rockheim, Trondheim",
+          "uk": "Rockheim, Trondheim",
+          "sv": "Rockheim, Trondheim",
+          "da": "Rockheim, Trondheim"
+        },
+        "credit": "Larry Lamsa",
+        "source": "https://commons.wikimedia.org/wiki/File:Rockheim_01.jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; no content alteration."
       }
     },
     {
@@ -2103,6 +2607,30 @@
         "da": [
           "Forestillingen varer cirka en time; se billetmuligheder hos Stormen."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/stormen-bodo.webp",
+        "alt": {
+          "nb": "Stormen, Bodø · 2015",
+          "en": "Stormen, Bodø · 2015",
+          "uk": "Stormen, Bodø · 2015",
+          "sv": "Stormen, Bodø · 2015",
+          "da": "Stormen, Bodø · 2015"
+        },
+        "credit": "DXR",
+        "source": "https://commons.wikimedia.org/wiki/File:Stormen_Konserthuset,_Bod%C3%B8,_South_view_20150608_1.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; no content alteration."
       }
     },
     {
@@ -2158,6 +2686,30 @@
         "da": [
           "Første forestilling starter 11.30 og varer en halv time."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/stormen-bodo.webp",
+        "alt": {
+          "nb": "Stormen, Bodø · 2015",
+          "en": "Stormen, Bodø · 2015",
+          "uk": "Stormen, Bodø · 2015",
+          "sv": "Stormen, Bodø · 2015",
+          "da": "Stormen, Bodø · 2015"
+        },
+        "credit": "DXR",
+        "source": "https://commons.wikimedia.org/wiki/File:Stormen_Konserthuset,_Bod%C3%B8,_South_view_20150608_1.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; no content alteration."
       }
     },
     {
@@ -2213,6 +2765,30 @@
         "da": [
           "Attenårsgrænse med værgeordning; kontrollér vilkårene inden billetkøb."
         ]
+      },
+      "image": {
+        "url": "./images/news/venues/stormen-bodo.webp",
+        "alt": {
+          "nb": "Stormen, Bodø · 2015",
+          "en": "Stormen, Bodø · 2015",
+          "uk": "Stormen, Bodø · 2015",
+          "sv": "Stormen, Bodø · 2015",
+          "da": "Stormen, Bodø · 2015"
+        },
+        "credit": "DXR",
+        "source": "https://commons.wikimedia.org/wiki/File:Stormen_Konserthuset,_Bod%C3%B8,_South_view_20150608_1.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and converted to WebP; no content alteration."
       }
     },
     {
@@ -2268,6 +2844,30 @@
         "da": [
           "Arrangørens side linker til billetsalg og opdateringer."
         ]
+      },
+      "image": {
+        "url": "./images/tromso.jpg",
+        "alt": {
+          "nb": "Tromsø · bybilde / city view",
+          "en": "Tromsø · bybilde / city view",
+          "uk": "Tromsø · bybilde / city view",
+          "sv": "Tromsø · bybilde / city view",
+          "da": "Tromsø · bybilde / city view"
+        },
+        "credit": "The Municipality of Tromsø from Tromsø, Norway",
+        "source": "https://commons.wikimedia.org/wiki/File:Troms%C3%B8_sentrum_(5835702754).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized/converted for display; responsive cropping."
       }
     },
     {
@@ -2323,6 +2923,30 @@
         "da": [
           "Beskrivelsen angiver koncertstart 20.00; kalenderen viser døråbning."
         ]
+      },
+      "image": {
+        "url": "./images/tromso.jpg",
+        "alt": {
+          "nb": "Tromsø · bybilde / city view",
+          "en": "Tromsø · bybilde / city view",
+          "uk": "Tromsø · bybilde / city view",
+          "sv": "Tromsø · bybilde / city view",
+          "da": "Tromsø · bybilde / city view"
+        },
+        "credit": "The Municipality of Tromsø from Tromsø, Norway",
+        "source": "https://commons.wikimedia.org/wiki/File:Troms%C3%B8_sentrum_(5835702754).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized/converted for display; responsive cropping."
       }
     },
     {
@@ -2378,7 +3002,32 @@
         "da": [
           "Døre 18.30; program 19.00, 20.30 og 22.00. Billetter via arrangøren."
         ]
+      },
+      "image": {
+        "url": "./images/tromso.jpg",
+        "alt": {
+          "nb": "Tromsø · bybilde / city view",
+          "en": "Tromsø · bybilde / city view",
+          "uk": "Tromsø · bybilde / city view",
+          "sv": "Tromsø · bybilde / city view",
+          "da": "Tromsø · bybilde / city view"
+        },
+        "credit": "The Municipality of Tromsø from Tromsø, Norway",
+        "source": "https://commons.wikimedia.org/wiki/File:Troms%C3%B8_sentrum_(5835702754).jpg",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "kind": "illustration",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke bilde fra arrangementet.",
+          "en": "Illustrative photograph, not a photograph of the event.",
+          "uk": "Ілюстративне фото, не знімок цієї події.",
+          "sv": "Illustrationsfoto, inte en bild från evenemanget.",
+          "da": "Illustrationsfoto, ikke et billede fra begivenheden."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized/converted for display; responsive cropping."
       }
     }
-  ]
+  ],
+  "mediaUpdated": "2026-10-19"
 }
