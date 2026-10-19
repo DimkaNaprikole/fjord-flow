@@ -1,0 +1,13 @@
+/* Compact visible circles retain a 44px touch target and translated labels. */
+body .osiris-launch[hidden]{display:none!important}
+#fjordHelper.fjord-ai>.fjord-helper-close{width:44px;height:44px;min-height:44px;top:1px;right:2px;padding:0;border:0;border-radius:50%;font:400 21px/1 sans-serif;background:radial-gradient(circle,#164957 0 14px,transparent 15px);color:#f5fbff;box-shadow:none}
+#fjordHelper.fjord-ai.osiris-compact:not(.fjord-ai-auth-pending)>.fjord-helper-close{top:0;right:0;width:44px;height:44px;font-size:21px}
+#fjordHelper.fjord-ai .osiris-compact-controls{gap:4px;flex-wrap:nowrap}
+#fjordHelper.fjord-ai .osiris-compact-controls .osiris-compact-mic,
+#fjordHelper.fjord-ai .osiris-compact-controls .osiris-expand{flex:none;width:44px;height:44px;min-height:44px;padding:0;border:0;border-radius:50%;font-size:0;background:radial-gradient(circle,#164957 0 18px,transparent 19px);box-shadow:none}
+#fjordHelper .osiris-compact-mic::before{content:'🎙';font-size:19px}
+#fjordHelper .osiris-compact-mic[aria-pressed=true]::before{content:'■';font-size:16px}
+#fjordHelper .osiris-expand::before{content:'▤';font-size:22px}
+#fjordHelper .fjord-ai-portrait .osiris-pet{width:112px;height:64px;animation:none!important}
+#fjordHelper .fjord-ai-portrait .osiris-avatar{width:100%;height:100%;object-fit:contain}
+#fjordHelper .osiris-expand:focus-visible,#fjordHelper .osiris-compact-mic:focus-visible,#fjordHelper>.fjord-helper-close:focus-visible{outline:3px solid #ffde94;outline-offset:1px}

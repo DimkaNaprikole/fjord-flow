@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "characters": [{
+    "id": "osiris",
+    "name": "Osiris",
+    "species": "sphynx",
+    "states": {
+      "idle": {"still": "media/osiris-motion/listen.png"},
+      "walk": {"animation": "media/osiris-motion/walk.webp", "still": "media/osiris-motion/walk.png"},
+      "listen": {"animation": "media/osiris-motion/listen.webp", "still": "media/osiris-motion/listen.png"},
+      "play": {"animation": "media/osiris-motion/play.webp", "still": "media/osiris-motion/play.png"}
+    }
+  }]
+}
