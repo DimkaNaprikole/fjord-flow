@@ -16,8 +16,8 @@ async function harness(){
  const all=(tag,node=section)=>[...(node.tagName===tag?[node]:[]),...node.children.flatMap(n=>all(tag,n))];return {section,document,docEvents,events,all};
 }
 test('world-only UI has actual players and no search, filters, or tourist selector',async()=>{
- const h=await harness();assert.equal(h.all('article').length,2);assert.equal(h.all('iframe').length,2);assert.equal(h.all('input').length,0);assert.equal(h.all('select').length,0);assert.equal(h.all('button').length,0);
- for(const frame of h.all('iframe')){assert.match(frame.src,/youtube-nocookie\.com\/embed\/[\w-]{11}\?autoplay=1&mute=1/);assert.match(frame.allow,/fullscreen/);}
+ const h=await harness();assert.equal(h.all('article').length,2);assert.equal(h.all('iframe').length,2);assert.equal(h.all('input').length,0);assert.equal(h.all('select').length,0);assert.equal(h.all('button').length,0);assert.equal(h.all('a').length,0);
+ for(const frame of h.all('iframe')){assert.match(frame.src,/youtube-nocookie\.com\/embed\/[\w-]{11}\?autoplay=1&mute=1/);assert.doesNotMatch(frame.allow,/fullscreen/);const params=new URL(frame.src).searchParams;for(const [key,value]of Object.entries({controls:'0',disablekb:'1',fs:'0',iv_load_policy:'3',mute:'1'}))assert.equal(params.get(key),value);}
 });
 test('hidden tab or section unloads video, returning restores only visible players',async()=>{
  const h=await harness();h.document.hidden=true;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,0);h.document.hidden=false;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,2);

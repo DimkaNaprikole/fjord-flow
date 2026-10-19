@@ -13,3 +13,5 @@
 #norwayWebcams .webcam-world{margin-top:0;padding-top:0;border:0}#norwayWebcams .webcam-world .webcam-card{padding:12px}#norwayWebcams .webcam-world .webcam-credit{color:#103e4b;font-weight:750}
 
 #norwayWebcams.ref-chapter .webcam-world>h2,#norwayWebcams.ref-chapter .webcam-world>p{display:none}
+
+#norwayWebcams .webcam-world .webcam-visual{min-height:200px}

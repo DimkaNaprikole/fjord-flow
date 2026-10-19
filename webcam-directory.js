@@ -24,9 +24,8 @@ function render(){
  const world=el('section',null,'webcam-world');world.id='worldWebcams';world.append(el('h2',t[0]),el('p',t[1]));const grid=el('div',null,'webcam-grid');
  for(const camera of select(items)){
   const card=el('article',null,'webcam-card'),visual=el('div',null,'webcam-visual');card.append(visual,el('h3',camera.name),el('p',camera.operator,'webcam-operator'),el('small',t[3]+': '+camera.checked,'webcam-checked'));
-  const source=el('a',t[2],'webcam-credit');source.href=camera.url;source.rel='noopener noreferrer';card.append(source);
   let frame=null;
-  const player={card,start(){if(frame)return;frame=el('iframe');frame.title=camera.name;frame.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';frame.src='https://www.youtube-nocookie.com/embed/'+camera.youtube+'?autoplay=1&mute=1&playsinline=1&rel=0';visual.replaceChildren(frame);},stop(){if(!frame)return;visual.replaceChildren();frame=null;}};
+  const player={card,start(){if(frame)return;frame=el('iframe');frame.title=camera.name;frame.allow='autoplay; encrypted-media';frame.referrerPolicy='strict-origin-when-cross-origin';frame.src='https://www.youtube-nocookie.com/embed/'+camera.youtube+'?autoplay=1&mute=1&playsinline=1&rel=0&controls=0&disablekb=1&fs=0&iv_load_policy=3';visual.replaceChildren(frame);},stop(){if(!frame)return;visual.replaceChildren();frame=null;}};
   players.push(player);grid.append(card);
  }
  world.append(grid);if(failed){world.append(el('p',t[4]));const retry=el('button',t[5]);retry.onclick=load;world.append(retry);}section.append(world);
