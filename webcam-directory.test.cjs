@@ -1,94 +1,25 @@
-const {test}=require('node:test');const assert=require('node:assert/strict');const {cameras,recent,select}=require('./webcam-directory.js');
-test('checked cameras expire instead of claiming permanent availability',()=>{const day=Date.parse('2026-10-19T12:00:00Z');assert.equal(select('all',true,day).length,cameras.filter(c=>c.display!=='hidden-no-inline-preview').length);assert.equal(select('all',true,day+8*86400000).length,0);assert.equal(select('all',false,day+8*86400000).length,cameras.filter(c=>c.display!=='hidden-no-inline-preview').length);assert.equal(recent(cameras[0],Date.parse('2026-10-18')),false);});
-test('road cameras have a checked image, source timestamp and explicit technical verification',()=>{const road=cameras.filter(c=>c.kind==='road');assert.equal(road.length,864);assert.equal(new Set(road.map(c=>c.cameraId)).size,road.length);for(const c of road){assert.equal(c.type,'snapshot');assert.equal(c.verification,'image-response');assert.match(c.snapshot,/^https:\/\/kamera\.atlas\.vegvesen\.no\/api\/images\//);assert.ok(Date.parse(c.sourceUpdated));assert.match(c.quality,/\d+ × \d+/);}assert.ok(cameras.filter(c=>c.verification==='visual').length>=14);});
-test('type filtering and evidence do not invent video for still images',()=>{const day=Date.parse('2026-10-19T12:00:00Z');assert.ok(select('snapshot',true,day).length>=864);assert.ok(select('video',true,day).every(c=>c.type==='video'));assert.equal(cameras.find(c=>c.id==='loen').quality,null);});
-
-test('world cameras stay separate from Norwegian inventory and retain actual visual evidence',()=>{
- const {worldCameras}=require('./webcam-directory.js');
- assert.equal(worldCameras.length,4);
- for(const camera of worldCameras){assert.equal(camera.kind,'world');assert.equal(camera.verification,'visual');assert.ok(camera.verificationNote);assert.equal(new URL(camera.url).protocol,'https:');assert.ok(!cameras.some(c=>c.id===camera.id));}
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const {recent,playable,select}=require('./webcam-directory.js');
+const data=require('./world-webcams-data.json');
+test('only reviewed embeddable world cameras are selected and checks expire',()=>{
+ const now=Date.parse('2026-10-19T12:00:00Z');assert.equal(select(data.cameras,now).length,2);assert.equal(select(data.cameras,now+8*86400000).length,0);
+ assert.equal(playable({verification:'embedded-visual',youtube:'bad'}),false);assert.equal(playable({...data.cameras[0],enabled:false}),false);
+ assert.equal(recent(data.cameras[0],Date.parse('2026-10-18')),false);
+ assert.ok(select(data.cameras,now).every(c=>!c.operator.includes('EarthCam')));
 });
-
-// Run the complete browser module and its actual play/stop/filter handlers.
-async function browserHarness(){
- const vm=require('node:vm'),fs=require('node:fs');
- class Element{
-  constructor(tag){this.tagName=tag;this.children=[];this.attributes={};this.dataset={};this.hidden=false;}
-  append(...nodes){for(const node of nodes){node.parentElement=this;this.children.push(node);}}
-  prepend(...nodes){for(const node of nodes)node.parentElement=this;this.children.unshift(...nodes);}
-  replaceChildren(...nodes){this.children.forEach(n=>n.parentElement=null);this.children=[];this.append(...nodes);}
-  setAttribute(name,value){this.attributes[name]=value;}
-  after(node){section=node;}
-  closest(selector){if(selector==='[hidden]'){let n=this;while(n){if(n.hidden)return n;n=n.parentElement;}}return null;}
- }
- let section;const events={},documentEvents={},nav=new Element('nav'),anchor=new Element('section');
- const document={hidden:false,documentElement:{lang:'en'},createElement:tag=>new Element(tag),createTextNode:text=>Object.assign(new Element('#text'),{textContent:text}),getElementById:()=>anchor,querySelector:()=>nav,addEventListener:(name,fn)=>documentEvents[name]=fn};
- const window={fetch:async()=>({ok:true,json:async()=>require('./webcam-directory-data.json')}),addEventListener:(name,fn)=>events[name]=fn,dispatchEvent:event=>events[event.type]?.(event)};
- vm.runInNewContext(fs.readFileSync(require.resolve('./webcam-directory.js'),'utf8'),{document,window,setInterval:()=>1,clearInterval:()=>{},Event:class{constructor(type){this.type=type;}},Date:class extends Date{static now(){return Date.parse('2026-10-19T12:00:00Z')}}});
- await window.FjordWebcams.ready;
- const find=(predicate,node=section)=>predicate(node)?node:node.children.map(child=>find(predicate,child)).find(Boolean);
- return {document,events,documentEvents,get section(){return section;},find};
+async function harness(){
+ const vm=require('node:vm'),fs=require('node:fs');let section;const events={},docEvents={};
+ class Element{constructor(tag){this.tagName=tag;this.children=[];this.dataset={};this.hidden=false;}append(...nodes){for(const node of nodes){node.parentElement=this;this.children.push(node);}}replaceChildren(...nodes){this.children=[];this.append(...nodes);}after(node){section=node;}closest(){return null;}getBoundingClientRect(){return {top:100,bottom:300};}}
+ const anchor=new Element('section'),nav=new Element('nav');const document={hidden:false,documentElement:{lang:'en'},createElement:t=>new Element(t),getElementById:()=>anchor,querySelector:()=>nav,addEventListener:(name,fn)=>docEvents[name]=fn};
+ const window={addEventListener:(name,fn)=>events[name]=fn,dispatchEvent:e=>events[e.type]?.()};
+ vm.runInNewContext(fs.readFileSync(require.resolve('./webcam-directory.js'),'utf8'),{window,document,innerHeight:800,fetch:async()=>({ok:true,json:async()=>data}),Date:class extends Date{static now(){return Date.parse('2026-10-19T12:00:00Z');}},Event:class{constructor(type){this.type=type;}}});await window.FjordWebcams.ready;
+ const all=(tag,node=section)=>[...(node.tagName===tag?[node]:[]),...node.children.flatMap(n=>all(tag,n))];return {section,document,docEvents,events,all};
 }
-test('leaving webcam tab removes the real player, preserves filters and restores click-to-play',async()=>{
- const h=await browserHarness();
- h.find(n=>n.className==='webcam-filters').children.find(n=>n.textContent==='Video').onclick();
- const play=h.find(n=>n.tagName==='button'&&n.textContent==='Watch camera');
- assert.equal(h.find(n=>n.tagName==='iframe'),undefined,'no third-party player before a click');
- play.onclick();const frame=h.find(n=>n.tagName==='iframe');assert.match(frame.src,/youtube-nocookie/);
- h.section.hidden=true;h.events['fjord:sections-changed']();
- assert.equal(h.find(n=>n.tagName==='iframe'),undefined);assert.equal(frame.parentElement,null);
- assert.equal(h.find(n=>n.textContent==='Video'&&n.attributes['aria-pressed']==='true').textContent,'Video');
- assert.equal(play.textContent,'Watch camera');assert.ok(h.find(n=>n.tagName==='img'&&n.alt==='Geiranger · Hotel Union')); // Location photo remains a separate illustration.
- h.section.hidden=false;h.events['fjord:sections-changed']();assert.equal(h.find(n=>n.tagName==='iframe'),undefined,'returning must not restart autoplay');
- play.onclick();assert.ok(h.find(n=>n.tagName==='iframe'),'explicit click starts the camera again');
+test('world-only UI has actual players and no search, filters, or tourist selector',async()=>{
+ const h=await harness();assert.equal(h.all('article').length,2);assert.equal(h.all('iframe').length,2);assert.equal(h.all('input').length,0);assert.equal(h.all('select').length,0);assert.equal(h.all('button').length,0);
+ for(const frame of h.all('iframe')){assert.match(frame.src,/youtube-nocookie\.com\/embed\/[\w-]{11}\?autoplay=1&mute=1/);assert.match(frame.allow,/fullscreen/);}
 });
-test('backgrounding the browser stops a camera without changing its selected section',async()=>{
- const h=await browserHarness();h.find(n=>n.tagName==='button'&&n.textContent==='Watch camera').onclick();
- h.document.hidden=true;h.documentEvents.visibilitychange();assert.equal(h.find(n=>n.tagName==='iframe'),undefined);
- h.document.hidden=false;h.documentEvents.visibilitychange();assert.equal(h.find(n=>n.tagName==='iframe'),undefined);
+test('hidden tab or section unloads video, returning restores only visible players',async()=>{
+ const h=await harness();h.document.hidden=true;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,0);h.document.hidden=false;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,2);
+ h.section.hidden=true;h.events['fjord:sections-changed']();assert.equal(h.all('iframe').length,0);h.section.hidden=false;h.events['fjord:sections-changed']();assert.equal(h.all('iframe').length,2);
 });
-
-test('large registry starts with 24 cards and lets visitors search without loading remote camera images',async()=>{
- const h=await browserHarness();
- const grid=()=>h.find(n=>n.className==='webcam-grid');
- assert.equal(grid().children.length,24);
- assert.equal(h.find(n=>n.tagName==='iframe'),undefined);
- const more=h.find(n=>n.className==='webcam-more');more.onclick();
- assert.equal(grid().children.length,48);
- const field=h.find(n=>n.tagName==='input'&&n.type==='search');field.value='Gimsøystraumen';
- h.find(n=>n.tagName==='button'&&n.textContent==='Search').onclick();
- assert.ok(grid().children.length>0&&grid().children.length<24);
- assert.ok(grid().children.every(card=>card.children.some(n=>n.tagName==='h3'&&n.textContent.includes('Gimsøystraumen'))));
-});
-
-test('world collection remains visible after filtering the Norwegian cameras',async()=>{
- const h=await browserHarness();
- const world=()=>h.find(n=>n.className==='webcam-world');
- assert.equal(h.find(n=>n.className==='webcam-grid',world()).children.length,4);
- const search=h.find(n=>n.tagName==='input'&&n.type==='search');search.value='nonexistent place';h.find(n=>n.tagName==='button'&&n.textContent==='Search').onclick();
- assert.equal(h.find(n=>n.className==='webcam-grid',world()).children.length,4);
- assert.ok(h.find(n=>n.className==='webcam-world-jump'));
-});
-
-test('a failed snapshot reports the error and can be retried without leaving a broken image',async()=>{
- const h=await browserHarness();
- const play=h.find(n=>n.tagName==='button'&&n.textContent==='Load camera image');
- const card=play.parentElement;
- play.onclick();
- const status=h.find(n=>n.className==='webcam-media-status',card);
- assert.equal(status.hidden,false);assert.equal(status.textContent,'Loading camera…');
- const image=h.find(n=>n.tagName==='img',card);image.onerror();
- assert.match(status.textContent,/Could not load/);assert.equal(play.textContent,'Try again');
- assert.equal(h.find(n=>n.tagName==='img',card),undefined);
- play.onclick();const retryImage=h.find(n=>n.tagName==='img',card);retryImage.onload();
- assert.equal(status.hidden,true);
-});
-
-test('external cameras have a clickable preview and a visible primary link in the current tab',async()=>{
- const h=await browserHarness(),preview=h.find(n=>n.className==='webcam-open-view');
- assert.equal(preview.href,'https://loenskylift.panomax.com/');
- const launch=h.find(n=>n.className==='webcam-launch');
- assert.equal(launch.href,preview.href);assert.equal(launch.target,undefined);
-});
-
-test('empty external tourist cards stay saved but are not publicly selected',()=>{const hidden=cameras.filter(c=>c.display==='hidden-no-inline-preview');assert.equal(hidden.length,10);const selected=select('all',false);for(const camera of hidden)assert.ok(!selected.includes(camera));assert.ok(selected.some(c=>c.id==='geiranger-cruiseport'));});

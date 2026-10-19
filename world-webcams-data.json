@@ -1,0 +1,25 @@
+{
+  "checked": "2026-10-19",
+  "cameras": [
+    {
+      "id": "tokyo-shibuya-ann",
+      "name": "Tokyo · Shibuya",
+      "operator": "ANN / TV Asahi",
+      "youtube": "8H3nRCFVR6Y",
+      "url": "https://www.youtube.com/watch?v=8H3nRCFVR6Y",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official verified ANNnewsCH channel; current live stream, readyState 4. Embedded player visually checked before publication."
+    },
+    {
+      "id": "venice-caangeli-4k",
+      "name": "Venezia · Canal Grande",
+      "operator": "Ca’ Angeli / I Love You Venice",
+      "youtube": "zKGzYuT5tg0",
+      "url": "https://www.caangeli.it/es/webcams/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official operator page embeds this YouTube player; moving canal image and 2026-10-19 09:47:50 camera timestamp observed at 09:48 local."
+    }
+  ]
+}
