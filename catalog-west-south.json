@@ -122,9 +122,8 @@
     "region": "Rogaland",
     "category": "sauna",
     "address": "Dokkgata 4, 4015 Stavanger · Svankevigå",
-    "website": "https://www.dampsauna.no/vare-badstuer/",
-    "source": "https://booking.dampsauna.no/saunas/SAU1790860543",
-    "bookingUrl": "https://booking.dampsauna.no/saunas/SAU1790860543",
+    "website": "https://www.dampsauna.no/",
+    "source": "https://www.dampsauna.no/",
     "description": {
       "nb": "En trebastu ved vannet i Svankevigå. Bildet viser den navngitte Venla-badstuen; ankomstpunktet er adressen Dokkgata 4.",
       "en": "A wooden waterside sauna in Svankevigå. The photograph shows the named Venla sauna; the arrival point is the Dokkgata 4 address.",
@@ -133,11 +132,11 @@
       "da": "En træsauna ved vandet i Svankevigå. Billedet viser Venla; ankomstpunktet er adressen Dokkgata 4."
     },
     "hoursNote": {
-      "nb": "Venlas morgenselvfyring annonseres 06:00–09:00. Dette er ikke en generell åpningstid: sjekk valgt økt, instruksjoner og tilgjengelighet før bestilling.",
-      "en": "Venla advertises a self-heated morning session 06:00–09:00. This is not a general opening schedule: check your selected session, instructions and availability before booking.",
-      "uk": "Для Venla рекламують ранковий сеанс із самостійним розпалюванням 06:00–09:00. Це не загальний графік: перед бронюванням перевірте потрібний сеанс, інструкції та наявність місць.",
-      "sv": "Venla erbjuder morgonpass med egen eldning 06:00–09:00. Detta är inte allmänna öppettider: kontrollera valt pass, instruktioner och tillgänglighet.",
-      "da": "Venla tilbyder morgenpas med egen optænding 06:00–09:00. Dette er ikke generelle åbningstider: kontrollér valgt pas, instruktioner og ledige pladser."
+      "en": "The old Venla booking link no longer identifies a specific sauna. Confirm the current location, sessions, access and price with Damp before booking; the earlier morning schedule is not confirmed.",
+      "nb": "Den gamle Venla-lenken viser ikke lenger en bestemt badstue. Avklar sted, økter, adgang og pris med Damp før bestilling; tidligere morgentider er ikke bekreftet.",
+      "uk": "Старе посилання Venla більше не вказує конкретну сауну. Уточніть місце, сеанси, доступ і ціну в Damp; попередній ранковий графік не підтверджено.",
+      "sv": "Den gamla Venla-länken visar inte längre en viss bastu. Bekräfta plats, pass, tillträde och pris med Damp före bokning; tidigare morgontider är inte bekräftade.",
+      "da": "Det gamle Venla-link viser ikke længere en bestemt sauna. Afklar sted, tider, adgang og pris med Damp før booking; tidligere morgentider er ikke bekræftet."
     },
     "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Dokkgata%204%20Stavanger&treffPerSide=3",
     "latitude": 58.97155073966166,
@@ -145,23 +144,25 @@
     "checked": "2026-10-17",
     "coordinateNote": "Published street-address arrival point; floating sauna exact berth may differ.",
     "image": "./images/catalog/south-venla.webp",
-    "imageSource": "https://www.dampsauna.no/vare-badstuer/",
+    "imageSource": "https://www.dampsauna.no/",
     "photoAlt": "Damp Sauna · Venla — facade photograph",
     "gallery": [
       {
         "src": "./images/catalog/south-venla.webp",
         "kind": "facade",
         "credit": "Damp Sauna · official booking page",
-        "source": "https://www.dampsauna.no/vare-badstuer/",
+        "source": "https://www.dampsauna.no/",
         "original": "https://booking.dampsauna.no/storage/images/1790860185-4d10e252-577d-49c2-9cb8-46c294994eef.jpeg",
-        "license": "Operator-published photograph; no open licence claimed"
+        "license": "Operator-published photograph; no open licence claimed",
+        "historicalSource": "https://www.dampsauna.no/vare-badstuer/",
+        "rightsNote": "Existing operator image retained from the previously reviewed Venla page; the current homepage is not proof of this photograph or venue availability."
       }
     ],
     "openingHours": {
       "timeZone": "Europe/Oslo",
       "verified": false,
-      "source": "https://booking.dampsauna.no/saunas/SAU1790860543",
-      "checked": "2026-10-17"
+      "source": "https://www.dampsauna.no/",
+      "checked": "2026-10-19"
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.97155073966166%2C5.750923362896597",
     "photoCaption": {
@@ -170,7 +171,8 @@
       "uk": "Справжнє фото · Damp Sauna · Venla",
       "sv": "Äkta foto · Damp Sauna · Venla",
       "da": "Ægte foto · Damp Sauna · Venla"
-    }
+    },
+    "linkChecked": "2026-10-19"
   },
   {
     "id": "drommeplassen-kristiansand",

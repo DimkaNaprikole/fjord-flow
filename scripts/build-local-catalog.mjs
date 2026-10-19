@@ -81,7 +81,7 @@ if (!await exists(path.join(root, 'catalog-rest.json'))) {
   process.exit(0);
 }
 const additions = (await Promise.all(['catalog-new-venues.json', 'catalog-central.json', 'catalog-north.json', 'catalog-west-south.json', 'catalog-sorlandet.json', 'catalog-kristiansand.json', 'catalog-oslofjord.json', 'catalog-east-coast-places.json', 'catalog-east-coast-stays.json', 'catalog-east-coast-cafes.json', 'catalog-telemark-places.json', 'catalog-telemark-stays.json', 'catalog-telemark-cafes.json', 'catalog-vestfold-places.json', 'catalog-vestfold-stays.json', 'catalog-vestfold-cafes.json'].map(read))).flat();
-additions.push(...await read('catalog-innerfjord-places.json'), ...await read('catalog-innerfjord-venues.json'), ...await read('catalog-national-expansion.json'));
+additions.push(...await read('catalog-innerfjord-places.json'), ...await read('catalog-innerfjord-venues.json'), ...await read('catalog-national-expansion.json'), ...await read('catalog-lister-coast.json'));
 const countyOverrides = await exists(path.join(root, 'catalog-counties.json')) ? await read('catalog-counties.json') : {};
 const coordinateOverrides = await read('catalog-coordinates.json');
 const visitNotes = await read('catalog-visit-notes.json');
@@ -90,7 +90,7 @@ const cafeMap = new Map(oldCafes.map(r => [r.id, r]));
 for (const entry of additions.filter(r => r.category === 'cafe')) cafeMap.set(entry.id, {...cafeMap.get(entry.id), ...entry});
 const cafes = await Promise.all([...cafeMap.values()].map(localisePhotos));
 const newNonCafes = await Promise.all(additions.filter(r => r.category !== 'cafe').map(localisePhotos));
-const experiences = (await read('route-experiences.json')).filter(r => r.image && !r.placeholder);
+const experiences = (await read('route-experiences.json')).filter(r => r.image && !r.placeholder && r.accessMode !== 'rail-only');
 const rest = await Promise.all((await read('catalog-rest.json')).map(localisePhotos));
 const entries = [
   ...cafes.map(r => normalized(r, 'cafe')),

@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "total": 412,
+  "total": 415,
   "datasets": {
     "bua": 310,
-    "catalogue": 96,
+    "catalogue": 99,
     "shopping": 6
   },
-  "photos": 165,
+  "photos": 168,
   "shops": 48,
   "review_queue": {
     "hours_not_verified": 11,
     "missing_coordinates": 2,
-    "single_photo_gallery": 62
+    "single_photo_gallery": 65
   },
   "review_items": [
     {
@@ -33,7 +33,7 @@
       "name": "Damp Sauna · Venla",
       "reason": "hours_not_verified",
       "checked": "2026-10-17",
-      "source": "https://booking.dampsauna.no/saunas/SAU1790860543"
+      "source": "https://www.dampsauna.no/"
     },
     {
       "key": "catalogue:flyt-fjordsauna-jevnaker",
@@ -159,7 +159,7 @@
       "name": "Damp Sauna · Venla",
       "reason": "single_photo_gallery",
       "checked": "2026-10-17",
-      "source": "https://booking.dampsauna.no/saunas/SAU1790860543"
+      "source": "https://www.dampsauna.no/"
     },
     {
       "key": "catalogue:dromedar-moxness-trondheim",
@@ -195,6 +195,13 @@
       "reason": "single_photo_gallery",
       "checked": "2026-10-16",
       "source": "https://www.dyreparken.no/"
+    },
+    {
+      "key": "catalogue:flekkefjord-hollenderbyen",
+      "name": "Flekkefjord · Hollenderbyen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-19",
+      "source": "https://www.visitsorlandet.com/destinasjoner/flekkefjord/"
     },
     {
       "key": "catalogue:teskje-drobak",
@@ -323,6 +330,13 @@
       "source": "https://www.visitsorlandet.com/destinasjoner/lillesand/"
     },
     {
+      "key": "catalogue:lista-fyr-coast",
+      "name": "Lista fyr",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-19",
+      "source": "https://www.listafyr.no/"
+    },
+    {
       "key": "catalogue:loen-skylift",
       "name": "Loen Skylift",
       "reason": "single_photo_gallery",
@@ -335,6 +349,13 @@
       "reason": "single_photo_gallery",
       "checked": "2026-10-18",
       "source": "https://visitvestfold.com/no/sted/nevlunghavn"
+    },
+    {
+      "key": "catalogue:nordberg-fort-lista",
+      "name": "Nordberg fort",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-19",
+      "source": "https://www.vestagdermuseet.no/lista/"
     },
     {
       "key": "catalogue:nordre-jarlsberg-sauna",
@@ -553,7 +574,7 @@
   "private_data_included": false,
   "source_hashes": {
     "bua-locations.json": "1f4d3ab6c3332497724a1bb558f0512bfab40e563ec3635f877b53c4c3481225",
-    "norway-catalog.json": "117d5d68b4a8ed56a9db76be73eedd5b843adec46f5da4b3ec106d4086500024",
+    "norway-catalog.json": "3ee2bd9847420fb4fcfc3b914af263abe0c6bb9cddeb551f7d43fc6046322ef3",
     "shopping-centres.json": "88b7ddaec4bc026e9650f0cd42e86ebc5377e8ca1d7d091a9d9e973270ddd103"
   }
 }

@@ -288,7 +288,7 @@
   }
   async function load() {
     loading = true; failed = false; render();
-    try {const response = await fetch('./norway-catalog.json?v=10'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); baseRecords = data; refreshCatalogue();}
+    try {const response = await fetch('./norway-catalog.json?v=11'); if (!response.ok) throw Error(); const data = await response.json(); if (!Array.isArray(data)) throw Error(); baseRecords = data; refreshCatalogue();}
     catch {failed = true;} finally {loading = false; rebuild();}
   }
   window.FjordCatalogueCards=Object.freeze({fold:foldCatalogue});

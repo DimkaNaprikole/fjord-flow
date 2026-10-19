@@ -1,7 +1,7 @@
 {
-  "checked": "2026-10-18",
+  "checked": "2026-10-19",
   "source": "https://www.kartverket.no/en/on-land/fakta-om-norge/norske-fylke-og-kommunar",
-  "total": 96,
+  "total": 99,
   "counties": [
     {
       "id": "03",
@@ -195,12 +195,12 @@
     {
       "id": "42",
       "name": "Agder",
-      "total": 16,
+      "total": 19,
       "categories": {
         "cafe": 5,
         "cabin": 3,
         "sauna": 0,
-        "rest": 8
+        "rest": 11
       },
       "ids": [
         "drommeplassen-kristiansand",
@@ -218,6 +218,9 @@
         "skottevik-coastal-cabins",
         "moysand-coastal-cabins",
         "risor-resort-seaside-cabin",
+        "lista-fyr-coast",
+        "nordberg-fort-lista",
+        "flekkefjord-hollenderbyen",
         "dyreparken-kristiansand"
       ]
     },

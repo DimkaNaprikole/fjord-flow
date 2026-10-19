@@ -42,7 +42,7 @@ let state,catalogue,shops,experiences,apps;
 const extraServices=await fetch('./official-services.json?v=4').then(r=>r.json());
 const serviceArtwork=await fetch('./service-artwork.json?v=4').then(r=>r.json());
 const [stateResult,catResult,shopResult,expResult,appResult]=await Promise.allSettled([
- fetch('./demo-data/state.json?v=5').then(r=>r.json()),fetch('./norway-catalog.json').then(r=>r.json()),
+ fetch('./demo-data/state.json?v=5').then(r=>r.json()),fetch('./norway-catalog.json?v=20261019lister').then(r=>r.json()),
  fetch('./shopping-centres.json').then(r=>r.json()),fetch('./route-experiences.json?v=20261019-photo').then(r=>r.json()),fetch('./travel-apps.json').then(r=>r.json())
 ]);
 if([stateResult,catResult,shopResult,expResult,appResult].some(r=>r.status!=='fulfilled'))throw Error('Reference layout source unavailable');

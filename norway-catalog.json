@@ -3021,7 +3021,7 @@
     "town": "Granavollen",
     "address": "Granavollen 3–5, 2750 Gran, Norway",
     "website": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
-    "bookingUrl": "https://book.sanner-hotell.no/en",
+    "bookingUrl": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
     "source": "https://www.sanner-hotell.no/en/stay-overnight/cabins",
     "checked": "2026-10-17",
     "latitude": 60.36572106156721,
@@ -3554,9 +3554,8 @@
     "region": "Rogaland",
     "category": "sauna",
     "address": "Dokkgata 4, 4015 Stavanger · Svankevigå",
-    "website": "https://www.dampsauna.no/vare-badstuer/",
-    "source": "https://booking.dampsauna.no/saunas/SAU1790860543",
-    "bookingUrl": "https://booking.dampsauna.no/saunas/SAU1790860543",
+    "website": "https://www.dampsauna.no/",
+    "source": "https://www.dampsauna.no/",
     "description": {
       "nb": "En trebastu ved vannet i Svankevigå. Bildet viser den navngitte Venla-badstuen; ankomstpunktet er adressen Dokkgata 4.",
       "en": "A wooden waterside sauna in Svankevigå. The photograph shows the named Venla sauna; the arrival point is the Dokkgata 4 address.",
@@ -3565,11 +3564,11 @@
       "da": "En træsauna ved vandet i Svankevigå. Billedet viser Venla; ankomstpunktet er adressen Dokkgata 4."
     },
     "hoursNote": {
-      "nb": "Venlas morgenselvfyring annonseres 06:00–09:00. Dette er ikke en generell åpningstid: sjekk valgt økt, instruksjoner og tilgjengelighet før bestilling.",
-      "en": "Venla advertises a self-heated morning session 06:00–09:00. This is not a general opening schedule: check your selected session, instructions and availability before booking.",
-      "uk": "Для Venla рекламують ранковий сеанс із самостійним розпалюванням 06:00–09:00. Це не загальний графік: перед бронюванням перевірте потрібний сеанс, інструкції та наявність місць.",
-      "sv": "Venla erbjuder morgonpass med egen eldning 06:00–09:00. Detta är inte allmänna öppettider: kontrollera valt pass, instruktioner och tillgänglighet.",
-      "da": "Venla tilbyder morgenpas med egen optænding 06:00–09:00. Dette er ikke generelle åbningstider: kontrollér valgt pas, instruktioner og ledige pladser."
+      "en": "The old Venla booking link no longer identifies a specific sauna. Confirm the current location, sessions, access and price with Damp before booking; the earlier morning schedule is not confirmed.",
+      "nb": "Den gamle Venla-lenken viser ikke lenger en bestemt badstue. Avklar sted, økter, adgang og pris med Damp før bestilling; tidligere morgentider er ikke bekreftet.",
+      "uk": "Старе посилання Venla більше не вказує конкретну сауну. Уточніть місце, сеанси, доступ і ціну в Damp; попередній ранковий графік не підтверджено.",
+      "sv": "Den gamla Venla-länken visar inte längre en viss bastu. Bekräfta plats, pass, tillträde och pris med Damp före bokning; tidigare morgontider är inte bekräftade.",
+      "da": "Det gamle Venla-link viser ikke længere en bestemt sauna. Afklar sted, tider, adgang og pris med Damp før booking; tidligere morgentider er ikke bekræftet."
     },
     "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Dokkgata%204%20Stavanger&treffPerSide=3",
     "latitude": 58.97155073966166,
@@ -3577,23 +3576,25 @@
     "checked": "2026-10-17",
     "coordinateNote": "Published street-address arrival point; floating sauna exact berth may differ.",
     "image": "./images/catalog/south-venla.webp",
-    "imageSource": "https://www.dampsauna.no/vare-badstuer/",
+    "imageSource": "https://www.dampsauna.no/",
     "photoAlt": "Damp Sauna · Venla — facade photograph",
     "gallery": [
       {
         "src": "./images/catalog/south-venla.webp",
         "kind": "facade",
         "credit": "Damp Sauna · official booking page",
-        "source": "https://www.dampsauna.no/vare-badstuer/",
+        "source": "https://www.dampsauna.no/",
         "original": "https://booking.dampsauna.no/storage/images/1790860185-4d10e252-577d-49c2-9cb8-46c294994eef.jpeg",
-        "license": "Operator-published photograph; no open licence claimed"
+        "license": "Operator-published photograph; no open licence claimed",
+        "historicalSource": "https://www.dampsauna.no/vare-badstuer/",
+        "rightsNote": "Existing operator image retained from the previously reviewed Venla page; the current homepage is not proof of this photograph or venue availability."
       }
     ],
     "openingHours": {
       "timeZone": "Europe/Oslo",
       "verified": false,
-      "source": "https://booking.dampsauna.no/saunas/SAU1790860543",
-      "checked": "2026-10-17"
+      "source": "https://www.dampsauna.no/",
+      "checked": "2026-10-19"
     },
     "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.97155073966166%2C5.750923362896597",
     "photoCaption": {
@@ -3603,6 +3604,7 @@
       "sv": "Äkta foto · Damp Sauna · Venla",
       "da": "Ægte foto · Damp Sauna · Venla"
     },
+    "linkChecked": "2026-10-19",
     "county": "Rogaland",
     "countyId": "11",
     "municipality": "Stavanger",
@@ -6153,6 +6155,173 @@
     "municipalityId": "5025",
     "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=62.57427&ost=11.38339&koordsys=4258",
     "coordinateKey": "62.57427,11.38339"
+  },
+  {
+    "id": "lista-fyr-coast",
+    "name": "Lista fyr",
+    "town": "Borhaug",
+    "latitude": 58.1091224260895,
+    "longitude": 6.568458549228652,
+    "address": "Fyrveien 70, 4563 Borhaug, Norway",
+    "coordinatePrecision": "address",
+    "coordinatesSource": "https://ws.geonorge.no/adresser/v1/sok?sok=Fyrveien%2070%20Borhaug&treffPerSide=3",
+    "routeQuery": "Lista fyr parkeringsplass, Borhaug, Norway",
+    "website": "https://www.listafyr.no/",
+    "description": {
+      "en": "Lighthouse, coastal views and birdlife. Use signed parking and explore on foot. The website carries an undated summer maintenance notice; confirm tower access.",
+      "nb": "Fyr, havutsikt og fugleliv. Bruk skiltet parkering og gå videre til fots. Nettsiden har et udatert sommervarsel om vedlikehold; avklar adgang til tårnet.",
+      "uk": "Маяк, морські краєвиди й птахи. Паркуйтеся за знаками, далі пішки. На сайті є літнє повідомлення про ремонт без року; уточніть доступ до вежі.",
+      "sv": "Fyr, havsutsikt och fågelliv. Följ parkeringsskyltarna och fortsätt till fots. Webbplatsen har en odaterad sommarnotis om underhåll; kontrollera tillträde till tornet.",
+      "da": "Fyr, havudsigt og fugleliv. Brug skiltet parkering og gå videre. Hjemmesiden har en udateret sommerbesked om vedligehold; afklar adgang til tårnet."
+    },
+    "hoursNote": {
+      "en": "Published visitor calendar: September–1 November daily 12–16; 2 November–April weekends 12–16, with exceptions. Check current services and tower access; not a live open status.",
+      "nb": "Publisert besøkskalender: september–1. november daglig 12–16; 2. november–april helger 12–16, med unntak. Sjekk tilbud og tårnadgang; ikke sanntidsstatus.",
+      "uk": "За календарем: вересень–1 листопада щодня 12–16; 2 листопада–квітень вихідними 12–16, є винятки. Уточнюйте послуги й доступ до вежі; це не поточний статус.",
+      "sv": "Publicerad kalender: september–1 november dagligen 12–16; 2 november–april helger 12–16, med undantag. Kontrollera service och tornets tillträde; ingen aktuell öppetstatus.",
+      "da": "Offentlig kalender: september–1. november dagligt 12–16; 2. november–april weekender 12–16, med undtagelser. Tjek service og tårnadgang; ikke aktuel åbenstatus."
+    },
+    "category": "rest",
+    "region": "Sørlandet · Lister",
+    "route": "listercoast",
+    "county": "Agder",
+    "source": "https://www.listafyr.no/",
+    "checked": "2026-10-19",
+    "image": "./images/catalog/lister-lista-fyr.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:20050807-Lista_fyr.jpg",
+    "photoAlt": "Lista lighthouse, photographed in August 2005",
+    "photoCaption": "Rolfsteinar · CC BY 2.5 · resized / WebP",
+    "coordinateNote": "Representative address or area point, not a verified parking entrance.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Lista%20fyr%20parkeringsplass%2C%20Borhaug%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./images/catalog/lister-lista-fyr.webp",
+        "kind": "view",
+        "credit": "Rolfsteinar",
+        "source": "https://commons.wikimedia.org/wiki/File:20050807-Lista_fyr.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/3/38/20050807-Lista_fyr.jpg",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ],
+    "countyId": "42",
+    "municipality": "Farsund",
+    "municipalityId": "4206",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.1091224260895&ost=6.568458549228652&koordsys=4258",
+    "coordinateKey": "58.1091224260895,6.568458549228652"
+  },
+  {
+    "id": "nordberg-fort-lista",
+    "name": "Nordberg fort",
+    "town": "Vanse",
+    "latitude": 58.13035,
+    "longitude": 6.62152,
+    "address": "Nordberg fort, 4560 Vanse, Norway",
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Nordberg%20fort&treffPerSide=5",
+    "routeQuery": "Nordberg fort parkering, Vanse, Norway",
+    "website": "https://www.vestagdermuseet.no/lista/",
+    "description": {
+      "en": "Historic coastal fort and views over Lista. Park beside the main building and continue on foot; some installations have steep steps and uneven ground. The photograph shows the landscape viewed from the fort.",
+      "nb": "Historisk kystfort og utsikt over Lista. Parker ved hovedbygget og fortsett til fots; noen anlegg har bratte trapper og ujevnt underlag. Bildet viser landskapet sett fra fortet.",
+      "uk": "Історичний береговий форт і краєвиди Lista. Паркуйтеся біля головної будівлі, далі пішки; є круті сходи й нерівні ділянки. На фото — краєвид із форту.",
+      "sv": "Historiskt kustfort med utsikt över Lista. Parkera vid huvudbyggnaden och fortsätt till fots; vissa anläggningar har branta trappor och ojämn mark. Fotot visar utsikten från fortet.",
+      "da": "Historisk kystfort med udsigt over Lista. Parkér ved hovedbygningen og fortsæt til fods; nogle anlæg har stejle trapper og ujævnt underlag. Fotoet viser udsigten fra fortet."
+    },
+    "hoursNote": {
+      "en": "Museum currently lists Sundays 12–16 year-round; groups by arrangement. Check tours, exhibitions and café before travel. Parking/access details: operator accessibility page.",
+      "nb": "Museet oppgir søndager 12–16 hele året; grupper etter avtale. Sjekk omvisninger, utstillinger og kafé før reisen. Parkering/adkomst: museets tilgjengelighetsside.",
+      "uk": "Музей вказує неділі 12–16 цілий рік; групи — за домовленістю. Уточніть екскурсії, виставки й кафе. Доступ і парковка — на сторінці доступності музею.",
+      "sv": "Museet anger söndagar 12–16 året runt; grupper efter överenskommelse. Kontrollera visningar, utställningar och kafé. Parkering och tillträde: museets tillgänglighetssida.",
+      "da": "Museet oplyser søndage 12–16 hele året; grupper efter aftale. Tjek rundvisninger, udstillinger og café. Parkering/adgang: museets tilgængelighedsside."
+    },
+    "accessSource": "https://www.vestagdermuseet.no/lista/tilgjengelighet/",
+    "category": "rest",
+    "region": "Sørlandet · Lister",
+    "route": "listercoast",
+    "county": "Agder",
+    "source": "https://www.vestagdermuseet.no/lista/",
+    "checked": "2026-10-19",
+    "image": "./images/catalog/lister-nordberg-view.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Nordberg_fort_J%C3%B6lle_hidra_IMG_0925.JPG",
+    "photoAlt": "Landscape toward Hidra from the Nordberg fort area, March 2013",
+    "photoCaption": "Bjoertvedt · CC BY-SA 3.0 · resized / WebP",
+    "coordinateNote": "Representative address or area point, not a verified parking entrance.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Nordberg%20fort%20parkering%2C%20Vanse%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./images/catalog/lister-nordberg-view.webp",
+        "kind": "view",
+        "credit": "Bjoertvedt",
+        "source": "https://commons.wikimedia.org/wiki/File:Nordberg_fort_J%C3%B6lle_hidra_IMG_0925.JPG",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/5/57/Nordberg_fort_J%C3%B6lle_hidra_IMG_0925.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ],
+    "countyId": "42",
+    "municipality": "Farsund",
+    "municipalityId": "4206",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.13035&ost=6.62152&koordsys=4258",
+    "coordinateKey": "58.13035,6.62152"
+  },
+  {
+    "id": "flekkefjord-hollenderbyen",
+    "name": "Flekkefjord · Hollenderbyen",
+    "town": "Flekkefjord",
+    "latitude": 58.29714,
+    "longitude": 6.66027,
+    "address": "Flekkefjord sentrum, Norway",
+    "coordinatePrecision": "area",
+    "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Flekkefjord&fuzzy=false&utkoordsys=4258&treffPerSide=5",
+    "routeQuery": "Parkeringshus Vollen, Flekkefjord, Norway",
+    "website": "https://www.visitsorlandet.com/destinasjoner/flekkefjord/",
+    "description": {
+      "en": "White wooden streets, street art and waterfront walks. Use Vollen parking garage and explore Hollenderbyen on foot; follow local parking signs. The marker shows the town, not a garage entrance.",
+      "nb": "Hvite trehusgater, gatekunst og tur langs sjøen. Bruk parkeringshuset Vollen og gå gjennom Hollenderbyen; følg lokale parkeringsskilt. Kartpunktet viser byen, ikke en garasjeinnkjøring.",
+      "uk": "Білі дерев’яні вулиці, стрітарт і набережна. Скористайтеся паркінгом Vollen та гуляйте Hollenderbyen пішки; дотримуйтеся знаків. Позначка вказує місто, а не в’їзд у гараж.",
+      "sv": "Vita trähusgator, gatukonst och promenader vid vattnet. Använd parkeringshuset Vollen och gå genom Hollenderbyen; följ skyltarna. Kartpunkten visar staden, inte garageinfarten.",
+      "da": "Hvide træhusgader, gadekunst og havnepromenade. Brug parkeringshuset Vollen og gå gennem Hollenderbyen; følg parkeringsskiltene. Kortpunktet viser byen, ikke garageindkørslen."
+    },
+    "hoursNote": {
+      "en": "Outdoor town walk; plan for daylight and weather. Museums, rail bikes, boats and cafés have separate seasonal schedules. Confirm parking conditions and opening hours for your date.",
+      "nb": "Utendørs byvandring; planlegg etter dagslys og vær. Museer, dresin, båter og kafeer har egne sesongtider. Sjekk parkering og åpningstider for reisedatoen.",
+      "uk": "Прогулянка містом просто неба; враховуйте погоду й світловий день. Музеї, дрезини, човни й кафе мають окремі сезонні графіки. Перевіряйте години та парковку на дату поїздки.",
+      "sv": "Utomhuspromenad; planera efter dagsljus och väder. Museer, dressin, båtar och kaféer har egna säsongstider. Kontrollera parkering och öppettider för resdagen.",
+      "da": "Udendørs byvandring; planlæg efter dagslys og vejr. Museer, dræsiner, både og caféer har egne sæsontider. Tjek parkering og åbningstider for rejsedatoen."
+    },
+    "accessSource": "https://www.flekkefjord.kommune.no/tjenester/vei-vann-og-renovasjon/parkering/parkeringsplasser-og-priser/",
+    "category": "rest",
+    "region": "Sørlandet · Lister",
+    "route": "listercoast",
+    "county": "Agder",
+    "source": "https://www.visitsorlandet.com/destinasjoner/flekkefjord/",
+    "checked": "2026-10-19",
+    "image": "./images/catalog/lister-flekkefjord.webp",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Flekkefjord-11.jpg",
+    "photoAlt": "Flekkefjord waterfront, photographed in August 2015",
+    "photoCaption": "Havstad112 · CC BY-SA 4.0 · resized / WebP",
+    "coordinateNote": "Representative address or area point, not a verified parking entrance.",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Parkeringshus%20Vollen%2C%20Flekkefjord%2C%20Norway",
+    "gallery": [
+      {
+        "src": "./images/catalog/lister-flekkefjord.webp",
+        "kind": "view",
+        "credit": "Havstad112",
+        "source": "https://commons.wikimedia.org/wiki/File:Flekkefjord-11.jpg",
+        "original": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Flekkefjord-11.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "modification": "Resized and converted to WebP; composition unchanged."
+      }
+    ],
+    "countyId": "42",
+    "municipality": "Flekkefjord",
+    "municipalityId": "4207",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.29714&ost=6.66027&koordsys=4258",
+    "coordinateKey": "58.29714,6.66027"
   },
   {
     "id": "tusenfryd",

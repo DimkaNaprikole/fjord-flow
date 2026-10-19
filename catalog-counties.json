@@ -159,6 +159,14 @@
     "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=60.86197584258663&ost=7.112441541309992&koordsys=4258",
     "coordinateKey": "60.86197584258663,7.112441541309992"
   },
+  "flekkefjord-hollenderbyen": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Flekkefjord",
+    "municipalityId": "4207",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.29714&ost=6.66027&koordsys=4258",
+    "coordinateKey": "58.29714,6.66027"
+  },
   "flyt-fjordsauna-jevnaker": {
     "county": "Akershus",
     "countyId": "32",
@@ -375,6 +383,14 @@
     "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=57.98229486990713&ost=7.047650772711434&koordsys=4258",
     "coordinateKey": "57.98229486990713,7.047650772711434"
   },
+  "lista-fyr-coast": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Farsund",
+    "municipalityId": "4206",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.1091224260895&ost=6.568458549228652&koordsys=4258",
+    "coordinateKey": "58.1091224260895,6.568458549228652"
+  },
   "loen-skylift": {
     "county": "Vestland",
     "countyId": "46",
@@ -446,6 +462,14 @@
     "municipalityId": "5001",
     "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=63.42691&ost=10.39691&koordsys=4258",
     "coordinateKey": "63.42691,10.39691"
+  },
+  "nordberg-fort-lista": {
+    "county": "Agder",
+    "countyId": "42",
+    "municipality": "Farsund",
+    "municipalityId": "4206",
+    "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.13035&ost=6.62152&koordsys=4258",
+    "coordinateKey": "58.13035,6.62152"
   },
   "nordraak-kragero": {
     "county": "Telemark",
