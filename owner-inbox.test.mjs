@@ -1,0 +1,5 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+test('owner reader renders only text and sends Firebase token to fixed endpoint',async()=>{const script=await readFile(new URL('./owner-inbox.mjs',import.meta.url),'utf8');assert.doesNotMatch(script,/innerHTML|insertAdjacentHTML|document\.write|owner-inbox-token/);assert.match(script,/text\.textContent=message\.content/);assert.match(script,/url\.origin!==\x27https:\/\/fjord-flow-chat\.laurkent123\.workers\.dev\x27/);assert.match(script,/ensureVerified/);assert.match(script,/credentials:'omit'/);assert.doesNotMatch(script,/method:\s*'POST'/);});
+test('private owner page prevents indexing/referrer sharing and retains theme',async()=>{const html=await readFile(new URL('./owner-inbox.html',import.meta.url),'utf8');assert.match(html,/noindex,nofollow,noarchive/);assert.match(html,/name="referrer" content="no-referrer"/);assert.match(html,/fjord-theme\.css/);assert.match(html,/ТЕСТОВОЕ ОБРАЩЕНИЕ/);});
