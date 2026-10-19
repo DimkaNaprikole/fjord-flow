@@ -37,6 +37,14 @@ test('opening an account while initial config is loading still uses one safe dia
  assert.equal(f.document.body.children.length,1);assert.equal(f.calls.filter(x=>x[0]==='verify').length,1);
 });
 
+test('owner account gets an inbox entry while ordinary profiles do not',async()=>{
+ const f=fixture();await f.window.FjordSiteAuth.open();const body=f.document.body.children[0].children.find(x=>x.className==='site-account-body');
+ assert.equal(body.children.some(x=>x.className==='site-account-owner-inbox'),false);
+ f.visitor.email='Laurkent123@gmail.com';f.events.get('fjord:auth-changed')();
+ const link=body.children.find(x=>x.className==='site-account-owner-inbox');assert.equal(link.href,'owner-inbox.html');
+ f.visitor.email='visitor@example.com';f.events.get('fjord:auth-changed')();assert.equal(body.children.some(x=>x.className==='site-account-owner-inbox'),false);
+});
+
 test('account artwork follows explicit interface language without changing the authenticated visitor',async()=>{
  const f=fixture();await f.window.FjordSiteAuth.open();const dialog=f.document.body.children[0],profile=f.window.FjordSiteAuth.getProfile();
  for(const [lang,caption]of [['uk','Wake up Украина'],['nb','Wake up Norway'],['en','Wake up USA']]){f.window.FjordI18n.language=lang;f.events.get('fjordlanguagechange')();assert.equal(dialog.querySelector('.site-account-cover').dataset.language,lang);assert.equal(dialog.querySelector('.site-account-pledge span').textContent,caption);assert.equal(f.window.FjordSiteAuth.getProfile().email,profile.email);}

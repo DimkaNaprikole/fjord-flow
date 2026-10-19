@@ -80,7 +80,14 @@
       try {await auth.signOutVisitor(); dialog.close(); changed();}
       catch {status.textContent = words()[5]; logout.disabled = false;}
     });
-    body.append(email, note, logout);
+    body.append(email, note);
+    // A convenience entry only; the inbox verifies owner identity on the server.
+    if (String(visitor.email || '').trim().toLowerCase() === 'laurkent123@gmail.com') {
+      const inbox = document.createElement('a'); inbox.className = 'site-account-owner-inbox'; inbox.href = 'owner-inbox.html';
+      inbox.textContent = ({nb:'Osiris · Henvendelser',en:'Osiris · Visitor requests',uk:'Osiris · Звернення',ru:'Osiris · Обращения',sv:'Osiris · Förfrågningar',da:'Osiris · Henvendelser'})[language()] || 'Osiris · Visitor requests';
+      body.append(inbox);
+    }
+    body.append(logout);
   }
   async function open(mode = 'login') {
     if (!dialog) createDialog();

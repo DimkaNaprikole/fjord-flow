@@ -2,6 +2,7 @@
 (()=>{'use strict';
 const normalize=s=>String(s||'').normalize('NFKD').replace(/\p{M}/gu,'').toLowerCase().replace(/ø/g,'o').replace(/æ/g,'ae').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const aliases={осло:'Oslo',берген:'Bergen',бергена:'Bergen',бергену:'Bergen',гран:'Gran',грана:'Gran',ставангер:'Stavanger',ставангера:'Stavanger',тронхейм:'Trondheim',тромсе:'Tromsø',тромсё:'Tromsø',флом:'Flåm',флома:'Flåm',лофотены:'Lofoten',лофотен:'Lofoten',гейрангер:'Geirangerfjord',гейрангерфьорд:'Geirangerfjord',тролльтунга:'Trolltunga',троллтунга:'Trolltunga',прекестулен:'Preikestolen',сеня:'Senja',рейне:'Reine',олесунн:'Ålesund',олесунд:'Ålesund',тролльстиген:'Trollstigen',троллстиген:'Trollstigen',лотефоссен:'Låtefossen',верингсфоссен:'Vøringsfossen',ворингсфоссен:'Vøringsfossen'};
+Object.assign(aliases,{гране:'Gran',грану:'Gran',бергене:'Bergen'});
 const canonical=s=>{const name=String(s).replace(/^(?:город(?:а|у|е)?|водопад(?:а|у)?|city of|the city of)\s+/iu,'');return aliases[normalize(name)]||name};
 function clean(s){return String(s||'').replace(/[?!\.]+$/u,'').replace(/\s+(?:пожалуйста|будь ласка|please|на машине|на автомобиле|на автобусе|на поезде|поездом|автобусом|машиной|пешком|by car|by bus|by train|on foot|with public transport|med bil|med buss|til fots).*$/iu,'').trim()}
 function parse(question){
@@ -15,7 +16,7 @@ function parse(question){
  if(!destination||destination.length>150||origin.length>150||/^(?:как|как-то|и |по |с |до |к |в |поездк|мне|нам|туда|там|here|there)/iu.test(destination))return null;
  if(/^(?:водопад(?:ам|ы|у|а)?|водоспад(?:ів|и)?|фьорды|фіорди|сауна|домики|waterfalls?|fjords?|sauna|the waterfalls)$/iu.test(destination))return null;
  const useCurrent=/^(?:меня|моего местоположения|my location|here|meg)$/iu.test(origin);if(useCurrent)origin='';
- const mode=/(?:пешком|пішки|on foot|walking|til fots)/iu.test(q)?'walking':/(?:обществен|потяг|поезд|автобус|public transport|transit|kollektiv)/iu.test(q)?'transit':'driving';
+ const mode=/(?:пешком|пішки|on foot|walking|til fots)/iu.test(q)?'walking':/(?:обществен|потяг|поезд|автобус|public transport|transit|kollektiv|\bby (?:bus|train)\b|\bmed (?:buss?|tog|tåg)\b)/iu.test(q)?'transit':'driving';
  return {destination:canonical(destination),origin:origin?canonical(origin):'',mode,...(useCurrent?{useCurrent:true}:{})};
 }
 function originCommand(question){

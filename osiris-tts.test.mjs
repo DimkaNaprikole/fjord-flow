@@ -12,7 +12,7 @@ const russian={lang:'ru-RU',name:'Russian'},norwegian={lang:'nb-NO',name:'Norweg
 function fixture({voices=[russian,norwegian,english],page='nb',heard='',conversation=false,blocked=false}={}){
  const timers=new Map(),listeners=new Map(),played=[],attributes={},events={},calls={resume:0,stop:0,pin:0},pets=[];let nextTimer=1;
  const synth={voices,paused:false,cancel(){},getVoices(){return this.voices},resume(){this.paused=false;calls.unpause=(calls.unpause||0)+1},addEventListener(name,fn){(listeners.get(name)||listeners.set(name,new Set()).get(name)).add(fn)},removeEventListener(name,fn){listeners.get(name)?.delete(fn)},speak(utterance){played.push(utterance);if(blocked)utterance.onerror?.({error:'not-allowed'});else utterance.onstart?.()}};
- const sandbox={window:{speechSynthesis:synth,SpeechSynthesisUtterance:class{constructor(text){this.text=text}}},config:{voiceConversation:true},dialog:{open:true},speaker:{setAttribute(){},addEventListener(name,fn){events[name]=fn}},status:{setAttribute(name,value){attributes[name]=value},textContent:''},lang:()=>page,clearTimeout:id=>timers.delete(id),setTimeout:(fn,ms)=>{const id=nextTimer++;timers.set(id,{fn,ms});return id},setPet:value=>pets.push(value),microphoneMuted:value=>calls.muted=value,pinAssistant:()=>calls.pin++,resumeLiveConversation:()=>calls.resume++,stopLive:()=>{calls.stop++;sandbox.voiceMode=false},endVoice:()=>{sandbox.voiceMode=false;vm.runInContext('cancelSpeech()',context)},speechGeneration:0,speakingAnswer:false,activeUtterance:null,lastHeardLanguage:heard,ttsStartTimer:null,liveDeadline:null,voiceMode:conversation,liveMode:'conversation'};
+ const sandbox={window:{speechSynthesis:synth,SpeechSynthesisUtterance:class{constructor(text){this.text=text}}},config:{voiceConversation:true},dialog:{open:true},speaker:{setAttribute(){},addEventListener(name,fn){events[name]=fn}},status:{setAttribute(name,value){attributes[name]=value},getAttribute(name){return attributes[name]??null},textContent:''},lang:()=>page,clearTimeout:id=>timers.delete(id),setTimeout:(fn,ms)=>{const id=nextTimer++;timers.set(id,{fn,ms});return id},setPet:value=>pets.push(value),refreshCompact(){},microphoneMuted:value=>calls.muted=value,pinAssistant:()=>calls.pin++,resumeLiveConversation:()=>calls.resume++,stopLive:()=>{calls.stop++;sandbox.voiceMode=false},endVoice:()=>{sandbox.voiceMode=false;vm.runInContext('cancelSpeech()',context)},speechGeneration:0,speakingAnswer:false,activeUtterance:null,lastHeardLanguage:heard,ttsStartTimer:null,liveDeadline:null,voiceMode:conversation,liveMode:'conversation'};
  const context=vm.createContext(sandbox);vm.runInContext(languageCode+'\n'+speechCode+'\nthis.api={speakAnswer,answerVoiceLanguage,questionLanguage,cancelSpeech};',context);
  return{...sandbox,api:sandbox.api,synth,played,attributes,timers,listeners,calls,events,pets,get speaking(){return sandbox.speakingAnswer},setPage(value){page=value},setVoices(value){synth.voices=value;for(const fn of [...(listeners.get('voiceschanged')||[])])fn()},fire(ms){const entry=[...timers].find(([,v])=>v.ms===ms);assert.ok(entry,'Pending timer '+ms);timers.delete(entry[0]);entry[1].fn()},state:()=>({answer:vm.runInContext('lastVoiceAnswer',context),hint:vm.runInContext('lastVoiceHint',context)})};
 }
@@ -20,7 +20,7 @@ function fixture({voices=[russian,norwegian,english],page='nb',heard='',conversa
 test('actual Russian answer wins over Norwegian page, hint and default voice',()=>{
  const app=fixture({heard:'no'});app.api.speakAnswer('Привет! Я Осирис. Чем могу помочь?','no');
  assert.equal(app.played.length,1);assert.equal(app.played[0].voice,russian);assert.equal(app.played[0].lang,'ru-RU');assert.equal(app.attributes['data-tts-language'],'ru-RU');assert.equal(app.attributes['data-tts-voice-language'],'ru-RU');
- app.played[0].onend();assert.equal(app.attributes['data-tts-state'],'ended');
+ assert.equal(app.speaker.hidden,true,'No routine replay button while voice works');app.played[0].onend();assert.equal(app.attributes['data-tts-state'],'ended');assert.equal(app.speaker.hidden,true,'No routine replay button after success');
 });
 
 test('Russian text never falls back to a Norwegian-only voice',()=>{
@@ -46,7 +46,7 @@ test('cancel and replacement cannot speak stale delayed answers',()=>{
 });
 
 test('browser playback restriction is visible; replay uses same answer and language',()=>{
- const app=fixture({blocked:true,conversation:true,page:'ru'});app.api.speakAnswer('Русский ответ','nb');assert.equal(app.attributes['data-tts-error'],'not-allowed');assert.match(app.status.textContent,/Прослушать ответ/);assert.equal(app.calls.stop,1);assert.equal(app.speaker.hidden,false);
+ const app=fixture({blocked:true,conversation:true,page:'ru'});app.api.speakAnswer('Русский ответ','nb');assert.equal(app.attributes['data-tts-error'],'not-allowed');assert.match(app.status.textContent,/Включить звук/);assert.equal(app.calls.stop,1);assert.equal(app.speaker.hidden,false);
  app.events.click();assert.equal(app.played.length,2);assert.equal(app.played[1].voice,russian);assert.equal(app.played[1].text,'Русский ответ');assert.equal(app.calls.pin,1);
 });
 
@@ -70,4 +70,11 @@ test('voice locales are case-insensitive and Norwegian no/nb aliases match',()=>
 test('paused synthesis resumes and failed startup stays replayable without a speech-length timer',()=>{
  const app=fixture();app.synth.paused=true;app.api.speakAnswer('Привет','ru');assert.equal(app.calls.unpause,1);assert.equal(app.timers.size,0);
  app.api.cancelSpeech();app.synth.speak=utterance=>app.played.push(utterance);app.api.speakAnswer('Ещё один ответ','ru');app.fire(8000);assert.equal(app.attributes['data-tts-error'],'playback-start-timeout');assert.equal(app.speaker.hidden,false);assert.equal(app.speaking,false);
+});
+
+test('browser TTS pet waits for onstart rather than a queued utterance',()=>{
+ const app=fixture();app.synth.speak=utterance=>app.played.push(utterance);app.api.speakAnswer('Ответ ещё в очереди.','ru');
+ assert.equal(app.pets.at(-1),'thinking');assert.equal(app.pets.includes('speaking'),false);
+ app.played[0].onstart();assert.equal(app.pets.at(-1),'speaking');app.played[0].onend();assert.equal(app.pets.at(-1),'idle');
+ const blocked=fixture({blocked:true});blocked.api.speakAnswer('Звук заблокирован.','ru');assert.equal(blocked.pets.includes('speaking'),false);assert.equal(blocked.pets.at(-1),'idle');
 });

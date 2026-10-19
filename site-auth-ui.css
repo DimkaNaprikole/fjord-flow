@@ -51,3 +51,5 @@
 #fjordSiteAccount .site-account-cover[data-language=en] .site-account-pledge{inset:auto auto 12px 20px;max-width:55%;font-size:25px;justify-content:flex-start;text-align:left}
 @media(max-width:480px){#fjordSiteAccount .site-account-pledge{font-size:21px}#fjordSiteAccount .site-account-cover[data-language=en] .site-account-brand{width:145px;margin-left:14px}#fjordSiteAccount .site-account-cover[data-language=en] .site-account-pledge{left:14px;font-size:22px;max-width:55%}}
 #fjordSiteAccount .site-account-cover:not([data-language=uk]):not([data-language=nb]):not([data-language=en]) .site-account-pledge{font-family:inherit;font-size:13px;letter-spacing:0}
+#fjordSiteAccount .site-account-owner-inbox{display:block;margin:12px 0;padding:10px 14px;border:1px solid #6b9ba855;border-radius:12px;background:#153d47;color:#eaf7f5;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+#fjordSiteAccount .site-account-owner-inbox:focus-visible{outline:2px solid #f7d987;outline-offset:3px}

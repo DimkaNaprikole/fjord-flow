@@ -7,8 +7,17 @@ const safeStep=(rect,dx,width,height,obstacles)=>{
  const area=swept(rect,dx);
  return area.left>=EDGE&&area.right<=width-EDGE&&area.top>=EDGE&&area.bottom<=height-EDGE&&!obstacles.some(r=>overlaps(area,r));
 };
+const isRoamObstacle=node=>{
+ if(node.hasAttribute('data-osiris-no-roam'))return true;
+ const tag=node.tagName.toLowerCase();
+ // Hero and advertising films are decorative (no controls, tabindex=-1).
+ if(tag==='video')return node.controls===true;
+ if(tag==='iframe')return Boolean(node.getAttribute('src')||node.hasAttribute('srcdoc'))&&node.getAttribute('aria-hidden')!=='true';
+ if(['button','input','select','textarea','summary'].includes(tag)||node.getAttribute('role')==='button'||(tag==='a'&&node.hasAttribute('href')))return true;
+ return node.hasAttribute('tabindex')&&node.tabIndex>=0;
+};
 // Pure geometry is also used by the offline regression tests.
-if(typeof module!=='undefined'&&module.exports)module.exports={overlaps,swept,safeStep};
+if(typeof module!=='undefined'&&module.exports)module.exports={overlaps,swept,safeStep,isRoamObstacle};
 if(typeof document==='undefined')return;
 function attach(){
  const launch=document.querySelector('.fjord-helper-launch.osiris-launch'),dialog=document.getElementById('fjordHelper');
@@ -21,11 +30,13 @@ function attach(){
  const copy={ru:'Звук кота',uk:'Звук кота',nb:'Kattelyd',en:'Cat sounds',sv:'Kattljud',da:'Kattelyde'};
  const translate=()=>{const language=(document.documentElement.lang||'en').split('-')[0];caption.textContent=copy[language]||copy.en};
  translate();
- let audio=null,voiceActive=false,offset=0,direction=-1,hover=false,focus=false,pressed=false,scrollUntil=0,nextWalk=Date.now()+12000,walkUntil=0,lastFrame=0,raf=0,dead=false;
- const blocked=()=>dead||!voiceActive||document.hidden||(dialog.open&&!dialog.classList.contains('osiris-compact'))||reduced.matches||hover||(focus&&launch.matches(':focus-visible'))||pressed||Date.now()<scrollUntil||Boolean(document.querySelector('dialog[open]:not(#fjordHelper),[aria-modal="true"]:not(#fjordHelper)'));
+ let audio=null,voiceActive=launch.dataset.osirisActive==='true',offset=0,direction=-1,hover=false,focus=false,pressed=false,scrollUntil=0,lastFrame=0,raf=0,dead=false;
+ // The microphone can remain active throughout a conversation. Only the
+ // assistant's speaking state permits movement; listening and thinking freeze it.
+ const blocked=()=>dead||!voiceActive||pet?.dataset.state!=='speaking'||document.hidden||reduced.matches||hover||(focus&&launch.matches(':focus-visible'))||pressed||Date.now()<scrollUntil||Boolean(document.querySelector('dialog[open]:not(#fjordHelper),[aria-modal="true"]:not(#fjordHelper)'));
  const soundBlocked=()=>dead||voiceActive||document.hidden||Boolean(window.speechSynthesis?.speaking)||(pet?.dataset.state&&pet.dataset.state!=='idle');
  const stopAudio=()=>{if(audio){audio.pause();audio.currentTime=0}};
- const stopWalking=()=>{walkUntil=0;launch.removeAttribute('data-osiris-walking')};
+ const stopWalking=()=>{launch.removeAttribute('data-osiris-walking')};
  const stop=()=>{stopWalking();stopAudio()};
  function chooseSound(event){
   if(!event.isTrusted||!toggle.checked){toggle.checked=false;stopAudio();return;}
@@ -37,7 +48,7 @@ function attach(){
  function obstacles(){
   const list=[];
   for(const node of document.querySelectorAll('a,button,input,select,textarea,summary,[role="button"],[tabindex],video,iframe,[data-osiris-no-roam]')){
-   if(node===launch||launch.contains(node)||dialog.contains(node)||node.closest('[hidden],dialog:not([open])'))continue;
+   if(node===launch||launch.contains(node)||!isRoamObstacle(node)||node.closest('[hidden],dialog:not([open])'))continue;
    for(const r of node.getClientRects())if(r.width&&r.height&&r.top<innerHeight&&r.bottom>0)list.push(r);
   }
   return list;
@@ -49,16 +60,17 @@ function attach(){
   const elapsed=Math.min(time-lastFrame,120);lastFrame=time;
   if(soundBlocked())stopAudio();
   if(blocked()){stopWalking();return}
-  const now=Date.now(),rect=launch.getBoundingClientRect();
+  const rect=launch.getBoundingClientRect();
   // No off-screen drift after rotation or zoom. The CSS dock remains the fallback.
-  if(rect.left<EDGE||rect.right>innerWidth-EDGE||rect.bottom>innerHeight-EDGE||rect.top<EDGE){offset=0;launch.style.removeProperty('translate');stopWalking();nextWalk=now+12000;return}
-  if(now>=nextWalk&&!walkUntil){walkUntil=now+6500;nextWalk=now+22000;launch.setAttribute('data-osiris-walking','true')}
-  if(walkUntil&&now<walkUntil){
-   const dx=direction*16*elapsed/1000;
-   if(safeStep(rect,dx,innerWidth,innerHeight,obstacles())&&Math.abs(offset+dx)<=36){
-    offset+=dx;launch.style.translate=`${offset.toFixed(2)}px 0`;
-   }else{direction*=-1;stopWalking();nextWalk=now+16000}
-  }else stopWalking();
+  if(rect.left<EDGE||rect.right>innerWidth-EDGE||rect.bottom>innerHeight-EDGE||rect.top<EDGE){offset=0;launch.style.removeProperty('translate');stopWalking();return}
+  const nearby=obstacles(),step=16*elapsed/1000;
+  const canMove=dx=>Math.abs(offset+dx)<=36&&safeStep(rect,dx,innerWidth,innerHeight,nearby);
+  let dx=direction*step;
+  // Turn around within the dock's small range. If either direction would cover
+  // a control (including the chat's own controls), stay still until it is clear.
+  if(!canMove(dx)){direction*=-1;dx=direction*step}
+  if(!canMove(dx)){stopWalking();return}
+  offset+=dx;launch.style.translate=`${offset.toFixed(2)}px 0`;launch.setAttribute('data-osiris-walking','true');
  }
  const events=[];
  function listen(target,event,handler,options){target.addEventListener(event,handler,options);events.push(()=>target.removeEventListener(event,handler,options))}
@@ -66,11 +78,11 @@ function attach(){
  listen(launch,'focusin',()=>{focus=true;if(launch.matches(':focus-visible'))stop()});listen(launch,'focusout',()=>{focus=false});
  listen(launch,'pointerdown',()=>{pressed=true;stop()});
  listen(window,'pointerup',()=>{pressed=false});listen(window,'pointercancel',()=>{pressed=false});
- listen(dialog,'close',()=>{nextWalk=Date.now()+12000});
+ listen(dialog,'close',stop);
  listen(toggle,'change',chooseSound);
- listen(window,'fjord:voice-activity',event=>{voiceActive=event.detail?.active===true;stop();if(voiceActive)nextWalk=Date.now()+500;});
+ listen(window,'fjord:voice-activity',event=>{voiceActive=event.detail?.active===true;stop()});
  listen(window,'scroll',()=>{scrollUntil=Date.now()+1500;stop()},{passive:true});
- listen(window,'resize',()=>{offset=0;launch.style.removeProperty('translate');stop();nextWalk=Date.now()+12000});
+ listen(window,'resize',()=>{offset=0;launch.style.removeProperty('translate');stop()});
  listen(document,'visibilitychange',stop);listen(window,'fjordlanguagechange',translate);
  const observer=new MutationObserver(()=>{if(blocked())stopWalking();if(soundBlocked())stopAudio()});observer.observe(dialog,{attributes:true,attributeFilter:['open','class']});if(pet)observer.observe(pet,{attributes:true,attributeFilter:['data-state']});
  listen(reduced,'change',()=>{offset=0;launch.style.removeProperty('translate');stop()});

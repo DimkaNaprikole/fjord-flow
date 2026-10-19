@@ -82,3 +82,51 @@ test('native farewell failure or missing drain has bounded cleanup and never res
   assert.equal(app.voiceState.peer.closed,true);assert.equal(track.readyState,'ended');assert.equal(track.enabled,false);assert.equal(remoteTrack.stopped,true);const calls=app.calls.length;app.document.emit('visibilitychange');await flush();assert.equal(app.calls.length,calls);app.dialog.close();
  }
 });
+
+test('moderation warning is spoken locally and resumes listening without model reply',async()=>{
+ const {app,channel,track}=await start();const warning='Я кот учёный — давай без ругани.';
+ app.setModerate({warned:true,disconnect:false,warning_text:warning,warnings:1});await askVoice(channel,'Осирис, тест предупреждения');
+ const moderation=app.calls.find(call=>call.url.endsWith('/moderate'));assert.equal(JSON.parse(moderation.options.body).language,'ru');
+ const responses=channel.sent.filter(message=>message.type==='response.create');assert.equal(responses.length,1);assert.equal(responses[0].response.conversation,'none');assert.match(responses[0].response.instructions,/кот учёный/);assert.equal(app.calls.some(call=>call.url.endsWith('/skill-match')),false);
+ created(channel);text(channel,warning);done(channel);drained(channel);assert.equal(track.enabled,true);assert.equal(app.voiceState.peer.closed,undefined);
+ app.setModerate({warned:false,disconnect:false});await askVoice(channel,'Спасибо, всё понятно','q2');assert.equal(channel.sent.filter(message=>message.type==='response.create').length,2);app.dialog.close();
+});
+
+test('moderation cooldown speaks server explanation and closes capture before farewell',async()=>{
+ const {app,channel,track}=await start();app.setModerate({warned:true,banned:true,disconnect:true,warning_text:'Пауза на 3 часа.'});await askVoice(channel);
+ assert.equal(track.readyState,'ended');assert.match(channel.sent.find(message=>message.type==='response.create').response.instructions,/Пауза на 3 часа/);
+ created(channel);text(channel,'Пауза на 3 часа.');done(channel);drained(channel);assert.equal(app.voiceState.peer.closed,true);app.dialog.close();
+});
+
+test('native pet waits for actual playback and stops speaking at audio drain',async()=>{
+ const {app,channel,audio,track}=await start();let resolvePlay;
+ audio.play=()=>new Promise(resolve=>{resolvePlay=resolve});
+ await askVoice(channel);created(channel);
+ assert.equal(app.dialog.attrs['data-osiris-state'],'thinking');assert.equal(app.find('fjord-ai-status').attrs['data-tts-state'],'queued');assert.equal(track.enabled,false);
+ resolvePlay();await flush();assert.equal(app.dialog.attrs['data-osiris-state'],'speaking');
+ drained(channel);assert.equal(app.dialog.attrs['data-osiris-state'],'thinking','Audio has ended even if generation completion is delayed');assert.equal(track.enabled,false);
+ done(channel);assert.equal(track.enabled,true);app.dialog.close();
+});
+
+test('blocked or stale native play promises never leave the pet speaking',async()=>{
+ for(const outcome of ['blocked','stopped','drained']){
+  const {app,channel,audio}=await start();let resolvePlay,rejectPlay;
+  audio.play=()=>new Promise((resolve,reject)=>{resolvePlay=resolve;rejectPlay=reject});await askVoice(channel);created(channel);
+  if(outcome==='blocked')rejectPlay(new Error('autoplay denied'));
+  else if(outcome==='stopped'){await app.find('fjord-ai-record-fallback').emit('click');resolvePlay()}
+  else{drained(channel);done(channel);resolvePlay()}
+  await flush();assert.notEqual(app.dialog.attrs['data-osiris-state'],'speaking',outcome);
+  if(outcome==='blocked'){assert.equal(app.dialog.attrs['data-osiris-state'],'idle');assert.equal(app.find('fjord-ai-status').attrs['data-tts-error'],'not-allowed')}
+  app.dialog.close();
+ }
+});
+
+test('local native replay also waits for play success and clears its state after rejection',async()=>{
+ const {app,channel,audio}=await start();audio.play=()=>Promise.reject(new Error('blocked'));await askVoice(channel);created(channel);await flush();text(channel);done(channel);drained(channel);
+ const create=app.document.createElement;let resolvePlay,rejectPlay;
+ app.document.createElement=tag=>{const element=create(tag);if(tag==='audio')element.play=()=>new Promise((resolve,reject)=>{resolvePlay=resolve;rejectPlay=reject});return element};
+ await app.find('fjord-ai-voice fjord-ai-read-answer').emit('click');assert.equal(app.dialog.attrs['data-osiris-state'],'thinking');resolvePlay();await flush();assert.equal(app.dialog.attrs['data-osiris-state'],'speaking');
+ const replay=app.dialog.children.find(item=>item.tag==='audio');replay.onended();assert.equal(app.dialog.attrs['data-osiris-state'],'idle');
+ // Simulate retry after another browser denial; no new model call is involved.
+ await app.find('fjord-ai-voice fjord-ai-read-answer').emit('click');rejectPlay(new Error('blocked'));await flush();assert.equal(app.dialog.attrs['data-osiris-state'],'idle');app.dialog.close();
+});

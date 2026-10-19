@@ -1,3 +1,31 @@
 <!doctype html>
-<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><title>Обращение · FJORD / FLOW</title><link rel="stylesheet" href="owner-inbox.css?v=1"><link rel="stylesheet" href="fjord-theme.css"><script type="module" src="owner-inbox.mjs?v=1"></script></head>
-<body class="owner-reader"><main><header><a href="./">FJORD / FLOW</a><span>Личный кабинет владельца</span></header><section class="owner-panel"><p class="eyebrow">Осирис · обращения с сайта</p><h1>Обращение посетителя</h1><p id="readerStatus" role="status" aria-live="polite">Войдите в аккаунт владельца, чтобы открыть обращение.</p><div class="owner-actions"><button type="button" id="readerLogin">Войти и открыть</button><button type="button" id="readerLogout" hidden>Выйти</button></div><article id="readerTicket" hidden aria-label="Сведения об обращении"><p id="readerTest" class="owner-test" hidden>ТЕСТОВОЕ ОБРАЩЕНИЕ — не реальный посетитель</p><dl id="readerFacts"></dl><h2>Переписка</h2><div id="readerMessages"></div><p class="owner-note">Только просмотр. Эта страница не отправляет ответы посетителю.</p></article></section></main><dialog id="readerAuth" aria-label="Вход владельца"><button id="readerAuthClose" type="button" aria-label="Закрыть">×</button><h2>Вход в FJORD / FLOW</h2></dialog></body></html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer"><title>Osiris · Личный кабинет · FJORD / FLOW</title><link rel="stylesheet" href="owner-inbox.css?v=2"><link rel="stylesheet" href="fjord-theme.css"><script type="module" src="owner-inbox.mjs?v=2"></script></head>
+<body class="owner-reader"><main>
+<header><a href="./">FJORD / FLOW</a><span>Личный кабинет владельца</span></header>
+<section class="owner-panel">
+<p class="eyebrow">Обращения с сайта</p><h1>Osiris</h1>
+<p id="readerStatus" role="status" aria-live="polite">Войдите в аккаунт владельца, чтобы открыть обращения.</p>
+<div class="owner-actions"><button type="button" id="readerLogin">Войти и открыть</button><button type="button" id="readerLogout" hidden>Выйти</button></div>
+<div id="readerWorkspace" class="owner-workspace" hidden>
+<section class="owner-list-panel" aria-label="Список обращений">
+<label for="readerSearch">Найти контакт или тему</label><input id="readerSearch" type="search" autocomplete="off" placeholder="Имя, email, телефон или текст">
+<div class="owner-list-caption"><p id="readerCount" aria-live="polite"></p><button id="readerResetFilter" type="button" hidden>Все обращения</button></div>
+<p id="readerFilter" class="owner-note" hidden></p>
+<div id="readerList" class="owner-ticket-list"></div>
+<p id="readerEmpty" class="owner-empty" hidden>Обращений пока нет.</p>
+<button id="readerMore" type="button" hidden>Загрузить ещё</button>
+<p class="owner-note owner-search-note">Поиск — по загруженным обращениям. Сохранены только сообщения, которые посетители разрешили передать владельцу.</p>
+</section>
+<section class="owner-detail-panel" aria-label="Выбранное обращение">
+<p id="readerSelection" class="owner-empty">Выберите обращение — здесь появятся контакты и история разговора.</p>
+<article id="readerTicket" hidden aria-label="Сведения об обращении">
+<p id="readerTest" class="owner-test" hidden>ТЕСТОВОЕ ОБРАЩЕНИЕ — не реальный посетитель</p>
+<h2 id="readerTicketTitle">Обращение посетителя</h2><p id="readerTopic" class="owner-topic"></p><dl id="readerFacts"></dl>
+<div class="owner-actions"><a id="readerMail" class="owner-contact-action" hidden>Написать email ↗</a><button type="button" id="readerContactHistory" hidden>Другие обращения этого контакта</button></div>
+<h3>История разговора</h3><div id="readerMessages"></div>
+<p class="owner-note">Просмотр переписки ничего не отправляет посетителю. Ссылка email откроет вашу почтовую программу.</p>
+</article></section></div>
+</section></main>
+<dialog id="readerAuth" aria-label="Вход владельца"><button id="readerAuthClose" type="button" aria-label="Закрыть">×</button><h2>Вход в FJORD / FLOW</h2></dialog>
+</body></html>

@@ -253,15 +253,15 @@ const answer=(channel,text,id='a1')=>{channel.message({type:'response.created'})
 }
 
 {
- const startAuto=async()=>{const app=boot({...voiceConfig},true);await flush();app.browserWindow.emit('fjord:open-chat');const channel=await startVoice(app);await microphone(app).emit('click');transcript(channel,'Как доехать до Осло?');await flush();return {app,channel,input:app.find('fjord-ai-compose').children.find(x=>x.tag==='textarea')}};
+ const startAuto=async()=>{const app=boot({...voiceConfig},true);await flush();app.browserWindow.emit('fjord:open-chat');const channel=await startVoice(app);await microphone(app).emit('click');transcript(channel,'Что интересного посмотреть весной?');await flush();return {app,channel,input:app.find('fjord-ai-compose').children.find(x=>x.tag==='textarea')}};
  {
-  const {app,channel,input}=await startAuto();channel.message({type:'response.created'});channel.message({type:'response.output_text.done',item_id:'complete-text',text:'Откройте маршрут.'});assert.equal(input.value,'Как доехать до Осло?','Text done alone must not discard the draft');channel.message({type:'response.done',response:{status:'completed'}});assert.equal(input.value,'','Clear matching auto-sent draft only after confirmed completed response');app.voiceState.utterance.onend();const before=app.calls.length;await app.find('fjord-ai-compose').emit('submit');await flush();assert.equal(app.calls.length,before,'Empty draft cannot accidentally resubmit the answered question');app.dialog.close();
+  const {app,channel,input}=await startAuto();channel.message({type:'response.created'});channel.message({type:'response.output_text.done',item_id:'complete-text',text:'Откройте маршрут.'});assert.equal(input.value,'Что интересного посмотреть весной?','Text done alone must not discard the draft');channel.message({type:'response.done',response:{status:'completed'}});assert.equal(input.value,'','Clear matching auto-sent draft only after confirmed completed response');app.voiceState.utterance.onend();const before=app.calls.length;await app.find('fjord-ai-compose').emit('submit');await flush();assert.equal(app.calls.length,before,'Empty draft cannot accidentally resubmit the answered question');app.dialog.close();
  }
  {
   const {app,channel,input}=await startAuto();input.value='Мой новый черновик';answer(channel,'Ответ готов.');assert.equal(input.value,'Мой новый черновик','Keep edits made while waiting for the voice answer');app.dialog.close();
  }
  for(const status of ['failed','incomplete']){
-  const {app,channel,input}=await startAuto();channel.message({type:'response.created'});channel.message({type:'response.output_text.done',item_id:'partial-'+status,text:'Неполный ответ.'});channel.message({type:'response.done',response:{status}});assert.equal(input.value,'Как доехать до Осло?','Preserve the auto-sent draft when text done is followed by '+status);app.dialog.close();
+  const {app,channel,input}=await startAuto();channel.message({type:'response.created'});channel.message({type:'response.output_text.done',item_id:'partial-'+status,text:'Неполный ответ.'});channel.message({type:'response.done',response:{status}});assert.equal(input.value,'Что интересного посмотреть весной?','Preserve the auto-sent draft when text done is followed by '+status);app.dialog.close();
  }
  {
   const app=boot({...voiceConfig},true);app.setSkill({answer:'Готовый проверенный ответ.'});await flush();app.browserWindow.emit('fjord:open-chat');const channel=await startVoice(app);await microphone(app).emit('click');transcript(channel,'Привет');await flush();assert.equal(app.find('fjord-ai-compose').children.find(x=>x.tag==='textarea').value,'','A successful local skill answer also clears only the matching submitted draft');app.dialog.close();
