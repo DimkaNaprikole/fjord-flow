@@ -63,6 +63,24 @@ test('advertising film resumes when scrolling from the former preload margin int
   assert.equal(plays,1,'entering the viewport must notify the observer and resume playback without another hash event');
 });
 
+test('mobile autoplay rejection retries on interaction without bypassing visibility or motion preferences',async()=>{
+  const code=source('./welcome-film.js');
+  const block=code.slice(code.indexOf("const advertising=document.querySelector('.advertising-showcase');"),code.lastIndexOf('})();'));
+  let plays=0,allow=false,top=100;
+  const handlers={},motion={matches:false,addEventListener(){}},connection={saveData:false,addEventListener(){}};
+  const video={setAttribute(){},play(){plays++;return allow?Promise.resolve():Promise.reject(Object.assign(new Error('Autoplay denied'),{name:'NotAllowedError'}));},pause(){}};
+  const advertising={prepend(){},closest:()=>null,getBoundingClientRect:()=>({width:390,top,bottom:top+640})};
+  const document={hidden:false,querySelector:()=>advertising,createElement:()=>video,addEventListener:(name,fn)=>{handlers[name]=fn;}};
+  const window={addEventListener(){},IntersectionObserver:true};
+  vm.runInNewContext(block,{document,window,innerHeight:844,navigator:{connection},matchMedia:()=>motion,requestAnimationFrame:fn=>fn(),IntersectionObserver:class{constructor(){}observe(){}}});
+  await Promise.resolve();assert.equal(plays,1,'first eligible autoplay attempt is denied');
+  top=1000;handlers.touchend();assert.equal(plays,1,'interaction outside the video viewport cannot start playback');
+  top=100;motion.matches=true;handlers.touchend();assert.equal(plays,1,'reduced motion stays respected');
+  motion.matches=false;connection.saveData=true;handlers.click();assert.equal(plays,1,'data saver stays respected');
+  connection.saveData=false;allow=true;handlers.touchend();await Promise.resolve();assert.equal(plays,2,'visible muted film retries directly inside the user gesture');
+  handlers.click();assert.equal(plays,2,'successful playback removes the retry condition');
+});
+
 test('weather refresh waits for a visible associated section and keeps its TTL cache',async()=>{
   const code=source('./explorer-weather.js');
   const refresh=code.slice(code.indexOf('async function refresh(){'),code.indexOf('function icon('));
