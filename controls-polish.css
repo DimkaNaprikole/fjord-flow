@@ -1,4 +1,4 @@
-/* Crisp, optically centered controls for the gallery and Afonya. */
+/* Crisp, optically centered controls for the gallery and Fjordi. */
 #galleryDialog #galleryClose,
 dialog.fjord-helper .fjord-helper-close {
   display: block;
@@ -47,7 +47,7 @@ button.fjord-helper-launch::before {
   animation: afonya-glow 4s ease-in-out infinite;
 }
 button.fjord-helper-launch::after {
-  content: 'Афоня';
+  content: attr(aria-label);
   flex: 0 0 auto;
   width: 0;
   overflow: hidden;

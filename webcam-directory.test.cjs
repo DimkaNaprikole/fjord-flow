@@ -1,8 +1,9 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const {recent,playable,select}=require('./webcam-directory.js');
 const data=require('./world-webcams-data.json');
+const cameraCount=data.cameras.length;
 test('world catalogue contains distinct reviewed embeds with official sources',()=>{
- assert.equal(data.cameras.length,15);assert.equal(new Set(data.cameras.map(c=>c.youtube)).size,15);assert.equal(select(data.cameras).length,15);
+ assert.ok(cameraCount>=20);assert.equal(new Set(data.cameras.map(c=>c.youtube)).size,cameraCount);assert.equal(select(data.cameras).length,cameraCount);
  for(const camera of data.cameras){assert.equal(new URL(camera.url).protocol,'https:');assert.ok(camera.evidence);assert.ok(!camera.operator.includes('EarthCam'));}
  assert.equal(playable({youtube:'bad',verification:'embedded-visual'}),false);assert.equal(playable({...data.cameras[0],enabled:false}),false);assert.equal(recent(data.cameras[0],Date.parse('2026-10-18')),false);
 });
@@ -16,17 +17,17 @@ async function harness(){
  const all=(tag,node=section)=>[...(node.tagName===tag?[node]:[]),...node.children.flatMap(n=>all(tag,n))];return {section,document,docEvents,events,all,instances,tick:()=>tick(),advance:ms=>{now+=ms;}};
 }
 test('all cameras have permanent cards without search, filters, source buttons or player controls',async()=>{
- const h=await harness();assert.equal(h.all('article').length,15);assert.equal(h.all('iframe').length,15);for(const tag of ['input','select','button','a'])assert.equal(h.all(tag).length,0);
+ const h=await harness();assert.equal(h.all('article').length,cameraCount);assert.equal(h.all('iframe').length,cameraCount);for(const tag of ['input','select','button','a'])assert.equal(h.all(tag).length,0);
  for(const frame of h.all('iframe')){const params=new URL(frame.src).searchParams;for(const [key,value]of Object.entries({autoplay:'1',mute:'1',controls:'0',disablekb:'1',fs:'0',iv_load_policy:'3',enablejsapi:'1'}))assert.equal(params.get(key),value);}
 });
 test('background tab and hidden section unload video; returning restores visible players',async()=>{
- const h=await harness();h.document.hidden=true;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,0);h.document.hidden=false;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,15);
- h.section.hidden=true;h.events['fjord:sections-changed']();assert.equal(h.all('iframe').length,0);h.section.hidden=false;h.events['fjord:sections-changed']();assert.equal(h.all('iframe').length,15);
+ const h=await harness();h.document.hidden=true;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,0);h.document.hidden=false;h.docEvents.visibilitychange();assert.equal(h.all('iframe').length,cameraCount);
+ h.section.hidden=true;h.events['fjord:sections-changed']();assert.equal(h.all('iframe').length,0);h.section.hidden=false;h.events['fjord:sections-changed']();assert.equal(h.all('iframe').length,cameraCount);
 });
 test('periodic health check never rotates cards or rebuilds healthy players',async()=>{
  const h=await harness(),cards=h.all('article'),frames=h.all('iframe');for(let i=0;i<10;i++){h.advance(30000);h.tick();}assert.deepEqual(h.all('article'),cards);assert.deepEqual(h.all('iframe'),frames);
 });
 test('an errored camera alone is hidden and retried after cooldown without restarting its neighbours',async()=>{
- const h=await harness(),cards=h.all('article'),frames=h.all('iframe');h.instances[0].events.onError({data:100});assert.equal(cards[0].hidden,true);assert.equal(h.all('iframe').length,14);assert.equal(h.all('iframe')[0],frames[1]);
- h.advance(299000);h.tick();assert.equal(cards[0].hidden,true);h.advance(2000);h.tick();assert.equal(cards[0].hidden,false);assert.equal(h.all('iframe').length,15);assert.equal(h.all('iframe')[1],frames[1]);
+ const h=await harness(),cards=h.all('article'),frames=h.all('iframe');h.instances[0].events.onError({data:100});assert.equal(cards[0].hidden,true);assert.equal(h.all('iframe').length,cameraCount-1);assert.equal(h.all('iframe')[0],frames[1]);
+ h.advance(299000);h.tick();assert.equal(cards[0].hidden,true);h.advance(2000);h.tick();assert.equal(cards[0].hidden,false);assert.equal(h.all('iframe').length,cameraCount);assert.equal(h.all('iframe')[1],frames[1]);
 });
