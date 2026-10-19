@@ -40,12 +40,12 @@ test('a nearby button causes a safe reversal and hidden controls do not block mo
  assert.ok(minimum>=-15,'keeps the 10px clearance around the nearby button');assert.ok(sawReturn);
  const g=speaking();g.obstacle({left:169,right:190,top:660,bottom:740},{inDialog:true,hidden:true});g.tick(100);assert.notEqual(g.launch.style.translate,undefined);
 });
-test('hidden page, reduced motion and a stopped conversation never keep walking',()=>{
+test('hidden page and reduced motion freeze walking; stopped voice returns to silent idle',()=>{
  const f=speaking();f.tick(100);let position=f.launch.style.translate;
  f.doc.hidden=true;f.tick(200);assert.equal(f.launch.style.translate,position);assert.equal(f.launch['data-osiris-walking'],undefined);
  f.doc.hidden=false;f.motion.matches=true;f.tick(300);assert.equal(f.launch.style.translate,position);
  f.motion.matches=false;f.win.emit('fjord:voice-activity',{detail:{active:false}});f.tick(400);assert.equal(f.launch.style.translate,position);
- f.setState('idle');f.dialog.open=false;f.tick(100000);assert.equal(f.launch.style.translate,position);assert.equal(f.plays(),0);
+ f.setState('idle');f.dialog.open=false;f.tick(500);assert.equal(f.launch.style.translate,position,'no immediate idle walk after stopping');f.tick(100000);assert.equal(f.plays(),0);
 });
 test('decorative hero video and negative-tabindex containers do not pin a speaking cat',()=>{
  const f=speaking(),cover={left:0,right:390,top:0,bottom:800};

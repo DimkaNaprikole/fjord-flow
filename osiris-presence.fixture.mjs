@@ -20,15 +20,15 @@ export function fixture(){
   getBoundingClientRect(){const rect=this.rect||cat,dx=parseFloat(this.style.translate)||0;return {...rect,left:rect.left+dx,right:rect.right+dx,width:rect.right-rect.left,height:rect.bottom-rect.top}}
   getClientRects(){return [this.getBoundingClientRect()]}
  }
- const launch=new Node(),dialog=new Node(),pet=new Node(),about=new Node(),doc=new Node(),win=new Node(),motion=new Node(),obstacles=[],observers=[];
+ const launch=new Node(),dialog=new Node(),pet=new Node(),avatar=new Node(),about=new Node(),doc=new Node(),win=new Node(),motion=new Node(),obstacles=[],observers=[];
  motion.matches=false;pet.dataset.state='idle';doc.documentElement={lang:'ru'};doc.readyState='complete';doc.hidden=false;
- launch.append(pet);launch.querySelector=()=>pet;dialog.querySelector=()=>about;
+ avatar.tagName='IMG';pet.append(avatar);pet.querySelector=()=>avatar;launch.append(pet);launch.querySelector=()=>pet;dialog.querySelector=()=>about;
  doc.querySelector=selector=>selector.includes('.osiris-launch')?launch:doc.foreignDialog||null;
  doc.getElementById=()=>dialog;doc.querySelectorAll=()=>obstacles;doc.createElement=()=>new Node();
  let now=0,frame,plays=0,pauses=0;
  const context={document:doc,window:win,innerWidth:390,innerHeight:800,matchMedia:()=>motion,Date:{now:()=>now},requestAnimationFrame:fn=>{frame=fn;return 1},cancelAnimationFrame(){},MutationObserver:class{constructor(fn){this.fn=fn;observers.push(this)}observe(){}disconnect(){}},Audio:class{play(){plays++;return Promise.resolve()}pause(){pauses++}}};
  vm.runInNewContext(readFileSync(new URL('./osiris-presence.js',import.meta.url),'utf8'),context);
- return {launch,dialog,pet,doc,win,motion,about,toggle:about.children[0].children[0],plays:()=>plays,pauses:()=>pauses,
+ return {launch,dialog,pet,avatar,doc,win,motion,about,toggle:about.children[0].children[0],plays:()=>plays,pauses:()=>pauses,
   tick(time){now=time;frame(time)},
   setState(state){pet.dataset.state=state;for(const observer of observers)observer.fn()},
   obstacle(rect,{inDialog=false,hidden=false,tag='button',attrs={},controls=false}={}){const node=new Node();node.tagName=tag.toUpperCase();node.controls=controls;for(const [key,value]of Object.entries(attrs))node.setAttribute(key,value);node.rect=rect;node.hiddenAncestor=hidden;obstacles.push(node);if(inDialog)dialog.append(node);return node},

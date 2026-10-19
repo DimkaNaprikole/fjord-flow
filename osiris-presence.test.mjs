@@ -21,7 +21,7 @@ test('opening the cat never opts into sound or schedules a delayed meow',()=>{
  f.launch.emit('keydown',{isTrusted:false,key:'Enter'});f.tick(200000);assert.equal(f.plays(),0);
  f.launch.emit('keydown',{isTrusted:true,key:'Enter'});f.launch.emit('pointerdown',{isTrusted:true});f.win.emit('pointerup');
  f.tick(300000);f.tick(690000);assert.equal(f.plays(),0);
- assert.equal(f.launch.style.translate,undefined,'inactive Osiris is stationary');
+ assert.equal(f.plays(),0,'idle motion is always silent');
 });
 test('only a trusted sound toggle previews a meow, and never during voice or speech',()=>{
  const f=fixture();f.toggle.checked=true;f.toggle.emit('change',{isTrusted:false});assert.equal(f.plays(),0);assert.equal(f.toggle.checked,false);

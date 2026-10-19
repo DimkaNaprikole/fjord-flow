@@ -1,7 +1,12 @@
-/* Motion belongs to the launcher only; the same portrait is not a 3D rig. */
+/* Reviewed transparent animation clips belong to the launcher, not a 3D rig. */
 .osiris-sound-option{display:flex;align-items:center;gap:8px;width:fit-content;margin:12px 0;font:inherit;cursor:pointer}
 .osiris-sound-option input{width:18px;height:18px;accent-color:var(--ff-accent,#9de4da)}
 .osiris-sound-option input:focus-visible{outline:2px solid var(--ff-accent,#9de4da);outline-offset:3px}
 .fjord-helper-launch[data-osiris-presence]{touch-action:manipulation}
 .fjord-helper-launch[data-osiris-presence]:focus-visible{outline:3px solid #e8d18c;outline-offset:5px}
 @media(prefers-reduced-motion:reduce){.fjord-helper-launch[data-osiris-presence]{translate:none!important}}
+body button.fjord-helper-launch.osiris-launch[data-osiris-motion]{width:180px;height:122px;justify-content:center;align-items:flex-start}
+body .osiris-launch[data-osiris-motion] .fjord-ai-pet.osiris-pet{width:180px;height:102px;animation:none!important;filter:none;transform:none}
+.osiris-launch[data-osiris-motion] .osiris-avatar{width:100%;height:100%;object-fit:contain;transform-origin:50% 50%}
+body .osiris-launch[data-osiris-motion] .fjord-ai-pet-name{bottom:0;font-size:11px;padding:3px 9px}
+@media(max-width:500px){body button.fjord-helper-launch.osiris-launch[data-osiris-motion]{width:154px;height:108px}body .osiris-launch[data-osiris-motion] .fjord-ai-pet.osiris-pet{width:154px;height:87px}}
