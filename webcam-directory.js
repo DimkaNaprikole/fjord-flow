@@ -4,7 +4,7 @@ let cameras=typeof module!=='undefined'&&module.exports?require('./webcam-direct
 let worldCameras=typeof module!=='undefined'&&module.exports?require('./webcam-directory-data.json').worldCameras||[]:[];
 const photoCredits={loen:['Ximonic (Simo Räsänen)','CC BY-SA 4.0','https://commons.wikimedia.org/wiki/File:Summer_evening_at_Lovatnet,_Stryn,_Norway,_2013_June.jpg'],bergen:['Diego Delso','CC BY-SA 4.0','https://commons.wikimedia.org/wiki/File:Bryggen,_Bergen,_Noruega,_2019-09-08,_DD_115-117_PAN.jpg'],geiranger:['Andreas Trepte','CC BY-SA 2.5','https://commons.wikimedia.org/wiki/File:Geirangerfjord_.jpg']};
 function recent(camera,now=Date.now()){const age=now-Date.parse(camera.checked+'T00:00:00Z');return age>=0&&age<7*86400000;}
-function select(type='all',checkedOnly=true,now=Date.now()){return cameras.filter(c=>(type==='all'||c.type===type)&&(!checkedOnly||recent(c,now)));}
+function select(type='all',checkedOnly=true,now=Date.now()){return cameras.filter(c=>c.display!=='hidden-no-inline-preview'&&(type==='all'||c.type===type)&&(!checkedOnly||recent(c,now)));}
 if(typeof module!=='undefined'&&module.exports){module.exports={cameras,worldCameras,recent,select};return;}
 const copy={
  nb:['Norge gjennom webkameraer','Se været og utsikten før du drar.','Alle','Video','Panorama 360°','Bare nylig kontrollerte','Bilde kontrollert','Må kontrolleres igjen','Kontrollert','Kvalitet ikke oppgitt','Se kamera','Åpne hos operatøren ↗','Stedsfoto · ikke et direkte kamerabilde','Ingen nylig kontrollerte kameraer i dette utvalget.','Status gjelder siste visuelle kontroll, ikke kontinuerlig overvåking. Etter sju dager kreves ny kontroll. Bitrate er ikke oppgitt av operatørene; oppløsning vises bare når den er målt.','Spilleren lastes først når du trykker. Tredjeparten kan bruke informasjonskapsler.','Stopp video'],
@@ -93,7 +93,7 @@ function render(){
  const sources=el('details',null,'webcam-sources');sources.append(el('summary',u[15]));
  for(const [name,url]of[['Statens vegvesen · data','https://dataut.vegvesen.no/dataservice/webkamera-statuser-api'],['Vegvesen trafikk','https://www.vegvesen.no/trafikk'],['Skiinfo Norge · Facebook','https://www.facebook.com/skiinfonorge'],['Skiinfo · Norge','https://www.skiinfo.no/norge/webcams']]){const a=el('a',name+' ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';sources.append(a);}section.append(sources,el('p',t[14],'webcam-policy'));window.dispatchEvent(new Event('fjord:sections-changed'));
 }
-async function load(){try{const r=await window.fetch('./webcam-directory-data.json?v=2');if(!r.ok)throw Error('registry unavailable');const data=await r.json();if(!Array.isArray(data.cameras))throw Error('invalid registry');cameras=data.cameras;worldCameras=Array.isArray(data.worldCameras)?data.worldCameras:[];loadFailed=false;}catch{loadFailed=true;}render();}
+async function load(){try{const r=await window.fetch('./webcam-directory-data.json?v=3');if(!r.ok)throw Error('registry unavailable');const data=await r.json();if(!Array.isArray(data.cameras))throw Error('invalid registry');cameras=data.cameras;worldCameras=Array.isArray(data.worldCameras)?data.worldCameras:[];loadFailed=false;}catch{loadFailed=true;}render();}
 window.FjordWebcams={ready:load()};
 const stopHiddenCamera=()=>{if(document.hidden||section.hidden||section.closest('[hidden]'))stopCamera?.();};
 window.addEventListener('fjord:sections-changed',stopHiddenCamera);

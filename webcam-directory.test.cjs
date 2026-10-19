@@ -1,5 +1,5 @@
 const {test}=require('node:test');const assert=require('node:assert/strict');const {cameras,recent,select}=require('./webcam-directory.js');
-test('checked cameras expire instead of claiming permanent availability',()=>{const day=Date.parse('2026-10-19T12:00:00Z');assert.equal(select('all',true,day).length,cameras.length);assert.equal(select('all',true,day+8*86400000).length,0);assert.equal(select('all',false,day+8*86400000).length,cameras.length);assert.equal(recent(cameras[0],Date.parse('2026-10-18')),false);});
+test('checked cameras expire instead of claiming permanent availability',()=>{const day=Date.parse('2026-10-19T12:00:00Z');assert.equal(select('all',true,day).length,cameras.filter(c=>c.display!=='hidden-no-inline-preview').length);assert.equal(select('all',true,day+8*86400000).length,0);assert.equal(select('all',false,day+8*86400000).length,cameras.filter(c=>c.display!=='hidden-no-inline-preview').length);assert.equal(recent(cameras[0],Date.parse('2026-10-18')),false);});
 test('road cameras have a checked image, source timestamp and explicit technical verification',()=>{const road=cameras.filter(c=>c.kind==='road');assert.equal(road.length,864);assert.equal(new Set(road.map(c=>c.cameraId)).size,road.length);for(const c of road){assert.equal(c.type,'snapshot');assert.equal(c.verification,'image-response');assert.match(c.snapshot,/^https:\/\/kamera\.atlas\.vegvesen\.no\/api\/images\//);assert.ok(Date.parse(c.sourceUpdated));assert.match(c.quality,/\d+ × \d+/);}assert.ok(cameras.filter(c=>c.verification==='visual').length>=14);});
 test('type filtering and evidence do not invent video for still images',()=>{const day=Date.parse('2026-10-19T12:00:00Z');assert.ok(select('snapshot',true,day).length>=864);assert.ok(select('video',true,day).every(c=>c.type==='video'));assert.equal(cameras.find(c=>c.id==='loen').quality,null);});
 
@@ -90,3 +90,5 @@ test('external cameras have a clickable preview and a visible primary link in th
  const launch=h.find(n=>n.className==='webcam-launch');
  assert.equal(launch.href,preview.href);assert.equal(launch.target,undefined);
 });
+
+test('empty external tourist cards stay saved but are not publicly selected',()=>{const hidden=cameras.filter(c=>c.display==='hidden-no-inline-preview');assert.equal(hidden.length,10);const selected=select('all',false);for(const camera of hidden)assert.ok(!selected.includes(camera));assert.ok(selected.some(c=>c.id==='geiranger-cruiseport'));});
