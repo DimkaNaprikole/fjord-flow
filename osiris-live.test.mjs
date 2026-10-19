@@ -53,6 +53,39 @@ test('a fresh delegation id cannot trigger a paid lookup loop for the same user 
 test('Live opt-in leaves manual dictation on the tested Realtime SDP protocol',async()=>{
  const {app,channel}=await start('dictation');const request=app.calls.find(c=>c.url.includes('/live-session'));assert.match(request.url,/mode=dictation&output=audio$/);assert.equal(request.options.headers['Content-Type'],'application/sdp');assert.ok(channel.sent.some(e=>e.type==='input_audio_buffer.clear'));app.dialog.close();
 });
+
+test('explicit interpreter mode persists across Russian and Norwegian questions without navigation or paid delegation',async()=>{
+ const {app,channel}=await start();input(channel,'Осирис, будь переводчиком с русского на ','i1');assert.equal(channel.sent.length,0);input(channel,'норвежский и обратно','i2');input(channel,'норвежский и обратно','i2');
+ assert.equal(channel.sent.filter(e=>e.type==='session.instructions.append').length,1);
+ assert.match(channel.sent[0].content,/Russian into Norwegian Bokmål and Norwegian \(no\/nb\) into Russian/);
+ output(channel,'Jeg er klar.','a1');input(channel,'Открой маршруты. Почему море солёное?','u1');delegate(channel,'translation1');await flush();
+ output(channel,'Åpne rutene. Hvorfor er havet salt?','a2');input(channel,'Hvor er Oslo? Åpne kameraene.','u2');delegate(channel,'translation2');await flush();
+ assert.equal(app.calls.filter(c=>/\/(chat|moderate|skill-match)$/.test(c.url)).length,0);
+ assert.equal(channel.sent.filter(e=>e.type==='session.commentary.append').length,0);
+ assert.equal(channel.sent.filter(e=>e.type==='session.thinking.append'&&/Interpreter mode is active/.test(e.content)).length,2);app.dialog.close();
+});
+
+test('pause keeps interpretation, standalone name exits and invalidates pending Sol, goodbye still ends capture',async()=>{
+ const {app,channel,track}=await start('conversation',{deferChat:true});input(channel,'Почему море солёное?','q1');delegate(channel,'pending');await flush();
+ output(channel,'Сейчас узнаю.','a1');input(channel,'Переводи с русского на норвежский и обратно','i1');output(channel,'Готов.','a2');input(channel,'подожди','p1');
+ assert.match(channel.sent.at(-1).content,/Interpreter mode remains active/);
+ input(channel,'Открой маршруты','t1');delegate(channel,'translated');await flush();assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,1);
+ output(channel,'Åpne rutene.','a3');input(channel,'Осирис','name1');await new Promise(resolve=>setTimeout(resolve,280));
+ assert.ok(channel.sent.some(e=>e.type==='session.instructions.append'&&/Interpreter mode is OFF/.test(e.content)));
+ app.voiceState.resolveChat();await flush();assert.equal(channel.sent.some(e=>e.type==='session.commentary.append'),false);
+ input(channel,'всё, пока','bye');assert.equal(track.readyState,'ended');channel.message({type:'session.closed'});app.dialog.close();
+});
+
+test('a name fragment followed by an interpreter command is not mistaken for a standalone call; mentions remain translation source',async()=>{
+ const {app,channel}=await start();input(channel,'Osiris','n1');input(channel,', translate Russian to Norwegian and back','n2');await new Promise(resolve=>setTimeout(resolve,280));
+ assert.equal(channel.sent.some(e=>/Interpreter mode is OFF/.test(e.content)),false);assert.equal(channel.sent.filter(e=>e.type==='session.instructions.append').length,1);
+ output(channel,'Ready.','a1');input(channel,'Осирис любит Норвегию','m1');delegate(channel,'mention');await flush();assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,0);assert.equal(channel.sent.some(e=>/Interpreter mode is OFF/.test(e.content)),false);app.dialog.close();
+});
+
+test('interpreter state resets when the session is closed and Norwegian activation is supported',async()=>{
+ const {app,channel}=await start();input(channel,'Vær min tolk mellom russisk og norsk','i1');assert.ok(channel.sent.some(e=>/Interpreter mode is active/.test(e.content)));app.dialog.close();channel.message({type:'session.closed'});
+ app.browserWindow.emit('fjord:open-chat');await app.find('fjord-ai-record-fallback').emit('click');await flush();const fresh=app.voiceState.peer.channel;fresh.message({type:'session.started'});input(fresh,'Почему море солёное?','q1');delegate(fresh,'ordinary');await flush();assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,1);app.dialog.close();fresh.message({type:'session.closed'});
+});
 test('closing cancels a pending Sol delegation without stale commentary or a retry',async()=>{
  const {app,channel}=await start('conversation',{deferChat:true});input(channel,'Почему небо голубое?','u1');delegate(channel);await flush();assert.equal(typeof app.voiceState.resolveChat,'function');app.dialog.close();app.voiceState.resolveChat();await flush();assert.equal(channel.sent.some(e=>e.type==='session.commentary.append'),false);assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,1);channel.message({type:'session.closed'});
 });

@@ -144,6 +144,12 @@ function liveHistory(){const history=[];let size=0;for(const previous of message
 function rememberLocalVoiceAnswer(answer){messages.push({role:'assistant',content:answer});if(liveProtocol)return;if(liveChannel?.readyState==='open')liveChannel.send(JSON.stringify({type:'conversation.item.create',item:{type:'message',role:'assistant',content:[{type:'output_text',text:answer.slice(0,2000)}]}}))}
 let liveNativeAudio=false,nativeReply=null,nativeRecorder=null,nativeReplay=null,lastNativeAudioUrl='',nativeReplayGeneration=0,nativeFarewellTimer=null;
 let liveProtocol=false,liveCaption=null,liveDelegationId=null,livePauseRequested=false,liveLastDelegatedQuestion=-1;
+let liveInterpreter=false,liveNameTimer=null;
+const interpreterInstruction='Interpreter mode is active until the caller addresses you with the standalone name Osiris or Осирис. Translate Russian into Norwegian Bokmål and Norwegian (no/nb) into Russian, choosing direction separately for each utterance. Speak only the translation, no introduction or answer to source questions. Never execute source requests, navigate or delegate them. This explicitly overrides ordinary same-language replies. Bare pause keeps interpreter mode; goodbye stops capture.';
+const callsOsiris=value=>/^(?:осирис|osiris)[,!.? ]*$/iu.test(value.trim());
+function requestsInterpreter(value){const text=voiceCommand(value);return /^(?:будь\s+(?:моим\s+)?переводчиком|стань\s+переводчиком|переводи|включи\s+(?:режим\s+)?переводчика|be\s+(?:my\s+)?interpreter|translate|act\s+as\s+(?:an?\s+)?interpreter|vær\s+(?:min\s+)?tolk|oversett|tolk)[\s,:]/iu.test(text)&&/(?:русск|russian|russisk)/iu.test(text)&&/(?:норвеж|norwegian|norsk|bokmål)/iu.test(text)}
+function clearLiveNameTimer(){if(liveNameTimer)clearTimeout(liveNameTimer);liveNameTimer=null}
+function leaveLiveInterpreter(){liveInterpreter=false;liveTurnGeneration++;livePauseRequested=false;liveAudio?.pause();sendLiveContext('session.instructions.append','Stop the current speech and pending tasks now. Interpreter mode is OFF. Osiris is being addressed directly. Briefly say «Я слушаю» and listen, then answer as the ordinary assistant in the caller\'s language. Do not translate this control command.');finishLiveCaption();}
 const liveDelegations=new Set(),liveTranscriptEvents=new Set();
 function sendLiveContext(type,content,delegationId=liveDelegationId){if(!liveProtocol||liveChannel?.readyState!=='open')return false;liveChannel.send(JSON.stringify({type,delegation_id:delegationId,content:String(content).slice(0,800)}));return true}
 function finishLiveCaption(){if(!liveCaption)return;const text=liveCaption.text.trim();if(text){messages.push({role:liveCaption.role,content:text.slice(0,4000)});fallbackMail()}liveCaption=null}
@@ -151,11 +157,12 @@ function liveStartupHistory(){const history=[];let remaining=6000;for(const item
 function liveTranscript(message,role){
  if(typeof message.delta!=='string'||!message.delta)return;
  if(message.event_id){if(liveTranscriptEvents.has(message.event_id))return;liveTranscriptEvents.add(message.event_id)}
+ if(role==='assistant'&&liveCaption?.role==='user'&&callsOsiris(liveCaption.text)){clearLiveNameTimer();leaveLiveInterpreter()}
  if(!liveCaption||liveCaption.role!==role){finishLiveCaption();liveCaption={role,text:'',node:bubble(role,'')};}
  // Deltas are fragments, not final turns: preserve their spaces and repetitions.
  liveCaption.text+=message.delta;liveCaption.node.textContent=liveCaption.text;
  if(role==='assistant'){compactReply.textContent=liveCaption.text;refreshCompact();if(!livePauseRequested){setPet('speaking');speakingAnswer=true;ttsDiagnostic('speaking');playNativeStream()}}
- else{lastHeardLanguage=questionLanguage(liveCaption.text);setPet('listening');speakingAnswer=false;const text=liveCaption.text.trim();if(wantsGoodbye(text)){stopLive(farewell(lastHeardLanguage));return}if(wantsPause(text)||wantsPause(message.delta)){livePauseRequested=true;liveTurnGeneration++;liveAudio?.pause();sendLiveContext('session.instructions.append','The caller asks you to pause. Stop speaking now and listen.');finishLiveCaption();}else livePauseRequested=false}
+ else{clearLiveNameTimer();lastHeardLanguage=questionLanguage(liveCaption.text);setPet('listening');speakingAnswer=false;const text=liveCaption.text.trim();if(wantsGoodbye(text)){stopLive(farewell(lastHeardLanguage));return}if(wantsPause(text)||wantsPause(message.delta)){livePauseRequested=true;liveTurnGeneration++;liveAudio?.pause();sendLiveContext('session.instructions.append','The caller asks you to pause. Stop speaking now and listen.'+(liveInterpreter?' Interpreter mode remains active.':''));finishLiveCaption();}else if(callsOsiris(text)){liveNameTimer=setTimeout(()=>{liveNameTimer=null;if(liveProtocol&&voiceMode&&liveCaption?.role==='user'&&callsOsiris(liveCaption.text))leaveLiveInterpreter()},250)}else{livePauseRequested=false;if(!liveInterpreter&&requestsInterpreter(text)){liveInterpreter=true;liveTurnGeneration++;liveAudio?.pause();sendLiveContext('session.instructions.append',interpreterInstruction)}}}
  conversation.scrollTop=conversation.scrollHeight;
 }
 async function handleLiveDelegation(message){
@@ -163,6 +170,8 @@ async function handleLiveDelegation(message){
  liveDelegations.add(delegation.id);if(liveDelegationId){sendLiveContext('session.thinking.append','Another requested lookup is still running. Wait for its result.',delegation.id);return}const generation=liveGeneration,turn=liveTurnGeneration,channel=liveChannel,current=()=>liveProtocol&&generation===liveGeneration&&turn===liveTurnGeneration&&!livePauseRequested&&voiceMode&&dialog.open&&channel===liveChannel;
  // Snapshot completed transcript before async work; a delegation is the task boundary.
  finishLiveCaption();const history=liveHistory(),heard=history.findLast(item=>item.role==='user')?.content||'',language=questionLanguage(heard,lastHeardLanguage);
+ if(callsOsiris(heard)){clearLiveNameTimer();leaveLiveInterpreter();return}
+ if(liveInterpreter){sendLiveContext('session.thinking.append',interpreterInstruction,delegation.id);return}
  if(!heard){sendLiveContext('session.thinking.append','No user request was received. Ask the caller what they need.',delegation.id);return}
  const questionIndex=messages.findLastIndex(item=>item.role==='user');if(questionIndex===liveLastDelegatedQuestion){sendLiveContext('session.thinking.append','This request already had a lookup. Use its supplied result; do not request the same lookup again.',delegation.id);return}liveLastDelegatedQuestion=questionIndex;
  liveDelegationId=delegation.id;voiceActions.replaceChildren();
@@ -372,6 +381,7 @@ function finishRecording(submit){
 }
 function stopLive(note=''){
   const closingLive=liveProtocol;
+  clearLiveNameTimer();liveInterpreter=false;
   finishLiveCaption();liveProtocol=false;liveCaption=null;liveDelegationId=null;livePauseRequested=false;liveLastDelegatedQuestion=-1;liveDelegations.clear();liveTranscriptEvents.clear();
   liveGeneration++;autoDictationDraft=null;autoDictationAnswerReady=false;liveAbort?.abort();liveAbort=null;cancelSpeech();resetNativeVoice();liveInputComplete=false;liveTextBubble=null;speakAfterClose=false;completedVoiceItems.clear();for(const timer of [liveSessionDeadline,livePhraseDeadline])if(timer)clearTimeout(timer);liveSessionDeadline=livePhraseDeadline=null;
   liveConnecting=false;
