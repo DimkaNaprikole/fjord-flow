@@ -20,6 +20,36 @@
       "checked": "2026-10-19",
       "verification": "embedded-visual",
       "evidence": "Official operator page embeds this YouTube player; moving canal image and 2026-10-19 09:47:50 camera timestamp observed at 09:48 local."
+    },
+    {
+      "id": "hollywood-broadwalk",
+      "name": "Hollywood, Florida · Broadwalk",
+      "operator": "City of Hollywood",
+      "youtube": "cmkAbDUEoyA",
+      "url": "https://www.hollywoodfl.org/1047/Hollywood-Beach-Webcams?NID=349",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed playing; LIVE edge; camera changed view from boardwalk to beach. Overlay about 04:01 AM matched 08:01 UTC."
+    },
+    {
+      "id": "hollywood-beach-theatre",
+      "name": "Hollywood, Florida · Beach Theatre",
+      "operator": "City of Hollywood",
+      "youtube": "pcPwY5Qg594",
+      "url": "https://www.hollywoodfl.org/1047/Hollywood-Beach-Webcams?NID=349",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed playing; real illuminated night square, LIVE edge on City of Hollywood channel."
+    },
+    {
+      "id": "jupiter-sawfish-bay",
+      "name": "Jupiter, Florida · Sawfish Bay",
+      "operator": "Town of Jupiter",
+      "youtube": "jjFUDD3hWxE",
+      "url": "https://jupiter.fl.us/2096/Jup-Life-Live-Cams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; moving nighttime bay view. Town of Jupiter channel, LIVE edge, readyState4 pausedfalse. No separate date overlay."
     }
   ]
 }
