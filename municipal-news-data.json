@@ -995,6 +995,1390 @@
           "RIFF med introduktion. 2 t 39 min. Pris og ændringer: se biografens hjemmeside."
         ]
       }
+    },
+    {
+      "id": "oslo-bullock-lane-20261021",
+      "municipality": "0301",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-21",
+      "eventDates": [
+        "2026-10-21"
+      ],
+      "time": "18:00",
+      "location": "MusikkRom, Oslo",
+      "mapQuery": "MusikkRom, Oslo",
+      "source": "Oslo-filharmonien",
+      "url": "https://ofo.no/no/konserter/2026-10-21/fra-bratsjgruppen-til-hovedrollen",
+      "expires": "2026-10-22T00:00:00+02:00",
+      "copy": {
+        "nb": [
+          "Catherine Bullock og Simon Lane",
+          "Bratsj og piano i MusikkRom 21. oktober kl. 18."
+        ],
+        "en": [
+          "Catherine Bullock and Simon Lane",
+          "Viola and piano at MusikkRom, 21 October at 18:00."
+        ],
+        "uk": [
+          "Камерний концерт Bullock і Lane",
+          "Альт і фортепіано в MusikkRom, 21 жовтня о 18:00."
+        ],
+        "sv": [
+          "Catherine Bullock och Simon Lane",
+          "Viola och piano i MusikkRom, 21 oktober kl. 18."
+        ],
+        "da": [
+          "Catherine Bullock og Simon Lane",
+          "Bratsch og klaver i MusikkRom, 21. oktober kl. 18."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Gratis uten billett; plassene fordeles etter ankomst."
+        ],
+        "en": [
+          "Free without tickets; admission is first come, first served."
+        ],
+        "uk": [
+          "Безкоштовно, без квитка; місця надаються за чергою прибуття."
+        ],
+        "sv": [
+          "Gratis utan biljett; platser fördelas efter ankomst."
+        ],
+        "da": [
+          "Gratis uden billet; pladser fordeles efter ankomst."
+        ]
+      },
+      "verificationUrls": [
+        "https://ofo.no/no/konserter/2026-10-21/fra-bratsjgruppen-til-hovedrollen"
+      ]
+    },
+    {
+      "id": "oslo-petrushka-20261022",
+      "municipality": "0301",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-22",
+      "eventDates": [
+        "2026-10-22",
+        "2026-10-23"
+      ],
+      "time": "19:00",
+      "location": "Oslo Konserthus, Oslo",
+      "mapQuery": "Oslo Konserthus, Oslo",
+      "source": "Oslo-filharmonien",
+      "url": "https://ofo.no/no/konserter/2026-10-22/petrenko-dirigerer-petrushka",
+      "expires": "2026-10-24T00:00:00+02:00",
+      "copy": {
+        "nb": [
+          "Petrenko dirigerer Petrushka",
+          "Oslo Konserthus 22. og 23. oktober kl. 19."
+        ],
+        "en": [
+          "Petrenko conducts Petrushka",
+          "Oslo Konserthus, 22 and 23 October at 19:00."
+        ],
+        "uk": [
+          "Петренко диригує «Петрушкою»",
+          "Oslo Konserthus, 22 і 23 жовтня о 19:00."
+        ],
+        "sv": [
+          "Petrenko dirigerar Petrusjka",
+          "Oslo Konserthus 22 och 23 oktober kl. 19."
+        ],
+        "da": [
+          "Petrenko dirigerer Petrusjka",
+          "Oslo Konserthus 22. og 23. oktober kl. 19."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Bertrand Chamayou er pianosolist. Billetter kjøpes hos arrangøren."
+        ],
+        "en": [
+          "Bertrand Chamayou is piano soloist. Tickets through the organiser."
+        ],
+        "uk": [
+          "Соліст — піаніст Bertrand Chamayou. Квитки — у організатора."
+        ],
+        "sv": [
+          "Bertrand Chamayou är pianosolist. Biljetter hos arrangören."
+        ],
+        "da": [
+          "Bertrand Chamayou er klaversolist. Billetter hos arrangøren."
+        ]
+      },
+      "verificationUrls": [
+        "https://ofo.no/no/konserter/2026-10-22/petrenko-dirigerer-petrushka"
+      ]
+    },
+    {
+      "id": "oslo-nyhus-20261024",
+      "municipality": "0301",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-24",
+      "eventDates": [
+        "2026-10-24"
+      ],
+      "time": "13:00",
+      "location": "MusikkRom, Oslo",
+      "mapQuery": "MusikkRom, Oslo",
+      "source": "Oslo-filharmonien",
+      "url": "https://ofo.no/no/konserter/2026-10-24/tradisjon-i-bevegelse",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "copy": {
+        "nb": [
+          "Tradisjon i bevegelse",
+          "Åshild og Ingfrid Breie Nyhus, 24. oktober kl. 13."
+        ],
+        "en": [
+          "Tradition in motion",
+          "Åshild and Ingfrid Breie Nyhus, 24 October at 13:00."
+        ],
+        "uk": [
+          "Традиція в русі",
+          "Åshild та Ingfrid Breie Nyhus, 24 жовтня о 13:00."
+        ],
+        "sv": [
+          "Tradition i rörelse",
+          "Åshild och Ingfrid Breie Nyhus, 24 oktober kl. 13."
+        ],
+        "da": [
+          "Tradition i bevægelse",
+          "Åshild og Ingfrid Breie Nyhus, 24. oktober kl. 13."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Gratis konsert uten billett. Dørene åpner 15 minutter før."
+        ],
+        "en": [
+          "Free, no ticket needed. Doors open 15 minutes before."
+        ],
+        "uk": [
+          "Безкоштовно, квиток не потрібен. Вхід за 15 хвилин до початку."
+        ],
+        "sv": [
+          "Gratis utan biljett. Dörrarna öppnar 15 minuter före."
+        ],
+        "da": [
+          "Gratis uden billet. Dørene åbner 15 minutter før."
+        ]
+      },
+      "verificationUrls": [
+        "https://ofo.no/no/konserter/2026-10-24/tradisjon-i-bevegelse"
+      ]
+    },
+    {
+      "id": "oslo-halloween-philharmonic-20261030",
+      "municipality": "0301",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-30",
+      "eventDates": [
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "time": "30.10 18:00; 31.10 13:00",
+      "location": "Oslo Konserthus, Oslo",
+      "mapQuery": "Oslo Konserthus, Oslo",
+      "source": "Oslo-filharmonien",
+      "url": "https://ofo.no/no/konserter/2026-10-30/halloweenkonsert-en-fest-for-hele-familien",
+      "expires": "2026-11-01T00:00:00+01:00",
+      "copy": {
+        "nb": [
+          "Halloween med Oslo-filharmonien",
+          "Familiekonsert 30. oktober kl. 18 og 31. oktober kl. 13."
+        ],
+        "en": [
+          "Halloween with Oslo Philharmonic",
+          "Family concert, 30 October 18:00 and 31 October 13:00."
+        ],
+        "uk": [
+          "Гелловін з Oslo-filharmonien",
+          "Сімейний концерт: 30 жовтня 18:00 та 31 жовтня 13:00."
+        ],
+        "sv": [
+          "Halloween med Oslo-filharmonien",
+          "Familjekonsert 30 oktober kl. 18 och 31 oktober kl. 13."
+        ],
+        "da": [
+          "Halloween med Oslo-filharmonien",
+          "Familiekoncert 30. oktober kl. 18 og 31. oktober kl. 13."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Anbefalt over åtte år. Aktiviteter i foajeen før konserten."
+        ],
+        "en": [
+          "Recommended for over eights. Foyer activities before the concert."
+        ],
+        "uk": [
+          "Рекомендовано від восьми років. Перед концертом — активності у фоє."
+        ],
+        "sv": [
+          "Rekommenderas över åtta år. Foajéaktiviteter före konserten."
+        ],
+        "da": [
+          "Anbefales over otte år. Aktiviteter i foyeren før koncerten."
+        ]
+      },
+      "verificationUrls": [
+        "https://ofo.no/no/konserter/2026-10-30/halloweenkonsert-en-fest-for-hele-familien"
+      ]
+    },
+    {
+      "id": "drammen-svendsens-catering-20261022",
+      "municipality": "3301",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-22",
+      "eventDates": [
+        "2026-10-22",
+        "2026-10-23",
+        "2026-10-24"
+      ],
+      "time": "22–23.10 19:00; 24.10 18:00",
+      "location": "Brageteatret – Union Scene, Drammen",
+      "mapQuery": "Brageteatret – Union Scene, Drammen",
+      "source": "Brageteatret",
+      "url": "https://www.brageteatret.no/forestilling/svendsens-catering/",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "copy": {
+        "nb": [
+          "Svendsens Catering i Drammen",
+          "Svart komedie på Union Scene 22.–24. oktober."
+        ],
+        "en": [
+          "Svendsens Catering in Drammen",
+          "Dark comedy at Union Scene, 22–24 October."
+        ],
+        "uk": [
+          "Svendsens Catering у Драммені",
+          "Чорна комедія в Union Scene, 22–24 жовтня."
+        ],
+        "sv": [
+          "Svendsens Catering i Drammen",
+          "Svart komedi på Union Scene 22–24 oktober."
+        ],
+        "da": [
+          "Svendsens Catering i Drammen",
+          "Sort komedie på Union Scene 22.–24. oktober."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Start kl. 19 torsdag/fredag og kl. 18 lørdag. Billetter hos teatret."
+        ],
+        "en": [
+          "Starts 19:00 Thursday/Friday, 18:00 Saturday. Tickets from the theatre."
+        ],
+        "uk": [
+          "Початок у четвер/п’ятницю 19:00, у суботу 18:00. Квитки — у театру."
+        ],
+        "sv": [
+          "Start kl. 19 torsdag/fredag, kl. 18 lördag. Biljetter hos teatern."
+        ],
+        "da": [
+          "Start kl. 19 torsdag/fredag, kl. 18 lørdag. Billetter hos teatret."
+        ]
+      },
+      "verificationUrls": [
+        "https://www.brageteatret.no/forestilling/svendsens-catering/"
+      ]
+    },
+    {
+      "id": "lillehammer-bondens-marked-20261023",
+      "municipality": "3405",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-23",
+      "eventDates": [
+        "2026-10-23",
+        "2026-10-24"
+      ],
+      "location": "Lilletorget, Lillehammer",
+      "mapQuery": "Lilletorget, Lillehammer",
+      "source": "Lillehammer Sentrum",
+      "url": "https://lillehammersentrum.no/arrangement/bondens-marked-pa-lilletorget-2/2026-10-23/",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "copy": {
+        "nb": [
+          "Bondens Marked på Lilletorget",
+          "Marked på Lilletorget 23.–24. oktober."
+        ],
+        "en": [
+          "Farmers market at Lilletorget",
+          "Market at Lilletorget, 23–24 October."
+        ],
+        "uk": [
+          "Фермерський ярмарок на Lilletorget",
+          "Ярмарок на Lilletorget, 23–24 жовтня."
+        ],
+        "sv": [
+          "Bondemarknad på Lilletorget",
+          "Marknad på Lilletorget 23–24 oktober."
+        ],
+        "da": [
+          "Bondemarked på Lilletorget",
+          "Marked på Lilletorget 23.–24. oktober."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Kalenderen oppgir start fredag kl. 10 og slutt lørdag kl. 16; daglige åpningstider må sjekkes."
+        ],
+        "en": [
+          "Calendar runs Friday 10:00 to Saturday 16:00; check daily opening hours."
+        ],
+        "uk": [
+          "У календарі: від п’ятниці 10:00 до суботи 16:00; уточніть години кожного дня."
+        ],
+        "sv": [
+          "Kalendern anger fredag kl. 10 till lördag kl. 16; kontrollera dagliga öppettider."
+        ],
+        "da": [
+          "Kalenderen angiver fredag kl. 10 til lørdag kl. 16; tjek daglige åbningstider."
+        ]
+      },
+      "verificationUrls": [
+        "https://lillehammersentrum.no/arrangement/bondens-marked-pa-lilletorget-2/2026-10-23/",
+        "https://lillehammersentrum.no/arrangementer/"
+      ]
+    },
+    {
+      "id": "lillehammer-hockey-classic-20261024",
+      "municipality": "3405",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-24",
+      "eventDates": [
+        "2026-10-24"
+      ],
+      "location": "Håkons Hall, Lillehammer",
+      "mapQuery": "Håkons Hall, Lillehammer",
+      "source": "Lillehammer Sentrum / Hockey Classic",
+      "url": "https://lillehammersentrum.no/arrangement/hockey-classic-2026/",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "copy": {
+        "nb": [
+          "Hockey Classic 2026",
+          "Lillehammer møter Storhamar i Håkons Hall 24. oktober."
+        ],
+        "en": [
+          "Hockey Classic 2026",
+          "Lillehammer face Storhamar at Håkons Hall, 24 October."
+        ],
+        "uk": [
+          "Hockey Classic 2026",
+          "Lillehammer проти Storhamar у Håkons Hall, 24 жовтня."
+        ],
+        "sv": [
+          "Hockey Classic 2026",
+          "Lillehammer möter Storhamar i Håkons Hall 24 oktober."
+        ],
+        "da": [
+          "Hockey Classic 2026",
+          "Lillehammer møder Storhamar i Håkons Hall 24. oktober."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Kalenderens arrangementsvindu er 13.30–23.30; sjekk kampstart og billetter hos arrangøren."
+        ],
+        "en": [
+          "Calendar event window is 13:30–23:30; check match time and tickets with organiser."
+        ],
+        "uk": [
+          "Подія в календарі: 13:30–23:30; час матчу й квитки уточнюйте в організатора."
+        ],
+        "sv": [
+          "Kalenderns evenemangstid är 13.30–23.30; kontrollera matchstart och biljetter hos arrangören."
+        ],
+        "da": [
+          "Kalenderens arrangementsvindue er 13.30–23.30; tjek kampstart og billetter hos arrangøren."
+        ]
+      },
+      "verificationUrls": [
+        "https://lillehammersentrum.no/arrangement/hockey-classic-2026/",
+        "https://lillehammersentrum.no/arrangementer/"
+      ]
+    },
+    {
+      "id": "lillehammer-heidal-bakery-20261031",
+      "municipality": "3405",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-31",
+      "eventDates": [
+        "2026-10-31"
+      ],
+      "time": "11:00–15:00",
+      "location": "Lilletorget, Lillehammer",
+      "mapQuery": "Lilletorget, Lillehammer",
+      "source": "Lillehammer Sentrum",
+      "url": "https://lillehammersentrum.no/arrangement/heidal-hjemmebakeri-pa-lilletorget-2/2026-10-31/",
+      "expires": "2026-11-01T00:00:00+01:00",
+      "copy": {
+        "nb": [
+          "Heidal Hjemmebakeri på Lilletorget",
+          "Tradisjonsbakst på Lilletorget 31. oktober kl. 11–15."
+        ],
+        "en": [
+          "Heidal bakery at Lilletorget",
+          "Traditional baking at Lilletorget, 31 October, 11:00–15:00."
+        ],
+        "uk": [
+          "Пекарня Heidal на Lilletorget",
+          "Традиційна випічка на Lilletorget, 31 жовтня, 11:00–15:00."
+        ],
+        "sv": [
+          "Heidal Hjemmebakeri på Lilletorget",
+          "Traditionellt bröd på Lilletorget 31 oktober kl. 11–15."
+        ],
+        "da": [
+          "Heidal Hjemmebakeri på Lilletorget",
+          "Traditionelt bagværk på Lilletorget 31. oktober kl. 11–15."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Familiebakeriet lager blant annet potetlefse, potetflatbrød og rømmebrød."
+        ],
+        "en": [
+          "The family bakery makes potato lefse, potato flatbread and sour-cream bread."
+        ],
+        "uk": [
+          "Сімейна пекарня готує картопляні lefse, flatbrød і сметанний хліб."
+        ],
+        "sv": [
+          "Familjebageriet bakar bland annat potatislefse, potatisflatbröd och gräddbröd."
+        ],
+        "da": [
+          "Familiebageriet laver blandt andet kartoffellefse, kartoffelfladbrød og rømmebrød."
+        ]
+      },
+      "verificationUrls": [
+        "https://lillehammersentrum.no/arrangement/heidal-hjemmebakeri-pa-lilletorget-2/2026-10-31/"
+      ]
+    },
+    {
+      "id": "bergen-kjott-festival-2026",
+      "municipality": "4601",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-23",
+      "eventDates": [
+        "2026-10-23",
+        "2026-10-24"
+      ],
+      "expires": "2026-10-25T00:00:00+02:00",
+      "source": "Visit Bergen",
+      "url": "https://www.visitbergen.com/hva-skjer/kjott-festival-p7941603",
+      "location": "Bergen Kjøtt, Bergen",
+      "time": "23.10: 18:00–02:00",
+      "mapQuery": "Bergen Kjøtt, Bergen",
+      "copy": {
+        "nb": [
+          "Kjøtt Festival",
+          "To festivaldager på Bergen Kjøtt, 23.–24. oktober."
+        ],
+        "en": [
+          "Kjøtt Festival",
+          "Two festival days at Bergen Kjøtt, 23–24 October."
+        ],
+        "uk": [
+          "Фестиваль Kjøtt",
+          "Два фестивальні дні в Bergen Kjøtt, 23–24 жовтня."
+        ],
+        "sv": [
+          "Kjøtt Festival",
+          "Två festivaldagar på Bergen Kjøtt, 23–24 oktober."
+        ],
+        "da": [
+          "Kjøtt Festival",
+          "To festivaldage på Bergen Kjøtt, 23.–24. oktober."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Musikkfestival med nye uttrykk. Fredagens program begynner klokken 18; se arrangørens program for lørdagen."
+        ],
+        "en": [
+          "A music festival featuring new sounds. Friday starts at 18:00; consult the organiser for Saturday’s programme."
+        ],
+        "uk": [
+          "Музичний фестиваль нових звучань. У п’ятницю початок о 18:00; суботню програму уточнюйте в організатора."
+        ],
+        "sv": [
+          "Musikfestival med nya uttryck. Fredagen börjar kl. 18; lördagens program finns hos arrangören."
+        ],
+        "da": [
+          "Musikfestival med nye udtryk. Fredag begynder kl. 18; se lørdagens program hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "bergen-bajazz-2026",
+      "municipality": "4601",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-24",
+      "eventDates": [
+        "2026-10-24",
+        "2026-10-25"
+      ],
+      "expires": "2026-10-26T00:00:00+01:00",
+      "source": "Visit Bergen",
+      "url": "https://www.visitbergen.com/hva-skjer/bajazzfestivalen-p5549293",
+      "location": "USF Verftet, Bergen",
+      "time": "24.10: 12:00–15:00; 25.10: 12:00–16:00",
+      "mapQuery": "USF Verftet, Bergen",
+      "copy": {
+        "nb": [
+          "Bajazzfestivalen",
+          "Musikk for barn og familier på USF Verftet, 24.–25. oktober."
+        ],
+        "en": [
+          "Bajazz family festival",
+          "Music for children and families at USF Verftet, 24–25 October."
+        ],
+        "uk": [
+          "Сімейний фестиваль Bajazz",
+          "Музика для дітей і родин в USF Verftet, 24–25 жовтня."
+        ],
+        "sv": [
+          "Bajazz familjefestival",
+          "Musik för barn och familjer på USF Verftet, 24–25 oktober."
+        ],
+        "da": [
+          "Bajazz familiefestival",
+          "Musik for børn og familier på USF Verftet, 24.–25. oktober."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Konserter og aktiviteter i flere rom. Åpent lørdag 12–15 og søndag 12–16."
+        ],
+        "en": [
+          "Concerts and activities across several rooms. Saturday 12:00–15:00, Sunday 12:00–16:00."
+        ],
+        "uk": [
+          "Концерти й заняття в кількох залах. Субота 12:00–15:00, неділя 12:00–16:00."
+        ],
+        "sv": [
+          "Konserter och aktiviteter i flera rum. Lördag 12–15, söndag 12–16."
+        ],
+        "da": [
+          "Koncerter og aktiviteter i flere rum. Lørdag 12–15, søndag 12–16."
+        ]
+      }
+    },
+    {
+      "id": "bergen-hjertefred-2026",
+      "municipality": "4601",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-11-01",
+      "expires": "2026-11-02T00:00:00+01:00",
+      "source": "Visit Bergen",
+      "url": "https://www.visitbergen.com/hva-skjer/hjertefred-bergen-2026-p7542243",
+      "location": "Nygårdsparken, Bergen",
+      "time": "18:00–19:00",
+      "mapQuery": "Nygårdsparken, Bergen",
+      "copy": {
+        "nb": [
+          "Hjertefred Bergen",
+          "Lys og fellesskap i Nygårdsparken 1. november klokken 18–19."
+        ],
+        "en": [
+          "Hjertefred Bergen",
+          "Light and community in Nygårdsparken on 1 November, 18:00–19:00."
+        ],
+        "uk": [
+          "Hjertefred у Бергені",
+          "Світло та спільнота в Nygårdsparken 1 листопада, 18:00–19:00."
+        ],
+        "sv": [
+          "Hjertefred Bergen",
+          "Ljus och gemenskap i Nygårdsparken 1 november kl. 18–19."
+        ],
+        "da": [
+          "Hjertefred Bergen",
+          "Lys og fællesskab i Nygårdsparken 1. november kl. 18–19."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Livssynsnøytral minnestund med musikk, dans og poesi. Gratis for alle aldre; lystenning fra klokken 17."
+        ],
+        "en": [
+          "A non-denominational remembrance gathering with music, dance and poetry. Free, all ages; candle lighting from 17:00."
+        ],
+        "uk": [
+          "Позаконфесійна зустріч пам’яті з музикою, танцем і поезією. Безкоштовно для всіх; свічки запалюють із 17:00."
+        ],
+        "sv": [
+          "Livsåskådningsneutral minnesstund med musik, dans och poesi. Gratis för alla åldrar; ljuständning från kl. 17."
+        ],
+        "da": [
+          "Livssynsåben mindestund med musik, dans og poesi. Gratis for alle aldre; lystænding fra kl. 17."
+        ]
+      }
+    },
+    {
+      "id": "stavanger-hanne-boel-2026",
+      "municipality": "1103",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-23",
+      "expires": "2026-10-24T00:00:00+02:00",
+      "source": "Stavanger konserthus",
+      "url": "https://www.stavanger-konserthus.no/event/hanne-boel-m-band/",
+      "location": "Kuppelhallen, Stavanger konserthus, Stavanger",
+      "time": "19:30",
+      "mapQuery": "Kuppelhallen, Stavanger konserthus, Stavanger",
+      "copy": {
+        "nb": [
+          "Hanne Boel med band",
+          "Konsert i Kuppelhallen 23. oktober klokken 19.30."
+        ],
+        "en": [
+          "Hanne Boel with band",
+          "Concert at Kuppelhallen on 23 October at 19:30."
+        ],
+        "uk": [
+          "Hanne Boel із гуртом",
+          "Концерт у Kuppelhallen 23 жовтня о 19:30."
+        ],
+        "sv": [
+          "Hanne Boel med band",
+          "Konsert i Kuppelhallen 23 oktober kl. 19.30."
+        ],
+        "da": [
+          "Hanne Boel med band",
+          "Koncert i Kuppelhallen 23. oktober kl. 19.30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Nye låter og kjent repertoar. Omtrent 90 minutter uten pause; billettinformasjon på konserthusets side."
+        ],
+        "en": [
+          "New songs and familiar repertoire. Approximately 90 minutes without an interval; ticket information from the venue."
+        ],
+        "uk": [
+          "Нові пісні та відомий репертуар. Приблизно 90 хвилин без антракту; квиткова інформація на сайті залу."
+        ],
+        "sv": [
+          "Nya låtar och välkänt material. Cirka 90 minuter utan paus; biljettinformation hos konserthuset."
+        ],
+        "da": [
+          "Nye sange og velkendt repertoire. Cirka 90 minutter uden pause; billetoplysninger hos koncerthuset."
+        ]
+      }
+    },
+    {
+      "id": "stavanger-open-family-day-2026",
+      "municipality": "1103",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-25",
+      "expires": "2026-10-26T00:00:00+01:00",
+      "source": "Stavanger konserthus / Stavanger Symfoniorkester",
+      "url": "https://www.stavanger-konserthus.no/event/apen-dag-med-familiekonsert/",
+      "location": "Stavanger konserthus, Stavanger",
+      "time": "12:00–15:00",
+      "mapQuery": "Stavanger konserthus, Stavanger",
+      "copy": {
+        "nb": [
+          "Åpen dag med familiekonsert",
+          "Musikalsk familiedag 25. oktober klokken 12–15."
+        ],
+        "en": [
+          "Open day with family concert",
+          "A musical family day on 25 October, 12:00–15:00."
+        ],
+        "uk": [
+          "Відкритий день із сімейним концертом",
+          "Музичний сімейний день 25 жовтня, 12:00–15:00."
+        ],
+        "sv": [
+          "Öppet hus med familjekonsert",
+          "Musikalisk familjedag 25 oktober kl. 12–15."
+        ],
+        "da": [
+          "Åbent hus med familiekoncert",
+          "Musikalsk familiedag 25. oktober kl. 12–15."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Prøv instrumenter, hør orkesteret og delta i aktiviteter. Gratis adgang, ingen påmelding."
+        ],
+        "en": [
+          "Try instruments, hear the orchestra and join activities. Free admission; no registration required."
+        ],
+        "uk": [
+          "Спробуйте інструменти, послухайте оркестр і долучайтеся до занять. Вхід безкоштовний, реєстрація не потрібна."
+        ],
+        "sv": [
+          "Prova instrument, hör orkestern och delta i aktiviteter. Gratis inträde, ingen anmälan."
+        ],
+        "da": [
+          "Prøv instrumenter, hør orkestret og deltag i aktiviteter. Gratis adgang, ingen tilmelding."
+        ]
+      }
+    },
+    {
+      "id": "stavanger-halloween-film-music-2026",
+      "municipality": "1103",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-30",
+      "eventDates": [
+        "2026-10-30",
+        "2026-10-31"
+      ],
+      "expires": "2026-11-01T00:00:00+01:00",
+      "source": "Stavanger konserthus / Stavanger Symfoniorkester",
+      "url": "https://www.stavanger-konserthus.no/event/halloween-filmmusikk-fra-morket-stavanger-symfoniorkester/",
+      "location": "Fartein Valen, Stavanger konserthus, Stavanger",
+      "time": "19:00",
+      "mapQuery": "Fartein Valen, Stavanger konserthus, Stavanger",
+      "copy": {
+        "nb": [
+          "Halloween: Filmmusikk fra mørket",
+          "Stavanger Symfoniorkester, 30. og 31. oktober klokken 19."
+        ],
+        "en": [
+          "Halloween: Film music from the dark",
+          "Stavanger Symphony Orchestra, 30 and 31 October at 19:00."
+        ],
+        "uk": [
+          "Геловін: музика темного кіно",
+          "Симфонічний оркестр Ставангера, 30 і 31 жовтня о 19:00."
+        ],
+        "sv": [
+          "Halloween: Filmmusik ur mörkret",
+          "Stavangers symfoniorkester, 30 och 31 oktober kl. 19."
+        ],
+        "da": [
+          "Halloween: Filmmusik fra mørket",
+          "Stavangers symfoniorkester, 30. og 31. oktober kl. 19."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Skummel filmmusikk med Rolf Kristian Larsen. Anbefalt fra 12 år; omtrent to timer inkludert pause."
+        ],
+        "en": [
+          "Spooky film music with Rolf Kristian Larsen. Recommended age 12+; approximately two hours including interval."
+        ],
+        "uk": [
+          "Моторошна кіномузика з Rolf Kristian Larsen. Рекомендовано від 12 років; близько двох годин з антрактом."
+        ],
+        "sv": [
+          "Skrämmande filmmusik med Rolf Kristian Larsen. Rekommenderat från 12 år; cirka två timmar inklusive paus."
+        ],
+        "da": [
+          "Uhyggelig filmmusik med Rolf Kristian Larsen. Anbefalet fra 12 år; cirka to timer inklusive pause."
+        ]
+      }
+    },
+    {
+      "id": "kristiansand-pacho-flores-2026",
+      "municipality": "4204",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-22",
+      "expires": "2026-10-23T00:00:00+02:00",
+      "source": "Kilden / Kristiansand Symfoniorkester",
+      "url": "https://kilden.com/program/45955-latinamerikansk-lidenskap-med-pacho-flores/",
+      "location": "Konsertsalen, Kilden, Kristiansand",
+      "time": "18:30",
+      "mapQuery": "Konsertsalen, Kilden, Kristiansand",
+      "copy": {
+        "nb": [
+          "Latinamerikansk lidenskap med Pacho Flores",
+          "KSO-konsert i Kildens konsertsal 22. oktober klokken 18.30."
+        ],
+        "en": [
+          "Latin American passion with Pacho Flores",
+          "KSO concert at Kilden’s main concert hall, 22 October at 18:30."
+        ],
+        "uk": [
+          "Латиноамериканська пристрасть із Pacho Flores",
+          "Концерт KSO у головному залі Kilden, 22 жовтня о 18:30."
+        ],
+        "sv": [
+          "Latinamerikansk passion med Pacho Flores",
+          "KSO-konsert i Kildens konsertsal 22 oktober kl. 18.30."
+        ],
+        "da": [
+          "Latinamerikansk passion med Pacho Flores",
+          "KSO-koncert i Kildens koncertsal 22. oktober kl. 18.30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppført i sesongen 2026/27. Program og billetter hos Kilden."
+        ],
+        "en": [
+          "Listed in the 2026/27 season. Programme and tickets from Kilden."
+        ],
+        "uk": [
+          "Подія сезону 2026/27. Програма та квитки — у Kilden."
+        ],
+        "sv": [
+          "Ingår i säsongen 2026/27. Program och biljetter hos Kilden."
+        ],
+        "da": [
+          "Del af sæsonen 2026/27. Program og billetter hos Kilden."
+        ]
+      }
+    },
+    {
+      "id": "kristiansand-melancholia-2026",
+      "municipality": "4204",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-27",
+      "expires": "2026-10-28T00:00:00+01:00",
+      "source": "Kilden / SeniorKilden",
+      "url": "https://kilden.com/program/46652-melancholia-ii/",
+      "location": "Multisalen, Kilden, Kristiansand",
+      "time": "12:00",
+      "mapQuery": "Multisalen, Kilden, Kristiansand",
+      "copy": {
+        "nb": [
+          "Melancholia II",
+          "Teater i Kildens Multisal 27. oktober klokken 12."
+        ],
+        "en": [
+          "Melancholia II",
+          "Theatre at Kilden’s Multisalen, 27 October at 12:00."
+        ],
+        "uk": [
+          "Melancholia II",
+          "Театр у Multisalen, Kilden, 27 жовтня о 12:00."
+        ],
+        "sv": [
+          "Melancholia II",
+          "Teater i Kildens Multisal 27 oktober kl. 12."
+        ],
+        "da": [
+          "Melancholia II",
+          "Teater i Kildens Multisal 27. oktober kl. 12."
+        ]
+      },
+      "details": {
+        "nb": [
+          "SeniorKilden er åpent for alle, med program tilpasset publikum over 60 år. Kontroller billettilgjengelighet."
+        ],
+        "en": [
+          "SeniorKilden welcomes everyone, with programming tailored to audiences over 60. Check current ticket availability."
+        ],
+        "uk": [
+          "SeniorKilden відкритий для всіх; програму орієнтовано на людей старше 60 років. Перевірте наявність квитків."
+        ],
+        "sv": [
+          "SeniorKilden välkomnar alla, med program anpassat för personer över 60. Kontrollera biljettillgång."
+        ],
+        "da": [
+          "SeniorKilden er åbent for alle, med program tilpasset personer over 60. Tjek billetstatus."
+        ]
+      }
+    },
+    {
+      "id": "trondheim-manifest-goat-20261024",
+      "municipality": "5001",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-24",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "source": "Verkstedhallen",
+      "url": "https://www.verkstedhallen.no/events/manifest-and-goat-the-head/B1DdFGw0fn",
+      "location": "Verkstedhallen & Lobbyen · Strandveien 29, Trondheim",
+      "mapQuery": "Verkstedhallen & Lobbyen · Strandveien 29, Trondheim",
+      "copy": {
+        "nb": [
+          "The Rumbullion: Manifest vs Goat the Head",
+          "To lokale metalband møtes i Verkstedhallen. Aldersgrense 18 år."
+        ],
+        "en": [
+          "The Rumbullion: Manifest vs Goat the Head",
+          "Two local metal bands share the Verkstedhallen stage. Age limit 18."
+        ],
+        "uk": [
+          "The Rumbullion: Manifest vs Goat the Head",
+          "Два місцеві метал-гурти виступлять у Verkstedhallen. Вікове обмеження 18 років."
+        ],
+        "sv": [
+          "The Rumbullion: Manifest vs Goat the Head",
+          "Två lokala metalband möts på Verkstedhallen. Åldersgräns 18 år."
+        ],
+        "da": [
+          "The Rumbullion: Manifest vs Goat the Head",
+          "To lokale metalbands mødes på Verkstedhallen. Aldersgrænse 18 år."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Siden oppgir ulike døråpningstider; sjekk tidspunkt direkte med arrangøren."
+        ],
+        "en": [
+          "The page lists conflicting door times; confirm timing with the organiser."
+        ],
+        "uk": [
+          "На сторінці різний час відкриття дверей; уточніть його в організатора."
+        ],
+        "sv": [
+          "Sidan anger olika insläppstider; kontrollera tiden hos arrangören."
+        ],
+        "da": [
+          "Siden angiver forskellige åbningstider; bekræft tidspunktet hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "trondheim-acappellissimo-20261024",
+      "municipality": "5001",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-24",
+      "time": "16:00",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "source": "Norges Korforbund / A Cappellissimo",
+      "url": "https://www.kor.no/arrangementer/konserter/perler-for-svin-gende",
+      "location": "Rockheim · Brattørkaia 14, Trondheim",
+      "mapQuery": "Rockheim · Brattørkaia 14, Trondheim",
+      "copy": {
+        "nb": [
+          "Perler, for Svin(gende)!",
+          "A Cappellissimo markerer 30 år med jubileumskonsert på Rockheim."
+        ],
+        "en": [
+          "Perler, for Svin(gende)!",
+          "A Cappellissimo celebrates its thirtieth anniversary with a Rockheim concert."
+        ],
+        "uk": [
+          "Perler, for Svin(gende)!",
+          "A Cappellissimo святкує тридцятиріччя концертом у Rockheim."
+        ],
+        "sv": [
+          "Perler, for Svin(gende)!",
+          "A Cappellissimo firar trettio år med konsert på Rockheim."
+        ],
+        "da": [
+          "Perler, for Svin(gende)!",
+          "A Cappellissimo fejrer tredive år med koncert på Rockheim."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Billettlenke og oppdatert informasjon finnes hos korforbundet."
+        ],
+        "en": [
+          "The choir federation provides tickets and current information."
+        ],
+        "uk": [
+          "Квитки й актуальна інформація — на сайті хорової федерації."
+        ],
+        "sv": [
+          "Biljetter och aktuell information finns hos körförbundet."
+        ],
+        "da": [
+          "Billetter og aktuelle oplysninger findes hos korforbundet."
+        ]
+      }
+    },
+    {
+      "id": "bodo-ser-du-dette-20261020",
+      "municipality": "1804",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-20",
+      "time": "19:00",
+      "expires": "2026-10-21T00:00:00+02:00",
+      "source": "Stormen Konserthus / Nordland Teater",
+      "url": "https://konserthus.stormen.no/program/teater/serdudette",
+      "location": "Stormen · Lille sal · Storgata 1B, Bodø",
+      "mapQuery": "Stormen · Lille sal · Storgata 1B, Bodø",
+      "copy": {
+        "nb": [
+          "Nordland Teater: Ser du dette?",
+          "Ungdomsteater om vennskap og digitale feiltrinn. Målgruppe fra 11 år."
+        ],
+        "en": [
+          "Nordland Teater: Ser du dette?",
+          "Youth theatre about friendship and online mistakes. Intended for ages eleven and above."
+        ],
+        "uk": [
+          "Nordland Teater: Ser du dette?",
+          "Молодіжна вистава про дружбу й помилки онлайн. Рекомендовано від одинадцяти років."
+        ],
+        "sv": [
+          "Nordland Teater: Ser du dette?",
+          "Ungdomsteater om vänskap och misstag på nätet. Målgrupp från elva år."
+        ],
+        "da": [
+          "Nordland Teater: Ser du dette?",
+          "Ungdomsteater om venskab og digitale fejltagelser. Målgruppe fra elleve år."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Forestillingen varer omtrent én time; se billettvalg hos Stormen."
+        ],
+        "en": [
+          "The performance lasts about an hour; see Stormen for ticket options."
+        ],
+        "uk": [
+          "Вистава триває близько години; варіанти квитків — у Stormen."
+        ],
+        "sv": [
+          "Föreställningen varar omkring en timme; biljetter finns hos Stormen."
+        ],
+        "da": [
+          "Forestillingen varer cirka en time; se billetmuligheder hos Stormen."
+        ]
+      }
+    },
+    {
+      "id": "bodo-trolltog-20261024",
+      "municipality": "1804",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-24",
+      "time": "11:30",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "source": "Stormen Konserthus / Arktisk Filharmoni",
+      "url": "https://konserthus.stormen.no/program/familie/barn/konsert/trolltog",
+      "location": "Stormen · Lille sal · Storgata 1B, Bodø",
+      "mapQuery": "Stormen · Lille sal · Storgata 1B, Bodø",
+      "copy": {
+        "nb": [
+          "Arktisk Filharmoni: Trolltog",
+          "Familiekonsert med Griegs musikk og fortelling. Gratis uten billetter."
+        ],
+        "en": [
+          "Arktisk Filharmoni: Trolltog",
+          "Family concert combining Grieg’s music and storytelling. Free, without tickets."
+        ],
+        "uk": [
+          "Arktisk Filharmoni: Trolltog",
+          "Сімейний концерт із музикою Гріга й оповідями. Безкоштовно, без квитків."
+        ],
+        "sv": [
+          "Arktisk Filharmoni: Trolltog",
+          "Familjekonsert med Griegs musik och berättande. Gratis utan biljetter."
+        ],
+        "da": [
+          "Arktisk Filharmoni: Trolltog",
+          "Familiekoncert med Griegs musik og fortælling. Gratis uden billetter."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Første forestilling er klokken 11.30 og varer en halvtime."
+        ],
+        "en": [
+          "The first performance starts at 11:30 and lasts half an hour."
+        ],
+        "uk": [
+          "Перший виступ починається об 11:30 і триває пів години."
+        ],
+        "sv": [
+          "Första föreställningen börjar 11.30 och varar en halvtimme."
+        ],
+        "da": [
+          "Første forestilling starter 11.30 og varer en halv time."
+        ]
+      }
+    },
+    {
+      "id": "bodo-hedvig-mollestad-20261024",
+      "municipality": "1804",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-24",
+      "time": "20:00",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "source": "Stormen Konserthus / Ad Lib",
+      "url": "https://konserthus.stormen.no/program/konsert/hedvigmollestadweejun",
+      "location": "Stormen · Sinus · Storgata 1B, Bodø",
+      "mapQuery": "Stormen · Sinus · Storgata 1B, Bodø",
+      "copy": {
+        "nb": [
+          "Ad Lib 50: Hedvig Mollestad Weejuns",
+          "Hedvig Mollestad Weejuns spiller på Sinus under Ad Lib-jubileet."
+        ],
+        "en": [
+          "Ad Lib 50: Hedvig Mollestad Weejuns",
+          "Hedvig Mollestad Weejuns plays Sinus for the Ad Lib anniversary."
+        ],
+        "uk": [
+          "Ad Lib 50: Hedvig Mollestad Weejuns",
+          "Hedvig Mollestad Weejuns виступить у Sinus до ювілею Ad Lib."
+        ],
+        "sv": [
+          "Ad Lib 50: Hedvig Mollestad Weejuns",
+          "Hedvig Mollestad Weejuns spelar på Sinus under Ad Lib-jubileet."
+        ],
+        "da": [
+          "Ad Lib 50: Hedvig Mollestad Weejuns",
+          "Hedvig Mollestad Weejuns spiller på Sinus under Ad Lib-jubilæet."
+        ]
+      },
+      "details": {
+        "nb": [
+          "18-årsgrense med vergeordning; sjekk vilkårene før billettkjøp."
+        ],
+        "en": [
+          "Age limit eighteen with a guardian scheme; check conditions before booking."
+        ],
+        "uk": [
+          "Обмеження 18 років із можливістю супроводу; перевірте умови перед купівлею."
+        ],
+        "sv": [
+          "Artonårsgräns med ledsagarordning; kontrollera villkoren före biljettköp."
+        ],
+        "da": [
+          "Attenårsgrænse med værgeordning; kontrollér vilkårene inden billetkøb."
+        ]
+      }
+    },
+    {
+      "id": "tromso-fri-flyt-filmtour-20261021",
+      "municipality": "5501",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-21",
+      "time": "18:30",
+      "expires": "2026-10-22T00:00:00+02:00",
+      "source": "Bryggeriet Scene",
+      "url": "https://www.bryggerietscene.no/program2/fri-flyt-filmtour",
+      "location": "Bryggeriet Scene · Tromsø",
+      "mapQuery": "Bryggeriet Scene · Tromsø",
+      "copy": {
+        "nb": [
+          "Fri Flyt Filmtour",
+          "Filmturné med ski- og snowboardfilmer før vintersesongen."
+        ],
+        "en": [
+          "Fri Flyt Filmtour",
+          "Ski and snowboard film tour ahead of the winter season."
+        ],
+        "uk": [
+          "Fri Flyt Filmtour",
+          "Кінотур із фільмами про лижі та сноуборд перед зимовим сезоном."
+        ],
+        "sv": [
+          "Fri Flyt Filmtour",
+          "Filmturné med skid- och snowboardfilmer inför vintersäsongen."
+        ],
+        "da": [
+          "Fri Flyt Filmtour",
+          "Filmturné med ski- og snowboardfilm inden vintersæsonen."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Arrangørens side lenker til billettsalg og oppdateringer."
+        ],
+        "en": [
+          "The organiser links to ticket sales and updates."
+        ],
+        "uk": [
+          "На сторінці організатора — продаж квитків та оновлення."
+        ],
+        "sv": [
+          "Arrangörens sida länkar till biljetter och uppdateringar."
+        ],
+        "da": [
+          "Arrangørens side linker til billetsalg og opdateringer."
+        ]
+      }
+    },
+    {
+      "id": "tromso-konradsen-20261023",
+      "municipality": "5501",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-23",
+      "time": "20:00",
+      "expires": "2026-10-24T00:00:00+02:00",
+      "source": "Bryggeriet Scene",
+      "url": "https://www.bryggerietscene.no/program2/konradsen-tankrommet",
+      "location": "Bryggeriet Scene · Tankrommet · Tromsø",
+      "mapQuery": "Bryggeriet Scene · Tankrommet · Tromsø",
+      "copy": {
+        "nb": [
+          "Konradsen · Tankrommet",
+          "Intim duokonsert med Konradsen på Tankrommet. Dørene åpner 19.00."
+        ],
+        "en": [
+          "Konradsen · Tankrommet",
+          "Intimate Konradsen duo concert at Tankrommet. Doors open at 19:00."
+        ],
+        "uk": [
+          "Konradsen · Tankrommet",
+          "Камерний концерт дуету Konradsen у Tankrommet. Двері відкриваються о 19:00."
+        ],
+        "sv": [
+          "Konradsen · Tankrommet",
+          "Intim duokonsert med Konradsen på Tankrommet. Insläpp 19.00."
+        ],
+        "da": [
+          "Konradsen · Tankrommet",
+          "Intim duokoncert med Konradsen på Tankrommet. Dørene åbner 19.00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Brødteksten oppgir konsertstart 20.00; kalenderfeltet viser døråpningen."
+        ],
+        "en": [
+          "The description specifies a 20:00 concert; the calendar lists door opening."
+        ],
+        "uk": [
+          "Опис указує початок о 20:00; календар показує відкриття дверей."
+        ],
+        "sv": [
+          "Beskrivningen anger konsertstart 20.00; kalendern visar insläpp."
+        ],
+        "da": [
+          "Beskrivelsen angiver koncertstart 20.00; kalenderen viser døråbning."
+        ]
+      }
+    },
+    {
+      "id": "tromso-world-bryggeriet-20261031",
+      "municipality": "5501",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-31",
+      "time": "19:00",
+      "expires": "2026-11-01T00:00:00+01:00",
+      "source": "Bryggeriet Scene / Tromsø World",
+      "url": "https://www.bryggerietscene.no/program2/troms-world-bryggeriet-scene",
+      "location": "Bryggeriet Scene · Tromsø",
+      "mapQuery": "Bryggeriet Scene · Tromsø",
+      "copy": {
+        "nb": [
+          "Tromsø World · Bryggeriet Scene",
+          "Gypsy Chicken, BCUC og Indiskotek fyller Bryggeriet med festivalmusikk."
+        ],
+        "en": [
+          "Tromsø World · Bryggeriet Scene",
+          "Gypsy Chicken, BCUC and Indiskotek bring festival music to Bryggeriet."
+        ],
+        "uk": [
+          "Tromsø World · Bryggeriet Scene",
+          "Gypsy Chicken, BCUC та Indiskotek виступлять на фестивальному вечорі Bryggeriet."
+        ],
+        "sv": [
+          "Tromsø World · Bryggeriet Scene",
+          "Gypsy Chicken, BCUC och Indiskotek bjuder på festivalmusik på Bryggeriet."
+        ],
+        "da": [
+          "Tromsø World · Bryggeriet Scene",
+          "Gypsy Chicken, BCUC og Indiskotek spiller festivalmusik på Bryggeriet."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dører 18.30; program 19.00, 20.30 og 22.00. Se arrangørens billettlenke."
+        ],
+        "en": [
+          "Doors 18:30; programme at 19:00, 20:30 and 22:00. Tickets via organiser."
+        ],
+        "uk": [
+          "Двері 18:30; програма о 19:00, 20:30 і 22:00. Квитки в організатора."
+        ],
+        "sv": [
+          "Insläpp 18.30; program 19.00, 20.30 och 22.00. Biljetter via arrangören."
+        ],
+        "da": [
+          "Døre 18.30; program 19.00, 20.30 og 22.00. Billetter via arrangøren."
+        ]
+      }
     }
   ]
 }
