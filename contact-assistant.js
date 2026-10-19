@@ -16,7 +16,7 @@ const facebook=node('a','fjord-contact-facebook');facebook.href='https://m.me/10
 const contactLinks=node('div','fjord-contact-links');contactLinks.append(address,facebook);
 footer.append(heading,intro,contactLinks);
 document.querySelector('footer')?.before(footer);
-const launch=node('button','fjord-helper-launch');launch.type='button';launch.dataset.i18nIgnore='';launch.setAttribute('aria-haspopup','dialog');launch.setAttribute('aria-controls','fjordHelper');launch.setAttribute('aria-label',({ru:'Фьорди',uk:'Фьорді'})[window.FjordI18n?.language||document.documentElement.lang]||'Fjordi');document.body.append(launch);
+const launch=node('button','fjord-helper-launch');launch.type='button';launch.dataset.i18nIgnore='';launch.setAttribute('aria-haspopup','dialog');launch.setAttribute('aria-controls','fjordHelper');launch.setAttribute('aria-label','Osiris');document.body.append(launch);
 const dialog=node('dialog','fjord-helper');dialog.id='fjordHelper';dialog.dataset.i18nIgnore='';dialog.setAttribute('aria-labelledby','fjordHelperTitle');
 const close=node('button','fjord-helper-close');close.type='button';close.textContent='×';
 const title=node('h2');title.id='fjordHelperTitle';const note=node('p','fjord-helper-note');
@@ -24,7 +24,7 @@ const topics=node('div','fjord-helper-topics');const answer=node('p','fjord-help
 const sectionLink=node('a','fjord-helper-go');dialog.append(close,title,note,topics,answer,sectionLink);document.body.append(dialog);
 let topic=0,returnFocus=null;
 const targets=['.roadtrip-collection','#cafeNearby','#staysSauna'];
-function render(){const w=words(),name=({ru:'Фьорди',uk:'Фьорді'})[window.FjordI18n?.language||document.documentElement.lang]||'Fjordi';heading.textContent=w[12].replace('FJORD / FLOW','Fjord Flow');intro.textContent=w[13];launch.setAttribute('aria-label',name);if(!launch.querySelector('.fjord-ai-pet'))launch.textContent=name;title.textContent=w[1];note.textContent=w[2];close.setAttribute('aria-label',w[18]);topics.replaceChildren();
+function render(){const w=words(),name='Osiris';heading.textContent=w[12].replace('FJORD / FLOW','Fjord Flow');intro.textContent=w[13];launch.setAttribute('aria-label',name);if(!launch.querySelector('.fjord-ai-pet'))launch.textContent=name;title.textContent=w[1];note.textContent=w[2];close.setAttribute('aria-label',w[18]);topics.replaceChildren();
  for(let i=0;i<4;i++){const button=node('button');button.type='button';button.textContent=w[3+i];button.setAttribute('aria-pressed',String(topic===i));button.onclick=()=>{topic=i;render();topics.children[i]?.focus({preventScroll:true})};topics.append(button)}
  answer.textContent=w[7+topic];sectionLink.textContent=w[11]+' ↗';const target=document.querySelector(topic===3?'#contact':targets[topic]);if(target&&!target.id)target.id='scenicRoutes';sectionLink.href=target?'#'+target.id:'#collection';}
 launch.onclick=()=>{returnFocus=document.activeElement;render();if(!dialog.open)dialog.showModal();close.focus()};close.onclick=()=>dialog.close();

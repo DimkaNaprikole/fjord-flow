@@ -69,3 +69,23 @@ dialog.fjord-helper.fjord-ai.fjord-ai-auth-pending[open]{display:block;height:au
 }
 
 .fjord-ai-origin{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:7px;color:#d4e6ed;font-size:12px;overflow-wrap:anywhere}.fjord-ai-origin button{border:0;background:transparent;color:#e1f4fa;font:inherit;text-decoration:underline;cursor:pointer;padding:5px}
+
+/* Osiris is a rendered portrait. These subtle state cues do not fake lip sync. */
+body button.fjord-helper-launch.osiris-launch,
+body button.fjord-helper-launch.osiris-launch:hover,
+body button.fjord-helper-launch.osiris-launch:focus-visible{width:84px;height:108px;padding:0;gap:0;border:0;border-radius:18px;background:transparent;box-shadow:none;backdrop-filter:none;color:#f5fbff;overflow:visible;transition:none}
+body button.fjord-helper-launch.osiris-launch::before,
+body button.fjord-helper-launch.osiris-launch::after{display:none}
+.osiris-launch .fjord-ai-pet-name{position:absolute;bottom:0;left:50%;transform:translateX(-50%);padding:3px 10px;border:1px solid #b2ccd5;border-radius:20px;background:#12384df2;color:#fff;font:700 12px/1.2 'Manrope',sans-serif;white-space:nowrap}
+body .fjord-ai-pet.osiris-pet{width:78px;height:94px;margin:0;border:0;border-radius:0;background:transparent;box-shadow:none;transform:none;animation:osiris-breathe 5s ease-in-out infinite;transform-origin:50% 95%;filter:drop-shadow(0 5px 7px #001e324d)}
+.fjord-ai-pet.osiris-pet::before,.fjord-ai-pet.osiris-pet::after,.osiris-pet>.fjord-ai-pet-face{display:none}
+.osiris-pet .osiris-avatar{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none}
+body .fjord-ai-portrait .fjord-ai-pet.osiris-pet{width:80px;height:96px;flex:none}
+body .fjord-ai-pet.osiris-pet[data-state=listening]{animation:osiris-attend 2.5s ease-in-out infinite;filter:drop-shadow(0 0 6px #9de4da99)}
+body .fjord-ai-pet.osiris-pet[data-state=thinking]{animation:osiris-ponder 2s ease-in-out infinite}
+body .fjord-ai-pet.osiris-pet[data-state=speaking]{animation:osiris-attend 1.8s ease-in-out infinite}
+.fjord-ai .fjord-ai-mic-language{max-width:180px}
+@keyframes osiris-breathe{50%{transform:translateY(-2px) scale(1.015)}}
+@keyframes osiris-attend{50%{transform:rotate(-2deg) translateY(-2px)}}
+@keyframes osiris-ponder{50%{transform:rotate(2deg)}}
+@media(prefers-reduced-motion:reduce){body .fjord-ai-pet.osiris-pet{animation:none!important}}

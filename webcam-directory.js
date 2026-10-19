@@ -19,21 +19,23 @@ let items=[],failed=false,observer=null,players=[],cycle=null;
 const blocked=new Map();
 const loadAPI=()=>window.YT?.Player?Promise.resolve(window.YT):typeof window.loadYouTubeAPI==='function'?window.loadYouTubeAPI():Promise.reject(Error('Player API unavailable'));
 const visible=()=>!document.hidden&&!section.hidden&&!section.closest('[hidden]');
-function refresh(){for(const player of players){const rect=player.card.getBoundingClientRect();if(visible()&&rect.bottom>0&&rect.top<innerHeight)player.start();else player.stop();}}
+function refresh(){for(const player of players){const rect=player.card.getBoundingClientRect(),rail=player.card.parentElement?.getBoundingClientRect();const horizontal=rect.right===undefined||!rail||rect.right>Math.max(0,rail.left)&&rect.left<Math.min(innerWidth,rail.right);if(visible()&&horizontal&&rect.bottom>0&&rect.top<innerHeight)player.start();else player.stop();}}
 function render(){
  observer?.disconnect();for(const player of players)player.stop();players=[];
  const lang=window.FjordI18n?.language||document.documentElement.lang,t=copy[lang]||copy.nb;nav.textContent=t[0];
  let world=section.querySelector('.webcam-world'),grid=world?.querySelector('.webcam-grid');const existing=Boolean(world&&grid);
  if(existing){world.querySelector('h2').textContent=t[0];world.querySelector('p').textContent=t[1];grid.replaceChildren();}
  else{world=el('section',null,'webcam-world');world.id='worldWebcams';world.append(el('h2',t[0]),el('p',t[1]));grid=el('div',null,'webcam-grid');}
+ grid.tabIndex=0;grid.setAttribute('aria-label',t[0]);grid.onscroll=refresh;
  for(const camera of select(items)){
   const card=el('article',null,'webcam-card'),visual=el('div',null,'webcam-visual');card.append(visual,el('h3',camera.name),el('p',camera.operator,'webcam-operator'),el('small',t[3]+': '+camera.checked,'webcam-checked'));if(camera.note)card.append(el('small',camera.note[lang]||camera.note.nb));
+  const caption=el('span',camera.name,'webcam-place-caption');visual.append(caption);
   let frame=null,api=null;
   const unavailable=()=>{if(!frame||!visible())return;blocked.set(camera.id,Date.now()+300000);player.stop();card.hidden=true;};
   card.hidden=(blocked.get(camera.id)||0)>Date.now();
-  const player={card,id:camera.id,start(){if(frame||card.hidden)return;frame=el('iframe');const currentFrame=frame;frame.title=camera.name;frame.allow='autoplay; encrypted-media';frame.referrerPolicy='strict-origin-when-cross-origin';frame.src='https://www.youtube-nocookie.com/embed/'+camera.youtube+'?autoplay=1&mute=1&playsinline=1&rel=0&controls=0&disablekb=1&fs=0&iv_load_policy=3&enablejsapi=1&origin='+encodeURIComponent(location.origin);visual.replaceChildren(frame);
+  const player={card,id:camera.id,start(){if(frame||card.hidden)return;frame=el('iframe');const currentFrame=frame;frame.title=camera.name;frame.allow='autoplay; encrypted-media';frame.referrerPolicy='strict-origin-when-cross-origin';frame.src='https://www.youtube-nocookie.com/embed/'+camera.youtube+'?autoplay=1&mute=1&playsinline=1&rel=0&controls=0&disablekb=1&fs=0&iv_load_policy=3&enablejsapi=1&origin='+encodeURIComponent(location.origin);visual.replaceChildren(frame,caption);
    loadAPI().then(YT=>{if(frame!==currentFrame)return;api=new YT.Player(frame,{events:{onReady:event=>{if(frame!==currentFrame)return;event.target.mute();event.target.playVideo();},onError:()=>{if(frame===currentFrame)unavailable();},onAutoplayBlocked:()=>{if(frame===currentFrame)unavailable();},onStateChange:event=>{if(frame===currentFrame&&event.data===0)unavailable();}}});}).catch(()=>{});
-  },stop(){if(!frame)return;frame=null;api?.destroy?.();api=null;visual.replaceChildren();}};
+  },stop(){if(!frame)return;frame=null;api?.destroy?.();api=null;visual.replaceChildren(caption);}};
   players.push(player);grid.append(card);
  }
  if(!existing)world.append(grid);if(failed){world.append(el('p',t[4]));const retry=el('button',t[5]);retry.onclick=load;world.append(retry);}if(!existing)section.replaceChildren(world);
@@ -42,5 +44,5 @@ function render(){
 }
 function retryUnavailable(){if(!visible())return;for(const player of players){const until=blocked.get(player.id);if(until&&until<=Date.now()){blocked.delete(player.id);player.card.hidden=false;}}refresh();}
 async function load(){try{const response=await fetch('./world-webcams-data.json?v=4');if(!response.ok)throw Error('camera registry');const data=await response.json();if(!Array.isArray(data.cameras))throw Error('camera data');items=data.cameras;failed=false;}catch{items=[];failed=true;}render();if(!cycle)cycle=setInterval(retryUnavailable,30000);}
-window.FjordWebcams={ready:load()};document.addEventListener('visibilitychange',refresh);window.addEventListener('fjord:sections-changed',refresh);window.addEventListener('fjordlanguagechange',render);
+window.FjordWebcams={ready:load()};document.addEventListener('visibilitychange',refresh);window.addEventListener('fjord:sections-changed',refresh);window.addEventListener('fjordlanguagechange',render);window.addEventListener('resize',refresh);
 })();
