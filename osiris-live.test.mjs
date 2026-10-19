@@ -36,6 +36,14 @@ test('local navigation executes before a paid Sol lookup and uses Live commentar
 test('goodbye stops capture and closes Live without moderation, delegation or new session',async()=>{
  const {app,channel,track}=await start();input(channel,'Осирис, всё, пока','u1');await flush();assert.equal(track.readyState,'ended');assert.notEqual(app.voiceState.peer.closed,true);channel.message({type:'session.closed'});assert.equal(app.voiceState.peer.closed,true);assert.ok(channel.sent.some(e=>e.type==='session.close'));assert.equal(app.calls.filter(c=>/\/(chat|moderate)$/.test(c.url)).length,0);assert.equal(app.calls.filter(c=>c.url.includes('/live-session')).length,1);app.dialog.close();
 });
+
+test('bare pause stops playback immediately and a following goodbye closes capture without an intervening answer',async()=>{
+ const {app,channel,track}=await start();app.voiceState.peer.ontrack({streams:[{getTracks:()=>[]}]});await flush();output(channel,'Расскажу о Норвегии.','a1');
+ input(channel,'подожди','u1');assert.equal(app.find('osiris-live-audio').paused,true);
+ assert.ok(channel.sent.some(e=>e.type==='session.instructions.append'&&/Stop speaking now/.test(e.content)));
+ input(channel,'всё, ','u2');input(channel,'пока','u3');assert.equal(track.readyState,'ended');
+ assert.ok(channel.sent.some(e=>e.type==='session.close'));channel.message({type:'session.closed'});assert.equal(app.calls.filter(c=>/\/(chat|moderate)$/.test(c.url)).length,0);app.dialog.close();
+});
 test('closed Live ignores late captions and task events',async()=>{
  const {app,channel,track}=await start();const old=channel.onmessage;app.dialog.close();const before=app.calls.length;old({data:JSON.stringify({type:'session.delegation.created',delegation:{id:'stale',target:'client'}})});old({data:JSON.stringify({type:'session.output_transcript.delta',delta:'stale'})});await flush();assert.equal(track.readyState,'ended');assert.equal(app.calls.length,before);assert.equal(app.find('fjord-ai-log').children.some(n=>n.textContent==='stale'),false);
 });
@@ -47,6 +55,13 @@ test('Live opt-in leaves manual dictation on the tested Realtime SDP protocol',a
 });
 test('closing cancels a pending Sol delegation without stale commentary or a retry',async()=>{
  const {app,channel}=await start('conversation',{deferChat:true});input(channel,'Почему небо голубое?','u1');delegate(channel);await flush();assert.equal(typeof app.voiceState.resolveChat,'function');app.dialog.close();app.voiceState.resolveChat();await flush();assert.equal(channel.sent.some(e=>e.type==='session.commentary.append'),false);assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,1);channel.message({type:'session.closed'});
+});
+
+test('pause during a pending lookup suppresses its late answer and keeps microphone ready',async()=>{
+ const {app,channel,track}=await start('conversation',{deferChat:true});input(channel,'Почему море солёное?','u1');delegate(channel);await flush();
+ input(channel,'подожди','u2');assert.ok(channel.sent.some(e=>e.type==='session.instructions.append'));
+ app.voiceState.resolveChat();await flush();assert.equal(channel.sent.some(e=>e.type==='session.commentary.append'),false);assert.equal(track.readyState,'live');
+ input(channel,'всё, пока','u3');assert.equal(track.readyState,'ended');channel.message({type:'session.closed'});app.dialog.close();
 });
 test('budget-protected dictation never opens old paid RTC when browser ASR is missing',async()=>{
  const app=boot({...config,paidRealtimeDisabled:true,budgetProtectedVoice:true},true);await flush();app.browserWindow.emit('fjord:open-chat');await app.find('fjord-ai-record-fallback').emit('click');await flush();assert.equal(app.calls.filter(c=>c.url.includes('/live-session')).length,0);assert.equal(app.find('fjord-ai-status').attrs['data-speech-error'],'unsupported');assert.equal(app.voiceState.track,null);app.dialog.close();

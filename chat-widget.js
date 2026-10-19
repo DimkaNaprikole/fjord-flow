@@ -155,12 +155,12 @@ function liveTranscript(message,role){
  // Deltas are fragments, not final turns: preserve their spaces and repetitions.
  liveCaption.text+=message.delta;liveCaption.node.textContent=liveCaption.text;
  if(role==='assistant'){compactReply.textContent=liveCaption.text;refreshCompact();if(!livePauseRequested){setPet('speaking');speakingAnswer=true;ttsDiagnostic('speaking');playNativeStream()}}
- else{lastHeardLanguage=questionLanguage(liveCaption.text);setPet('listening');speakingAnswer=false;const text=liveCaption.text.trim();if(wantsGoodbye(text)){stopLive(farewell(lastHeardLanguage));return}if(wantsPause(text)){livePauseRequested=true;liveAudio?.pause();sendLiveContext('session.instructions.append','The caller asks you to pause. Stop speaking now and listen.');}else livePauseRequested=false}
+ else{lastHeardLanguage=questionLanguage(liveCaption.text);setPet('listening');speakingAnswer=false;const text=liveCaption.text.trim();if(wantsGoodbye(text)){stopLive(farewell(lastHeardLanguage));return}if(wantsPause(text)||wantsPause(message.delta)){livePauseRequested=true;liveTurnGeneration++;liveAudio?.pause();sendLiveContext('session.instructions.append','The caller asks you to pause. Stop speaking now and listen.');finishLiveCaption();}else livePauseRequested=false}
  conversation.scrollTop=conversation.scrollHeight;
 }
 async function handleLiveDelegation(message){
  const delegation=message.delegation;if(delegation?.target!=='client'||typeof delegation.id!=='string'||liveDelegations.has(delegation.id))return;
- liveDelegations.add(delegation.id);if(liveDelegationId){sendLiveContext('session.thinking.append','Another requested lookup is still running. Wait for its result.',delegation.id);return}const generation=liveGeneration,channel=liveChannel,current=()=>liveProtocol&&generation===liveGeneration&&voiceMode&&dialog.open&&channel===liveChannel;
+ liveDelegations.add(delegation.id);if(liveDelegationId){sendLiveContext('session.thinking.append','Another requested lookup is still running. Wait for its result.',delegation.id);return}const generation=liveGeneration,turn=liveTurnGeneration,channel=liveChannel,current=()=>liveProtocol&&generation===liveGeneration&&turn===liveTurnGeneration&&!livePauseRequested&&voiceMode&&dialog.open&&channel===liveChannel;
  // Snapshot completed transcript before async work; a delegation is the task boundary.
  finishLiveCaption();const history=liveHistory(),heard=history.findLast(item=>item.role==='user')?.content||'',language=questionLanguage(heard,lastHeardLanguage);
  if(!heard){sendLiveContext('session.thinking.append','No user request was received. Ask the caller what they need.',delegation.id);return}
