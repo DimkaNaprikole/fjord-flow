@@ -51,7 +51,7 @@ const fail=k=>{throw Error(msg(k))},response=(v,status=200)=>new Response(JSON.s
 window.FjordPublicDemo=Object.freeze({accountMessage:()=>msg('blocked')});
 let statePromise,routesPromise;
 async function asset(path){const r=await nativeFetch(new URL('demo-data/'+path,publicBase));if(!r.ok)fail('route');return r.json()}
-async function state(){return statePromise||(statePromise=asset('state.json?v=4').catch(e=>{statePromise=null;throw e}))}
+async function state(){return statePromise||(statePromise=asset('state.json?v=5').catch(e=>{statePromise=null;throw e}))}
 const norm=s=>String(s??'').normalize('NFC').trim().toLocaleLowerCase();
 const point=p=>{const a=[Number(p.latitude),Number(p.longitude)];if(!a.every(Number.isFinite)||a[0]<57||a[0]>72||a[1]<3||a[1]>33)fail('access');return a};
 const coords=s=>/^\s*[+-]?\d+(?:\.\d+)?\s*,\s*[+-]?\d+(?:\.\d+)?\s*$/.test(s)?s.split(',').map(Number):null;

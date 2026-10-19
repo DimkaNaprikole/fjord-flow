@@ -1,5 +1,5 @@
 /* Selected boards: a curated photographic view. Original controls/data stay in DOM. */
-import {waterfallVisits} from './waterfall-visits.mjs';
+import {waterfallVisits} from './waterfall-visits.mjs?v=2';
 const lang=()=>window.FjordI18n?.language||document.documentElement.lang||'nb';
 const languages=['nb','en','uk','sv','da'];
 const tr=(...s)=>s[languages.indexOf(lang())]||s[0];
@@ -42,7 +42,7 @@ let state,catalogue,shops,experiences,apps;
 const extraServices=await fetch('./official-services.json?v=4').then(r=>r.json());
 const serviceArtwork=await fetch('./service-artwork.json?v=4').then(r=>r.json());
 const [stateResult,catResult,shopResult,expResult,appResult]=await Promise.allSettled([
- fetch('./demo-data/state.json').then(r=>r.json()),fetch('./norway-catalog.json').then(r=>r.json()),
+ fetch('./demo-data/state.json?v=5').then(r=>r.json()),fetch('./norway-catalog.json').then(r=>r.json()),
  fetch('./shopping-centres.json').then(r=>r.json()),fetch('./route-experiences.json?v=20261019-photo').then(r=>r.json()),fetch('./travel-apps.json').then(r=>r.json())
 ]);
 if([stateResult,catResult,shopResult,expResult,appResult].some(r=>r.status!=='fulfilled'))throw Error('Reference layout source unavailable');
@@ -80,11 +80,12 @@ function automaticScene(panel,key,intro,items){
    return;
   }
   const v=waterfallVisits[x.id],i=Math.max(0,languages.indexOf(lang()));if(!v)return;
-  information.append(el('h3','',x.name),el('p','ref-visit-location',[x.municipality,x.region].filter(Boolean).join(' · ')));
+  information.append(el('h3','',x.name),el('p','ref-visit-location',[...new Set([x.municipality,x.region].filter(Boolean))].join(' · ')));
+  if(v.description?.[i])information.append(el('p','',v.description[i]));
   for(const [heading,text]of [[tr('Parkering og adkomst','Parking and access','Парковка та під’їзд','Parkering och tillfart','Parkering og adgang'),v.parking[i]],[tr('Til fots / med tog','On foot / by train','Пішки / потягом','Till fots / med tåg','Til fods / med tog'),v.walk[i]]]){information.append(el('h4','',heading),el('p','',text));}
-  const url=v.train||'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(v.route)+'&travelmode=driving';
-  information.append(link(v.train?tr('Flåmsbana · planlegg turen','Flåm Railway · plan your trip','Flåmsbana · планувати поїздку','Flåmsbana · planera resan','Flåmsbana · planlæg turen'):tr('Veien til parkeringen','Directions to parking','Під’їзд до парковки','Vägen till parkeringen','Rute til parkeringen'),url));
-  information.append(link(tr('Kilde','Source','Джерело','Källa','Kilde')+' · 19.10.2026',v.source));
+  const url=v.train||(v.mapOnly?'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(x.name+', '+x.municipality+', Norway'):'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(v.route)+'&travelmode=driving');
+  information.append(link(v.train?tr('Flåmsbana · planlegg turen','Flåm Railway · plan your trip','Flåmsbana · планувати поїздку','Flåmsbana · planera resan','Flåmsbana · planlæg turen'):v.mapOnly?tr('Se på kartet','View on map','Переглянути на карті','Visa på kartan','Se på kortet'):tr('Veien til parkeringen','Directions to parking','Під’їзд до парковки','Vägen till parkeringen','Rute til parkeringen'),url));
+  information.append(link(tr('Kilde','Source','Джерело','Källa','Kilde')+' · '+(v.checked||'2026-10-19'),v.source));
  };
  const updateInformation=x=>{renderInformation(x);if(weatherShell&&information)information.append(weatherShell);weather?.update();};
  if(key==='waterfalls'){hero.classList.add('ref-waterfall-scene');information=el('aside','ref-visit-info');hero.append(information);updateInformation(items[0]);}
@@ -92,7 +93,7 @@ function automaticScene(panel,key,intro,items){
  const slides=items.map((x,i)=>{
   const slide=el('div','ref-scene-slide');slide.classList.toggle('is-active',i===0);slide.inert=i!==0;slide.setAttribute('aria-hidden',String(i!==0));
   const button=el('button','ref-scene-target');button.type='button';button.setAttribute('aria-label',copy.info()+' · '+x.name);button.onclick=x.open||(()=>openPlace(x.id));
-  const photo=x.image?image(x.image,x.name):null;if(photo)photo.loading=['experiences','stays','services'].includes(key)&&i>1?'lazy':'eager';if(x.image)button.append(photo);else button.append(el('span','ref-service-wordmark',x.name));button.append(el('span','ref-scene-name',x.name));slide.append(button);
+  const photo=x.image?image(x.image,x.name):null;if(photo)photo.loading=['experiences','stays','services','waterfalls'].includes(key)&&i>1?'lazy':'eager';if(x.image)button.append(photo);else button.append(el('span','ref-service-wordmark',x.name));button.append(el('span','ref-scene-name',x.name));slide.append(button);
   if(x.imageSource){const credit=link([x.imageCredit,x.imageLicense].filter(Boolean).join(' · '),x.imageSource);credit.className='ref-scene-credit';slide.append(credit);}
   stage.append(slide);return slide;
  });
@@ -119,7 +120,7 @@ function automaticScene(panel,key,intro,items){
   const nextImage=slides[next].querySelector('img');if(nextImage&&(!nextImage.complete||!nextImage.naturalWidth)){nextImage.loading='eager';return;}
   slides[current].classList.remove('is-active');slides[current].inert=true;slides[current].setAttribute('aria-hidden','true');
   current=next;slides[current].classList.add('is-active');slides[current].inert=false;slides[current].setAttribute('aria-hidden','false');hero.dataset.activePlace=items[current].id;updateInformation(items[current]);
-  if(['experiences','stays','services'].includes(key)){const upcoming=slides[(current+1)%slides.length].querySelector('img');if(upcoming)upcoming.loading='eager';}
+  if(['experiences','stays','services','waterfalls'].includes(key)){const upcoming=slides[(current+1)%slides.length].querySelector('img');if(upcoming)upcoming.loading='eager';}
  },4000);
  sceneDisposers.push(()=>{clearInterval(timer);observer.disconnect();resetDepth();stage.removeEventListener('pointermove',moveDepth);stage.removeEventListener('pointerleave',resetDepth);stage.removeEventListener('pointercancel',resetDepth);stage.removeEventListener('focusin',resetDepth);reduced.removeEventListener('change',resetDepth);finePointer.removeEventListener('change',resetDepth);});return hero;
 }
@@ -155,7 +156,15 @@ function renderAll(){
   p.append(action(copy.choose()+' ›',()=>r.classList.toggle('ref-expanded')));
  });
  mount('collection',p=>{automaticScene(p,'places',copy.placesIntro(),['trolltunga','geiranger','bergen','lofoten'].map(id=>state.find(x=>x.id===id)).filter(Boolean));carousel(p,state.map(x=>({name:x.name,photo:x.image,onPhoto:()=>openPlace(x.id),onInfo:()=>openPlace(x.id)})));});
- mount('waterfallChapter',p=>{automaticScene(p,'waterfalls',copy.waterIntro(),['steinsdalsfossen','voringfossen','kjosfossen'].map(id=>state.find(x=>x.id===id)).filter(Boolean));});
+ mount('waterfallChapter',p=>{
+  const headings={nb:['Parkering og adkomst','Til fots / med tog'],en:['Parking and access','On foot / by train'],uk:['Парковка та під’їзд','Пішки / потягом'],sv:['Parkering och tillfart','Till fots / med tåg'],da:['Parkering og adgang','Til fods / med tog']};
+  const waterfalls=state.filter(x=>x.category==='Waterfalls'&&waterfallVisits[x.id]).map(x=>{
+   const v=waterfallVisits[x.id],venue={...x,website:v.source,address:x.municipality,gallery:(x.gallery||[]).map(p=>({src:p.image,source:p.imageSource,credit:p.imageCredit,license:p.imageLicense,licenseUrl:p.imageLicenseUrl,kind:'place',alt:x.name})),directionsLabel:v.train?'Flåmsbana':v.mapOnly?tr('Se på kartet','View on map','Переглянути на карті','Visa på kartan','Se på kortet'):null,directionsUrl:v.train||(v.mapOnly?'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(x.name+', '+x.municipality+', Norway'):'https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(v.route)+'&travelmode=driving'),visitInfo:{expanded:true,checked:v.checked||'2026-10-19',source:v.source,text:Object.fromEntries(languages.map((l,i)=>[l,[v.description?.[i],headings[l][0]+': '+v.parking[i],headings[l][1]+': '+v.walk[i]].filter(Boolean).join('\n\n')]))}};
+   return {...x,open:()=>window.FjordStayGallery?.open(venue)};
+  });
+  automaticScene(p,'waterfalls',copy.waterIntro(),waterfalls);
+  carousel(p,waterfalls.map(x=>({name:x.name,photo:x.image,onPhoto:x.open,onInfo:x.open})));
+ });
  mount('buaEquipment',(p,r)=>{
   title(p,'BUA',copy.buaIntro(),'./images/bua-gear-illustration.webp');
   const controls=el('div','ref-bua-controls');const picker=take(r,'select');if(picker)controls.append(picker);

@@ -90,6 +90,7 @@
         const labels = {nb:['Nettsted','Bestill','Finn veien'],en:['Website','Book a stay','Get directions'],uk:['Сайт','Забронювати','Прокласти маршрут'],sv:['Webbplats','Boka','Hitta hit'],da:['Hjemmeside','Book','Find vej']}[language()] || ['Website','Book a stay','Get directions'];
         if (venue.category && venue.category !== 'cabin') labels[1] = {nb:'Bestill',en:'Book',uk:'Забронювати',sv:'Boka',da:'Book'}[language()] || 'Book';
         venueActions.setAttribute('aria-label', venue.name);
+        if(venue.directionsLabel)labels[2]=venue.directionsLabel;
         const targets = [venue.website, venue.bookingUrl, venue.directionsUrl || 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(venue.routeQuery || [venue.name,venue.address,venue.area,venue.town,'Norway'].filter(Boolean).join(', '))];
         targets.forEach((target, i) => {
           if (venue.openingHours && i !== 1) return;
