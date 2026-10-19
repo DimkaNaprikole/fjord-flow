@@ -1,0 +1,7 @@
+/* Motion belongs to the launcher only; the same portrait is not a 3D rig. */
+.osiris-sound-option{display:flex;align-items:center;gap:8px;width:fit-content;margin:12px 0;font:inherit;cursor:pointer}
+.osiris-sound-option input{width:18px;height:18px;accent-color:var(--ff-accent,#9de4da)}
+.osiris-sound-option input:focus-visible{outline:2px solid var(--ff-accent,#9de4da);outline-offset:3px}
+.fjord-helper-launch[data-osiris-presence]{touch-action:manipulation}
+.fjord-helper-launch[data-osiris-presence]:focus-visible{outline:3px solid #e8d18c;outline-offset:5px}
+@media(prefers-reduced-motion:reduce){.fjord-helper-launch[data-osiris-presence]{translate:none!important}}

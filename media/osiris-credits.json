@@ -1,0 +1,17 @@
+{
+  "character": {
+    "name": "Osiris",
+    "image": "../images/osiris-assistant-v1.png",
+    "description": "AI-generated rendered mascot based on photographs supplied and approved by the site owner. This asset is a rendered image, not a rigged 3D model."
+  },
+  "meow": {
+    "file": "osiris-meow.mp3",
+    "title": "Maullido de gata hembra joven",
+    "author": "George Miquilena",
+    "source": "https://commons.wikimedia.org/wiki/File:Maullido_de_gata_hembra_joven.ogg",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "checked": "2026-10-19",
+    "note": "Wikimedia Commons MP3 transcode, unchanged. A licensed stock cat sound; not a recording of the owner's Osiris."
+  }
+}

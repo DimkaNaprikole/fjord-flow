@@ -23,16 +23,16 @@ function boot(config={enabled:true,endpoint:'https://chat.example.test',paidVoic
  const documentEvents={};
  const document={readyState:'complete',hidden:false,documentElement:{lang:'en'},activeElement:launch,createElement:tag=>new Element(tag),getElementById:id=>id==='fjordHelper'?dialog:sections[id]||null,querySelector:()=>launch,addEventListener:(key,fn)=>documentEvents[key]=fn,emit:key=>documentEvents[key]?.()};
  let chatReply={answer:'<img src=x onerror=alert(1)>',needs_human:false},chatStatus=200;let contactReply={recorded:true,ticket_id:'a'.repeat(64)},replyResult={status:'pending'},moderateReply={severe:false,warnings:0,banned:false},skillReply={matched:false};
- const voiceState={spoken:[],timer:null,replyTimer:null,awayTimer:null,answerTimer:null,answerDelay:null,hoverTimer:null,recordTimer:null,stopped:false,peer:null,track:null};
+ const voiceState={spoken:[],timer:null,replyTimer:null,awayTimer:null,timers:new Map(),nextTimer:1000,answerTimer:null,answerDelay:null,hoverTimer:null,recordTimer:null,stopped:false,peer:null,track:null};
  const fetch=async(url,options={})=>{calls.push({url,options});if(url==='./chat-config.json')return{ok:true,json:async()=>config};if(url.startsWith('./demo-data/state.json'))return{ok:true,json:async()=>directionsCatalog};if(url.endsWith('/health')){if(config.healthFailures>0){config.healthFailures--;throw Error('Temporary health failure')}return{ok:true,json:async()=>({ready:true})}};if(url.endsWith('/live-session'))return{ok:true,text:async()=>('v=0\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111\r\n')};if(url.endsWith('/transcribe'))return{ok:true,json:async()=>({text:'Vis meg Lofoten',language:'no'})};if(url.endsWith('/moderate'))return{ok:true,json:async()=>moderateReply};if(url.endsWith('/skill-match'))return{ok:true,json:async()=>skillReply};if(url.endsWith('/chat'))return{ok:chatStatus===200,status:chatStatus,json:async()=>chatReply};if(url.includes('/ticket-reply?'))return{ok:true,json:async()=>replyResult};return{ok:true,json:async()=>contactReply}};
  class FakeRecorder { static isTypeSupported(type){return type==='audio/webm'} constructor(_stream,options){this.mimeType=options.mimeType;this.state='inactive'} start(){this.state='recording'} stop(){this.state='inactive';this.ondataavailable?.({data:new Blob([new Uint8Array(1000)],{type:'audio/webm'})});this.onstop?.()} }
  class FakeChannel {constructor(){this.readyState='connecting';this.sent=[]}send(value){this.sent.push(JSON.parse(value))}close(){this.readyState='closed'}message(value){this.onmessage?.({data:JSON.stringify(value)})}}
  class FakePeer {constructor(){voiceState.peer=this;this.connectionState='new'}addTrack(){}createDataChannel(){this.channel=new FakeChannel();return this.channel}async createOffer(){return{sdp:'v=0\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111\r\n'+'.'.repeat(120)}}async setLocalDescription(){}async setRemoteDescription(){this.channel.readyState='open';this.channel.onopen?.()}close(){this.closed=true}}
- const synthesis={cancel(){},speak(utterance){voiceState.spoken.push(utterance.text)}};
+ const synthesis={cancel(){voiceState.cancelled=(voiceState.cancelled||0)+1},getVoices(){return [{lang:'ru-RU',name:'Russian test'},{lang:'en-US',name:'English test'},{lang:'nb-NO',name:'Norwegian test'}]},speak(utterance){voiceState.utterance=utterance;voiceState.spoken.push(utterance.text)}};
  const browserWindow={addEventListener:(k,f)=>events[k]=f,emit:(key,details={})=>events[key]?.({preventDefault(){},...details})};
  if(voice){browserWindow.MediaRecorder=FakeRecorder;browserWindow.RTCPeerConnection=FakePeer;browserWindow.speechSynthesis=synthesis}
- const context={document,window:browserWindow,navigator:{},fetch,URL,Event:class{constructor(type){this.type=type}},AbortController,Blob,FormData,encodeURIComponent,matchMedia:()=>({matches:true}),setInterval,clearInterval,setTimeout:(fn,ms)=>{if(ms===10000){voiceState.initRetry=fn;return 785}if(ms===60000){voiceState.holdTimer=fn;return 783}if(ms===4000){voiceState.finalizeTimer=fn;return 784}if(ms===30000){voiceState.recordTimer=fn;return 782}if(voice&&ms===600000){voiceState.timer=fn;return 777}if(ms===15000){voiceState.replyTimer=fn;return 778}if(ms===5000){voiceState.awayTimer=fn;return 779}if(ms===500){voiceState.hoverTimer=fn;return 781}if(voice&&(ms===400||ms===2500)){voiceState.answerTimer=fn;voiceState.answerDelay=ms;return 780}return setTimeout(fn,ms)},clearTimeout:id=>{if(![777,778,779,780,781,782,783,784,785].includes(id))clearTimeout(id)}};
- if(voice){context.RTCPeerConnection=FakePeer;context.MediaRecorder=FakeRecorder;context.navigator={mediaDevices:{getUserMedia:async()=>{const track={stop(){voiceState.stopped=true}};voiceState.track=track;return{getAudioTracks:()=>[track],getTracks:()=>[track]}}}};context.speechSynthesis=synthesis;context.SpeechSynthesisUtterance=class{constructor(text){this.text=text}};browserWindow.SpeechSynthesisUtterance=context.SpeechSynthesisUtterance}
+ const context={document,window:browserWindow,navigator:{},fetch,URL,Event:class{constructor(type){this.type=type}},AbortController,Blob,FormData,encodeURIComponent,matchMedia:()=>({matches:true}),setInterval,clearInterval,setTimeout:(fn,ms)=>{if(config.voiceConversation===true&&[20000,30000,120000].includes(ms)){const id=voiceState.nextTimer++;voiceState.timers.set(id,{fn,ms});return id}if(ms===10000){voiceState.initRetry=fn;return 785}if(ms===60000){voiceState.holdTimer=fn;return 783}if(ms===4000){voiceState.finalizeTimer=fn;return 784}if(ms===30000){voiceState.recordTimer=fn;return 782}if(voice&&ms===600000){voiceState.timer=fn;return 777}if(ms===15000){voiceState.replyTimer=fn;return 778}if(ms===5000){voiceState.awayTimer=fn;return 779}if(ms===500){voiceState.hoverTimer=fn;return 781}if(voice&&(ms===400||ms===2500)){voiceState.answerTimer=fn;voiceState.answerDelay=ms;return 780}return setTimeout(fn,ms)},clearTimeout:id=>{if(voiceState.timers.delete(id))return;if(![777,778,779,780,781,782,783,784,785].includes(id))clearTimeout(id)}};
+ if(voice){context.RTCPeerConnection=FakePeer;context.MediaRecorder=FakeRecorder;context.navigator={mediaDevices:{getUserMedia:async()=>{const track={enabled:true,readyState:'live',stop(){voiceState.stopped=true;this.readyState='ended';this.enabled=false}};voiceState.track=track;return{getAudioTracks:()=>[track],getTracks:()=>[track]}}}};context.speechSynthesis=synthesis;context.SpeechSynthesisUtterance=class{constructor(text){this.text=text}};browserWindow.SpeechSynthesisUtterance=context.SpeechSynthesisUtterance}
  vm.runInNewContext(directionsSource,context);vm.runInNewContext(source,context);
  return{dialog,launch,calls,sentinel,sections,voiceState,browserWindow,document,setChat:(r,status=200)=>{chatReply=r;chatStatus=status},setContact:r=>contactReply=r,setReply:r=>replyResult=r,setModerate:r=>moderateReply=r,setSkill:r=>skillReply=r,find:cls=>{const visit=n=>n.className===cls?n:n.children?.map(visit).find(Boolean);return visit(dialog)}};
 }
@@ -90,11 +90,11 @@ for(const [code,http,expected] of [['provider_rate_limit',429,'Провайде�
 failures.setChat({error:'unknown'},429);failureInput.value='Show me cabins';await failureForm.emit('submit');await flush();assert.ok(failures.find('fjord-ai-status').textContent.includes('temporarily limiting requests'));assert.ok(!failures.find('fjord-ai-status').textContent.includes('free'));
 console.log('PASS: provider/site-minute/site-daily limits distinguished, retry delay, invalid/truncated/unavailable replies, preserved question and no automatic retries.');
 
-const hovered=boot(undefined,true);await flush();await hovered.launch.emit('mouseenter');await flush();assert.equal(hovered.dialog.open,true);assert.equal(hovered.calls.filter(c=>c.url.endsWith('/live-session')).length,0,'Hover never incurs a paid voice call');await hovered.launch.emit('mouseleave');hovered.voiceState.hoverTimer();assert.equal(hovered.dialog.open,false);
+const hovered=boot(undefined,true);await flush();await hovered.launch.emit('mouseenter');await flush();assert.equal(hovered.dialog.open,false,'Hover never opens the assistant');assert.equal(hovered.calls.filter(c=>c.url.endsWith('/live-session')).length,0,'Hover never incurs a paid voice call');hovered.launch.onclick();await hovered.dialog.emit('mouseleave');assert.equal(hovered.dialog.open,true,'Leaving the dialog never closes it');hovered.dialog.close();
 
 for(const interaction of ['pointerdown','focusin']){
- const pinned=boot();await flush();await pinned.launch.emit('mouseenter');await pinned.dialog.emit(interaction);await pinned.launch.emit('mouseleave');pinned.voiceState.hoverTimer();assert.equal(pinned.dialog.open,true,'Form interaction pins chat: '+interaction);
- await pinned.launch.emit('mouseenter');await pinned.launch.emit('mouseleave');pinned.voiceState.hoverTimer();assert.equal(pinned.dialog.open,true,'Crossing the launcher cannot unpin an active conversation');pinned.dialog.close();
+ const pinned=boot();await flush();pinned.launch.onclick();await pinned.dialog.emit(interaction);await pinned.launch.emit('mouseleave');assert.equal(pinned.dialog.open,true,'Form interaction pins chat: '+interaction);
+ await pinned.launch.emit('mouseenter');await pinned.launch.emit('mouseleave');assert.equal(pinned.dialog.open,true,'Crossing the launcher cannot unpin an active conversation');pinned.dialog.close();
 }
 function installRecognition(app,{endOnStop=true,startError=null,delayedStart=false}={}){
  const instances=[];
@@ -199,4 +199,48 @@ console.log('PASS: manual Send and Contact owner cancel in-flight dictation and 
  assert.deepEqual(buttons.map(n=>n.textContent),['Открыть: Места рядом ↗','Открыть: Снаряжение BUA ↗']);
  buttons[1].onclick();assert.equal(guide.sections.buaEquipment.focused,true);
  console.log('PASS: informational guide offers real local-catalogue and BUA navigation with local translated labels.');
+}
+
+// Realtime is tested with in-memory WebRTC / synthesis fixtures: no microphone or paid request.
+const voiceConfig={enabled:true,endpoint:'https://chat.example.test',paidVoice:true,voiceConversation:true};
+const timerOf=(app,ms)=>[...app.voiceState.timers.values()].find(t=>t.ms===ms);
+{
+ const app=boot({...voiceConfig},true);await flush();app.launch.onclick();const mic=app.find('fjord-ai-record-fallback');
+ assert.equal(paidCalls(app).length,0,'Opening alone never starts paid voice');assert.equal(mic.children[0].className,'osiris-mic-icon');
+ await mic.emit('click');await flush();const channel=app.voiceState.peer.channel,track=app.voiceState.track;
+ assert.equal(paidCalls(app).length,1);assert.equal(mic.attrs['aria-pressed'],'true');assert.ok(timerOf(app,20000));
+ channel.message({type:'session.created'});assert.equal(channel.sent.length,0,'No generated greeting or paid duplicate reply');
+ channel.message({type:'input_audio_buffer.speech_started'});channel.message({type:'input_audio_buffer.speech_stopped'});
+ assert.equal(track.readyState,'ended','A pause releases physical microphone before inference');assert.equal(track.enabled,false);assert.ok(timerOf(app,30000));assert.equal(timerOf(app,20000),undefined);
+ channel.message({type:'conversation.item.input_audio_transcription.completed',item_id:'question-1',transcript:'Привет, что посмотреть рядом?'});await flush();
+ assert.equal(channel.sent.filter(e=>e.type==='response.create').length,1,'VAD turn leads to exactly one answer request');
+ channel.message({type:'conversation.item.input_audio_transcription.completed',item_id:'extra-question',transcript:'Extra delayed input'});await flush();assert.equal(channel.sent.filter(e=>e.type==='response.create').length,1,'A click accepts only one transcript');channel.message({type:'response.created'});channel.message({type:'response.output_text.delta',delta:'Можно '});
+ assert.equal(app.voiceState.spoken.length,0,'Deltas are never read aloud repeatedly');
+ channel.message({type:'response.output_text.done',item_id:'answer-1',text:'Можно посетить музей.'});
+ channel.message({type:'response.output_text.done',item_id:'answer-1',text:'Можно посетить музей.'});
+ assert.deepEqual(app.voiceState.spoken,['Можно посетить музей.']);assert.equal(app.voiceState.utterance.lang,'ru-RU');assert.equal(app.voiceState.utterance.voice.name,'Russian test');assert.equal(track.enabled,false,'Own voice cannot be captured');
+ channel.message({type:'response.done'});assert.equal(app.find('fjord-ai-pet').attrs['data-state'],'speaking','Final server event does not overwrite speaking');
+ const spoken=app.voiceState.utterance;spoken.onend();assert.equal(app.voiceState.peer.closed,true);assert.equal(mic.attrs['aria-pressed'],'false');assert.equal(timerOf(app,30000),undefined);assert.equal(timerOf(app,120000),undefined);
+ assert.equal(paidCalls(app).length,1,'Answer completion never reconnects');
+ await mic.emit('click');await flush();assert.equal(paidCalls(app).length,2,'Only a new explicit click creates the next session');assert.equal(app.voiceState.track.enabled,true);app.dialog.close();
+ assert.equal(app.voiceState.track.readyState,'ended');assert.equal(app.voiceState.peer.closed,true);assert.equal(app.voiceState.utterance.onend,null,'Close detaches prior speech callbacks');
+ console.log('PASS: explicit live mic, VAD pause, text plus one localized utterance, stopped microphone, no history playback and one question per click.');
+}
+{
+ const app=boot({...voiceConfig},true);await flush();app.launch.onclick();const mic=app.find('fjord-ai-record-fallback');await mic.emit('click');await flush();const channel=app.voiceState.peer.channel,stale=channel.onmessage;
+ await mic.emit('click');assert.equal(app.voiceState.track.readyState,'ended');assert.equal(mic.attrs['aria-pressed'],'false');stale({data:JSON.stringify({type:'response.output_text.done',text:'Late reply'})});assert.equal(app.voiceState.spoken.length,0,'Stopped session cannot speak stale events');
+ await mic.emit('click');await flush();timerOf(app,20000).fn();assert.equal(app.voiceState.track.readyState,'ended');assert.match(app.find('fjord-ai-status').textContent,/20 seconds/);assert.equal(paidCalls(app).length,2,'Capture deadline has no automatic retry');
+ await mic.emit('click');await flush();app.voiceState.peer.channel.message({type:'input_audio_buffer.speech_stopped'});timerOf(app,30000).fn();assert.equal(app.voiceState.peer.closed,true);assert.match(app.find('fjord-ai-status').textContent,/timed out/);app.dialog.close();
+ console.log('PASS: second click, close, stale callbacks, 20-second capture and bounded reply wait all release microphone without retry.');
+}
+{
+ const app=boot({...voiceConfig},true);delete app.browserWindow.RTCPeerConnection;await flush();app.launch.onclick();const mic=app.find('fjord-ai-record-fallback');await mic.emit('click');assert.equal(paidCalls(app).length,0,'Missing WebRTC only records after explicit click');assert.equal(app.voiceState.peer,null);await mic.emit('click');await flush();assert.equal(app.calls.filter(c=>c.url.endsWith('/transcribe')).length,1);assert.equal(app.calls.filter(c=>c.url.endsWith('/live-session')).length,0);app.dialog.close();
+ console.log('PASS: unavailable WebRTC preserves manual recording fallback; no automatic paid transition.');
+}
+
+{
+ const app=boot({...voiceConfig},true);await flush();app.launch.onclick();const mic=app.find('fjord-ai-record-fallback');await mic.emit('click');await flush();let channel=app.voiceState.peer.channel;
+ channel.message({type:'input_audio_buffer.speech_stopped'});channel.message({type:'response.output_text.done',item_id:'close-answer',text:'You can visit Oslo.'});const oldSpeech=app.voiceState.utterance,lateEnd=oldSpeech.onend;app.dialog.close();assert.equal(oldSpeech.onend,null);assert.equal(oldSpeech.onerror,null);lateEnd();assert.equal(mic.attrs['aria-pressed'],'false');assert.equal(app.voiceState.track.readyState,'ended');
+ app.launch.onclick();await mic.emit('click');await flush();channel=app.voiceState.peer.channel;delete app.browserWindow.speechSynthesis;channel.message({type:'input_audio_buffer.speech_stopped'});channel.message({type:'response.output_text.done',item_id:'text-only',text:'You can visit Oslo.'});assert.equal(app.voiceState.peer.closed,true,'Missing synthesis ends the session while preserving the text');assert.ok(app.find('fjord-ai-log').children.some(n=>n.textContent==='You can visit Oslo.'));app.dialog.close();
+ console.log('PASS: active TTS close detaches callbacks; unsupported browser synthesis retains text and releases the session.');
 }

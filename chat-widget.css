@@ -89,3 +89,10 @@ body .fjord-ai-pet.osiris-pet[data-state=speaking]{animation:osiris-attend 1.8s 
 @keyframes osiris-attend{50%{transform:rotate(-2deg) translateY(-2px)}}
 @keyframes osiris-ponder{50%{transform:rotate(2deg)}}
 @media(prefers-reduced-motion:reduce){body .fjord-ai-pet.osiris-pet{animation:none!important}}
+
+/* A microphone is the single conversation start/stop action. */
+#fjordHelper.fjord-ai .fjord-ai-record-fallback{display:flex;align-items:center;justify-content:center;gap:12px;min-height:58px;border:1px solid #83b7bc;background:var(--ff-action,#164957);color:#f5fbff;font:700 14px/1.35 'Manrope',sans-serif;border-radius:18px;touch-action:manipulation}
+#fjordHelper.fjord-ai .fjord-ai-record-fallback[hidden]{display:none}
+#fjordHelper.fjord-ai .fjord-ai-record-fallback[aria-pressed=true]{background:#693944;border-color:#e3a4ae;color:#fff;box-shadow:0 0 0 3px #e3a4ae26}
+.osiris-mic-icon{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex:none;font-size:26px;line-height:1;pointer-events:none}
+#fjordHelper.fjord-ai .fjord-ai-record-fallback:focus-visible{outline:3px solid #ffde94;outline-offset:3px}
