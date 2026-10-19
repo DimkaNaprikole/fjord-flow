@@ -69,7 +69,7 @@ test('weather refresh waits for a visible associated section and keeps its TTL c
   const audience=code.slice(code.indexOf('function weatherVisible(){'),code.indexOf('function makeBadge('));
   let hidden=true,fetches=0;
   const host={closest:()=>hidden?{}:null,getBoundingClientRect:()=>({width:400,height:300})};
-  const context={document:{hidden:false},badges:[{el:{parentElement:host}}],catalogueReady:Promise.resolve(),pending:null,cache:{at:0},failedAt:0,TTL:600000,RETRY:120000,places:[{id:'bergen'}],signature:()=> 'one',apiURL:()=> 'https://example.invalid/weather',mapResponse:()=>({bergen:{}}),renderAll(){},sessionStorage:{setItem(){}},AbortSignal,console,fetch:async()=>{fetches++;return {ok:true,json:async()=>({})};}};
+  const context={document:{hidden:false},badges:[{el:{parentElement:host}}],catalogueReady:Promise.resolve(),pending:null,cache:{until:{}},metFailures:{},failedAt:0,visiblePlaces:()=>[{id:'bergen'}],loadWeather:async()=>{fetches++;context.cache.until.bergen=Date.now()+600000;},renderAll(){},console};
   vm.createContext(context);vm.runInContext(audience+refresh,context);
   await context.refresh();assert.equal(fetches,0);
   hidden=false;context.document.hidden=true;await context.refresh();assert.equal(fetches,0);

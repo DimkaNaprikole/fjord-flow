@@ -50,6 +50,106 @@
       "checked": "2026-10-19",
       "verification": "embedded-visual",
       "evidence": "Official municipal embed; moving nighttime bay view. Town of Jupiter channel, LIVE edge, readyState4 pausedfalse. No separate date overlay."
+    },
+    {
+      "id": "deerfield-pier",
+      "name": "Deerfield Beach · Fishing Pier",
+      "operator": "City of Deerfield Beach",
+      "youtube": "H33wtprQqSM",
+      "url": "https://deerfield-beach.com/beachcams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; real illuminated pier deck, LIVE edge, timestamp04:05:58."
+    },
+    {
+      "id": "deerfield-beach",
+      "name": "Deerfield Beach · Beach",
+      "operator": "City of Deerfield Beach",
+      "youtube": "rdeoEeJ00xA",
+      "url": "https://deerfield-beach.com/beachcams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; real pier and moving waves, LIVE edge, weather overlay04:08."
+    },
+    {
+      "id": "deerfield-sports",
+      "name": "Deerfield Beach · Volleyball",
+      "operator": "City of Deerfield Beach",
+      "youtube": "1PLqzPwXP0c",
+      "url": "https://deerfield-beach.com/beachcams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; live night sports court, timestamp04:11:49."
+    },
+    {
+      "id": "jupiter-memorial",
+      "name": "Jupiter · Veterans Memorial",
+      "operator": "Town of Jupiter",
+      "youtube": "-nJwQ5ECvUw",
+      "url": "https://jupiter.fl.us/2096/Jup-Life-Live-Cams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; illuminated night plaza, playing video readyState4 with advancing playback time."
+    },
+    {
+      "id": "kilauea-v1",
+      "name": "Hawaiʻi · Kīlauea V1",
+      "operator": "USGS Hawaiian Volcano Observatory",
+      "youtube": "HggWKlZv9yk",
+      "url": "https://www.usgs.gov/volcanoes/kilauea/summit-webcams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official current stream; overlay2026-10-18 22:16:14HST matched19Oct08:16UTC; night crater with glowing vents."
+    },
+    {
+      "id": "kilauea-v3",
+      "name": "Hawaiʻi · Kīlauea V3",
+      "operator": "USGS Hawaiian Volcano Observatory",
+      "youtube": "gXKuUyKt8mc",
+      "url": "https://url.usgs.gov/v3cam",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official current stream; overlay2026-10-18 22:16:29HST matched19Oct08:16UTC; moving live nighttime crater view."
+    },
+    {
+      "id": "taipei-xiangshan",
+      "name": "Taipei · Xiangshan / Taipei 101",
+      "operator": "Taipei City Tourism",
+      "youtube": "z_fY1pj1VBw",
+      "url": "https://www.travel.taipei/4k-livestream/#/zh-tw/107",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official city tourism embed; actual skyline, playing at LIVE edge,61viewers at check."
+    },
+    {
+      "id": "seoul-plaza",
+      "name": "Seoul · Seoul Plaza",
+      "operator": "Seoul Metropolitan Government",
+      "youtube": "pBKHz27GG3c",
+      "url": "https://world.seoul.go.kr/news-events/multimedia/seoul-live/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official city government embed; real plaza, people/cars, playing at red LIVE edge."
+    },
+    {
+      "id": "tallinn-old-town",
+      "name": "Tallinn · Old Town",
+      "operator": "Digital.Tallinn / 360PANO",
+      "youtube": "VhVgZi2lGv0",
+      "url": "https://tallinn.info/citycam/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official operator embed; old-town traffic, overlay19-10-2026 11:16:11, LIVE."
+    },
+    {
+      "id": "prague-mozart",
+      "name": "Praha · Vltava / Mozart",
+      "operator": "CamStreamer / The Mozart Prague",
+      "youtube": "kvYMIaXclIE",
+      "url": "https://www.youtube.com/@Camstreamer_com/streams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Current official CamStreamer LIVE stream since30Sep2026; real Vltava/LichtensteinPalace/PTZ view. Operator may show occasional own promos."
     }
   ]
 }

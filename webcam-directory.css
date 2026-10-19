@@ -15,3 +15,5 @@
 #norwayWebcams.ref-chapter .webcam-world>h2,#norwayWebcams.ref-chapter .webcam-world>p{display:none}
 
 #norwayWebcams .webcam-world .webcam-visual{min-height:200px}
+
+#norwayWebcams .webcam-card[hidden]{display:none!important}
