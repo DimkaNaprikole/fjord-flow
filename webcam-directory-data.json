@@ -17471,5 +17471,55 @@
       "latitude": 60.398827,
       "longitude": 7.614223
     }
+  ],
+  "worldCameras": [
+    {
+      "id": "world-times-square",
+      "name": "New York · Times Square",
+      "operator": "EarthCam",
+      "type": "video",
+      "url": "https://www.earthcam.com/usa/newyork/timessquare/",
+      "checked": "2026-10-19",
+      "verification": "visual",
+      "kind": "world",
+      "quality": null,
+      "verificationNote": "Live moving Times Square North 4K video, local clock 03:35 AM; verified after pre-roll advertisement on 19 October 2026. No copied preview image."
+    },
+    {
+      "id": "world-abbey-road",
+      "name": "London · Abbey Road",
+      "operator": "EarthCam / Abbey Road Studios",
+      "type": "video",
+      "url": "https://www.earthcam.com/world/england/london/abbeyroad/",
+      "checked": "2026-10-19",
+      "verification": "visual",
+      "kind": "world",
+      "quality": null,
+      "verificationNote": "Moving live video, local overlay 08:37 AM, readyState 4, playback advancing; verified 19 October 2026."
+    },
+    {
+      "id": "world-kitzbueheler-horn",
+      "name": "Kitzbüheler Horn · Austria",
+      "operator": "KitzSki / Panomax",
+      "type": "panorama",
+      "url": "https://kitzski.panomax.com/horn?cu=de-DE",
+      "checked": "2026-10-19",
+      "verification": "visual",
+      "kind": "world",
+      "quality": null,
+      "verificationNote": "Rendered mountain panorama timestamp 09:30, checked 09:38; LIVEVIDEO played, readyState 4, currentTime 3.09. Panorama rather than uninterrupted street camera."
+    },
+    {
+      "id": "world-salzburg",
+      "name": "Salzburg · Maxglan",
+      "operator": "COPA-DATA / Panomax",
+      "type": "panorama",
+      "url": "https://copadata.panomax.com/",
+      "checked": "2026-10-19",
+      "verification": "visual",
+      "kind": "world",
+      "quality": null,
+      "verificationNote": "Rendered panorama timestamp 09:30; LIVEVIDEO real frame, paused false, readyState 4, currentTime 3.68. No advertisement or login. Panorama rather than uninterrupted street camera."
+    }
   ]
 }

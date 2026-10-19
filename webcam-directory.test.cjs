@@ -3,12 +3,19 @@ test('checked cameras expire instead of claiming permanent availability',()=>{co
 test('road cameras have a checked image, source timestamp and explicit technical verification',()=>{const road=cameras.filter(c=>c.kind==='road');assert.equal(road.length,864);assert.equal(new Set(road.map(c=>c.cameraId)).size,road.length);for(const c of road){assert.equal(c.type,'snapshot');assert.equal(c.verification,'image-response');assert.match(c.snapshot,/^https:\/\/kamera\.atlas\.vegvesen\.no\/api\/images\//);assert.ok(Date.parse(c.sourceUpdated));assert.match(c.quality,/\d+ × \d+/);}assert.ok(cameras.filter(c=>c.verification==='visual').length>=14);});
 test('type filtering and evidence do not invent video for still images',()=>{const day=Date.parse('2026-10-19T12:00:00Z');assert.ok(select('snapshot',true,day).length>=864);assert.ok(select('video',true,day).every(c=>c.type==='video'));assert.equal(cameras.find(c=>c.id==='loen').quality,null);});
 
+test('world cameras stay separate from Norwegian inventory and retain actual visual evidence',()=>{
+ const {worldCameras}=require('./webcam-directory.js');
+ assert.equal(worldCameras.length,4);
+ for(const camera of worldCameras){assert.equal(camera.kind,'world');assert.equal(camera.verification,'visual');assert.ok(camera.verificationNote);assert.equal(new URL(camera.url).protocol,'https:');assert.ok(!cameras.some(c=>c.id===camera.id));}
+});
+
 // Run the complete browser module and its actual play/stop/filter handlers.
 async function browserHarness(){
  const vm=require('node:vm'),fs=require('node:fs');
  class Element{
   constructor(tag){this.tagName=tag;this.children=[];this.attributes={};this.dataset={};this.hidden=false;}
   append(...nodes){for(const node of nodes){node.parentElement=this;this.children.push(node);}}
+  prepend(...nodes){for(const node of nodes)node.parentElement=this;this.children.unshift(...nodes);}
   replaceChildren(...nodes){this.children.forEach(n=>n.parentElement=null);this.children=[];this.append(...nodes);}
   setAttribute(name,value){this.attributes[name]=value;}
   after(node){section=node;}
@@ -52,6 +59,15 @@ test('large registry starts with 24 cards and lets visitors search without loadi
  h.find(n=>n.tagName==='button'&&n.textContent==='Search').onclick();
  assert.ok(grid().children.length>0&&grid().children.length<24);
  assert.ok(grid().children.every(card=>card.children.some(n=>n.tagName==='h3'&&n.textContent.includes('Gimsøystraumen'))));
+});
+
+test('world collection remains visible after filtering the Norwegian cameras',async()=>{
+ const h=await browserHarness();
+ const world=()=>h.find(n=>n.className==='webcam-world');
+ assert.equal(h.find(n=>n.className==='webcam-grid',world()).children.length,4);
+ const search=h.find(n=>n.tagName==='input'&&n.type==='search');search.value='nonexistent place';h.find(n=>n.tagName==='button'&&n.textContent==='Search').onclick();
+ assert.equal(h.find(n=>n.className==='webcam-grid',world()).children.length,4);
+ assert.ok(h.find(n=>n.className==='webcam-world-jump'));
 });
 
 test('a failed snapshot reports the error and can be retried without leaving a broken image',async()=>{

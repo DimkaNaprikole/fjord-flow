@@ -1,10 +1,11 @@
 /* Operator status + decoded road images; tourism cameras visually checked separately. Click to load media. */
 (()=>{'use strict';
 let cameras=typeof module!=='undefined'&&module.exports?require('./webcam-directory-data.json').cameras:[];
+let worldCameras=typeof module!=='undefined'&&module.exports?require('./webcam-directory-data.json').worldCameras||[]:[];
 const photoCredits={loen:['Ximonic (Simo Räsänen)','CC BY-SA 4.0','https://commons.wikimedia.org/wiki/File:Summer_evening_at_Lovatnet,_Stryn,_Norway,_2013_June.jpg'],bergen:['Diego Delso','CC BY-SA 4.0','https://commons.wikimedia.org/wiki/File:Bryggen,_Bergen,_Noruega,_2019-09-08,_DD_115-117_PAN.jpg'],geiranger:['Andreas Trepte','CC BY-SA 2.5','https://commons.wikimedia.org/wiki/File:Geirangerfjord_.jpg']};
 function recent(camera,now=Date.now()){const age=now-Date.parse(camera.checked+'T00:00:00Z');return age>=0&&age<7*86400000;}
 function select(type='all',checkedOnly=true,now=Date.now()){return cameras.filter(c=>(type==='all'||c.type===type)&&(!checkedOnly||recent(c,now)));}
-if(typeof module!=='undefined'&&module.exports){module.exports={cameras,recent,select};return;}
+if(typeof module!=='undefined'&&module.exports){module.exports={cameras,worldCameras,recent,select};return;}
 const copy={
  nb:['Norge gjennom webkameraer','Se været og utsikten før du drar.','Alle','Video','Panorama 360°','Bare nylig kontrollerte','Bilde kontrollert','Må kontrolleres igjen','Kontrollert','Kvalitet ikke oppgitt','Se kamera','Åpne hos operatøren ↗','Stedsfoto · ikke et direkte kamerabilde','Ingen nylig kontrollerte kameraer i dette utvalget.','Status gjelder siste visuelle kontroll, ikke kontinuerlig overvåking. Etter sju dager kreves ny kontroll. Bitrate er ikke oppgitt av operatørene; oppløsning vises bare når den er målt.','Spilleren lastes først når du trykker. Tredjeparten kan bruke informasjonskapsler.','Stopp video'],
  en:['Norway through webcams','Check the weather and the view before you go.','All','Video','360° panorama','Recently checked only','Picture checked','Needs a new check','Checked','Quality not provided','Watch camera','Open operator’s camera ↗','Location photo · not a live camera image','No recently checked cameras in this selection.','Status reflects the last visual check, not continuous monitoring. A new check is required after seven days. Operators do not publish bitrate; resolution is shown only when measured.','The player loads only when you press play. The third party may use cookies.','Stop video'],
@@ -49,7 +50,7 @@ function render(){
  const rows=select(type,checkedOnly).filter(c=>(kind==='all'||c.kind===kind)&&normal([c.name,c.region,c.operator].join(' ')).includes(normal(query)));
  section.append(el('p',rows.length+' '+u[7],'webcam-count'));
  const grid=el('div',null,'webcam-grid');
- for(const camera of rows.slice(0,limit)){
+ function addCamera(camera,grid){
   const card=el('article',null,'webcam-card'),visual=el('div',null,'webcam-visual');
   const placeholder=camera.image?el('img'):el('div','◉ '+camera.name,'webcam-placeholder');if(camera.image){placeholder.src=camera.image;placeholder.alt=camera.name;placeholder.loading='lazy';}visual.append(placeholder);card.append(visual);
   if(camera.image)card.append(el('small',t[12],'webcam-photo-note'));
@@ -75,13 +76,24 @@ function render(){
   if(camera.license){const a=el('a',camera.operator+' · '+camera.license,'webcam-credit');a.href=camera.licenseUrl;a.target='_blank';a.rel='noopener noreferrer';card.append(a);}
   grid.append(card);
  }
+ for(const camera of rows.slice(0,limit))addCamera(camera,grid);
  section.append(grid);const status=el('div',null,'webcam-status');if(!rows.length)status.append(el('p',loadFailed?u[12]:t[13]));
  if(rows.length>limit){const more=el('button',u[6]+' · '+Math.min(24,rows.length-limit),'webcam-more');more.type='button';more.onclick=()=>{limit+=24;render();};section.append(more);}
  if(loadFailed){const retry=el('button',u[13]);retry.onclick=load;status.append(retry);}section.append(status);
+ const worldText={
+  nb:['Webkameraer fra verden','Kontrollerte videoer og panoramaer på operatørens nettsted. Det kan vises reklame før bildet.','Til verdenskameraene ↓'],
+  en:['Webcams around the world','Checked videos and panoramas on the operator’s website. An advertisement may play before the camera.','World webcams ↓'],
+  uk:['Вебкамери світу','Перевірені відео й панорами на сайті оператора. Перед камерою може бути реклама.','До камер світу ↓'],
+  sv:['Webbkameror i världen','Kontrollerade videor och panoramor på operatörens webbplats. Reklam kan visas före kamerabilden.','Till världskamerorna ↓'],
+  da:['Webkameraer i verden','Kontrollerede videoer og panoramaer på operatørens hjemmeside. Reklamer kan vises før kameraet.','Til verdenskameraerne ↓']
+ }[lang]||['World webcams','Live views on the operator website. Advertising may play first.','World webcams ↓'];
+ const world=el('section',null,'webcam-world');world.id='worldWebcams';world.append(el('h2',worldText[0]),el('p',worldText[1]));
+ const worldGrid=el('div',null,'webcam-grid');for(const camera of worldCameras.filter(c=>!checkedOnly||recent(c)))addCamera(camera,worldGrid);world.append(worldGrid);section.append(world);
+ const worldJump=el('button',worldText[2],'webcam-world-jump');worldJump.type='button';worldJump.onclick=()=>world.scrollIntoView({behavior:'smooth',block:'start'});controls.prepend(worldJump);
  const sources=el('details',null,'webcam-sources');sources.append(el('summary',u[15]));
  for(const [name,url]of[['Statens vegvesen · data','https://dataut.vegvesen.no/dataservice/webkamera-statuser-api'],['Vegvesen trafikk','https://www.vegvesen.no/trafikk'],['Skiinfo Norge · Facebook','https://www.facebook.com/skiinfonorge'],['Skiinfo · Norge','https://www.skiinfo.no/norge/webcams']]){const a=el('a',name+' ↗');a.href=url;a.target='_blank';a.rel='noopener noreferrer';sources.append(a);}section.append(sources,el('p',t[14],'webcam-policy'));window.dispatchEvent(new Event('fjord:sections-changed'));
 }
-async function load(){try{const r=await window.fetch('./webcam-directory-data.json?v=1');if(!r.ok)throw Error('registry unavailable');const data=await r.json();if(!Array.isArray(data.cameras))throw Error('invalid registry');cameras=data.cameras;loadFailed=false;}catch{loadFailed=true;}render();}
+async function load(){try{const r=await window.fetch('./webcam-directory-data.json?v=2');if(!r.ok)throw Error('registry unavailable');const data=await r.json();if(!Array.isArray(data.cameras))throw Error('invalid registry');cameras=data.cameras;worldCameras=Array.isArray(data.worldCameras)?data.worldCameras:[];loadFailed=false;}catch{loadFailed=true;}render();}
 window.FjordWebcams={ready:load()};
 const stopHiddenCamera=()=>{if(document.hidden||section.hidden||section.closest('[hidden]'))stopCamera?.();};
 window.addEventListener('fjord:sections-changed',stopHiddenCamera);
