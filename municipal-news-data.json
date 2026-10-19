@@ -14,19 +14,35 @@
     },
     "0301": {
       "name": "Oslo kommune",
-      "news": "https://aktuelt.oslo.kommune.no/"
+      "news": "https://aktuelt.oslo.kommune.no/",
+      "events": "https://www.visitoslo.com/no/hva-skjer",
+      "eventsChecked": "2026-10-19",
+      "groups": [
+        {
+          "name": "Hva skjer i Oslo",
+          "url": "https://www.facebook.com/groups/hvaskjerioslo/"
+        }
+      ]
     },
     "4601": {
       "name": "Bergen kommune",
       "news": "https://www.bergen.kommune.no/hvaskjer",
-      "events": "https://billett.bergen.kommune.no/"
+      "events": "https://www.visitbergen.com/hva-skjer",
+      "eventsChecked": "2026-10-19",
+      "groups": [
+        {
+          "name": "Konserter ,arrangementer i Bergen og omegn",
+          "url": "https://www.facebook.com/groups/801298240846638/"
+        }
+      ]
     },
     "4204": {
       "name": "Kristiansand kommune",
       "news": "https://www.kristiansand.kommune.no/",
       "events": "https://www.kristiansand.kommune.no/kalender/",
       "facebook": "https://www.facebook.com/kristiansand.kommune",
-      "facebookSource": "https://www.kristiansand.kommune.no/kalender/"
+      "facebookSource": "https://www.kristiansand.kommune.no/kalender/",
+      "eventsChecked": "2026-10-19"
     },
     "3236": {
       "name": "Jevnaker kommune",
@@ -51,6 +67,32 @@
           "url": "https://www.facebook.com/groups/256137362789/"
         }
       ]
+    },
+    "5001": {
+      "name": "Visit Trondheim",
+      "events": "https://visittrondheim.no/en/events/",
+      "eventsChecked": "2026-10-19",
+      "groups": [
+        {
+          "name": "Arrangementer i Trondheim",
+          "url": "https://www.facebook.com/groups/45039093871/"
+        }
+      ]
+    },
+    "1103": {
+      "name": "Edge of Norway",
+      "events": "https://www.edgeofnorway.com/no/arrangementer",
+      "eventsChecked": "2026-10-19"
+    },
+    "1108": {
+      "name": "Edge of Norway",
+      "events": "https://www.edgeofnorway.com/no/arrangementer",
+      "eventsChecked": "2026-10-19"
+    },
+    "5501": {
+      "name": "Visit Tromsø",
+      "events": "https://www.visittromso.no/events",
+      "eventsChecked": "2026-10-19"
     }
   },
   "items": [
