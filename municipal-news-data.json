@@ -93,6 +93,11 @@
       "name": "Visit Tromsø",
       "events": "https://www.visittromso.no/events",
       "eventsChecked": "2026-10-19"
+    },
+    "3305": {
+      "name": "Ringerike · Hønefoss kino",
+      "events": "https://www.nfkino.no/kino/honefoss",
+      "eventsChecked": "2026-10-19"
     }
   },
   "items": [
@@ -832,18 +837,48 @@
       "location": "Hadeland Glassverk, Jevnaker",
       "mapQuery": "Hadeland Glassverk Jevnaker",
       "copy": {
-        "nb": ["Lysfest på Hadeland Glassverk", "24. oktober kl. 17.00: lys, musikk og åpning av julemarkedet i Jevnaker."],
-        "en": ["Festival of lights at Hadeland Glassverk", "24 October at 17:00: lights, music and the opening of Jevnaker’s Christmas market."],
-        "uk": ["Свято світла на Hadeland Glassverk", "24 жовтня о 17:00: світло, музика та відкриття різдвяного ярмарку в Jevnaker."],
-        "sv": ["Ljusfest på Hadeland Glassverk", "24 oktober kl. 17.00: ljus, musik och invigning av julmarknaden i Jevnaker."],
-        "da": ["Lysfest på Hadeland Glassverk", "24. oktober kl. 17.00: lys, musik og åbning af julemarkedet i Jevnaker."]
+        "nb": [
+          "Lysfest på Hadeland Glassverk",
+          "24. oktober kl. 17.00: lys, musikk og åpning av julemarkedet i Jevnaker."
+        ],
+        "en": [
+          "Festival of lights at Hadeland Glassverk",
+          "24 October at 17:00: lights, music and the opening of Jevnaker’s Christmas market."
+        ],
+        "uk": [
+          "Свято світла на Hadeland Glassverk",
+          "24 жовтня о 17:00: світло, музика та відкриття різдвяного ярмарку в Jevnaker."
+        ],
+        "sv": [
+          "Ljusfest på Hadeland Glassverk",
+          "24 oktober kl. 17.00: ljus, musik och invigning av julmarknaden i Jevnaker."
+        ],
+        "da": [
+          "Lysfest på Hadeland Glassverk",
+          "24. oktober kl. 17.00: lys, musik og åbning af julemarkedet i Jevnaker."
+        ]
       },
       "details": {
-        "nb": ["Programmet omfatter Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet og lysshow.", "Et nytt julemarked åpner samme dag. Billettpris er ikke bekreftet; sjekk arrangørens oppdaterte program og vilkår før besøket."],
-        "en": ["The programme includes Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet and a light show.", "A new Christmas market opens that day. Admission price is unconfirmed; check the organiser’s latest programme and terms before visiting."],
-        "uk": ["У програмі — Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet та світлове шоу.", "Цього ж дня відкривається новий різдвяний ярмарок. Вартість входу не підтверджена; перед відвідуванням перевірте актуальну програму й умови організатора."],
-        "sv": ["Programmet omfattar Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet och en ljusshow.", "En ny julmarknad öppnar samma dag. Entrépriset är inte bekräftat; kontrollera arrangörens aktuella program och villkor före besöket."],
-        "da": ["Programmet omfatter Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet og et lysshow.", "Et nyt julemarked åbner samme dag. Entréprisen er ikke bekræftet; tjek arrangørens aktuelle program og vilkår før besøget."]
+        "nb": [
+          "Programmet omfatter Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet og lysshow.",
+          "Et nytt julemarked åpner samme dag. Billettpris er ikke bekreftet; sjekk arrangørens oppdaterte program og vilkår før besøket."
+        ],
+        "en": [
+          "The programme includes Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet and a light show.",
+          "A new Christmas market opens that day. Admission price is unconfirmed; check the organiser’s latest programme and terms before visiting."
+        ],
+        "uk": [
+          "У програмі — Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet та світлове шоу.",
+          "Цього ж дня відкривається новий різдвяний ярмарок. Вартість входу не підтверджена; перед відвідуванням перевірте актуальну програму й умови організатора."
+        ],
+        "sv": [
+          "Programmet omfattar Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet och en ljusshow.",
+          "En ny julmarknad öppnar samma dag. Entrépriset är inte bekräftat; kontrollera arrangörens aktuella program och villkor före besöket."
+        ],
+        "da": [
+          "Programmet omfatter Maria Haukaas Mittet, Jevnaker kulturskole, Kulturakademiet og et lysshow.",
+          "Et nyt julemarked åbner samme dag. Entréprisen er ikke bekræftet; tjek arrangørens aktuelle program og vilkår før besøget."
+        ]
       }
     },
     {
@@ -858,22 +893,107 @@
       "expires": "2026-10-31T00:00:00+01:00",
       "source": "Jevnaker kommune · Fjordlandsbyen 2026",
       "url": "https://www.jevnaker.kommune.no/organisasjon/fjordlandsbyen-jevnaker/hva-skjer/fjordlandsbyen-2026",
-      "verificationUrls": ["https://www.jevnaker.kommune.no/organisasjon/fjordlandsbyen-jevnaker/hva-skjer/fjordlandsbyen-2026"],
+      "verificationUrls": [
+        "https://www.jevnaker.kommune.no/organisasjon/fjordlandsbyen-jevnaker/hva-skjer/fjordlandsbyen-2026"
+      ],
       "location": "Bergergata 4 · Hønefossvegen 14 · Røde Kors-huset, Jevnaker",
       "mapQuery": "Bergergata 4 Jevnaker",
       "copy": {
-        "nb": ["Halloween i Jevnaker", "30. oktober: skumle hager, kasseklatring og servering."],
-        "en": ["Halloween in Jevnaker", "30 October: spooky gardens, crate climbing and refreshments."],
-        "uk": ["Гелловін у Jevnaker", "30 жовтня: моторошні сади, лазіння по ящиках і частування."],
-        "sv": ["Halloween i Jevnaker", "30 oktober: kusliga trädgårdar, lådklättring och servering."],
-        "da": ["Halloween i Jevnaker", "30. oktober: uhyggelige haver, kasseklatring og servering."]
+        "nb": [
+          "Halloween i Jevnaker",
+          "30. oktober: skumle hager, kasseklatring og servering."
+        ],
+        "en": [
+          "Halloween in Jevnaker",
+          "30 October: spooky gardens, crate climbing and refreshments."
+        ],
+        "uk": [
+          "Гелловін у Jevnaker",
+          "30 жовтня: моторошні сади, лазіння по ящиках і частування."
+        ],
+        "sv": [
+          "Halloween i Jevnaker",
+          "30 oktober: kusliga trädgårdar, lådklättring och servering."
+        ],
+        "da": [
+          "Halloween i Jevnaker",
+          "30. oktober: uhyggelige haver, kasseklatring og servering."
+        ]
       },
       "details": {
-        "nb": ["Hager: Bergergata 4 og Hønefossvegen 14 (inngang Bakkelivegen). Jevnaker Klatreklubb ved Røde Kors-huset; servering fra Frivilligsentralen. Tid/pris: spør arrangøren."],
-        "en": ["Gardens: Bergergata 4 and Hønefossvegen 14 (Bakkelivegen entrance). Jevnaker Klatreklubb near Røde Kors-huset; Frivilligsentralen refreshments. Time/price: ask the organiser."],
-        "uk": ["Сади: Bergergata 4 і Hønefossvegen 14 (вхід Bakkelivegen). Jevnaker Klatreklubb біля Røde Kors-huset; частування Frivilligsentralen. Час/ціна: уточнюйте в організатора."],
-        "sv": ["Trädgårdar: Bergergata 4 och Hønefossvegen 14 (ingång Bakkelivegen). Jevnaker Klatreklubb vid Røde Kors-huset; servering från Frivilligsentralen. Tid/pris: fråga arrangören."],
-        "da": ["Haver: Bergergata 4 og Hønefossvegen 14 (indgang Bakkelivegen). Jevnaker Klatreklubb ved Røde Kors-huset; servering fra Frivilligsentralen. Tid/pris: spørg arrangøren."]
+        "nb": [
+          "Hager: Bergergata 4 og Hønefossvegen 14 (inngang Bakkelivegen). Jevnaker Klatreklubb ved Røde Kors-huset; servering fra Frivilligsentralen. Tid/pris: spør arrangøren."
+        ],
+        "en": [
+          "Gardens: Bergergata 4 and Hønefossvegen 14 (Bakkelivegen entrance). Jevnaker Klatreklubb near Røde Kors-huset; Frivilligsentralen refreshments. Time/price: ask the organiser."
+        ],
+        "uk": [
+          "Сади: Bergergata 4 і Hønefossvegen 14 (вхід Bakkelivegen). Jevnaker Klatreklubb біля Røde Kors-huset; частування Frivilligsentralen. Час/ціна: уточнюйте в організатора."
+        ],
+        "sv": [
+          "Trädgårdar: Bergergata 4 och Hønefossvegen 14 (ingång Bakkelivegen). Jevnaker Klatreklubb vid Røde Kors-huset; servering från Frivilligsentralen. Tid/pris: fråga arrangören."
+        ],
+        "da": [
+          "Haver: Bergergata 4 og Hønefossvegen 14 (indgang Bakkelivegen). Jevnaker Klatreklubb ved Røde Kors-huset; servering fra Frivilligsentralen. Tid/pris: spørg arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "honefoss-riff-markens-grode-2026",
+      "municipality": "3305",
+      "category": "events",
+      "published": "2026-10-19",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-19",
+      "eventDate": "2026-10-23",
+      "time": "18:00",
+      "expires": "2026-10-24T00:00:00+02:00",
+      "source": "Nordisk Film Kino · Hønefoss",
+      "url": "https://www.nfkino.no/kino/honefoss",
+      "website": "https://www.nfkino.no/film/markens-grode",
+      "bookingUrl": "https://www.nfkino.no/screening/2592/98b2c5b0-eda9-4f71-a1d0-5e575686bcba",
+      "location": "Hønefoss kino · Hønefoss Bru 3, 3502 Hønefoss",
+      "mapQuery": "Hønefoss kino Hønefoss Bru 3",
+      "topic": "cinema",
+      "copy": {
+        "nb": [
+          "Markens grøde · RIFF på Hønefoss kino",
+          "23. oktober kl. 18.00 i sal 1. Norsk tale og tekst; aldersgrense 12 år."
+        ],
+        "en": [
+          "Markens grøde · RIFF at Hønefoss cinema",
+          "23 October at 18:00, screen 1. Norwegian dialogue and subtitles; age rating 12."
+        ],
+        "uk": [
+          "Markens grøde · RIFF у кінотеатрі Hønefoss",
+          "23 жовтня о 18:00, зал 1. Норвезька озвучка й субтитри; віковий рейтинг 12+."
+        ],
+        "sv": [
+          "Markens grøde · RIFF på Hønefoss kino",
+          "23 oktober kl. 18.00, sal 1. Norskt tal och text; åldersgräns 12 år."
+        ],
+        "da": [
+          "Markens grøde · RIFF i Hønefoss kino",
+          "23. oktober kl. 18.00, sal 1. Norsk tale og tekst; aldersgrænse 12 år."
+        ]
+      },
+      "details": {
+        "nb": [
+          "RIFF med innledning. 2 t 39 min. Pris og endringer: se kinoens nettside."
+        ],
+        "en": [
+          "RIFF screening with introduction. 2h 39m. Check prices and changes with the cinema."
+        ],
+        "uk": [
+          "RIFF зі вступом. 2 год 39 хв. Ціна й зміни — на сайті кінотеатру."
+        ],
+        "sv": [
+          "RIFF med introduktion. 2 tim 39 min. Pris och ändringar: se biografens webbplats."
+        ],
+        "da": [
+          "RIFF med introduktion. 2 t 39 min. Pris og ændringer: se biografens hjemmeside."
+        ]
       }
     }
   ]
