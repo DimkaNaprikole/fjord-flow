@@ -1,0 +1,101 @@
+/* Approved Hadeland reading surface, shared by all place information windows. */
+dialog.ff-information-dialog{
+ --ff-panel:#fffdf6;--ff-ink:#113b46;--ff-muted:#4a6167;--ff-field:#f2f4ef;
+ --ff-deep:#edf1eb;--ff-line:#113b461c;--ff-line-strong:#113b4633;
+ --ff-action:#e9efea;--ff-accent:#155266;
+ box-sizing:border-box;width:min(760px,calc(100vw - 32px));max-width:760px;
+ max-height:calc(100dvh - 32px);margin:auto;padding:0;overflow:auto;
+ overscroll-behavior:contain;background:var(--ff-panel);color:var(--ff-ink);
+ border:1px solid var(--ff-line-strong);border-radius:22px;
+ font-family:Manrope,'Segoe UI',sans-serif;
+}
+dialog.ff-information-dialog :is(h2,h3,h4,label,summary,strong,b){color:var(--ff-ink)}
+dialog.ff-information-dialog :is(p,small,dt,dd){color:var(--ff-muted)}
+dialog.ff-information-dialog :is(a,button):not(.stay-gallery-thumb):not(.gm-style button):not(.film-play){font-weight:800}
+dialog.ff-information-dialog a:not(.gm-style a){color:var(--ff-accent);text-underline-offset:4px}
+dialog.ff-information-dialog :is(a,button,summary,input,select):focus-visible{outline:3px solid #21769b;outline-offset:3px}
+dialog.ff-information-dialog :is(.gallery-top,.stay-gallery-header,.shopping-dialog-top){position:sticky;top:0;z-index:12;margin:0;padding:14px 22px;background:#fffdf6f5;backdrop-filter:blur(8px);border-bottom:1px solid var(--ff-line)}
+dialog.ff-information-dialog :is(.gallery-top,.stay-gallery-header) h2{font:850 clamp(22px,3vw,30px)/1.25 Manrope,sans-serif;letter-spacing:-.5px;margin:0}
+dialog.ff-information-dialog :is(.stay-gallery-icon,.discovery-story-close,.experience-photo-close,#galleryClose){color:var(--ff-ink);background:#fffdf6f2;border:1px solid var(--ff-line-strong);border-radius:50%;min-width:42px;min-height:42px}
+dialog.ff-information-dialog :is(.stay-gallery-viewer,.stay-gallery-stage,.gallery-stage){background:var(--ff-field)}
+dialog.ff-information-dialog .stay-gallery-stage{height:280px;overflow:hidden}
+dialog.ff-information-dialog .stay-gallery-stage img{object-fit:contain}
+dialog.ff-information-dialog :is(.shopping-hero img,.discovery-story-cover){width:100%;height:240px;max-height:240px;object-fit:cover}
+dialog.ff-information-dialog .shopping-hero{margin:0}
+dialog.ff-information-dialog :is(.shopping-dialog-body,.discovery-story-full){padding:24px 30px;background:transparent}
+dialog.ff-information-dialog :is(.shopping-dialog-body,.discovery-story-full) h2{font:850 clamp(25px,4vw,34px)/1.25 Manrope,sans-serif;letter-spacing:-.5px}
+dialog.ff-information-dialog :is(.cafe-gallery-info,.stay-gallery-venue-actions){padding:16px 24px;margin:0}
+dialog.ff-information-dialog .cafe-gallery-summary{gap:12px;flex-wrap:wrap}
+dialog.ff-information-dialog .cafe-gallery-hours{background:var(--ff-field);border-color:var(--ff-line)}
+dialog.ff-information-dialog .cafe-gallery-actions a,
+dialog.ff-information-dialog .stay-gallery-venue-actions a,
+dialog.ff-information-dialog .shopping-actions :is(a,button){color:var(--ff-accent);background:none;border:0;border-radius:0;text-decoration:underline;text-underline-offset:4px;padding:8px 0;min-height:44px;box-shadow:none}
+dialog.ff-information-dialog .stay-gallery-venue-actions{display:flex;flex-wrap:wrap;gap:10px 22px}
+dialog.ff-information-dialog .stay-gallery-venue-actions[hidden]{display:none}
+dialog.ff-information-dialog .stay-gallery-meta{background:none;color:var(--ff-muted);gap:8px 18px;padding:12px 24px}
+dialog.ff-information-dialog .stay-gallery-thumbs{padding:14px 24px;background:none}
+dialog.ff-information-dialog .stay-gallery-thumb[aria-current=true]{border-color:#155266}
+dialog.ff-information-dialog .ff-info-extra{margin:12px 24px;padding:8px 0;border-top:1px solid var(--ff-line);color:var(--ff-ink)}
+dialog.ff-information-dialog .ff-info-extra>summary{cursor:pointer;font:800 13px/1.5 Manrope,sans-serif;min-height:44px;align-content:center}
+dialog.ff-information-dialog .ff-info-extra :is(figcaption,#galleryCaption){margin:0;padding:8px 0;font-size:12px;line-height:1.7;background:none;color:var(--ff-muted)}
+dialog.ff-information-dialog .ff-info-extra .ff-info-extra{margin:8px 0}
+dialog.ff-information-dialog .shopping-dialog-body>.ff-info-extra{margin:14px 0}
+dialog.ff-information-dialog .shopping-stores{grid-template-columns:1fr 1fr}
+dialog.ff-information-dialog .google-place-map{margin:0;background:var(--ff-field)}
+dialog.ff-information-dialog .google-place-map :is(h3,p[role=status]){color:var(--ff-ink)}
+#galleryDialog.ff-information-dialog #destinationDetails{background:none;color:var(--ff-ink);padding:20px 24px;margin:0}
+#galleryDialog.ff-information-dialog .gallery-action-row{margin:0;padding:12px 24px;flex-wrap:wrap;background:var(--ff-field)}
+#galleryDialog.ff-information-dialog .gallery-quick-actions{flex:1 1 220px}
+#galleryDialog.ff-information-dialog .gallery-quick-actions button{background:none;color:var(--ff-accent);border:0;text-decoration:underline;text-underline-offset:4px}
+#galleryDialog.ff-information-dialog .route-planner{background:none;padding:8px 0}
+#galleryDialog.ff-information-dialog .gallery-stage{height:280px;min-height:0}
+#galleryDialog.ff-information-dialog #galleryImage{height:100%;max-height:280px;object-fit:contain}
+#experiencePhotoDialog.ff-information-dialog{padding:22px 26px}
+#experiencePhotoDialog.ff-information-dialog figure{margin:18px -26px}
+#experiencePhotoDialog.ff-information-dialog figure img{width:100%;height:260px;object-fit:contain;background:var(--ff-field)}
+#experiencePhotoDialog.ff-information-dialog>p{font-size:15px;line-height:1.75}
+#experiencePhotoDialog.ff-information-dialog .ff-info-extra{margin:12px 0}
+@media(max-width:550px){
+ dialog.ff-information-dialog{width:calc(100vw - 16px);max-height:calc(100dvh - 16px);border-radius:16px}
+ dialog.ff-information-dialog :is(.shopping-dialog-body,.discovery-story-full){padding:20px}
+ dialog.ff-information-dialog :is(.stay-gallery-stage,.gallery-stage){height:210px}
+ dialog.ff-information-dialog :is(.shopping-hero img,.discovery-story-cover){height:180px}
+ dialog.ff-information-dialog .shopping-stores{grid-template-columns:1fr}
+}
+
+#stayGallery.ff-information-dialog .stay-gallery-stage{height:260px;min-height:180px}
+#stayGallery.ff-information-dialog .stay-gallery-counter{color:var(--ff-muted)}
+dialog.ff-information-dialog [hidden]{display:none!important}
+@media(max-width:550px){#stayGallery.ff-information-dialog .stay-gallery-stage{height:210px}}
+
+#galleryDialog.ff-information-dialog{background:#fffdf6;padding:0;color:#113b46;backdrop-filter:none}
+#galleryDialog.ff-information-dialog .gallery-top{position:sticky;background:#fffdf6f5;color:#113b46;min-height:76px;border-radius:0;padding:14px 64px 14px 22px}
+#galleryDialog.ff-information-dialog .gallery-top:before{display:none}
+#galleryDialog.ff-information-dialog #galleryTitle{color:#113b46;font:850 clamp(22px,3vw,30px)/1.25 Manrope,sans-serif;letter-spacing:-.5px}
+#galleryDialog.ff-information-dialog .gallery-top .eyebrow{color:#4a6167}
+#galleryDialog.ff-information-dialog .gallery-stage{background:#edf1eb}
+#galleryDialog.ff-information-dialog .gallery-quick-actions{background:none;border:0;box-shadow:none;padding:0}
+#galleryDialog.ff-information-dialog .gallery-quick-actions button{box-shadow:none}
+#galleryDialog.ff-information-dialog .place-webcam{background:#f2f4ef;color:#113b46;margin:0;padding:10px 24px;border:0;border-radius:0}
+#galleryDialog.ff-information-dialog .place-webcam small{color:#4a6167}
+#galleryDialog.ff-information-dialog :is(input,select,select option){background:#fffdf6;color:#113b46;border-color:#113b4633}
+#galleryDialog.ff-information-dialog :is(input,textarea)::placeholder{color:#61777c}
+#galleryDialog.ff-information-dialog :is(#routeNote,.route-privacy,.creator-credit summary,.creator-credit p){color:#4a6167}
+#galleryDialog.ff-information-dialog #destinationDetails h3{font:850 26px/1.3 Manrope,sans-serif}
+#galleryDialog.ff-information-dialog .ff-info-extra :is(.stay-links a,.destination-reviews button){background:#e9efea;color:#155266}
+#galleryDialog.ff-information-dialog .ff-info-extra #galleryCaption{background:none}
+#experiencePhotoDialog.ff-information-dialog .ff-info-extra figcaption{background:none;color:#4a6167}
+
+#stayGallery.ff-information-dialog .stay-gallery-venue-actions{background:transparent;border:0;justify-content:flex-start;padding:12px 24px;color:#113b46}
+#stayGallery.ff-information-dialog .stay-gallery-venue-actions a{background:none;box-shadow:none;border:0;color:#155266}
+
+:is(#newsDialog,#shoppingDialog,#stayGallery,#galleryDialog,#experiencePhotoDialog,#discoveryStoryDialog).ff-information-dialog{width:min(760px,calc(100vw - 32px));max-width:760px;background:#fffdf6;color:#113b46}
+#shoppingDialog.ff-information-dialog .shopping-hero{background:#edf1eb}
+#shoppingDialog.ff-information-dialog .shopping-hours a{background:none;border:0;text-decoration:underline;text-underline-offset:4px;padding:8px 0}
+@media(max-width:550px){:is(#newsDialog,#shoppingDialog,#stayGallery,#galleryDialog,#experiencePhotoDialog,#discoveryStoryDialog).ff-information-dialog{width:calc(100vw - 16px)}}
+
+#galleryDialog.ff-information-dialog #galleryClose{background:#fffdf6;border:1px solid #113b4633;box-shadow:none}
+#galleryDialog.ff-information-dialog #galleryClose::before,#galleryDialog.ff-information-dialog #galleryClose::after{background:#113b46}
+
+#galleryDialog.ff-information-dialog .gallery-stage{box-sizing:border-box;width:100%;max-width:100%;aspect-ratio:auto}
+@media(max-width:700px){#galleryDialog.ff-information-dialog .gallery-quick-actions{flex:0 1 auto;width:100%;height:auto}#galleryDialog.ff-information-dialog .gallery-stage{height:210px}}

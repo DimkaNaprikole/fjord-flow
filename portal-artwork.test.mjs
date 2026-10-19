@@ -25,7 +25,7 @@ function harness({header=false,explorer=false,reducedMotion=false}={}){
  const sections=[node(),node()];journeys.append(...sections);
  const friendship=header?node('div'):null,pledge=header?node('a'):null,about=explorer?node():null;if(friendship)body.append(friendship);if(about)journeys.append(about);
  const motion={...events(),matches:reducedMotion};
- const document={...events(),body,hidden:false,createElement:node,getElementById:id=>id==='journeys'?journeys:null,querySelector:s=>s==='#about'?about:s==='body>header>.solidarity-art-pair'?friendship:s==='#solidarityBanner .solidarity-pledge'?pledge:null,querySelectorAll:()=>sections};
+ const document={...events(),body,hidden:false,createElement:node,createElementNS:(_namespace,tag)=>node(tag),getElementById:id=>id==='journeys'?journeys:null,querySelector:s=>s==='#about'?about:s==='body>header>.solidarity-art-pair'?friendship:s==='#solidarityBanner .solidarity-pledge'?pledge:null,querySelectorAll:()=>sections};
  const window={...events(),innerWidth:1280,innerHeight:800,IntersectionObserver};
  vm.runInNewContext(source,{window,document,matchMedia:()=>motion,MutationObserver,IntersectionObserver,setInterval(fn,delay){assert.equal(delay,8000);const id=++timerId;timers.set(id,fn);return id;},clearInterval:id=>timers.delete(id)});
  return {document,window,motion,sections,friendship,pledge,about,timers,node,
@@ -74,6 +74,8 @@ test('header keeps both artworks clean and cycles all six live slogans with redu
  for(let i=0;i<4;i++){
   assert.deepEqual(pair(h.friendship),clean,'no baked-in slogans in any frame');
   assert.equal(caption.hidden,false);assert.equal(caption.dataset.frame,String(i%3));
+  assert.match(caption.innerHTML,new RegExp('friendship-third-left\" data-order=\"'+(i%3===1?'second':'first')+'\"'));
+  assert.match(caption.innerHTML,new RegExp('friendship-third-right\" data-order=\"'+(i%3===1?'first':'second')+'\"'));
   const text=caption.innerHTML.replace(/<[^>]+>/g,' ');
   for(const phrase of frames[i%3])assert.match(text,phrase);
   if(i<3){h.tick();await flush();}

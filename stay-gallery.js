@@ -54,7 +54,7 @@
     thumbs = el('nav', 'stay-gallery-thumbs');
     cafeInfo = el('section', 'cafe-gallery-info'); cafeInfo.hidden = true;
     venueActions = el('nav', 'stay-gallery-venue-actions'); venueActions.hidden = true;
-    dialog.append(header, cafeInfo, venueActions, viewer, meta, thumbs); document.body.append(dialog);
+    dialog.append(header, viewer, thumbs, cafeInfo, venueActions, meta); document.body.append(dialog);
     dialog.addEventListener('close', () => clearInterval(cafeTimer));
     dialog.addEventListener('click', e => {if (e.target === dialog) dialog.close();});
     dialog.addEventListener('keydown', e => {
@@ -84,7 +84,7 @@
         b.setAttribute('aria-label', `${i + 1}. ${w()[kinds[p.kind] || 8]}`);
         const img = el('img'); img.src = valid(p.src); img.alt = ''; img.loading = 'lazy'; b.append(img); return b;
       }));
-      previous.hidden = next.hidden = photos.length < 2;
+      previous.hidden = next.hidden = thumbs.hidden = photos.length < 2;
       venueActions.replaceChildren(); venueActions.hidden = Boolean(venue.openingHours && !venue.bookingUrl);
       if (!venueActions.hidden) {
         const labels = {nb:['Nettsted','Bestill','Finn veien'],en:['Website','Book a stay','Get directions'],uk:['Сайт','Забронювати','Прокласти маршрут'],sv:['Webbplats','Boka','Hitta hit'],da:['Hjemmeside','Book','Find vej']}[language()] || ['Website','Book a stay','Get directions'];
@@ -101,11 +101,13 @@
       }
       clearInterval(cafeTimer);
       const refreshCafe = window.FjordCafeGalleryInfo?.render(cafeInfo, venue);
+      if(!venue.openingHours && venue.address){cafeInfo.hidden=false;cafeInfo.append(el('p','cafe-gallery-address',venue.address));}
       if (venue.visitInfo?.text) {
         const info = venue.visitInfo, text = typeof info.text === 'string' ? info.text : info.text[language()] || info.text.en || info.text.nb;
         if (text) {
           cafeInfo.hidden = false;
           const visit = el('details', 'cafe-gallery-hours');
+          visit.open = false;
           visit.append(el('summary', '', {nb:'Før du drar',en:'Before you go',uk:'Перед поїздкою',sv:'Före besöket',da:'Før afrejse'}[language()] || 'Before you go'), el('p', '', text));
           if (valid(info.source)) {const a = el('a', '', ({nb:'Informasjonskilde',en:'Information source',uk:'Джерело інформації',sv:'Informationskälla',da:'Informationskilde'}[language()] || 'Information source') + ' ↗'); a.href = valid(info.source); a.target = '_blank'; a.rel = 'noopener noreferrer'; visit.append(a);}
           if (info.checked) visit.append(el('p', 'cafe-gallery-muted', info.checked));
@@ -117,7 +119,7 @@
         cafeInfo.hidden = false;
         const details = el('details', 'cafe-gallery-hours');
         details.append(el('summary', '', {nb:'Besøk og bestilling',en:'Visiting and booking',uk:'Відвідування та бронювання',sv:'Besök och bokning',da:'Besøg og booking'}[language()] || 'Visiting and booking'), el('p', '', local(venue.hoursNote)));
-        if (venue.address) details.append(el('p', 'cafe-gallery-address', venue.address));
+
         cafeInfo.append(details);
       }
       if (refreshCafe) cafeTimer = setInterval(refreshCafe, 60000);

@@ -53,7 +53,7 @@ if(advanceExplorer){
 }
 
 /* Other public chapters share one clock and load their artwork only near view. */
-const publicSections='#journeys>section:not(#homePanel):not(#about):not(.hero),body>section#advertising,body>section#contact,body>section#norwayOverview';
+const publicSections='#journeys>section:not(#homePanel):not(#about):not(.hero),body>section#advertising,body>section#contact:not(.developer-card-host),body>section#norwayOverview';
 const sectionArtwork=new Map(),nearbySections=new Set();
 let sectionOffset=0,artworkTimer=0;
 const displayed=section=>section.isConnected&&!section.closest('[hidden]')&&section.getClientRects().length>0;
@@ -90,6 +90,7 @@ function discoverArtworkSections(){
   for(const section of document.querySelectorAll(publicSections)){
     if(sectionArtwork.has(section))continue;
     section.classList.add('portal-art-section');
+    if(section.id!=='advertising')section.classList.add('portal-light-chapter');
     sectionArtwork.set(section,{offset:sectionOffset++%6,advance:null});
     artworkObserver?.observe(section);
   }
@@ -108,6 +109,11 @@ function scanNearbySections(){
 /* Two wake-up pairs, then a clean pair with the shared friendship message. */
 const friendship=document.querySelector('body>header>.solidarity-art-pair');
 if(friendship){
+  // Render both right-hand phrases with identical ink; slightly strengthen the closing line.
+  const ink=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  ink.setAttribute('aria-hidden','true');ink.setAttribute('width','0');ink.setAttribute('height','0');ink.style.position='absolute';
+  ink.innerHTML='<defs><filter id="friendshipForeverInk" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="0.65" result="stroke"/><feFlood flood-color="#0f0e0e" result="ink"/><feComposite in="ink" in2="stroke" operator="in"/></filter></defs>';
+  friendship.parentNode.append(ink);
   const caption=document.createElement('div');
   caption.className='friendship-third-caption';caption.hidden=true;caption.setAttribute('lang','nb');caption.setAttribute('data-i18n-ignore','');
   friendship.parentNode.append(caption);
@@ -115,8 +121,8 @@ if(friendship){
     const frame=index%3;
     caption.dataset.frame=String(frame);
     caption.innerHTML=frame===2
-      ?'<span class="friendship-third-left"><b>Norge +</b><b>Ukraina</b></span><span class="friendship-third-right"><b>Sammen</b><b>for frihet</b></span>'
-      :`<span class="friendship-third-left" lang="en">${frame===0?'<b>Wake</b><b>up</b><b>Ukraine</b>':'<b>Stand</b><b>with</b><b>Ukraine</b>'}</span><span class="friendship-third-right" lang="en">${frame===0?'<b>Stand</b><b>with</b><b>Norway</b>':'<b>Wake</b><b>up</b><b>Norway</b>'}</span>`;
+      ?'<span class="friendship-third-left" data-order="first"><b>Norge +</b><b>Ukraina</b></span><span class="friendship-third-right" data-order="second"><b>Sammen</b><b>for frihet</b><img class="friendship-forever" src="images/friendship-nazavzhdy.png" alt="назавжди" lang="uk" decoding="async"></span>'
+      :`<span class="friendship-third-left" data-order="${frame===1?'second':'first'}" lang="en">${frame===0?'<b>Wake</b><b>up</b><b>Ukraine</b>':'<b>Stand</b><b>with</b><b>Ukraine</b>'}</span><span class="friendship-third-right" data-order="${frame===1?'first':'second'}" lang="en">${frame===0?'<b>Stand</b><b>with</b><b>Norway</b>':'<b>Wake</b><b>up</b><b>Norway</b>'}</span>`;
     caption.hidden=false;
   };
   const cleanPair=['images/ukraine-friendship-clean.webp',norwegian];

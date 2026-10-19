@@ -45,14 +45,6 @@ if(heroScenery){
  document.addEventListener('visibilitychange',updateLocationFilm);reduceFilm.addEventListener?.('change',updateLocationFilm);
  const credits=document.getElementById('sceneryCredits');if(credits){const p=document.createElement('p');p.append('Lofoten location film — Danny Rest · ');for(const [label,href] of [['CC BY 3.0','https://creativecommons.org/licenses/by/3.0/'],['Original video','https://commons.wikimedia.org/wiki/File:LOFOTEN_ISLANDS_-_NORWAY_-_4K_FILM.webm']]){const a=document.createElement('a');a.textContent=label;a.href=href;a.target='_blank';a.rel='noopener noreferrer';p.append(a,' · ')}p.append('Muted, cropped preview.');credits.append(p)}
 }
-// Repeat the lower advertisement without changing its translated text or contact links.
-const sourceAd=document.querySelector('.advertising-message');
-if(sourceAd){
- const heroAd=sourceAd.cloneNode(true);heroAd.classList.add('hero-advertising-message');heroAd.querySelector('[id]')?.removeAttribute('id');hero.closest('.hero')?.append(heroAd);
- const selector='h2 span, .advertising-brand, .advertising-contact a';
- const syncAd=()=>{const source=[...sourceAd.querySelectorAll(selector)],target=[...heroAd.querySelectorAll(selector)];source.forEach((item,i)=>{if(target[i])target[i].textContent=item.textContent})};
- new MutationObserver(syncAd).observe(sourceAd,{subtree:true,childList:true,characterData:true});syncAd();
-}
 let previousOverflow='';
 trigger.addEventListener('click',()=>{error.hidden=true;previousOverflow=document.body.style.overflow;dialog.showModal();document.body.style.overflow='hidden';if(!video.getAttribute('src'))video.src='media/fjord-flow-welcome.mp4';video.play().catch(()=>{/* Native controls remain available if playback is blocked. */});});
 function stop(){video.pause();document.body.style.overflow=previousOverflow;trigger.focus({preventScroll:true});}
@@ -66,11 +58,16 @@ if(advertising){
  const adFilmUrl='media/eagle-ad-background.mp4';
  const backgroundVideo=document.createElement('video');backgroundVideo.className='advertising-background-film';backgroundVideo.muted=true;backgroundVideo.defaultMuted=true;backgroundVideo.loop=true;backgroundVideo.autoplay=true;backgroundVideo.playsInline=true;backgroundVideo.preload='none';backgroundVideo.poster='images/advertising-fjord-art.webp';backgroundVideo.setAttribute('aria-hidden','true');backgroundVideo.setAttribute('playsinline','');backgroundVideo.tabIndex=-1;advertising.prepend(backgroundVideo);
  let backgroundInView=false;const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
- const updateBackground=()=>{if(backgroundInView&&!reducedMotion.matches&&!document.hidden&&!advertising.closest('[hidden]')&&!navigator.connection?.saveData){if(!backgroundVideo.src)backgroundVideo.src=adFilmUrl;backgroundVideo.play().catch(()=>{});}else backgroundVideo.pause();};
- if('IntersectionObserver' in window){new IntersectionObserver(entries=>{backgroundInView=entries[0].isIntersecting;updateBackground();},{rootMargin:'200px'}).observe(advertising);}else{backgroundInView=true;updateBackground();}
+ const updateBackground=()=>{const box=advertising.getBoundingClientRect();backgroundInView=box.bottom>0&&box.top<innerHeight&&box.width>0;if(backgroundInView&&!reducedMotion.matches&&!document.hidden&&!advertising.closest('[hidden]')&&!navigator.connection?.saveData){if(!backgroundVideo.src)backgroundVideo.src=adFilmUrl;backgroundVideo.play().catch(()=>{});}else backgroundVideo.pause();};
+ // Match the strict viewport check above: an expanded margin can fire too early
+ // and leave a paused film without another callback when it reaches the screen.
+ if('IntersectionObserver' in window){new IntersectionObserver(entries=>{backgroundInView=entries[0].isIntersecting;updateBackground();},{rootMargin:'0px'}).observe(advertising);}else{backgroundInView=true;updateBackground();}
  reducedMotion.addEventListener?.('change',updateBackground);
  document.addEventListener('visibilitychange',updateBackground);
- window.addEventListener('fjord:sections-changed',updateBackground);
+ window.addEventListener('fjord:sections-changed',()=>requestAnimationFrame(updateBackground));
+ window.addEventListener('hashchange',()=>requestAnimationFrame(updateBackground));
+ window.addEventListener('resize',updateBackground);
+ requestAnimationFrame(updateBackground);
  navigator.connection?.addEventListener?.('change',updateBackground);
 }
 })();

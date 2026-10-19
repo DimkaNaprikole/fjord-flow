@@ -27,39 +27,57 @@
 .friendship-alternating .hero-artwork-pair img{filter:none;object-position:center 42%}
 .friendship-alternating .hero-artwork-pair img:first-child{object-fit:fill;height:145%;transform:translateY(-15%)}
 .friendship-alternating:has(.hero-artwork-pair.is-visible)>.solidarity-art{opacity:0}
-/* One local hand-drawn typeface over both clean original compositions. */
-@font-face{font-family:'Friendship Brush';src:url('fonts/chewy/Chewy-Regular.ttf') format('truetype');font-style:normal;font-weight:400;font-display:swap}
-body>header>.friendship-third-caption{position:absolute;inset:0;z-index:0;pointer-events:none}
+/* Approved painted captions: native raster proportions, sequential reveal. */
+body>header{min-height:clamp(470px,44vw,660px)}
+body>header>.solidarity-art-pair{opacity:.82}
+body>header>.friendship-third-caption{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.85}
 .friendship-third-caption[hidden]{display:none}
 .friendship-third-caption>span{
- position:absolute;width:40%;top:18%;color:#18292d;opacity:.52;
- font:400 clamp(38px,6.5vw,100px)/.94 'Friendship Brush',sans-serif;text-transform:uppercase;
- -webkit-text-stroke:1px #02090c;paint-order:stroke fill;letter-spacing:.01em
+ position:absolute;top:100px;width:min(42%,420px);aspect-ratio:1;
+ background-image:url('images/friendship-approved-lettering.webp');background-repeat:no-repeat;background-size:200% 300%;
+ clip-path:inset(2.5% 0 1.5%);animation:friendship-ink-in .6s ease .4s both
 }
-.friendship-third-caption b{display:block;font-weight:400;text-align:center}
-.friendship-third-caption b:first-child{text-align:left}
-.friendship-third-caption b:last-child{text-align:right}
-.friendship-third-left{left:5%;transform:rotate(-2deg)}
-.friendship-third-right{right:5%;transform:rotate(2deg)}
-.friendship-third-caption[data-frame="2"]>span{top:25%;font-size:clamp(40px,7.2vw,112px);line-height:.98}
-.friendship-third-caption[data-frame="2"]>.friendship-third-right{top:31%}
+.friendship-third-caption>span[data-order="second"]{animation-delay:1.4s}
+.friendship-third-caption b{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.friendship-third-left{left:25%;transform:translateX(-50%)}
+.friendship-third-right{left:75%;transform:translateX(-50%)}
+.friendship-third-caption[data-frame="0"]>.friendship-third-left{background-position:0 0}
+.friendship-third-caption[data-frame="0"]>.friendship-third-right{background-position:100% 0}
+.friendship-third-caption[data-frame="1"]>.friendship-third-left{background-position:0 50%}
+.friendship-third-caption[data-frame="1"]>.friendship-third-right{background-position:100% 50%}
+.friendship-third-caption[data-frame="2"]>.friendship-third-left{background-position:0 100%}
+.friendship-third-caption[data-frame="2"]>.friendship-third-right{background-position:100% 100%}
 .solidarity-art-pair>.solidarity-art{position:absolute;top:0;width:50%;height:100%;object-fit:cover!important}
 .solidarity-art-pair>.solidarity-art:first-of-type{left:0}
 .solidarity-art-pair>.solidarity-art:nth-of-type(2){right:0}
 body>header>#solidarityBanner{display:none}
 body>header>:is(.brand,.solidarity-banner,.header-tools,nav){position:relative;z-index:2}
-@media(min-width:651px) and (max-width:1000px){
- body>header{min-height:360px}
- .friendship-third-caption>span{top:22%}
- .friendship-third-caption[data-frame="2"]>span{top:28%}
- .friendship-third-caption[data-frame="2"]>.friendship-third-right{top:33%}
+/* Shared wordmark and light account tools from the approved header. */
+body>header>.header-branding>.brand{width:clamp(180px,33vw,500px);max-width:100%;align-self:start;background:#fffbedcf;box-shadow:0 0 24px 16px #fffbedcf}
+body>header>.header-branding>.brand .friendship-wordmark{display:block;width:420px;height:auto;max-width:100%;object-fit:contain}
+body>header>.header-branding>.brand>span{font-size:clamp(9px,1.2vw,18px);font-weight:800;letter-spacing:1.2px;color:#164754;white-space:nowrap}
+body>header>.header-tools{display:flex;align-items:center;gap:12px;padding:2px 6px;background:#fffbeddb;box-shadow:0 0 22px 15px #fffbeddb}
+body>header .language-control{display:flex;align-items:center;gap:5px;background:transparent}
+body>header .language-control::before,body>header #headerSignIn::before{content:'';display:inline-block;flex:none;width:16px;height:16px;background:#164754;mask:url('images/ui/globe.svg') center/contain no-repeat}
+body>header #headerSignIn::before{mask-image:url('images/ui/user-round.svg')}
+body>header .language-control #siteLanguage{width:auto;max-width:155px;min-height:40px;border:0;border-radius:0;padding:4px 15px 4px 0;background:transparent;color:#164754;box-shadow:none;font-size:16px;font-weight:800}
+body>header #headerAccount{font-weight:800;display:flex;align-items:center;gap:9px;border-left:1px solid #16475460;padding-left:12px}
+body>header .header-tools #headerAccount :is(#headerRegister,.header-account-button){display:inline-flex;align-items:center;gap:5px;min-height:40px;padding:5px 1px;border:0;border-radius:0;background:transparent;color:#164754;box-shadow:none;font-size:16px;font-weight:800;white-space:nowrap}
+body>header #headerAccount .header-account-button:hover{color:#082b3c;text-decoration:underline}
+/* Approved soft ivory backing with plain bold navigation links. */
+body>header>nav.site-tabs{
+ position:absolute;grid-area:auto;left:var(--ff-ornament-width);right:var(--ff-ornament-width);bottom:12px;width:auto;margin:0;padding:10px 16px;
+ display:flex;flex-wrap:nowrap;justify-content:space-evenly;gap:8px;min-height:56px;
+ overflow-x:auto;scrollbar-width:thin;border:0;border-radius:0;background:#fffbedeb;box-shadow:0 0 24px 14px #fffbedeb
 }
-@media(max-width:650px){
- body>header{min-height:320px;grid-template-rows:auto 1fr auto}
- .friendship-third-caption>span{top:38%;font-size:clamp(22px,6.5vw,42px);-webkit-text-stroke:.65px #02090c}
- .friendship-third-caption[data-frame="2"]>span{top:46%;font-size:clamp(24px,7.2vw,46px)}
- .friendship-third-caption[data-frame="2"]>.friendship-third-right{top:52%}
-}
+body>header>nav.site-tabs [role=tab]{flex:none;border:0;border-radius:0;background:transparent;color:#103e4b;box-shadow:none;font-weight:800;font-size:13px;padding:8px 9px;min-height:40px;text-shadow:0 1px 2px #fff,0 0 5px #fff}
+body>header>nav.site-tabs [role=tab]:hover{background:transparent;text-decoration:underline;text-underline-offset:5px}
+body>header>nav.site-tabs [role=tab][aria-selected=true]{background:transparent;box-shadow:inset 0 -2px #28574d;color:#103e4b}
+body>header :is(button,select,a):focus-visible{outline:3px solid #2568a7;outline-offset:3px}
+@keyframes friendship-ink-in{from{opacity:0}to{opacity:1}}
+@media(min-width:651px) and (max-width:1000px){body>header{min-height:430px}.friendship-third-caption>span{top:100px;width:240px}}
+@media(max-width:650px){body>header{min-height:380px;grid-template-rows:auto 1fr auto}.friendship-third-caption>span{top:110px;width:40%}body>header>.header-branding>.brand{width:155px}body>header>.header-branding>.brand>span{font-size:7px;letter-spacing:.5px}body>header>.header-tools{max-width:180px;gap:0;align-items:flex-end}body>header .language-control #siteLanguage{font-size:12px;font-weight:800;max-width:130px}body>header #headerAccount{gap:8px;border:0;padding:0;flex-wrap:nowrap}body>header .header-tools #headerAccount :is(#headerRegister,.header-account-button){font-size:12px;font-weight:800}body>header>nav.site-tabs{left:var(--ff-ornament-width);right:var(--ff-ornament-width);bottom:12px;justify-content:flex-start;padding:7px 10px}body>header>nav.site-tabs [role=tab]{font-size:12px;padding:9px 13px}}
+@media(prefers-reduced-motion:reduce){.friendship-third-caption>span{animation:none;opacity:1}}
 
 /* The second chapter uses a full-width scene, matching the opening screen. */
 #journeys>#about.about-explorer{position:relative;isolation:isolate;width:100%;max-width:none;margin:0;padding:0;background:#103343;overflow:hidden;border-radius:0}
@@ -126,13 +144,45 @@ body>header>:is(.brand,.solidarity-banner,.header-tools,nav){position:relative;z
 #journeys>section.waterfall-story.portal-art-section:not(#homePanel)::after{pointer-events:none}
 #journeys>section#droneExperience.portal-art-section{padding:0}
 #droneExperience.portal-art-section .drone-experience-body{padding:clamp(28px,4vw,58px)}
-body>#advertising.portal-art-section{background-image:none;min-height:520px}
-body>#advertising.portal-art-section .advertising-message{right:calc(var(--ff-page-gutter) + var(--ff-panel-inset));bottom:48px}
+:is(body,#journeys)>#advertising.portal-art-section{background-image:none;min-height:520px}
+:is(body,#journeys)>#advertising.portal-art-section .advertising-message{right:calc(var(--ff-page-gutter) + var(--ff-panel-inset));bottom:48px}
 #journeys>section#cards.portal-art-section{padding-top:24px}
 #journeys>section#collection.portal-art-section{padding-bottom:32px}
 @media(max-width:650px){
  #journeys>section.portal-art-section:not(#homePanel),body>section.portal-art-section:not(#homePanel){padding-inline:28px}
  #journeys>section.waterfall-story.portal-art-section:not(#homePanel),#journeys>section#droneExperience.portal-art-section{padding:0}
- body>#advertising.portal-art-section .advertising-message{right:28px;bottom:38px;width:calc(100% - 56px)}
+ :is(body,#journeys)>#advertising.portal-art-section .advertising-message{right:28px;bottom:38px;width:calc(100% - 56px)}
  .portal-art-section::before{background:#082b3cb3}
 }
+
+/* One botanical source for every outer rail and the navigation strip. */
+:root{--ff-ornament-image:url('images/portal-wheat-cornflowers-fine.webp')}
+.portal-art-rail.left,.portal-art-rail.right,.portal-art-rail.top::before,.portal-art-rail.bottom::before{background-size:calc(var(--ff-ornament-width) * 6) auto}
+.portal-art-rail{filter:drop-shadow(0 1px .6px #70551b40)}
+.portal-art-frame::before,.portal-art-frame::after{background:#f2f5ec30;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+
+@media(min-width:1001px){body>header>nav.site-tabs{flex-wrap:wrap;justify-content:center;gap:2px 16px}body>header>nav.site-tabs [role=tab]{flex:none;min-width:0;padding:6px 4px;font-size:16px;white-space:nowrap;text-align:center;line-height:1.35}}
+
+/* Owner's Facebook group is independent of forum and main navigation. */
+body>header>.header-branding{grid-area:brand;position:relative;z-index:2;align-self:start;min-width:0}
+body>header>.header-branding>.brand{display:block}
+.header-facebook-group{display:table;margin-top:5px;padding:3px 0;font:800 14px/1.4 Manrope,'Segoe UI',sans-serif;color:#164754;text-decoration:underline;text-underline-offset:3px;background:#fffbedcc;box-shadow:0 0 12px 6px #fffbedcc}
+.header-facebook-group:hover{color:#082b3c;text-decoration-thickness:2px}
+@media(max-width:650px){.header-facebook-group{font-size:10px;max-width:155px;margin-top:4px;white-space:nowrap}}
+
+/* Five main destinations; detailed shortcuts belong inside their destination. */
+body>header>nav.site-tabs>[data-legacy-tab]{display:none!important}
+body>header>nav.site-tabs{justify-content:space-evenly;flex-wrap:wrap;gap:4px 20px;overflow:visible}
+body>header>nav.site-tabs [data-primary-tab]{font-size:clamp(15px,1.2vw,18px);min-height:44px;padding:8px 12px;white-space:nowrap}
+.site-group-links{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 22px;margin:0;padding:18px calc(var(--ff-ornament-width) + 16px);background:var(--ff-panel);color:var(--ff-ink)}
+.site-group-links a{color:var(--ff-ink);font-weight:700;line-height:1.5;padding:7px 0;text-underline-offset:5px}
+.site-group-links a:hover{text-decoration:underline}
+.site-group-links a:focus-visible{outline:3px solid #d6bb67;outline-offset:4px}
+@media(max-width:650px){body>header{min-height:410px}body>header>nav.site-tabs{justify-content:center;gap:2px 12px;padding:6px 8px}body>header>nav.site-tabs [data-primary-tab]{font-size:14px;padding:6px 8px;min-height:40px}.site-group-links{justify-content:flex-start;gap:4px 18px;font-size:13px}}
+
+@media(max-width:650px){body>header>nav.site-tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px 0}body>header>nav.site-tabs [data-primary-tab]{grid-column:span 2;padding:6px 2px}body>header>nav.site-tabs [data-primary-tab="forum"]{grid-column:2/span 2}body>header>nav.site-tabs [data-primary-tab="news"]{grid-column:4/span 2}}
+
+/* Third friendship frame: Ukrainian closing line, matching the raster brush lettering. */
+.friendship-third-caption[data-frame="2"]>.friendship-third-right{background-image:none;clip-path:none;}
+.friendship-third-caption[data-frame="2"]>.friendship-third-right::before{content:'';position:absolute;inset:0;background:#0f0e0e;mask-image:url('images/friendship-approved-lettering.webp');mask-repeat:no-repeat;mask-size:200% 300%;mask-position:100% 100%;-webkit-mask-image:url('images/friendship-approved-lettering.webp');-webkit-mask-repeat:no-repeat;-webkit-mask-size:200% 300%;-webkit-mask-position:100% 100%;}
+.friendship-third-caption[data-frame="2"]>.friendship-third-right>.friendship-forever{position:absolute;display:block;left:-2.5%;top:71.4%;bottom:auto;width:105%;max-width:none;height:auto;object-fit:contain;opacity:1;filter:url('#friendshipForeverInk');}

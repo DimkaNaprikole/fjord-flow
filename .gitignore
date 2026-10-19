@@ -5,3 +5,7 @@ data/*-journal
 
 # Local artwork comparison, not part of the public site.
 /_art-preview/
+
+# Owner-only skill snapshots and local visual audit notes.
+/skill-backups/
+/design-qa.md

@@ -23,3 +23,27 @@ test('full Google canvas enables wheel zoom and retains camera during label refr
   adapter.setType('terrain');adapter.setType('invalid');assert.deepEqual(types,['terrain']);
   adapter.destroy();assert.equal(markers.at(-1).map,null);
 });
+
+test('late Google authorization failure replays the current selection in fallback',async()=>{
+ const listeners=new Map(),replayed=[];let destroyed=0;
+ class MapCanvas{fitBounds(){}setCenter(){}setZoom(){}}
+ class InfoWindow{close(){}}
+ const fallback={provider:'openstreetmap',render(...args){replayed.push(args);return args[0].length;},setPath(path){this.path=path;},focus(){},resize(){},destroy(){}};
+ const window={addEventListener:(name,fn)=>listeners.set(name,fn),removeEventListener:name=>listeners.delete(name),FjordGoogleNorwayMap:{loadAPI:async()=>{}},FjordLeafletMap:{preferred:()=>false,create:async()=>fallback}};
+ const google={maps:{importLibrary:async name=>name==='maps'?{Map:MapCanvas,InfoWindow}:{AdvancedMarkerElement:class{constructor(){}addListener(){}}},marker:{PinElement:class{}},LatLngBounds:class{extend(){}},event:{trigger(){}}}};
+ const context={window,google,document:{createElement:()=>({append(){}})}};
+ vm.runInNewContext(readFileSync(new URL('./google-standard-map.js',import.meta.url),'utf8'),context);
+ const adapter=await window.FjordGoogleStandardMap.create({replaceChildren(){destroyed++;}},{enabled:true,userActivated:true});
+ adapter.render([{id:'cafe',name:'Cafe',category:'cafe',latitude:60,longitude:10}],null,'cafe',true);
+ await listeners.get('fjord:google-auth-failed')();
+ assert.equal(adapter.provider,'openstreetmap');assert.equal(replayed.length,1);assert.equal(replayed[0][0][0].id,'cafe');assert.equal(replayed[0][2],'cafe');assert.equal(destroyed,1);
+ adapter.destroy();assert.equal(listeners.has('fjord:google-auth-failed'),false);
+});
+
+ test('explicit Google provider never substitutes another map on authorization failure',async()=>{
+ let fallbacks=0;
+ const window={FjordGoogleMapConfig:{provider:'google'},FjordGoogleNorwayMap:{loadAPI:async()=>{throw Error('GOOGLE_MAPS_AUTH_FAILED');}},FjordLeafletMap:{preferred:()=>true,create:async()=>{fallbacks++;}}};
+ vm.runInNewContext(readFileSync(new URL('./google-standard-map.js',import.meta.url),'utf8'),{window});
+ await assert.rejects(window.FjordGoogleStandardMap.create({},{enabled:true,userActivated:true}),/GOOGLE_MAPS_AUTH_FAILED/);
+ assert.equal(fallbacks,0);
+});

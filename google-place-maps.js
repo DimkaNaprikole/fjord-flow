@@ -17,7 +17,7 @@
         if(panel.pending||!panel.rows.length)return;panel.pending=true;status.textContent=words[language()][1];
         try{
           if(!panel.map)panel.map=await window.FjordGoogleStandardMap.create(canvas,{...window.FjordGoogleMapConfig,userActivated:true,language:language(),buildInfo:p=>{const box=document.createElement('div');box.style.color='#173e49';const title=document.createElement('strong');title.textContent=p.name;const address=document.createElement('p');address.textContent=p.address||p.town||'';box.append(title,address);return box;}});
-          panel.map.resize();panel.map.render(panel.rows,null,'all',true);if(panel.rows.length===1&&!panel.geometry?.length)panel.map.focus(panel.rows[0]);panel.map.setPath?.(panel.geometry);status.textContent='';
+          panel.heading.textContent=panel.map.provider==='openstreetmap'?'OpenStreetMap':words[language()][0];panel.map.resize();panel.map.render(panel.rows,null,'all',true);if(panel.rows.length===1&&!panel.geometry?.length)panel.map.focus(panel.rows[0]);panel.map.setPath?.(panel.geometry);status.textContent='';
         }catch{status.textContent=words[language()][2]+' ';const retry=document.createElement('button');retry.type='button';retry.textContent=words[language()][3];retry.onclick=panel.load;status.append(retry);}
         finally{panel.pending=false;}
       };

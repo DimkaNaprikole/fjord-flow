@@ -58,6 +58,9 @@ class SecretCheckTests(unittest.TestCase):
     def test_maps_browser_key_exception_is_narrow(self):
         config = "window.FjordGoogleMapConfig = Object.freeze({enabled:true, apiKey:'" + self.google + "'});\n"
         self.assertEqual(scanner.scan_text("google-maps-config.js", config), [])
+        google_only = config.replace("enabled:true, ", "enabled:true, provider:'google', ")
+        self.assertEqual(scanner.scan_text("google-maps-config.js", google_only), [])
+        self.assertEqual(len(scanner.scan_text("google-maps-config.js", google_only.replace("provider:'google'", "provider:'other'"))), 1)
         self.assertEqual(len(scanner.scan_text("other.js", config)), 1)
         self.assertEqual(len(scanner.scan_text("google-maps-config.js", config + self.google)), 2)
         self.assertEqual(len(scanner.scan_text("google-maps-config.js", "/* " + self.google + " */\n" + config)), 1)

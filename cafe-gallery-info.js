@@ -48,7 +48,7 @@
       }
     } catch {}
     line.append(info, actions);
-    const details = node('details', 'cafe-gallery-hours'), summary = node('summary', '', w[4]); details.append(summary); details.open = !!venue.hoursNote;
+    const details = node('details', 'cafe-gallery-hours'), summary = node('summary', '', w[4]); details.append(summary); details.open = false;
     const table = node('dl');
     (hours.weekly || []).forEach((periods, day) => {
       const row = node('div'); if (day === state.day) row.className = 'is-today';
@@ -65,6 +65,7 @@
     const checked=new Date((hours.checked||'')+'T12:00:00Z');
     if(Number.isFinite(checked.getTime()))details.append(node('span','cafe-gallery-checked',`${w[9]}: ${new Intl.DateTimeFormat(lang||'nb').format(checked)}`));
     const note = node('p', 'cafe-gallery-hours-note', hours.verified ? w[6] : w[7]);
+    if(venue.address)host.append(node('p','cafe-gallery-address',venue.address));
     host.append(line, note, details);
     return () => {
       const fresh = evaluate(hours);

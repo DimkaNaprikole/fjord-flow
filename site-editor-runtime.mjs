@@ -56,7 +56,8 @@ function apply(){
  for(const button of BUTTONS){const node=select(button.selector);if(!node)continue;const value=documentValue.buttons[button.id]||{};text(node,value.label?.[language()]);if(button.link){if(!buttonLinks.has(node))buttonLinks.set(node,node.getAttribute('href'));const href=value.href||buttonLinks.get(node);if(node.getAttribute('href')!==href)node.setAttribute('href',href);}}
  const account=select('#headerAccount');if(account)for(const [index,id]of [...documentValue.headerButtonOrder,...['signIn','register'].filter(id=>!documentValue.headerButtonOrder.includes(id))].entries()){const node=select(BUTTONS.find(b=>b.id===id).selector);if(node)node.style.order=String(index);}
  const nav=document.querySelector('body>header>nav');
- if(nav){const controls=[...nav.children].filter(n=>n.matches('a,button')),key=n=>PAGES.find(p=>n.getAttribute('href')===p.root)?.id||'home';
+ // The approved primary groups supersede the retired navigation ordering.
+ if(nav&&!nav.querySelector('[data-primary-tab]')){const controls=[...nav.children].filter(n=>n.matches('a,button')),key=n=>PAGES.find(p=>n.getAttribute('href')===p.root)?.id||'home';
   controls.forEach(n=>{const disabled=String(documentValue.pages[key(n)]?.enabled===false);if(n.dataset.cmsDisabled!==disabled)n.dataset.cmsDisabled=disabled;});
   if(documentValue.navOrder.length&&!originalNavOrder)originalNavOrder=controls.map(key);
   const requested=documentValue.navOrder.length?documentValue.navOrder:originalNavOrder||controls.map(key);

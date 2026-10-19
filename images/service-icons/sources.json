@@ -1,0 +1,81 @@
+{
+  "checked": "2026-10-19",
+  "icons": {
+    "bua": {
+      "path": "images/service-icons/bua.png",
+      "source": "https://bua.no/favicon.ico?favicon.3b18b558.ico",
+      "size": [
+        48,
+        48
+      ],
+      "kind": "official site favicon; converted ICO to PNG without redrawing"
+    },
+    "entur": {
+      "path": "images/service-icons/entur.png",
+      "source": "https://entur.no/static/favicon/apple-touch-icon.png",
+      "size": [
+        180,
+        180
+      ],
+      "kind": "official site icon",
+      "note": ""
+    },
+    "vy": {
+      "path": "images/service-icons/vy.png",
+      "source": "https://www.vy.no/apple-touch-icon.png",
+      "size": [
+        540,
+        540
+      ],
+      "kind": "official site icon",
+      "note": ""
+    },
+    "hyre": {
+      "path": "images/service-icons/hyre.png",
+      "source": "https://www.hyre.no/icons/favicon-48x48.png",
+      "size": [
+        48,
+        48
+      ],
+      "kind": "official site icon",
+      "note": ""
+    },
+    "drivstoff": {
+      "path": "images/service-icons/drivstoff.png",
+      "source": "https://drivstoffappen.no/apple-touch-icon.png",
+      "size": [
+        100,
+        100
+      ],
+      "kind": "official site icon",
+      "note": ""
+    },
+    "coopay": {
+      "path": "images/service-icons/coopay.png",
+      "source": "https://www.coop.no/icons/favicon-512x512.png",
+      "size": [
+        512,
+        512
+      ],
+      "kind": "official site icon",
+      "note": "Coop parent brand icon; Coopay is a feature of the Coop app."
+    }
+  },
+  "logos": {
+    "hyre": {
+      "path": "images/service-icons/hyre-logo.svg",
+      "source": "https://www.hyre.no/img/hyre-logo_white-in-blue.svg",
+      "discovered_on": "https://www.hyre.no/en/"
+    },
+    "entur": {
+      "path": "images/service-icons/entur-logo.png",
+      "source": "https://storage.googleapis.com/entur-prod.appspot.com/public/Enturlogo_blue-500px.png",
+      "discovered_on": "https://entur.no/"
+    },
+    "bua": {
+      "path": "images/service-icons/bua-logo.svg",
+      "source": "https://bua.no/app",
+      "kind": "Exact inline header SVG from BUA Home link; currentColor renders black as standalone image"
+    }
+  }
+}

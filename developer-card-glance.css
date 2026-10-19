@@ -1,0 +1,27 @@
+.developer-glance{position:fixed;z-index:24;width:294px;padding:19px 20px 16px;border:1px solid #f6d995a6;border-radius:16px;background:linear-gradient(100deg,#07131ff0,#102034df),url('images/laurkent-digital-backdrop.png') center/cover;box-shadow:0 12px 35px #00152645,inset 0 1px #fff0c930;color:#fff5df;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);animation:developer-glance-in .5s ease both;box-sizing:border-box;}
+.developer-glance[hidden]{display:none!important;}
+.developer-glance .developer-glance__brand{margin:0 32px 10px 0;color:#e8c77f;font:850 11px/1.4 Manrope,'Segoe UI',sans-serif;letter-spacing:.04em;}
+.developer-glance .developer-glance__title{display:block;max-width:235px;color:#fff3d2;font:850 19px/1.25 Manrope,'Segoe UI',sans-serif;text-decoration:none;letter-spacing:-.02em;}
+.developer-glance .developer-glance__more{display:inline-block;margin-top:13px;color:#ffe3a0;font:800 12px/1.4 Manrope,'Segoe UI',sans-serif;text-decoration:underline;text-underline-offset:4px;}
+.developer-glance .developer-glance__links{display:flex;gap:14px;flex-wrap:wrap;margin-top:13px;padding-top:10px;border-top:1px solid #f4d38e33;}
+.developer-glance .developer-glance__links a{color:#eadcbf;font:750 11px/1.4 Manrope,'Segoe UI',sans-serif;text-decoration:underline;text-underline-offset:3px;}
+.developer-glance .developer-glance__close{position:absolute;right:8px;top:7px;width:32px;height:32px;min-height:32px;padding:0;border:0;border-radius:50%;background:#fff1;color:#ffe7af;font:500 23px/1 Manrope,sans-serif;box-shadow:none;}
+.developer-glance :is(a,button):focus-visible{outline:3px solid #ffe3a0;outline-offset:4px;}
+@keyframes developer-glance-in{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:none;}}
+@media(max-width:550px){.developer-glance{width:280px;padding:16px 18px;}}
+@media(prefers-reduced-motion:reduce){.developer-glance{animation:none;}}
+
+.developer-glance{background:linear-gradient(100deg,#07131f55,#10203433),url('images/laurkent-digital-backdrop.png') center/cover;backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);text-shadow:0 1px 3px #000,0 0 8px #000b;}
+
+/* Small unobtrusive live card. */
+.developer-glance{width:240px;padding:14px 16px 12px;border-radius:13px;}
+.developer-glance .developer-glance__brand{font-size:9px;margin-bottom:8px;}
+.developer-glance .developer-glance__title{font-size:16px;line-height:1.2;max-width:190px;}
+.developer-glance .developer-glance__more{font-size:11px;margin-top:10px;}
+.developer-glance .developer-glance__links{gap:10px;margin-top:10px;padding-top:8px;}
+.developer-glance .developer-glance__links a{font-size:10px;}
+@media(max-width:550px){.developer-glance{width:230px;padding:13px 15px 11px;}}
+
+.developer-glance{width:220px;padding:13px 14px 11px;}.developer-glance .developer-glance__title{font-size:15px;}@media(max-width:550px){.developer-glance{width:220px;}}
+
+.developer-glance .developer-glance__brand{margin-bottom:4px;}.developer-glance__brand a{color:inherit;text-decoration:underline;text-underline-offset:3px;}.developer-glance .developer-glance__email{display:block;color:#eed6a9;font:650 9px/1.4 Manrope,sans-serif;text-decoration:underline;text-underline-offset:3px;}.developer-glance__email[hidden]{display:none!important;}.developer-glance .developer-glance__title{margin-top:16px;}.developer-glance .developer-glance__links{display:none;}

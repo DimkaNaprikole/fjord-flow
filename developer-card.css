@@ -1,0 +1,119 @@
+/* One deliberately distinct golden glass card, scoped to the owner's contact section. */
+#contact.developer-card-host{width:100%;max-width:none;margin:0;padding:clamp(24px,4vw,64px) var(--ff-page-gutter,28px);border:0;border-radius:0;box-shadow:none;backdrop-filter:none;background:#faf6e9;color:#fff2d8;}
+#contact .developer-card{position:relative;isolation:isolate;overflow:hidden;width:100%;max-width:1320px;min-height:720px;margin:0 auto;border:1px solid #ecc77790;border-radius:28px;background:#07111e;box-shadow:0 22px 60px #18273733,0 0 26px #ba8c3b25;}
+#contact .developer-card__backdrop{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.035);animation:developer-drift 22s ease-in-out infinite alternate;}
+#contact .developer-card__glow{position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(100deg,#06101ecc 0%,#07121e70 42%,transparent 72%);}
+#contact .developer-card:after{content:'';position:absolute;inset:-80% -40%;z-index:-1;pointer-events:none;background:linear-gradient(110deg,transparent 43%,#fbd5930c 47%,#fff6d320 50%,#9abbff0c 53%,transparent 57%);transform:translateX(-35%);animation:developer-shimmer 13s ease-in-out infinite;}
+#contact .developer-card__glass{position:relative;width:min(57%,720px);margin:clamp(26px,4vw,56px);padding:clamp(24px,3vw,42px);border:1px solid #f2d69b66;border-radius:22px;background:linear-gradient(125deg,#e8c78316,#121c2b99 75%);box-shadow:inset 0 1px #fff8d933,0 20px 55px #0002;backdrop-filter:blur(13px);-webkit-backdrop-filter:blur(13px);}
+#contact.developer-card-host .developer-card__brand{margin:0 0 32px;color:#f7dc9c;font:800 18px/1.3 Manrope,'Segoe UI',sans-serif;letter-spacing:.02em;}
+#contact.developer-card-host .developer-card__eyebrow{margin:0 0 14px;color:#d7c6a6;font:700 11px/1.45 Manrope,sans-serif;letter-spacing:.13em;text-transform:uppercase;}
+#contact.developer-card-host h2.developer-card__title{margin:0 0 20px;color:#fff8ec;font:850 clamp(30px,3.1vw,48px)/1.13 Manrope,'Segoe UI',sans-serif;letter-spacing:-.035em;text-transform:none;text-shadow:0 2px 12px #0004;overflow-wrap:anywhere;}
+#contact .developer-card__accent{display:block;margin-top:5px;color:#f1cf86;}
+#contact.developer-card-host .developer-card__lead{margin:0 0 24px;color:#e8e2d6;font:500 15px/1.7 Manrope,sans-serif;max-width:45ch;}
+#contact .developer-card__services{list-style:none;display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 28px;padding:0;color:#f3d99f;font:750 12px/1.5 Manrope,sans-serif;}
+#contact .developer-card__services li{padding-bottom:5px;border-bottom:1px solid #dcc08a55;}
+#contact .developer-card__cta{display:inline-flex;align-items:center;min-height:48px;padding:13px 18px;border:1px solid #ffdf9bbb;border-radius:10px;background:linear-gradient(110deg,#fff1bb,#c69b4d 58%,#f5d68f);color:#201b14;font:850 14px/1.4 Manrope,sans-serif;text-decoration:none;box-shadow:0 6px 24px #edc77222;}
+#contact .developer-card__cta:hover{background:linear-gradient(110deg,#fff5d3,#e5bf76);box-shadow:0 7px 30px #edc77244;}
+#contact.developer-card-host .developer-card__note{margin:11px 0 27px;color:#d4c8b6;font:500 11px/1.5 Manrope,sans-serif;}
+#contact .developer-card__contacts{display:flex;flex-wrap:wrap;gap:12px 22px;padding-top:18px;border-top:1px solid #ead1a433;}
+#contact .developer-card__contacts a{min-height:28px;color:#ffe3a2;font:800 13px/1.5 Manrope,sans-serif;text-decoration:underline;text-underline-offset:5px;overflow-wrap:anywhere;}
+#contact .developer-card__contacts .developer-card__email{flex-basis:100%;color:#eee3cf;}
+#contact .developer-card :is(a,button):focus-visible{outline:3px solid #fff0b7;outline-offset:5px;}
+#contact .developer-card__concept{position:absolute;right:24px;bottom:18px;color:#dfd8c8;font:500 10px/1.4 Manrope,sans-serif;text-shadow:0 1px 5px #000;}
+#contact .developer-card-original[hidden]{display:none;}
+#contact .developer-card[data-motion-paused=true] .developer-card__backdrop,#contact .developer-card[data-motion-paused=true]:after{animation-play-state:paused;}
+@keyframes developer-drift{from{transform:scale(1.035) translateX(-.7%);filter:hue-rotate(-7deg);}to{transform:scale(1.09) translateX(.7%);filter:hue-rotate(9deg);}}
+@keyframes developer-shimmer{0%,15%{transform:translateX(-35%);}70%,100%{transform:translateX(35%);}}
+@media(max-width:850px){#contact .developer-card{min-height:770px;}#contact .developer-card__glass{width:70%;}#contact .developer-card__backdrop{object-position:65% center;}}
+@media(max-width:550px){#contact.developer-card-host{padding:24px 16px;}#contact .developer-card{min-height:0;padding-top:170px;border-radius:20px;}#contact .developer-card__backdrop{object-position:70% top;object-fit:cover;}#contact .developer-card__glow{background:linear-gradient(180deg,transparent,#07121ed9 35%,#07121ef2 85%);}#contact .developer-card__glass{width:auto;margin:0 12px 40px;padding:24px 20px;border-radius:16px;background:#0b1724c9;backdrop-filter:blur(10px);}#contact.developer-card-host .developer-card__brand{margin-bottom:24px;font-size:17px;}#contact.developer-card-host h2.developer-card__title{font-size:31px;}#contact .developer-card__cta{width:100%;justify-content:center;}#contact .developer-card__concept{bottom:12px;font-size:9px;}}
+@media(prefers-reduced-motion:reduce){#contact .developer-card__backdrop,#contact .developer-card:after{animation:none;transform:none;}}
+#contact .developer-card--detailed{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:start;gap:28px;padding:44px 44px 56px;}
+#contact .developer-card--detailed .developer-card__glass{width:auto;min-width:0;margin:0;padding:32px;}
+#contact .developer-card__offer{min-width:0;margin-top:42px;padding:26px 28px;border:1px solid #e5c88266;border-radius:18px;background:linear-gradient(140deg,#1b2939c9,#0b1721c9);box-shadow:inset 0 1px #ffe5b324;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+#contact.developer-card-host .developer-card__offer-label{color:#e7c57d;font:800 11px/1.4 Manrope,'Segoe UI',sans-serif;letter-spacing:.1em;text-transform:uppercase;margin:0 0 10px;}
+#contact.developer-card-host .developer-card__offer-title{color:#fff0d2;font:800 25px/1.2 Manrope,'Segoe UI',sans-serif;letter-spacing:-.02em;margin:0 0 22px;}
+#contact .developer-card__offer-list{margin:0;padding:0;}
+#contact .developer-card__offer-list dt{color:#f3d494;font:850 15px/1.4 Manrope,'Segoe UI',sans-serif;margin:18px 0 5px;}
+#contact .developer-card__offer-list dt:first-child{margin-top:0;}
+#contact .developer-card__offer-list dd{color:#eee4d3;font:500 13px/1.65 Manrope,'Segoe UI',sans-serif;margin:0;padding:0 0 14px;border-bottom:1px solid #f3d49424;}
+#contact .developer-card__offer-list dd:last-child{border-bottom:0;padding-bottom:0;}
+#contact.developer-card-host .developer-card__offer-note{color:#d7c7aa;font:600 11px/1.6 Manrope,'Segoe UI',sans-serif;margin:22px 0 0;}
+@media(max-width:1000px){#contact .developer-card--detailed{grid-template-columns:1fr;padding:32px;gap:22px;}#contact .developer-card__offer{margin-top:0;}#contact .developer-card--detailed .developer-card__glass{padding:28px;}}
+@media(max-width:550px){#contact .developer-card--detailed{padding:150px 12px 44px;gap:18px;}#contact .developer-card--detailed .developer-card__glass{padding:24px 20px;}#contact .developer-card__offer{padding:24px 20px;}#contact.developer-card-host .developer-card__offer-title{font-size:23px;}}
+#contact .developer-card__glass{isolation:isolate;overflow:hidden;}
+#contact .developer-card__matrix{position:absolute;inset:0;display:block;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9;mask-image:linear-gradient(90deg,#000c,#0008 45%,#000d);-webkit-mask-image:linear-gradient(90deg,#000c,#0008 45%,#000d);}
+#contact .developer-card__glass>:not(.developer-card__matrix){position:relative;z-index:1;}
+
+/* Compact business card: readable, without taking a full screen. */
+#contact .developer-card--detailed{max-width:1040px;min-height:0;padding:28px;gap:22px;}
+#contact .developer-card--detailed .developer-card__glass{padding:24px;}
+#contact.developer-card-host .developer-card__brand{font-size:16px;margin-bottom:20px;}
+#contact.developer-card-host h2.developer-card__title{font-size:clamp(27px,2.5vw,36px);margin-bottom:16px;}
+#contact.developer-card-host .developer-card__lead{font-size:14px;line-height:1.6;margin-bottom:18px;}
+#contact .developer-card__services{margin-bottom:20px;}
+#contact.developer-card-host .developer-card__note{margin-bottom:18px;}
+#contact .developer-card__offer{margin-top:24px;padding:22px;}
+#contact.developer-card-host .developer-card__offer-title{font-size:22px;margin-bottom:16px;}
+#contact .developer-card__offer-list dt{font-size:14px;margin-top:14px;}
+#contact .developer-card__offer-list dd{font-size:12px;line-height:1.55;padding-bottom:10px;}
+#contact.developer-card-host .developer-card__offer-note{margin-top:16px;}
+#contact .developer-card__concept{right:18px;bottom:8px;font-size:9px;}
+@media(max-width:1000px){#contact .developer-card--detailed{max-width:640px;grid-template-columns:1fr;}#contact .developer-card__offer{margin-top:0;}}
+@media(max-width:550px){#contact .developer-card--detailed{padding:80px 12px 28px;gap:14px;}#contact .developer-card--detailed .developer-card__glass,#contact .developer-card__offer{padding:20px;}#contact.developer-card-host h2.developer-card__title{font-size:28px;}}
+
+#contact .developer-support{position:relative;isolation:isolate;overflow:hidden;max-width:560px;margin:26px auto 0;padding:26px 30px;border:1px solid #e6c77799;border-radius:20px;background:radial-gradient(ellipse at 100% 0,#d9a84133,transparent 65%),linear-gradient(125deg,#102331ed,#07111ef5);box-shadow:inset 0 1px #ffe9a733,0 12px 30px #07111e26;color:#fff3d8;font-family:Manrope,'Segoe UI',sans-serif;}
+#contact.developer-card-host .developer-support__label{font:800 10px/1.5 Manrope,sans-serif;letter-spacing:.14em;color:#f4d28c;margin:0 0 12px;}
+#contact.developer-card-host .developer-support__title{font:800 25px/1.2 Manrope,sans-serif;color:#ffe2a2;margin:0 0 16px;letter-spacing:-.02em;}
+#contact.developer-card-host .developer-support__question{font:750 14px/1.5 Manrope,sans-serif;color:#fff8ec;margin:0 0 8px;}
+#contact.developer-card-host .developer-support__body{font:500 13px/1.65 Manrope,sans-serif;color:#e8dfce;margin:0 0 20px;}
+#contact .developer-support__vipps{display:block;border:1px solid #ffb69d88;border-radius:9px;padding:11px 18px;background:#ec744e;color:#21140f;font:800 14px/1.4 Manrope,sans-serif;box-shadow:none;cursor:default;opacity:.85;}
+#contact .developer-support__note{display:block;margin-top:12px;font:500 11px/1.5 Manrope,sans-serif;color:#d4c4a6;}
+@media(max-width:550px){#contact .developer-support{padding:22px 20px;}#contact.developer-card-host .developer-support__title{font-size:23px;}}
+
+/* Clear glass: keep the computers visible through both text panels. */
+#contact .developer-card__glow{background:linear-gradient(100deg,#06101e59 0%,#07121e26 48%,transparent 78%);}
+#contact .developer-card__glass,#contact .developer-card__offer{background:linear-gradient(125deg,#07121e30,#07121e50);backdrop-filter:blur(1px);-webkit-backdrop-filter:blur(1px);}
+#contact .developer-card__glass>:not(canvas):not(.developer-card__cta),#contact .developer-card__offer{text-shadow:0 1px 3px #000,0 0 9px #0009;}
+#contact .developer-card__cta{text-shadow:none;}
+@media(max-width:550px){#contact .developer-card__glow{background:linear-gradient(180deg,#07121e15,#07121e45 45%,#07121e70);}}
+
+#contact .developer-support__pay{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+#contact .developer-support__qr{display:block;flex:0 0 112px;border-radius:9px;overflow:hidden;background:#fff;line-height:0;}
+#contact .developer-support__qr img{display:block;width:112px;height:112px;background:#fff;}
+#contact .developer-support__details{flex:1;min-width:150px;}
+#contact .developer-support__vipps{display:inline-block;opacity:1;cursor:pointer;text-decoration:none;}
+#contact .developer-support__vipps:hover{background:#ff9471;}
+#contact .developer-support__pay a:focus-visible{outline:3px solid #ffe2a2;outline-offset:4px;}
+#contact.developer-card-host .developer-support__recipient{font:600 11px/1.65 Manrope,sans-serif;color:#f4dfb5;margin:10px 0 0;}
+
+/* Business-card scale; long service descriptions are available on demand. */
+#contact .developer-card--detailed{display:block;max-width:640px;min-height:0;padding:24px;border-radius:20px;}
+#contact .developer-card--detailed .developer-card__glass{width:78%;margin:0;padding:0;border:0;border-radius:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;}
+#contact.developer-card-host .developer-card__brand{font-size:13px;margin-bottom:14px;}
+#contact.developer-card-host .developer-card__eyebrow{font-size:9px;letter-spacing:.05em;margin-bottom:10px;}
+#contact.developer-card-host h2.developer-card__title{font-size:27px;line-height:1.16;margin-bottom:16px;}
+#contact .developer-card__glass>.developer-card__lead,#contact .developer-card__services,#contact .developer-card__glass>.developer-card__note{display:none;}
+#contact .developer-card__cta{min-height:40px;padding:10px 14px;font-size:12px;}
+#contact .developer-card__contacts{gap:10px;margin-top:14px;padding-top:12px;}
+#contact .developer-card__contacts a{font-size:11px;min-height:22px;}
+#contact .developer-card__contacts .developer-card__email{flex-basis:auto;}
+#contact .developer-card__offer{margin-top:18px;padding:0;background:#07121e66;border:1px solid #f3d49440;border-radius:10px;backdrop-filter:none;}
+#contact .developer-card__offer-toggle{cursor:pointer;padding:11px 14px;color:#ffe1a1;font:750 12px/1.5 Manrope,sans-serif;}
+#contact .developer-card__offer[open]{padding:0 16px 16px;}
+#contact .developer-card__offer[open] .developer-card__offer-toggle{margin-inline:-16px;margin-bottom:12px;}
+#contact .developer-card__offer-label{display:none;}
+#contact.developer-card-host .developer-card__offer-title{font-size:19px;}
+#contact .developer-card__concept{display:none;}
+@media(max-width:550px){#contact .developer-card--detailed{padding:20px;max-width:390px;}#contact .developer-card--detailed .developer-card__glass{width:100%;padding:0;}#contact.developer-card-host h2.developer-card__title{font-size:25px;}#contact .developer-card__backdrop{object-position:60% center;}#contact .developer-card__cta{width:auto;}}
+
+#contact .developer-support{max-width:480px;min-height:220px;padding:20px;background:linear-gradient(90deg,#07151ae6,#07151a44),url('images/fjord-support-growth.png') center/cover;}
+#contact.developer-card-host .developer-support__label{font-size:9px;margin-bottom:10px;}
+#contact.developer-card-host .developer-support__title{font-size:20px;max-width:72%;line-height:1.2;margin-bottom:12px;text-shadow:0 1px 5px #000;}
+#contact.developer-card-host .developer-support__question{display:none;}
+#contact.developer-card-host .developer-support__body{font-size:11px;line-height:1.5;max-width:64%;margin-bottom:12px;text-shadow:0 1px 4px #000;}
+#contact .developer-support__pay{position:absolute;right:20px;bottom:20px;}
+#contact .developer-support__qr{flex-basis:76px;}
+#contact .developer-support__qr img{width:76px;height:76px;}
+#contact .developer-support__note{max-width:65%;font-size:9px;margin-top:12px;}
+
+#contact.developer-card-host .developer-card__brand{margin-bottom:5px;}#contact .developer-card__brand a{color:inherit;text-decoration:underline;text-underline-offset:4px;}#contact .developer-card__direct-email{display:inline-block;color:#e8d6b2;font:650 10px/1.4 Manrope,sans-serif;text-underline-offset:3px;margin-bottom:18px;}#contact .developer-card__contacts{display:none;}

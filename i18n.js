@@ -1,6 +1,8 @@
 /* Original catalogue text is preserved; community content is never translated. */
 (()=>{'use strict';
 const rows=`
+Choose a route|Velg en rute|Обрати маршрут|Välj en rutt|Vælg en rute
+Contact us|Kontakt oss|Зв’язатися|Kontakta oss|Kontakt os
 Video controls unavailable. Open the original video.|Videokontrollene er utilgjengelige. Åpne originalvideoen.|Керування відео недоступне. Відкрийте оригінальне відео.|Videokontrollerna är otillgängliga. Öppna originalvideon.|Videokontrollerne er utilgængelige. Åbn den originale video.
 Card checkout preview · no charge|Forhåndsvisning av kortbetaling · ingen belastning|Демонстрація оплати карткою · без списання|Förhandsvisning av kortbetalning · ingen debitering|Forhåndsvisning af kortbetaling · ingen opkrævning
 Replay same event (test duplicate protection)|Gjenta samme hendelse (test duplikatvern)|Повторити подію (перевірка захисту від дублювання)|Upprepa samma händelse (testa dubblettskydd)|Gentag samme hændelse (test dubletbeskyttelse)
@@ -39,7 +41,7 @@ Our travel journal|Reisejournalen vår|Наш щоденник подороже�
 Community|Fellesskap|Спільнота|Gemenskap|Fællesskab
 CURATED JOURNEYS · NORWAY|UTVALGTE REISER · NORGE|ВИБРАНІ ПОДОРОЖІ · НОРВЕГІЯ|UTVALDA RESOR · NORGE|UDVALGTE REJSER · NORGE
 INTERACTIVE PREVIEW|INTERAKTIV FORHÅNDSVISNING|ІНТЕРАКТИВНИЙ ПЕРЕГЛЯД|INTERAKTIV FÖRHANDSVISNING|INTERAKTIV FORHÅNDSVISNING
-YOUR NORWEGIAN FIELD GUIDE · VOL. 01|DIN NORGESGUIDE · UTGAVE 01|ВАШ ПУТІВНИК НОРВЕГІЄЮ · ВИПУСК 01|DIN NORGEGUIDE · UTGÅVA 01|DIN NORGESGUIDE · UDGAVE 01
+YOUR NORWEGIAN FIELD GUIDE|DIN NORGESGUIDE|ВАШ ПУТІВНИК НОРВЕГІЄЮ|DIN NORGEGUIDE|DIN NORGESGUIDE
 Norway|Norge|Норвегія|Norge|Norge
 is calling.|kaller.|кличе.|kallar.|kalder.
 Fjords that silence you. Mountains that stay with you.|Fjorder som tar pusten fra deg. Fjell du aldri glemmer.|Фіорди, що вражають. Гори, що залишаються в пам’яті.|Fjordar som tar andan ur dig. Berg du aldrig glömmer.|Fjorde, der tager pusten fra dig. Bjerge, du aldrig glemmer.

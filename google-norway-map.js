@@ -27,21 +27,23 @@
   function createWithLibrary(container,options,library) {
     if(!container||typeof container.append!=='function')throw Error('GOOGLE_MAPS_CONTAINER_INVALID');
     if(typeof library?.Map3DElement!=='function'||typeof library?.Marker3DInteractiveElement!=='function')throw Error('GOOGLE_MAPS_3D_UNAVAILABLE');
-    const initial=cameraForPoints([]);
+    const initial={center:{lat:60.37,lng:10.56,altitude:0},range:100000,tilt:35,heading:0};
     if(Number.isFinite(options.range)&&options.range>=2500&&options.range<=15000000)initial.range=options.range;
     if(validPoint(options.center))initial.center={lat:options.center.latitude,lng:options.center.longitude,altitude:0};
     const map=new library.Map3DElement({...initial,mode:'HYBRID',gestureHandling:'GREEDY',defaultUIHidden:true});
     if(map.style){map.style.width='100%';map.style.height='100%';map.style.display='block';}
     container.append(map);
-    let markers=[],destroyed=false,lastRows=[],lastRoute=null,lastCategory='all';
+    let visitorMarker=null,markers=[],destroyed=false,lastRows=[],lastRoute=null,lastCategory='all',visitorPosition=null;
     const onMapError=()=>{if(!destroyed)options.onError?.(Error('GOOGLE_MAPS_RENDER_FAILED'));};
     map.addEventListener('gmp-error',onMapError);map.addEventListener('gmp-map-id-error',onMapError);
     const applyCamera=camera=>{if(destroyed)return;map.stopCameraAnimation?.();Object.assign(map,camera);};
     const clear=()=>{markers.forEach(({marker,click})=>{marker.removeEventListener('gmp-click',click);marker.remove();});markers=[];};
     const fit=(rows=lastRows,route=lastRoute,category=lastCategory)=>{
       const routePoints=Array.isArray(route?.points)?route.points.filter(validPoint):[];
-      applyCamera(cameraForPoints(routePoints.length?routePoints:filterPlaces(rows,category)));
+      if(routePoints.length){applyCamera(cameraForPoints(routePoints));return;}
+      const p=visitorPosition||filterPlaces(rows,category)[0];if(p)applyCamera({center:{lat:p.latitude,lng:p.longitude,altitude:0},range:100000,tilt:35,heading:0});
     };
+    const locationControl=typeof window!=='undefined'?window.FjordMapLocation?.attach(container,{locate:p=>{if(!validPoint(p)||destroyed)return;visitorPosition=p;visitorMarker?.remove();visitorMarker=new library.Marker3DInteractiveElement({position:{lat:p.latitude,lng:p.longitude,altitude:0},altitudeMode:'CLAMP_TO_GROUND',title:'◎',sizePreserved:true});if(window.google?.maps?.marker?.PinElement)visitorMarker.append(new window.google.maps.marker.PinElement({background:'#1678eb',glyphText:'◎',glyphColor:'#fff'}));map.append(visitorMarker);applyCamera({center:{lat:p.latitude,lng:p.longitude,altitude:0},range:100000,tilt:35,heading:0});}}):null;
     return {
       zoom(direction){if(!destroyed)applyCamera({range:Math.max(250,Math.min(15000000,map.range*(direction>0?.65:1.5)))});},
       render(rows,route=null,category='all') {
@@ -57,7 +59,7 @@
       },
       fit,
       reset(){if(!destroyed){lastRoute=null;lastCategory='all';this.render(lastRows,null,'all');}},
-      destroy(){if(destroyed)return;destroyed=true;clear();map.removeEventListener('gmp-error',onMapError);map.removeEventListener('gmp-map-id-error',onMapError);map.stopCameraAnimation?.();map.remove();lastRows=[];lastRoute=null;},
+      destroy(){if(destroyed)return;destroyed=true;locationControl?.destroy();visitorMarker?.remove();clear();map.removeEventListener('gmp-error',onMapError);map.removeEventListener('gmp-map-id-error',onMapError);map.stopCameraAnimation?.();map.remove();lastRows=[];lastRoute=null;},
       get markerCount(){return markers.length;}
     };
   }
@@ -70,8 +72,8 @@
     loading=new Promise((resolve,reject)=>{
       const callback='__fjordGoogle3DReady'+(++sequence),script=document.createElement('script');let finished=false;
       const previousAuth=window.gm_authFailure;
-      const finish=(error,value)=>{if(finished)return;finished=true;clearTimeout(timer);script.onerror=null;window[callback]=()=>{};if(window.gm_authFailure===authFailure)window.gm_authFailure=previousAuth;if(error){script.remove();reject(error);}else resolve(value);};
-      const authFailure=()=>{finish(Error('GOOGLE_MAPS_AUTH_FAILED'));if(typeof previousAuth==='function')previousAuth();};
+      const finish=(error,value)=>{if(finished)return;finished=true;clearTimeout(timer);script.onerror=null;window[callback]=()=>{};if(error&&window.gm_authFailure===authFailure)window.gm_authFailure=previousAuth;if(error){script.remove();reject(error);}else resolve(value);};
+      const authFailure=()=>{window.FjordGoogleMapsFailed=true;window.dispatchEvent(new Event('fjord:google-auth-failed'));finish(Error('GOOGLE_MAPS_AUTH_FAILED'));if(typeof previousAuth==='function')previousAuth();};
       const timer=setTimeout(()=>finish(Error('GOOGLE_MAPS_LOAD_TIMEOUT')),18000);
       window[callback]=()=>{Promise.resolve().then(()=>window.google.maps.importLibrary('maps3d')).then(lib=>finish(null,lib),error=>finish(error));};
       window.gm_authFailure=authFailure;

@@ -25,23 +25,26 @@
   const section = el('section', 'norway-overview'); section.id = 'norwayOverview';
   const eyebrow=el('p','norway-overview__eyebrow'), title=el('h2'), intro=el('p','norway-overview__intro'); title.id='norwayOverviewTitle'; section.setAttribute('aria-labelledby',title.id);
   const controls=el('div','norway-overview__controls'), filters=el('div','norway-overview__filters'), select=el('select'), fitButton=el('button'), routeButton=el('button'), status=el('p','norway-overview__status'), canvas=el('div','norway-overview__canvas'), note=el('p','norway-overview__note');
+  const routeLabel=el('label','norway-overview__route-label');select.id='norwayOverviewRoute';routeLabel.htmlFor=select.id;fitButton.className='norway-overview__fit';routeButton.className='norway-overview__open-route';
   status.setAttribute('role','status'); canvas.id='norwayOverviewCanvas'; canvas.setAttribute('role','region');
-  const providerControls=el('div','norway-overview__providers'), googleButton=el('button','','Google Maps · 3D'), flatButton=el('button','','2D'), fullButton=el('button','','⛶');
+  const providerControls=el('div','norway-overview__providers norway-overview__mode'), googleButton=el('button','','Google Maps · 3D'), flatButton=el('button','','2D'), fullButton=el('button','','⛶');
   const googleCanvas=el('div','norway-overview__canvas norway-overview__google'), details=el('div','norway-overview__details');
   const standardCanvas=el('div','norway-overview__canvas norway-overview__standard'),standardButton=el('button','','Google Maps'),locationButton=el('button','','◎'),typeControls=el('div','norway-overview__providers');
   standardCanvas.id='norwayStandardCanvas';standardCanvas.hidden=true;typeControls.hidden=true;
   googleCanvas.id='norwayGoogleCanvas';googleCanvas.hidden=true;details.hidden=true;
   // Let the page scroll over the map; keep click-and-drag panning.
   [standardCanvas,googleCanvas].forEach(host=>host.addEventListener('wheel',event=>event.stopImmediatePropagation(),{capture:true,passive:true}));
-  const googleConfig=window.FjordGoogleMapConfig || {};providerControls.hidden=googleConfig.enabled!==true;
+  const googleConfig=window.FjordGoogleMapConfig || {};providerControls.hidden=false;
   for(const button of [googleButton,flatButton,fullButton])button.type='button';
-  standardButton.type='button';locationButton.type='button';
+  standardButton.type='button';locationButton.type='button';locationButton.hidden=true;
   providerControls.append(standardButton,googleButton,locationButton);
-  controls.append(filters,select,routeButton,fitButton); section.append(eyebrow,title,intro,controls,providerControls,typeControls,status,canvas,standardCanvas,googleCanvas,details,note);
+  controls.append(filters,routeLabel,select,routeButton,fitButton); section.append(eyebrow,title,intro,controls,providerControls,typeControls,status,canvas,standardCanvas,googleCanvas,details,note);
   const footer=document.querySelector('footer'); if(footer)footer.before(section); else document.querySelector('main')?.append(section);
+  let showcase=null;
   let rows=[], baseCatalogue=[], extraPlaces=[], category='cafe', routeKey='', loaded=false, loading=false, loadPromise=null;
   function refreshCatalogue() {
     rows=(window.FjordCatalogueContent?.merge(baseCatalogue)||baseCatalogue).concat(extraPlaces);
+    showcase?.refresh();
     // Remove an open popup whose record may have been hidden or changed.
     details.hidden=true;details.replaceChildren();
     if(loaded)draw(false);
@@ -55,16 +58,17 @@
   const shoppingLabels={nb:['Kjøpesentre','Butikker i senteret'],en:['Shopping centres','Stores in this centre'],uk:['Торгові центри','Магазини центру'],sv:['Köpcentrum','Butiker i centrumet'],da:['Indkøbscentre','Butikker i centret']};
   function finishShopping(){if(!pendingShopping||!standardMap||!standardActive)return;const p=pendingShopping;pendingShopping=null;standardMap.focus(p);details.replaceChildren(popup(p));details.hidden=false;}
   function labels() {
-    const a=t(); eyebrow.textContent=a[0];title.textContent=a[1];intro.textContent=a[2];note.textContent=a[16];canvas.setAttribute('aria-label',a[19]);select.setAttribute('aria-label',a[18]);fitButton.textContent=a[9];fitButton.type='button';routeButton.type='button';routeButton.textContent=({nb:'Åpne ruten',en:'Open route',uk:'Відкрити маршрут',sv:'Öppna rutten',da:'Åbn ruten'})[lang()];routeButton.hidden=!routeKey;
+    const a=t();routeLabel.textContent=a[18]; eyebrow.textContent=a[0];title.textContent=a[1];intro.textContent=a[2];note.textContent=a[16];canvas.setAttribute('aria-label',a[19]);select.setAttribute('aria-label',a[18]);fitButton.textContent=a[9];fitButton.type='button';routeButton.type='button';routeButton.textContent=({nb:'Åpne ruten',en:'Open route',uk:'Відкрити маршрут',sv:'Öppna rutten',da:'Åbn ruten'})[lang()];routeButton.hidden=!routeKey;
     fullButton.textContent='⛶ '+googleCopy[lang()][0];googleCanvas.setAttribute('aria-label','Google Maps 3D');googleCanvas.setAttribute('role','region');
-    googleButton.setAttribute('aria-pressed',String(googleActive));flatButton.setAttribute('aria-pressed',String(!googleActive));if(googleActive)note.textContent=googleCopy[lang()][2];
-    standardButton.setAttribute('aria-pressed',String(standardActive));flatButton.setAttribute('aria-pressed',String(!googleActive&&!standardActive));locationButton.textContent='◎ '+ui[lang()][3];locationButton.title=ui[lang()][4];
-    typeControls.hidden=!standardActive;typeControls.replaceChildren();['roadmap','hybrid','terrain'].forEach((type,i)=>{const b=el('button','',ui[lang()][i]);b.type='button';b.setAttribute('aria-pressed',String(mapType===type));b.addEventListener('click',()=>{mapType=type;standardMap?.setType(type);labels();});typeControls.append(b);});
+    googleButton.disabled=window.FjordLeafletMap?.preferred()===true;googleButton.title=googleButton.disabled?({nb:'Google 3D er ikke tilgjengelig på denne adressen. 2D-kartet fungerer.',en:'Google 3D is unavailable on this address. The 2D map is available.',uk:'Google 3D недоступний за цією адресою. Карта 2D працює.',sv:'Google 3D är inte tillgängligt på denna adress. 2D-kartan fungerar.',da:'Google 3D er ikke tilgængeligt på denne adresse. 2D-kortet virker.'})[lang()]:'';googleButton.setAttribute('aria-pressed',String(googleActive));flatButton.setAttribute('aria-pressed',String(!googleActive));if(googleActive)note.textContent=googleCopy[lang()][2];
+    standardButton.textContent=standardMap?.provider==='openstreetmap'||window.FjordLeafletMap?.preferred()?'OpenStreetMap':'Google Maps';standardButton.setAttribute('aria-pressed',String(standardActive));flatButton.setAttribute('aria-pressed',String(!googleActive&&!standardActive));locationButton.textContent='◎ '+ui[lang()][3];locationButton.title=ui[lang()][4];
+    typeControls.hidden=!standardActive||standardMap?.provider==='openstreetmap';typeControls.replaceChildren();['roadmap','hybrid','terrain'].forEach((type,i)=>{const b=el('button','',ui[lang()][i]);b.type='button';b.setAttribute('aria-pressed',String(mapType===type));b.addEventListener('click',()=>{mapType=type;standardMap?.setType(type);labels();});typeControls.append(b);});
     if(googleActive){typeControls.hidden=false;typeControls.replaceChildren();[1,-1].forEach(direction=>{const b=el('button','',direction>0?'+':'−');b.type='button';b.setAttribute('aria-label',direction>0?'Zoom in':'Zoom out');b.addEventListener('click',()=>googleMap?.zoom(direction));typeControls.append(b);});}
     if(!googleActive)note.textContent=ui[lang()][6];
-    filters.replaceChildren(); categories.forEach((key,i)=>{const b=el('button','',key==='shopping'?shoppingLabels[lang()][0]:key==='equipment'?equipmentLabels[lang()][0]:a[i+4]);b.type='button';b.setAttribute('aria-pressed',String(category===key)); b.style.setProperty('--map-category',colors[key]); b.addEventListener('click',()=>{category=key;labels();if(loaded)draw(true);});filters.append(b);});
+    filters.replaceChildren(); categories.forEach((key,i)=>{const b=el('button','',key==='shopping'?shoppingLabels[lang()][0]:key==='equipment'?equipmentLabels[lang()][0]:a[i+4]);b.type='button';b.setAttribute('aria-pressed',String(category===key)); b.style.setProperty('--map-category',colors[key]); b.addEventListener('click',()=>{category=key;showcase?.select(key);labels();if(loaded)draw(true);});filters.append(b);});
     select.replaceChildren(); const first=el('option','',a[8]);first.value='';select.append(first);
     Object.entries(routes()).filter(([,r])=>routePoints(r).length>1).forEach(([key,r])=>{const option=el('option','',localized(r.title)||r.label||key);option.value=key;select.append(option);});select.value=routeKey;
+    showcase?.sync(category);
     if(loaded)draw(false); else if(!loading)status.textContent=a[12];
   }
   function popup(p) {
@@ -107,7 +111,7 @@
   });
   flatButton.addEventListener('click',()=>flatView());
   function activateStandard(){
-    if(googleConfig.enabled!==true)return Promise.resolve(null);
+    if(googleConfig.enabled!==true&&!window.FjordLeafletMap)return Promise.resolve(null);
     if(standardActivation)return standardActivation;
     standardActivation=Promise.resolve().then(async()=>{
       await load();if(!loaded)return null;
@@ -144,10 +148,20 @@
     finally{clearTimeout(timeout);loading=false;}
   }
   routeButton.addEventListener('click',()=>{const trigger=[...document.querySelectorAll('[data-roadtrip]')].find(b=>b.dataset.roadtrip===routeKey);trigger?.click();});
-  select.addEventListener('change',()=>{routeKey=select.value;routeButton.hidden=!routeKey;draw(true);});fitButton.addEventListener('click',()=>{routeKey='';labels();if(loaded)draw(true);else load();});
-  window.addEventListener('fjord:shopping-map',async e=>{await load();if(!loaded)return;const p=rows.find(p=>p.category==='shopping'&&p.id===e.detail?.id);if(!p)return;category='shopping';routeKey='';pendingShopping=p;labels();draw(true);if(standardActive)finishShopping();else standardButton.click();section.scrollIntoView({behavior:'smooth',block:'start'});});
+  select.addEventListener('change',()=>{showcase?.lock();routeKey=select.value;routeButton.hidden=!routeKey;draw(true);});fitButton.addEventListener('click',()=>{routeKey='';labels();if(loaded)draw(true);else load();});
+  window.addEventListener('fjord:shopping-map',async e=>{await load();if(!loaded)return;const p=rows.find(p=>p.category==='shopping'&&p.id===e.detail?.id);if(!p)return;category='shopping';showcase?.select('shopping');routeKey='';pendingShopping=p;labels();draw(true);if(standardActive)finishShopping();else standardButton.click();section.scrollIntoView({behavior:'smooth',block:'start'});});
+  showcase=window.FjordMapShowcase?.mount(section,{
+    rows:()=>rows,
+    categoryLabel:key=>key==='shopping'?shoppingLabels[lang()][0]:key==='equipment'?equipmentLabels[lang()][0]:t()[4+categories.indexOf(key)],
+    onCategory:key=>{category=key;labels();if(loaded)draw(true);},
+    open:p=>{
+      if(p.category==='equipment'){window.dispatchEvent(new CustomEvent('fjord:bua-select',{detail:{id:p.id}}));return;}
+      if(window.FjordStayGallery){window.FjordStayGallery.open({...p,name:localized(p.name),image:typeof p.image==='object'?p.image.url:p.image,visitInfo:{text:[p.address,localized(p.description),p.stores?.map(s=>s.name).join(' · ')].filter(Boolean).join(' · '),source:p.website,checked:p.checked,expanded:true}});return;}
+      window.dispatchEvent(new CustomEvent(p.destinationId?'fjord:open-place':'fjord:catalogue-select',{detail:{id:p.destinationId||p.id}}));
+    }
+  });
   window.addEventListener('fjord:catalogue-content',refreshCatalogue);
   window.addEventListener('fjordlanguagechange',labels);labels();
-  async function loadDefault(){await load();if(loaded&&googleConfig.enabled===true&&!standardActive&&!standardLoading&&!googleActive)standardButton.click();}
+  async function loadDefault(){await load();if(loaded&&!standardActive&&!standardLoading&&!googleActive)standardButton.click();}
   if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(e=>e.isIntersecting)){observer.disconnect();loadDefault();}},{rootMargin:'100px'});observer.observe(section);} else load();
 })();

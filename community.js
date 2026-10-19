@@ -7,7 +7,9 @@ const communityHubCopy={
  sv:['Fjord Flow — Свої серед фіордів','Delta i samtalen om Norge. Ange kommun eller ort i inläggen.','Gå med på Facebook','Kommunnyheter|Köp och sälj|Jobb|Boende|Samåkning|Resor|Samtal'],
  da:['Fjord Flow — Свої серед фіордів','Deltag i samtalen om Norge. Angiv kommune eller by i opslagene.','Bliv medlem på Facebook','Kommunenyheder|Køb og salg|Job|Bolig|Samkørsel|Rejser|Samtaler']
 };
+const communityHeaderGroupCopy={nb:'Facebook-gruppen vår',en:'Our Facebook group',uk:'Наша група у Facebook',sv:'Vår Facebook-grupp',da:'Vores Facebook-gruppe'};
 function renderCommunityHub(language){
+ const headerLink=document.querySelector('.header-facebook-group');if(headerLink)headerLink.textContent=(communityHeaderGroupCopy[language]||communityHeaderGroupCopy.nb)+' ↗';
  let hub=communitySection.querySelector('.community-hub');if(!hub){hub=document.createElement('section');hub.className='community-hub';communitySection.querySelector('.community-title').after(hub);}hub.replaceChildren();
  const copy=communityHubCopy[language]||communityHubCopy.nb,title=document.createElement('h3'),intro=document.createElement('p'),topics=document.createElement('ul'),links=document.createElement('nav');title.textContent=copy[0];intro.textContent=copy[1];copy[3].split('|').forEach((text,index)=>{const item=document.createElement('li'),a=document.createElement('a');a.textContent=text+' ↗';a.href=fjordCommunityLinks.facebook+'learning_content/?filter='+fjordCommunityGuideIds[index];a.target='_blank';a.rel='noopener noreferrer';item.append(a);topics.append(item);});links.setAttribute('aria-label',copy[0]);for(const [service,url]of Object.entries(fjordCommunityLinks)){if(!url)continue;const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=service==='facebook'?copy[2]+' ↗':'Telegram ↗';links.append(a);}hub.append(title,intro,topics,links);
 }

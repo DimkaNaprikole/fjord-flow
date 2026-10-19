@@ -14,3 +14,7 @@
 
 - After changing norway-catalog.json, bua-locations.json or shopping-centres.json, rebuild with `python scripts/public_catalogue_db.py build` and run `python scripts/test_public_catalogue_db.py` before publishing.
 - Public SQLite/report exports accept only those reviewed public sources. Never add visitor accounts, transcripts, private chat skills, tokens or Worker configuration to them.
+
+## Approved place information windows — 19 October 2026
+
+- Use `information-dialogs.css` / `information-dialogs.js` for the light Hadeland-style reading surface across place, café, cabin, attraction, story and shopping dialogs. Keep photos, essential facts and official/directions actions visible; fold credits, reviews, long shop lists, maps and route planning separately. Preserve existing nodes/handlers and open ancestor details before a shortcut scrolls to its target. Card overlays keep their separate full-photo/gold-link style.

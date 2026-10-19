@@ -52,7 +52,7 @@ def scan_text(path, content):
     # HTTP-referrer and Maps-JavaScript-only restrictions, not this scanner.
     # Allow just the single key value in the exact root configuration shape.
     if path == "google-maps-config.js":
-        config = re.fullmatch(r"(?:/\*[\s\S]*?\*/\s*)?window\.FjordGoogleMapConfig = Object\.freeze\(\{enabled:(?:true|false), apiKey:'(AIza[0-9A-Za-z_-]{35})'\}\);\s*", content)
+        config = re.fullmatch(r"(?:/\*[\s\S]*?\*/\s*)?window\.FjordGoogleMapConfig = Object\.freeze\(\{enabled:(?:true|false), (?:provider:'google', )?apiKey:'(AIza[0-9A-Za-z_-]{35})'\}\);\s*", content)
         if config:
             allowed = config.span(1)
     findings = set()

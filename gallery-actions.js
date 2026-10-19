@@ -12,6 +12,7 @@
   const labels = {uk:['Про місце ↓','Побудувати маршрут ↓'], en:['About this place ↓','Plan your route ↓'], nb:['Om stedet ↓','Planlegg ruten ↓'], sv:['Om platsen ↓','Planera rutten ↓'], da:['Om stedet ↓','Planlæg ruten ↓']};
   function reveal(target) {
     if (!target) return;
+    for(let p=target.parentElement;p;p=p.parentElement)if(p.tagName==='DETAILS')p.open=true;
     target.tabIndex = -1;
     target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth', block:'start'});
     target.focus({preventScroll:true});

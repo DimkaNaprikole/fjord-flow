@@ -6,7 +6,7 @@
   dialog.innerHTML = `<header class="itinerary-header"><div><p class="eyebrow">YOUR JOURNEY, STOP BY STOP</p><h2 id="itineraryTitle"></h2><p id="itineraryOrder" data-i18n-ignore></p></div><button id="itineraryClose" type="button" aria-label="Close itinerary">×</button></header>
     <div class="itinerary-layout"><section class="itinerary-map-panel"><div id="itineraryMap" aria-label="Map of the whole itinerary"></div><p id="itineraryStatus" role="status"></p><p class="itinerary-notice">Driving estimates exclude visits, hikes, ferries and current road conditions. Check seasonal mountain-road closures before travelling.</p><a id="itineraryNavigation" class="button" target="_blank" rel="noopener noreferrer">Open full route in Google Maps ↗</a><button id="itineraryFit" class="text-link" type="button">Show the whole route</button></section><section><h3>All stops along the way</h3><ol id="itineraryStops"></ol></section></div>`;
   document.body.append(dialog);
-  let map, mapLoading, infoWindow, routeLine, markers = [], activePoints = [], requestId = 0, controller, activeKey, activeButton, experiences = [];
+  let map, mapLoading, infoWindow, routeLine, mapIsFallback=false, fallbackGeometry=[], markers = [], activePoints = [], requestId = 0, controller, activeKey, activeButton, experiences = [];
   const chosen = new Set(), excludedStops = new Set();
   const languages = ['en','nb','uk','sv','da'];
   const extraText = new Map([
@@ -107,9 +107,10 @@
   const query = p => p.routeQuery || coords(p).join(',');
   const find = id => data.destinations.find(p => p.id === id);
   const position = p => ({lat:p.latitude,lng:p.longitude});
-  function clearMap(){markers.forEach(marker=>{marker.map=null;});markers=[];infoWindow?.close();if(routeLine){routeLine.setMap(null);routeLine=null;}}
+  function clearMap(){markers.forEach(marker=>{marker.map=null;});markers=[];infoWindow?.close();if(routeLine){routeLine.setMap(null);routeLine=null;}fallbackGeometry=[];if(mapIsFallback)map.setPath([]);}
   const fit = () => {
     if (!map || !dialog.open || !activePoints.length) return;
+    if(mapIsFallback){map.resize();map.render(activePoints.map((p,i)=>({...p,category:'rest',name:`${i+1}. ${localized(p.name)}`})),null,'rest',true);map.setPath(fallbackGeometry);return;}
     const bounds = new google.maps.LatLngBounds();
     activePoints.forEach(p=>bounds.extend(position(p)));
     routeLine?.getPath().forEach(p=>bounds.extend(p));
@@ -117,27 +118,40 @@
     // A single point or a very short route must not zoom into an individual roof.
     google.maps.event.addListenerOnce(map,'idle',()=>{if(map.getZoom()>14)map.setZoom(14);});
   };
+  let mapLocationControl,visitorMarker;
   async function ensureMap(){
     if(map)return map;if(mapLoading)return mapLoading;
     mapLoading=(async()=>{
+      const useFallback=async()=>{
+        if(!window.FjordLeafletMap?.create)throw Error('MAP_FALLBACK_UNAVAILABLE');
+        mapLocationControl?.destroy();visitorMarker?.setMap(null);const canvas=document.getElementById('itineraryMap');canvas.replaceChildren();
+        map=await window.FjordLeafletMap.create(canvas,{language:language(),scrollwheel:true,buildInfo:p=>{const box=node('div');box.append(node('strong',localized(p.name)));return box;}});mapIsFallback=true;
+        new ResizeObserver(()=>{if(dialog.open)fit();}).observe(canvas);return map;
+      };
+      if(window.FjordGoogleMapConfig?.provider!=='google'&&(window.FjordLeafletMap?.preferred?.()||['localhost','127.0.0.1','[::1]'].includes(window.location?.hostname)))return useFallback();
+      try{
       const config=window.FjordGoogleMapConfig;
       if(!config?.enabled||!window.FjordGoogleNorwayMap?.loadAPI)throw Error('GOOGLE_MAPS_NOT_ENABLED');
       await window.FjordGoogleNorwayMap.loadAPI({...config,userActivated:true,language:language()});
       const [{Map,InfoWindow}]=await Promise.all([google.maps.importLibrary('maps'),google.maps.importLibrary('marker')]);
       map=new Map(document.getElementById('itineraryMap'),{center:{lat:60.37,lng:10.56},zoom:9,mapId:'DEMO_MAP_ID',mapTypeId:'roadmap',gestureHandling:'greedy',scrollwheel:true,zoomControl:true,cameraControl:true,mapTypeControl:true,mapTypeControlOptions:{mapTypeIds:['roadmap','hybrid','satellite','terrain']},fullscreenControl:false,streetViewControl:true,rotateControl:true,scaleControl:true,clickableIcons:true});
       infoWindow=new InfoWindow({maxWidth:260});
+      mapLocationControl=window.FjordMapLocation?.attach(document.getElementById('itineraryMap'),{locate:p=>{visitorMarker?.setMap(null);visitorMarker=new google.maps.Marker({map,position:{lat:p.latitude,lng:p.longitude},title:text('My location'),icon:{path:google.maps.SymbolPath.CIRCLE,scale:9,fillColor:'#1678eb',fillOpacity:1,strokeColor:'#fff',strokeWeight:3}});if(window.FjordMapRegion)window.FjordMapRegion.google(map,p);else{map.setCenter(visitorMarker.getPosition());map.setZoom(9);}}});
       new ResizeObserver(()=>{if(dialog.open)fit();}).observe(document.getElementById('itineraryMap'));
       return map;
+      }catch(error){if(window.FjordGoogleMapConfig?.provider!=='google'&&window.FjordLeafletMap?.create)return useFallback();throw error;}
     })().catch(error=>{mapLoading=null;throw error;});
     return mapLoading;
   }
   function focusStop(p,index){
+    if(mapIsFallback&&map){map.focus({...p,name:`${index+1}. ${localized(p.name)}`});document.getElementById('itineraryMap').scrollIntoView({block:'nearest',behavior:'smooth'});return;}
     if(!map||!markers[index]){document.getElementById('itineraryNavigation').focus();return;}
     map.setCenter(position(p));map.setZoom(13);markers[index].showStop();
     document.getElementById('itineraryMap').scrollIntoView({block:'nearest',behavior:'smooth'});
   }
   function showMarkers(points){
     clearMap();
+    if(mapIsFallback){map.render(points.map((p,i)=>({...p,category:'rest',name:`${i+1}. ${localized(p.name)}`})),null,'rest',true);return;}
     markers=points.map((p,i)=>{
       const pin=new google.maps.marker.PinElement({glyphText:String(i+1),glyphColor:'#fff',background:'#b70d35',borderColor:'#fff',scale:.9});
       const marker=new google.maps.marker.AdvancedMarkerElement({map,position:position(p),title:`${i+1}. ${localized(p.name)}`,content:pin,gmpClickable:true});
@@ -150,6 +164,12 @@
     fit();
   }
   document.getElementById('itineraryClose').onclick = () => dialog.close();
+  window.addEventListener('fjord:google-auth-failed',async()=>{
+    if(window.FjordGoogleMapConfig?.provider==='google'||!map||mapIsFallback||!window.FjordLeafletMap?.create)return;
+    const geometry=routeLine?.getPath().getArray().map(p=>[p.lng(),p.lat()])||[];
+    clearMap();map=null;mapLoading=null;
+    try{await ensureMap();showMarkers(activePoints);fallbackGeometry=geometry;map.setPath(geometry);fit();}catch{/* Existing navigation and stop cards remain available. */}
+  });
   document.getElementById('itineraryFit').onclick = fit;
   dialog.addEventListener('close', () => { requestId++; controller?.abort(); });
   function stopCards(points) {
@@ -226,7 +246,7 @@
       }
       if (token !== requestId || !dialog.open) return;
       if (!result.geometry?.length) throw Error('Missing road geometry');
-      if(map&&!mapFailed)routeLine = new google.maps.Polyline({map,path:result.geometry.map(p=>({lat:p[1],lng:p[0]})),strokeColor:'#bb1238',strokeWeight:5,strokeOpacity:.9});
+      if(map&&!mapFailed){if(mapIsFallback){fallbackGeometry=result.geometry;map.setPath(fallbackGeometry);}else routeLine = new google.maps.Polyline({map,path:result.geometry.map(p=>({lat:p[1],lng:p[0]})),strokeColor:'#bb1238',strokeWeight:5,strokeOpacity:.9});}
       const distance = Math.round(result.total_distance_km ?? result.distance_km);
       const minutes = Math.round(result.total_duration_minutes ?? result.duration_minutes);
       if(!Number.isFinite(distance)||!Number.isFinite(minutes))throw Error('Missing estimates');

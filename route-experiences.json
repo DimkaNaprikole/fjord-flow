@@ -200,7 +200,19 @@
     "sources": [
       "https://www.flaamzipline.no/english"
     ],
-    "checked": "2026-10-16"
+    "checked": "2026-10-16",
+    "image": "./images/flam-zipline-official.jpg",
+    "imageSource": "https://www.flaamzipline.no/english",
+    "gallery": [
+      {
+        "src": "./images/flam-zipline-official.jpg",
+        "kind": "place",
+        "credit": "Flåm Zipline · official website",
+        "source": "https://www.flaamzipline.no/english",
+        "original": "https://static.wixstatic.com/media/758c6c_f1419a8b6d004b599180e8a584b2651c~mv2.jpeg",
+        "rightsNote": "Official operator photograph. No open licence asserted; source and credit retained."
+      }
+    ]
   },
   {
     "id": "storelgen",
