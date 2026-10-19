@@ -17,7 +17,7 @@ async function browserHarness(){
  let section;const events={},documentEvents={},nav=new Element('nav'),anchor=new Element('section');
  const document={hidden:false,documentElement:{lang:'en'},createElement:tag=>new Element(tag),createTextNode:text=>Object.assign(new Element('#text'),{textContent:text}),getElementById:()=>anchor,querySelector:()=>nav,addEventListener:(name,fn)=>documentEvents[name]=fn};
  const window={fetch:async()=>({ok:true,json:async()=>require('./webcam-directory-data.json')}),addEventListener:(name,fn)=>events[name]=fn,dispatchEvent:event=>events[event.type]?.(event)};
- vm.runInNewContext(fs.readFileSync(require.resolve('./webcam-directory.js'),'utf8'),{document,window,Event:class{constructor(type){this.type=type;}},Date:class extends Date{static now(){return Date.parse('2026-10-19T12:00:00Z')}}});
+ vm.runInNewContext(fs.readFileSync(require.resolve('./webcam-directory.js'),'utf8'),{document,window,setInterval:()=>1,clearInterval:()=>{},Event:class{constructor(type){this.type=type;}},Date:class extends Date{static now(){return Date.parse('2026-10-19T12:00:00Z')}}});
  await window.FjordWebcams.ready;
  const find=(predicate,node=section)=>predicate(node)?node:node.children.map(child=>find(predicate,child)).find(Boolean);
  return {document,events,documentEvents,get section(){return section;},find};
@@ -52,4 +52,25 @@ test('large registry starts with 24 cards and lets visitors search without loadi
  h.find(n=>n.tagName==='button'&&n.textContent==='Search').onclick();
  assert.ok(grid().children.length>0&&grid().children.length<24);
  assert.ok(grid().children.every(card=>card.children.some(n=>n.tagName==='h3'&&n.textContent.includes('Gimsøystraumen'))));
+});
+
+test('a failed snapshot reports the error and can be retried without leaving a broken image',async()=>{
+ const h=await browserHarness();
+ const play=h.find(n=>n.tagName==='button'&&n.textContent==='Load camera image');
+ const card=play.parentElement;
+ play.onclick();
+ const status=h.find(n=>n.className==='webcam-media-status',card);
+ assert.equal(status.hidden,false);assert.equal(status.textContent,'Loading camera…');
+ const image=h.find(n=>n.tagName==='img',card);image.onerror();
+ assert.match(status.textContent,/Could not load/);assert.equal(play.textContent,'Try again');
+ assert.equal(h.find(n=>n.tagName==='img',card),undefined);
+ play.onclick();const retryImage=h.find(n=>n.tagName==='img',card);retryImage.onload();
+ assert.equal(status.hidden,true);
+});
+
+test('external cameras have a clickable preview and a visible primary link in the current tab',async()=>{
+ const h=await browserHarness(),preview=h.find(n=>n.className==='webcam-open-view');
+ assert.equal(preview.href,'https://loenskylift.panomax.com/');
+ const launch=h.find(n=>n.className==='webcam-launch');
+ assert.equal(launch.href,preview.href);assert.equal(launch.target,undefined);
 });

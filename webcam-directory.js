@@ -30,9 +30,15 @@ const extra={
  uk:['Оновлювані знімки','Пошук місця або дороги','Знайти','Усі джерела','Туристичні камери','Дорожні камери','Показати ще','камер у добірці','Перевірено статус оператора й файл зображення','Зображення перевірено візуально','Час зйомки не підтверджено','Завантажити кадр камери','Не вдалося завантажити каталог камер.','Спробувати знову','Час оновлення оператора','Джерела та Facebook'],
  sv:['Uppdaterade bilder','Sök plats eller väg','Sök','Alla källor','Turistkameror','Vägkameror','Visa fler','kameror i urvalet','Operatörstatus och bildfil kontrollerade','Bilden visuellt kontrollerad','Bildens tid inte bekräftad','Ladda kamerabild','Kameraregistret kunde inte laddas.','Försök igen','Operatörens uppdateringstid','Källor och Facebook'],
  da:['Opdaterede billeder','Søg sted eller vej','Søg','Alle kilder','Turistkameraer','Vejkameraer','Vis flere','kameraer i udvalget','Operatørstatus og billedfil kontrolleret','Billedet visuelt kontrolleret','Billedets tidspunkt ikke bekræftet','Indlæs kamerabillede','Kameraregistret kunne ikke indlæses.','Prøv igen','Operatørens opdateringstid','Kilder og Facebook']};
+const mediaWords={
+ nb:['Laster kameraet…','Kamerabildet kunne ikke lastes. Prøv igjen eller åpne operatøren.','Spilleren er åpnet. Hvis bildet uteblir, åpne operatørens kamera.','Kameraet åpnes på operatørens nettsted.','Åpne kameraet ↗'],
+ en:['Loading camera…','Could not load the camera image. Retry or open the operator.','Player opened. If there is no picture, open the operator’s camera.','This camera opens on the operator’s website.','Open camera ↗'],
+ uk:['Завантажуємо камеру…','Не вдалося завантажити кадр. Спробуйте знову або відкрийте сайт оператора.','Плеєр відкрито. Якщо немає зображення, відкрийте камеру оператора.','Ця камера відкривається на сайті оператора.','Відкрити камеру ↗'],
+ sv:['Laddar kameran…','Kamerabilden kunde inte laddas. Försök igen eller öppna operatören.','Spelaren är öppen. Om bilden saknas, öppna operatörens kamera.','Kameran öppnas på operatörens webbplats.','Öppna kameran ↗'],
+ da:['Indlæser kamera…','Kamerabilledet kunne ikke indlæses. Prøv igen eller åbn operatøren.','Afspilleren er åben. Hvis billedet mangler, åbn operatørens kamera.','Kameraet åbnes på operatørens hjemmeside.','Åbn kamera ↗']};
 const normal=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase().replace(/ø/g,'o').replace(/æ/g,'ae');
 function render(){
- stopCamera?.();const lang=window.FjordI18n?.language||document.documentElement.lang,t=copy[lang]||copy.nb,u=extra[lang]||extra.nb;
+ stopCamera?.();const lang=window.FjordI18n?.language||document.documentElement.lang,t=copy[lang]||copy.nb,u=extra[lang]||extra.nb,m=mediaWords[lang]||mediaWords.nb;
  navLink.textContent=({nb:'Webkameraer',en:'Webcams',uk:'Вебкамери',sv:'Webbkameror',da:'Webkameraer'})[lang]||'Webkameraer';section.replaceChildren();section.append(el('p','FJORD / FLOW · WEBCAM','eyebrow'),el('h2',t[0]),el('p',t[1]));
  const controls=el('div',null,'webcam-filters');
  for(const [value,label]of[['all',t[2]],['video',t[3]],['panorama',t[4]],['snapshot',u[0]]]){const b=el('button',label);b.type='button';b.setAttribute('aria-pressed',String(type===value));b.onclick=()=>{type=value;limit=24;render();};controls.append(b);}
@@ -52,15 +58,20 @@ function render(){
   const facts=el('div',null,'webcam-facts');facts.append(el('span',camera.type==='video'?t[3]:camera.type==='panorama'?t[4]:u[0]),el('span',camera.verification==='visual'?u[9]:u[8]));if(!recent(camera))facts.append(el('span',t[7]));if(camera.quality)facts.append(el('span',camera.quality));card.append(facts,el('p',t[8]+': '+camera.checked,'webcam-checked'));
   if(camera.captureTimeUnknown)card.append(el('small',u[10]));
   if(camera.sourceUpdated)card.append(el('small',u[14]+': '+new Intl.DateTimeFormat(lang,{dateStyle:'short',timeStyle:'short',timeZone:'Europe/Oslo'}).format(new Date(camera.sourceUpdated))));
-  if(camera.youtube||camera.snapshot){
+  const inline=Boolean(camera.youtube||camera.snapshot);
+  if(inline){
    const play=el('button',camera.snapshot?u[11]:t[10]);play.type='button';
-   const start=()=>{stopCamera?.();let timer;
-    if(camera.youtube){const frame=el('iframe');frame.src='https://www.youtube-nocookie.com/embed/'+camera.youtube+'?autoplay=1';frame.title=camera.name;frame.allow='autoplay; encrypted-media; picture-in-picture';frame.referrerPolicy='strict-origin-when-cross-origin';visual.replaceChildren(frame);}
-    else{const shot=el('img');shot.alt=camera.name;const refresh=()=>{shot.src=camera.snapshot+'?t='+Date.now();};refresh();visual.replaceChildren(shot);timer=setInterval(refresh,60000);}
-    play.textContent=t[16];stopCamera=()=>{if(timer)clearInterval(timer);visual.replaceChildren(placeholder);play.textContent=camera.snapshot?u[11]:t[10];play.onclick=start;stopCamera=null;};play.onclick=()=>stopCamera?.();
-   };play.onclick=start;card.append(el('small',t[15]),play);
+   const mediaStatus=el('p',null,'webcam-media-status');mediaStatus.setAttribute('role','status');mediaStatus.hidden=true;
+   const start=()=>{stopCamera?.();let timer,active=true;mediaStatus.hidden=false;mediaStatus.textContent=m[0];
+    const failed=()=>{if(!active)return;if(timer)clearInterval(timer);visual.replaceChildren(placeholder);mediaStatus.hidden=false;mediaStatus.textContent=m[1];play.textContent=u[13];play.onclick=start;};
+    if(camera.youtube){const frame=el('iframe');frame.title=camera.name;frame.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';frame.onload=()=>{if(active)mediaStatus.textContent=m[2];};frame.onerror=failed;frame.src='https://www.youtube-nocookie.com/embed/'+camera.youtube+'?autoplay=1&mute=1&playsinline=1';visual.replaceChildren(frame);}
+    else{const shot=el('img');shot.alt=camera.name;shot.onload=()=>{if(active)mediaStatus.hidden=true;};shot.onerror=failed;const refresh=()=>{shot.src=camera.snapshot+'?t='+Date.now();};refresh();visual.replaceChildren(shot);timer=setInterval(refresh,60000);}
+    play.textContent=t[16];stopCamera=()=>{active=false;if(timer)clearInterval(timer);visual.replaceChildren(placeholder);mediaStatus.hidden=true;play.textContent=camera.snapshot?u[11]:t[10];play.onclick=start;stopCamera=null;};play.onclick=()=>stopCamera?.();
+   };play.onclick=start;card.append(el('small',t[15]),mediaStatus,play);
+  }else{
+   const open=el('a',null,'webcam-open-view');open.href=camera.url;open.setAttribute('aria-label',m[4]+' · '+camera.name);visual.replaceChildren(open);open.append(placeholder,el('span',m[4],'webcam-open-overlay'));card.append(el('small',m[3],'webcam-external-note'));
   }
-  const link=el('a',t[11]);link.href=camera.url;link.target='_blank';link.rel='noopener noreferrer';card.append(link);
+  const link=el('a',inline?t[11]:m[4],inline?'':'webcam-launch');link.href=camera.url;link.rel='noopener noreferrer';card.append(link);
   if(camera.license){const a=el('a',camera.operator+' · '+camera.license,'webcam-credit');a.href=camera.licenseUrl;a.target='_blank';a.rel='noopener noreferrer';card.append(a);}
   grid.append(card);
  }
