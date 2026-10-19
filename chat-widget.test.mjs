@@ -244,3 +244,11 @@ const timerOf=(app,ms)=>[...app.voiceState.timers.values()].find(t=>t.ms===ms);
  app.launch.onclick();await mic.emit('click');await flush();channel=app.voiceState.peer.channel;delete app.browserWindow.speechSynthesis;channel.message({type:'input_audio_buffer.speech_stopped'});channel.message({type:'response.output_text.done',item_id:'text-only',text:'You can visit Oslo.'});assert.equal(app.voiceState.peer.closed,true,'Missing synthesis ends the session while preserving the text');assert.ok(app.find('fjord-ai-log').children.some(n=>n.textContent==='You can visit Oslo.'));app.dialog.close();
  console.log('PASS: active TTS close detaches callbacks; unsupported browser synthesis retains text and releases the session.');
 }
+
+{
+ const app=boot({...voiceConfig},true);await flush();app.launch.onclick();const mic=app.find('fjord-ai-record-fallback');await mic.emit('click');await flush();
+ app.document.hidden=true;app.document.emit('visibilitychange');
+ assert.equal(app.voiceState.track.readyState,'ended','Leaving the page releases the physical microphone immediately');assert.equal(app.voiceState.peer.closed,true);assert.equal(mic.attrs['aria-pressed'],'false');assert.equal(paidCalls(app).length,1,'Background cancellation does not start another session');
+ app.document.hidden=false;app.document.emit('visibilitychange');assert.equal(paidCalls(app).length,1,'Returning requires a new explicit click');app.dialog.close();
+ console.log('PASS: backgrounding stops live capture immediately and returning never restarts it.');
+}

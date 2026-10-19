@@ -300,7 +300,7 @@ mic.addEventListener('blur',()=>releaseDictation(false));
 mic.addEventListener('click',event=>event.preventDefault());
 mic.addEventListener('contextmenu',event=>event.preventDefault());
 window.addEventListener('blur',()=>releaseDictation(false));
-document.addEventListener('visibilitychange',()=>{if(document.hidden)releaseDictation(false)});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){releaseDictation(false);if(livePeer||liveConnecting||speakingAnswer)endVoice()}});
 input.addEventListener('input',fallbackMail);fallback.addEventListener('click',fallbackMail);
 human.addEventListener('click',()=>{if(dictationSession||voiceMode)endVoice();ask(input.value.trim()||words()[12],true)});
 handoff.addEventListener('submit',async e=>{e.preventDefault();if(busy||!token)return;if(!handoff.reportValidity()||!consent.checked){status.textContent=words()[13];return}setBusy(true);status.textContent=words()[15];try{const result=await post('/contact',{token,escalation_token:token,consent:true});if(result.recorded!==true||!/^[a-f0-9]{64}$/.test(String(result.ticket_id||'')))throw new Error('Not recorded');const ticketId=result.ticket_id,question=pendingQuestion;pendingTicket=ticketId;const receipt=(bridgeCopy[lang()]||bridgeCopy.en)[0];status.textContent=words()[10]+ticketId+' '+receipt;token=null;handoff.hidden=true;void pollOwnerReply(ticketId);if(ownerAwayTimer)clearTimeout(ownerAwayTimer);ownerAwayTimer=setTimeout(()=>void offerAssistantAnswer(ticketId,question),5000)}catch(error){status.setAttribute('data-contact-error',String(error.code||'unconfirmed').slice(0,80));status.textContent=words()[19]+(error.code?' '+serviceError(error,lang()):'')}finally{setBusy(false)}});
