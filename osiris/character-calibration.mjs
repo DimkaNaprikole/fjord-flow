@@ -1490,6 +1490,61 @@ export const CHARACTER_CALIBRATION = Object.freeze({
       "identityContinuity": "manual-only",
       "note": "More realistic side profile, dark eye and pendant collar differ from frontal Osiris. Manual-only continuity recommendation; one short jump ends in a low stance, no recovery run.",
       "evidence": "work/life-cutouts/calibration/posters-4.jpg"
+    },
+    "walk": {
+      "head": {
+        "left": 0.59375,
+        "top": 0.2814814814814815,
+        "right": 0.7541666666666667,
+        "bottom": 0.5148148148148148,
+        "cx": 0.6739583333333333,
+        "cy": 0.39814814814814814,
+        "width": 0.16041666666666668,
+        "height": 0.23333333333333334
+      },
+      "body": {
+        "left": 0.3125,
+        "top": 0.36666666666666664,
+        "right": 0.5895833333333333,
+        "bottom": 0.7111111111111111,
+        "width": 0.27708333333333335,
+        "height": 0.34444444444444444
+      },
+      "ground": {
+        "x": 0.5208333333333334,
+        "y": 0.9555555555555556
+      },
+      "endGround": {
+        "x": 0.475,
+        "y": 0.9555555555555556
+      },
+      "pose": "walk-right",
+      "referenceFrame": 0,
+      "sourceSize": {
+        "width": 480,
+        "height": 270
+      },
+      "startBounds": {
+        "left": 0.15,
+        "top": 0.14814814814814814,
+        "right": 0.76875,
+        "bottom": 0.9555555555555556
+      },
+      "unionBounds": {
+        "left": 0.13541666666666666,
+        "top": 0.1111111111111111,
+        "right": 0.7708333333333334,
+        "bottom": 0.9555555555555556
+      },
+      "scaleToReference": 1.6883116883116882,
+      "confidence": "medium",
+      "identityContinuity": "review-cut",
+      "collection": "legacy-motion-bridge",
+      "source": "../media/osiris-motion/walk.webp",
+      "frameCount": 83,
+      "duration": 5.229,
+      "note": "Real right-facing walk in place. First and last frames are mid-stride, not neutral standing. Legacy light is greyer than the newer frontal portrait; this is neither a run nor a full turn. No primary media metadata was changed.",
+      "evidence": "work/life-cutouts/calibration/legacy-walk.jpg"
     }
   }
 });
@@ -1784,5 +1839,15 @@ export const MOTION_POSES = Object.freeze({
     "lastFrame": 124,
     "evidence": "work/life-cutouts/calibration/last-4.jpg",
     "note": "More realistic side profile, dark eye and pendant collar differ from frontal Osiris. Manual-only continuity recommendation; one short jump ends in a low stance, no recovery run."
+  },
+  "walk": {
+    "start": "walk-right",
+    "end": "walk-right",
+    "role": "locomotion",
+    "verified": true,
+    "firstFrame": 0,
+    "lastFrame": 82,
+    "evidence": "work/life-cutouts/calibration/legacy-walk.jpg",
+    "note": "Both endpoints are walking phases, not a get-up/settle transition. Right-facing body; no turn in this source."
   }
 });
