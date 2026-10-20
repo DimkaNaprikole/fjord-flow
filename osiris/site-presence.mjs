@@ -294,7 +294,16 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  });
  listen(pet,'pointerenter',()=>{hover=true;if(travel&&!travel.scene){hideWalk({immediate:true});holdLastFrame();}else if(!blocked&&!interaction)brain.queueReaction({kind:'hover',targetId:'osiris'},time);});
  listen(pet,'pointerleave',()=>{hover=false;brain.cancelAttention('osiris',time);});
- listen(window,'resize',()=>{obstacleCacheAt=-Infinity;if(interaction)stop();else cancelTravel();hideWalk({immediate:true});holdLastFrame();position();clampViewport();position();});
+ let lastViewportSize={width:innerWidth,height:innerHeight};
+ listen(window,'resize',()=>{
+  obstacleCacheAt=-Infinity;
+  const changed=lastViewportSize.width!==innerWidth||lastViewportSize.height!==innerHeight;
+  lastViewportSize={width:innerWidth,height:innerHeight};
+  // Opening a Fjord Flow section emits resize to refresh its maps. It does
+  // not resize the screen and must not cancel the gesture that opened it.
+  if(changed){if(interaction)stop();else cancelTravel();hideWalk({immediate:true});holdLastFrame();}
+  position();clampViewport();position();
+ });
  listen(window,'scroll',()=>{obstacleCacheAt=-Infinity;},true);
  listen(launch,'focus',()=>{if(!blocked&&!travel)brain.queueReaction({kind:'focus',targetId:'osiris'},time);});
  listen(launch,'blur',()=>brain.cancelAttention('osiris',time));
@@ -308,6 +317,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  observer.observe(pet,{attributes:true,attributeFilter:['data-state']});
  observer.observe(dialog,{attributes:true,attributeFilter:['open','class']});
  const resize=new ResizeObserver(()=>{position();clampViewport();});resize.observe(pet);
+ const sameRect=(a,b)=>Boolean(a&&b&&['left','top','right','bottom'].every(k=>Math.abs(a[k]-b[k])<.5));
  function sceneObstacles(obstacles,scene){
   // For an explicit request the pet can walk over page controls. They are not
   // physical walls, and crossing them never clicks them: only onContact owns
