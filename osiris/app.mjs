@@ -1,4 +1,4 @@
-import {mountSiteGallery} from './site-gallery.mjs?v=20261020gallery1';
+import {mountSiteGallery} from './site-gallery.mjs?v=20261020continuity1';
 
 const copy={
  nb:['Språk','PROSJEKT OSIRIS','din digitale følgesvenn','Snakk med Osiris eller utforsk bevegelsene hans.','Åpne chat','Bevegelsesverksted','Utforsk de ferdige bevegelsene. Du starter forhåndsvisningen selv.'],

@@ -15,23 +15,15 @@ body .osiris-life-pet .osiris-life-poster {
   border:0;background:transparent;box-shadow:none;object-fit:fill;pointer-events:none;
 }
 body .osiris-life-pet .osiris-life-canvas {opacity:0}
-body button.fjord-helper-launch.osiris-launch[data-osiris-motion="life-v1"]{width:210px;height:162px;translate:none!important}
-body .osiris-launch[data-osiris-motion="life-v1"] .fjord-ai-pet.osiris-pet{width:210px;height:142px}
+body button.fjord-helper-launch.osiris-launch[data-osiris-motion="life-v1"]{width:280px;height:200px;translate:none!important}
+body .osiris-launch[data-osiris-motion="life-v1"] .fjord-ai-pet.osiris-pet{width:280px;height:180px}
 #fjordHelper .fjord-ai-portrait .osiris-life-pet{width:160px;height:120px}
-body .osiris-life-pause {
-  position:fixed;right:14px;bottom:155px;z-index:1001;width:36px;height:36px;min-height:36px;
-  display:grid;place-items:center;padding:0;border:1px solid #8faea855;border-radius:50%;
-  color:#f0faf7;background:#123d43cc;font:600 15px/1 system-ui;cursor:pointer;
-}
-body .osiris-life-pause[hidden]{display:none!important}
-body .osiris-life-pause:focus-visible,
 #fjordHelper .osiris-life-options :focus-visible{outline:3px solid #f5d495;outline-offset:3px}
 #fjordHelper .osiris-life-options{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 #fjordHelper .osiris-life-options label{display:grid;gap:5px;flex-basis:100%}
 #fjordHelper .osiris-life-options select{width:100%;min-height:40px;background:#123d43;color:#f0faf7;border:1px solid #8faea855;border-radius:8px;padding:7px}
 #fjordHelper .osiris-life-options button{min-height:40px;padding:7px 14px;border:1px solid #8faea855;border-radius:8px;background:#123d43;color:#f0faf7;cursor:pointer}
 @media(max-width:500px){
- body button.fjord-helper-launch.osiris-launch[data-osiris-motion="life-v1"]{width:168px;height:134px}
- body .osiris-launch[data-osiris-motion="life-v1"] .fjord-ai-pet.osiris-pet{width:168px;height:114px}
- body .osiris-life-pause{bottom:132px;right:10px}
+ body button.fjord-helper-launch.osiris-launch[data-osiris-motion="life-v1"]{width:230px;height:170px}
+ body .osiris-launch[data-osiris-motion="life-v1"] .fjord-ai-pet.osiris-pet{width:230px;height:150px}
 }

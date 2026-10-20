@@ -1,6 +1,8 @@
-import {AlphaVideo} from './alpha-video.mjs';
-import {createCatBrain} from './cat-brain.mjs';
+import {AlphaSequence} from './alpha-sequence.mjs?v=20261020continuity1';
+import {createCatBrain} from './cat-brain.mjs?v=20261020continuity1';
 import {buildMovementCatalog,behaviorPools} from './movement-catalog.mjs';
+import {fitCharacterClip} from './character-layout.mjs';
+import {MOTION_POSES} from './character-calibration.mjs';
 
 const MEDIA=new URL('../media/osiris-life/metadata.json',import.meta.url);
 const COPY={
@@ -23,13 +25,10 @@ const ENGLISH={
 // A fixed crop covers the whole trajectory. It never follows individual limbs
 // and never shifts the cat's picture to pretend that it is walking.
 export function fitPresenceClip(clip,width,height) {
- const ratio=clip.width/clip.height,u=clip.unionBounds||clip.bounds||{left:0,top:0,right:1,bottom:1};
- const source=clip.startBounds||u;
- const bodyHeight=Math.max(.15,source.bottom-source.top);
- const wanted=height*(clip.id==='roll'||clip.id==='lying-toy'?.45:.87);
- const h=Math.min(wanted/bodyHeight,(width-8)/(Math.max(.1,u.right-u.left)*ratio),(height-8)/Math.max(.1,u.bottom-u.top));
- const w=h*ratio;
- return {width:w,height:h,left:width/2-w*(u.left+u.right)/2,top:height-4-u.bottom*h};
+ return fitCharacterClip(clip,width,height,{
+  anchorX:width*(clip.anchorFraction??.5),
+  baseline:clip.baselineFraction==null?undefined:height*clip.baselineFraction,
+ });
 }
 
 export function conversationOwnsAttention({state='idle',voice=false,typing=false}={}) {
@@ -64,32 +63,33 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  poster.className='osiris-life-poster';poster.alt='';poster.src=new URL(clips.get('blink').poster,mediaUrl);
  pet.append(poster,canvas);
  let renderer;
- try{renderer=new AlphaVideo(canvas);}catch(error){canvas.remove();poster.remove();delete launch.dataset.osirisLife;throw error;}
+ try{renderer=new AlphaSequence(canvas,{fit:fitPresenceClip});}catch(error){canvas.remove();poster.remove();delete launch.dataset.osirisLife;throw error;}
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let time=0,last=performance.now(),generation=0,load=null,loading=false,active=null,currentClip=clips.get('blink');
  let paused=false,voice=false,dead=false,blocked=false,ready=false,held=false;
  let lastPlay='',restUntil=0,frame=0;
+ let anchorFraction=.5,baselineFraction;
  const events=[],listen=(el,type,fn,opts)=>{el.addEventListener(type,fn,opts);events.push(()=>el.removeEventListener(type,fn,opts));};
  const brain=createCatBrain({
   now:()=>time,...behaviorPools(catalog),
   durations:Object.fromEntries([...clips].map(([id,c])=>[id,c.duration*1000+500])),
   restDurationRangeMs:[6000,14000],initialPlayDelayMs:10000,playCooldownMs:26000,samePlayCooldownMs:100000,
   dailyCooldownMs:24000,sameDailyCooldownMs:90000,reducedMotion:reduced.matches,
+  motionPoses:MOTION_POSES,initialPose:MOTION_POSES.blink.start,poseSelection:'prefer',
  });
  const pause=document.createElement('button');
  pause.type='button';pause.className='osiris-life-pause';pause.textContent='Ⅱ';
- launch.after(pause);
  const panel=document.createElement('div');panel.className='osiris-life-options';
  const label=document.createElement('label'),select=document.createElement('select');
  const caption=document.createElement('span');label.append(caption,select);
  const play=document.createElement('button'),rest=document.createElement('button');
- play.type=rest.type='button';panel.append(label,play,rest);
+ play.type=rest.type='button';panel.append(label,play,rest,pause);
  dialog.querySelector('.fjord-ai-about')?.append(panel);
  const lang=()=>document.documentElement.lang.split('-')[0];
  function translate(){
   const copy=COPY[lang()]||COPY.en;
   pause.setAttribute('aria-label',copy[paused?1:0]);pause.title=copy[paused?1:0];
-  pause.setAttribute('aria-pressed',String(paused));pause.textContent=paused?'▷':'Ⅱ';
+  pause.setAttribute('aria-pressed',String(paused));pause.textContent=copy[paused?1:0];
   caption.textContent=copy[2];play.textContent=copy[4];rest.textContent=copy[5];
   const value=select.value;
   select.replaceChildren(new Option(copy[3],''));
@@ -99,17 +99,16 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  function position(){
   const {width,height}=pet.getBoundingClientRect();
   if(width<10||height<10)return;
-  for(const [el,clip] of [[canvas,currentClip],[poster,clips.get('blink')]]){
-   const fit=fitPresenceClip(clip,width,height);
-   for(const [key,value] of Object.entries(fit))el.style[key]=`${value}px`;
-  }
+  renderer.resize(width,height);
+  Object.assign(canvas.style,{width:`${width}px`,height:`${height}px`,left:'0px',top:'0px'});
+  const fit=fitPresenceClip(clips.get('blink'),width,height);
+  for(const key of ['width','height','left','top'])poster.style[key]=`${fit[key]}px`;
  }
  function fallback(){
   canvas.style.opacity='0';poster.style.opacity='1';ready=false;
  }
- function stop({calm=false}={}){
+ function stop(){
   generation++;load?.abort();loading=false;renderer.pause();brain.cancel(time);active=null;
-  if(calm)fallback();
  }
  function attention(){
   const focused=document.activeElement;
@@ -120,10 +119,9 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  }
  function sync(){
   const busy=attention(),next=paused||document.hidden||reduced.matches||busy;
-  pause.hidden=dialog.open&&!dialog.classList.contains('osiris-compact')&&!dialog.classList.contains('fjord-ai-auth-pending');
   if(next!==blocked){
    blocked=next;
-   if(blocked)stop({calm:busy||reduced.matches});
+   if(blocked)stop();
    else{brain.noteUserActivity(time);last=performance.now();}
   }
   launch.dataset.osirisLife=paused?'paused':busy?'conversation':reduced.matches?'still':'ready';
@@ -134,14 +132,15 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
   if(decision.mode==='rest'){
    active=decision;renderer.pause();launch.dataset.osirisScene='rest';return;
   }
-  const clip=clips.get(decision.id);
+  const source=clips.get(decision.id),clip=source&&{...source,anchorFraction,baselineFraction};
   if(!clip){brain.finish(decision.token,time);return;}
   const token=++generation;load?.abort();load=new AbortController();renderer.pause();
   active=decision;loading=true;held=false;launch.dataset.osirisScene=clip.id;
-  // Show the transparent calm blink poster while the next file buffers.
-  canvas.style.opacity='0';poster.style.opacity='1';
+  // Keep the actual outgoing frame during buffering, interruptions and rest.
+  // The fallback portrait is only needed before the first decoded frame.
+  if(!ready){canvas.style.opacity='0';poster.style.opacity='1';}
   try{
-   await renderer.load(new URL(clip.packed,mediaUrl).href,{signal:load.signal});
+   await renderer.load(new URL(clip.packed,mediaUrl).href,{signal:load.signal,clip});
    if(token!==generation||blocked||dead)return;
    currentClip=clip;position();ready=true;loading=false;
    canvas.style.opacity='1';poster.style.opacity='0';last=performance.now();
@@ -152,7 +151,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
    });
   }catch(error){
    if(token!==generation||error.name==='AbortError')return;
-   loading=false;brain.finish(decision.token,time);active=null;fallback();
+   loading=false;brain.finish(decision.token,time);active=null;if(!ready)fallback();
    // A failed download must not enter a tight retry loop.
    restUntil=time+30000;launch.dataset.osirisLife='fallback';
   }
@@ -174,7 +173,11 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  listen(select,'change',()=>{command(select.value);select.value='';});
  listen(renderer.video,'ended',()=>{
   if(loading||!active||!renderer.video.ended)return;
-  brain.finish(active.token,time);active=null;held=true;renderer.pause();
+  brain.finish(active.token,time,{completed:true});
+  const {width,height}=pet.getBoundingClientRect();
+  const fit=fitPresenceClip(currentClip,width,height);
+  if(fit.endGround){anchorFraction=fit.endGround.x/width;baselineFraction=fit.endGround.y/height;}
+  active=null;held=true;renderer.pause();
  });
  listen(pet,'pointerenter',()=>{if(!blocked)brain.queueReaction({kind:'hover',targetId:'osiris'},time);});
  listen(pet,'pointerleave',()=>brain.cancelAttention('osiris',time));

@@ -118,6 +118,17 @@ const unique = values => [...new Set(values)];
  * idle selection. rub and ledge-reach remain manual even if supplied.
  * restDurationRangeMs optionally samples a pause from [min,max] once per
  * completed movement. Without a valid range, restDurationMs stays fixed.
+ * motionPoses opts into reviewed pose continuity. Entries contain verified:true,
+ * start/end pose keys (including facing/props) and role:
+ * play/orient/locomotion/settle/idle. Unknown entries never auto-play.
+ * finish(token,time,{completed:true}) confirms the actual decoded end frame.
+ * Only that signal can start a bounded follow-up chain. Errors/expiry/cancel
+ * never infer an end pose. A rest decision holds the last rendered frame.
+ * poseSelection:'prefer' permits an ordinary scene change when no compatible
+ * automatic clip is eligible, or after three completed matching idle scenes
+ * have starved play. Games still wait for rest, energy and cooldowns.
+ * The host must treat continuity:
+ * 'scene-change' as an edit, never an anatomical turn. Followups stay exact.
  */
 export function createCatBrain(options = {}) {
  const {
@@ -142,6 +153,9 @@ export function createCatBrain(options = {}) {
   initialEnergy = 75,
   recoverEnergyPerSecond = 2,
   reducedMotion: initialReducedMotion = false,
+  motionPoses = null,
+  initialPose = null,
+  poseSelection = 'strict',
  } = options;
  const playIds = unique(availablePlay).filter(id => PLAY_BEHAVIORS[id]);
  const expressionIds = unique(availableExpressions).filter(id => EXPRESSION_BEHAVIORS[id]);
@@ -169,6 +183,19 @@ export function createCatBrain(options = {}) {
  let lastReactionAt = -Infinity;
  const recent = [];
  const lastStarted = new Map();
+ const continuity = motionPoses!==null && typeof motionPoses==='object';
+ const roles = new Set(['play','orient','locomotion','settle','idle']);
+ const poses = new Map(Object.entries(motionPoses||{}).filter(([,entry])=>
+  entry?.verified===true && typeof entry.start==='string' && entry.start.length>0 &&
+  typeof entry.end==='string' && entry.end.length>0 && roles.has(entry.role)
+ ).map(([id,entry])=>[id,Object.freeze({...entry})]));
+ let pose = typeof initialPose==='string'&&initialPose ? initialPose : null;
+ let followup = null;
+ let matchedIdleCount = 0;
+ const compatible = id => !continuity || Boolean(poses.has(id)&&(!pose||poses.get(id).start===pose));
+ const automaticIds = unique([...playIds,...expressionIds,...dailyIds]);
+ const cooldownForId = id => PLAY_BEHAVIORS[id] ? samePlayCooldownMs :
+  DAILY_BEHAVIORS[id] ? sameDailyCooldownMs : expressionCooldownMs;
 
  function time(value) {
   const requested = value === undefined ? Number(clock()) : Number(value);
@@ -192,10 +219,16 @@ export function createCatBrain(options = {}) {
   lastStarted.set(id, at);
  }
 
- function release(at) {
+ function release(at, {completed=false}={}) {
   if (!current) return null;
   const previous = current.decision;
   current = null;
+  if(continuity && previous.mode!=='rest'){
+   matchedIdleCount=completed&&previous.mode==='idle'&&previous.continuity==='matched'&&!previous.chainFrom?
+    Math.min(3,matchedIdleCount+1):0;
+   pose=completed ? poses.get(previous.id)?.end||null : null;
+   followup=null;
+  }
   if (previous.mode !== 'rest') {
    quietUntil = Math.max(quietUntil, at + sampleRestMs());
   }
@@ -208,7 +241,7 @@ export function createCatBrain(options = {}) {
   return previous.token;
  }
 
- function weighted(ids, catalog, at, cooldown) {
+ function selectionCandidates(ids, at, cooldown) {
   const blocked = new Set(recent.slice(-2));
   const cooldownFor = id => nonnegative(typeof cooldown === 'function' ? cooldown(id) : cooldown);
   const eligible = ids.filter(id =>
@@ -223,6 +256,11 @@ export function createCatBrain(options = {}) {
     .sort((a, b) => (lastStarted.get(a) ?? -Infinity) - (lastStarted.get(b) ?? -Infinity))
     .slice(0, 1);
   }
+  return candidates;
+ }
+
+ function weighted(ids, catalog, at, cooldown) {
+  const candidates=selectionCandidates(ids,at,cooldown);
   const total = candidates.reduce((sum, id) => sum + catalog[id].weight, 0);
   if (!total) return null;
   let cursor = draw() * total;
@@ -244,6 +282,11 @@ export function createCatBrain(options = {}) {
    token: ++serial, mode, id, startedAt: at, endsAt: at + durationMs,
    durationMs, priority: 0, phase: 'start', targetId: null, actionId: null,
    reducedMotion, ...details,
+   ...(continuity ? {startPose:mode==='rest'?pose:poses.get(id)?.start||null,
+    endPose:mode==='rest'?pose:poses.get(id)?.end||null} : {}),
+   ...(continuity&&mode!=='rest' ? {
+    continuity:pose&&poses.get(id)?.start===pose?'matched':'scene-change',
+   } : {}),
   });
   current = {decision, hitConsumed: false};
   if (mode !== 'rest') {
@@ -270,15 +313,52 @@ export function createCatBrain(options = {}) {
    return begin('react', reaction.id, at, reaction);
   }
   if (current) return current.decision;
+  if(followup){
+   if(reducedMotion||energy<playEnergyMinimum){
+    followup=null;quietUntil=Math.max(quietUntil,at+sampleRestMs());
+   }else if(at<followup.readyAt){
+    return begin('rest','rest',at,{phase:'settle',durationMs:followup.readyAt-at,endsAt:followup.readyAt});
+   }else{
+    const roleOrder=followup.after==='play'?['orient','locomotion','settle']:
+     followup.after==='orient'?['locomotion','settle']:['settle'];
+    let id=null;
+    for(const role of roleOrder){
+     const eligible=automaticIds.filter(candidate=>compatible(candidate)&&poses.get(candidate)?.role===role);
+     id=weighted(eligible,{...PLAY_BEHAVIORS,...IDLE_BEHAVIORS},at,cooldownForId);
+     if(id)break;
+    }
+    if(id){
+     const chain=followup;followup=null;
+     return begin(PLAY_BEHAVIORS[id]?'play':'idle',id,at,{
+      chainFrom:chain.from,chainOrigin:chain.origin,chainRemaining:chain.remaining-1,
+     });
+    }
+    followup=null;quietUntil=Math.max(quietUntil,at+sampleRestMs());
+   }
+  }
   if (at < quietUntil || energy < playEnergyMinimum || reducedMotion) {
    return begin('rest', 'rest', at);
   }
+  const idleIds = at >= nextDailyAt ? [...expressionIds, ...dailyIds] : expressionIds;
+  let selectionFilter=compatible;
+  if(continuity&&poseSelection==='prefer'){
+   const matchingPlay=at>=nextPlayAt&&selectionCandidates(playIds.filter(compatible),at,samePlayCooldownMs).length;
+   const matchingIdle=selectionCandidates(idleIds.filter(compatible),at,cooldownForId).length;
+   // A disconnected pose graph must not turn a living pet into an endless
+   // blink/listen loop. This is an honest scene edit after the normal rest,
+   // never an invented followup or an exception to energy/cooldown limits.
+   if(matchedIdleCount>=3&&at>=nextPlayAt&&playChance>0){
+    const playPool=playIds.filter(matchingPlay?compatible:id=>poses.has(id));
+    const playId=weighted(playPool,PLAY_BEHAVIORS,at,samePlayCooldownMs);
+    if(playId)return begin('play',playId,at);
+   }
+   if(!matchingPlay&&!matchingIdle)selectionFilter=id=>poses.has(id);
+  }
   if (at >= nextPlayAt && draw() < clamp(playChance, 0, 1)) {
-   const playId = weighted(playIds, PLAY_BEHAVIORS, at, samePlayCooldownMs);
+   const playId = weighted(playIds.filter(selectionFilter), PLAY_BEHAVIORS, at, samePlayCooldownMs);
    if (playId) return begin('play', playId, at);
   }
-  const idleIds = at >= nextDailyAt ? [...expressionIds, ...dailyIds] : expressionIds;
-  const expressionId = weighted(idleIds, IDLE_BEHAVIORS, at,
+  const expressionId = weighted(idleIds.filter(selectionFilter), IDLE_BEHAVIORS, at,
    id => DAILY_BEHAVIORS[id] ? sameDailyCooldownMs : expressionCooldownMs);
   return expressionId ? begin('idle', expressionId, at) : begin('rest', 'rest', at);
  }
@@ -301,6 +381,8 @@ export function createCatBrain(options = {}) {
       existing?.kind === kind && existing.targetId === (request.targetId || null)) return false;
   if (isAttention(kind) &&
       at - lastReactionAt < nonnegative(reactionCooldownMs)) return false;
+  followup=null;
+  matchedIdleCount=0;
   const requestedId = request.id;
   const id = (PLAY_BEHAVIORS[requestedId] || IDLE_BEHAVIORS[requestedId]) ? requestedId : 'listen';
   pending = Object.freeze({
@@ -322,6 +404,8 @@ export function createCatBrain(options = {}) {
 
  function noteUserActivity(value) {
   const at = time(value);
+  followup=null;
+  matchedIdleCount=0;
   quietUntil = Math.max(quietUntil, at + nonnegative(activityQuietMs));
   if (current && current.decision.priority === 0 && current.decision.mode !== 'rest') release(at);
  }
@@ -339,16 +423,30 @@ export function createCatBrain(options = {}) {
   });
  }
 
- function finish(token, value) {
+ function finish(token, value, {completed=false}={}) {
   const at = time(value);
   if (!current || current.decision.token !== token) return false;
-  release(at);
+  const previous=current.decision;
+  release(at,{completed});
+  if(continuity&&completed&&pose&&!pending&&!stopped&&!reducedMotion&&previous.mode!=='rest'){
+   const spec=poses.get(previous.id);
+   const remaining=spec?.role==='settle' ? 0 :
+    Number.isInteger(previous.chainRemaining) ? previous.chainRemaining :
+    spec?.role==='play'&&(!previous.kind||previous.kind==='command') ? 2 : 0;
+   if(remaining>0){
+    const readyAt=at+400+Math.round(draw()*400);
+    followup={from:previous.id,origin:previous.chainOrigin||previous.token,after:spec.role,remaining,readyAt};
+    quietUntil=readyAt;
+   }
+  }
   return true;
  }
 
  function cancel(value) {
   const at = time(value);
   pending = null;
+  followup=null;
+  matchedIdleCount=0;
   const token = release(at);
   quietUntil = Math.max(quietUntil, at + nonnegative(activityQuietMs));
   return token;
@@ -369,6 +467,7 @@ export function createCatBrain(options = {}) {
  function setReducedMotion(enabled, value) {
   const at = time(value);
   reducedMotion = Boolean(enabled);
+  if(reducedMotion){followup=null;matchedIdleCount=0;}
   if (reducedMotion && current?.decision.priority === 0 && current.decision.mode !== 'rest') release(at);
  }
 
@@ -378,6 +477,7 @@ export function createCatBrain(options = {}) {
    energy, stopped, reducedMotion, quietUntil, nextPlayAt, nextDailyAt,
    current: current?.decision || null, pending,
    recent: Object.freeze([...recent]),
+   pose, followup:followup?Object.freeze({...followup}):null,
   });
  }
 

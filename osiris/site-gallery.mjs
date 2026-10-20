@@ -1,5 +1,6 @@
-import {AlphaVideo} from './alpha-video.mjs';
+import {AlphaSequence} from './alpha-sequence.mjs?v=20261020continuity1';
 import {buildMovementCatalog} from './movement-catalog.mjs';
+import {fitCharacterClip} from './character-layout.mjs';
 
 const MEDIA=new URL('../media/osiris-life/metadata.json',import.meta.url);
 const ENGLISH={
@@ -20,20 +21,15 @@ const COPY={
  da:['Bevægelse','Vis','Pause','Fortsæt','Vis alle i rækkefølge','Stop','Baggrund','Mørk','Lys','Tern','Indlæser…','Bevægelsen kunne ikke indlæses. Tryk Vis for at prøve igen.','Klar til visning','Færdig','Sat på pause','Hver bevægelse vises én gang, uden tekniske dubletter. Mikrofonen tændes ikke.','Reduceret bevægelse er aktiveret: vis én bevægelse manuelt.'],
 };
 
-// Static whole-trajectory framing; never moves the image to simulate a walk.
-export function fitGalleryClip(clip,width,height){
- const u=clip.unionBounds||clip.bounds||{left:0,top:0,right:1,bottom:1},ratio=clip.width/clip.height;
- const h=Math.min((width-24)/(Math.max(.1,u.right-u.left)*ratio),(height-24)/Math.max(.1,u.bottom-u.top));
- const w=h*ratio;
- return {width:w,height:h,left:width/2-w*(u.left+u.right)/2,top:height-12-u.bottom*h};
-}
+// The dock and gallery use the same physical character scale.
+export const fitGalleryClip=fitCharacterClip;
 
-/** One decoded player; no DOM, timers, microphone or page navigation. */
+/** One presentation stage; no DOM, timers, microphone or page navigation. */
 export function createGalleryPlayback({renderer,clips,mediaUrl=MEDIA,onState=()=>{},onFrame=()=>{},isHidden=()=>false,isReduced=()=>false}){
  const accepted=new Map(clips.map(clip=>[clip.id,clip]));
- let selectedId=clips[0]?.id||'',playing=false,paused=false,loading=false,ready=false,dead=false;
+ let selectedId=clips[0]?.id||'',playing=false,paused=false,loading=false,ready=false,hasFrame=false,dead=false;
  let queue=[],queueIndex=-1,generation=0,controller=null,error=null,finished=false;
- const snapshot=()=>({selectedId,playing,paused,loading,ready,queue:[...queue],queueIndex,error,finished});
+ const snapshot=()=>({selectedId,playing,paused,loading,ready,hasFrame,queue:[...queue],queueIndex,error,finished});
  const publish=()=>onState(snapshot());
  function cancel({keepQueue=false}={}){
   generation++;controller?.abort();controller=null;renderer.pause();
@@ -56,9 +52,10 @@ export function createGalleryPlayback({renderer,clips,mediaUrl=MEDIA,onState=()=
   cancel({keepQueue});const token=generation;
   selectedId=id;controller=new AbortController();loading=true;ready=false;error=null;paused=false;publish();
   try{
-   await renderer.load(new URL(accepted.get(id).media.packed,mediaUrl).href,{signal:controller.signal});
+   const media=accepted.get(id).media;
+   await renderer.load(new URL(media.packed,mediaUrl).href,{clip:media,signal:controller.signal});
    if(dead||token!==generation)return false;
-   loading=false;ready=true;publish();onFrame(0,accepted.get(id));
+   loading=false;ready=true;hasFrame=true;publish();onFrame(0,accepted.get(id));
    if(autoplay&&!paused&&!isHidden())await run(token);
    return true;
   }catch(cause){
@@ -114,9 +111,12 @@ export async function mountSiteGallery(root,{mediaUrl=MEDIA}={}){
  const lang=()=>document.documentElement.lang.split('-')[0],words=()=>COPY[lang()]||COPY.en;
  const label=item=>lang()==='ru'?item.title:ENGLISH[item.id]||item.title;
  function position(){
-  if(!clip)return;const {width,height}=stage.getBoundingClientRect();
+  if(!renderer)return;const {width,height}=stage.getBoundingClientRect();
   if(width<25||height<25)return;
-  for(const [key,value]of Object.entries(fitGalleryClip(clip.media,width,height)))canvas.style[key]=`${value}px`;
+  // Both decoded buffers are laid out inside this stable stage; CSS must not
+  // stretch or reposition the composite according to the incoming clip.
+  canvas.style.width='100%';canvas.style.height='100%';canvas.style.left='0';canvas.style.top='0';
+  renderer.resize(width,height);
  }
  function render(state=playback?.snapshot()){
   if(!state)return;
@@ -126,7 +126,7 @@ export async function mountSiteGallery(root,{mediaUrl=MEDIA}={}){
   play.textContent=c[state.paused&&state.ready&&!renderer.video.ended?3:1];
   pause.disabled=!state.playing&&!state.loading;stop.disabled=!state.playing&&!state.loading&&!state.queue.length;
   all.disabled=reduced.matches||!catalog.clips.length;
-  canvas.hidden=!state.ready;position();
+  canvas.hidden=!state.hasFrame;position();
   const itemIndex=catalog.clips.indexOf(clip)+1;
   count.textContent=`${itemIndex} / ${catalog.actionCount} · ${clip.media.duration.toFixed(1)} s · ${clip.media.fps} FPS`;
   const progress=state.queue.length?`${state.queueIndex+1} / ${state.queue.length} · `:'';
@@ -148,7 +148,11 @@ export async function mountSiteGallery(root,{mediaUrl=MEDIA}={}){
  const resize=new ResizeObserver(position);resize.observe(stage);
  listen(window,'pagehide',event=>{if(!event.persisted)destroy();else playback?.pause();});
  listen(document,'visibilitychange',()=>{if(document.hidden)playback?.pause();});
- listen(reduced,'change',()=>{playback?.pause();translate();});
+ listen(reduced,'change',()=>{
+  playback?.pause();
+  if(renderer)renderer.transitionMs=reduced.matches?0:180;
+  translate();
+ });
  listen(window,'fjordlanguagechange',translate);
  listen(select,'change',()=>{seconds=0;void playback?.select(select.value);});
  listen(play,'click',()=>void playback?.play());listen(pause,'click',()=>playback?.pause());
@@ -159,7 +163,8 @@ export async function mountSiteGallery(root,{mediaUrl=MEDIA}={}){
   const response=await fetch(mediaUrl,{signal:startup.signal});if(!response.ok)throw Error('Movement manifest unavailable');
   catalog=buildMovementCatalog(await response.json());if(dead||startup.signal.aborted)return null;
   if(!catalog.clips.length)throw Error('No accepted movements');
-  renderer=new AlphaVideo(canvas);
+  renderer=new AlphaSequence(canvas,{fit:fitGalleryClip,transitionMs:reduced.matches?0:180});
+  position();
   playback=createGalleryPlayback({
    renderer,clips:catalog.clips,mediaUrl,isHidden:()=>document.hidden,isReduced:()=>reduced.matches,
    onState:render,onFrame:(time,item)=>{seconds=time;clip=item;render();},
