@@ -34,8 +34,22 @@ test('Live preserves fragment spaces and repetitions, groups captions and avoids
 test('delegation runs Sol once per task and returns content with the same delegation id',async()=>{
  const {app,channel}=await start();app.setChat({answer:'Короткий умный ответ.'});input(channel,'Почему море солёное?','u1');delegate(channel);delegate(channel);await flush();const calls=app.calls.filter(c=>c.url.endsWith('/chat'));assert.equal(calls.length,1);assert.equal(JSON.parse(calls[0].options.body).messages.at(-1).content,'Почему море солёное?');const result=channel.sent.find(e=>e.type==='session.commentary.append');assert.equal(result.delegation_id,'d1');assert.equal(result.content,'Короткий умный ответ.');assert.ok(channel.sent.every(e=>!e.type.startsWith('response.')&&!e.type.startsWith('conversation.')));app.dialog.close();
 });
+test('delegation history stays within 12 messages/6000 characters and ends with latest user request',async()=>{
+ const {app,channel}=await start();app.setChat({answer:'Ответ.'});
+ for(let n=0;n<16;n++){input(channel,`Вопрос ${n}: `+'у'.repeat(1800),'bounded-user-'+n);output(channel,`Ответ ${n}: `+'а'.repeat(1800),'bounded-assistant-'+n)}
+ input(channel,'Последний вопрос: что означает фьорд?','bounded-latest');output(channel,'Сейчас посмотрю.','bounded-preamble');delegate(channel,'bounded');
+ await flush();const calls=app.calls.filter(c=>c.url.endsWith('/chat'));assert.equal(calls.length,1);const history=JSON.parse(calls[0].options.body).messages;
+ assert.ok(history.length<=12);assert.ok(history.reduce((size,item)=>size+item.content.length,0)<=6000);assert.equal(history[0].role,'user');
+ assert.deepEqual(history.at(-1),{role:'user',content:'Последний вопрос: что означает фьорд?'});assert.equal(history.some(item=>item.content==='Сейчас посмотрю.'),false);app.dialog.close();
+});
 test('local navigation executes before a paid Sol lookup and uses Live commentary',async()=>{
  const {app,channel}=await start();input(channel,'Открой маршруты','u1');delegate(channel);await flush();assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,0);assert.ok(channel.sent.some(e=>e.type==='session.commentary.append'));app.dialog.close();
+});
+test('a newer explicit Live command supersedes a pending lookup and receives its own verified result',async()=>{
+ const {app,channel}=await start('conversation',{deferChat:true});input(channel,'Расскажи подробно о море.','old-question');delegate(channel,'old-task');await flush();
+ assert.equal(typeof app.voiceState.resolveChat,'function');output(channel,'Проверяю.','old-preamble');input(channel,'Открой маршруты','new-command');delegate(channel,'new-task');await flush();
+ assert.equal(app.sections.scenicRoutes.scrolled.block,'start');assert.ok(channel.sent.some(event=>event.type==='session.commentary.append'&&event.delegation_id==='new-task'));
+ app.voiceState.resolveChat();await flush();assert.equal(channel.sent.some(event=>event.type==='session.commentary.append'&&event.delegation_id==='old-task'),false);app.dialog.close();
 });
 test('goodbye stops capture and closes Live without moderation, delegation or new session',async()=>{
  const {app,channel,track}=await start();input(channel,'Осирис, всё, пока','u1');await flush();assert.equal(track.readyState,'ended');assert.notEqual(app.voiceState.peer.closed,true);channel.message({type:'session.closed'});assert.equal(app.voiceState.peer.closed,true);assert.ok(channel.sent.some(e=>e.type==='session.close'));assert.equal(app.calls.filter(c=>/\/(chat|moderate)$/.test(c.url)).length,0);assert.equal(app.calls.filter(c=>c.url.includes('/live-session')).length,1);app.dialog.close();

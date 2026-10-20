@@ -2,7 +2,8 @@ import {AlphaSequence} from './alpha-sequence.mjs?v=20261020continuity1';
 import {createCatBrain} from './cat-brain.mjs?v=20261020continuity1';
 import {buildMovementCatalog,behaviorPools} from './movement-catalog.mjs';
 import {fitCharacterClip} from './character-layout.mjs';
-import {MOTION_POSES} from './character-calibration.mjs';
+import {MOTION_POSES,CHARACTER_CALIBRATION} from './character-calibration.mjs';
+import {clampCenter,planRoute,stepRoute} from './viewport-roaming.mjs';
 
 const MEDIA=new URL('../media/osiris-life/metadata.json',import.meta.url);
 const COPY={
@@ -35,14 +36,14 @@ export function conversationOwnsAttention({state='idle',voice=false,typing=false
  return voice||typing||['listening','thinking','speaking'].includes(state);
 }
 
-export const presencePaused=({paused=false,hidden=false,reduced=false}={})=>paused||hidden||reduced;
+export const presencePaused=({paused=false,hidden=false,reduced=false,animations=true}={})=>paused||hidden||reduced||animations===false;
 export function patrolStep(rect,dx,width,obstacles=[]) {
  const left=Math.min(rect.left,rect.left+dx),right=Math.max(rect.right,rect.right+dx);
  return left>=12&&right<=width-12&&!obstacles.some(r=>
   left<r.right+10&&right>r.left-10&&rect.top<r.bottom+10&&rect.bottom>r.top-10);
 }
 
-export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
+export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random=Math.random}={}) {
  if(!launch||!dialog||!pet||launch.dataset.osirisLife)return null;
  launch.dataset.osirisLife='loading';
  // The production dock can reuse the original pet even if metadata fails.
@@ -65,24 +66,28 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  }finally{
   clearTimeout(startupTimeout);window.removeEventListener('pagehide',abortStartup);
  }
- const canvas=document.createElement('canvas'),poster=document.createElement('img'),walk=document.createElement('img');
+ const canvas=document.createElement('canvas'),poster=document.createElement('img'),walk=document.createElement('img'),hitbox=document.createElement('span');
+ hitbox.className='osiris-life-hitbox';hitbox.setAttribute('aria-hidden','true');
  walk.className='osiris-life-walk';walk.alt='';walk.hidden=true;walk.style.opacity='0';
  walk.src=new URL('../media/osiris-motion/walk.webp',import.meta.url);
  canvas.className='osiris-life-canvas';canvas.setAttribute('aria-hidden','true');
  poster.className='osiris-life-poster';poster.alt='';poster.src=new URL(clips.get('blink').poster,mediaUrl);
- pet.append(poster,canvas,walk);
+ pet.append(poster,canvas,walk,hitbox);
  let renderer;
- try{renderer=new AlphaSequence(canvas,{fit:fitPresenceClip});}catch(error){canvas.remove();poster.remove();walk.remove();delete launch.dataset.osirisLife;throw error;}
+ try{renderer=new AlphaSequence(canvas,{fit:fitPresenceClip});}catch(error){canvas.remove();poster.remove();walk.remove();hitbox.remove();delete launch.dataset.osirisLife;throw error;}
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let time=0,last=performance.now(),generation=0,load=null,loading=false,active=null,currentClip=clips.get('blink');
  let paused=false,voice=false,dead=false,blocked=false,ready=false,held=false;
- let lastPlay='',restUntil=0,frame=0,offset=0,direction=-1,hover=false,walking=false;
+ let roamingEnabled=window.OsirisSettings?.preferences?.roaming!==false;
+ let animationsEnabled=window.OsirisSettings?.preferences?.animations!==false;
+ let lastPlay='',restUntil=0,frame=0,offset=0,offsetY=0,direction=-1,hover=false,walking=false;
+ let travel=null,drag=null,nextRoamAt=8000,suppressClickUntil=0,suppressNextClick=false,lastRoamZone=-1,publicApi;
  let walkReady=walk.complete&&walk.naturalWidth>0;
  let obstacleCacheAt=-Infinity,obstacleCache=[];
  let anchorFraction=.5,baselineFraction;
  const events=[],listen=(el,type,fn,opts)=>{el.addEventListener(type,fn,opts);events.push(()=>el.removeEventListener(type,fn,opts));};
  const brain=createCatBrain({
-  now:()=>time,...behaviorPools(catalog),
+  now:()=>time,random,...behaviorPools(catalog),
   durations:Object.fromEntries([...clips].map(([id,c])=>[id,c.duration*1000+500])),
   restDurationRangeMs:[3500,5200],initialPlayDelayMs:1500,playCooldownMs:7000,samePlayCooldownMs:35000,
   dailyCooldownMs:4000,sameDailyCooldownMs:30000,reducedMotion:reduced.matches,
@@ -99,8 +104,10 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  const lang=()=>document.documentElement.lang.split('-')[0];
  function translate(){
   const copy=COPY[lang()]||COPY.en;
-  pause.setAttribute('aria-label',copy[paused?1:0]);pause.title=copy[paused?1:0];
-  pause.setAttribute('aria-pressed',String(paused));pause.textContent=copy[paused?1:0];
+  const isPaused=paused||!animationsEnabled;
+  pause.setAttribute('aria-label',copy[isPaused?1:0]);pause.title=copy[isPaused?1:0];
+  pause.setAttribute('aria-pressed',String(isPaused));pause.textContent=copy[isPaused?1:0];
+  pause.disabled=play.disabled=select.disabled=!animationsEnabled;
   caption.textContent=copy[2];play.textContent=copy[4];rest.textContent=copy[5];
   const value=select.value;
   select.replaceChildren(new Option(copy[3],''));
@@ -116,6 +123,38 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
   for(const key of ['width','height','left','top'])poster.style[key]=`${fit[key]}px`;
   const walkingFit=fitPresenceClip({id:'walk',width:480,height:270,anchorFraction,baselineFraction},width,height);
   for(const key of ['width','height','left','top'])walk.style[key]=`${walkingFit[key]}px`;
+  const box=visualRect();
+  Object.assign(hitbox.style,{left:`${box.left-pet.getBoundingClientRect().left}px`,top:`${box.top-pet.getBoundingClientRect().top}px`,
+   width:`${box.width}px`,height:`${box.height}px`});
+  hitbox.hidden=docked();
+ }
+ const viewport=()=>({width:innerWidth,height:innerHeight});
+ const hasViewport=()=>Number.isFinite(innerWidth)&&innerWidth>0&&Number.isFinite(innerHeight)&&innerHeight>0;
+ const docked=()=>Boolean(dialog.open&&!dialog.classList.contains('osiris-compact')&&!dialog.classList.contains('fjord-ai-auth-pending')||!launch.contains(pet)||launch.hidden);
+ const walkClip=()=>({id:'walk',width:480,height:270,anchorFraction,baselineFraction});
+ function visualRect(source=walking?walkClip():ready?currentClip:clips.get('blink'),mirror=source.id==='walk'&&direction<0){
+  const stage=pet.getBoundingClientRect(),fit=fitPresenceClip(source,stage.width,stage.height);
+  const entry=CHARACTER_CALIBRATION.clips[source.id],u=entry?.unionBounds||source.unionBounds||source.bounds||{left:0,top:0,right:1,bottom:1};
+  const left=stage.left+fit.left+(mirror?1-u.right:u.left)*fit.width;
+  const right=stage.left+fit.left+(mirror?1-u.left:u.right)*fit.width;
+  const top=stage.top+fit.top+u.top*fit.height,bottom=stage.top+fit.top+u.bottom*fit.height;
+  return {left,right,top,bottom,width:right-left,height:bottom-top,x:(left+right)/2,y:(top+bottom)/2};
+ }
+ function placeCenter(point,source,mirror){
+  if(docked())return;
+  const box=visualRect(source,mirror),clamped=clampCenter(point,box,viewport(),8);
+  if(!clamped)return;
+  offset+=clamped.x-box.x;offsetY+=clamped.y-box.y;
+  launch.style.setProperty('--osiris-roam-x',`${offset.toFixed(2)}px`);
+  launch.style.setProperty('--osiris-roam-y',`${offsetY.toFixed(2)}px`);
+ }
+ function clampViewport(){
+  if(!docked()){const box=visualRect();placeCenter(box);}
+ }
+ function cancelTravel(){
+  if(!travel)return;
+  const previous=travel;travel=null;previous.signal?.removeEventListener('abort',previous.abort);
+  previous.resolve(false);nextRoamAt=time+6000;
  }
  function fallback(){
   canvas.style.opacity='0';poster.style.opacity='1';ready=false;
@@ -127,15 +166,18 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  function holdLastFrame(){
   canvas.style.opacity=ready?'1':'0';poster.style.opacity=ready?'0':'1';
  }
- function beginWalk(){
-  if(!walkReady||blocked||dead||active?.mode!=='rest'||active.phase==='settle')return;
+ function beginWalk(point){
+  if(!walkReady||blocked||dead||!travel||docked())return;
+  const alreadyWalking=walking;
   walking=true;walk.hidden=false;walk.style.opacity='0';position();
+  if(point)placeCenter(point,walkClip());
   // Commit the transparent start before fading in a previously hidden image.
-  walk.getBoundingClientRect();
+  if(!alreadyWalking)walk.getBoundingClientRect();
   walk.style.opacity='1';canvas.style.opacity='0';poster.style.opacity='0';
   launch.dataset.osirisScene='walk';
  }
  function stop({preserveWalk=false}={}){
+  cancelTravel();
   generation++;load?.abort();loading=false;renderer.pause();brain.cancel(time);active=null;
   if(!preserveWalk){hideWalk({immediate:true});holdLastFrame();}
  }
@@ -148,19 +190,21 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  }
  function sync(){
   obstacleCacheAt=-Infinity;
-  const busy=attention(),next=presencePaused({paused,hidden:document.hidden,reduced:reduced.matches});
+  const busy=attention(),next=presencePaused({paused,hidden:document.hidden,reduced:reduced.matches,animations:animationsEnabled});
+  if(docked()&&(travel||drag)){endDrag(true);stop();nextRoamAt=time+5000;}
   if(next!==blocked){
    blocked=next;
-   if(blocked)stop();
+   if(blocked){endDrag(true);stop();}
    else{brain.noteUserActivity(time);last=performance.now();}
   }
-  launch.dataset.osirisLife=paused?'paused':busy?'conversation':reduced.matches?'still':'ready';
+  launch.dataset.osirisLife=paused||!animationsEnabled?'paused':busy?'conversation':reduced.matches?'still':'ready';
   position();
  }
  async function show(decision){
   if(dead||blocked)return;
   if(decision.mode==='rest'){
-   active=decision;renderer.pause();launch.dataset.osirisScene='rest';beginWalk();return;
+   active=decision;renderer.pause();launch.dataset.osirisScene='rest';
+   if(decision.phase!=='settle')maybeRoam();return;
   }
   const source=clips.get(decision.id),clip=source&&{...source,anchorFraction,baselineFraction};
   if(!clip){brain.finish(decision.token,time);return;}
@@ -174,6 +218,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
    if(token!==generation||blocked||dead)return;
    currentClip=clip;position();ready=true;loading=false;
    hideWalk();
+   clampViewport();position();
    canvas.style.opacity='1';poster.style.opacity='0';last=performance.now();
    let previous=0;
    await renderer.play(seconds=>{
@@ -188,12 +233,19 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
   }
  }
  function command(id){
-  if(!clips.has(id)||document.hidden||reduced.matches)return;
+  if(!animationsEnabled||!clips.has(id)||document.hidden||reduced.matches)return;
   paused=false;translate();sync();stop({preserveWalk:true});restUntil=0;
   brain.queueReaction({kind:'command',id},time);
   const decision=brain.next(time);if(decision)void show(decision);
  }
  function setPaused(value){paused=value;translate();sync();}
+ function setPreferences(preferences={}){
+  if(dead)return;
+  if(typeof preferences?.roaming==='boolean')roamingEnabled=preferences.roaming;
+  if(typeof preferences?.animations==='boolean')animationsEnabled=preferences.animations;
+  if(!roamingEnabled&&travel?.reason==='ambient')finishTravel(false);
+  translate();sync();
+ }
  listen(pause,'click',()=>setPaused(!paused));
  listen(play,'click',()=>{
   const choices=catalog.clips.filter(item=>item.group==='play'&&item.id!==lastPlay);
@@ -202,8 +254,8 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
  });
  listen(rest,'click',()=>{stop();restUntil=time+45000;launch.dataset.osirisScene='rest';});
  listen(select,'change',()=>{command(select.value);select.value='';});
- listen(walk,'load',()=>{walkReady=true;if(!loading)beginWalk();});
- listen(walk,'error',()=>{walkReady=false;hideWalk({immediate:true});holdLastFrame();});
+ listen(walk,'load',()=>{walkReady=true;});
+ listen(walk,'error',()=>{walkReady=false;cancelTravel();hideWalk({immediate:true});holdLastFrame();});
  listen(renderer.video,'ended',()=>{
   if(loading||!active||active.mode==='rest'||!renderer.video.ended)return;
   brain.finish(active.token,time,{completed:true});
@@ -212,63 +264,153 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA}={}) {
   if(fit.endGround){anchorFraction=fit.endGround.x/width;baselineFraction=fit.endGround.y/height;}
   active=null;held=true;renderer.pause();
  });
- listen(pet,'pointerenter',()=>{hover=true;if(!blocked)brain.queueReaction({kind:'hover',targetId:'osiris'},time);});
+ listen(pet,'pointerenter',()=>{hover=true;if(travel){hideWalk({immediate:true});holdLastFrame();}else if(!blocked)brain.queueReaction({kind:'hover',targetId:'osiris'},time);});
  listen(pet,'pointerleave',()=>{hover=false;brain.cancelAttention('osiris',time);});
- listen(window,'resize',()=>{offset=0;obstacleCacheAt=-Infinity;launch.style.removeProperty('--osiris-roam-x');position();});
+ listen(window,'resize',()=>{obstacleCacheAt=-Infinity;cancelTravel();hideWalk({immediate:true});holdLastFrame();position();clampViewport();position();});
  listen(window,'scroll',()=>{obstacleCacheAt=-Infinity;},true);
- listen(launch,'focus',()=>{if(!blocked)brain.queueReaction({kind:'focus',targetId:'osiris'},time);});
+ listen(launch,'focus',()=>{if(!blocked&&!travel)brain.queueReaction({kind:'focus',targetId:'osiris'},time);});
  listen(launch,'blur',()=>brain.cancelAttention('osiris',time));
  listen(dialog,'focusin',sync);listen(dialog,'focusout',()=>queueMicrotask(sync));
  listen(window,'fjord:voice-activity',event=>{voice=event.detail?.active===true;sync();});
  listen(document,'visibilitychange',sync);listen(reduced,'change',()=>{brain.setReducedMotion(reduced.matches,time);sync();});
  listen(window,'fjordlanguagechange',translate);
- listen(document,'keydown',event=>{if(event.key==='Escape')setPaused(true);});
+ listen(window,'osiris:settings-changed',event=>setPreferences(event.detail?.preferences));
+ listen(document,'keydown',event=>{if(event.key==='Escape'){endDrag(true);setPaused(true);}});
  const observer=new MutationObserver(sync);
  observer.observe(pet,{attributes:true,attributeFilter:['data-state']});
  observer.observe(dialog,{attributes:true,attributeFilter:['open','class']});
- const resize=new ResizeObserver(position);resize.observe(pet);
+ const resize=new ResizeObserver(()=>{position();clampViewport();});resize.observe(pet);
  function patrolObstacles(now){
   if(now-obstacleCacheAt<200)return obstacleCache;
-  obstacleCacheAt=now;obstacleCache=[];
+  obstacleCacheAt=now;const nextObstacles=[];
   for(const node of document.querySelectorAll('a[href],button,input,select,textarea,summary,[data-osiris-no-roam]')){
    if(node===launch||node===pause||launch.contains(node)||node.closest('dialog:not([open]),[hidden]'))continue;
-   for(const r of node.getClientRects())if(r.width&&r.height)obstacleCache.push(r);
+   for(const r of node.getClientRects())if(r.width&&r.height&&r.right>0&&r.left<innerWidth&&r.bottom>0&&r.top<innerHeight)nextObstacles.push(r);
   }
+  if(nextObstacles.length!==obstacleCache.length||nextObstacles.some((r,i)=>['left','right','top','bottom'].some(k=>r[k]!==obstacleCache[i][k])))obstacleCache=nextObstacles;
   return obstacleCache;
  }
+ function moveTo(target,{reason='command',signal}={}){
+  if(dead||blocked||docked()||drag||!walkReady||!hasViewport()||signal?.aborted||!Number.isFinite(target?.x)||!Number.isFinite(target?.y)||(reason==='ambient'&&!roamingEnabled))return Promise.resolve(false);
+  const startBox=visualRect(),walkBox=visualRect(walkClip()),footprint={width:walkBox.width,height:walkBox.height};
+  const start=clampCenter(startBox,footprint,viewport(),8),goal=clampCenter(target,footprint,viewport(),8);
+  if(!start||!goal)return Promise.resolve(false);
+  const obstacles=patrolObstacles(performance.now());
+  const path=planRoute({start,target:goal,footprint,viewport:viewport(),obstacles,clearance:8});
+  if(!path)return Promise.resolve(false);
+  stop();restUntil=0;
+  if(Math.hypot(goal.x-start.x,goal.y-start.y)<2)return Promise.resolve(true);
+  return new Promise(resolve=>{
+   const abort=()=>{cancelTravel();hideWalk({immediate:true});holdLastFrame();};
+   travel={position:start,target:goal,remaining:path,footprint,obstacles,reason,resolve,signal,abort};
+   signal?.addEventListener('abort',abort,{once:true});
+  });
+ }
+ function finishTravel(success){
+  if(!travel)return;
+  const previous=travel;travel=null;previous.signal?.removeEventListener('abort',previous.abort);
+  hideWalk();holdLastFrame();placeCenter(previous.position);position();
+  restUntil=time+1500;nextRoamAt=time+9000+random()*7000;
+  brain.noteUserActivity(time);launch.dataset.osirisScene='rest';previous.resolve(success);
+ }
+ function maybeRoam(){
+  if(!roamingEnabled||!hasViewport()||travel||drag||hover||docked()||!walkReady||time<nextRoamAt||launch.matches(':focus-visible'))return;
+  nextRoamAt=time+6000+random()*8000;
+  // Many pauses remain genuine rest. A walk is a route, never a treadmill loop.
+  if(random()>.45)return;
+  const view=viewport(),here=visualRect(),zones=[[.15,.18],[.5,.18],[.85,.18],[.15,.5],[.5,.5],[.85,.5],[.15,.82],[.5,.82],[.85,.82]];
+  const first=Math.floor(random()*zones.length);
+  for(let i=0;i<zones.length;i++){
+   const index=(first+i)%zones.length;if(index===lastRoamZone)continue;
+   const target={x:view.width*zones[index][0],y:view.height*zones[index][1]};
+   if(Math.hypot(target.x-here.x,target.y-here.y)<100)continue;
+   void moveTo(target,{reason:'ambient'});
+   if(travel){lastRoamZone=index;break;}
+  }
+ }
+ function advanceTravel(delta,now){
+  if(!travel)return;
+  if(blocked||drag||docked()||!hasViewport()){finishTravel(false);return;}
+  if(hover||launch.matches(':focus-visible')){hideWalk({immediate:true});holdLastFrame();return;}
+  const obstacles=patrolObstacles(now);
+  if(obstacles!==travel.obstacles){
+   const path=planRoute({start:travel.position,target:travel.target,footprint:travel.footprint,viewport:viewport(),obstacles,clearance:8});
+   if(!path){finishTravel(false);return;}
+   travel.remaining=path;travel.obstacles=obstacles;
+  }
+  const step=stepRoute(travel.position,travel.remaining,85*Math.min(100,delta)/1000);
+  if(!step){finishTravel(false);return;}
+  const dx=step.position.x-travel.position.x;
+  if(Math.abs(dx)>.01)direction=dx<0?-1:1;
+  walk.style.scale=direction<0?'-1 1':'1 1';
+  if(Math.hypot(step.position.x-travel.position.x,step.position.y-travel.position.y)>.001){
+   beginWalk(travel.position);placeCenter(step.position,walkClip());position();
+  }
+  travel.position=step.position;travel.remaining=step.remaining;
+  if(step.arrived)finishTravel(true);
+ }
+ function endDrag(cancelled=false){
+  if(!drag)return;
+  const previous=drag;drag=null;
+  if(previous.active){
+   suppressClickUntil=performance.now()+700;suppressNextClick=true;
+   try{launch.releasePointerCapture(previous.id);}catch{}
+   delete launch.dataset.osirisDragging;nextRoamAt=time+12000;restUntil=time+5000;brain.noteUserActivity(time);
+   clampViewport();position();
+  }
+ }
+ listen(launch,'pointerdown',event=>{
+  if(dead||docked()||document.hidden||event.isPrimary===false||(event.button!=null&&event.button!==0))return;
+  suppressNextClick=false;
+  const box=visualRect();
+  if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)return;
+  drag={id:event.pointerId,x:event.clientX,y:event.clientY,center:{x:box.x,y:box.y},active:false};
+ });
+ listen(window,'pointermove',event=>{
+  if(!drag||event.pointerId!==drag.id)return;
+  const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
+  if(!drag.active&&Math.hypot(dx,dy)<6)return;
+  if(!drag.active){
+   drag.active=true;stop();launch.dataset.osirisDragging='true';
+   try{launch.setPointerCapture(drag.id);}catch{}
+  }
+  event.preventDefault();placeCenter({x:drag.center.x+dx,y:drag.center.y+dy});position();
+ },{passive:false});
+ listen(window,'pointerup',event=>{if(drag&&event.pointerId===drag.id)endDrag();});
+ listen(window,'pointercancel',event=>{if(drag&&event.pointerId===drag.id)endDrag(true);});
+ listen(launch,'lostpointercapture',()=>endDrag(true));
+ listen(launch,'click',event=>{
+  if(suppressNextClick&&performance.now()<suppressClickUntil&&event.detail!==0){suppressNextClick=false;event.preventDefault();event.stopImmediatePropagation();}
+ },true);
  function tick(now){
   if(dead)return;
   const delta=Math.min(250,Math.max(0,now-last));last=now;
-  if(!blocked&&!loading&&(!active||active.mode==='rest'))time+=delta;
-  if(!blocked&&!loading&&time>=restUntil){
+  if(!blocked&&!drag&&!loading&&(!active||active.mode==='rest'))time+=delta;
+  if(!blocked&&!drag&&!travel&&!loading&&time>=restUntil){
    const decision=brain.next(time);
    if(decision&&decision.token!==active?.token)void show(decision);
   }
-  if(!blocked&&walking&&!hover&&!launch.hidden&&!launch.matches(':focus-visible')){
-   const rect=launch.getBoundingClientRect(),obstacles=patrolObstacles(now);
-   let dx=direction*38*delta/1000;
-   if(!patrolStep(rect,dx,innerWidth,obstacles)){
-    if(patrolStep(rect,-dx,innerWidth,obstacles)){direction*=-1;dx=-dx;}
-    else dx=0;
-   }
-   if(dx){
-    offset+=dx;launch.style.setProperty('--osiris-roam-x',`${offset.toFixed(2)}px`);
-   }
-   walk.style.scale=direction<0?'-1 1':'1 1';
-  }
+  advanceTravel(delta,now);
   frame=requestAnimationFrame(tick);
  }
  function destroy(){
-  dead=true;stop();cancelAnimationFrame(frame);observer.disconnect();resize.disconnect();
-  events.forEach(off=>off());renderer.destroy();canvas.remove();poster.remove();walk.remove();pause.remove();panel.remove();launch.style.removeProperty('--osiris-roam-x');
+  dead=true;endDrag(true);stop();cancelAnimationFrame(frame);observer.disconnect();resize.disconnect();
+  events.forEach(off=>off());renderer.destroy();canvas.remove();poster.remove();walk.remove();hitbox.remove();pause.remove();panel.remove();launch.style.removeProperty('--osiris-roam-x');launch.style.removeProperty('--osiris-roam-y');
   pet.classList.remove('osiris-life-pet');delete launch.dataset.osirisLife;
+  if(window.OsirisPresence===publicApi)delete window.OsirisPresence;
  }
- listen(window,'pagehide',event=>{if(!event.persisted)destroy();});
+ listen(window,'pagehide',event=>{if(!event.persisted)destroy();else{endDrag(true);stop();}});
  pet.classList.add('osiris-life-pet');
  launch.dataset.osirisMotion='life-v1';launch.dataset.osirisPresence='ready';
  translate();position();sync();frame=requestAnimationFrame(tick);
  // Same pet node is subsequently moved by the existing production chat dock.
- return {command,setPaused,destroy,snapshot:()=>({paused,blocked,loading,ready,held,walking,offset,scene:launch.dataset.osirisScene,brain:brain.snapshot(time)})};
+ publicApi={command,setPaused,setPreferences,moveTo,cancelMove:()=>{
+  const had=!!travel;cancelTravel();hideWalk({immediate:true});holdLastFrame();return had;
+ },destroy,snapshot:()=>({paused,blocked,loading,ready,held,walking,roaming:roamingEnabled,animations:animationsEnabled,offset,offsetY,dragging:!!drag?.active,
+  travelling:!!travel,position:visualRect(),target:travel?{...travel.target}:null,scene:launch.dataset.osirisScene,brain:brain.snapshot(time)})};
+ window.OsirisPresence=publicApi;
+ window.dispatchEvent(new Event('osiris:presence-ready'));
+ return publicApi;
 }
 
 function attach(){

@@ -18,7 +18,11 @@ body .osiris-life-pet .osiris-life-walk {
 }
 body .osiris-life-pet .osiris-life-canvas {opacity:0}
 body .osiris-life-pet .osiris-life-walk[hidden]{display:none!important}
-body button.fjord-helper-launch.osiris-launch[data-osiris-motion="life-v1"]{width:280px;height:200px;translate:var(--osiris-roam-x,0px) 0!important}
+body button.fjord-helper-launch.osiris-launch[data-osiris-motion="life-v1"]{width:280px;height:200px;translate:var(--osiris-roam-x,0px) var(--osiris-roam-y,0px)!important;touch-action:auto;pointer-events:none}
+body .osiris-launch[data-osiris-motion="life-v1"] .osiris-life-pet{pointer-events:none}
+body .osiris-life-pet .osiris-life-hitbox{position:absolute;display:block;z-index:2;pointer-events:auto;touch-action:none;cursor:grab;background:transparent;border:0}
+body .osiris-life-pet .osiris-life-hitbox[hidden]{display:none!important}
+body .osiris-launch[data-osiris-dragging="true"] .osiris-life-hitbox{cursor:grabbing}
 body .osiris-launch[data-osiris-motion="life-v1"] .fjord-ai-pet.osiris-pet{width:280px;height:180px}
 #fjordHelper .fjord-ai-portrait .osiris-life-pet{width:160px;height:120px}
 #fjordHelper .osiris-life-options :focus-visible{outline:3px solid #f5d495;outline-offset:3px}

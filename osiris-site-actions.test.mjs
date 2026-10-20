@@ -2,13 +2,14 @@ import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import {createSiteActionBridge} from './osiris/site-actions.mjs';
 
 const [source,directionsSource,fixtureSource,catalog]=await Promise.all(['chat-widget.js','assistant-routing.js','chat-widget.test.mjs','demo-data/state.json'].map(file=>readFile(new URL(file,import.meta.url),'utf8')));
 // Git may check out CRLF on Windows; normalize fixture boundaries, not app code.
 const normalizedFixture=fixtureSource.replace(/\r\n/g,'\n');
 const fixtureStart=normalizedFixture.indexOf('class Element {'),fixtureEnd=normalizedFixture.indexOf('\n{\n const a=boot({enabled:false})');
 assert.ok(fixtureStart>=0&&fixtureEnd>fixtureStart,'Shared chat fixture boundaries must be present');
-const fixture=normalizedFixture.slice(fixtureStart,fixtureEnd);
+const fixture=normalizedFixture.slice(fixtureStart,fixtureEnd).replace("if(url.endsWith('/chat'))return","if(url.endsWith('/chat')&&config.deferIdentityReply)await new Promise(resolve=>voiceState.resolveIdentityReply=resolve);if(url.endsWith('/chat'))return");
 const context={source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
 vm.runInNewContext(fixture+'\nthis.fixtureApi={boot,flush};',context);
 const {boot,flush}=context.fixtureApi;
@@ -79,4 +80,88 @@ test('Dima/Dimka contact requests use the consent handoff, with no immediate mes
   const app=await start();const channel=await heard(app,question,'q1',language);const answer=channel.sent.find(event=>event.type==='response.create')?.response?.instructions;assert.match(answer||'',/Dima|Дим|Дім/);assert.doesNotMatch(answer,/WhatsApp/);assert.equal(app.calls.filter(call=>call.url.endsWith('/chat')||call.url.endsWith('/contact')).length,0);app.dialog.close();
  }
  const app=await start();app.setChat({answer:'Подтвердите отправку.',needs_human:true,escalation_token:'fixture-token'});await heard(app,'Свяжись с Димой');finish(app);await heard(app,'Хочу уточнить маршрут на завтра','q2');assert.equal(app.voiceState.track.readyState,'ended');const handoff=app.find('fjord-ai-handoff');assert.equal(handoff.hidden,false);assert.equal(handoff.children.find(item=>item.className==='fjord-ai-consent').children[0].checked,false);await handoff.emit('submit');assert.equal(app.calls.filter(call=>call.url.endsWith('/contact')).length,0,'Explicit unchecked consent prevents external sending');app.dialog.close();
+});
+
+function delayedBridge(app) {
+ const moves=[];let allowed=true;
+ for(const section of Object.values(app.sections))section.getBoundingClientRect=()=>({left:400,right:500,top:100,bottom:140,width:100,height:40});
+ app.browserWindow.OsirisSettings={isAllowed:()=>allowed};
+ app.browserWindow.OsirisSiteActions=createSiteActionBridge({
+  document:app.document,viewport:()=>({width:1000,height:700}),reducedMotion:()=>false,isAllowed:()=>allowed,
+  getPresence:()=>({snapshot:()=>({position:{width:100,height:80,x:200,y:100}}),moveTo:(point,{signal})=>new Promise(resolve=>moves.push({resolve,signal,point}))}),
+ });
+ return {moves,disable(){allowed=false;app.browserWindow.emit('osiris:settings-changed')}};
+}
+const submit=async(app,text)=>{const form=app.find('fjord-ai-compose');form.children.find(n=>n.tag==='textarea').value=text;await form.emit('submit');await flush()};
+
+test('typed command waits for arrival, then reports success; correction cancels without a stale success',async()=>{
+ const app=boot();await flush();app.browserWindow.emit('fjord:open-chat');app.sections.journeys=app.document.createElement('section');app.sections.norwayWebcams=app.document.createElement('section');
+ const {moves}=delayedBridge(app);let old=submit(app,'Открой туризм');await flush();
+ assert.equal(app.sections.journeys.scrolled,undefined);assert.equal(app.find('fjord-ai-log').children.some(n=>n.textContent?.startsWith('Открыт раздел')),false);
+ const next=submit(app,'Покажи видеокамеры');await flush();assert.equal(moves[0].signal.aborted,true);moves[0].resolve(true);moves[1].resolve(true);await Promise.all([old,next]);await flush();
+ assert.equal(app.sections.journeys.scrolled,undefined);assert.equal(app.sections.norwayWebcams.scrolled.block,'start');
+ const answers=app.find('fjord-ai-log').children.filter(n=>n.textContent?.startsWith('Открыт раздел'));assert.equal(answers.length,1);assert.match(answers[0].textContent,/Веб-камеры/);assert.equal(app.dialog.open,true);assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,0);app.dialog.close();
+});
+test('voice Stop or a newly spoken correction cancels navigation while preserving only the current result',async()=>{
+ for(const stop of [true,false]){const app=await start(),{moves}=delayedBridge(app);await heard(app,'Открой туризм');assert.equal(moves.length,1);assert.equal(app.revealed.length,0);
+  if(stop)await app.find('fjord-ai-record-fallback').emit('click');else app.voiceState.peer.channel.message({type:'input_audio_buffer.speech_started'});
+  moves[0].resolve(true);await flush();assert.equal(app.revealed.length,0);assert.equal(app.find('fjord-ai-log').children.some(n=>n.textContent?.startsWith('Открыт раздел')),false);app.dialog.close();
+ }
+});
+test('close, hidden tab, typing a correction and settings off revoke queued typed navigation',async()=>{
+ for(const mode of ['close','hidden','input','settings']){const app=boot();await flush();app.browserWindow.emit('fjord:open-chat');app.sections.journeys=app.document.createElement('section');const bridge=delayedBridge(app),pending=submit(app,'Открой туризм');await flush();
+  if(mode==='close')app.dialog.close();if(mode==='hidden'){app.document.hidden=true;app.document.emit('visibilitychange')}if(mode==='input')await app.find('fjord-ai-compose').children.find(n=>n.tag==='textarea').emit('input');if(mode==='settings')bridge.disable();
+  bridge.moves[0].resolve(true);await pending;assert.equal(app.sections.journeys.scrolled,undefined);assert.equal(app.find('fjord-ai-log').children.some(n=>n.textContent?.startsWith('Открыт раздел')),false);if(mode==='settings')assert.match(app.find('fjord-ai-status').textContent,/disabled|отключены/);app.dialog.close();
+ }
+});
+test('negated commands, how-to questions and recommendations do not navigate; all ten known section labels do',async()=>{
+ const app=boot();await flush();app.browserWindow.emit('fjord:open-chat');
+ for(const id of ['journeys','norwayWebcams'])app.sections[id]=app.document.createElement('section');
+ for(const text of ['Не открывай веб-камеры','Как открыть веб-камеры?','Покажи как открыть веб-камеры','Покажи водопады в Норвегии']){await submit(app,text);assert.ok(Object.values(app.sections).every(section=>!section.scrolled))}
+ for(const [title,id] of [['Места','collection'],['Красивые маршруты','scenicRoutes'],['Домики и сауны','staysSauna'],['Кафе рядом','cafeNearby'],['Впечатления по маршруту','routeExperiences'],['Истории путешествий','travelStories'],['Места рядом','norwayCatalogue'],['Снаряжение BUA','buaEquipment'],['Туризм','journeys'],['Веб-камеры','norwayWebcams']]){
+  await submit(app,'Открой '+title);assert.ok(app.sections[id].scrolled,id);
+ }
+ assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,4);app.dialog.close();
+});
+test('settings off also blocks the no-module fallback',async()=>{
+ const app=boot();await flush();app.browserWindow.emit('fjord:open-chat');app.sections.journeys=app.document.createElement('section');app.browserWindow.OsirisSettings={isAllowed:()=>false};
+ await submit(app,'Открой туризм');assert.equal(app.sections.journeys.scrolled,undefined);assert.match(app.find('fjord-ai-status').textContent,/disabled/);app.dialog.close();
+});
+
+function authFixture(app) {
+ const store=new Map();app.browserWindow.atob=globalThis.atob;
+ app.browserWindow.sessionStorage={getItem:key=>store.get(key)||null,setItem:(key,value)=>store.set(key,value),removeItem:key=>store.delete(key)};
+ let visitor=null;app.browserWindow.__fixtureAuth={ensureVerified:async()=>visitor,getVisitorToken:async()=>visitor?.idToken||''};
+ return (uid,revision=1)=>{visitor=uid?{idToken:'header.'+Buffer.from(JSON.stringify({sub:uid,exp:revision})).toString('base64url')+'.signature',email:'same-address@example.test',emailVerified:true}:null;if(visitor)store.set('fjord-afonya-visitor',JSON.stringify(visitor));else store.delete('fjord-afonya-visitor');app.browserWindow.emit('fjord:auth-changed');};
+}
+test('same UID token refresh retains chat; Alice to Bob clears history, handoff, route origin and pending navigation',async()=>{
+ const app=boot({enabled:true,endpoint:'https://chat.example.test',firebaseApiKey:'fixture-key'});await flush();const identity=authFixture(app);identity('Alice');app.browserWindow.emit('fjord:open-chat');await flush();
+ await submit(app,'Я еду из Грана');assert.equal(app.find('fjord-ai-origin').hidden,false);app.setChat({answer:'Alice private answer',needs_human:true,escalation_token:'alice-only'});await submit(app,'Мой личный вопрос');const log=app.find('fjord-ai-log');const before=log.children.length;assert.equal(app.find('fjord-ai-handoff').hidden,false);
+ identity('Alice',2);assert.equal(log.children.length,before);assert.equal(app.find('fjord-ai-handoff').hidden,false);
+ app.sections.journeys=app.document.createElement('section');const {moves}=delayedBridge(app),pending=submit(app,'Открой туризм');await flush();identity('Bob');moves[0].resolve(true);await pending;
+ assert.equal(log.children.length,0);assert.equal(app.sections.journeys.scrolled,undefined);assert.equal(app.find('fjord-ai-handoff').hidden,true);assert.equal(app.find('fjord-ai-origin').hidden,true);assert.doesNotMatch(decodeURIComponent(app.find('fjord-ai-email').href),/Alice|личный|Gran/);
+ app.setChat({answer:'Bob answer'});await submit(app,'Новый вопрос');const posted=JSON.parse(app.calls.filter(c=>c.url.endsWith('/chat')).at(-1).options.body);assert.deepEqual(posted.messages.map(m=>m.content),['Новый вопрос']);
+ identity(null);assert.equal(log.children.length,0);assert.equal(app.dialog.open,false);
+});
+test('UID switch ends active voice and never restarts the microphone',async()=>{
+ const app=await start();const identity=authFixture(app);identity('Alice');assert.equal(app.voiceState.track.readyState,'ended');assert.equal(app.find('fjord-ai-log').children.length,0);
+ app.find('fjord-ai-input-mode').value='conversation';await app.find('fjord-ai-record-fallback').emit('click');await flush();const track=app.voiceState.track;
+ identity('Alice',2);assert.equal(track.readyState,'live');identity('Bob');assert.equal(track.readyState,'ended');assert.equal(app.find('fjord-ai-log').children.length,0);app.dialog.close();
+});
+test('an old in-flight chat reply cannot restore private history or handoff after UID change',async()=>{
+ const config={enabled:true,endpoint:'https://chat.example.test',firebaseApiKey:'fixture-key',deferIdentityReply:true};
+ const app=boot(config);await flush();const identity=authFixture(app);identity('Alice');app.browserWindow.emit('fjord:open-chat');await flush();
+ await submit(app,'Alice private question');assert.equal(typeof app.voiceState.resolveIdentityReply,'function');
+ identity('Bob');app.setChat({answer:'Alice private response',needs_human:true,escalation_token:'alice-ticket'});app.voiceState.resolveIdentityReply();await flush();
+ assert.equal(app.find('fjord-ai-log').children.length,0);assert.equal(app.find('fjord-ai-handoff').hidden,true);assert.equal(app.find('fjord-ai-status').textContent,'');
+ config.deferIdentityReply=false;app.setChat({answer:'Bob response'});await submit(app,'Bob question');const body=JSON.parse(app.calls.filter(call=>call.url.endsWith('/chat')).at(-1).options.body);
+ assert.deepEqual(body.messages.map(message=>message.content),['Bob question']);app.dialog.close();
+});
+test('a late token refresh from the previous UID cannot reset the new account or send its question',async()=>{
+ const app=boot({enabled:true,endpoint:'https://chat.example.test',firebaseApiKey:'fixture-key'});await flush();const identity=authFixture(app);identity('Alice');app.browserWindow.emit('fjord:open-chat');await flush();
+ const auth=app.browserWindow.__fixtureAuth,normalToken=auth.getVisitorToken,aliceToken=await normalToken();let resolve;
+ auth.getVisitorToken=()=>new Promise(done=>resolve=done);await submit(app,'Old private question');assert.equal(typeof resolve,'function');
+ identity('Bob');auth.getVisitorToken=normalToken;app.setChat({answer:'Bob answer'});await submit(app,'Bob question');resolve(aliceToken);await flush();
+ assert.deepEqual(Array.from(app.find('fjord-ai-log').children,n=>n.textContent),['Bob question','Bob answer']);
+ assert.equal(app.calls.filter(call=>call.url.endsWith('/chat')).length,1);app.dialog.close();
 });
