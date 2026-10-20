@@ -3106,6 +3106,178 @@
         "checked": "2026-10-19",
         "modifications": "Resized and re-encoded as WebP, no content edits."
       }
+    },
+    {
+      "id": "bergen-hakonshallen-choirs-20261022",
+      "municipality": "4601",
+      "eventDate": "2026-10-22",
+      "expires": "2026-10-23T00:00:00+02:00",
+      "source": "Visit Bergen / Bergen Kammerkor / Bergen Damekor",
+      "url": "https://www.visitbergen.com/hva-skjer/korkonsert-i-hakonshallen-p8616363",
+      "location": "Håkonshallen, Bergenhus 10, 5003 Bergen",
+      "time": "20:00–21:30",
+      "mapQuery": "Håkonshallen, Bergenhus 10, Bergen",
+      "copy": {
+        "nb": [
+          "Korkonsert i Håkonshallen",
+          "Bergen Kammerkor og Bergen Damekor, 22. oktober kl. 20.00–21.30."
+        ],
+        "en": [
+          "Choir concert in Håkonshallen",
+          "Bergen Kammerkor and Bergen Damekor, 22 October, 20:00–21:30."
+        ],
+        "uk": [
+          "Хоровий концерт у Håkonshallen",
+          "Bergen Kammerkor і Bergen Damekor, 22 жовтня, 20:00–21:30."
+        ],
+        "sv": [
+          "Körkonsert i Håkonshallen",
+          "Bergen Kammerkor och Bergen Damekor, 22 oktober kl. 20.00–21.30."
+        ],
+        "da": [
+          "Korkoncert i Håkonshallen",
+          "Bergen Kammerkor og Bergen Damekor, 22. oktober kl. 20.00–21.30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dirigent Annlaug Hus og pianist Vidar Eldholm. Pris og bestillingsvilkår er ikke oppgitt i kalenderen; avklar med arrangøren."
+        ],
+        "en": [
+          "Conductor Annlaug Hus and pianist Vidar Eldholm. The calendar gives no price or booking terms; check with the organiser."
+        ],
+        "uk": [
+          "Диригентка Annlaug Hus, піаніст Vidar Eldholm. Ціну й умови бронювання в календарі не вказано; уточнюйте в організатора."
+        ],
+        "sv": [
+          "Dirigent Annlaug Hus och pianist Vidar Eldholm. Kalendern anger inte pris eller bokningsvillkor; fråga arrangören."
+        ],
+        "da": [
+          "Dirigent Annlaug Hus og pianist Vidar Eldholm. Kalenderen oplyser ikke pris eller bestillingsvilkår; spørg arrangøren."
+        ]
+      },
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "textOnly": true
+    },
+    {
+      "id": "tromso-kristian-kristensen-20261023",
+      "municipality": "5501",
+      "eventDate": "2026-10-23",
+      "expires": "2026-10-24T00:00:00+02:00",
+      "source": "Bryggeriet Scene",
+      "url": "https://www.bryggerietscene.no/program2/kristian-kristensen",
+      "location": "Bryggeriet Scene · Hovedscenen · Tromsø",
+      "time": "21:00",
+      "mapQuery": "Bryggeriet Scene, Tromsø",
+      "copy": {
+        "nb": [
+          "Kristian Kristensen · Hovedscenen",
+          "Konsert 23. oktober kl. 21.00; dørene åpner kl. 20.00. Aldersgrense 18 år."
+        ],
+        "en": [
+          "Kristian Kristensen · Main stage",
+          "Concert 23 October at 21:00; doors open at 20:00. Ages 18+."
+        ],
+        "uk": [
+          "Kristian Kristensen · Головна сцена",
+          "Концерт 23 жовтня о 21:00; двері відкривають о 20:00. Вік 18+."
+        ],
+        "sv": [
+          "Kristian Kristensen · Stora scenen",
+          "Konsert 23 oktober kl. 21.00; dörrarna öppnar kl. 20.00. Åldersgräns 18 år."
+        ],
+        "da": [
+          "Kristian Kristensen · Hovedscenen",
+          "Koncert 23. oktober kl. 21.00; dørene åbner kl. 20.00. Aldersgrænse 18 år."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Norske hits og nytt engelskspråklig materiale. Eget arrangement, ikke Konradsen i Tankrommet samme kveld. Pris er ikke oppgitt; avklar billetter med arrangøren."
+        ],
+        "en": [
+          "Norwegian hits and new English-language material. Separate from Konradsen in Tankrommet that evening. Price is not listed; check tickets with the organiser."
+        ],
+        "uk": [
+          "Норвезькі хіти й новий англомовний матеріал. Окремий виступ, не Konradsen у Tankrommet того ж вечора. Ціну не вказано; квитки уточнюйте в організатора."
+        ],
+        "sv": [
+          "Norska hits och nytt engelskspråkigt material. Ett annat evenemang än Konradsen i Tankrommet samma kväll. Pris anges inte; kontrollera biljetter hos arrangören."
+        ],
+        "da": [
+          "Norske hits og nyt engelsksproget materiale. Et andet arrangement end Konradsen i Tankrommet samme aften. Pris ikke oplyst; tjek billetter hos arrangøren."
+        ]
+      },
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "textOnly": true
+    },
+    {
+      "id": "jevnaker-maskeverksted-20261025",
+      "municipality": "3236",
+      "eventDate": "2026-10-25",
+      "expires": "2026-10-26T00:00:00+01:00",
+      "source": "Skape i Ro · offentlig Facebook-arrangement",
+      "url": "https://www.facebook.com/events/1098617213052184/",
+      "location": "Skape i Ro, Storgata 7, 3520 Jevnaker",
+      "time": "12:00–15:00",
+      "mapQuery": "Storgata 7, Jevnaker",
+      "copy": {
+        "nb": [
+          "Maskeverksted hos Skape i Ro",
+          "Lag din egen maske 25. oktober kl. 12.00–15.00. Pris 299 kr, inkludert maske og materialer."
+        ],
+        "en": [
+          "Mask workshop at Skape i Ro",
+          "Decorate your own mask on 25 October, 12:00–15:00. NOK 299 includes the mask and materials."
+        ],
+        "uk": [
+          "Майстерня масок у Skape i Ro",
+          "Прикрасьте власну маску 25 жовтня, 12:00–15:00. 299 NOK включає маску й матеріали."
+        ],
+        "sv": [
+          "Maskverkstad hos Skape i Ro",
+          "Dekorera din egen mask 25 oktober kl. 12.00–15.00. 299 NOK inklusive mask och material."
+        ],
+        "da": [
+          "Maskeværksted hos Skape i Ro",
+          "Dekorér din egen maske 25. oktober kl. 12.00–15.00. 299 NOK inklusive maske og materialer."
+        ]
+      },
+      "details": {
+        "nb": [
+          "For barn, ungdom og voksne; ingen forkunnskaper kreves. Begrenset antall plasser; avklar påmelding og ledighet direkte med Skape i Ro."
+        ],
+        "en": [
+          "For children, young people and adults; no experience needed. Places are limited; check registration and availability directly with Skape i Ro."
+        ],
+        "uk": [
+          "Для дітей, молоді й дорослих; досвід не потрібен. Кількість місць обмежена; запис і наявність уточнюйте безпосередньо в Skape i Ro."
+        ],
+        "sv": [
+          "För barn, ungdomar och vuxna; inga förkunskaper behövs. Begränsat antal platser; fråga Skape i Ro om anmälan och lediga platser."
+        ],
+        "da": [
+          "For børn, unge og voksne; ingen erfaring nødvendig. Begrænset antal pladser; spørg Skape i Ro om tilmelding og ledighed."
+        ]
+      },
+      "discoveredIn": {
+        "name": "Oppslagstavla for Hadeland",
+        "url": "https://www.facebook.com/groups/681820395175180/posts/29182303014700204/"
+      },
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "textOnly": true
     }
   ],
   "mediaUpdated": "2026-10-19"

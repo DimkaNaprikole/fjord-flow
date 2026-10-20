@@ -5,11 +5,13 @@ const {join}=require('node:path');
 const {localizedImageText,imageRoleLabel}=require('./municipal-news.js');
 const data=require('./municipal-news-data.json');
 
-test('every dated announcement has a local image and new images keep reusable attribution',()=>{
+test('dated announcements use an attributed local image or an explicit text-only card',()=>{
  const stories=data.items.filter(x=>x.category!=='places');
  assert.ok(stories.length>=29);
  for(const item of stories){
-  const image=item.image;assert.ok(image?.url,item.id);
+  const image=item.image;
+  if(item.textOnly===true){assert.ok(!image?.url,item.id+' must not substitute an unrelated photograph');continue;}
+  assert.ok(image?.url,item.id);
   assert.ok(existsSync(join(__dirname,image.url)),item.id+' image file');
   assert.ok(image.credit&&image.source,item.id+' credit and source');
   if(item.publishedKind==='editorial'){
