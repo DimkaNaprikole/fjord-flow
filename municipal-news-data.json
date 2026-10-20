@@ -3278,6 +3278,405 @@
       "sourcePublished": null,
       "checked": "2026-10-20",
       "textOnly": true
+    },
+    {
+      "id": "trondheim-mitt-palestina-20261021",
+      "municipality": "5001",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-21",
+      "time": "17:30",
+      "expires": "2026-10-22T00:00:00+02:00",
+      "location": "Cinemateket Trondheim · Olavskvartalet, Trondheim",
+      "mapQuery": "Cinemateket Trondheim · Olavskvartalet, Trondheim",
+      "url": "https://cinematekettrondheim.ticketco.events/no/nb/e/mitt_palestina_all_thats_left_of_you_2026_2",
+      "source": "Cinemateket Trondheim / TicketCo",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Mitt Palestina: All That's Left of You",
+          "Cinemateket Trondheim · Olavskvartalet, Trondheim · 21 oktober · 17:30."
+        ],
+        "en": [
+          "Mitt Palestina: All That's Left of You",
+          "Cinemateket Trondheim · Olavskvartalet, Trondheim · 21 October · 17:30."
+        ],
+        "uk": [
+          "Mitt Palestina: All That's Left of You",
+          "Cinemateket Trondheim · Olavskvartalet, Trondheim · 21 жовтня · 17:30."
+        ],
+        "sv": [
+          "Mitt Palestina: All That's Left of You",
+          "Cinemateket Trondheim · Olavskvartalet, Trondheim · 21 oktober · 17:30."
+        ],
+        "da": [
+          "Mitt Palestina: All That's Left of You",
+          "Cinemateket Trondheim · Olavskvartalet, Trondheim · 21 oktober · 17:30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Film av Cherien Dabis (2025), 2 t 25 min. Arabisk tale, norsk tekst, aldersgrense 12 år. Ordinær pris 130 kr; under 18 år 70 kr; student/honnør/filmklubb 90 kr. Salnummer er ikke oppgitt; sjekk billetter hos arrangøren."
+        ],
+        "en": [
+          "Film by Cherien Dabis (2025), 2h 25m. Arabic dialogue, Norwegian subtitles, age rating 12. Standard NOK 130; under 18 NOK 70; student/senior/film-club NOK 90. Auditorium number is not listed; check tickets with the organiser."
+        ],
+        "uk": [
+          "Фільм Cherien Dabis (2025), 2 год 25 хв. Арабською з норвезькими субтитрами, віковий рейтинг 12. Звичайний квиток 130 NOK, до 18 років 70 NOK, студентський/пенсійний/кіноклуб 90 NOK. Номер залу не вказано; квитки перевіряйте в організатора."
+        ],
+        "sv": [
+          "Film av Cherien Dabis (2025), 2 tim 25 min. Arabiskt tal, norsk text, åldersgräns 12 år. Ordinarie 130 NOK; under 18 år 70 NOK; student/pensionär/filmklubb 90 NOK. Salnummer anges inte; kontrollera biljetter hos arrangören."
+        ],
+        "da": [
+          "Film af Cherien Dabis (2025), 2 t 25 min. Arabisk tale, norske undertekster, aldersgrænse 12 år. Standard 130 NOK; under 18 år 70 NOK; studerende/pensionist/filmklub 90 NOK. Salnummer ikke oplyst; tjek billetter hos arrangøren."
+        ]
+      },
+      "eventType": "cinema"
+    },
+    {
+      "id": "hamar-storhamar-kor-20261021",
+      "municipality": "3403",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-21",
+      "time": "19:30–21:00",
+      "expires": "2026-10-22T00:00:00+02:00",
+      "location": "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar",
+      "mapQuery": "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar",
+      "url": "https://www.hamar-kulturhus.no/arrangementer/144609/storhamar-blandede-kor/",
+      "source": "Hamar kulturhus / Storhamar Blandede Kor",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Storhamar Blandede Kor · Returns to the ’80s",
+          "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar · 21 oktober · 19:30–21:00."
+        ],
+        "en": [
+          "Storhamar Blandede Kor · Returns to the ’80s",
+          "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar · 21 October · 19:30–21:00."
+        ],
+        "uk": [
+          "Storhamar Blandede Kor · Returns to the ’80s",
+          "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar · 21 жовтня · 19:30–21:00."
+        ],
+        "sv": [
+          "Storhamar Blandede Kor · Returns to the ’80s",
+          "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar · 21 oktober · 19:30–21:00."
+        ],
+        "da": [
+          "Storhamar Blandede Kor · Returns to the ’80s",
+          "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar · 21 oktober · 19:30–21:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Koret synger 80-tallshits med solist Knut Erik Østgård fra Return. Dørene åpner kl. 18.30. Pris er ikke oppgitt; sjekk billetter hos arrangøren."
+        ],
+        "en": [
+          "The choir performs 1980s hits with Return vocalist Knut Erik Østgård. Doors open at 18:30. Price is not listed; check tickets with the organiser."
+        ],
+        "uk": [
+          "Хор виконує хіти 1980-х із солістом Return Knut Erik Østgård. Двері відкривають о 18:30. Ціну не вказано; квитки перевіряйте в організатора."
+        ],
+        "sv": [
+          "Kören sjunger 1980-talshits med Return-sångaren Knut Erik Østgård. Dörrarna öppnar kl. 18.30. Pris anges inte; kontrollera biljetter hos arrangören."
+        ],
+        "da": [
+          "Koret synger 1980’er-hits med Return-sangeren Knut Erik Østgård. Dørene åbner kl. 18.30. Pris ikke oplyst; tjek billetter hos arrangøren."
+        ]
+      },
+      "eventType": "concert"
+    },
+    {
+      "id": "kristiansund-chrysalis-20261021",
+      "municipality": "1505",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-21",
+      "time": "19:00",
+      "expires": "2026-10-22T00:00:00+02:00",
+      "location": "Kulturfabrikken · Klubbscenen, Fosnagata 35, Kristiansund",
+      "mapQuery": "Kulturfabrikken · Klubbscenen, Fosnagata 35, Kristiansund",
+      "url": "https://tikkio.com/events/64902-chrysalis-kulturfabrikken",
+      "source": "Kristiansund Jazzklubb / Kulturfabrikken · Tikkio",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Chrysalis",
+          "Kulturfabrikken · Klubbscenen, Fosnagata 35, Kristiansund · 21 oktober · 19:00."
+        ],
+        "en": [
+          "Chrysalis",
+          "Kulturfabrikken · Klubbscenen, Fosnagata 35, Kristiansund · 21 October · 19:00."
+        ],
+        "uk": [
+          "Chrysalis",
+          "Kulturfabrikken · Klubbscenen, Fosnagata 35, Kristiansund · 21 жовтня · 19:00."
+        ],
+        "sv": [
+          "Chrysalis",
+          "Kulturfabrikken · Klubbscenen, Fosnagata 35, Kristiansund · 21 oktober · 19:00."
+        ],
+        "da": [
+          "Chrysalis",
+          "Kulturfabrikken · Klubbscenen, Fosnagata 35, Kristiansund · 21 oktober · 19:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Jazzkvartett med saksofon, trompet, kontrabass og trommer. Dørene åpner kl. 18.00; konserten starter kl. 19.00. Pris er ikke bekreftet; sjekk billettvilkår hos arrangøren."
+        ],
+        "en": [
+          "Jazz quartet with saxophone, trumpet, double bass and drums. Doors at 18:00; concert starts at 19:00. Price is unconfirmed; check ticket terms with the organiser."
+        ],
+        "uk": [
+          "Джазовий квартет: саксофон, труба, контрабас і ударні. Двері о 18:00; концерт починається о 19:00. Ціну не підтверджено; умови квитків уточнюйте в організатора."
+        ],
+        "sv": [
+          "Jazzkvartett med saxofon, trumpet, kontrabas och trummor. Dörrar kl. 18.00; konsertstart kl. 19.00. Pris är inte bekräftat; kontrollera biljettvillkor hos arrangören."
+        ],
+        "da": [
+          "Jazzkvartet med saxofon, trompet, kontrabas og trommer. Døre kl. 18.00; koncertstart kl. 19.00. Pris ikke bekræftet; tjek billetvilkår hos arrangøren."
+        ]
+      },
+      "eventType": "concert"
+    },
+    {
+      "id": "molde-imarhan-20261029",
+      "municipality": "1506",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-29",
+      "time": "20:30",
+      "expires": "2026-10-30T00:00:00+01:00",
+      "location": "Storyville scene · Plassen, Gørvellplassen 1, Molde",
+      "mapQuery": "Storyville scene · Plassen, Gørvellplassen 1, Molde",
+      "url": "https://www.storyville.no/host-2026/imarhan-2026-10-29-2000",
+      "source": "Storyville Jazz Club / Molde Mundo",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Imarhan",
+          "Storyville scene · Plassen, Gørvellplassen 1, Molde · 29 oktober · 20:30."
+        ],
+        "en": [
+          "Imarhan",
+          "Storyville scene · Plassen, Gørvellplassen 1, Molde · 29 October · 20:30."
+        ],
+        "uk": [
+          "Imarhan",
+          "Storyville scene · Plassen, Gørvellplassen 1, Molde · 29 жовтня · 20:30."
+        ],
+        "sv": [
+          "Imarhan",
+          "Storyville scene · Plassen, Gørvellplassen 1, Molde · 29 oktober · 20:30."
+        ],
+        "da": [
+          "Imarhan",
+          "Storyville scene · Plassen, Gørvellplassen 1, Molde · 29 oktober · 20:30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Tuaregmusikk med funk og rock. Kalenderfeltet viser 20.00, men arrangørens tekst presiserer konsertstart 20.30. Avklar billettkategori, pris og adgang hos arrangøren."
+        ],
+        "en": [
+          "Tuareg music with funk and rock. The calendar field shows 20:00, but the organiser explicitly states a 20:30 concert start in the description. Check ticket category, price and admission with the organiser."
+        ],
+        "uk": [
+          "Туарезька музика з фанком і роком. У календарному полі 20:00, але організатор прямо уточнює початок концерту о 20:30 в описі. Категорію, ціну й умови квитків уточнюйте в організатора."
+        ],
+        "sv": [
+          "Tuaregisk musik med funk och rock. Kalenderfältet visar 20.00, men arrangörens text anger uttryckligen konsertstart 20.30. Kontrollera biljettkategori, pris och tillträde hos arrangören."
+        ],
+        "da": [
+          "Tuaregmusik med funk og rock. Kalenderfeltet viser 20.00, men arrangørens tekst præciserer koncertstart 20.30. Tjek billetkategori, pris og adgang hos arrangøren."
+        ]
+      },
+      "eventType": "concert"
+    },
+    {
+      "id": "faerder-teiegarden-market-20261024",
+      "municipality": "3911",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-24",
+      "time": "10:00–16:00",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "location": "Teiegården, Ørsnesalleen 31, Nøtterøy, Færder",
+      "mapQuery": "Teiegården, Ørsnesalleen 31, Nøtterøy, Færder",
+      "url": "https://www.bondensmarked.no/markeder/teiegarden-pa-noetteroey-2026-10-24",
+      "source": "Bondens marked",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Bondens marked · Høstmarked ved Teiegården",
+          "Teiegården, Ørsnesalleen 31, Nøtterøy, Færder · 24 oktober · 10:00–16:00."
+        ],
+        "en": [
+          "Bondens marked · Høstmarked ved Teiegården",
+          "Teiegården, Ørsnesalleen 31, Nøtterøy, Færder · 24 October · 10:00–16:00."
+        ],
+        "uk": [
+          "Bondens marked · Høstmarked ved Teiegården",
+          "Teiegården, Ørsnesalleen 31, Nøtterøy, Færder · 24 жовтня · 10:00–16:00."
+        ],
+        "sv": [
+          "Bondens marked · Høstmarked ved Teiegården",
+          "Teiegården, Ørsnesalleen 31, Nøtterøy, Færder · 24 oktober · 10:00–16:00."
+        ],
+        "da": [
+          "Bondens marked · Høstmarked ved Teiegården",
+          "Teiegården, Ørsnesalleen 31, Nøtterøy, Færder · 24 oktober · 10:00–16:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Bondens marked med lokale produsenter og matvarer. Inngangspris er ikke oppgitt; sjekk oppdateringer og vilkår hos arrangøren."
+        ],
+        "en": [
+          "Bondens marked with local producers and food. Admission price is not listed; check updates and terms with the organiser."
+        ],
+        "uk": [
+          "Bondens marked із місцевими виробниками й продуктами. Вартість входу не вказано; оновлення та умови перевіряйте в організатора."
+        ],
+        "sv": [
+          "Bondens marked med lokala producenter och mat. Entrépris anges inte; kontrollera uppdateringar och villkor hos arrangören."
+        ],
+        "da": [
+          "Bondens marked med lokale producenter og madvarer. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
+        ]
+      },
+      "eventType": "market"
+    },
+    {
+      "id": "fredrikstad-bondens-marked-20261031",
+      "municipality": "3107",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-31",
+      "time": "11:00–16:00",
+      "expires": "2026-11-01T00:00:00+01:00",
+      "location": "Kongens torv, Gamle Fredrikstad",
+      "mapQuery": "Kongens torv, Gamle Fredrikstad",
+      "url": "https://www.bondensmarked.no/markeder/bondens-marked-i-gamlebyen-i-fredrikstad-2026-10-31",
+      "source": "Bondens marked",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Bondens marked · Gamlebyen",
+          "Kongens torv, Gamle Fredrikstad · 31 oktober · 11:00–16:00."
+        ],
+        "en": [
+          "Bondens marked · Gamlebyen",
+          "Kongens torv, Gamle Fredrikstad · 31 October · 11:00–16:00."
+        ],
+        "uk": [
+          "Bondens marked · Gamlebyen",
+          "Kongens torv, Gamle Fredrikstad · 31 жовтня · 11:00–16:00."
+        ],
+        "sv": [
+          "Bondens marked · Gamlebyen",
+          "Kongens torv, Gamle Fredrikstad · 31 oktober · 11:00–16:00."
+        ],
+        "da": [
+          "Bondens marked · Gamlebyen",
+          "Kongens torv, Gamle Fredrikstad · 31 oktober · 11:00–16:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Bondens marked med lokale produsenter og matvarer. Inngangspris er ikke oppgitt; sjekk oppdateringer og vilkår hos arrangøren."
+        ],
+        "en": [
+          "Bondens marked with local producers and food. Admission price is not listed; check updates and terms with the organiser."
+        ],
+        "uk": [
+          "Bondens marked із місцевими виробниками й продуктами. Вартість входу не вказано; оновлення та умови перевіряйте в організатора."
+        ],
+        "sv": [
+          "Bondens marked med lokala producenter och mat. Entrépris anges inte; kontrollera uppdateringar och villkor hos arrangören."
+        ],
+        "da": [
+          "Bondens marked med lokale producenter og madvarer. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
+        ]
+      },
+      "eventType": "market"
+    },
+    {
+      "id": "sandefjord-bondens-marked-20261031",
+      "municipality": "3907",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-31",
+      "time": "10:00–16:00",
+      "expires": "2026-11-01T00:00:00+01:00",
+      "location": "Sandefjord Torv, Sandefjord",
+      "mapQuery": "Sandefjord Torv, Sandefjord",
+      "url": "https://www.bondensmarked.no/markeder/sandefjord-torv-2026-10-31",
+      "source": "Bondens marked",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Bondens marked · Sandefjord Torv",
+          "Sandefjord Torv, Sandefjord · 31 oktober · 10:00–16:00."
+        ],
+        "en": [
+          "Bondens marked · Sandefjord Torv",
+          "Sandefjord Torv, Sandefjord · 31 October · 10:00–16:00."
+        ],
+        "uk": [
+          "Bondens marked · Sandefjord Torv",
+          "Sandefjord Torv, Sandefjord · 31 жовтня · 10:00–16:00."
+        ],
+        "sv": [
+          "Bondens marked · Sandefjord Torv",
+          "Sandefjord Torv, Sandefjord · 31 oktober · 10:00–16:00."
+        ],
+        "da": [
+          "Bondens marked · Sandefjord Torv",
+          "Sandefjord Torv, Sandefjord · 31 oktober · 10:00–16:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Bondens marked med lokale produsenter og matvarer. Inngangspris er ikke oppgitt; sjekk oppdateringer og vilkår hos arrangøren."
+        ],
+        "en": [
+          "Bondens marked with local producers and food. Admission price is not listed; check updates and terms with the organiser."
+        ],
+        "uk": [
+          "Bondens marked із місцевими виробниками й продуктами. Вартість входу не вказано; оновлення та умови перевіряйте в організатора."
+        ],
+        "sv": [
+          "Bondens marked med lokala producenter och mat. Entrépris anges inte; kontrollera uppdateringar och villkor hos arrangören."
+        ],
+        "da": [
+          "Bondens marked med lokale producenter og madvarer. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
+        ]
+      },
+      "eventType": "market"
     }
   ],
   "mediaUpdated": "2026-10-19"
