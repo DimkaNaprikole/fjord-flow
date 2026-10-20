@@ -822,7 +822,7 @@
       "published": "2026-10-19",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-19",
+      "checked": "2026-10-20",
       "eventDate": "2026-10-24",
       "time": "17:00",
       "expires": "2026-10-25T00:00:00+02:00",
@@ -3026,6 +3026,85 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized/converted for display; responsive cropping."
+      }
+    },
+    {
+      "id": "stavanger-thrice-20261021",
+      "municipality": "1103",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-21",
+      "expires": "2026-10-22T00:00:00+02:00",
+      "source": "Stavanger konserthus / Dansenett Norge",
+      "url": "https://www.stavanger-konserthus.no/event/nagelhus-schia-productions-thrice-av-damien-jalet/",
+      "location": "Stavanger konserthus, Zetlitz, Sandvigå 1, Stavanger",
+      "time": "19:00",
+      "mapQuery": "Stavanger konserthus, Sandvigå 1, Stavanger",
+      "copy": {
+        "nb": [
+          "Thrice · Nagelhus Schia Productions",
+          "Dans i Zetlitz, Stavanger konserthus, 21. oktober kl. 19.00."
+        ],
+        "en": [
+          "Thrice · Nagelhus Schia Productions",
+          "Dance at Zetlitz, Stavanger konserthus, 21 October at 19:00."
+        ],
+        "uk": [
+          "Thrice · Nagelhus Schia Productions",
+          "Танець у Zetlitz, Stavanger konserthus, 21 жовтня о 19:00."
+        ],
+        "sv": [
+          "Thrice · Nagelhus Schia Productions",
+          "Dans i Zetlitz, Stavanger konserthus, 21 oktober kl. 19.00."
+        ],
+        "da": [
+          "Thrice · Nagelhus Schia Productions",
+          "Dans i Zetlitz, Stavanger konserthus, 21. oktober kl. 19.00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Tre verk av Damien Jalet. Varighet én time uten pause. Oppgitt pris 150–325 kr inkludert serviceavgift; sjekk billettilgjengelighet hos arrangøren."
+        ],
+        "en": [
+          "Three works by Damien Jalet. One hour without an interval. Listed price NOK 150–325 including booking fee; check ticket availability with the organiser."
+        ],
+        "uk": [
+          "Три роботи Damien Jalet. Одна година без антракту. Заявлена ціна 150–325 NOK із сервісним збором; наявність квитків уточнюйте в організатора."
+        ],
+        "sv": [
+          "Tre verk av Damien Jalet. En timme utan paus. Angivet pris 150–325 NOK inklusive serviceavgift; kontrollera biljetter hos arrangören."
+        ],
+        "da": [
+          "Tre værker af Damien Jalet. En time uden pause. Oplyst pris 150–325 NOK inklusive servicegebyr; tjek billetter hos arrangøren."
+        ]
+      },
+      "image": {
+        "url": "./images/news/venues/stavanger-konserthus.webp",
+        "alt": {
+          "nb": "Stavanger Konserthus",
+          "en": "Stavanger Konserthus",
+          "uk": "Stavanger Konserthus",
+          "sv": "Stavanger Konserthus",
+          "da": "Stavanger Konserthus"
+        },
+        "credit": "Olaf Meister",
+        "source": "https://commons.wikimedia.org/wiki/File:Konzerthaus_Stavanger_2017.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "kind": "venue",
+        "caption": {
+          "nb": "Foto av stedet, ikke fra det kommende arrangementet.",
+          "en": "Photograph of the venue, not of the upcoming event.",
+          "uk": "Фото місця, а не майбутньої події.",
+          "sv": "Foto av platsen, inte av det kommande evenemanget.",
+          "da": "Foto af stedet, ikke af den kommende begivenhed."
+        },
+        "checked": "2026-10-19",
+        "modifications": "Resized and re-encoded as WebP, no content edits."
       }
     }
   ],
