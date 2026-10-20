@@ -165,3 +165,36 @@ test('a late token refresh from the previous UID cannot reset the new account or
  assert.deepEqual(Array.from(app.find('fjord-ai-log').children,n=>n.textContent),['Bob question','Bob answer']);
  assert.equal(app.calls.filter(call=>call.url.endsWith('/chat')).length,1);app.dialog.close();
 });
+test('cafe command reveals the visible cafeStops section, not its hidden legacy cafeNearby panel',async()=>{
+ for(const voice of [false,true]){
+  const app=voice?await start():boot();await flush();if(!voice)app.browserWindow.emit('fjord:open-chat');
+  const section=app.document.createElement('section');section.id='cafeStops';section.getBoundingClientRect=()=>({width:900,height:650});
+  app.sections.cafeStops=section;const legacy=app.sections.cafeNearby;legacy.id='cafeNearby';legacy.parentElement=section;legacy.getBoundingClientRect=()=>({width:0,height:0});
+  app.browserWindow.getComputedStyle=node=>({display:node===legacy?'none':'block',visibility:'visible'});
+  const revealed=[];app.browserWindow.FjordTabs={reveal:target=>revealed.push(target)};
+  if(voice)await heard(app,'Открой кафе');else await submit(app,'Открой кафе');
+  assert.equal(revealed.at(-1),section);assert.equal(section.scrolled.block,'start');assert.equal(section.focused,true);assert.equal(legacy.scrolled,undefined);
+  assert.equal(actions(app)[0].attrs['aria-controls'],'cafeStops');assert.ok(app.find('fjord-ai-log').children.some(node=>node.textContent?.startsWith('Открыт раздел:')));
+  if(voice)assert.equal(app.voiceState.track.readyState,'live');app.dialog.close();
+ }
+});
+test('a tab-hidden section is revealed before visibility is checked and scrolling starts',async()=>{
+ for(const [id,label] of [['travelStories','Истории путешествий'],['norwayCatalogue','Места рядом'],['norwayWebcams','Веб-камеры']]){
+  const app=boot();await flush();app.browserWindow.emit('fjord:open-chat');const section=app.sections[id]||app.document.createElement('section');app.sections[id]=section;
+  section.hidden=true;section.getBoundingClientRect=()=>({width:section.hidden?0:900,height:section.hidden?0:600});
+  app.browserWindow.getComputedStyle=node=>({display:node.hidden?'none':'block',visibility:'visible'});
+  app.browserWindow.FjordTabs={reveal:target=>{assert.equal(target,section);target.hidden=false}};
+  await submit(app,'Открой '+label);assert.equal(section.scrolled.block,'start');assert.ok(app.find('fjord-ai-log').children.some(node=>node.textContent?.startsWith('Открыт раздел:')));app.dialog.close();
+ }
+});
+test('permanently hidden, zero-area or hidden-ancestor targets never report navigation success',async()=>{
+ for(const mode of ['display-none','zero-area','ancestor']){
+  const app=boot();await flush();app.browserWindow.emit('fjord:open-chat');const target=app.sections.collection;
+  target.getBoundingClientRect=()=>({width:mode==='zero-area'?0:900,height:600});
+  app.browserWindow.getComputedStyle=node=>({display:mode==='display-none'&&node===target?'none':'block',visibility:'visible'});
+  if(mode==='ancestor'){target.parentElement=app.document.createElement('section');target.parentElement.hidden=true}
+  app.browserWindow.FjordTabs={reveal:()=>{}};
+  await submit(app,'Открой места');assert.equal(target.scrolled,undefined);assert.equal(target.focused,undefined);
+  assert.equal(app.find('fjord-ai-log').children.some(node=>node.textContent?.startsWith('Открыт раздел:')),false);assert.match(app.find('fjord-ai-status').textContent,/Не удалось открыть/);app.dialog.close();
+ }
+});

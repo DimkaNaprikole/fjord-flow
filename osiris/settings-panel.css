@@ -37,7 +37,31 @@
 .osiris-settings-panel *,
 .osiris-settings-panel *::before,
 .osiris-settings-panel *::after { box-sizing: border-box; }
-.osiris-settings-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+/* The host site's global header is absolutely positioned and has a fixed height. */
+.osiris-settings-panel > .osiris-settings-header {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  float: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: auto;
+  min-width: 0;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  box-shadow: none;
+  transform: none;
+}
 .osiris-settings-panel h2 { margin: 0; font-size: 1.4rem; line-height: 1.2; }
 .osiris-settings-panel h3,
 .osiris-settings-panel legend { margin: 0 0 10px; padding: 0; font-size: 1.06rem; font-weight: 700; }
@@ -62,7 +86,7 @@
 .osiris-settings-panel [hidden] { display: none !important; }
 @media (max-width: 420px) {
   .osiris-settings-panel { padding: 14px; }
-  .osiris-settings-header { align-items: flex-start; gap: 8px; }
+  .osiris-settings-panel > .osiris-settings-header { align-items: flex-start; gap: 8px; }
   .osiris-settings-panel h2 { font-size: 1.2rem; }
   .osiris-settings-group { padding: 10px; }
   .osiris-settings-shortcut a { flex-basis: 150px; }
