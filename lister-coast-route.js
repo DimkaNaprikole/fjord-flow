@@ -94,11 +94,11 @@
       "local": true,
       "website": "https://www.vestagdermuseet.no/lista/",
       "description": {
-        "en": "Historic coastal fort and views over Lista. Park beside the main building and continue on foot; some installations have steep steps and uneven ground. The photograph shows the landscape viewed from the fort.",
-        "nb": "Historisk kystfort og utsikt over Lista. Parker ved hovedbygget og fortsett til fots; noen anlegg har bratte trapper og ujevnt underlag. Bildet viser landskapet sett fra fortet.",
-        "uk": "Історичний береговий форт і краєвиди Lista. Паркуйтеся біля головної будівлі, далі пішки; є круті сходи й нерівні ділянки. На фото — краєвид із форту.",
-        "sv": "Historiskt kustfort med utsikt över Lista. Parkera vid huvudbyggnaden och fortsätt till fots; vissa anläggningar har branta trappor och ojämn mark. Fotot visar utsikten från fortet.",
-        "da": "Historisk kystfort med udsigt over Lista. Parkér ved hovedbygningen og fortsæt til fods; nogle anlæg har stejle trapper og ujævnt underlag. Fotoet viser udsigten fra fortet."
+        "en": "Historic coastal fort and views over Lista. Park beside the main building and continue on foot; some installations have steep steps and uneven ground. The photograph shows the landscape viewed from the fort. The outdoor loop is wheelchair-accessible; the upstairs exhibition has stairs only. Allow 2–3 hours for exhibitions and a guided visit. Access source: museum, updated 24 January 2025; checked 20 October 2026.",
+        "nb": "Historisk kystfort og utsikt over Lista. Parker ved hovedbygget og fortsett til fots; noen anlegg har bratte trapper og ujevnt underlag. Bildet viser landskapet sett fra fortet. Rundveien ute er tilgjengelig for rullestol; utstillingen i andre etasje har bare trapp. Beregn 2–3 timer med utstillinger og omvisning. Adkomstkilde: museet, oppdatert 24. januar 2025; sjekket 20. oktober 2026.",
+        "uk": "Історичний береговий форт і краєвиди Lista. Паркуйтеся біля головної будівлі, далі пішки; є круті сходи й нерівні ділянки. На фото — краєвид із форту. Кільцева доріжка доступна для крісел колісних; до виставки нагорі лише сходи. На виставки й екскурсію закладіть 2–3 години. Джерело доступності: музей, оновлено 24 січня 2025; перевірено 20 жовтня 2026.",
+        "sv": "Historiskt kustfort med utsikt över Lista. Parkera vid huvudbyggnaden och fortsätt till fots; vissa anläggningar har branta trappor och ojämn mark. Fotot visar utsikten från fortet. Rundvägen ute är tillgänglig för rullstol; övervåningens utställning nås bara via trappa. Räkna med 2–3 timmar för utställningar och visning. Källa för tillgänglighet: museet, uppdaterad 24 januari 2025; kontrollerad 20 oktober 2026.",
+        "da": "Historisk kystfort med udsigt over Lista. Parkér ved hovedbygningen og fortsæt til fods; nogle anlæg har stejle trapper og ujævnt underlag. Fotoet viser udsigten fra fortet. Rundvejen ude er tilgængelig for kørestole; udstillingen ovenpå har kun trappe. Afsæt 2–3 timer til udstillinger og rundvisning. Adgangskilde: museet, opdateret 24. januar 2025; kontrolleret 20. oktober 2026."
       },
       "season": {
         "en": "Museum currently lists Sundays 12–16 year-round; groups by arrangement. Check tours, exhibitions and café before travel. Parking/access details: operator accessibility page.",
