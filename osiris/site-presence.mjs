@@ -308,15 +308,11 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  observer.observe(pet,{attributes:true,attributeFilter:['data-state']});
  observer.observe(dialog,{attributes:true,attributeFilter:['open','class']});
  const resize=new ResizeObserver(()=>{position();clampViewport();});resize.observe(pet);
- const sameRect=(a,b)=>Boolean(a&&b&&['left','top','right','bottom'].every(k=>Math.abs(a[k]-b[k])<.5));
  function sceneObstacles(obstacles,scene){
-  if(!scene)return obstacles;
-  // A navigation row is a destination surface, not a wall. Walking across its
-  // neighbours never activates them; only onContact owns the requested action.
-  const group=scene.target?.closest?.('[role="tablist"]');
-  const controls=group?.querySelectorAll?.('[role="tab"]')||[];
-  const allowed=[scene.targetRect,...[...controls].map(node=>node.getBoundingClientRect())];
-  return obstacles.filter(rect=>!allowed.some(other=>sameRect(rect,other)));
+  // For an explicit request the pet can walk over page controls. They are not
+  // physical walls, and crossing them never clicks them: only onContact owns
+  // the one requested action. Unprompted roaming still avoids every control.
+  return scene?[]:obstacles;
  }
  const targetRect=target=>{
   if(!target||target.isConnected===false||target.disabled)return null;
@@ -393,8 +389,13 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   const decision=brain.next(time);if(decision)void show(decision);
   nextRoamAt=time+14000;restUntil=time+1800;
  }
- function interactWith(target,{signal,onContact}={}){
+ async function interactWith(target,{signal,onContact}={}){
   stop();
+  const requestGeneration=generation;
+  // Compact chat moves the same pet through a MutationObserver. Let that DOM
+  // move settle before deciding whether the pet is still inside the full chat.
+  await Promise.resolve();
+  if(requestGeneration!==generation)return false;
   if(dead||blocked||docked()||drag||!hasViewport()||!walkReady||signal?.aborted||typeof onContact!=='function'||!clips.has('cursor-button')||!targetRect(target))return Promise.resolve(false);
   return new Promise(resolve=>{
    const scene={target,onContact,resolve,controller:new AbortController(),committed:false,contacted:false};
