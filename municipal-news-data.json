@@ -3677,6 +3677,589 @@
         ]
       },
       "eventType": "market"
+    },
+    {
+      "id": "askoy-ekko-kormix-20261020",
+      "municipality": "4627",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-20",
+      "time": "19:00–20:30",
+      "expires": "2026-10-20T20:30:00+02:00",
+      "location": "Fargeriet i Strusshamn, Askøy",
+      "mapQuery": "Fargeriet i Strusshamn, Askøy",
+      "url": "https://detskjer.askoy.no/2522-jazz-blues-og-rock-roll-for-og-na-konsert-med-sangforeningen-ekko-og-kormix",
+      "source": "Askøy kommune · Det skjer på Askøy / Sangforeningen Ekko",
+      "textOnly": true,
+      "eventType": "concert",
+      "copy": {
+        "nb": [
+          "Jazz, blues og Rock&Roll før og nå · Ekko og Kormix",
+          "Fargeriet i Strusshamn, Askøy · 20 oktober · 19:00–20:30."
+        ],
+        "en": [
+          "Jazz, blues og Rock&Roll før og nå · Ekko og Kormix",
+          "Fargeriet i Strusshamn, Askøy · 20 October · 19:00–20:30."
+        ],
+        "uk": [
+          "Jazz, blues og Rock&Roll før og nå · Ekko og Kormix",
+          "Fargeriet i Strusshamn, Askøy · 20 жовтня · 19:00–20:30."
+        ],
+        "sv": [
+          "Jazz, blues og Rock&Roll før og nå · Ekko og Kormix",
+          "Fargeriet i Strusshamn, Askøy · 20 oktober · 19:00–20:30."
+        ],
+        "da": [
+          "Jazz, blues og Rock&Roll før og nå · Ekko og Kormix",
+          "Fargeriet i Strusshamn, Askøy · 20 oktober · 19:00–20:30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Korkonsert om jazz, blues og rock med Ekko og Kormix. 50 kr, billetter i døren. Fargeriet i Strusshamn; gatenummer er ikke oppgitt i arrangementet."
+        ],
+        "en": [
+          "Ekko and Kormix perform jazz, blues and rock. NOK 50; tickets at the door. At Fargeriet in Strusshamn; the event does not give a street number."
+        ],
+        "uk": [
+          "Хоровий концерт Ekko і Kormix: джаз, блюз і рок. 50 NOK, квитки на вході. Fargeriet у Strusshamn; номер будинку в анонсі не вказано."
+        ],
+        "sv": [
+          "Körkonsert med jazz, blues och rock av Ekko och Kormix. 50 NOK, biljetter vid dörren. Fargeriet i Strusshamn; gatunummer anges inte."
+        ],
+        "da": [
+          "Korkoncert med jazz, blues og rock af Ekko og Kormix. 50 NOK, billetter ved døren. Fargeriet i Strusshamn; gadenummer ikke oplyst."
+        ]
+      }
+    },
+    {
+      "id": "harstad-nina-fjeldet-20261021",
+      "municipality": "5503",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-21",
+      "time": "19:00",
+      "expires": "2026-10-22T00:00:00+02:00",
+      "location": "Harstad kulturhus · Lillesalen, Havnegata 3, 9404 Harstad",
+      "mapQuery": "Harstad kulturhus · Lillesalen, Havnegata 3, 9404 Harstad",
+      "url": "https://www.harstadkulturhus.no/event/omvesla-nina-fjeldet/",
+      "source": "Harstad kulturhus / Scene Nord",
+      "textOnly": true,
+      "eventType": "concert",
+      "copy": {
+        "nb": [
+          "Nina Fjeldet · Ômvesla",
+          "Harstad kulturhus · Lillesalen, Havnegata 3, 9404 Harstad · 21 oktober · 19:00."
+        ],
+        "en": [
+          "Nina Fjeldet · Ômvesla",
+          "Harstad kulturhus · Lillesalen, Havnegata 3, 9404 Harstad · 21 October · 19:00."
+        ],
+        "uk": [
+          "Nina Fjeldet · Ômvesla",
+          "Harstad kulturhus · Lillesalen, Havnegata 3, 9404 Harstad · 21 жовтня · 19:00."
+        ],
+        "sv": [
+          "Nina Fjeldet · Ômvesla",
+          "Harstad kulturhus · Lillesalen, Havnegata 3, 9404 Harstad · 21 oktober · 19:00."
+        ],
+        "da": [
+          "Nina Fjeldet · Ômvesla",
+          "Harstad kulturhus · Lillesalen, Havnegata 3, 9404 Harstad · 21 oktober · 19:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Fortellerkonsert med fele og historier av Nina Fjeldet; varighet 60 minutter. Ordinær pris 245 kr, under 18 år og studenter 145 kr. Sjekk billettilgjengelighet hos arrangøren."
+        ],
+        "en": [
+          "Nina Fjeldet combines fiddle music and storytelling; duration 60 minutes. Standard NOK 245; under 18s and students NOK 145. Check ticket availability with the organiser."
+        ],
+        "uk": [
+          "Nina Fjeldet поєднує скрипкову музику й розповіді; тривалість 60 хвилин. Звичайний квиток 245 NOK, до 18 років і студентам 145 NOK. Наявність перевіряйте в організатора."
+        ],
+        "sv": [
+          "Nina Fjeldet förenar fiolmusik och berättande; 60 minuter. Ordinarie 245 NOK; under 18 år och studenter 145 NOK. Kontrollera biljetter hos arrangören."
+        ],
+        "da": [
+          "Nina Fjeldet forener violinmusik og fortællinger; 60 minutter. Standard 245 NOK; under 18 år og studerende 145 NOK. Tjek billetter hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "narvik-hovdingen-20261030",
+      "municipality": "1806",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-30",
+      "time": "21:00",
+      "expires": "2026-10-31T00:00:00+01:00",
+      "location": "Narvik kulturhus · Mørkholla, Kongensgate 44, 8514 Narvik",
+      "mapQuery": "Narvik kulturhus · Mørkholla, Kongensgate 44, 8514 Narvik",
+      "url": "https://www.narvikkulturhus.no/program/hovdingen/",
+      "source": "Narvik kulturhus",
+      "textOnly": true,
+      "eventType": "concert",
+      "copy": {
+        "nb": [
+          "Høvdingen",
+          "Narvik kulturhus · Mørkholla, Kongensgate 44, 8514 Narvik · 30 oktober · 21:00."
+        ],
+        "en": [
+          "Høvdingen",
+          "Narvik kulturhus · Mørkholla, Kongensgate 44, 8514 Narvik · 30 October · 21:00."
+        ],
+        "uk": [
+          "Høvdingen",
+          "Narvik kulturhus · Mørkholla, Kongensgate 44, 8514 Narvik · 30 жовтня · 21:00."
+        ],
+        "sv": [
+          "Høvdingen",
+          "Narvik kulturhus · Mørkholla, Kongensgate 44, 8514 Narvik · 30 oktober · 21:00."
+        ],
+        "da": [
+          "Høvdingen",
+          "Narvik kulturhus · Mørkholla, Kongensgate 44, 8514 Narvik · 30 oktober · 21:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Folk-funk og rock. Konsertstart 21.00; dørene åpner 20.00. Aldersgrense 18 år. Ordinær pris 275 kr, student/honnør 220 kr; sjekk billettvilkår hos arrangøren."
+        ],
+        "en": [
+          "Folk-funk and rock. Concert at 21:00; doors at 20:00. Ages 18+. Standard NOK 275; student/senior NOK 220. Check ticket terms with the organiser."
+        ],
+        "uk": [
+          "Фолк-фанк і рок. Концерт о 21:00; двері о 20:00. Вік 18+. Звичайний квиток 275 NOK, студентам/пенсіонерам 220 NOK. Умови перевіряйте в організатора."
+        ],
+        "sv": [
+          "Folk-funk och rock. Konsertstart 21.00; dörrar 20.00. Åldersgräns 18 år. Ordinarie 275 NOK, student/pensionär 220 NOK; kontrollera biljettvillkor."
+        ],
+        "da": [
+          "Folk-funk og rock. Koncertstart 21.00; døre 20.00. Aldersgrænse 18 år. Standard 275 NOK, studerende/pensionist 220 NOK; tjek billetvilkår."
+        ]
+      }
+    },
+    {
+      "id": "haugesund-hivju-garbage-king-20261030",
+      "municipality": "1106",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-30",
+      "time": "21:30",
+      "expires": "2026-10-31T00:00:00+01:00",
+      "location": "Festiviteten · Teatercafeen, Knut Knutsen O.A.S gate 4, 5528 Haugesund",
+      "mapQuery": "Festiviteten · Teatercafeen, Knut Knutsen O.A.S gate 4, 5528 Haugesund",
+      "url": "https://www.festiviteten.no/program/45837-hivju-and-the-garbage-king/",
+      "source": "Festiviteten",
+      "textOnly": true,
+      "eventType": "concert",
+      "copy": {
+        "nb": [
+          "Hivju and the Garbage King",
+          "Festiviteten · Teatercafeen, Knut Knutsen O.A.S gate 4, 5528 Haugesund · 30 oktober · 21:30."
+        ],
+        "en": [
+          "Hivju and the Garbage King",
+          "Festiviteten · Teatercafeen, Knut Knutsen O.A.S gate 4, 5528 Haugesund · 30 October · 21:30."
+        ],
+        "uk": [
+          "Hivju and the Garbage King",
+          "Festiviteten · Teatercafeen, Knut Knutsen O.A.S gate 4, 5528 Haugesund · 30 жовтня · 21:30."
+        ],
+        "sv": [
+          "Hivju and the Garbage King",
+          "Festiviteten · Teatercafeen, Knut Knutsen O.A.S gate 4, 5528 Haugesund · 30 oktober · 21:30."
+        ],
+        "da": [
+          "Hivju and the Garbage King",
+          "Festiviteten · Teatercafeen, Knut Knutsen O.A.S gate 4, 5528 Haugesund · 30 oktober · 21:30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Akustisk konsert med Kristofer Hivju og Olav Lystrup. Oppgitt pris 410 kr. Billettsidens tilgjengelighet kunne ikke bekreftes; kontroller direkte hos Festiviteten."
+        ],
+        "en": [
+          "Acoustic concert with Kristofer Hivju and Olav Lystrup. Listed price NOK 410. Ticket availability could not be confirmed; check directly with Festiviteten."
+        ],
+        "uk": [
+          "Акустичний концерт Kristofer Hivju й Olav Lystrup. Заявлена ціна 410 NOK. Наявність квитків не підтверджена; уточнюйте безпосередньо у Festiviteten."
+        ],
+        "sv": [
+          "Akustisk konsert med Kristofer Hivju och Olav Lystrup. Angivet pris 410 NOK. Biljetttillgång kunde inte bekräftas; fråga Festiviteten direkt."
+        ],
+        "da": [
+          "Akustisk koncert med Kristofer Hivju og Olav Lystrup. Oplyst pris 410 NOK. Billetstatus kunne ikke bekræftes; spørg Festiviteten direkte."
+        ]
+      }
+    },
+    {
+      "id": "klepp-orremessa-20261023",
+      "municipality": "1120",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-23",
+      "time": "23.10 17:00–21:00; 24–25.10 11:00–17:00",
+      "expires": "2026-10-25T17:00:00+01:00",
+      "location": "Roslandsvegen 360, 4343 Orre, Klepp",
+      "mapQuery": "Roslandsvegen 360, 4343 Orre, Klepp",
+      "url": "https://www.orremessa.no/",
+      "source": "Orremesså",
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Orremesså · 23.10 17–21 / 24–25.10 11–17",
+          "Roslandsvegen 360, 4343 Orre, Klepp · 23 oktober · 23.10 17:00–21:00; 24–25.10 11:00–17:00."
+        ],
+        "en": [
+          "Orremesså · 23.10 17–21 / 24–25.10 11–17",
+          "Roslandsvegen 360, 4343 Orre, Klepp · 23 October · 23.10 17:00–21:00; 24–25.10 11:00–17:00."
+        ],
+        "uk": [
+          "Orremesså · 23.10 17–21 / 24–25.10 11–17",
+          "Roslandsvegen 360, 4343 Orre, Klepp · 23 жовтня · 23.10 17:00–21:00; 24–25.10 11:00–17:00."
+        ],
+        "sv": [
+          "Orremesså · 23.10 17–21 / 24–25.10 11–17",
+          "Roslandsvegen 360, 4343 Orre, Klepp · 23 oktober · 23.10 17:00–21:00; 24–25.10 11:00–17:00."
+        ],
+        "da": [
+          "Orremesså · 23.10 17–21 / 24–25.10 11–17",
+          "Roslandsvegen 360, 4343 Orre, Klepp · 23 oktober · 23.10 17:00–21:00; 24–25.10 11:00–17:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Orremesså i Orre: fredag 23. oktober 17–21, lørdag 24. og søndag 25. oktober 11–17. Gratis inngang ifølge arrangøren. Matboder, utstillere og familieaktiviteter; enkelte boder kan ha kortere åpningstid."
+        ],
+        "en": [
+          "Orremesså in Orre: Friday 23 October 17–21; Saturday 24 and Sunday 25 October 11–17. Free admission according to the organiser. Food stalls, exhibitors and family activities; individual stalls may close earlier."
+        ],
+        "uk": [
+          "Orremesså в Orre: п’ятниця 23 жовтня 17–21; субота 24 й неділя 25 жовтня 11–17. Організатор підтверджує безкоштовний вхід. Продукти, виставкові стенди й сімейні розваги; окремі стенди можуть закриватися раніше."
+        ],
+        "sv": [
+          "Orremesså i Orre: fredag 23 oktober 17–21, lördag 24 och söndag 25 oktober 11–17. Gratis inträde enligt arrangören. Matstånd, utställare och familjeaktiviteter; enskilda stånd kan stänga tidigare."
+        ],
+        "da": [
+          "Orremesså i Orre: fredag 23. oktober 17–21, lørdag 24. og søndag 25. oktober 11–17. Gratis adgang ifølge arrangøren. Madboder, udstillere og familieaktiviteter; enkelte boder kan lukke tidligere."
+        ]
+      },
+      "eventDates": [
+        "2026-10-23",
+        "2026-10-24",
+        "2026-10-25"
+      ]
+    },
+    {
+      "id": "lodingen-bondens-marked-20261024",
+      "municipality": "1851",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-24",
+      "time": "11:00–15:00",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "location": "Sjøvegen 2, 8410 Lødingen",
+      "mapQuery": "Sjøvegen 2, 8410 Lødingen",
+      "url": "https://www.bondensmarked.no/markeder/loedingen-2026-10-24",
+      "source": "Bondens marked",
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked i Lødingen",
+          "Sjøvegen 2, 8410 Lødingen · 24 oktober · 11:00–15:00."
+        ],
+        "en": [
+          "Bondens marked i Lødingen",
+          "Sjøvegen 2, 8410 Lødingen · 24 October · 11:00–15:00."
+        ],
+        "uk": [
+          "Bondens marked i Lødingen",
+          "Sjøvegen 2, 8410 Lødingen · 24 жовтня · 11:00–15:00."
+        ],
+        "sv": [
+          "Bondens marked i Lødingen",
+          "Sjøvegen 2, 8410 Lødingen · 24 oktober · 11:00–15:00."
+        ],
+        "da": [
+          "Bondens marked i Lødingen",
+          "Sjøvegen 2, 8410 Lødingen · 24 oktober · 11:00–15:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokale matvarer direkte fra produsentene på Bondens marked. Inngangspris er ikke oppgitt; sjekk oppdateringer og vilkår hos arrangøren."
+        ],
+        "en": [
+          "Local food directly from producers at Bondens marked. Admission price is not listed; check updates and terms with the organiser."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників на Bondens marked. Ціну входу не вказано; оновлення й умови перевіряйте в організатора."
+        ],
+        "sv": [
+          "Lokala livsmedel direkt från producenterna på Bondens marked. Entrépris anges inte; kontrollera uppdateringar och villkor hos arrangören."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne på Bondens marked. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "eidsvoll-raholt-bondens-marked-20261030",
+      "municipality": "3240",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-30",
+      "time": "11:00–17:00",
+      "expires": "2026-10-31T00:00:00+01:00",
+      "location": "AMFI Eidsvoll, Gladbakkvegen 1, 2070 Råholt",
+      "mapQuery": "AMFI Eidsvoll, Gladbakkvegen 1, 2070 Råholt",
+      "url": "https://www.bondensmarked.no/markeder/raholt-2026-10-30",
+      "source": "Bondens marked",
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked — Råholt",
+          "AMFI Eidsvoll, Gladbakkvegen 1, 2070 Råholt · 30 oktober · 11:00–17:00."
+        ],
+        "en": [
+          "Bondens marked — Råholt",
+          "AMFI Eidsvoll, Gladbakkvegen 1, 2070 Råholt · 30 October · 11:00–17:00."
+        ],
+        "uk": [
+          "Bondens marked — Råholt",
+          "AMFI Eidsvoll, Gladbakkvegen 1, 2070 Råholt · 30 жовтня · 11:00–17:00."
+        ],
+        "sv": [
+          "Bondens marked — Råholt",
+          "AMFI Eidsvoll, Gladbakkvegen 1, 2070 Råholt · 30 oktober · 11:00–17:00."
+        ],
+        "da": [
+          "Bondens marked — Råholt",
+          "AMFI Eidsvoll, Gladbakkvegen 1, 2070 Råholt · 30 oktober · 11:00–17:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokale matvarer direkte fra produsentene på Bondens marked. Inngangspris er ikke oppgitt; sjekk oppdateringer og vilkår hos arrangøren."
+        ],
+        "en": [
+          "Local food directly from producers at Bondens marked. Admission price is not listed; check updates and terms with the organiser."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників на Bondens marked. Ціну входу не вказано; оновлення й умови перевіряйте в організатора."
+        ],
+        "sv": [
+          "Lokala livsmedel direkt från producenterna på Bondens marked. Entrépris anges inte; kontrollera uppdateringar och villkor hos arrangören."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne på Bondens marked. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "harstad-bondens-marked-20261031",
+      "municipality": "5503",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-31",
+      "time": "11:00–15:00",
+      "expires": "2026-11-01T00:00:00+01:00",
+      "location": "Harstad torg, Verftsgata 7, 9405 Harstad",
+      "mapQuery": "Harstad torg, Verftsgata 7, 9405 Harstad",
+      "url": "https://www.bondensmarked.no/markeder/harstad-2026-10-31",
+      "source": "Bondens marked",
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked — Harstad",
+          "Harstad torg, Verftsgata 7, 9405 Harstad · 31 oktober · 11:00–15:00."
+        ],
+        "en": [
+          "Bondens marked — Harstad",
+          "Harstad torg, Verftsgata 7, 9405 Harstad · 31 October · 11:00–15:00."
+        ],
+        "uk": [
+          "Bondens marked — Harstad",
+          "Harstad torg, Verftsgata 7, 9405 Harstad · 31 жовтня · 11:00–15:00."
+        ],
+        "sv": [
+          "Bondens marked — Harstad",
+          "Harstad torg, Verftsgata 7, 9405 Harstad · 31 oktober · 11:00–15:00."
+        ],
+        "da": [
+          "Bondens marked — Harstad",
+          "Harstad torg, Verftsgata 7, 9405 Harstad · 31 oktober · 11:00–15:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokale matvarer direkte fra produsentene på Bondens marked. Inngangspris er ikke oppgitt; sjekk oppdateringer og vilkår hos arrangøren."
+        ],
+        "en": [
+          "Local food directly from producers at Bondens marked. Admission price is not listed; check updates and terms with the organiser."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників на Bondens marked. Ціну входу не вказано; оновлення й умови перевіряйте в організатора."
+        ],
+        "sv": [
+          "Lokala livsmedel direkt från producenterna på Bondens marked. Entrépris anges inte; kontrollera uppdateringar och villkor hos arrangören."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne på Bondens marked. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "tromso-end-of-violence-20261020",
+      "municipality": "5501",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-20",
+      "time": "18:30–20:40",
+      "expires": "2026-10-20T20:40:00+02:00",
+      "location": "Aurora Kino Fokus · sal 5, Tromsø",
+      "mapQuery": "Aurora Kino Fokus · sal 5, Tromsø",
+      "url": "https://verdensteatret.ticketco.events/no/nb/e/the_end_of_violence_3",
+      "source": "Verdensteatret / Cinemateket i Tromsø · TicketCo",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "The End of Violence",
+          "Aurora Kino Fokus · sal 5, Tromsø · 20 oktober · 18:30–20:40."
+        ],
+        "en": [
+          "The End of Violence",
+          "Aurora Kino Fokus · sal 5, Tromsø · 20 October · 18:30–20:40."
+        ],
+        "uk": [
+          "The End of Violence",
+          "Aurora Kino Fokus · sal 5, Tromsø · 20 жовтня · 18:30–20:40."
+        ],
+        "sv": [
+          "The End of Violence",
+          "Aurora Kino Fokus · sal 5, Tromsø · 20 oktober · 18:30–20:40."
+        ],
+        "da": [
+          "The End of Violence",
+          "Aurora Kino Fokus · sal 5, Tromsø · 20 oktober · 18:30–20:40."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Wim Wenders (1997), 2 t 1 min; engelsk tale uten undertekster, aldersgrense 15 år. Ordinær pris 130 kr; student/honnør 120 kr. Midlertidig visningssted er Aurora Kino Fokus, sal 5: ikke Verdensteatrets stengte kinosal."
+        ],
+        "en": [
+          "Wim Wenders (1997), 2h 1m; English without subtitles, age rating 15. Standard NOK 130; student/senior NOK 120. Temporary venue: Aurora Kino Fokus, screen 5; the Verdensteatret cinema auditorium is closed."
+        ],
+        "uk": [
+          "Wim Wenders (1997), 2 год 1 хв; англійською без субтитрів, віковий рейтинг 15. Звичайний квиток 130 NOK, студентам/пенсіонерам 120 NOK. Тимчасове місце: Aurora Kino Fokus, зал 5; кінозал Verdensteatret закритий."
+        ],
+        "sv": [
+          "Wim Wenders (1997), 2 tim 1 min; engelskt tal utan text, åldersgräns 15 år. Ordinarie 130 NOK, student/pensionär 120 NOK. Tillfällig plats: Aurora Kino Fokus, sal 5; Verdensteatrets biosalong är stängd."
+        ],
+        "da": [
+          "Wim Wenders (1997), 2 t 1 min; engelsk tale uden undertekster, aldersgrænse 15 år. Standard 130 NOK, studerende/pensionist 120 NOK. Midlertidigt sted: Aurora Kino Fokus, sal 5; Verdensteatrets biografsal er lukket."
+        ]
+      },
+      "relatedSources": [
+        "https://www.verdensteatret.no/movie/the-end-of-violence",
+        "https://www.verdensteatret.no/billetter"
+      ]
+    },
+    {
+      "id": "fredrikstad-faf-opening-julenissens-20261021",
+      "municipality": "3107",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-21",
+      "time": "16:30–17:59",
+      "expires": "2026-10-21T17:59:00+02:00",
+      "location": "Fredrikstad Kino · sal 3, Nygaardsgata 16, Fredrikstad",
+      "mapQuery": "Fredrikstad Kino · sal 3, Nygaardsgata 16, Fredrikstad",
+      "url": "https://animationfestival.no/program/2026/opening-film-julenissens-verksted",
+      "source": "Fredrikstad Animation Festival",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Julenissens Verksted · FAF åpning",
+          "Fredrikstad Kino · sal 3, Nygaardsgata 16, Fredrikstad · 21 oktober · 16:30–17:59."
+        ],
+        "en": [
+          "Julenissens Verksted · FAF åpning",
+          "Fredrikstad Kino · sal 3, Nygaardsgata 16, Fredrikstad · 21 October · 16:30–17:59."
+        ],
+        "uk": [
+          "Julenissens Verksted · FAF åpning",
+          "Fredrikstad Kino · sal 3, Nygaardsgata 16, Fredrikstad · 21 жовтня · 16:30–17:59."
+        ],
+        "sv": [
+          "Julenissens Verksted · FAF åpning",
+          "Fredrikstad Kino · sal 3, Nygaardsgata 16, Fredrikstad · 21 oktober · 16:30–17:59."
+        ],
+        "da": [
+          "Julenissens Verksted · FAF åpning",
+          "Fredrikstad Kino · sal 3, Nygaardsgata 16, Fredrikstad · 21 oktober · 16:30–17:59."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Familiefilm og festivalåpning; aldersgrense 0+. Filmen varer 75 minutter, programposten 16.30–17.59. Språk, undertekster og pris er ikke oppgitt i denne programteksten; sjekk billettvilkår på arrangørens Eventive-side."
+        ],
+        "en": [
+          "Family film and festival opening; age rating 0+. Film runtime 75 minutes; scheduled session 16:30–17:59. Language, subtitles and price are not given in this programme text; check ticket terms on the organiser’s Eventive page."
+        ],
+        "uk": [
+          "Сімейний фільм і відкриття фестивалю; віковий рейтинг 0+. Фільм триває 75 хвилин, сеанс у програмі 16:30–17:59. Мову, субтитри й ціну в цьому описі не зазначено; умови квитків перевіряйте на Eventive організатора."
+        ],
+        "sv": [
+          "Familjefilm och festivalöppning; åldersgräns 0+. Filmens längd 75 minuter; programpunkt 16.30–17.59. Språk, textning och pris anges inte här; kontrollera biljettvillkor på arrangörens Eventive-sida."
+        ],
+        "da": [
+          "Familiefilm og festivalåbning; aldersgrænse 0+. Filmen varer 75 minutter, programpunktet 16.30–17.59. Sprog, undertekster og pris er ikke oplyst her; tjek billetvilkår på arrangørens Eventive-side."
+        ]
+      },
+      "relatedSources": [
+        "https://animationfestival.no/films/2026/santa-s-workshop",
+        "https://faf2026.eventive.org/schedule/6ab135200e50db52c1e6055b"
+      ]
     }
   ],
   "mediaUpdated": "2026-10-19"
