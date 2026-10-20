@@ -15,7 +15,9 @@ body .osiris-life-pet .osiris-life-poster {
   border:0;background:transparent;box-shadow:none;object-fit:fill;pointer-events:none;
 }
 body .osiris-life-pet .osiris-life-canvas {opacity:0}
-body button.fjord-helper-launch.osiris-launch[data-osiris-motion="life-v1"]{width:210px;height:162px;translate:none!important}
+body button.fjord-helper-launch.osiris-launch[data-osiris-motion="life-v1"]{width:210px;height:162px;translate:var(--osiris-roam-x,0px) 0!important}
+body .osiris-life-pet .osiris-life-walk{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+body .osiris-life-pet .osiris-life-walk[hidden]{display:none!important}
 body .osiris-launch[data-osiris-motion="life-v1"] .fjord-ai-pet.osiris-pet{width:210px;height:142px}
 #fjordHelper .fjord-ai-portrait .osiris-life-pet{width:160px;height:120px}
 body .osiris-life-pause {
