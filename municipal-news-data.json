@@ -7110,6 +7110,523 @@
           "Studio Ghiblis fortælling om Kiki i restaureret 4K-version. Standardbillet 200 NOK; børn op til 12 år 160 NOK. Sprog, undertekster og filmens aldersgrænse er ikke oplyst."
         ]
       }
+    },
+    {
+      "id": "sarpsborg-blaseensemblet-20261021",
+      "municipality": "3105",
+      "eventDate": "2026-10-21",
+      "time": "19:00–20:30",
+      "expires": "2026-10-21T20:30:00+02:00",
+      "source": "Sarpsborg Scene / Det Norske Blåseensemble",
+      "url": "https://www.sarpsborgscene.no/program/blaseensemblet-tilbake-til-70-tallet/",
+      "location": "Sarpsborg scene · Robert Normannsalen, St. Mariegate 38, 1706 Sarpsborg",
+      "mapQuery": "Sarpsborg scene · Robert Normannsalen, St. Mariegate 38, 1706 Sarpsborg",
+      "category": "events",
+      "eventType": "concert",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Blåseensemblet · Tilbake til 70-tallet",
+          "Rock, soul, funk og pop fra 1970-tallet med ensemble og fire solister."
+        ],
+        "en": [
+          "Blåseensemblet · Tilbake til 70-tallet",
+          "1970s rock, soul, funk and pop with the ensemble and four soloists."
+        ],
+        "uk": [
+          "Blåseensemblet · Tilbake til 70-tallet",
+          "Рок, соул, фанк і поп 1970-х з ансамблем та чотирма солістами."
+        ],
+        "sv": [
+          "Blåseensemblet · Tilbake til 70-tallet",
+          "Rock, soul, funk och pop från 1970-talet med ensemble och fyra solister."
+        ],
+        "da": [
+          "Blåseensemblet · Tilbake til 70-tallet",
+          "Rock, soul, funk og pop fra 1970’erne med ensemble og fire solister."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Ingen aldersgrense. TicketCo oppgir ordinær 375 kr, student 180 kr og gratis barnebillett til og med 17 år; sjekk vilkår og eventuelle gebyrer før bestilling."
+        ],
+        "en": [
+          "No age limit. TicketCo lists standard NOK 375, students NOK 180 and free tickets through age 17; check conditions and any fees before booking."
+        ],
+        "uk": [
+          "Без вікового обмеження. TicketCo вказує звичайний квиток 375 NOK, студентський 180 NOK, дітям до 17 років включно безкоштовно; перевірте умови та можливі збори."
+        ],
+        "sv": [
+          "Ingen åldersgräns. TicketCo anger ordinarie 375 NOK, student 180 NOK och gratis till och med 17 år; kontrollera villkor och eventuella avgifter."
+        ],
+        "da": [
+          "Ingen aldersgrænse. TicketCo angiver normal 375 NOK, studerende 180 NOK og gratis til og med 17 år; tjek vilkår og eventuelle gebyrer."
+        ]
+      }
+    },
+    {
+      "id": "larvik-bare-egil-20261024",
+      "municipality": "3909",
+      "eventDate": "2026-10-24",
+      "time": "20:00",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "source": "Bølgen kulturhus",
+      "url": "https://www.bolgenkulturhus.no/program/bare-egil-spellemannslag/",
+      "location": "Bølgen kulturhus · Sanden Scene, Sanden 2, 3264 Larvik",
+      "mapQuery": "Bølgen kulturhus · Sanden Scene, Sanden 2, 3264 Larvik",
+      "category": "events",
+      "eventType": "concert",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Bare Egil spellemannslag",
+          "Folkemusikk med humor på høstturné."
+        ],
+        "en": [
+          "Bare Egil spellemannslag",
+          "Folk music with humour on an autumn tour."
+        ],
+        "uk": [
+          "Bare Egil spellemannslag",
+          "Народна музика з гумором в осінньому турі."
+        ],
+        "sv": [
+          "Bare Egil spellemannslag",
+          "Folkmusik med humor på höstturné."
+        ],
+        "da": [
+          "Bare Egil spellemannslag",
+          "Folkemusik med humor på efterårsturné."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dører 19.00, konsert 20.00. Absolutt 18-årsgrense; ståkonsert. Varighet ca.75–90 minutter. Oppgitt pris 450 kr; sjekk billetter hos arrangøren."
+        ],
+        "en": [
+          "Doors 19:00, concert 20:00. Strict 18+; standing concert. About 75–90 minutes. Listed price NOK 450; check tickets with the venue."
+        ],
+        "uk": [
+          "Двері 19:00, концерт 20:00. Суворо 18+, стоячі місця. Приблизно 75–90 хвилин. Заявлена ціна 450 NOK; квитки в організатора."
+        ],
+        "sv": [
+          "Insläpp 19.00, konsert 20.00. Absolut 18-årsgräns; ståkonsert. Cirka 75–90 minuter. Angivet pris 450 NOK; kontrollera biljetter hos arrangören."
+        ],
+        "da": [
+          "Døre 19.00, koncert 20.00. Streng 18-årsgrænse; ståkoncert. Cirka 75–90 minutter. Oplyst pris 450 NOK; tjek billetter hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "skien-odd-nordstoga-20261028",
+      "municipality": "4003",
+      "eventDate": "2026-10-28",
+      "time": "19:00",
+      "expires": "2026-10-29T00:00:00+01:00",
+      "source": "Ibsenhuset",
+      "url": "https://www.ibsenhuset.no/program/odd-nordstoga-for-du-gar/",
+      "location": "Ibsenhuset · Dovregubbens hall, Lundegate 6, 3724 Skien",
+      "mapQuery": "Ibsenhuset · Dovregubbens hall, Lundegate 6, 3724 Skien",
+      "category": "events",
+      "eventType": "concert",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Odd Nordstoga · Før du går",
+          "Gamle favoritter og nye sanger med band."
+        ],
+        "en": [
+          "Odd Nordstoga · Før du går",
+          "Familiar favourites and new songs with his band."
+        ],
+        "uk": [
+          "Odd Nordstoga · Før du går",
+          "Улюблені й нові пісні з гуртом."
+        ],
+        "sv": [
+          "Odd Nordstoga · Før du går",
+          "Välkända favoriter och nya sånger med band."
+        ],
+        "da": [
+          "Odd Nordstoga · Før du går",
+          "Kendte favoritter og nye sange med band."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris 620–670 kr; ordinær 670 kr. Døråpning, varighet og aldersgrense er ikke oppgitt på arrangementsiden; sjekk hos arrangøren."
+        ],
+        "en": [
+          "Listed price NOK 620–670; standard NOK 670. Door time, duration and age limit are not stated on the event page; check with the venue."
+        ],
+        "uk": [
+          "Заявлена ціна 620–670 NOK; звичайний квиток 670 NOK. Час відкриття дверей, тривалість і вікове обмеження не вказані; уточнюйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris 620–670 NOK; ordinarie 670 NOK. Insläpp, längd och åldersgräns anges inte på evenemangssidan; fråga arrangören."
+        ],
+        "da": [
+          "Oplyst pris 620–670 NOK; normal 670 NOK. Døråbning, varighed og aldersgrænse er ikke angivet; spørg arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "sola-solamessen-20261106",
+      "municipality": "1124",
+      "category": "events",
+      "eventDate": "2026-11-06",
+      "time": "10:00–18:00; 07.11 10:00–17:00",
+      "expires": "2026-11-07T17:00:00+01:00",
+      "source": "Solamessen",
+      "url": "https://solamessen.no/",
+      "location": "Åsenhallen A & B, Åsenvegen 86, Sola",
+      "mapQuery": "Åsenhallen A & B, Åsenvegen 86, Sola",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Solamessen 2026 · 06.11 10–18 / 07.11 10–17",
+          "6.–7. november · Åsenhallen A & B, Åsenvegen 86, Sola. Gratis inngang."
+        ],
+        "en": [
+          "Solamessen 2026 · 06.11 10–18 / 07.11 10–17",
+          "6–7 November · Åsenhallen A & B, Åsenvegen 86, Sola. Free admission."
+        ],
+        "uk": [
+          "Ярмарок Solamessen 2026 · 06.11 10–18 / 07.11 10–17",
+          "6–7 листопада · Åsenhallen A & B, Åsenvegen 86, Sola. Вхід безкоштовний."
+        ],
+        "sv": [
+          "Solamessen 2026 · 06.11 10–18 / 07.11 10–17",
+          "6–7 november · Åsenhallen A & B, Åsenvegen 86, Sola. Fri entré."
+        ],
+        "da": [
+          "Solamessen 2026 · 06.11 10–18 / 07.11 10–17",
+          "6.–7. november · Åsenhallen A & B, Åsenvegen 86, Sola. Gratis adgang."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Fredag 6. november 10:00–18:00; lørdag 7. november 10:00–17:00. Håndverksmesse med egenproduserte og egendesignede varer. Gratis parkering; kafé med mat, kaffe og kaker. 5. november er riggedag for utstillere, ikke publikumsdag."
+        ],
+        "en": [
+          "Friday 6 November 10:00–18:00; Saturday 7 November 10:00–17:00. Craft fair featuring handmade and self-designed goods. Free parking; café with food, coffee and cakes. 5 November is exhibitor setup, not a public opening day."
+        ],
+        "uk": [
+          "П’ятниця 6 листопада 10:00–18:00; субота 7 листопада 10:00–17:00. Ярмарок виробів ручної роботи та власного дизайну. Паркування безкоштовне; кафе з їжею, кавою та випічкою. 5 листопада — монтаж для учасників, не день відвідування."
+        ],
+        "sv": [
+          "Fredag 6 november 10.00–18.00; lördag 7 november 10.00–17.00. Hantverksmässa med egentillverkade och egendesignade varor. Gratis parkering; kafé med mat, kaffe och kakor. 5 november är uppbyggnad för utställare, inte öppet för besökare."
+        ],
+        "da": [
+          "Fredag 6. november 10.00–18.00; lørdag 7. november 10.00–17.00. Håndværksmesse med egenproducerede og egendesignede varer. Gratis parkering; café med mad, kaffe og kager. 5. november er opstilling for udstillere, ikke en publikumsdag."
+        ]
+      },
+      "eventDates": [
+        "2026-11-06",
+        "2026-11-07"
+      ]
+    },
+    {
+      "id": "market-bm-stryn-2026-11-28",
+      "municipality": "4651",
+      "category": "events",
+      "eventDate": "2026-11-28",
+      "time": "12:00–16:00",
+      "expires": "2026-11-28T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bm-stryn-2026-11-28",
+      "location": "Per Bolstadplass, Stryn sentrum, 6783 Stryn",
+      "mapQuery": "Per Bolstadplass, Stryn sentrum, 6783 Stryn",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Per Bolstadplass, Stryn",
+          "28 november · 12:00–16:00 · Per Bolstadplass, Stryn sentrum, 6783 Stryn."
+        ],
+        "en": [
+          "Farmers’ market · Per Bolstadplass, Stryn",
+          "28 November · 12:00–16:00 · Per Bolstadplass, Stryn sentrum, 6783 Stryn."
+        ],
+        "uk": [
+          "Фермерський ринок · Per Bolstadplass, Stryn",
+          "28 листопада · 12:00–16:00 · Per Bolstadplass, Stryn sentrum, 6783 Stryn."
+        ],
+        "sv": [
+          "Bondens marknad · Per Bolstadplass, Stryn",
+          "28 november · 12:00–16:00 · Per Bolstadplass, Stryn sentrum, 6783 Stryn."
+        ],
+        "da": [
+          "Bondens marked · Per Bolstadplass, Stryn",
+          "28 november · 12:00–16:00 · Per Bolstadplass, Stryn sentrum, 6783 Stryn."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bm-nordfjordeid-2026-11-29",
+      "municipality": "4649",
+      "category": "events",
+      "eventDate": "2026-11-29",
+      "time": "12:00–16:00",
+      "expires": "2026-11-29T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bm-nordfjordeid-2026-11-29",
+      "location": "Nordfjordeid, Sjøgata 21, 6770, NORDFJORDEID",
+      "mapQuery": "Nordfjordeid, Sjøgata 21, 6770, NORDFJORDEID",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Nordfjordeid · Alti",
+          "29 november · 12:00–16:00 · Nordfjordeid, Sjøgata 21, 6770, NORDFJORDEID."
+        ],
+        "en": [
+          "Farmers’ market · Nordfjordeid · Alti",
+          "29 November · 12:00–16:00 · Nordfjordeid, Sjøgata 21, 6770, NORDFJORDEID."
+        ],
+        "uk": [
+          "Фермерський ринок · Nordfjordeid · Alti",
+          "29 листопада · 12:00–16:00 · Nordfjordeid, Sjøgata 21, 6770, NORDFJORDEID."
+        ],
+        "sv": [
+          "Bondens marknad · Nordfjordeid · Alti",
+          "29 november · 12:00–16:00 · Nordfjordeid, Sjøgata 21, 6770, NORDFJORDEID."
+        ],
+        "da": [
+          "Bondens marked · Nordfjordeid · Alti",
+          "29 november · 12:00–16:00 · Nordfjordeid, Sjøgata 21, 6770, NORDFJORDEID."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "lillehammer-la-fjella-leve-20261021",
+      "municipality": "3405",
+      "category": "events",
+      "eventType": "cinema",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-21",
+      "time": "18:00",
+      "expires": "2026-10-22T00:00:00+02:00",
+      "location": "Lillehammer kino · sal 2, Kirkegaten 69, Lillehammer",
+      "mapQuery": "Lillehammer kino · sal 2, Kirkegaten 69, Lillehammer",
+      "url": "https://www.lillehammerkino.no/informasjon/spesialvisning-med-besok-av-regissor-havard-bustnes-la-fjella-leve",
+      "source": "Lillehammer kino",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "La fjella leve · regissørbesøk",
+          "Lillehammer · 2026-10-21 · 18:00."
+        ],
+        "en": [
+          "La fjella leve · regissørbesøk",
+          "Lillehammer · 2026-10-21 · 18:00."
+        ],
+        "uk": [
+          "La fjella leve · regissørbesøk",
+          "Lillehammer · 2026-10-21 · 18:00."
+        ],
+        "sv": [
+          "La fjella leve · regissørbesøk",
+          "Lillehammer · 2026-10-21 · 18:00."
+        ],
+        "da": [
+          "La fjella leve · regissørbesøk",
+          "Lillehammer · 2026-10-21 · 18:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dokumentar av Håvard Bustnes, 1 t 40 min, tillatt for alle, norsk tekst. Etter filmen blir det samtale med regissøren, Johan Greff og en representant fra Nansenskolen. Pris og sluttid for hele arrangementet er ikke oppgitt."
+        ],
+        "en": [
+          "Documentary by Håvard Bustnes, 1h 40m, all ages, Norwegian subtitles. Followed by a discussion with the director, Johan Greff and a Nansenskolen representative. Price and the full event end time are not listed."
+        ],
+        "uk": [
+          "Документальний фільм Håvard Bustnes, 1 год 40 хв, для всіх вікових груп, норвезькі субтитри. Після фільму — розмова з режисером, Johan Greff та представником Nansenskolen. Ціну й час завершення всього заходу не зазначено."
+        ],
+        "sv": [
+          "Dokumentär av Håvard Bustnes, 1 tim 40 min, barntillåten, norsk text. Efter filmen följer samtal med regissören, Johan Greff och en representant från Nansenskolen. Pris och sluttid för hela arrangemanget anges inte."
+        ],
+        "da": [
+          "Dokumentar af Håvard Bustnes, 1 t 40 min, tilladt for alle, norske undertekster. Efter filmen er der samtale med instruktøren, Johan Greff og en repræsentant fra Nansenskolen. Pris og sluttid for hele arrangementet er ikke oplyst."
+        ]
+      }
+    },
+    {
+      "id": "oslo-for-harde-livet-20261020",
+      "municipality": "0301",
+      "category": "events",
+      "eventType": "cinema",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-20",
+      "time": "18:00",
+      "expires": "2026-10-21T00:00:00+02:00",
+      "location": "Cinemateket · Lillebil, Dronningens gate 16, Oslo",
+      "mapQuery": "Cinemateket · Lillebil, Dronningens gate 16, Oslo",
+      "url": "https://www.cinemateket.no/filmer/for-harde-livet",
+      "source": "Cinemateket Oslo",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "For harde livet · samtale med regissøren",
+          "Oslo · 2026-10-20 · 18:00."
+        ],
+        "en": [
+          "For harde livet · samtale med regissøren",
+          "Oslo · 2026-10-20 · 18:00."
+        ],
+        "uk": [
+          "For harde livet · samtale med regissøren",
+          "Oslo · 2026-10-20 · 18:00."
+        ],
+        "sv": [
+          "For harde livet · samtale med regissøren",
+          "Oslo · 2026-10-20 · 18:00."
+        ],
+        "da": [
+          "For harde livet · samtale med regissøren",
+          "Oslo · 2026-10-20 · 18:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Sigve Endresens dokumentar fra 1989, 101 minutter, norsk tale uten tekst, aldersgrense 12 år, 35 mm. Vigdis Lian møter regissøren til samtale før filmen. Pris og samlet sluttid er ikke oppgitt på filmsiden."
+        ],
+        "en": [
+          "Sigve Endresen’s 1989 documentary, 101 minutes, Norwegian without subtitles, age rating 12, 35mm. Vigdis Lian talks with the director before the film. Price and overall end time are not listed on the film page."
+        ],
+        "uk": [
+          "Документальний фільм Sigve Endresen (1989), 101 хвилина, норвезькою без субтитрів, рейтинг 12, 35 мм. Перед показом Vigdis Lian розмовляє з режисером. Ціну й загальний час завершення не зазначено."
+        ],
+        "sv": [
+          "Sigve Endresens dokumentär från 1989, 101 minuter, norskt tal utan text, åldersgräns 12, 35 mm. Vigdis Lian samtalar med regissören före filmen. Pris och total sluttid anges inte på filmsidan."
+        ],
+        "da": [
+          "Sigve Endresens dokumentar fra 1989, 101 minutter, norsk tale uden undertekster, aldersgrænse 12, 35 mm. Vigdis Lian taler med instruktøren før filmen. Pris og samlet sluttid er ikke oplyst på filmsiden."
+        ]
+      }
+    },
+    {
+      "id": "oslo-ulya-20261022",
+      "municipality": "0301",
+      "category": "events",
+      "eventType": "cinema",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-22",
+      "time": "18:00",
+      "expires": "2026-10-23T00:00:00+02:00",
+      "location": "Cinemateket · Tancred, Dronningens gate 16, Oslo",
+      "mapQuery": "Cinemateket · Tancred, Dronningens gate 16, Oslo",
+      "url": "https://www.cinemateket.no/filmer/ulya",
+      "source": "Cinemateket Oslo",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Ulya · Baltiske filmdager",
+          "Oslo · 2026-10-22 · 18:00."
+        ],
+        "en": [
+          "Ulya · Baltiske filmdager",
+          "Oslo · 2026-10-22 · 18:00."
+        ],
+        "uk": [
+          "Ulya · Baltiske filmdager",
+          "Oslo · 2026-10-22 · 18:00."
+        ],
+        "sv": [
+          "Ulya · Baltiske filmdager",
+          "Oslo · 2026-10-22 · 18:00."
+        ],
+        "da": [
+          "Ulya · Baltiske filmdager",
+          "Oslo · 2026-10-22 · 18:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Åpningsfilm for Baltiske filmdager med produsent Guntis Trekteris. Viesturs Kairiss (2026), 102 minutter; latvisk og russisk tale, engelsk tekst, aldersgrense 9 år. Pris og sluttid for hele arrangementet er ikke oppgitt."
+        ],
+        "en": [
+          "Opening film of Baltic Film Days with producer Guntis Trekteris. Viesturs Kairiss (2026), 102 minutes; Latvian and Russian with English subtitles, age rating 9. Price and the full event end time are not listed."
+        ],
+        "uk": [
+          "Фільм-відкриття Днів балтійського кіно за участю продюсера Guntis Trekteris. Viesturs Kairiss (2026), 102 хвилини; латиською й російською з англійськими субтитрами, рейтинг 9. Ціну й час завершення всього заходу не зазначено."
+        ],
+        "sv": [
+          "Öppningsfilm för Baltiska filmdagar med producent Guntis Trekteris. Viesturs Kairiss (2026), 102 minuter; lettiskt och ryskt tal med engelsk text, åldersgräns 9. Pris och hela arrangemangets sluttid anges inte."
+        ],
+        "da": [
+          "Åbningsfilm ved Baltiske filmdage med producer Guntis Trekteris. Viesturs Kairiss (2026), 102 minutter; lettisk og russisk tale med engelske undertekster, aldersgrænse 9. Pris og hele arrangementets sluttid er ikke oplyst."
+        ]
+      }
     }
   ],
   "mediaUpdated": "2026-10-19"
