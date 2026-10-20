@@ -114,7 +114,11 @@ export class AlphaSequence {
    throw Error('Invalid character layout.');
   }
   this.ctx.globalAlpha=alpha;
-  this.ctx.drawImage(this.active.canvas,box.left,box.top,box.width,box.height);
+  this.ctx.save();
+  try{
+   if(box.mirror)this.ctx.setTransform(-1,0,0,1,2*box.left+box.width,0);
+   this.ctx.drawImage(this.active.canvas,box.left,box.top,box.width,box.height);
+  }finally{this.ctx.restore();}
  }
  _drawFrozen(alpha=1){
   // A dock resize may change the stage aspect ratio while loading or paused.

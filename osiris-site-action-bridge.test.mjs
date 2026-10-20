@@ -57,3 +57,66 @@ test('settings disable blocks initial actions and revokes an action awaiting arr
   allowed=true;const pending=f.run();await tick();allowed=false;f.bridge.cancel('disabled');
   assert.equal((await pending).status,'disabled');assert.equal(f.count(),0);
 });
+
+function contactFixture(extra={}) {
+  const contacts=[];
+  const f=fixture({getPresence:()=>({
+    interactWith:(target,options)=>new Promise(resolve=>contacts.push({target,...options,resolve})),
+    moveTo:()=>{throw Error('interactWith must take precedence')},
+    snapshot:()=>{throw Error('interaction does not require a snapshot')},
+  }),...extra});
+  return {...f,contacts};
+}
+test('interaction targets the visual control and commits exactly once at contact, not on arrival',async()=>{
+  const f=contactFixture(),visual={...f.target},pending=f.run({visualTarget:visual});await tick();
+  const contact=f.contacts[0];assert.equal(contact.target,visual);assert.equal(f.count(),0);assert.equal([...f.timers.values()][0].ms,25000);
+  assert.equal(contact.onContact(),true);assert.equal(f.count(),1);
+  assert.equal(contact.onContact(),true);assert.equal(f.count(),1,'Repeated callback does not repeat the handler');
+  contact.resolve(true);assert.equal((await pending).status,'completed');assert.equal(f.count(),1);
+  assert.equal(contact.signal.aborted,false,'Successful departure is owned by presence');
+  assert.equal(contact.onContact(),false,'Late callbacks after completion are closed');assert.equal(f.timers.size,0);
+});
+test('interaction timeout aborts before ordinary commit and a late contact cannot double activate',async()=>{
+  const f=contactFixture();let abortedAtCommit=false;
+  const pending=f.run({commit:()=>{abortedAtCommit=f.contacts[0].signal.aborted}});await tick();
+  [...f.timers.values()][0].fn();assert.equal((await pending).status,'completed');assert.equal(abortedAtCommit,true);
+  assert.equal(f.contacts[0].onContact(),false);f.contacts[0].resolve(true);
+});
+test('superseding interaction or an explicit abort prevents the old contact from executing',async()=>{
+  for(const mode of ['new','abort']){
+    const f=contactFixture(),controller=new AbortController(),old=f.run({signal:controller.signal});await tick();
+    let next;if(mode==='new'){next=f.run();await tick()}else controller.abort();
+    assert.equal(f.contacts[0].onContact(),false);f.contacts[0].resolve(true);assert.equal((await old).status,'cancelled');assert.equal(f.count(),0);
+    if(next){f.contacts[1].onContact();f.contacts[1].resolve(true);assert.equal((await next).status,'completed');assert.equal(f.count(),1)}
+  }
+});
+test('contact rechecks settings, current request, connected target and catalogue trust',async()=>{
+  for(const mode of ['settings','current','removed','disabled','trust']){
+    let allowed=true,current=true,trusted=true;const f=contactFixture({isAllowed:()=>allowed});
+    const pending=f.run({kind:'place',id:'lofoten',isTrusted:()=>trusted,isCurrent:()=>current});await tick();
+    if(mode==='settings')allowed=false;if(mode==='current')current=false;if(mode==='removed')f.target.isConnected=false;if(mode==='disabled')f.target.disabled=true;if(mode==='trust')trusted=false;
+    assert.equal(f.contacts[0].onContact(),false,mode);assert.equal(f.count(),0);f.contacts[0].resolve(false);
+    assert.notEqual((await pending).status,'completed',mode);assert.equal(f.count(),0);
+  }
+});
+test('failed contact handler is not retried by fallback or duplicate callbacks',async()=>{
+  for(const throws of [false,true]){
+    const f=contactFixture();let attempts=0;
+    const pending=f.run({commit:()=>{attempts++;if(throws)throw Error('handler failed');return false}});await tick();
+    assert.equal(f.contacts[0].onContact(),false);assert.equal(f.contacts[0].onContact(),false);f.contacts[0].resolve(false);
+    assert.equal((await pending).status,throws?'failed':'unavailable');assert.equal(attempts,1);
+  }
+});
+test('unavailable/rejected interaction falls back once; success without a contact is not trusted as a commit',async()=>{
+  for(const outcome of [false,true,'throw']){
+    const f=fixture({getPresence:()=>({interactWith:async()=>{if(outcome==='throw')throw Error('unavailable');return outcome}})});
+    assert.equal((await f.run()).status,'completed');assert.equal(f.count(),1);
+  }
+});
+test('reduced motion skips interaction and still executes the explicit action once',async()=>{
+  const f=contactFixture({reducedMotion:()=>true});assert.equal((await f.run()).status,'completed');assert.equal(f.count(),1);assert.equal(f.contacts.length,0);
+});
+test('a delayed completion after contact cannot time out and abort the successful departure',async()=>{
+  const f=contactFixture(),pending=f.run();await tick();f.contacts[0].onContact();[...f.timers.values()][0].fn();
+  assert.equal((await pending).status,'completed');assert.equal(f.contacts[0].signal.aborted,false);assert.equal(f.count(),1);f.contacts[0].resolve(true);
+});

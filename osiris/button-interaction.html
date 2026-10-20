@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Osiris — касание настоящей кнопки</title>
+  <link rel="stylesheet" href="./site-presence.css">
+  <style>
+    :root{color-scheme:dark;font:16px/1.45 system-ui,sans-serif;background:#08262c;color:#eef7f3}
+    *{box-sizing:border-box}body{margin:0;min-height:100dvh}button{font:inherit;min-height:44px;padding:10px 14px;border:1px solid #7ba7a4;border-radius:10px;background:#164957;color:#f2faf7;cursor:pointer}
+    button:disabled{opacity:.55;cursor:default}:focus-visible{outline:3px solid #f5d495;outline-offset:3px}
+    .interaction-demo{min-height:100dvh;display:grid;grid-template-rows:auto minmax(360px,1fr) auto}
+    .interaction-demo-head{padding:16px 20px 10px;max-width:1100px;width:100%;margin:auto}
+    .interaction-demo-head h1{margin:0 0 5px;font-size:clamp(22px,4.5vw,32px)}
+    .interaction-demo-head p{margin:5px 0;color:#c5d9d4;font-size:14px}
+    .interaction-demo-commands{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .interaction-demo-commands button{font-size:14px}
+    .interaction-demo-arena{position:relative;min-height:360px;background:radial-gradient(ellipse at 50% 85%,#36727a33,transparent 65%);border-block:1px solid #83aaa333}
+    .interaction-demo-target{position:absolute;display:grid;gap:4px;place-items:center;width:clamp(118px,19vw,168px);min-height:74px;padding:12px;box-shadow:0 8px 24px #00182044}
+    .interaction-demo-target span{font-size:12px;color:#d0e1dc}
+    #scenicRoutes{left:8%;top:24%}#norwayWebcams{right:8%;top:max(72px,12%)}#cafeNearby{left:55%;top:61%}
+    .interaction-demo-status{display:grid;gap:4px;padding:10px 20px 14px;min-height:90px;font-size:14px}
+    .interaction-demo-status p{margin:0}.interaction-demo-debug{color:#bdd8d4;font:12px/1.5 ui-monospace,monospace;overflow-wrap:anywhere}
+    body .fjord-helper-launch.interaction-demo-pet{position:fixed;left:calc(50% - 140px);bottom:4px;z-index:40;width:280px;height:200px;border:0;padding:0;background:transparent;box-shadow:none}
+    .interaction-demo-pet .fjord-ai-pet{display:block;width:280px;height:180px}
+    #fjordHelper{width:min(540px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;margin:auto;padding:18px;border:1px solid #7ba7a4;border-radius:14px;background:#0b2d32;color:#eef7f3}
+    #fjordHelper::backdrop{background:#00181daa}#fjordHelper h2{font-size:20px;margin:0 0 12px}#fjordHelper p{font-size:14px;color:#c5d9d4}
+    #fjordHelper .interaction-demo-dialog-close{float:right;margin:0 0 10px 10px}
+    @media(max-width:500px){.interaction-demo-head{padding:12px}.interaction-demo-commands{gap:6px}.interaction-demo-commands button{padding:9px;font-size:12px}.interaction-demo-status{padding-inline:12px;font-size:12px}.interaction-demo-target{width:118px;font-size:14px}#scenicRoutes{left:5%;top:20%}#norwayWebcams{right:5%;top:72px}#cafeNearby{left:auto;right:12%;top:63%}body .fjord-helper-launch.interaction-demo-pet{left:calc(50% - 115px);width:230px;height:170px}.interaction-demo-pet .fjord-ai-pet{width:230px;height:150px}}
+  </style>
+</head>
+<body>
+  <main class="interaction-demo">
+    <header class="interaction-demo-head">
+      <h1>Osiris нажимает кнопку лапой</h1>
+      <p>Настоящий персонаж и общий механизм сайта: подход → прыжок и касание → действие → отход.</p>
+      <div class="interaction-demo-commands" aria-label="Попросить Osiris">
+        <button type="button" data-demo-command="scenicRoutes" disabled>Osiris, нажми «Маршруты»</button>
+        <button type="button" data-demo-command="cafeNearby" disabled>Osiris, нажми «Кафе»</button>
+        <button type="button" data-demo-command="norwayWebcams" disabled>Osiris, нажми «Камеры»</button>
+        <button type="button" id="interactionCancel" disabled>Отмена</button>
+        <button type="button" id="interactionOptions">Движения Osiris</button>
+      </div>
+    </header>
+    <section class="interaction-demo-arena" aria-label="Три настоящие кнопки">
+      <button type="button" class="interaction-demo-target" id="scenicRoutes">Маршруты<span>Нажатий: <output data-demo-count="scenicRoutes">0</output></span></button>
+      <button type="button" class="interaction-demo-target" id="norwayWebcams">Камеры<span>Нажатий: <output data-demo-count="norwayWebcams">0</output></span></button>
+      <button type="button" class="interaction-demo-target" id="cafeNearby">Кафе<span>Нажатий: <output data-demo-count="cafeNearby">0</output></span></button>
+    </section>
+    <div class="interaction-demo-status">
+      <p id="interactionStatus" role="status" aria-live="polite">Загрузка настоящего Osiris…</p>
+      <p id="interactionReadiness"></p>
+      <p class="interaction-demo-debug">Фаза: <output id="interactionPhase">idle</output> · Клип: <output id="interactionScene">—</output> · Персонаж: <output id="interactionLife">loading</output></p>
+    </div>
+  </main>
+  <button type="button" class="fjord-helper-launch osiris-launch interaction-demo-pet" aria-label="Открыть движения Osiris">
+    <span class="fjord-ai-pet osiris-pet" data-state="idle"></span>
+  </button>
+  <dialog id="fjordHelper" aria-labelledby="interactionOptionsTitle">
+    <button type="button" class="interaction-demo-dialog-close" id="interactionOptionsClose">Закрыть</button>
+    <h2 id="interactionOptionsTitle">Движения Osiris</h2>
+    <p>Закройте эту панель, чтобы проверить подход к кнопкам. Микрофон и чат в демонстрации не запускаются.</p>
+    <details class="fjord-ai-about" open><summary>Выбрать движение</summary></details>
+  </dialog>
+  <script type="module" src="./button-interaction.mjs"></script>
+</body>
+</html>

@@ -1,9 +1,9 @@
-import {AlphaSequence} from './alpha-sequence.mjs?v=20261020continuity1';
+import {AlphaSequence} from './alpha-sequence.mjs?v=20261020contact1';
 import {createCatBrain} from './cat-brain.mjs?v=20261020continuity1';
 import {buildMovementCatalog,behaviorPools} from './movement-catalog.mjs';
-import {fitCharacterClip} from './character-layout.mjs';
 import {MOTION_POSES,CHARACTER_CALIBRATION} from './character-calibration.mjs';
 import {clampCenter,planRoute,stepRoute} from './viewport-roaming.mjs';
+import {gestureFit,contactPlans,PAW_CONTACT} from './button-choreography.mjs';
 
 const MEDIA=new URL('../media/osiris-life/metadata.json',import.meta.url);
 const COPY={
@@ -26,10 +26,7 @@ const ENGLISH={
 // A fixed crop covers the whole trajectory. It never follows individual limbs
 // and never shifts the cat's picture to pretend that it is walking.
 export function fitPresenceClip(clip,width,height) {
- return fitCharacterClip(clip,width,height,{
-  anchorX:width*(clip.anchorFraction??.5),
-  baseline:clip.baselineFraction==null?undefined:height*clip.baselineFraction,
- });
+ return gestureFit(clip,width,height);
 }
 
 export function conversationOwnsAttention({state='idle',voice=false,typing=false}={}) {
@@ -60,6 +57,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   // A mocked/cache response may finish after cancellation; never attach it.
   if(startup.signal.aborted||pet.isConnected===false)throw new DOMException('Osiris mount cancelled','AbortError');
   clips=new Map(catalog.clips.map(item=>[item.id,item.media]));
+  for(const item of catalog.clips)for(const variant of item.variants)clips.set(variant.id,variant.media);
   if(!clips.has('blink'))throw Error('Osiris calm frame unavailable');
  }catch(error){
   delete launch.dataset.osirisLife;throw error;
@@ -85,6 +83,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  let walkReady=walk.complete&&walk.naturalWidth>0;
  let obstacleCacheAt=-Infinity,obstacleCache=[];
  let anchorFraction=.5,baselineFraction;
+ let interaction=null;
  const events=[],listen=(el,type,fn,opts)=>{el.addEventListener(type,fn,opts);events.push(()=>el.removeEventListener(type,fn,opts));};
  const brain=createCatBrain({
   now:()=>time,random,...behaviorPools(catalog),
@@ -121,7 +120,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   Object.assign(canvas.style,{width:`${width}px`,height:`${height}px`,left:'0px',top:'0px'});
   const fit=fitPresenceClip(clips.get('blink'),width,height);
   for(const key of ['width','height','left','top'])poster.style[key]=`${fit[key]}px`;
-  const walkingFit=fitPresenceClip({id:'walk',width:480,height:270,anchorFraction,baselineFraction},width,height);
+  const walkingFit=fitPresenceClip(walkClip(),width,height);
   for(const key of ['width','height','left','top'])walk.style[key]=`${walkingFit[key]}px`;
   const box=visualRect();
   Object.assign(hitbox.style,{left:`${box.left-pet.getBoundingClientRect().left}px`,top:`${box.top-pet.getBoundingClientRect().top}px`,
@@ -131,8 +130,8 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  const viewport=()=>({width:innerWidth,height:innerHeight});
  const hasViewport=()=>Number.isFinite(innerWidth)&&innerWidth>0&&Number.isFinite(innerHeight)&&innerHeight>0;
  const docked=()=>Boolean(dialog.open&&!dialog.classList.contains('osiris-compact')&&!dialog.classList.contains('fjord-ai-auth-pending')||!launch.contains(pet)||launch.hidden);
- const walkClip=()=>({id:'walk',width:480,height:270,anchorFraction,baselineFraction});
- function visualRect(source=walking?walkClip():ready?currentClip:clips.get('blink'),mirror=source.id==='walk'&&direction<0){
+ const walkClip=()=>({id:'walk',width:480,height:270,anchorFraction,baselineFraction,mirrored:direction<0});
+ function visualRect(source=walking?walkClip():ready?currentClip:clips.get('blink'),mirror=source.mirrored||source.id==='walk'&&direction<0){
   const stage=pet.getBoundingClientRect(),fit=fitPresenceClip(source,stage.width,stage.height);
   const entry=CHARACTER_CALIBRATION.clips[source.id],u=entry?.unionBounds||source.unionBounds||source.bounds||{left:0,top:0,right:1,bottom:1};
   const left=stage.left+fit.left+(mirror?1-u.right:u.left)*fit.width;
@@ -150,6 +149,22 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  }
  function clampViewport(){
   if(!docked()){const box=visualRect();placeCenter(box);}
+ }
+ function groundPoint(source,end=false){
+  const stage=pet.getBoundingClientRect(),fit=fitPresenceClip(source,stage.width,stage.height);
+  const ground=end?fit.endGround:fit.ground;
+  return ground&&{x:stage.left+ground.x,y:stage.top+ground.y};
+ }
+ function shiftStage(origin){
+  const stage=pet.getBoundingClientRect();
+  offset+=origin.x-stage.left;offsetY+=origin.y-stage.top;
+  launch.style.setProperty('--osiris-roam-x',`${offset.toFixed(2)}px`);
+  launch.style.setProperty('--osiris-roam-y',`${offsetY.toFixed(2)}px`);
+ }
+ function alignGround(point,source){
+  if(!point)return;
+  const stage=pet.getBoundingClientRect(),fit=fitPresenceClip(source,stage.width,stage.height);
+  if(fit.ground)shiftStage({x:point.x-fit.ground.x,y:point.y-fit.ground.y});
  }
  function cancelTravel(){
   if(!travel)return;
@@ -176,7 +191,13 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   walk.style.opacity='1';canvas.style.opacity='0';poster.style.opacity='0';
   launch.dataset.osirisScene='walk';
  }
- function stop({preserveWalk=false}={}){
+ function cancelInteraction(){
+  const previous=interaction;if(!previous)return;
+  interaction=null;previous.controller.abort();previous.detach?.();previous.resolve(false);
+  delete launch.dataset.osirisInteraction;
+ }
+ function stop({preserveWalk=false,preserveInteraction=false}={}){
+  if(!preserveInteraction)cancelInteraction();
   cancelTravel();
   generation++;load?.abort();loading=false;renderer.pause();brain.cancel(time);active=null;
   if(!preserveWalk){hideWalk({immediate:true});holdLastFrame();}
@@ -191,7 +212,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  function sync(){
   obstacleCacheAt=-Infinity;
   const busy=attention(),next=presencePaused({paused,hidden:document.hidden,reduced:reduced.matches,animations:animationsEnabled});
-  if(docked()&&(travel||drag)){endDrag(true);stop();nextRoamAt=time+5000;}
+  if(docked()&&(travel||drag||interaction)){endDrag(true);stop();nextRoamAt=time+5000;}
   if(next!==blocked){
    blocked=next;
    if(blocked){endDrag(true);stop();}
@@ -206,8 +227,9 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
    active=decision;renderer.pause();launch.dataset.osirisScene='rest';
    if(decision.phase!=='settle')maybeRoam();return;
   }
-  const source=clips.get(decision.id),clip=source&&{...source,anchorFraction,baselineFraction};
+  const source=clips.get(decision.id),clip=source&&{...source,anchorFraction,baselineFraction,mirrored:direction<0};
   if(!clip){brain.finish(decision.token,time);return;}
+  const incomingGround=walking?groundPoint(walkClip()):null;
   const token=++generation;load?.abort();load=new AbortController();renderer.pause();
   active=decision;loading=true;held=false;launch.dataset.osirisScene=clip.id;
   // Keep the actual outgoing frame during buffering, interruptions and rest.
@@ -216,7 +238,11 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   try{
    await renderer.load(new URL(clip.packed,mediaUrl).href,{signal:load.signal,clip});
    if(token!==generation||blocked||dead)return;
-   currentClip=clip;position();ready=true;loading=false;
+   // The outgoing canvas is not the outgoing picture when the native walk is
+   // visible. Do not dissolve an old seated pose over the new action.
+   if(incomingGround)await renderer.seek(0);
+   if(token!==generation||blocked||dead)return;
+   currentClip=clip;alignGround(incomingGround,clip);position();ready=true;loading=false;
    hideWalk();
    clampViewport();position();
    canvas.style.opacity='1';poster.style.opacity='0';last=performance.now();
@@ -241,6 +267,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  function setPaused(value){paused=value;translate();sync();}
  function setPreferences(preferences={}){
   if(dead)return;
+  if(preferences?.siteActions===false&&interaction)stop();
   if(typeof preferences?.roaming==='boolean')roamingEnabled=preferences.roaming;
   if(typeof preferences?.animations==='boolean')animationsEnabled=preferences.animations;
   if(!roamingEnabled&&travel?.reason==='ambient')finishTravel(false);
@@ -257,16 +284,17 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  listen(walk,'load',()=>{walkReady=true;});
  listen(walk,'error',()=>{walkReady=false;cancelTravel();hideWalk({immediate:true});holdLastFrame();});
  listen(renderer.video,'ended',()=>{
+  if(interaction)return;
   if(loading||!active||active.mode==='rest'||!renderer.video.ended)return;
   brain.finish(active.token,time,{completed:true});
   const {width,height}=pet.getBoundingClientRect();
   const fit=fitPresenceClip(currentClip,width,height);
-  if(fit.endGround){anchorFraction=fit.endGround.x/width;baselineFraction=fit.endGround.y/height;}
+  if(fit.endGround){anchorFraction=currentClip.mirrored?1-fit.endGround.x/width:fit.endGround.x/width;baselineFraction=fit.endGround.y/height;}
   active=null;held=true;renderer.pause();
  });
- listen(pet,'pointerenter',()=>{hover=true;if(travel){hideWalk({immediate:true});holdLastFrame();}else if(!blocked)brain.queueReaction({kind:'hover',targetId:'osiris'},time);});
+ listen(pet,'pointerenter',()=>{hover=true;if(travel&&!travel.scene){hideWalk({immediate:true});holdLastFrame();}else if(!blocked&&!interaction)brain.queueReaction({kind:'hover',targetId:'osiris'},time);});
  listen(pet,'pointerleave',()=>{hover=false;brain.cancelAttention('osiris',time);});
- listen(window,'resize',()=>{obstacleCacheAt=-Infinity;cancelTravel();hideWalk({immediate:true});holdLastFrame();position();clampViewport();position();});
+ listen(window,'resize',()=>{obstacleCacheAt=-Infinity;if(interaction)stop();else cancelTravel();hideWalk({immediate:true});holdLastFrame();position();clampViewport();position();});
  listen(window,'scroll',()=>{obstacleCacheAt=-Infinity;},true);
  listen(launch,'focus',()=>{if(!blocked&&!travel)brain.queueReaction({kind:'focus',targetId:'osiris'},time);});
  listen(launch,'blur',()=>brain.cancelAttention('osiris',time));
@@ -280,6 +308,116 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  observer.observe(pet,{attributes:true,attributeFilter:['data-state']});
  observer.observe(dialog,{attributes:true,attributeFilter:['open','class']});
  const resize=new ResizeObserver(()=>{position();clampViewport();});resize.observe(pet);
+ const sameRect=(a,b)=>Boolean(a&&b&&['left','top','right','bottom'].every(k=>Math.abs(a[k]-b[k])<.5));
+ const targetRect=target=>{
+  if(!target||target.isConnected===false||target.disabled)return null;
+  for(let node=target;node;node=node.parentElement){
+   if(node.hidden||node.getAttribute?.('aria-hidden')==='true')return null;
+   const style=window.getComputedStyle?.(node);
+   if(style?.display==='none'||style?.visibility==='hidden')return null;
+  }
+  const rect=target.getBoundingClientRect?.();
+  return rect?.width>0&&rect.height>0?rect:null;
+ };
+ function nextFrame(signal){
+  return new Promise(resolve=>{
+   if(signal.aborted){resolve(false);return;}
+   const abort=()=>{cancelAnimationFrame(handle);resolve(false);};
+   const handle=requestAnimationFrame(()=>{signal.removeEventListener('abort',abort);resolve(!signal.aborted);});
+   signal.addEventListener('abort',abort,{once:true});
+  });
+ }
+ async function interactionClip(scene,plan){
+  const signal=scene.controller.signal,clip=plan.source,token=++generation;
+  load?.abort();load=new AbortController();loading=true;renderer.pause();active=null;
+  const abortLoad=()=>load?.abort();signal.addEventListener('abort',abortLoad,{once:true});
+  try{
+   await renderer.load(new URL(clip.packed,mediaUrl).href,{signal:load.signal,clip});
+   if(interaction!==scene||signal.aborted||token!==generation)return false;
+   if(walking)await renderer.seek(0);
+   if(interaction!==scene||signal.aborted||token!==generation)return false;
+   currentClip=clip;ready=true;loading=false;held=false;
+   shiftStage(plan.origin);hideWalk();position();canvas.style.opacity='1';poster.style.opacity='0';
+   launch.dataset.osirisScene='cursor-button';launch.dataset.osirisInteraction='reach';
+   return await new Promise((resolve,reject)=>{
+    const cleanup=()=>{renderer.video.removeEventListener('ended',ended);signal.removeEventListener('abort',aborted);};
+    const aborted=()=>{cleanup();renderer.pause();resolve(false);};
+    const ended=()=>{cleanup();held=true;renderer.pause();resolve(true);};
+    renderer.video.addEventListener('ended',ended,{once:true});signal.addEventListener('abort',aborted,{once:true});
+    renderer.play(seconds=>{
+     if(interaction!==scene||signal.aborted||scene.contacted||seconds<PAW_CONTACT.time)return;
+     // Layout can change while he approaches. Never claim a hit on a moved button.
+     const rect=targetRect(scene.target),stage=pet.getBoundingClientRect(),fit=fitPresenceClip(clip,stage.width,stage.height);
+     const paw={x:stage.left+fit.left+(clip.mirrored?1-PAW_CONTACT.x:PAW_CONTACT.x)*fit.width,
+      y:stage.top+fit.top+PAW_CONTACT.y*fit.height};
+     scene.contacted=true;
+     const within=seconds<=PAW_CONTACT.end&&rect&&paw.x>=rect.left-3&&paw.x<=rect.right+3&&paw.y>=rect.top-3&&paw.y<=rect.bottom+3;
+     let committed=false;
+     try{committed=!!within&&scene.onContact()===true;}catch{}
+     scene.committed=committed;
+     launch.dataset.osirisInteraction=committed?'contact':'miss';
+     if(committed){
+      scene.target.classList?.add('osiris-paw-contact');
+      setTimeout(()=>scene.target.classList?.remove('osiris-paw-contact'),420);
+     }
+     scene.resolve(committed);
+    }).catch(error=>{cleanup();reject(error);});
+   });
+  }finally{signal.removeEventListener('abort',abortLoad);if(interaction===scene)loading=false;}
+ }
+ async function depart(scene){
+  if(interaction!==scene||scene.controller.signal.aborted||blocked||docked())return;
+  launch.dataset.osirisInteraction='depart';
+  const here=visualRect(),view=viewport(),side=scene.plan.mirrored?1:-1;
+  const goals=[{x:here.x+side*190,y:Math.min(view.height-here.height/2-16,here.y+100)},
+   {x:view.width*.5,y:view.height*.72},{x:view.width*.2,y:view.height*.72},{x:view.width*.8,y:view.height*.72}];
+  for(const goal of goals){
+   if(interaction!==scene)return;
+   if(Math.hypot(goal.x-here.x,goal.y-here.y)<70)continue;
+   if(await moveTo(goal,{scene,signal:scene.controller.signal,reason:'command'}))break;
+  }
+  if(interaction!==scene)return;
+  scene.detach?.();interaction=null;
+  launch.dataset.osirisInteraction='relax';
+  const id=random()<.55?'yarn':'sniff';
+  brain.queueReaction({kind:'command',id},time);
+  const decision=brain.next(time);if(decision)void show(decision);
+  nextRoamAt=time+14000;restUntil=time+1800;
+ }
+ function interactWith(target,{signal,onContact}={}){
+  stop();
+  if(dead||blocked||docked()||drag||!hasViewport()||!walkReady||signal?.aborted||typeof onContact!=='function'||!clips.has('cursor-button')||!targetRect(target))return Promise.resolve(false);
+  return new Promise(resolve=>{
+   const scene={target,onContact,resolve,controller:new AbortController(),committed:false,contacted:false};
+   interaction=scene;
+   const abort=()=>{if(interaction===scene)stop();};
+   signal?.addEventListener('abort',abort,{once:true});scene.detach=()=>signal?.removeEventListener('abort',abort);
+   void (async()=>{
+    let rect=targetRect(target);
+    if(rect.top<130||rect.bottom>innerHeight-25||rect.left<0||rect.right>innerWidth){
+     target.scrollIntoView?.({block:'center',inline:'nearest',behavior:'instant'});
+     if(!await nextFrame(scene.controller.signal)||!await nextFrame(scene.controller.signal))return;
+     rect=targetRect(target);
+    }
+    if(!rect)return;
+    const stage=pet.getBoundingClientRect(),clip={...clips.get('cursor-button'),anchorFraction:.5};
+    const plans=contactPlans({rect,stage,viewport:viewport(),position:visualRect(),clip,walk:walkClip()});
+    launch.dataset.osirisInteraction='approach';scene.targetRect=rect;
+    for(const plan of plans){
+     if(interaction!==scene)return;
+     scene.plan=plan;
+     if(!await moveTo(plan.approach,{scene,signal:scene.controller.signal,reason:'command'}))continue;
+     if(interaction!==scene)return;
+     direction=plan.mirrored?-1:1;
+     if(await interactionClip(scene,plan)&&scene.committed)await depart(scene);
+     return;
+    }
+   })().catch(()=>{}).finally(()=>{
+    if(interaction===scene){scene.detach();interaction=null;loading=false;hideWalk();holdLastFrame();delete launch.dataset.osirisInteraction;nextRoamAt=time+6000;}
+    resolve(scene.committed);
+   });
+  });
+ }
  function patrolObstacles(now){
   if(now-obstacleCacheAt<200)return obstacleCache;
   obstacleCacheAt=now;const nextObstacles=[];
@@ -290,31 +428,36 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(nextObstacles.length!==obstacleCache.length||nextObstacles.some((r,i)=>['left','right','top','bottom'].some(k=>r[k]!==obstacleCache[i][k])))obstacleCache=nextObstacles;
   return obstacleCache;
  }
- function moveTo(target,{reason='command',signal}={}){
+ function moveTo(target,{reason='command',signal,scene=null}={}){
   if(dead||blocked||docked()||drag||!walkReady||!hasViewport()||signal?.aborted||!Number.isFinite(target?.x)||!Number.isFinite(target?.y)||(reason==='ambient'&&!roamingEnabled))return Promise.resolve(false);
+  if(scene&&!walking){const here=groundPoint(currentClip,held)||visualRect();if(Math.abs(target.x-here.x)>1)direction=target.x<here.x?-1:1;}
   const startBox=visualRect(),walkBox=visualRect(walkClip()),footprint={width:walkBox.width,height:walkBox.height};
+  if(scene&&ready&&!walking){
+   const ground=groundPoint(currentClip,held),wg=groundPoint(walkClip());
+   if(ground&&wg){startBox.x=ground.x+walkBox.x-wg.x;startBox.y=ground.y+walkBox.y-wg.y;}
+  }
   const start=clampCenter(startBox,footprint,viewport(),8),goal=clampCenter(target,footprint,viewport(),8);
   if(!start||!goal)return Promise.resolve(false);
-  const obstacles=patrolObstacles(performance.now());
+  const obstacles=patrolObstacles(performance.now()).filter(r=>!scene?.targetRect||!sameRect(r,scene.targetRect));
   const path=planRoute({start,target:goal,footprint,viewport:viewport(),obstacles,clearance:8});
   if(!path)return Promise.resolve(false);
-  stop();restUntil=0;
+  stop({preserveInteraction:scene===interaction&&!!scene});restUntil=0;
   if(Math.hypot(goal.x-start.x,goal.y-start.y)<2)return Promise.resolve(true);
   return new Promise(resolve=>{
    const abort=()=>{cancelTravel();hideWalk({immediate:true});holdLastFrame();};
-   travel={position:start,target:goal,remaining:path,footprint,obstacles,reason,resolve,signal,abort};
+   travel={position:start,target:goal,remaining:path,footprint,obstacles,reason,resolve,signal,abort,scene};
    signal?.addEventListener('abort',abort,{once:true});
   });
  }
  function finishTravel(success){
   if(!travel)return;
   const previous=travel;travel=null;previous.signal?.removeEventListener('abort',previous.abort);
-  hideWalk();holdLastFrame();placeCenter(previous.position);position();
+  if(!previous.scene){hideWalk();holdLastFrame();placeCenter(previous.position);position();}
   restUntil=time+1500;nextRoamAt=time+9000+random()*7000;
   brain.noteUserActivity(time);launch.dataset.osirisScene='rest';previous.resolve(success);
  }
  function maybeRoam(){
-  if(!roamingEnabled||!hasViewport()||travel||drag||hover||docked()||!walkReady||time<nextRoamAt||launch.matches(':focus-visible'))return;
+  if(interaction||!roamingEnabled||!hasViewport()||travel||drag||hover||docked()||!walkReady||time<nextRoamAt||launch.matches(':focus-visible'))return;
   nextRoamAt=time+6000+random()*8000;
   // Many pauses remain genuine rest. A walk is a route, never a treadmill loop.
   if(random()>.45)return;
@@ -331,9 +474,9 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  function advanceTravel(delta,now){
   if(!travel)return;
   if(blocked||drag||docked()||!hasViewport()){finishTravel(false);return;}
-  if(hover||launch.matches(':focus-visible')){hideWalk({immediate:true});holdLastFrame();return;}
-  const obstacles=patrolObstacles(now);
-  if(obstacles!==travel.obstacles){
+  if(!travel.scene&&(hover||launch.matches(':focus-visible'))){hideWalk({immediate:true});holdLastFrame();return;}
+  const obstacles=patrolObstacles(now).filter(r=>!travel.scene?.targetRect||!sameRect(r,travel.scene.targetRect));
+  if(obstacles.length!==travel.obstacles.length||obstacles.some((r,i)=>!sameRect(r,travel.obstacles[i]))){
    const path=planRoute({start:travel.position,target:travel.target,footprint:travel.footprint,viewport:viewport(),obstacles,clearance:8});
    if(!path){finishTravel(false);return;}
    travel.remaining=path;travel.obstacles=obstacles;
@@ -386,7 +529,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(dead)return;
   const delta=Math.min(250,Math.max(0,now-last));last=now;
   if(!blocked&&!drag&&!loading&&(!active||active.mode==='rest'))time+=delta;
-  if(!blocked&&!drag&&!travel&&!loading&&time>=restUntil){
+  if(!blocked&&!drag&&!travel&&!interaction&&!loading&&time>=restUntil){
    const decision=brain.next(time);
    if(decision&&decision.token!==active?.token)void show(decision);
   }
@@ -404,10 +547,10 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  launch.dataset.osirisMotion='life-v1';launch.dataset.osirisPresence='ready';
  translate();position();sync();frame=requestAnimationFrame(tick);
  // Same pet node is subsequently moved by the existing production chat dock.
- publicApi={command,setPaused,setPreferences,moveTo,cancelMove:()=>{
-  const had=!!travel;cancelTravel();hideWalk({immediate:true});holdLastFrame();return had;
+ publicApi={command,setPaused,setPreferences,moveTo,interactWith,cancelMove:()=>{
+  const had=!!travel||!!interaction;stop();return had;
  },destroy,snapshot:()=>({paused,blocked,loading,ready,held,walking,roaming:roamingEnabled,animations:animationsEnabled,offset,offsetY,dragging:!!drag?.active,
-  travelling:!!travel,position:visualRect(),target:travel?{...travel.target}:null,scene:launch.dataset.osirisScene,brain:brain.snapshot(time)})};
+  travelling:!!travel,interaction:launch.dataset.osirisInteraction||null,position:visualRect(),target:travel?{...travel.target}:null,scene:launch.dataset.osirisScene,brain:brain.snapshot(time)})};
  window.OsirisPresence=publicApi;
  window.dispatchEvent(new Event('osiris:presence-ready'));
  return publicApi;

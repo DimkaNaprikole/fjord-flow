@@ -20,7 +20,7 @@ export function createSiteActionBridge({
   reducedMotion = () => globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches,
   isAllowed = () => globalThis.window?.OsirisSettings?.isAllowed('siteActions') !== false,
   viewport = () => ({width:globalThis.innerWidth,height:globalThis.innerHeight}),
-  setTimer = setTimeout, clearTimer = clearTimeout, timeoutMs = 3000,
+  setTimer = setTimeout, clearTimer = clearTimeout, timeoutMs = 25000,
 } = {}) {
   let pending = null;
   const cancel = (reason='cancelled') => {
@@ -37,38 +37,85 @@ export function createSiteActionBridge({
       || kind==='explorer' && /^explorerTab[0-3]$/.test(id)
       || kind==='place' && typeof id==='string' && /^[\w-]{1,100}$/.test(id) && isTrusted()===true;
     if (!allowed || typeof commit!=='function' || !usable(target)) return {status:'unavailable'};
-    const entry={request:new AbortController(),movement:new AbortController()}; pending=entry;
+    const entry={request:new AbortController(),movement:new AbortController(),attempted:false,result:null,contactClosed:false}; pending=entry;
     const onAbort=()=>{entry.request.abort();entry.movement.abort()};
     signal?.addEventListener('abort',onAbort,{once:true});
     if (signal?.aborted) onAbort();
     const current=()=>pending===entry&&!entry.request.signal.aborted&&!document?.hidden&&usable(target)&&isCurrent();
-    let timer=null, abortWait=null;
+    let timer=null, abortWait=null, interaction=false;
+    const refusal=()=>{
+      if (!isAllowed()) return 'disabled';
+      if (!current()) return entry.reason||'cancelled';
+      if (kind==='place' && isTrusted()!==true) return 'unavailable';
+      return null;
+    };
+    // The local handlers are synchronous. Record the attempt before invoking one
+    // so duplicate/reentrant contact events cannot activate it a second time.
+    const commitOnce=()=>{
+      if (entry.attempted) return entry.result?.status==='completed';
+      const blocked=refusal();
+      if (blocked) return false;
+      entry.attempted=true;
+      try {entry.result={status:commit()===false?'unavailable':'completed'}}
+      catch {entry.result={status:'failed'}}
+      return entry.result.status==='completed';
+    };
+    const onContact=()=>{
+      if (entry.contactClosed||entry.movement.signal.aborted||!usable(visualTarget)) return false;
+      return commitOnce();
+    };
+    const animate=async(start,limit)=>{
+      const interrupted=new Promise(resolve=>{
+        abortWait=()=>resolve(false);entry.request.signal.addEventListener('abort',abortWait,{once:true});
+        timer=setTimer(()=>{
+          // Contact may already have committed while presence starts its own
+          // departure. A delayed promise must not kill that successful exit.
+          if (entry.result?.status!=='completed') entry.movement.abort();
+          resolve(false);
+        },Math.max(0,Math.min(limit,timeoutMs)));
+      });
+      await Promise.race([
+        Promise.resolve().then(()=>current()&&!entry.movement.signal.aborted?start():false).catch(()=>false),
+        interrupted,
+      ]);
+      if (timer!==null) clearTimer(timer);timer=null;
+      entry.request.signal.removeEventListener('abort',abortWait);abortWait=null;
+    };
     try {
       if (!current()) return {status:entry.reason||'cancelled'};
-      const presence=getPresence(), point=!reducedMotion()&&approachPoint(visualTarget,presence?.snapshot?.()?.position,viewport());
-      if (point && typeof presence?.moveTo==='function') {
-        const interrupted = new Promise(resolve=>{
-          abortWait=()=>resolve(false);entry.request.signal.addEventListener('abort',abortWait,{once:true});
-          timer=setTimer(()=>{entry.movement.abort();resolve(false)},Math.max(0,Math.min(3000,timeoutMs)));
-        });
-        // Unreachable/timeout means use the ordinary authorized site handler.
-        // Only a superseding/cancelled user request prevents the commit.
-        await Promise.race([Promise.resolve().then(()=>presence.moveTo(point,{signal:entry.movement.signal,reason:'command'})).catch(()=>false),interrupted]);
-        if (timer!==null) clearTimer(timer);timer=null;
-        entry.movement.abort();
+      const presence=getPresence(), motion=!reducedMotion();
+      if (motion && typeof presence?.interactWith==='function' && usable(visualTarget)) {
+        interaction=true;
+        // Allow a viewport-length native walk (85px/s), buffering and the
+        // measured 4.5s paw gesture without speeding up the actual movement.
+        await animate(()=>presence.interactWith(visualTarget,{signal:entry.movement.signal,onContact}),25000);
+      } else {
+        const point=motion&&approachPoint(visualTarget,presence?.snapshot?.()?.position,viewport());
+        if (point && typeof presence?.moveTo==='function') {
+          await animate(()=>presence.moveTo(point,{signal:entry.movement.signal,reason:'command'}),3000);
+        }
       }
-      if (!isAllowed()) return {status:'disabled'};
-      if (!current()) return {status:entry.reason||'cancelled'};
-      if (kind==='place' && isTrusted()!==true) return {status:'unavailable'};
-      const result=commit();
-      return {status:result===false?'unavailable':'completed'};
+      entry.contactClosed=true;
+      if (entry.attempted) return entry.result;
+      // No contact: stop any late animation before using the ordinary handler.
+      // Unreachable/timeout never discards an otherwise valid user command.
+      entry.movement.abort();
+      const blocked=refusal();
+      if (blocked) return {status:blocked};
+      commitOnce();
+      return entry.result;
     } catch {
-      return {status:current()?'failed':'cancelled'};
+      return entry.result||{status:current()?'failed':'cancelled'};
     } finally {
+      entry.contactClosed=true;
       if (timer!==null) clearTimer(timer);
       if (abortWait) entry.request.signal.removeEventListener('abort',abortWait);
       signal?.removeEventListener('abort',onAbort);
-      entry.movement.abort();
+      // interactWith owns the post-contact depart/play/rest scene. A successful
+      // contact ends this bridge's responsibility, not that autonomous scene.
+      if (!interaction||entry.result?.status!=='completed') {
+        entry.movement.abort();
+      }
       if (pending===entry) pending=null;
     }
   }
