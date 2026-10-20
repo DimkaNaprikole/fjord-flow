@@ -4,7 +4,11 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 const [source,directionsSource,fixtureSource,catalog]=await Promise.all(['chat-widget.js','assistant-routing.js','chat-widget.test.mjs','demo-data/state.json'].map(file=>readFile(new URL(file,import.meta.url),'utf8')));
-let fixture=fixtureSource.slice(fixtureSource.indexOf('class Element {'),fixtureSource.indexOf('\n{\n const a=boot({enabled:false})'));
+// Git may check out CRLF on Windows; normalize fixture boundaries, not app code.
+const normalizedFixture=fixtureSource.replace(/\r\n/g,'\n');
+const fixtureStart=normalizedFixture.indexOf('class Element {'),fixtureEnd=normalizedFixture.indexOf('\n{\n const a=boot({enabled:false})');
+assert.ok(fixtureStart>=0&&fixtureEnd>fixtureStart,'Shared chat fixture boundaries must be present');
+let fixture=normalizedFixture.slice(fixtureStart,fixtureEnd);
 // Extend only the transport response; all UI, RTC, auth and request fixtures remain shared.
 fixture=fixture.replace("return{ok:true,text:async()=>('v=0", "return{ok:true,json:async()=>({session:{id:'live_fixture'},transport:{type:'webrtc',sdp:'v=0\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\n'}}),text:async()=>('v=0");
 fixture=fixture.replace("if(url.endsWith('/chat'))return","if(url.endsWith('/chat')&&config.deferChat)await new Promise(resolve=>voiceState.resolveChat=resolve);if(url.endsWith('/chat'))return");

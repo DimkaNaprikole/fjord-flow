@@ -1,13 +1,24 @@
+import {mountSiteGallery} from './site-gallery.mjs?v=20261020gallery1';
+
 const copy={
- nb:['Språk','PROSJEKT OSIRIS','din digitale følgesvenn','Snakk med Osiris eller utforsk bevegelsene hans.','Åpne chat','Bevegelsesverksted','Forhåndsvisning av bevegelser. Disse knappene slår ikke på mikrofonen.','Figur','Hvile','Gå','Lytte','Leke','Bevegelsen kunne ikke lastes.'],
- en:['Language','PROJECT OSIRIS','your digital companion','Talk to Osiris or explore his movements.','Open chat','Motion workshop','Motion preview. These buttons do not turn on the microphone.','Character','Rest','Walk','Listen','Play','The animation could not be loaded.'],
- ru:['Язык','ПРОЕКТ ОСИРИС','твой цифровой спутник','Поговори с Осирисом или посмотри его движения.','Открыть чат','Мастерская движений','Предпросмотр движений. Эти кнопки не включают микрофон.','Персонаж','Отдыхает','Ходит','Слушает','Играет','Не удалось загрузить анимацию.'],
- uk:['Мова','ПРОЄКТ ОСІРІС','твій цифровий супутник','Поговори з Осірісом або переглянь його рухи.','Відкрити чат','Майстерня рухів','Попередній перегляд рухів. Ці кнопки не вмикають мікрофон.','Персонаж','Відпочиває','Ходить','Слухає','Грається','Не вдалося завантажити анімацію.'],
- sv:['Språk','PROJEKT OSIRIS','din digitala följeslagare','Prata med Osiris eller utforska hans rörelser.','Öppna chatt','Rörelseverkstad','Förhandsvisning av rörelser. Knapparna slår inte på mikrofonen.','Figur','Vila','Gå','Lyssna','Leka','Animationen kunde inte laddas.'],
- da:['Sprog','PROJEKT OSIRIS','din digitale følgesvend','Tal med Osiris eller udforsk hans bevægelser.','Åbn chat','Bevægelsesværksted','Forhåndsvisning af bevægelser. Knapperne tænder ikke mikrofonen.','Figur','Hvile','Gå','Lytte','Lege','Animationen kunne ikke indlæses.']};
-const keys=['language','eyebrow','subtitle','intro','chat','lab','note','character','idle','walk','listen','play','error'];
-const language=document.querySelector('#language'),image=document.querySelector('#preview'),status=document.querySelector('#assetStatus'),picker=document.querySelector('#character'),reduced=matchMedia('(prefers-reduced-motion: reduce)');let characters=[],state='idle';
-function translate(){document.documentElement.lang=language.value;document.querySelectorAll('[data-copy]').forEach(el=>el.textContent=copy[language.value][keys.indexOf(el.dataset.copy)]);window.dispatchEvent(new Event('fjordlanguagechange'))}
-function render(){const character=characters.find(c=>c.id===picker.value),clip=character?.states[state]||character?.states.idle;if(!clip)return;status.textContent='';image.src=(!reduced.matches&&!document.hidden&&clip.animation)||clip.still;image.alt=character.name;document.querySelectorAll('[data-state]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.state===state)))}
-language.addEventListener('change',translate);picker.addEventListener('change',render);document.querySelectorAll('[data-state]').forEach(button=>button.onclick=()=>{state=button.dataset.state;render()});reduced.addEventListener('change',render);document.addEventListener('visibilitychange',render);image.onerror=()=>{status.textContent=copy[language.value][12]};document.querySelector('#openChat').onclick=()=>window.dispatchEvent(new Event('fjord:open-chat'));
-translate();try{const response=await fetch('osiris/characters.json');if(!response.ok)throw Error();characters=(await response.json()).characters;for(const character of characters){const option=document.createElement('option');option.value=character.id;option.textContent=character.name;picker.append(option)}render()}catch{status.textContent=copy[language.value][12]}
+ nb:['Språk','PROSJEKT OSIRIS','din digitale følgesvenn','Snakk med Osiris eller utforsk bevegelsene hans.','Åpne chat','Bevegelsesverksted','Utforsk de ferdige bevegelsene. Du starter forhåndsvisningen selv.'],
+ en:['Language','PROJECT OSIRIS','your digital companion','Talk to Osiris or explore his movements.','Open chat','Motion workshop','Explore the finished movements. You start the preview yourself.'],
+ ru:['Язык','ПРОЕКТ OSIRIS','твой цифровой спутник','Поговори с Osiris или посмотри его движения.','Открыть чат','Мастерская движений','Все готовые движения в одном месте. Большой показ запускается вручную.'],
+ uk:['Мова','ПРОЄКТ OSIRIS','твій цифровий супутник','Поговори з Osiris або переглянь його рухи.','Відкрити чат','Майстерня рухів','Усі готові рухи в одному місці. Великий показ запускається вручну.'],
+ sv:['Språk','PROJEKT OSIRIS','din digitala följeslagare','Prata med Osiris eller utforska hans rörelser.','Öppna chatt','Rörelseverkstad','Utforska de färdiga rörelserna. Du startar förhandsvisningen själv.'],
+ da:['Sprog','PROJEKT OSIRIS','din digitale følgesvend','Tal med Osiris eller udforsk hans bevægelser.','Åbn chat','Bevægelsesværksted','Udforsk de færdige bevægelser. Du starter selv forhåndsvisningen.'],
+};
+const keys=['language','eyebrow','subtitle','intro','chat','lab','note'];
+const language=document.querySelector('#language');
+function translate(){
+ const current=copy[language.value]||copy.nb;
+ document.documentElement.lang=language.value;
+ document.querySelectorAll('[data-copy]').forEach(el=>{
+  const text=current[keys.indexOf(el.dataset.copy)];if(text!==undefined)el.textContent=text;
+ });
+ window.dispatchEvent(new Event('fjordlanguagechange'));
+}
+language.addEventListener('change',translate);
+document.querySelector('#openChat').onclick=()=>window.dispatchEvent(new Event('fjord:open-chat'));
+translate();
+void mountSiteGallery(document.querySelector('[data-site-gallery]'));

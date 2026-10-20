@@ -4,7 +4,11 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 const [source,directionsSource,fixtureSource,catalog]=await Promise.all(['chat-widget.js','assistant-routing.js','chat-widget.test.mjs','demo-data/state.json'].map(file=>readFile(new URL(file,import.meta.url),'utf8')));
-const fixture=fixtureSource.slice(fixtureSource.indexOf('class Element {'),fixtureSource.indexOf('\n{\n const a=boot({enabled:false})'));
+// Git may check out CRLF on Windows; normalize fixture boundaries, not app code.
+const normalizedFixture=fixtureSource.replace(/\r\n/g,'\n');
+const fixtureStart=normalizedFixture.indexOf('class Element {'),fixtureEnd=normalizedFixture.indexOf('\n{\n const a=boot({enabled:false})');
+assert.ok(fixtureStart>=0&&fixtureEnd>fixtureStart,'Shared chat fixture boundaries must be present');
+const fixture=normalizedFixture.slice(fixtureStart,fixtureEnd);
 const context={source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
 vm.runInNewContext(fixture+'\nthis.fixtureApi={boot,flush};',context);
 const {boot,flush}=context.fixtureApi;

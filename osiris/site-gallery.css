@@ -1,0 +1,25 @@
+.site-gallery{min-width:0}
+.site-gallery .gallery-choice{display:grid;gap:6px}
+.site-gallery .gallery-choice select{width:100%;max-width:none}
+.site-gallery .gallery-stage{position:relative;isolation:isolate;overflow:hidden;height:clamp(260px,52vw,470px);margin:18px 0;border:1px solid #71979255;border-radius:18px;background:#08262c}
+.site-gallery .gallery-stage[data-background=light]{background:#e0e9e7}
+.site-gallery .gallery-stage[data-background=checker]{background-color:#6a7c7c;background-image:conic-gradient(#879696 25%,transparent 0 50%,#879696 0 75%,transparent 0);background-size:28px 28px}
+.site-gallery .gallery-stage canvas{position:absolute;display:block;max-width:none;max-height:none;background:transparent;pointer-events:none}
+.site-gallery .gallery-stage canvas[hidden]{display:none}
+.site-gallery .osiris-decoder{position:absolute;left:-10000px;width:1px;height:1px;opacity:0;pointer-events:none}
+.site-gallery .gallery-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.site-gallery .gallery-controls button:disabled{opacity:.5;cursor:default}
+.site-gallery .gallery-background{display:flex;align-items:center;gap:7px;margin-left:auto}
+.site-gallery .gallery-background select{max-width:150px}
+.site-gallery .gallery-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+.site-gallery .gallery-heading h3{margin:0;font-size:clamp(19px,3vw,26px)}
+.site-gallery .gallery-count{font-size:12px;color:#c5d5d0;white-space:nowrap}
+.site-gallery .gallery-status{min-height:1.6em;color:#e3cf9e;font-size:14px;margin:10px 0}
+.site-gallery .gallery-description,.site-gallery .gallery-limit{font-size:14px;margin:8px 0}
+.site-gallery .gallery-description:empty,.site-gallery .gallery-limit:empty{display:none}
+.site-gallery .gallery-limit{color:#c5d5d0}
+@media(max-width:500px){
+ .site-gallery .gallery-controls button{padding:9px 12px;font-size:14px}
+ .site-gallery .gallery-background{flex-basis:100%;margin-left:0;font-size:14px}
+ .site-gallery .gallery-stage{height:280px;margin:14px 0}
+}

@@ -5,7 +5,11 @@ import test from 'node:test';
 
 // Reuse the widget's full browser fixture, without executing its test cases.
 const [source,directionsSource,fixtureSource,catalog]=await Promise.all(['chat-widget.js','assistant-routing.js','chat-widget.test.mjs','demo-data/state.json'].map(file=>readFile(new URL(file,import.meta.url),'utf8')));
-const fixture=fixtureSource.slice(fixtureSource.indexOf('class Element {'),fixtureSource.indexOf('\n{\n const a=boot({enabled:false})'));
+// Git may check out CRLF on Windows; normalize fixture boundaries, not app code.
+const normalizedFixture=fixtureSource.replace(/\r\n/g,'\n');
+const fixtureStart=normalizedFixture.indexOf('class Element {'),fixtureEnd=normalizedFixture.indexOf('\n{\n const a=boot({enabled:false})');
+assert.ok(fixtureStart>=0&&fixtureEnd>fixtureStart,'Shared chat fixture boundaries must be present');
+const fixture=normalizedFixture.slice(fixtureStart,fixtureEnd);
 assert.ok(fixture.includes('function boot(')&&!fixture.includes('const a=boot({enabled:false})'));
 const context={source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
 vm.runInNewContext(fixture+'\nthis.fixtureApi={boot,flush};',context);
