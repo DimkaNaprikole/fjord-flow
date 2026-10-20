@@ -4260,6 +4260,2856 @@
         "https://animationfestival.no/films/2026/santa-s-workshop",
         "https://faf2026.eventive.org/schedule/6ab135200e50db52c1e6055b"
       ]
+    },
+    {
+      "id": "harstad-kalabalik-20261022",
+      "municipality": "5503",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-22",
+      "time": "11:30",
+      "expires": "2026-10-23T00:00:00+02:00",
+      "source": "Harstad kulturhus / Easy Listening Productions",
+      "url": "https://www.harstadkulturhus.no/event/kalabalik-formiddagskonserter-hosten-2026/",
+      "location": "Harstad kulturhus · Foajé 2. etasje, Havnegata 3, Harstad",
+      "mapQuery": "Harstad kulturhus · Foajé 2. etasje, Havnegata 3, Harstad",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Kalabalik",
+          "Balkan-brass til lunsj; ca. 35 minutter."
+        ],
+        "en": [
+          "Kalabalik",
+          "Balkan brass at lunchtime; about 35 minutes."
+        ],
+        "uk": [
+          "Kalabalik",
+          "Балканські духові в обід; приблизно 35 хвилин."
+        ],
+        "sv": [
+          "Kalabalik",
+          "Balkanbrass på lunchen; cirka 35 minuter."
+        ],
+        "da": [
+          "Kalabalik",
+          "Balkanbrass til frokost; cirka 35 minutter."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 200 NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 200 NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 200 NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 200 NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 200 NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "harstad-hedvig-weejuns-20261023",
+      "municipality": "5503",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-23",
+      "time": "21:00",
+      "expires": "2026-10-24T00:00:00+02:00",
+      "source": "Harstad kulturhus",
+      "url": "https://www.harstadkulturhus.no/event/hedvig-mollestad-weejuns-stoy-2026/",
+      "location": "Harstad kulturhus · Lillesalen, Havnegata 3, Harstad",
+      "mapQuery": "Harstad kulturhus · Lillesalen, Havnegata 3, Harstad",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Hedvig Mollestad Weejuns · STØY",
+          "Jazz og rock under Kulturnatt. Gratis, begrenset kapasitet."
+        ],
+        "en": [
+          "Hedvig Mollestad Weejuns · STØY",
+          "Jazz and rock during Kulturnatt. Free, with limited capacity."
+        ],
+        "uk": [
+          "Hedvig Mollestad Weejuns · STØY",
+          "Джаз і рок під час Kulturnatt. Безкоштовно, місткість обмежена."
+        ],
+        "sv": [
+          "Hedvig Mollestad Weejuns · STØY",
+          "Jazz och rock under Kulturnatt. Gratis, begränsad kapacitet."
+        ],
+        "da": [
+          "Hedvig Mollestad Weejuns · STØY",
+          "Jazz og rock under Kulturnatt. Gratis, begrænset kapacitet."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 0 NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 0 NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 0 NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 0 NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 0 NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "harstad-mandskor-20261024",
+      "municipality": "5503",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-24",
+      "time": "16:00",
+      "expires": "2026-10-25T00:00:00+02:00",
+      "source": "Harstad kulturhus / Harstad Mandskor",
+      "url": "https://www.harstadkulturhus.no/event/harstad-mandskor-morketidskonsert-2/",
+      "location": "Bethel, Harstad sentrum",
+      "mapQuery": "Bethel, Harstad sentrum",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Harstad Mandskor · Mørketidskonsert",
+          "Mannskor med piano og variert repertoar."
+        ],
+        "en": [
+          "Harstad Mandskor · Mørketidskonsert",
+          "Men’s choir with piano and a varied repertoire."
+        ],
+        "uk": [
+          "Harstad Mandskor · Mørketidskonsert",
+          "Чоловічий хор із фортепіано та різноманітним репертуаром."
+        ],
+        "sv": [
+          "Harstad Mandskor · Mørketidskonsert",
+          "Manskör med piano och varierad repertoar."
+        ],
+        "da": [
+          "Harstad Mandskor · Mørketidskonsert",
+          "Mandskor med klaver og varieret repertoire."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 200 / 100 (<18) NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 200 / 100 (<18) NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 200 / 100 (<18) NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 200 / 100 (<18) NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 200 / 100 (<18) NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "harstad-reiersrud-sundstol-20261025",
+      "municipality": "5503",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-25",
+      "time": "19:00",
+      "expires": "2026-10-26T00:00:00+01:00",
+      "source": "Trondenesdagene",
+      "url": "https://www.harstadkulturhus.no/event/knut-reiersrud-geir-sundstol-trondenesdagene-2026/",
+      "location": "Trondenes kirke, Harstad",
+      "mapQuery": "Trondenes kirke, Harstad",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Knut Reiersrud & Geir Sundstøl",
+          "Strengemusikk inspirert av Henry Purcell; 90 minutter."
+        ],
+        "en": [
+          "Knut Reiersrud & Geir Sundstøl",
+          "String music inspired by Henry Purcell; 90 minutes."
+        ],
+        "uk": [
+          "Knut Reiersrud & Geir Sundstøl",
+          "Струнна музика, натхненна Генрі Перселлом; 90 хвилин."
+        ],
+        "sv": [
+          "Knut Reiersrud & Geir Sundstøl",
+          "Strängmusik inspirerad av Henry Purcell; 90 minuter."
+        ],
+        "da": [
+          "Knut Reiersrud & Geir Sundstøl",
+          "Strengemusik inspireret af Henry Purcell; 90 minutter."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 375 / 275 student / 0 (<16) NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 375 / 275 student / 0 (<16) NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 375 / 275 student / 0 (<16) NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 375 / 275 student / 0 (<16) NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 375 / 275 student / 0 (<16) NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "harstad-gutta-boys-20261029",
+      "municipality": "5503",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-29",
+      "time": "11:30",
+      "expires": "2026-10-30T00:00:00+01:00",
+      "source": "Harstad kulturhus",
+      "url": "https://www.harstadkulturhus.no/event/gutta-boys-formiddagskonserter-hosten-2026/",
+      "location": "Harstad kulturhus · Foajé 2. etasje, Havnegata 3, Harstad",
+      "mapQuery": "Harstad kulturhus · Foajé 2. etasje, Havnegata 3, Harstad",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Gutta Boys",
+          "Klassisk musikk med humor, fiolin og kontrabass."
+        ],
+        "en": [
+          "Gutta Boys",
+          "Classical music with humour, violin and double bass."
+        ],
+        "uk": [
+          "Gutta Boys",
+          "Класична музика з гумором, скрипкою та контрабасом."
+        ],
+        "sv": [
+          "Gutta Boys",
+          "Klassisk musik med humor, fiol och kontrabas."
+        ],
+        "da": [
+          "Gutta Boys",
+          "Klassisk musik med humor, violin og kontrabas."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 200 NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 200 NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 200 NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 200 NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 200 NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "harstad-anders-jektvik-20261030",
+      "municipality": "5503",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-30",
+      "time": "19:30",
+      "expires": "2026-10-31T00:00:00+01:00",
+      "source": "Harstad kulturhus",
+      "url": "https://www.harstadkulturhus.no/event/anders-jektvik/",
+      "location": "Harstad kulturhus · Lillesalen, Havnegata 3, Harstad",
+      "mapQuery": "Harstad kulturhus · Lillesalen, Havnegata 3, Harstad",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Anders Jektvik",
+          "Viserock på soloturné; ca. 90 minutter."
+        ],
+        "en": [
+          "Anders Jektvik",
+          "Singer-songwriter rock on a solo tour; about 90 minutes."
+        ],
+        "uk": [
+          "Anders Jektvik",
+          "Авторський рок у сольному турі; приблизно 90 хвилин."
+        ],
+        "sv": [
+          "Anders Jektvik",
+          "Visrock på soloturné; cirka 90 minuter."
+        ],
+        "da": [
+          "Anders Jektvik",
+          "Viserock på soloturné; cirka 90 minutter."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 485 NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 485 NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 485 NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 485 NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 485 NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "harstad-faure-requiem-20261101",
+      "municipality": "5503",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-11-01",
+      "time": "19:00",
+      "expires": "2026-11-02T00:00:00+01:00",
+      "source": "Trondenesdagene",
+      "url": "https://www.harstadkulturhus.no/event/faure-requiem-trondenesdagene-2026/",
+      "location": "Trondenes kirke, Harstad",
+      "mapQuery": "Trondenes kirke, Harstad",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Fauré Requiem",
+          "Vox Arctica, strykekvintett og orgel; 60 minutter."
+        ],
+        "en": [
+          "Fauré Requiem",
+          "Vox Arctica, string quintet and organ; 60 minutes."
+        ],
+        "uk": [
+          "Fauré Requiem",
+          "Vox Arctica, струнний квінтет і орган; 60 хвилин."
+        ],
+        "sv": [
+          "Fauré Requiem",
+          "Vox Arctica, stråkkvintett och orgel; 60 minuter."
+        ],
+        "da": [
+          "Fauré Requiem",
+          "Vox Arctica, strygekvintet og orgel; 60 minutter."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 350 / 0 (<16) NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 350 / 0 (<16) NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 350 / 0 (<16) NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 350 / 0 (<16) NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 350 / 0 (<16) NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "harstad-haerens-lunsj-20261105",
+      "municipality": "5503",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-11-05",
+      "time": "11:30",
+      "expires": "2026-11-06T00:00:00+01:00",
+      "source": "Harstad kulturhus / Hærens musikkorps",
+      "url": "https://www.harstadkulturhus.no/event/lunsjkonsert-med-haerens-musikkorps/",
+      "location": "Harstad kulturhus · Foajé 2. etasje, Havnegata 3, Harstad",
+      "mapQuery": "Harstad kulturhus · Foajé 2. etasje, Havnegata 3, Harstad",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Lunsjkonsert · Hærens musikkorps",
+          "Lunsjkonsert med militærensemble; ca. 45 minutter."
+        ],
+        "en": [
+          "Lunsjkonsert · Hærens musikkorps",
+          "Lunchtime concert by a military ensemble; about 45 minutes."
+        ],
+        "uk": [
+          "Lunsjkonsert · Hærens musikkorps",
+          "Обідній концерт військового ансамблю; приблизно 45 хвилин."
+        ],
+        "sv": [
+          "Lunsjkonsert · Hærens musikkorps",
+          "Lunchkonsert med militärensemble; cirka 45 minuter."
+        ],
+        "da": [
+          "Lunsjkonsert · Hærens musikkorps",
+          "Frokostkoncert med militærensemble; cirka 45 minutter."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 175 NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 175 NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 175 NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 175 NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 175 NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "hamar-ingebjorg-bratland-20261022",
+      "municipality": "3403",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-22",
+      "time": "19:00–20:30",
+      "expires": "2026-10-23T00:00:00+02:00",
+      "source": "Hamar kulturhus",
+      "url": "https://www.hamar-kulturhus.no/arrangementer/144606/ingebjorg-bratland-med-band/",
+      "location": "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar",
+      "mapQuery": "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Ingebjørg Bratland med band",
+          "Kjente og nye sanger med band."
+        ],
+        "en": [
+          "Ingebjørg Bratland med band",
+          "Familiar and new songs with her band."
+        ],
+        "uk": [
+          "Ingebjørg Bratland med band",
+          "Відомі й нові пісні з гуртом."
+        ],
+        "sv": [
+          "Ingebjørg Bratland med band",
+          "Kända och nya sånger med band."
+        ],
+        "da": [
+          "Ingebjørg Bratland med band",
+          "Kendte og nye sange med band."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dører 18:00. Pris ikke oppgitt; sjekk hos arrangøren. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Doors 18:00. Price not listed; check with the organiser. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Двері 18:00. Ціну не вказано; уточнюйте в організатора. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Insläpp 18:00. Pris anges inte; kontrollera med arrangören. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Døre 18:00. Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "hamar-trina-coleman-20261025",
+      "municipality": "3403",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-25",
+      "time": "19:00–20:30",
+      "expires": "2026-10-26T00:00:00+01:00",
+      "source": "Hamar kulturhus",
+      "url": "https://www.hamar-kulturhus.no/arrangementer/144591/trina-coleman-hamar-messingensemble/",
+      "location": "Hamar kulturhus · Klubbscene Rolf Jacobsen, Torggata 100, Hamar",
+      "mapQuery": "Hamar kulturhus · Klubbscene Rolf Jacobsen, Torggata 100, Hamar",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Trina Coleman & Hamar messingensemble · A jazz Affair",
+          "Jazzstandarder med sang, messing og trommer."
+        ],
+        "en": [
+          "Trina Coleman & Hamar messingensemble · A jazz Affair",
+          "Jazz standards with vocals, brass and drums."
+        ],
+        "uk": [
+          "Trina Coleman & Hamar messingensemble · A jazz Affair",
+          "Джазові стандарти з вокалом, духовими й ударними."
+        ],
+        "sv": [
+          "Trina Coleman & Hamar messingensemble · A jazz Affair",
+          "Jazzstandarder med sång, bleckblås och trummor."
+        ],
+        "da": [
+          "Trina Coleman & Hamar messingensemble · A jazz Affair",
+          "Jazzstandarder med sang, messing og trommer."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dører 18:00. Pris ikke oppgitt; sjekk hos arrangøren. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Doors 18:00. Price not listed; check with the organiser. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Двері 18:00. Ціну не вказано; уточнюйте в організатора. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Insläpp 18:00. Pris anges inte; kontrollera med arrangören. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Døre 18:00. Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "hamar-odd-nordstoga-20261030",
+      "municipality": "3403",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-30",
+      "time": "20:00–21:30",
+      "expires": "2026-10-31T00:00:00+01:00",
+      "source": "Hamar kulturhus",
+      "url": "https://www.hamar-kulturhus.no/arrangementer/144582/odd-nordstoga/",
+      "location": "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar",
+      "mapQuery": "Hamar kulturhus · Kirsten Flagstad-salen, Torggata 100, Hamar",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Odd Nordstoga · Før du går",
+          "Nye sanger og kjente favoritter med band."
+        ],
+        "en": [
+          "Odd Nordstoga · Før du går",
+          "New songs and familiar favourites with his band."
+        ],
+        "uk": [
+          "Odd Nordstoga · Før du går",
+          "Нові пісні та відомі улюблені твори з гуртом."
+        ],
+        "sv": [
+          "Odd Nordstoga · Før du går",
+          "Nya sånger och välkända favoriter med band."
+        ],
+        "da": [
+          "Odd Nordstoga · Før du går",
+          "Nye sange og kendte favoritter med band."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dører 19:00. Pris ikke oppgitt; sjekk hos arrangøren. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Doors 19:00. Price not listed; check with the organiser. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Двері 19:00. Ціну не вказано; уточнюйте в організатора. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Insläpp 19:00. Pris anges inte; kontrollera med arrangören. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Døre 19:00. Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "hamar-cash-commitment-20261031",
+      "municipality": "3403",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-31",
+      "time": "19:30–21:00",
+      "expires": "2026-11-01T00:00:00+01:00",
+      "source": "Hamar kulturhus",
+      "url": "https://www.hamar-kulturhus.no/arrangementer/144577/cash-commitment/",
+      "location": "Hamar kulturhus · Multisal Pauline Hall, Torggata 100, Hamar",
+      "mapQuery": "Hamar kulturhus · Multisal Pauline Hall, Torggata 100, Hamar",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Cash Commitment · A tribute to Johnny and June",
+          "Hyllest til Johnny Cash og June Carter; unummererte sitteplasser."
+        ],
+        "en": [
+          "Cash Commitment · A tribute to Johnny and June",
+          "A tribute to Johnny Cash and June Carter; unreserved seating."
+        ],
+        "uk": [
+          "Cash Commitment · A tribute to Johnny and June",
+          "Присвята Джонні Кешу й Джун Картер; місця без нумерації."
+        ],
+        "sv": [
+          "Cash Commitment · A tribute to Johnny and June",
+          "Hyllning till Johnny Cash och June Carter; onumrerade sittplatser."
+        ],
+        "da": [
+          "Cash Commitment · A tribute to Johnny and June",
+          "Hyldest til Johnny Cash og June Carter; unummererede siddepladser."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dører 18:30. Pris ikke oppgitt; sjekk hos arrangøren. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Doors 18:30. Price not listed; check with the organiser. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Двері 18:30. Ціну не вказано; уточнюйте в організатора. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Insläpp 18:30. Pris anges inte; kontrollera med arrangören. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Døre 18:30. Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "narvik-popklang-halloween-20261026",
+      "municipality": "1806",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-26",
+      "time": "19:00–20:15",
+      "expires": "2026-10-27T00:00:00+01:00",
+      "source": "Narvik kulturhus",
+      "url": "https://www.narvikkulturhus.no/program/popklang-ankenes-skolekorps-halloween-show/",
+      "location": "Narvik kulturhus · Teatersalen, Kongensgate 44, Narvik",
+      "mapQuery": "Narvik kulturhus · Teatersalen, Kongensgate 44, Narvik",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Popklang & Ankenes skolekorps · Halloween",
+          "Halloween-show med kor, skolekorps og kulturskolens venner."
+        ],
+        "en": [
+          "Popklang & Ankenes skolekorps · Halloween",
+          "Halloween show with a choir, school band and music-school friends."
+        ],
+        "uk": [
+          "Popklang & Ankenes skolekorps · Halloween",
+          "Гелловінське шоу з хором, шкільним оркестром і друзями школи мистецтв."
+        ],
+        "sv": [
+          "Popklang & Ankenes skolekorps · Halloween",
+          "Halloweenshow med kör, skolmusikkår och kulturskolans vänner."
+        ],
+        "da": [
+          "Popklang & Ankenes skolekorps · Halloween",
+          "Halloweenshow med kor, skoleorkester og kulturskolens venner."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 200 / 50 (<12) NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 200 / 50 (<12) NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 200 / 50 (<12) NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 200 / 50 (<12) NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 200 / 50 (<12) NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "narvik-anders-jektvik-20261031",
+      "municipality": "1806",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-31",
+      "time": "19:00",
+      "expires": "2026-11-01T00:00:00+01:00",
+      "source": "Narvik kulturhus",
+      "url": "https://www.narvikkulturhus.no/program/anders-jektvik/",
+      "location": "Narvik kulturhus · Mørkholla, Kongensgate 44, Narvik",
+      "mapQuery": "Narvik kulturhus · Mørkholla, Kongensgate 44, Narvik",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Anders Jektvik",
+          "Viserock og egne tekster fra Hitra-artisten."
+        ],
+        "en": [
+          "Anders Jektvik",
+          "Singer-songwriter rock and original lyrics by the Hitra artist."
+        ],
+        "uk": [
+          "Anders Jektvik",
+          "Авторський рок і власні тексти музиканта з Hitra."
+        ],
+        "sv": [
+          "Anders Jektvik",
+          "Visrock och egna texter av artisten från Hitra."
+        ],
+        "da": [
+          "Anders Jektvik",
+          "Viserock og egne tekster fra artisten fra Hitra."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 480 / 375 student+honnør NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 480 / 375 student+honnør NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 480 / 375 student+honnør NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 480 / 375 student+honnør NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 480 / 375 student+honnør NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "narvik-dabach-amigos-20261107",
+      "municipality": "1806",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-11-07",
+      "time": "19:00–20:15",
+      "expires": "2026-11-08T00:00:00+01:00",
+      "source": "Narvik kulturhus",
+      "url": "https://www.narvikkulturhus.no/program/torbjorn-dabach-lost-amigos/",
+      "location": "Narvik kulturhus · Teatersalen, Kongensgate 44, Narvik",
+      "mapQuery": "Narvik kulturhus · Teatersalen, Kongensgate 44, Narvik",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Torbjørn Dåbach & Lost Amigos",
+          "Lokal artist med band; overskuddet går til Demensforeningen i Narvik."
+        ],
+        "en": [
+          "Torbjørn Dåbach & Lost Amigos",
+          "Local artist and band; proceeds benefit Narvik’s dementia association."
+        ],
+        "uk": [
+          "Torbjørn Dåbach & Lost Amigos",
+          "Місцевий виконавець із гуртом; прибуток — об’єднанню з питань деменції в Narvik."
+        ],
+        "sv": [
+          "Torbjørn Dåbach & Lost Amigos",
+          "Lokal artist med band; överskottet går till demensföreningen i Narvik."
+        ],
+        "da": [
+          "Torbjørn Dåbach & Lost Amigos",
+          "Lokal artist med band; overskuddet går til demensforeningen i Narvik."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 325 / 275 student+honnør NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 325 / 275 student+honnør NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 325 / 275 student+honnør NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 325 / 275 student+honnør NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 325 / 275 student+honnør NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "askoy-cajun-gumbo-20261022",
+      "municipality": "4627",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-22",
+      "time": "19:00",
+      "expires": "2026-10-23T00:00:00+02:00",
+      "source": "Askøy kommune · Det skjer på Askøy",
+      "url": "https://detskjer.askoy.no/2523-konsert-med-caju-gumbo-og-paul-sine-haner/2026-10-22-19-00",
+      "location": "Fargeriet, Strusshamn, Askøy",
+      "mapQuery": "Fargeriet, Strusshamn, Askøy",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Cajun Gumbo & Paul sine Haner",
+          "Cajun, Tex-Mex og irsk-amerikansk folkemusikk."
+        ],
+        "en": [
+          "Cajun Gumbo & Paul sine Haner",
+          "Cajun, Tex-Mex and Irish-American folk music."
+        ],
+        "uk": [
+          "Cajun Gumbo & Paul sine Haner",
+          "Каджунська, Tex-Mex та ірландсько-американська народна музика."
+        ],
+        "sv": [
+          "Cajun Gumbo & Paul sine Haner",
+          "Cajun, Tex-Mex och irländsk-amerikansk folkmusik."
+        ],
+        "da": [
+          "Cajun Gumbo & Paul sine Haner",
+          "Cajun, Tex-Mex og irsk-amerikansk folkemusik."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Pris ikke oppgitt; sjekk hos arrangøren. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Price not listed; check with the organiser. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Ціну не вказано; уточнюйте в організатора. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Pris anges inte; kontrollera med arrangören. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "askoy-tine-helseth-20261025",
+      "municipality": "4627",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-25",
+      "time": "19:00",
+      "expires": "2026-10-26T00:00:00+01:00",
+      "source": "Askøy kommune / Klassisk Askøy",
+      "url": "https://detskjer.askoy.no/det-skjer-pa-askoy/2423-tine-thing-helseth-i-kipo/2026-10-25-19-00",
+      "location": "KIPO kultursal, Søre Myrane 13, Askøy",
+      "mapQuery": "KIPO kultursal, Søre Myrane 13, Askøy",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Tine Thing Helseth i KIPO",
+          "Konsert med trompetisten Tine Thing Helseth."
+        ],
+        "en": [
+          "Tine Thing Helseth i KIPO",
+          "Concert with trumpeter Tine Thing Helseth."
+        ],
+        "uk": [
+          "Tine Thing Helseth i KIPO",
+          "Концерт трубачки Tine Thing Helseth."
+        ],
+        "sv": [
+          "Tine Thing Helseth i KIPO",
+          "Konsert med trumpetaren Tine Thing Helseth."
+        ],
+        "da": [
+          "Tine Thing Helseth i KIPO",
+          "Koncert med trompetisten Tine Thing Helseth."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Pris ikke oppgitt; sjekk hos arrangøren. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Price not listed; check with the organiser. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Ціну не вказано; уточнюйте в організатора. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Pris anges inte; kontrollera med arrangören. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "gjovik-mikkel-berg-eriksen-20261022",
+      "municipality": "3407",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-22",
+      "time": "19:00",
+      "expires": "2026-10-23T00:00:00+02:00",
+      "source": "Byscena Bedehuset",
+      "url": "https://event.checkin.no/230989/klassisk-pa-klubb-mikkel-berg-eriksen",
+      "location": "Byscena Bedehuset, Kirkegata 8, Gjøvik",
+      "mapQuery": "Byscena Bedehuset, Kirkegata 8, Gjøvik",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Klassisk på klubb · Mikkel Berg-Eriksen",
+          "Pianoklassikere og pianistens egen musikk."
+        ],
+        "en": [
+          "Klassisk på klubb · Mikkel Berg-Eriksen",
+          "Piano classics and the pianist’s own music."
+        ],
+        "uk": [
+          "Klassisk på klubb · Mikkel Berg-Eriksen",
+          "Фортепіанна класика й власна музика піаніста."
+        ],
+        "sv": [
+          "Klassisk på klubb · Mikkel Berg-Eriksen",
+          "Pianoklassiker och pianistens egen musik."
+        ],
+        "da": [
+          "Klassisk på klubb · Mikkel Berg-Eriksen",
+          "Klaverklassikere og pianistens egen musik."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dører 18:00. Oppgitt pris: 310 / 170 student+barn+ungdom NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Doors 18:00. Listed price: 310 / 170 student+barn+ungdom NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Двері 18:00. Заявлена ціна: 310 / 170 student+barn+ungdom NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Insläpp 18:00. Angivet pris: 310 / 170 student+barn+ungdom NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Døre 18:00. Oplyst pris: 310 / 170 student+barn+ungdom NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "haugesund-ingrid-bjornov-20261029",
+      "municipality": "1106",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-29",
+      "time": "19:00",
+      "expires": "2026-10-30T00:00:00+01:00",
+      "source": "Festiviteten",
+      "url": "https://www.festiviteten.no/program/43240-ingrid-bjornov/",
+      "location": "Festiviteten · Hovedsalen, Knut Knutsen O.A.S gate 4, Haugesund",
+      "mapQuery": "Festiviteten · Hovedsalen, Knut Knutsen O.A.S gate 4, Haugesund",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Ingrid Bjørnov · Bjørnov tar det piano",
+          "Pianist og underholder i elektrisk sceneshow med eget band."
+        ],
+        "en": [
+          "Ingrid Bjørnov · Bjørnov tar det piano",
+          "Pianist and entertainer in an electric stage show with her own band."
+        ],
+        "uk": [
+          "Ingrid Bjørnov · Bjørnov tar det piano",
+          "Піаністка й артистка в електричному сценічному шоу зі своїм гуртом."
+        ],
+        "sv": [
+          "Ingrid Bjørnov · Bjørnov tar det piano",
+          "Pianist och underhållare i elektrisk scenshow med eget band."
+        ],
+        "da": [
+          "Ingrid Bjørnov · Bjørnov tar det piano",
+          "Pianist og entertainer i elektrisk sceneshow med eget band."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 600 NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 600 NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 600 NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 600 NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 600 NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "haugesund-vibran-20261030",
+      "municipality": "1106",
+      "category": "events",
+      "eventType": "concert",
+      "eventDate": "2026-10-30",
+      "time": "19:00",
+      "expires": "2026-10-31T00:00:00+01:00",
+      "source": "Festiviteten / Mannskoret Vibran",
+      "url": "https://www.festiviteten.no/program/46754-mannskoret-vibran/",
+      "location": "Festiviteten · Hovedsalen, Knut Knutsen O.A.S gate 4, Haugesund",
+      "mapQuery": "Festiviteten · Hovedsalen, Knut Knutsen O.A.S gate 4, Haugesund",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Mannskoret Vibran · Hundre år i sangens tjeneste",
+          "Jubileumskonsert for mannskorets 100 år."
+        ],
+        "en": [
+          "Mannskoret Vibran · Hundre år i sangens tjeneste",
+          "Concert celebrating the men’s choir’s centenary."
+        ],
+        "uk": [
+          "Mannskoret Vibran · Hundre år i sangens tjeneste",
+          "Концерт до сторіччя чоловічого хору."
+        ],
+        "sv": [
+          "Mannskoret Vibran · Hundre år i sangens tjeneste",
+          "Jubileumskonsert för manskörens 100 år."
+        ],
+        "da": [
+          "Mannskoret Vibran · Hundre år i sangens tjeneste",
+          "Jubilæumskoncert for mandskorets 100 år."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Oppgitt pris: 130 (100 + 30 gebyr) NOK. Sjekk billetter og oppdateringer hos arrangøren."
+        ],
+        "en": [
+          "Listed price: 130 (100 + 30 gebyr) NOK. Check tickets and updates with the organiser."
+        ],
+        "uk": [
+          "Заявлена ціна: 130 (100 + 30 gebyr) NOK. Квитки й оновлення перевіряйте в організатора."
+        ],
+        "sv": [
+          "Angivet pris: 130 (100 + 30 gebyr) NOK. Kontrollera biljetter och uppdateringar hos arrangören."
+        ],
+        "da": [
+          "Oplyst pris: 130 (100 + 30 gebyr) NOK. Tjek billetter og opdateringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "market-bondens-marked-pa-vinkelplassen-2026-10-24",
+      "municipality": "0301",
+      "category": "events",
+      "eventDate": "2026-10-24",
+      "time": "10:00–16:00",
+      "expires": "2026-10-24T16:00:00+02:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bondens-marked-pa-vinkelplassen-2026-10-24",
+      "location": "Vinkelplassen (Majorstuen), Kirkeveien 59, 0364, OSLO",
+      "mapQuery": "Vinkelplassen (Majorstuen), Kirkeveien 59, 0364, OSLO",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Vinkelplassen",
+          "24 oktober · 10:00–16:00 · Vinkelplassen (Majorstuen), Kirkeveien 59, 0364, OSLO."
+        ],
+        "en": [
+          "Farmers’ market · Vinkelplassen",
+          "24 October · 10:00–16:00 · Vinkelplassen (Majorstuen), Kirkeveien 59, 0364, OSLO."
+        ],
+        "uk": [
+          "Фермерський ринок · Vinkelplassen",
+          "24 жовтня · 10:00–16:00 · Vinkelplassen (Majorstuen), Kirkeveien 59, 0364, OSLO."
+        ],
+        "sv": [
+          "Bondens marknad · Vinkelplassen",
+          "24 oktober · 10:00–16:00 · Vinkelplassen (Majorstuen), Kirkeveien 59, 0364, OSLO."
+        ],
+        "da": [
+          "Bondens marked · Vinkelplassen",
+          "24 oktober · 10:00–16:00 · Vinkelplassen (Majorstuen), Kirkeveien 59, 0364, OSLO."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bondens-marked-bergen-2026-10-31",
+      "municipality": "4601",
+      "category": "events",
+      "eventDate": "2026-10-31",
+      "time": "10:00–16:00",
+      "expires": "2026-10-31T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bondens-marked-bergen-2026-10-31",
+      "location": "Bergen Fisketorget, Torget 5, 5014, BERGEN",
+      "mapQuery": "Bergen Fisketorget, Torget 5, 5014, BERGEN",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Fisketorget, Bergen",
+          "31 oktober · 10:00–16:00 · Bergen Fisketorget, Torget 5, 5014, BERGEN."
+        ],
+        "en": [
+          "Farmers’ market · Fisketorget, Bergen",
+          "31 October · 10:00–16:00 · Bergen Fisketorget, Torget 5, 5014, BERGEN."
+        ],
+        "uk": [
+          "Фермерський ринок · Fisketorget, Bergen",
+          "31 жовтня · 10:00–16:00 · Bergen Fisketorget, Torget 5, 5014, BERGEN."
+        ],
+        "sv": [
+          "Bondens marknad · Fisketorget, Bergen",
+          "31 oktober · 10:00–16:00 · Bergen Fisketorget, Torget 5, 5014, BERGEN."
+        ],
+        "da": [
+          "Bondens marked · Fisketorget, Bergen",
+          "31 oktober · 10:00–16:00 · Bergen Fisketorget, Torget 5, 5014, BERGEN."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bondens-marked-pa-vinslottet-pa-hasle-2026-11-01",
+      "municipality": "0301",
+      "category": "events",
+      "eventDate": "2026-11-01",
+      "time": "11:00–16:00",
+      "expires": "2026-11-01T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bondens-marked-pa-vinslottet-pa-hasle-2026-11-01",
+      "location": "Vinslottet på Hasle, Bøkkerveien 4, 0579, OSLO",
+      "mapQuery": "Vinslottet på Hasle, Bøkkerveien 4, 0579, OSLO",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Vinslottet, Hasle",
+          "1 november · 11:00–16:00 · Vinslottet på Hasle, Bøkkerveien 4, 0579, OSLO."
+        ],
+        "en": [
+          "Farmers’ market · Vinslottet, Hasle",
+          "1 November · 11:00–16:00 · Vinslottet på Hasle, Bøkkerveien 4, 0579, OSLO."
+        ],
+        "uk": [
+          "Фермерський ринок · Vinslottet, Hasle",
+          "1 листопада · 11:00–16:00 · Vinslottet på Hasle, Bøkkerveien 4, 0579, OSLO."
+        ],
+        "sv": [
+          "Bondens marknad · Vinslottet, Hasle",
+          "1 november · 11:00–16:00 · Vinslottet på Hasle, Bøkkerveien 4, 0579, OSLO."
+        ],
+        "da": [
+          "Bondens marked · Vinslottet, Hasle",
+          "1 november · 11:00–16:00 · Vinslottet på Hasle, Bøkkerveien 4, 0579, OSLO."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bm-oersta-lysfest-2026-11-06",
+      "municipality": "1520",
+      "category": "events",
+      "eventDate": "2026-11-06",
+      "time": "12:00–18:00",
+      "expires": "2026-11-06T18:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bm-oersta-lysfest-2026-11-06",
+      "location": "Ørsta, 6150, ØRSTA",
+      "mapQuery": "Ørsta, 6150, ØRSTA",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Ørsta · Lysfest",
+          "6 november · 12:00–18:00 · Ørsta, 6150, ØRSTA."
+        ],
+        "en": [
+          "Farmers’ market · Ørsta · Lysfest",
+          "6 November · 12:00–18:00 · Ørsta, 6150, ØRSTA."
+        ],
+        "uk": [
+          "Фермерський ринок · Ørsta · Lysfest",
+          "6 листопада · 12:00–18:00 · Ørsta, 6150, ØRSTA."
+        ],
+        "sv": [
+          "Bondens marknad · Ørsta · Lysfest",
+          "6 november · 12:00–18:00 · Ørsta, 6150, ØRSTA."
+        ],
+        "da": [
+          "Bondens marked · Ørsta · Lysfest",
+          "6 november · 12:00–18:00 · Ørsta, 6150, ØRSTA."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bondens-marked-utenfor-asker-kulturhus-2026-11-07",
+      "municipality": "3203",
+      "category": "events",
+      "eventDate": "2026-11-07",
+      "time": "10:00–16:00",
+      "expires": "2026-11-07T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bondens-marked-utenfor-asker-kulturhus-2026-11-07",
+      "location": "Asker Kulturhus, Strøket 15A, 1383, ASKER",
+      "mapQuery": "Asker Kulturhus, Strøket 15A, 1383, ASKER",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Asker kulturhus",
+          "7 november · 10:00–16:00 · Asker Kulturhus, Strøket 15A, 1383, ASKER."
+        ],
+        "en": [
+          "Farmers’ market · Asker kulturhus",
+          "7 November · 10:00–16:00 · Asker Kulturhus, Strøket 15A, 1383, ASKER."
+        ],
+        "uk": [
+          "Фермерський ринок · Asker kulturhus",
+          "7 листопада · 10:00–16:00 · Asker Kulturhus, Strøket 15A, 1383, ASKER."
+        ],
+        "sv": [
+          "Bondens marknad · Asker kulturhus",
+          "7 november · 10:00–16:00 · Asker Kulturhus, Strøket 15A, 1383, ASKER."
+        ],
+        "da": [
+          "Bondens marked · Asker kulturhus",
+          "7 november · 10:00–16:00 · Asker Kulturhus, Strøket 15A, 1383, ASKER."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-myre-2026-11-07",
+      "municipality": "1868",
+      "category": "events",
+      "eventDate": "2026-11-07",
+      "time": "11:00–15:00",
+      "expires": "2026-11-07T15:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/myre-2026-11-07",
+      "location": "Myre - Huset for alle, Storgata 29, 8430, MYRE",
+      "mapQuery": "Myre - Huset for alle, Storgata 29, 8430, MYRE",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Myre · Huset for alle",
+          "7 november · 11:00–15:00 · Myre - Huset for alle, Storgata 29, 8430, MYRE."
+        ],
+        "en": [
+          "Farmers’ market · Myre · Huset for alle",
+          "7 November · 11:00–15:00 · Myre - Huset for alle, Storgata 29, 8430, MYRE."
+        ],
+        "uk": [
+          "Фермерський ринок · Myre · Huset for alle",
+          "7 листопада · 11:00–15:00 · Myre - Huset for alle, Storgata 29, 8430, MYRE."
+        ],
+        "sv": [
+          "Bondens marknad · Myre · Huset for alle",
+          "7 november · 11:00–15:00 · Myre - Huset for alle, Storgata 29, 8430, MYRE."
+        ],
+        "da": [
+          "Bondens marked · Myre · Huset for alle",
+          "7 november · 11:00–15:00 · Myre - Huset for alle, Storgata 29, 8430, MYRE."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-steinkjer-torg-2026-11-07",
+      "municipality": "5006",
+      "category": "events",
+      "eventDate": "2026-11-07",
+      "time": "11:00–15:00",
+      "expires": "2026-11-07T15:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/steinkjer-torg-2026-11-07",
+      "location": "Steinkjer torg, Kongens Gate 26A, 7713, STEINKJER",
+      "mapQuery": "Steinkjer torg, Kongens Gate 26A, 7713, STEINKJER",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Steinkjer torg",
+          "7 november · 11:00–15:00 · Steinkjer torg, Kongens Gate 26A, 7713, STEINKJER."
+        ],
+        "en": [
+          "Farmers’ market · Steinkjer torg",
+          "7 November · 11:00–15:00 · Steinkjer torg, Kongens Gate 26A, 7713, STEINKJER."
+        ],
+        "uk": [
+          "Фермерський ринок · Steinkjer torg",
+          "7 листопада · 11:00–15:00 · Steinkjer torg, Kongens Gate 26A, 7713, STEINKJER."
+        ],
+        "sv": [
+          "Bondens marknad · Steinkjer torg",
+          "7 november · 11:00–15:00 · Steinkjer torg, Kongens Gate 26A, 7713, STEINKJER."
+        ],
+        "da": [
+          "Bondens marked · Steinkjer torg",
+          "7 november · 11:00–15:00 · Steinkjer torg, Kongens Gate 26A, 7713, STEINKJER."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bm-devoldfabrikken-lystenning-2026-11-12",
+      "municipality": "1531",
+      "category": "events",
+      "eventDate": "2026-11-12",
+      "time": "13:00–19:00",
+      "expires": "2026-11-12T19:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bm-devoldfabrikken-lystenning-2026-11-12",
+      "location": "Devoldfabrikken, Langevåg, O.A.Devold-vegen 16, 6030, LANGEVÅG",
+      "mapQuery": "Devoldfabrikken, Langevåg, O.A.Devold-vegen 16, 6030, LANGEVÅG",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Devoldfabrikken, Langevåg",
+          "12 november · 13:00–19:00 · Devoldfabrikken, Langevåg, O.A.Devold-vegen 16, 6030, LANGEVÅG."
+        ],
+        "en": [
+          "Farmers’ market · Devoldfabrikken, Langevåg",
+          "12 November · 13:00–19:00 · Devoldfabrikken, Langevåg, O.A.Devold-vegen 16, 6030, LANGEVÅG."
+        ],
+        "uk": [
+          "Фермерський ринок · Devoldfabrikken, Langevåg",
+          "12 листопада · 13:00–19:00 · Devoldfabrikken, Langevåg, O.A.Devold-vegen 16, 6030, LANGEVÅG."
+        ],
+        "sv": [
+          "Bondens marknad · Devoldfabrikken, Langevåg",
+          "12 november · 13:00–19:00 · Devoldfabrikken, Langevåg, O.A.Devold-vegen 16, 6030, LANGEVÅG."
+        ],
+        "da": [
+          "Bondens marked · Devoldfabrikken, Langevåg",
+          "12 november · 13:00–19:00 · Devoldfabrikken, Langevåg, O.A.Devold-vegen 16, 6030, LANGEVÅG."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bm-digernes-2026-11-13",
+      "municipality": "1508",
+      "category": "events",
+      "eventDate": "2026-11-13",
+      "time": "12:00–16:00",
+      "expires": "2026-11-13T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bm-digernes-2026-11-13",
+      "location": "Digerneset , Digernes Næringsområde 9, 6260, SKODJE",
+      "mapQuery": "Digerneset , Digernes Næringsområde 9, 6260, SKODJE",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Digerneset, Skodje",
+          "13 november · 12:00–16:00 · Digerneset , Digernes Næringsområde 9, 6260, SKODJE."
+        ],
+        "en": [
+          "Farmers’ market · Digerneset, Skodje",
+          "13 November · 12:00–16:00 · Digerneset , Digernes Næringsområde 9, 6260, SKODJE."
+        ],
+        "uk": [
+          "Фермерський ринок · Digerneset, Skodje",
+          "13 листопада · 12:00–16:00 · Digerneset , Digernes Næringsområde 9, 6260, SKODJE."
+        ],
+        "sv": [
+          "Bondens marknad · Digerneset, Skodje",
+          "13 november · 12:00–16:00 · Digerneset , Digernes Næringsområde 9, 6260, SKODJE."
+        ],
+        "da": [
+          "Bondens marked · Digerneset, Skodje",
+          "13 november · 12:00–16:00 · Digerneset , Digernes Næringsområde 9, 6260, SKODJE."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-julemarked-varatun-gard-2026-11-13",
+      "municipality": "1108",
+      "category": "events",
+      "eventDate": "2026-11-13",
+      "time": "16:00–20:00",
+      "expires": "2026-11-13T20:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/julemarked-varatun-gard-2026-11-13",
+      "location": "Varatun gård, Varatunhagen 51, 4317, SANDNES",
+      "mapQuery": "Varatun gård, Varatunhagen 51, 4317, SANDNES",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Julemarked · Varatun gård, Sandnes",
+          "13 november · 16:00–20:00 · Varatun gård, Varatunhagen 51, 4317, SANDNES."
+        ],
+        "en": [
+          "Christmas market · Varatun gård, Sandnes",
+          "13 November · 16:00–20:00 · Varatun gård, Varatunhagen 51, 4317, SANDNES."
+        ],
+        "uk": [
+          "Різдвяний ярмарок · Varatun gård, Sandnes",
+          "13 листопада · 16:00–20:00 · Varatun gård, Varatunhagen 51, 4317, SANDNES."
+        ],
+        "sv": [
+          "Julmarknad · Varatun gård, Sandnes",
+          "13 november · 16:00–20:00 · Varatun gård, Varatunhagen 51, 4317, SANDNES."
+        ],
+        "da": [
+          "Julemarked · Varatun gård, Sandnes",
+          "13 november · 16:00–20:00 · Varatun gård, Varatunhagen 51, 4317, SANDNES."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bondens-marked-pa-lillestroem-torv-2026-11-14",
+      "municipality": "3205",
+      "category": "events",
+      "eventDate": "2026-11-14",
+      "time": "10:00–16:00",
+      "expires": "2026-11-14T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bondens-marked-pa-lillestroem-torv-2026-11-14",
+      "location": "Lillestrøm Torv, Torvet 6, 2000, LILLESTRØM",
+      "mapQuery": "Lillestrøm Torv, Torvet 6, 2000, LILLESTRØM",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Lillestrøm Torv",
+          "14 november · 10:00–16:00 · Lillestrøm Torv, Torvet 6, 2000, LILLESTRØM."
+        ],
+        "en": [
+          "Farmers’ market · Lillestrøm Torv",
+          "14 November · 10:00–16:00 · Lillestrøm Torv, Torvet 6, 2000, LILLESTRØM."
+        ],
+        "uk": [
+          "Фермерський ринок · Lillestrøm Torv",
+          "14 листопада · 10:00–16:00 · Lillestrøm Torv, Torvet 6, 2000, LILLESTRØM."
+        ],
+        "sv": [
+          "Bondens marknad · Lillestrøm Torv",
+          "14 november · 10:00–16:00 · Lillestrøm Torv, Torvet 6, 2000, LILLESTRØM."
+        ],
+        "da": [
+          "Bondens marked · Lillestrøm Torv",
+          "14 november · 10:00–16:00 · Lillestrøm Torv, Torvet 6, 2000, LILLESTRØM."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-julemarked-oddernes-gartneri-hageland-2026-11-14",
+      "municipality": "4204",
+      "category": "events",
+      "eventDate": "2026-11-14",
+      "time": "10:00–16:00",
+      "expires": "2026-11-14T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/julemarked-oddernes-gartneri-hageland-2026-11-14",
+      "location": "Oddernes gartneri, Bjørnebakken 1, 4631, KRISTIANSAND S",
+      "mapQuery": "Oddernes gartneri, Bjørnebakken 1, 4631, KRISTIANSAND S",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Julemarked · Oddernes Gartneri",
+          "14 november · 10:00–16:00 · Oddernes gartneri, Bjørnebakken 1, 4631, KRISTIANSAND S."
+        ],
+        "en": [
+          "Christmas market · Oddernes Gartneri",
+          "14 November · 10:00–16:00 · Oddernes gartneri, Bjørnebakken 1, 4631, KRISTIANSAND S."
+        ],
+        "uk": [
+          "Різдвяний ярмарок · Oddernes Gartneri",
+          "14 листопада · 10:00–16:00 · Oddernes gartneri, Bjørnebakken 1, 4631, KRISTIANSAND S."
+        ],
+        "sv": [
+          "Julmarknad · Oddernes Gartneri",
+          "14 november · 10:00–16:00 · Oddernes gartneri, Bjørnebakken 1, 4631, KRISTIANSAND S."
+        ],
+        "da": [
+          "Julemarked · Oddernes Gartneri",
+          "14 november · 10:00–16:00 · Oddernes gartneri, Bjørnebakken 1, 4631, KRISTIANSAND S."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-domkirkeplassen-i-stavanger-2026-11-14",
+      "municipality": "1103",
+      "category": "events",
+      "eventDate": "2026-11-14",
+      "time": "11:00–15:00",
+      "expires": "2026-11-14T15:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/domkirkeplassen-i-stavanger-2026-11-14",
+      "location": "Domkirkeplassen i Stavanger, Domkirkeplassen 1, 4006, STAVANGER",
+      "mapQuery": "Domkirkeplassen i Stavanger, Domkirkeplassen 1, 4006, STAVANGER",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Domkirkeplassen, Stavanger",
+          "14 november · 11:00–15:00 · Domkirkeplassen i Stavanger, Domkirkeplassen 1, 4006, STAVANGER."
+        ],
+        "en": [
+          "Farmers’ market · Domkirkeplassen, Stavanger",
+          "14 November · 11:00–15:00 · Domkirkeplassen i Stavanger, Domkirkeplassen 1, 4006, STAVANGER."
+        ],
+        "uk": [
+          "Фермерський ринок · Domkirkeplassen, Stavanger",
+          "14 листопада · 11:00–15:00 · Domkirkeplassen i Stavanger, Domkirkeplassen 1, 4006, STAVANGER."
+        ],
+        "sv": [
+          "Bondens marknad · Domkirkeplassen, Stavanger",
+          "14 november · 11:00–15:00 · Domkirkeplassen i Stavanger, Domkirkeplassen 1, 4006, STAVANGER."
+        ],
+        "da": [
+          "Bondens marked · Domkirkeplassen, Stavanger",
+          "14 november · 11:00–15:00 · Domkirkeplassen i Stavanger, Domkirkeplassen 1, 4006, STAVANGER."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-birkelunden-pa-gr-nerloekka-2026-11-14",
+      "municipality": "0301",
+      "category": "events",
+      "eventDate": "2026-11-14",
+      "time": "11:00–16:00",
+      "expires": "2026-11-14T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/birkelunden-pa-gr-nerloekka-2026-11-14",
+      "location": "Birkelunden (Grünerløkka), Seilduksgata 23B, 0553, OSLO",
+      "mapQuery": "Birkelunden (Grünerløkka), Seilduksgata 23B, 0553, OSLO",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Birkelunden, Grünerløkka",
+          "14 november · 11:00–16:00 · Birkelunden (Grünerløkka), Seilduksgata 23B, 0553, OSLO."
+        ],
+        "en": [
+          "Farmers’ market · Birkelunden, Grünerløkka",
+          "14 November · 11:00–16:00 · Birkelunden (Grünerløkka), Seilduksgata 23B, 0553, OSLO."
+        ],
+        "uk": [
+          "Фермерський ринок · Birkelunden, Grünerløkka",
+          "14 листопада · 11:00–16:00 · Birkelunden (Grünerløkka), Seilduksgata 23B, 0553, OSLO."
+        ],
+        "sv": [
+          "Bondens marknad · Birkelunden, Grünerløkka",
+          "14 november · 11:00–16:00 · Birkelunden (Grünerløkka), Seilduksgata 23B, 0553, OSLO."
+        ],
+        "da": [
+          "Bondens marked · Birkelunden, Grünerløkka",
+          "14 november · 11:00–16:00 · Birkelunden (Grünerløkka), Seilduksgata 23B, 0553, OSLO."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-kongensgate-oest-2026-11-14",
+      "municipality": "5001",
+      "category": "events",
+      "eventDate": "2026-11-14",
+      "time": "11:00–16:00",
+      "expires": "2026-11-14T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/kongensgate-oest-2026-11-14",
+      "location": "Kongensgate øst, Kongens gate, 7012, TRONDHEIM",
+      "mapQuery": "Kongensgate øst, Kongens gate, 7012, TRONDHEIM",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Kongens gate, Trondheim",
+          "14 november · 11:00–16:00 · Kongensgate øst, Kongens gate, 7012, TRONDHEIM."
+        ],
+        "en": [
+          "Farmers’ market · Kongens gate, Trondheim",
+          "14 November · 11:00–16:00 · Kongensgate øst, Kongens gate, 7012, TRONDHEIM."
+        ],
+        "uk": [
+          "Фермерський ринок · Kongens gate, Trondheim",
+          "14 листопада · 11:00–16:00 · Kongensgate øst, Kongens gate, 7012, TRONDHEIM."
+        ],
+        "sv": [
+          "Bondens marknad · Kongens gate, Trondheim",
+          "14 november · 11:00–16:00 · Kongensgate øst, Kongens gate, 7012, TRONDHEIM."
+        ],
+        "da": [
+          "Bondens marked · Kongens gate, Trondheim",
+          "14 november · 11:00–16:00 · Kongensgate øst, Kongens gate, 7012, TRONDHEIM."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-julemarked-pa-klostergarden-2026-11-21",
+      "municipality": "1103",
+      "category": "events",
+      "eventDate": "2026-11-21",
+      "time": "10:00–15:00",
+      "expires": "2026-11-21T15:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/julemarked-pa-klostergarden-2026-11-21",
+      "location": "Klostergarden, Mosterøyveien 802, 4156, MOSTERØY",
+      "mapQuery": "Klostergarden, Mosterøyveien 802, 4156, MOSTERØY",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Julemarked · Klostergården, Mosterøy",
+          "21 november · 10:00–15:00 · Klostergarden, Mosterøyveien 802, 4156, MOSTERØY."
+        ],
+        "en": [
+          "Christmas market · Klostergården, Mosterøy",
+          "21 November · 10:00–15:00 · Klostergarden, Mosterøyveien 802, 4156, MOSTERØY."
+        ],
+        "uk": [
+          "Різдвяний ярмарок · Klostergården, Mosterøy",
+          "21 листопада · 10:00–15:00 · Klostergarden, Mosterøyveien 802, 4156, MOSTERØY."
+        ],
+        "sv": [
+          "Julmarknad · Klostergården, Mosterøy",
+          "21 november · 10:00–15:00 · Klostergarden, Mosterøyveien 802, 4156, MOSTERØY."
+        ],
+        "da": [
+          "Julemarked · Klostergården, Mosterøy",
+          "21 november · 10:00–15:00 · Klostergarden, Mosterøyveien 802, 4156, MOSTERØY."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-soendre-torv-2026-11-21",
+      "municipality": "3305",
+      "category": "events",
+      "eventDate": "2026-11-21",
+      "time": "11:00–16:30",
+      "expires": "2026-11-21T16:30:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/soendre-torv-2026-11-21",
+      "location": "Hønefoss torg, Søndre Torv 1, 3510, HØNEFOSS",
+      "mapQuery": "Hønefoss torg, Søndre Torv 1, 3510, HØNEFOSS",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Julemarked · Søndre Torv, Hønefoss",
+          "21 november · 11:00–16:30 · Hønefoss torg, Søndre Torv 1, 3510, HØNEFOSS."
+        ],
+        "en": [
+          "Christmas market · Søndre Torv, Hønefoss",
+          "21 November · 11:00–16:30 · Hønefoss torg, Søndre Torv 1, 3510, HØNEFOSS."
+        ],
+        "uk": [
+          "Різдвяний ярмарок · Søndre Torv, Hønefoss",
+          "21 листопада · 11:00–16:30 · Hønefoss torg, Søndre Torv 1, 3510, HØNEFOSS."
+        ],
+        "sv": [
+          "Julmarknad · Søndre Torv, Hønefoss",
+          "21 november · 11:00–16:30 · Hønefoss torg, Søndre Torv 1, 3510, HØNEFOSS."
+        ],
+        "da": [
+          "Julemarked · Søndre Torv, Hønefoss",
+          "21 november · 11:00–16:30 · Hønefoss torg, Søndre Torv 1, 3510, HØNEFOSS."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bondens-marked-pa-baerums-verk-2026-11-22",
+      "municipality": "3201",
+      "category": "events",
+      "eventDate": "2026-11-22",
+      "time": "12:00–17:00",
+      "expires": "2026-11-22T17:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bondens-marked-pa-baerums-verk-2026-11-22",
+      "location": "Bærums Verk, Verksgata 15, 1353, BÆRUMS VERK",
+      "mapQuery": "Bærums Verk, Verksgata 15, 1353, BÆRUMS VERK",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Bærums Verk",
+          "22 november · 12:00–17:00 · Bærums Verk, Verksgata 15, 1353, BÆRUMS VERK."
+        ],
+        "en": [
+          "Farmers’ market · Bærums Verk",
+          "22 November · 12:00–17:00 · Bærums Verk, Verksgata 15, 1353, BÆRUMS VERK."
+        ],
+        "uk": [
+          "Фермерський ринок · Bærums Verk",
+          "22 листопада · 12:00–17:00 · Bærums Verk, Verksgata 15, 1353, BÆRUMS VERK."
+        ],
+        "sv": [
+          "Bondens marknad · Bærums Verk",
+          "22 november · 12:00–17:00 · Bærums Verk, Verksgata 15, 1353, BÆRUMS VERK."
+        ],
+        "da": [
+          "Bondens marked · Bærums Verk",
+          "22 november · 12:00–17:00 · Bærums Verk, Verksgata 15, 1353, BÆRUMS VERK."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bm-sykkylven-nattope-2026-11-27",
+      "municipality": "1528",
+      "category": "events",
+      "eventDate": "2026-11-27",
+      "time": "14:00–20:00",
+      "expires": "2026-11-27T20:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bm-sykkylven-nattope-2026-11-27",
+      "location": "Sykkylven, 6230, SYKKYLVEN",
+      "mapQuery": "Sykkylven, 6230, SYKKYLVEN",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Sykkylven · Nattope",
+          "27 november · 14:00–20:00 · Sykkylven, 6230, SYKKYLVEN."
+        ],
+        "en": [
+          "Farmers’ market · Sykkylven · Nattope",
+          "27 November · 14:00–20:00 · Sykkylven, 6230, SYKKYLVEN."
+        ],
+        "uk": [
+          "Фермерський ринок · Sykkylven · Nattope",
+          "27 листопада · 14:00–20:00 · Sykkylven, 6230, SYKKYLVEN."
+        ],
+        "sv": [
+          "Bondens marknad · Sykkylven · Nattope",
+          "27 november · 14:00–20:00 · Sykkylven, 6230, SYKKYLVEN."
+        ],
+        "da": [
+          "Bondens marked · Sykkylven · Nattope",
+          "27 november · 14:00–20:00 · Sykkylven, 6230, SYKKYLVEN."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "market-bondens-marked-pa-kolbotn-torg-2026-11-28",
+      "municipality": "3207",
+      "category": "events",
+      "eventDate": "2026-11-28",
+      "time": "10:00–16:00",
+      "expires": "2026-11-28T16:00:00+01:00",
+      "source": "Bondens marked",
+      "url": "https://www.bondensmarked.no/markeder/bondens-marked-pa-kolbotn-torg-2026-11-28",
+      "location": "Kolbotn Torg, Kolbotnveien 33, 1410, KOLBOTN",
+      "mapQuery": "Kolbotn Torg, Kolbotnveien 33, 1410, KOLBOTN",
+      "checked": "2026-10-20",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "textOnly": true,
+      "eventType": "market",
+      "copy": {
+        "nb": [
+          "Bondens marked · Kolbotn torg",
+          "28 november · 10:00–16:00 · Kolbotn Torg, Kolbotnveien 33, 1410, KOLBOTN."
+        ],
+        "en": [
+          "Farmers’ market · Kolbotn torg",
+          "28 November · 10:00–16:00 · Kolbotn Torg, Kolbotnveien 33, 1410, KOLBOTN."
+        ],
+        "uk": [
+          "Фермерський ринок · Kolbotn torg",
+          "28 листопада · 10:00–16:00 · Kolbotn Torg, Kolbotnveien 33, 1410, KOLBOTN."
+        ],
+        "sv": [
+          "Bondens marknad · Kolbotn torg",
+          "28 november · 10:00–16:00 · Kolbotn Torg, Kolbotnveien 33, 1410, KOLBOTN."
+        ],
+        "da": [
+          "Bondens marked · Kolbotn torg",
+          "28 november · 10:00–16:00 · Kolbotn Torg, Kolbotnveien 33, 1410, KOLBOTN."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Lokalmat direkte fra produsentene. Inngangspris er ikke oppgitt. Sjekk arrangørens side før avreise."
+        ],
+        "en": [
+          "Local food directly from the producers. Admission price is not stated. Check the organiser’s page before travelling."
+        ],
+        "uk": [
+          "Місцеві продукти безпосередньо від виробників. Вартість входу не вказана. Перед поїздкою перевірте сторінку організатора."
+        ],
+        "sv": [
+          "Lokal mat direkt från producenterna. Entrépris anges inte. Kontrollera arrangörens sida före resan."
+        ],
+        "da": [
+          "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
+        ]
+      }
+    },
+    {
+      "id": "kristiansand-battle-algiers-20261020",
+      "municipality": "4204",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-20",
+      "time": "18:00–20:05",
+      "expires": "2026-10-20T20:05:00+02:00",
+      "location": "Cinemateket i Kristiansand · Aladdin, Kongens gate 6",
+      "mapQuery": "Cinemateket i Kristiansand · Aladdin, Kongens gate 6",
+      "url": "https://www.krscinematek.no/events/the-battle-of-algiers/",
+      "source": "Cinemateket i Kristiansand",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "The Battle of Algiers",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-20 · 18:00–20:05."
+        ],
+        "en": [
+          "The Battle of Algiers",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-20 · 18:00–20:05."
+        ],
+        "uk": [
+          "The Battle of Algiers",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-20 · 18:00–20:05."
+        ],
+        "sv": [
+          "The Battle of Algiers",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-20 · 18:00–20:05."
+        ],
+        "da": [
+          "The Battle of Algiers",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-20 · 18:00–20:05."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Film av Gillo Pontecorvo (1966). 18-årsgrense skyldes servering i bar/sal. Språk, undertekster og pris er ikke oppgitt i programteksten; sjekk arrangørens billettside."
+        ],
+        "en": [
+          "Film by Gillo Pontecorvo (1966). Entry is 18+ because alcohol is served in the bar/auditorium. Language, subtitles and price are not listed in the programme; check the organiser’s ticket page."
+        ],
+        "uk": [
+          "Фільм Gillo Pontecorvo (1966). Вхід 18+ через продаж алкоголю в барі/залі. Мову, субтитри й ціну в програмі не зазначено; перевіряйте сторінку квитків організатора."
+        ],
+        "sv": [
+          "Film av Gillo Pontecorvo (1966). 18-årsgräns på grund av alkoholservering i bar/salong. Språk, textning och pris anges inte i programmet; kontrollera arrangörens biljettsida."
+        ],
+        "da": [
+          "Film af Gillo Pontecorvo (1966). Adgang 18+ på grund af alkoholservering i bar/sal. Sprog, undertekster og pris er ikke oplyst i programmet; tjek arrangørens billetside."
+        ]
+      }
+    },
+    {
+      "id": "kristiansand-kort-innpa10-20261021",
+      "municipality": "4204",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-21",
+      "time": "18:00–20:00",
+      "expires": "2026-10-21T20:00:00+02:00",
+      "location": "Cinemateket i Kristiansand · Aladdin, Kongens gate 6",
+      "mapQuery": "Cinemateket i Kristiansand · Aladdin, Kongens gate 6",
+      "url": "https://www.krscinematek.no/events/kort-innpa-10-nye-lokale-kortfilmer/",
+      "source": "Cinemateket i Kristiansand / Sørnorsk Filmsenter",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Kort innpå #10 · nye lokale kortfilmer",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-21 · 18:00–20:00."
+        ],
+        "en": [
+          "Kort innpå #10 · nye lokale kortfilmer",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-21 · 18:00–20:00."
+        ],
+        "uk": [
+          "Kort innpå #10 · nye lokale kortfilmer",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-21 · 18:00–20:00."
+        ],
+        "sv": [
+          "Kort innpå #10 · nye lokale kortfilmer",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-21 · 18:00–20:00."
+        ],
+        "da": [
+          "Kort innpå #10 · nye lokale kortfilmer",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-21 · 18:00–20:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Gratis kortfilmkveld med lokale filmskapere. 18-årsgrense på grunn av servering i bar/sal. Ingrid Dokka og John Nomedal er verter. Språk og undertekster er ikke oppgitt."
+        ],
+        "en": [
+          "Free short-film evening with local filmmakers. Entry 18+ because alcohol is served in the bar/auditorium. Hosted by Ingrid Dokka and John Nomedal. Languages and subtitles are not specified."
+        ],
+        "uk": [
+          "Безкоштовний вечір місцевих короткометражних фільмів. Вхід 18+ через продаж алкоголю в барі/залі. Ведучі Ingrid Dokka та John Nomedal. Мови й субтитри не зазначені."
+        ],
+        "sv": [
+          "Gratis kortfilmskväll med lokala filmskapare. 18-årsgräns på grund av alkoholservering i bar/salong. Värdar är Ingrid Dokka och John Nomedal. Språk och textning anges inte."
+        ],
+        "da": [
+          "Gratis kortfilmaften med lokale filmskabere. Adgang 18+ på grund af alkoholservering i bar/sal. Værter: Ingrid Dokka og John Nomedal. Sprog og undertekster er ikke oplyst."
+        ]
+      }
+    },
+    {
+      "id": "kristiansand-orwell225-20261022",
+      "municipality": "4204",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-22",
+      "time": "18:00–20:05",
+      "expires": "2026-10-22T20:05:00+02:00",
+      "location": "Cinemateket i Kristiansand · Aladdin, Kongens gate 6",
+      "mapQuery": "Cinemateket i Kristiansand · Aladdin, Kongens gate 6",
+      "url": "https://www.krscinematek.no/events/orwell-225/",
+      "source": "Cinemateket i Kristiansand",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Orwell: 2+2=5",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-22 · 18:00–20:05."
+        ],
+        "en": [
+          "Orwell: 2+2=5",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-22 · 18:00–20:05."
+        ],
+        "uk": [
+          "Orwell: 2+2=5",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-22 · 18:00–20:05."
+        ],
+        "sv": [
+          "Orwell: 2+2=5",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-22 · 18:00–20:05."
+        ],
+        "da": [
+          "Orwell: 2+2=5",
+          "Kristiansand · Cinemateket i Kristiansand · Aladdin, Kongens gate 6 · 2026-10-22 · 18:00–20:05."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dokumentar av Raoul Peck (2025), med kort innledning av Anne Pintch (UiA). 18-årsgrense på grunn av servering i bar/sal. Pris, språk og undertekster må sjekkes hos arrangøren."
+        ],
+        "en": [
+          "Documentary by Raoul Peck (2025), introduced by Anne Pintch (UiA). Entry 18+ because alcohol is served in the bar/auditorium. Confirm price, language and subtitles with the organiser."
+        ],
+        "uk": [
+          "Документальний фільм Raoul Peck (2025), із коротким вступом Anne Pintch (UiA). Вхід 18+ через продаж алкоголю в барі/залі. Ціну, мову й субтитри уточнюйте в організатора."
+        ],
+        "sv": [
+          "Dokumentär av Raoul Peck (2025), med kort introduktion av Anne Pintch (UiA). 18-årsgräns på grund av alkoholservering i bar/salong. Kontrollera pris, språk och textning hos arrangören."
+        ],
+        "da": [
+          "Dokumentar af Raoul Peck (2025), med kort introduktion ved Anne Pintch (UiA). Adgang 18+ på grund af alkoholservering i bar/sal. Bekræft pris, sprog og undertekster hos arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "bergen-scarface-20261025",
+      "municipality": "4601",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-25",
+      "time": "16:00–18:50",
+      "expires": "2026-10-25T18:50:00+01:00",
+      "location": "Cinemateket i Bergen · Georgernes Verft 12",
+      "mapQuery": "Cinemateket i Bergen · Georgernes Verft 12",
+      "url": "https://cinemateketbergen.ticketco.events/no/nb/e/scarface__2510_kl_1600",
+      "source": "Cinemateket i Bergen / TicketCo",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Scarface",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-25 · 16:00–18:50."
+        ],
+        "en": [
+          "Scarface",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-25 · 16:00–18:50."
+        ],
+        "uk": [
+          "Scarface",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-25 · 16:00–18:50."
+        ],
+        "sv": [
+          "Scarface",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-25 · 16:00–18:50."
+        ],
+        "da": [
+          "Scarface",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-25 · 16:00–18:50."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Brian De Palma (1983), 2 t 50 min; engelsk tale uten tekst, 15 år. Ordinær 100 kr, honnør/student 80 kr. Tiden følger den konkrete billettsiden; programoversikten viser et annet klokkeslett etter overgangen til vintertid."
+        ],
+        "en": [
+          "Brian De Palma (1983), 2h 50m; English without subtitles, age rating 15. Standard NOK 100, senior/student NOK 80. Time follows the individual ticket page; the programme overview shows a different time after the switch to winter time."
+        ],
+        "uk": [
+          "Brian De Palma (1983), 2 год 50 хв; англійською без субтитрів, рейтинг 15. Звичайний квиток 100 NOK, пенсійний/студентський 80 NOK. Час узято з конкретного квитка; календар показує інший час після переходу на зимовий час."
+        ],
+        "sv": [
+          "Brian De Palma (1983), 2 tim 50 min; engelskt tal utan text, åldersgräns 15. Ordinarie 100 NOK, pensionär/student 80 NOK. Tiden följer den enskilda biljettsidan; programöversikten visar en annan tid efter övergången till vintertid."
+        ],
+        "da": [
+          "Brian De Palma (1983), 2 t 50 min; engelsk tale uden undertekster, aldersgrænse 15. Standard 100 NOK, pensionist/studerende 80 NOK. Tiden følger den konkrete billetside; programoversigten viser et andet tidspunkt efter skiftet til vintertid."
+        ]
+      }
+    },
+    {
+      "id": "bergen-synecdoche-20261026",
+      "municipality": "4601",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-26",
+      "time": "19:00–21:04",
+      "expires": "2026-10-26T21:04:00+01:00",
+      "location": "Cinemateket i Bergen · Georgernes Verft 12",
+      "mapQuery": "Cinemateket i Bergen · Georgernes Verft 12",
+      "url": "https://cinemateketbergen.ticketco.events/no/nb/e/huff_synecdoche_new_york__2610_kl_1900",
+      "source": "Cinemateket i Bergen / TicketCo",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "HUFF: Synecdoche, New York",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-26 · 19:00–21:04."
+        ],
+        "en": [
+          "HUFF: Synecdoche, New York",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-26 · 19:00–21:04."
+        ],
+        "uk": [
+          "HUFF: Synecdoche, New York",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-26 · 19:00–21:04."
+        ],
+        "sv": [
+          "HUFF: Synecdoche, New York",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-26 · 19:00–21:04."
+        ],
+        "da": [
+          "HUFF: Synecdoche, New York",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-26 · 19:00–21:04."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Charlie Kaufman (2008), 2 t 4 min; engelsk tale, norsk tekst, 15 år, 35 mm. Ordinær 100 kr, honnør/student 80 kr. Klokkeslett følger den konkrete billettsiden; programoversikten viser én time tidligere."
+        ],
+        "en": [
+          "Charlie Kaufman (2008), 2h 4m; English with Norwegian subtitles, age rating 15, 35mm. Standard NOK 100, senior/student NOK 80. Time follows the individual ticket page; the programme overview shows one hour earlier."
+        ],
+        "uk": [
+          "Charlie Kaufman (2008), 2 год 4 хв; англійською з норвезькими субтитрами, рейтинг 15, 35 мм. Звичайний квиток 100 NOK, пенсійний/студентський 80 NOK. Час із конкретного квитка; календар показує на годину раніше."
+        ],
+        "sv": [
+          "Charlie Kaufman (2008), 2 tim 4 min; engelskt tal med norsk text, åldersgräns 15, 35 mm. Ordinarie 100 NOK, pensionär/student 80 NOK. Tiden följer biljettsidan; programöversikten visar en timme tidigare."
+        ],
+        "da": [
+          "Charlie Kaufman (2008), 2 t 4 min; engelsk tale med norske undertekster, aldersgrænse 15, 35 mm. Standard 100 NOK, pensionist/studerende 80 NOK. Tiden følger billetsiden; programoversigten viser en time tidligere."
+        ]
+      }
+    },
+    {
+      "id": "bergen-wolf-children-20261027",
+      "municipality": "4601",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-27",
+      "time": "20:00–21:57",
+      "expires": "2026-10-27T21:57:00+01:00",
+      "location": "Cinemateket i Bergen · Georgernes Verft 12",
+      "mapQuery": "Cinemateket i Bergen · Georgernes Verft 12",
+      "url": "https://cinemateketbergen.ticketco.events/no/nb/e/wolf_children__2710_kl_2000",
+      "source": "Cinemateket i Bergen / TicketCo",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Wolf Children",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-27 · 20:00–21:57."
+        ],
+        "en": [
+          "Wolf Children",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-27 · 20:00–21:57."
+        ],
+        "uk": [
+          "Wolf Children",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-27 · 20:00–21:57."
+        ],
+        "sv": [
+          "Wolf Children",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-27 · 20:00–21:57."
+        ],
+        "da": [
+          "Wolf Children",
+          "Bergen · Cinemateket i Bergen · Georgernes Verft 12 · 2026-10-27 · 20:00–21:57."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Mamoru Hosoda (2012), 1 t 57 min; japansk tale, engelsk tekst, 6 år, 4K DCP. Ordinær 100 kr, honnør/student 80 kr. Klokkeslett følger billettsiden; programoversikten viser én time tidligere."
+        ],
+        "en": [
+          "Mamoru Hosoda (2012), 1h 57m; Japanese with English subtitles, age rating 6, 4K DCP. Standard NOK 100, senior/student NOK 80. Time follows the ticket page; the programme overview shows one hour earlier."
+        ],
+        "uk": [
+          "Mamoru Hosoda (2012), 1 год 57 хв; японською з англійськими субтитрами, рейтинг 6, 4K DCP. Звичайний квиток 100 NOK, пенсійний/студентський 80 NOK. Час із квитка; календар показує на годину раніше."
+        ],
+        "sv": [
+          "Mamoru Hosoda (2012), 1 tim 57 min; japanskt tal, engelsk text, åldersgräns 6, 4K DCP. Ordinarie 100 NOK, pensionär/student 80 NOK. Tiden följer biljettsidan; programöversikten visar en timme tidigare."
+        ],
+        "da": [
+          "Mamoru Hosoda (2012), 1 t 57 min; japansk tale med engelske undertekster, aldersgrænse 6, 4K DCP. Standard 100 NOK, pensionist/studerende 80 NOK. Tiden følger billetsiden; programoversigten viser en time tidligere."
+        ]
+      }
+    },
+    {
+      "id": "bodo-kunsten-gaa-langsomt-20261030",
+      "municipality": "1804",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-30",
+      "time": "18:30–20:30",
+      "expires": "2026-10-30T20:30:00+01:00",
+      "location": "Fram Kino · sal 1, Bodø",
+      "mapQuery": "Fram Kino · sal 1, Bodø",
+      "url": "https://bodofilmfestival.ticketco.events/no/nb/e/kunsten_aa_gaa_langsomt",
+      "source": "Bodø Filmfestival / TicketCo",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Kunsten å gå langsomt · verdenspremiere",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-30 · 18:30–20:30."
+        ],
+        "en": [
+          "Kunsten å gå langsomt · verdenspremiere",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-30 · 18:30–20:30."
+        ],
+        "uk": [
+          "Kunsten å gå langsomt · verdenspremiere",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-30 · 18:30–20:30."
+        ],
+        "sv": [
+          "Kunsten å gå langsomt · verdenspremiere",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-30 · 18:30–20:30."
+        ],
+        "da": [
+          "Kunsten å gå langsomt · verdenspremiere",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-30 · 18:30–20:30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Dokumentar om Sissel Higraffs vandring gjennom Norge. Regissør Kaia Kjos-Kendall presenterer filmen. Ordinær billett 200 kr. Språk, undertekster og aldersgrense er ikke oppgitt på billettsiden."
+        ],
+        "en": [
+          "Documentary about Sissel Higraff’s journey on foot through Norway. Director Kaia Kjos-Kendall introduces the film. Standard ticket NOK 200. Language, subtitles and age rating are not listed on the ticket page."
+        ],
+        "uk": [
+          "Документальний фільм про піший шлях Sissel Higraff через Норвегію. Стрічку представляє режисерка Kaia Kjos-Kendall. Звичайний квиток 200 NOK. Мову, субтитри й віковий рейтинг не зазначено."
+        ],
+        "sv": [
+          "Dokumentär om Sissel Higraffs vandring genom Norge. Regissören Kaia Kjos-Kendall presenterar filmen. Ordinarie biljett 200 NOK. Språk, textning och åldersgräns anges inte på biljettsidan."
+        ],
+        "da": [
+          "Dokumentar om Sissel Higraffs vandring gennem Norge. Instruktør Kaia Kjos-Kendall præsenterer filmen. Standardbillet 200 NOK. Sprog, undertekster og aldersgrænse er ikke oplyst på billetsiden."
+        ]
+      }
+    },
+    {
+      "id": "bodo-lille-amelie-20261031",
+      "municipality": "1804",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-31",
+      "time": "10:45–12:04",
+      "expires": "2026-10-31T12:04:00+01:00",
+      "location": "Fram Kino · sal 2, Bodø",
+      "mapQuery": "Fram Kino · sal 2, Bodø",
+      "url": "https://bodofilmfestival.ticketco.events/no/nb/e/lille_amelie",
+      "source": "Bodø Filmfestival / TicketCo",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Barnas BFF: Lille Amelie",
+          "Bodø · Fram Kino · sal 2, Bodø · 2026-10-31 · 10:45–12:04."
+        ],
+        "en": [
+          "Barnas BFF: Lille Amelie",
+          "Bodø · Fram Kino · sal 2, Bodø · 2026-10-31 · 10:45–12:04."
+        ],
+        "uk": [
+          "Barnas BFF: Lille Amelie",
+          "Bodø · Fram Kino · sal 2, Bodø · 2026-10-31 · 10:45–12:04."
+        ],
+        "sv": [
+          "Barnas BFF: Lille Amelie",
+          "Bodø · Fram Kino · sal 2, Bodø · 2026-10-31 · 10:45–12:04."
+        ],
+        "da": [
+          "Barnas BFF: Lille Amelie",
+          "Bodø · Fram Kino · sal 2, Bodø · 2026-10-31 · 10:45–12:04."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Animasjonsfilm om en liten jente som vokser opp i Japan. Ordinær billett 200 kr; festivalpass og rabattvilkår må sjekkes separat. Språk, undertekster og aldersgrense er ikke oppgitt på billettsiden."
+        ],
+        "en": [
+          "Animated film about a young girl growing up in Japan. Standard ticket NOK 200; festival-pass and discount conditions must be checked separately. Language, subtitles and age rating are not listed on the ticket page."
+        ],
+        "uk": [
+          "Анімаційний фільм про дівчинку, яка зростає в Японії. Звичайний квиток 200 NOK; умови фестивального абонемента й знижок уточнюйте окремо. Мову, субтитри й віковий рейтинг не зазначено."
+        ],
+        "sv": [
+          "Animerad film om en liten flicka som växer upp i Japan. Ordinarie biljett 200 NOK; kontrollera festivalpass och rabattvillkor separat. Språk, textning och åldersgräns anges inte på biljettsidan."
+        ],
+        "da": [
+          "Animationsfilm om en lille pige, der vokser op i Japan. Standardbillet 200 NOK; festivalpas og rabatvilkår skal tjekkes særskilt. Sprog, undertekster og aldersgrænse er ikke oplyst på billetsiden."
+        ]
+      }
+    },
+    {
+      "id": "bodo-flow-20261031",
+      "municipality": "1804",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-31",
+      "time": "10:45–12:08",
+      "expires": "2026-10-31T12:08:00+01:00",
+      "location": "Fram Kino · sal 3, Bodø",
+      "mapQuery": "Fram Kino · sal 3, Bodø",
+      "url": "https://bodofilmfestival.ticketco.events/no/nb/e/flow",
+      "source": "Bodø Filmfestival / TicketCo",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Barnas BFF: Flow",
+          "Bodø · Fram Kino · sal 3, Bodø · 2026-10-31 · 10:45–12:08."
+        ],
+        "en": [
+          "Barnas BFF: Flow",
+          "Bodø · Fram Kino · sal 3, Bodø · 2026-10-31 · 10:45–12:08."
+        ],
+        "uk": [
+          "Barnas BFF: Flow",
+          "Bodø · Fram Kino · sal 3, Bodø · 2026-10-31 · 10:45–12:08."
+        ],
+        "sv": [
+          "Barnas BFF: Flow",
+          "Bodø · Fram Kino · sal 3, Bodø · 2026-10-31 · 10:45–12:08."
+        ],
+        "da": [
+          "Barnas BFF: Flow",
+          "Bodø · Fram Kino · sal 3, Bodø · 2026-10-31 · 10:45–12:08."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Animasjon om en katt og andre dyr på flukt fra en flom. Ordinær billett 200 kr; barn opptil 12 år 160 kr. Språk, undertekster og filmens aldersgrense er ikke oppgitt på billettsiden."
+        ],
+        "en": [
+          "Animation about a cat and other animals escaping a flood. Standard ticket NOK 200; children up to age 12 NOK 160. Language, subtitles and film age rating are not listed on the ticket page."
+        ],
+        "uk": [
+          "Анімація про кота та інших тварин, які рятуються від повені. Звичайний квиток 200 NOK, дітям до 12 років 160 NOK. Мову, субтитри й віковий рейтинг фільму не зазначено."
+        ],
+        "sv": [
+          "Animation om en katt och andra djur som flyr undan en översvämning. Ordinarie biljett 200 NOK; barn upp till 12 år 160 NOK. Språk, textning och filmens åldersgräns anges inte."
+        ],
+        "da": [
+          "Animation om en kat og andre dyr på flugt fra en oversvømmelse. Standardbillet 200 NOK; børn op til 12 år 160 NOK. Sprog, undertekster og filmens aldersgrænse er ikke oplyst."
+        ]
+      }
+    },
+    {
+      "id": "bodo-kikis-budservice-20261031",
+      "municipality": "1804",
+      "category": "events",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-31",
+      "time": "11:00–12:43",
+      "expires": "2026-10-31T12:43:00+01:00",
+      "location": "Fram Kino · sal 1, Bodø",
+      "mapQuery": "Fram Kino · sal 1, Bodø",
+      "url": "https://bodofilmfestival.ticketco.events/no/nb/e/barnas_bff_kikis_budservice",
+      "source": "Bodø Filmfestival / TicketCo",
+      "textOnly": true,
+      "eventType": "cinema",
+      "copy": {
+        "nb": [
+          "Barnas BFF: Kikis Budservice",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-31 · 11:00–12:43."
+        ],
+        "en": [
+          "Barnas BFF: Kikis Budservice",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-31 · 11:00–12:43."
+        ],
+        "uk": [
+          "Barnas BFF: Kikis Budservice",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-31 · 11:00–12:43."
+        ],
+        "sv": [
+          "Barnas BFF: Kikis Budservice",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-31 · 11:00–12:43."
+        ],
+        "da": [
+          "Barnas BFF: Kikis Budservice",
+          "Bodø · Fram Kino · sal 1, Bodø · 2026-10-31 · 11:00–12:43."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Studio Ghiblis fortelling om Kiki vises i restaurert 4K-versjon. Ordinær billett 200 kr; barn opptil 12 år 160 kr. Språk, undertekster og filmens aldersgrense er ikke oppgitt på billettsiden."
+        ],
+        "en": [
+          "Studio Ghibli’s story of Kiki, shown in a restored 4K version. Standard ticket NOK 200; children up to age 12 NOK 160. Language, subtitles and film age rating are not listed on the ticket page."
+        ],
+        "uk": [
+          "Історія Кікі від Studio Ghibli у відреставрованій 4K-версії. Звичайний квиток 200 NOK, дітям до 12 років 160 NOK. Мову, субтитри й віковий рейтинг фільму не зазначено."
+        ],
+        "sv": [
+          "Studio Ghiblis berättelse om Kiki i restaurerad 4K-version. Ordinarie biljett 200 NOK; barn upp till 12 år 160 NOK. Språk, textning och filmens åldersgräns anges inte."
+        ],
+        "da": [
+          "Studio Ghiblis fortælling om Kiki i restaureret 4K-version. Standardbillet 200 NOK; børn op til 12 år 160 NOK. Sprog, undertekster og filmens aldersgrænse er ikke oplyst."
+        ]
+      }
     }
   ],
   "mediaUpdated": "2026-10-19"
