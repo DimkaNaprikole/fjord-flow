@@ -73,3 +73,12 @@ body:has(#newsDialog[open]){overflow:hidden}#newsDialog{overscroll-behavior:cont
 #municipalNews.ref-chapter .news-card-body .news-date{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
 #municipalNews .news-photo-badge{position:absolute;top:9px;right:9px;bottom:auto;left:auto;max-width:calc(100% - 18px);width:max-content;z-index:1;padding:3px 7px;border-radius:6px;background:#102f3bd9;color:#fff;font:750 10px/1.4 Manrope,sans-serif}#municipalNews.ref-chapter .news-card-location{display:none}#municipalNews.ref-chapter .news-card-body{padding:26px 14px 12px;gap:5px;background:linear-gradient(transparent,#071f2866 28%,#071f28d9)}#newsDialog .news-story-photo figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 10px}#newsDialog .news-image-context{flex-basis:100%;margin:0}#newsDialog .news-story-photo figcaption small{flex-basis:100%;font-size:11px}
+
+/* Stable inner surface keeps the shared chapter shell mounted during filtering. */
+.ref-panel > .news-content > .news-heading{display:none}
+.news-content{min-width:0}
+.news-radius-control{display:grid;gap:.35rem;min-width:180px;max-width:320px;flex:1}
+.news-radius-control input[type=range]{width:100%;min-height:32px;accent-color:var(--ff-accent,#397c78)}
+.news-radius-control small,.news-radius-note{font-size:.8rem;line-height:1.4}
+
+#municipalNews.ref-chapter .news-card-body .news-card-category{display:block;font-size:10px;line-height:1.2;letter-spacing:.04em;opacity:.9}

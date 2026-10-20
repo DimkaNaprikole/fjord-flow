@@ -40,6 +40,28 @@ test('manual selection cancels pending GPS and stale results cannot overwrite it
   finish({coords:point}); await pending;
   assert.equal(cancelled,true); assert.equal(controller.state.status,'');
 });
+
+test('distance filter receives the permitted point before administrative lookup, even if that lookup fails', async () => {
+  const calls=[];
+  const controller=createController({
+    locate:()=>({promise:Promise.resolve({coords:point})}),
+    located:value=>calls.push(['point',value]),
+    resolve:async()=>{calls.push(['lookup']);throw {code:'network'};}
+  });
+  await controller.start();
+  assert.deepEqual(calls,[['point',point],['lookup']]);
+  assert.equal(controller.state.status,'network');
+  assert.equal('coords' in controller.state,false);
+});
+
+test('malformed provider coordinates never activate a distance filter', async () => {
+  const controller=createController({
+    locate:()=>({promise:Promise.resolve({coords:{latitude:100,longitude:10}})}),
+    located:()=>assert.fail('invalid point must not reach the list'),
+    resolve:()=>assert.fail('invalid point must not reach Kartverket')
+  });
+  await controller.start();assert.equal(controller.state.status,'position');
+});
 test('permission failure stays actionable and never queries Kartverket', async () => {
   const controller = createController({locate:()=>({promise:Promise.reject({code:1})}),resolve:()=>assert.fail('no GPS data')});
   await controller.start(); assert.equal(controller.state.status,'denied');

@@ -174,6 +174,16 @@
       "relatedMunicipalities": [
         "3234",
         "3236"
+      ],
+      "coordinates": {
+        "latitude": 60.35526231931031,
+        "longitude": 10.576804605135187
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3446&adressenavn=Skolelia&nummer=3&treffPerSide=5",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3446&adressenavn=Skolelia&nummer=3&treffPerSide=5"
       ]
     },
     {
@@ -832,7 +842,8 @@
       "verificationUrls": [
         "https://www.hadeland.com/pages/lysfest",
         "https://www.hadeland.com/pages/jul-pa-hadeland-glassverk",
-        "https://www.jevnaker.kommune.no/organisasjon/fjordlandsbyen-jevnaker/hva-skjer/fjordlandsbyen-2026"
+        "https://www.jevnaker.kommune.no/organisasjon/fjordlandsbyen-jevnaker/hva-skjer/fjordlandsbyen-2026",
+        "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Hadeland%20glassverk&fuzzy=false&utkoordsys=4258&treffPerSide=20"
       ],
       "location": "Hadeland Glassverk, Jevnaker",
       "mapQuery": "Hadeland Glassverk Jevnaker",
@@ -903,7 +914,14 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized and converted to WebP; displayed with responsive cropping."
-      }
+      },
+      "coordinates": {
+        "latitude": 60.23767,
+        "longitude": 10.39666
+      },
+      "coordinateSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Hadeland%20glassverk&fuzzy=false&utkoordsys=4258&treffPerSide=20",
+      "coordinatePrecision": "venue-area",
+      "coordinatesChecked": "2026-10-20"
     },
     {
       "id": "halloween-jevnaker-2026",
@@ -1834,7 +1852,15 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized and re-encoded as WebP, no content edits."
-      }
+      },
+      "coordinates": {
+        "latitude": 60.4018707275391,
+        "longitude": 5.32061004638672
+      },
+      "coordinateSource": "https://www.visitbergen.com/hva-skjer/kjott-festival-p7941603",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "bergen-bajazz-2026",
@@ -1917,7 +1943,15 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized and re-encoded as WebP, no content edits."
-      }
+      },
+      "coordinates": {
+        "latitude": 60.3947982788086,
+        "longitude": 5.30993986129761
+      },
+      "coordinateSource": "https://www.visitbergen.com/hva-skjer/bajazzfestivalen-p5549293",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "bergen-hjertefred-2026",
@@ -1996,7 +2030,15 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized and re-encoded as WebP, no content edits."
-      }
+      },
+      "coordinates": {
+        "latitude": 60.3837509155273,
+        "longitude": 5.32805013656616
+      },
+      "coordinateSource": "https://www.visitbergen.com/hva-skjer/hjertefred-bergen-2026-p7542243",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "stavanger-hanne-boel-2026",
@@ -2473,7 +2515,15 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized and re-encoded as WebP, no content edits."
-      }
+      },
+      "coordinates": {
+        "latitude": 63.43843856251215,
+        "longitude": 10.4225210903616
+      },
+      "coordinateSource": "https://www.verkstedhallen.no/events/manifest-and-goat-the-head/B1DdFGw0fn",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "trondheim-acappellissimo-20261024",
@@ -2631,7 +2681,15 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized and converted to WebP; no content alteration."
-      }
+      },
+      "coordinates": {
+        "latitude": 67.2835371,
+        "longitude": 14.3775625
+      },
+      "coordinateSource": "https://konserthus.stormen.no/program/teater/serdudette",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "bodo-trolltog-20261024",
@@ -2710,7 +2768,17 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized and converted to WebP; no content alteration."
-      }
+      },
+      "coordinates": {
+        "latitude": 67.2835371,
+        "longitude": 14.3775625
+      },
+      "coordinateSource": "https://konserthus.stormen.no/program/teater/serdudette",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://konserthus.stormen.no/program/teater/serdudette"
+      ]
     },
     {
       "id": "bodo-hedvig-mollestad-20261024",
@@ -2789,7 +2857,17 @@
         },
         "checked": "2026-10-19",
         "modifications": "Resized and converted to WebP; no content alteration."
-      }
+      },
+      "coordinates": {
+        "latitude": 67.2835371,
+        "longitude": 14.3775625
+      },
+      "coordinateSource": "https://konserthus.stormen.no/program/teater/serdudette",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://konserthus.stormen.no/program/teater/serdudette"
+      ]
     },
     {
       "id": "tromso-fri-flyt-filmtour-20261021",
@@ -3161,7 +3239,15 @@
       "publishedKind": "editorial",
       "sourcePublished": null,
       "checked": "2026-10-20",
-      "textOnly": true
+      "textOnly": true,
+      "coordinates": {
+        "latitude": 60.4002799987793,
+        "longitude": 5.31870985031128
+      },
+      "coordinateSource": "https://www.visitbergen.com/hva-skjer/korkonsert-i-hakonshallen-p8616363",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "tromso-kristian-kristensen-20261023",
@@ -3277,7 +3363,17 @@
       "publishedKind": "editorial",
       "sourcePublished": null,
       "checked": "2026-10-20",
-      "textOnly": true
+      "textOnly": true,
+      "coordinates": {
+        "latitude": 60.24101544397285,
+        "longitude": 10.386974087208896
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3236&adressenavn=Storgata&nummer=7&treffPerSide=5",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3236&adressenavn=Storgata&nummer=7&treffPerSide=5"
+      ]
     },
     {
       "id": "trondheim-mitt-palestina-20261021",
@@ -3334,7 +3430,15 @@
           "Film af Cherien Dabis (2025), 2 t 25 min. Arabisk tale, norske undertekster, aldersgrænse 12 år. Standard 130 NOK; under 18 år 70 NOK; studerende/pensionist/filmklub 90 NOK. Salnummer ikke oplyst; tjek billetter hos arrangøren."
         ]
       },
-      "eventType": "cinema"
+      "eventType": "cinema",
+      "coordinates": {
+        "latitude": 63.43342054720539,
+        "longitude": 10.403006640783701
+      },
+      "coordinateSource": "https://cinematekettrondheim.ticketco.events/no/nb/e/mitt_palestina_all_thats_left_of_you_2026_2",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "hamar-storhamar-kor-20261021",
@@ -3391,7 +3495,17 @@
           "Koret synger 1980’er-hits med Return-sangeren Knut Erik Østgård. Dørene åbner kl. 18.30. Pris ikke oplyst; tjek billetter hos arrangøren."
         ]
       },
-      "eventType": "concert"
+      "eventType": "concert",
+      "coordinates": {
+        "latitude": 60.795133859406384,
+        "longitude": 11.067054846610478
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20"
+      ]
     },
     {
       "id": "kristiansund-chrysalis-20261021",
@@ -3448,7 +3562,15 @@
           "Jazzkvartet med saxofon, trompet, kontrabas og trommer. Døre kl. 18.00; koncertstart kl. 19.00. Pris ikke bekræftet; tjek billetvilkår hos arrangøren."
         ]
       },
-      "eventType": "concert"
+      "eventType": "concert",
+      "coordinates": {
+        "latitude": 63.1172266,
+        "longitude": 7.7322464
+      },
+      "coordinateSource": "https://tikkio.com/events/64902-chrysalis-kulturfabrikken",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "molde-imarhan-20261029",
@@ -3562,7 +3684,15 @@
           "Bondens marked med lokale producenter og madvarer. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
         ]
       },
-      "eventType": "market"
+      "eventType": "market",
+      "coordinates": {
+        "latitude": 59.2525696,
+        "longitude": 10.4184906
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/teiegarden-pa-noetteroey-2026-10-24",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "fredrikstad-bondens-marked-20261031",
@@ -3619,7 +3749,15 @@
           "Bondens marked med lokale producenter og madvarer. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
         ]
       },
-      "eventType": "market"
+      "eventType": "market",
+      "coordinates": {
+        "latitude": 59.2016377,
+        "longitude": 10.9524329
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bondens-marked-i-gamlebyen-i-fredrikstad-2026-10-31",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "sandefjord-bondens-marked-20261031",
@@ -3676,7 +3814,15 @@
           "Bondens marked med lokale producenter og madvarer. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
         ]
       },
-      "eventType": "market"
+      "eventType": "market",
+      "coordinates": {
+        "latitude": 59.128438,
+        "longitude": 10.2314776
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/sandefjord-torv-2026-10-31",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "askoy-ekko-kormix-20261020",
@@ -3790,7 +3936,17 @@
         "da": [
           "Nina Fjeldet forener violinmusik og fortællinger; 60 minutter. Standard 245 NOK; under 18 år og studerende 145 NOK. Tjek billetter hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.8040711061154,
+        "longitude": 16.549541127931032
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20"
+      ]
     },
     {
       "id": "narvik-hovdingen-20261030",
@@ -3847,7 +4003,17 @@
         "da": [
           "Folk-funk og rock. Koncertstart 21.00; døre 20.00. Aldersgrænse 18 år. Standard 275 NOK, studerende/pensionist 220 NOK; tjek billetvilkår."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.43871013246819,
+        "longitude": 17.428552120722117
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1806&adressenavn=Kongens%20gate&nummer=44&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1806&adressenavn=Kongens%20gate&nummer=44&treffPerSide=20"
+      ]
     },
     {
       "id": "haugesund-hivju-garbage-king-20261030",
@@ -3904,7 +4070,17 @@
         "da": [
           "Akustisk koncert med Kristofer Hivju og Olav Lystrup. Oplyst pris 410 NOK. Billetstatus kunne ikke bekræftes; spørg Festiviteten direkte."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.410335566451366,
+        "longitude": 5.274321816406505
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1106&adressenavn=Knut%20Knutsen%20OAS%20gate&nummer=4&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1106&adressenavn=Knut%20Knutsen%20OAS%20gate&nummer=4&treffPerSide=20"
+      ]
     },
     {
       "id": "klepp-orremessa-20261023",
@@ -3966,7 +4142,15 @@
         "2026-10-23",
         "2026-10-24",
         "2026-10-25"
-      ]
+      ],
+      "coordinates": {
+        "latitude": 58.7182511,
+        "longitude": 5.569982599999999
+      },
+      "coordinateSource": "https://www.orremessa.no/",
+      "coordinatePrecision": "property-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "lodingen-bondens-marked-20261024",
@@ -4023,7 +4207,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne på Bondens marked. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.4139602,
+        "longitude": 15.9977513
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/loedingen-2026-10-24",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "eidsvoll-raholt-bondens-marked-20261030",
@@ -4080,7 +4272,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne på Bondens marked. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.2810033,
+        "longitude": 11.1739837
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/raholt-2026-10-30",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "harstad-bondens-marked-20261031",
@@ -4137,7 +4337,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne på Bondens marked. Entrépris ikke oplyst; tjek opdateringer og vilkår hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.7990964,
+        "longitude": 16.5385298
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/harstad-2026-10-31",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "tromso-end-of-violence-20261020",
@@ -4198,7 +4406,15 @@
       "relatedSources": [
         "https://www.verdensteatret.no/movie/the-end-of-violence",
         "https://www.verdensteatret.no/billetter"
-      ]
+      ],
+      "coordinates": {
+        "latitude": 69.6511822,
+        "longitude": 18.955564
+      },
+      "coordinateSource": "https://verdensteatret.ticketco.events/no/nb/e/the_end_of_violence_3",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "fredrikstad-faf-opening-julenissens-20261021",
@@ -4316,7 +4532,17 @@
         "da": [
           "Oplyst pris: 200 NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.8040711061154,
+        "longitude": 16.549541127931032
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20"
+      ]
     },
     {
       "id": "harstad-hedvig-weejuns-20261023",
@@ -4373,7 +4599,17 @@
         "da": [
           "Oplyst pris: 0 NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.8040711061154,
+        "longitude": 16.549541127931032
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20"
+      ]
     },
     {
       "id": "harstad-mandskor-20261024",
@@ -4544,7 +4780,17 @@
         "da": [
           "Oplyst pris: 200 NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.8040711061154,
+        "longitude": 16.549541127931032
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20"
+      ]
     },
     {
       "id": "harstad-anders-jektvik-20261030",
@@ -4601,7 +4847,17 @@
         "da": [
           "Oplyst pris: 485 NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.8040711061154,
+        "longitude": 16.549541127931032
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20"
+      ]
     },
     {
       "id": "harstad-faure-requiem-20261101",
@@ -4715,7 +4971,17 @@
         "da": [
           "Oplyst pris: 175 NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.8040711061154,
+        "longitude": 16.549541127931032
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=5503&adressenavn=Havnegata&nummer=3&treffPerSide=20"
+      ]
     },
     {
       "id": "hamar-ingebjorg-bratland-20261022",
@@ -4772,7 +5038,17 @@
         "da": [
           "Døre 18:00. Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.795133859406384,
+        "longitude": 11.067054846610478
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20"
+      ]
     },
     {
       "id": "hamar-trina-coleman-20261025",
@@ -4829,7 +5105,17 @@
         "da": [
           "Døre 18:00. Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.795133859406384,
+        "longitude": 11.067054846610478
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20"
+      ]
     },
     {
       "id": "hamar-odd-nordstoga-20261030",
@@ -4886,7 +5172,17 @@
         "da": [
           "Døre 19:00. Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.795133859406384,
+        "longitude": 11.067054846610478
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20"
+      ]
     },
     {
       "id": "hamar-cash-commitment-20261031",
@@ -4943,7 +5239,17 @@
         "da": [
           "Døre 18:30. Pris ikke oplyst; spørg arrangøren. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.795133859406384,
+        "longitude": 11.067054846610478
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=3403&adressenavn=Torggata&nummer=100&treffPerSide=20"
+      ]
     },
     {
       "id": "narvik-popklang-halloween-20261026",
@@ -5000,7 +5306,17 @@
         "da": [
           "Oplyst pris: 200 / 50 (<12) NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.43871013246819,
+        "longitude": 17.428552120722117
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1806&adressenavn=Kongens%20gate&nummer=44&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1806&adressenavn=Kongens%20gate&nummer=44&treffPerSide=20"
+      ]
     },
     {
       "id": "narvik-anders-jektvik-20261031",
@@ -5057,7 +5373,17 @@
         "da": [
           "Oplyst pris: 480 / 375 student+honnør NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.43871013246819,
+        "longitude": 17.428552120722117
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1806&adressenavn=Kongens%20gate&nummer=44&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1806&adressenavn=Kongens%20gate&nummer=44&treffPerSide=20"
+      ]
     },
     {
       "id": "narvik-dabach-amigos-20261107",
@@ -5114,7 +5440,17 @@
         "da": [
           "Oplyst pris: 325 / 275 student+honnør NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.43871013246819,
+        "longitude": 17.428552120722117
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1806&adressenavn=Kongens%20gate&nummer=44&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1806&adressenavn=Kongens%20gate&nummer=44&treffPerSide=20"
+      ]
     },
     {
       "id": "askoy-cajun-gumbo-20261022",
@@ -5285,7 +5621,15 @@
         "da": [
           "Døre 18:00. Oplyst pris: 310 / 170 student+barn+ungdom NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.797493,
+        "longitude": 10.687821
+      },
+      "coordinateSource": "https://event.checkin.no/230989/klassisk-pa-klubb-mikkel-berg-eriksen",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "haugesund-ingrid-bjornov-20261029",
@@ -5342,7 +5686,17 @@
         "da": [
           "Oplyst pris: 600 NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.410335566451366,
+        "longitude": 5.274321816406505
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1106&adressenavn=Knut%20Knutsen%20OAS%20gate&nummer=4&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1106&adressenavn=Knut%20Knutsen%20OAS%20gate&nummer=4&treffPerSide=20"
+      ]
     },
     {
       "id": "haugesund-vibran-20261030",
@@ -5399,7 +5753,17 @@
         "da": [
           "Oplyst pris: 130 (100 + 30 gebyr) NOK. Tjek billetter og opdateringer hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.410335566451366,
+        "longitude": 5.274321816406505
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1106&adressenavn=Knut%20Knutsen%20OAS%20gate&nummer=4&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=1106&adressenavn=Knut%20Knutsen%20OAS%20gate&nummer=4&treffPerSide=20"
+      ]
     },
     {
       "id": "market-bondens-marked-pa-vinkelplassen-2026-10-24",
@@ -5456,7 +5820,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.9289807,
+        "longitude": 10.7162212
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bondens-marked-pa-vinkelplassen-2026-10-24",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-bondens-marked-bergen-2026-10-31",
@@ -5513,7 +5885,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.3947946,
+        "longitude": 5.3253124
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bondens-marked-bergen-2026-10-31",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-bondens-marked-pa-vinslottet-pa-hasle-2026-11-01",
@@ -5570,7 +5950,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.92698,
+        "longitude": 10.7939975
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bondens-marked-pa-vinslottet-pa-hasle-2026-11-01",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-bm-oersta-lysfest-2026-11-06",
@@ -5684,7 +6072,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.8358952,
+        "longitude": 10.4330572
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bondens-marked-utenfor-asker-kulturhus-2026-11-07",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-myre-2026-11-07",
@@ -5741,7 +6137,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 68.9149196,
+        "longitude": 15.0902145
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/myre-2026-11-07",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-steinkjer-torg-2026-11-07",
@@ -5798,7 +6202,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 64.0152565,
+        "longitude": 11.4963187
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/steinkjer-torg-2026-11-07",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-bm-devoldfabrikken-lystenning-2026-11-12",
@@ -5855,7 +6267,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 62.4402276,
+        "longitude": 6.1877877
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bm-devoldfabrikken-lystenning-2026-11-12",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-bm-digernes-2026-11-13",
@@ -5912,7 +6332,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 62.4936644,
+        "longitude": 6.6084684
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bm-digernes-2026-11-13",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-julemarked-varatun-gard-2026-11-13",
@@ -5969,7 +6397,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 58.8662655,
+        "longitude": 5.7307702
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/julemarked-varatun-gard-2026-11-13",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-bondens-marked-pa-lillestroem-torv-2026-11-14",
@@ -6026,7 +6462,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.9560268,
+        "longitude": 11.0487323
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bondens-marked-pa-lillestroem-torv-2026-11-14",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-julemarked-oddernes-gartneri-hageland-2026-11-14",
@@ -6083,7 +6527,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 58.1617628,
+        "longitude": 8.0166334
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/julemarked-oddernes-gartneri-hageland-2026-11-14",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-domkirkeplassen-i-stavanger-2026-11-14",
@@ -6140,7 +6592,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 58.9701567,
+        "longitude": 5.7329024
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/domkirkeplassen-i-stavanger-2026-11-14",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-birkelunden-pa-gr-nerloekka-2026-11-14",
@@ -6197,7 +6657,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.9253439,
+        "longitude": 10.7608567
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/birkelunden-pa-gr-nerloekka-2026-11-14",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-kongensgate-oest-2026-11-14",
@@ -6254,7 +6722,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 63.430518,
+        "longitude": 10.3791168
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/kongensgate-oest-2026-11-14",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-julemarked-pa-klostergarden-2026-11-21",
@@ -6311,7 +6787,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.1027146,
+        "longitude": 5.5882891
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/julemarked-pa-klostergarden-2026-11-21",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-soendre-torv-2026-11-21",
@@ -6368,7 +6852,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.1658223,
+        "longitude": 10.2562614
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/soendre-torv-2026-11-21",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-bondens-marked-pa-baerums-verk-2026-11-22",
@@ -6425,7 +6917,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.940502,
+        "longitude": 10.5012683
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bondens-marked-pa-baerums-verk-2026-11-22",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "market-bm-sykkylven-nattope-2026-11-27",
@@ -6539,7 +7039,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.8107287,
+        "longitude": 10.7983586
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bondens-marked-pa-kolbotn-torg-2026-11-28",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "kristiansand-battle-algiers-20261020",
@@ -6596,7 +7104,17 @@
         "da": [
           "Film af Gillo Pontecorvo (1966). Adgang 18+ på grund af alkoholservering i bar/sal. Sprog, undertekster og pris er ikke oplyst i programmet; tjek arrangørens billetside."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 58.14334837907067,
+        "longitude": 7.996729686466498
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=4204&adressenavn=Kongens+gate&nummer=6&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=4204&adressenavn=Kongens+gate&nummer=6&treffPerSide=20"
+      ]
     },
     {
       "id": "kristiansand-kort-innpa10-20261021",
@@ -6653,7 +7171,17 @@
         "da": [
           "Gratis kortfilmaften med lokale filmskabere. Adgang 18+ på grund af alkoholservering i bar/sal. Værter: Ingrid Dokka og John Nomedal. Sprog og undertekster er ikke oplyst."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 58.14334837907067,
+        "longitude": 7.996729686466498
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=4204&adressenavn=Kongens+gate&nummer=6&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=4204&adressenavn=Kongens+gate&nummer=6&treffPerSide=20"
+      ]
     },
     {
       "id": "kristiansand-orwell225-20261022",
@@ -6710,7 +7238,17 @@
         "da": [
           "Dokumentar af Raoul Peck (2025), med kort introduktion ved Anne Pintch (UiA). Adgang 18+ på grund af alkoholservering i bar/sal. Bekræft pris, sprog og undertekster hos arrangøren."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 58.14334837907067,
+        "longitude": 7.996729686466498
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=4204&adressenavn=Kongens+gate&nummer=6&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=4204&adressenavn=Kongens+gate&nummer=6&treffPerSide=20"
+      ]
     },
     {
       "id": "bergen-scarface-20261025",
@@ -6767,7 +7305,15 @@
         "da": [
           "Brian De Palma (1983), 2 t 50 min; engelsk tale uden undertekster, aldersgrænse 15. Standard 100 NOK, pensionist/studerende 80 NOK. Tiden følger den konkrete billetside; programoversigten viser et andet tidspunkt efter skiftet til vintertid."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.3960798,
+        "longitude": 5.308739199999991
+      },
+      "coordinateSource": "https://cinemateketbergen.ticketco.events/no/nb/e/scarface__2510_kl_1600",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "bergen-synecdoche-20261026",
@@ -6824,7 +7370,17 @@
         "da": [
           "Charlie Kaufman (2008), 2 t 4 min; engelsk tale med norske undertekster, aldersgrænse 15, 35 mm. Standard 100 NOK, pensionist/studerende 80 NOK. Tiden følger billetsiden; programoversigten viser en time tidligere."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.3960798,
+        "longitude": 5.308739199999991
+      },
+      "coordinateSource": "https://cinemateketbergen.ticketco.events/no/nb/e/scarface__2510_kl_1600",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://cinemateketbergen.ticketco.events/no/nb/e/scarface__2510_kl_1600"
+      ]
     },
     {
       "id": "bergen-wolf-children-20261027",
@@ -6881,7 +7437,17 @@
         "da": [
           "Mamoru Hosoda (2012), 1 t 57 min; japansk tale med engelske undertekster, aldersgrænse 6, 4K DCP. Standard 100 NOK, pensionist/studerende 80 NOK. Tiden følger billetsiden; programoversigten viser en time tidligere."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 60.3960798,
+        "longitude": 5.308739199999991
+      },
+      "coordinateSource": "https://cinemateketbergen.ticketco.events/no/nb/e/scarface__2510_kl_1600",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://cinemateketbergen.ticketco.events/no/nb/e/scarface__2510_kl_1600"
+      ]
     },
     {
       "id": "bodo-kunsten-gaa-langsomt-20261030",
@@ -6938,7 +7504,15 @@
         "da": [
           "Dokumentar om Sissel Higraffs vandring gennem Norge. Instruktør Kaia Kjos-Kendall præsenterer filmen. Standardbillet 200 NOK. Sprog, undertekster og aldersgrænse er ikke oplyst på billetsiden."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 67.2834901,
+        "longitude": 14.3789391
+      },
+      "coordinateSource": "https://bodofilmfestival.ticketco.events/no/nb/e/kunsten_aa_gaa_langsomt",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "bodo-lille-amelie-20261031",
@@ -6995,7 +7569,17 @@
         "da": [
           "Animationsfilm om en lille pige, der vokser op i Japan. Standardbillet 200 NOK; festivalpas og rabatvilkår skal tjekkes særskilt. Sprog, undertekster og aldersgrænse er ikke oplyst på billetsiden."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 67.2834901,
+        "longitude": 14.3789391
+      },
+      "coordinateSource": "https://bodofilmfestival.ticketco.events/no/nb/e/kunsten_aa_gaa_langsomt",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://bodofilmfestival.ticketco.events/no/nb/e/kunsten_aa_gaa_langsomt"
+      ]
     },
     {
       "id": "bodo-flow-20261031",
@@ -7052,7 +7636,17 @@
         "da": [
           "Animation om en kat og andre dyr på flugt fra en oversvømmelse. Standardbillet 200 NOK; børn op til 12 år 160 NOK. Sprog, undertekster og filmens aldersgrænse er ikke oplyst."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 67.2834901,
+        "longitude": 14.3789391
+      },
+      "coordinateSource": "https://bodofilmfestival.ticketco.events/no/nb/e/kunsten_aa_gaa_langsomt",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://bodofilmfestival.ticketco.events/no/nb/e/kunsten_aa_gaa_langsomt"
+      ]
     },
     {
       "id": "bodo-kikis-budservice-20261031",
@@ -7109,7 +7703,17 @@
         "da": [
           "Studio Ghiblis fortælling om Kiki i restaureret 4K-version. Standardbillet 200 NOK; børn op til 12 år 160 NOK. Sprog, undertekster og filmens aldersgrænse er ikke oplyst."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 67.2834901,
+        "longitude": 14.3789391
+      },
+      "coordinateSource": "https://bodofilmfestival.ticketco.events/no/nb/e/kunsten_aa_gaa_langsomt",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://bodofilmfestival.ticketco.events/no/nb/e/kunsten_aa_gaa_langsomt"
+      ]
     },
     {
       "id": "sarpsborg-blaseensemblet-20261021",
@@ -7455,7 +8059,15 @@
         "da": [
           "Lokale fødevarer direkte fra producenterne. Entrépris er ikke oplyst. Tjek arrangørens side før afrejse."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 61.9086132,
+        "longitude": 5.9853571
+      },
+      "coordinateSource": "https://www.bondensmarked.no/markeder/bm-nordfjordeid-2026-11-29",
+      "coordinatePrecision": "venue-marker",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": []
     },
     {
       "id": "lillehammer-la-fjella-leve-20261021",
@@ -7569,7 +8181,17 @@
         "da": [
           "Sigve Endresens dokumentar fra 1989, 101 minutter, norsk tale uden undertekster, aldersgrænse 12, 35 mm. Vigdis Lian taler med instruktøren før filmen. Pris og samlet sluttid er ikke oplyst på filmsiden."
         ]
-      }
+      },
+      "coordinates": {
+        "latitude": 59.90961165359811,
+        "longitude": 10.745752189439866
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=0301&adressenavn=Dronningens+gate&nummer=16&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=0301&adressenavn=Dronningens+gate&nummer=16&treffPerSide=20"
+      ]
     },
     {
       "id": "oslo-ulya-20261022",
@@ -7625,6 +8247,130 @@
         ],
         "da": [
           "Åbningsfilm ved Baltiske filmdage med producer Guntis Trekteris. Viesturs Kairiss (2026), 102 minutter; lettisk og russisk tale med engelske undertekster, aldersgrænse 9. Pris og hele arrangementets sluttid er ikke oplyst."
+        ]
+      },
+      "coordinates": {
+        "latitude": 59.90961165359811,
+        "longitude": 10.745752189439866
+      },
+      "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=0301&adressenavn=Dronningens+gate&nummer=16&treffPerSide=20",
+      "coordinatePrecision": "address-point",
+      "coordinatesChecked": "2026-10-20",
+      "verificationUrls": [
+        "https://ws.geonorge.no/adresser/v1/sok?kommunenummer=0301&adressenavn=Dronningens+gate&nummer=16&treffPerSide=20"
+      ]
+    },
+    {
+      "id": "karmoy-minimoro-klonemaskin-20261024",
+      "municipality": "1149",
+      "category": "events",
+      "eventType": "family",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-24",
+      "time": "14:00–14:30",
+      "expires": "2026-10-24T14:30:00+02:00",
+      "location": "Karmøy kulturhus · Rådhusvegen 71, Åkrehamn",
+      "mapQuery": "Karmøy kulturhus · Rådhusvegen 71, Åkrehamn",
+      "url": "https://karmoy.ticketco.events/no/sv/m/e/minimoro__karmoey_kulturhus__solo_salo_ogen_klin_kokos_klonemaskin__teatertuttene",
+      "source": "Karmøy kommune / Teatertuttene · TicketCo",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "MiniMoro · Solo, Salo og en klin kokos klonemaskin",
+          "Åkrehamn, Karmøy · 2026-10-24 · 14:00–14:30."
+        ],
+        "en": [
+          "MiniMoro · Solo, Salo og en klin kokos klonemaskin",
+          "Åkrehamn, Karmøy · 2026-10-24 · 14:00–14:30."
+        ],
+        "uk": [
+          "MiniMoro · Solo, Salo og en klin kokos klonemaskin",
+          "Åkrehamn, Karmøy · 2026-10-24 · 14:00–14:30."
+        ],
+        "sv": [
+          "MiniMoro · Solo, Salo og en klin kokos klonemaskin",
+          "Åkrehamn, Karmøy · 2026-10-24 · 14:00–14:30."
+        ],
+        "da": [
+          "MiniMoro · Solo, Salo og en klin kokos klonemaskin",
+          "Åkrehamn, Karmøy · 2026-10-24 · 14:00–14:30."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Ordløs slapstick-teater for barn 3–6 år, ca. 25 minutter. Billett 60 kr; gratis kun med gyldig aktivitetskort."
+        ],
+        "en": [
+          "Wordless slapstick theatre for ages 3–6, about 25 minutes. Ticket NOK 60; free only with a valid activity card."
+        ],
+        "uk": [
+          "Театральна комедія без слів для дітей 3–6 років, близько 25 хвилин. Квиток 60 NOK; безкоштовно лише з дійсною карткою активностей."
+        ],
+        "sv": [
+          "Ordlös slapstick-teater för barn 3–6 år, cirka 25 minuter. Biljett 60 NOK; gratis endast med giltigt aktivitetskort."
+        ],
+        "da": [
+          "Ordløst slapstick-teater for børn 3–6 år, cirka 25 minutter. Billet 60 NOK; gratis kun med gyldigt aktivitetskort."
+        ]
+      }
+    },
+    {
+      "id": "oslo-ole-brumm-eventyr-20261025",
+      "municipality": "0301",
+      "category": "events",
+      "eventType": "theatre",
+      "published": "2026-10-20",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-20",
+      "eventDate": "2026-10-25",
+      "time": "11:15",
+      "expires": "2026-10-26T00:00:00+01:00",
+      "location": "Skillebekk Scene · Munkedamsveien 80, Oslo",
+      "mapQuery": "Skillebekk Scene · Munkedamsveien 80, Oslo",
+      "url": "https://www.ticketmaster.no/event/ole-brumm-pa-eventyr-billetter/998893959",
+      "source": "Égal Teater / Skillebekk Scene · Ticketmaster",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Ole Brumm på eventyr · Égal Teater",
+          "Oslo · 2026-10-25 · 11:15."
+        ],
+        "en": [
+          "Ole Brumm på eventyr · Égal Teater",
+          "Oslo · 2026-10-25 · 11:15."
+        ],
+        "uk": [
+          "Ole Brumm på eventyr · Égal Teater",
+          "Oslo · 2026-10-25 · 11:15."
+        ],
+        "sv": [
+          "Ole Brumm på eventyr · Égal Teater",
+          "Oslo · 2026-10-25 · 11:15."
+        ],
+        "da": [
+          "Ole Brumm på eventyr · Égal Teater",
+          "Oslo · 2026-10-25 · 11:15."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Familieteater om Ole Brumm. Ordinær 285 kr, barn 260 kr inkludert oppgitte avgifter. Sluttid og anbefalt alder er ikke oppgitt på billettsiden."
+        ],
+        "en": [
+          "Family theatre featuring Winnie-the-Pooh. Standard NOK 285, child NOK 260 including listed fees. End time and recommended age are not stated on the ticket page."
+        ],
+        "uk": [
+          "Сімейна вистава про Вінні-Пуха. Звичайний квиток 285 NOK, дитячий 260 NOK, із зазначеними зборами. Час завершення та рекомендований вік не зазначені."
+        ],
+        "sv": [
+          "Familjeteater om Nalle Puh. Ordinarie 285 NOK, barn 260 NOK inklusive angivna avgifter. Sluttid och rekommenderad ålder anges inte på biljettsidan."
+        ],
+        "da": [
+          "Familieteater om Peter Plys. Standard 285 NOK, børn 260 NOK inklusive oplyste gebyrer. Sluttid og anbefalet alder er ikke oplyst på billetsiden."
         ]
       }
     }

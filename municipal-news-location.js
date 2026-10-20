@@ -18,7 +18,7 @@
   function errorKey(error) {
     return ({1:'denied',2:'position',3:'timeout',unsupported:'unsupported','gesture-required':'unsupported',outside:'outside',position:'position'})[error?.code] || (error?.name === 'AbortError' ? 'timeout' : 'network');
   }
-  function createController({locate, resolve = resolveMunicipality, changed = () => {}, selected = () => {}, timeoutMs = 12000} = {}) {
+  function createController({locate, resolve = resolveMunicipality, changed = () => {}, selected = () => {}, located = () => {}, timeoutMs = 12000} = {}) {
     let revision = 0, geo, abort, timer;
     const state = {busy:false, status:'', municipality:null};
     function stop() { revision++; clearTimeout(timer); geo?.cancel?.(); abort?.abort(); geo = abort = null; state.busy = false; }
@@ -32,6 +32,9 @@
         geo = locate({userInitiated:true});
         const position = await geo.promise;
         if (token !== revision) return;
+        // Share the point only with the in-memory distance filter, never storage.
+        if (!Number.isFinite(position?.coords?.latitude) || !Number.isFinite(position?.coords?.longitude) || Math.abs(position.coords.latitude)>90 || Math.abs(position.coords.longitude)>180) throw problem('position');
+        located({latitude:position.coords.latitude, longitude:position.coords.longitude});
         state.status = 'resolving'; changed(state);
         abort = new AbortController();
         timer = setTimeout(() => abort?.abort(), timeoutMs);
@@ -56,10 +59,10 @@
     sv: ['Nyheter nära mig','Söker din position…','Söker kommunen…','Kommun vid din position: ','Positionstillstånd nekades. Välj kommun manuellt.','Kunde inte hitta din position. Välj kommun manuellt.','Tidsgränsen nåddes. Försök igen eller välj kommun.','Position är inte tillgänglig. Välj kommun manuellt.','Ingen norsk kommun hittades vid punkten. Välj manuellt.','Kunde inte kontrollera kommunen hos Kartverket. Försök igen eller välj manuellt.','Först efter ett tryck och ditt tillstånd skickas koordinater till Kartverket för att hitta kommunen. Funktionen lagrar inte GPS.'],
     da: ['Nyheder nær mig','Finder din position…','Finder kommunen…','Kommune ved din position: ','Adgang til position blev afvist. Vælg kommune manuelt.','Kunne ikke finde din position. Vælg kommune manuelt.','Tidsgrænsen blev nået. Prøv igen eller vælg kommune.','Position er utilgængelig. Vælg kommune manuelt.','Ingen norsk kommune fundet ved punktet. Vælg manuelt.','Kunne ikke kontrollere kommunen hos Kartverket. Prøv igen eller vælg manuelt.','Først efter et tryk og din tilladelse sendes koordinater til Kartverket for at finde kommunen. Funktionen gemmer ikke GPS.']
   };
-  let view, onSelect;
+  let view, onSelect, onPosition;
   const controller = createController({
     locate: options => {if (!window.FjordBrowserGeolocation) throw problem('unsupported'); return window.FjordBrowserGeolocation.locate(options);},
-    changed: paint, selected: result => onSelect?.(result)
+    changed: paint, selected: result => onSelect?.(result), located: point => onPosition?.(point)
   });
   function paint() {
     if (!view?.isConnected) return;
@@ -71,9 +74,10 @@
     view.querySelector('[role="status"]').textContent = status ? text[indices[status]] + (status === 'found' ? municipality.name : '') : '';
     view.querySelector('small').textContent = text[10];
   }
-  function mount({container, onSelect: callback}) {
+  function mount({container, onSelect: callback, onPosition: positionCallback}) {
     if (!container) return;
     onSelect = callback;
+    onPosition = positionCallback;
     view = document.createElement('div'); view.className = 'news-location'; view.dataset.i18nIgnore = '';
     const button = document.createElement('button'); button.type = 'button'; button.onclick = controller.start;
     const status = document.createElement('p'); status.setAttribute('role','status'); status.setAttribute('aria-live','polite');
