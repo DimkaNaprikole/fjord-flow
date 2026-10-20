@@ -47,3 +47,16 @@ test('synchronous watch callback still clears the returned watch ID', async () =
   const f = fake(); f.provider.watchPosition = success => {success(position()); return 99;};
   const r = locate({geolocation:f.provider,userInitiated:true}); f.calls[0].failure({code:3}); await r.promise; assert.deepEqual(f.cleared,[99]);
 });
+
+test('single-request mode never opens a second native request on timeout or unavailability', async () => {
+  for (const code of [2,3]) {
+    const f=fake(),r=locate({geolocation:f.provider,userInitiated:true,retryFresh:false});
+    f.calls[0].failure({code});await assert.rejects(r.promise,e=>e.code===code);
+    f.calls[0].success(position());assert.equal(f.calls.length,1);assert.deepEqual(f.cleared,[]);
+  }
+});
+
+test('single-request mode own deadline also stops without opening a watch', async () => {
+  const f=fake(),r=locate({geolocation:f.provider,userInitiated:true,retryFresh:false,coarseTimeoutMs:5});
+  await assert.rejects(r.promise,e=>e.code===3);assert.equal(f.calls.length,1);
+});

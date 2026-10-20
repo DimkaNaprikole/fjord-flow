@@ -24,8 +24,11 @@
       problem ? rejectPromise(problem) : resolvePromise(position);
     }
     function stage(name, timeoutMs) {try {options.onStage?.({stage: name, timeoutMs});} catch {}}
-    function startFresh() {
+    function startFresh(cause = 3) {
       if (settled) return;
+      // Some embedded browsers prompt again for watchPosition. Callers can keep
+      // one native request per explicit click instead of silently requesting twice.
+      if (options.retryFresh === false) {finish(error(cause, 'Geolocation did not return a position; automatic retry is disabled.')); return;}
       cleanup(); const token = ++revision; stage('fresh', freshMs);
       timer = setTimeout(() => {if (token === revision) finish(error(3, 'Fresh geolocation timed out.'));}, freshMs);
       if (typeof provider.watchPosition !== 'function') {finish(error(2, 'Fresh geolocation is unavailable.')); return;}
@@ -48,15 +51,15 @@
       try {
         provider.getCurrentPosition(position => {
           if (settled || token !== revision) return;
-          const result = normalize(position); result ? finish(null, result) : startFresh();
+          const result = normalize(position); result ? finish(null, result) : startFresh(2);
         }, problem => {
           if (settled || token !== revision) return;
           if (problem?.code === 1) finish(error(1, problem.message || 'Geolocation permission denied.'));
-          else if (problem?.code === 2 || problem?.code === 3) startFresh();
+          else if (problem?.code === 2 || problem?.code === 3) startFresh(problem.code);
           else finish(error(2, problem?.message || 'Geolocation failed.'));
         }, {enableHighAccuracy: false, maximumAge: 60000, timeout: coarseMs});
       } catch (problem) {if (!settled && token === revision) {
-        if (problem?.code === 2 || problem?.code === 3) startFresh();
+        if (problem?.code === 2 || problem?.code === 3) startFresh(problem.code);
         else finish(error(problem?.code === 1 ? 1 : 2, problem?.message || 'Geolocation failed.'));
       }}
     }
