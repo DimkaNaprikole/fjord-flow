@@ -309,6 +309,15 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  observer.observe(dialog,{attributes:true,attributeFilter:['open','class']});
  const resize=new ResizeObserver(()=>{position();clampViewport();});resize.observe(pet);
  const sameRect=(a,b)=>Boolean(a&&b&&['left','top','right','bottom'].every(k=>Math.abs(a[k]-b[k])<.5));
+ function sceneObstacles(obstacles,scene){
+  if(!scene)return obstacles;
+  // A navigation row is a destination surface, not a wall. Walking across its
+  // neighbours never activates them; only onContact owns the requested action.
+  const group=scene.target?.closest?.('[role="tablist"]');
+  const controls=group?.querySelectorAll?.('[role="tab"]')||[];
+  const allowed=[scene.targetRect,...[...controls].map(node=>node.getBoundingClientRect())];
+  return obstacles.filter(rect=>!allowed.some(other=>sameRect(rect,other)));
+ }
  const targetRect=target=>{
   if(!target||target.isConnected===false||target.disabled)return null;
   for(let node=target;node;node=node.parentElement){
@@ -438,7 +447,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   }
   const start=clampCenter(startBox,footprint,viewport(),8),goal=clampCenter(target,footprint,viewport(),8);
   if(!start||!goal)return Promise.resolve(false);
-  const obstacles=patrolObstacles(performance.now()).filter(r=>!scene?.targetRect||!sameRect(r,scene.targetRect));
+  const obstacles=sceneObstacles(patrolObstacles(performance.now()),scene);
   const path=planRoute({start,target:goal,footprint,viewport:viewport(),obstacles,clearance:8});
   if(!path)return Promise.resolve(false);
   stop({preserveInteraction:scene===interaction&&!!scene});restUntil=0;
@@ -475,7 +484,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(!travel)return;
   if(blocked||drag||docked()||!hasViewport()){finishTravel(false);return;}
   if(!travel.scene&&(hover||launch.matches(':focus-visible'))){hideWalk({immediate:true});holdLastFrame();return;}
-  const obstacles=patrolObstacles(now).filter(r=>!travel.scene?.targetRect||!sameRect(r,travel.scene.targetRect));
+  const obstacles=sceneObstacles(patrolObstacles(now),travel.scene);
   if(obstacles.length!==travel.obstacles.length||obstacles.some((r,i)=>!sameRect(r,travel.obstacles[i]))){
    const path=planRoute({start:travel.position,target:travel.target,footprint:travel.footprint,viewport:viewport(),obstacles,clearance:8});
    if(!path){finishTravel(false);return;}
