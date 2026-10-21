@@ -8373,6 +8373,289 @@
           "Familieteater om Peter Plys. Standard 285 NOK, børn 260 NOK inklusive oplyste gebyrer. Sluttid og anbefalet alder er ikke oplyst på billetsiden."
         ]
       }
+    },
+    {
+      "id": "sandnes-selkie-poetry-20261021",
+      "municipality": "1108",
+      "category": "events",
+      "published": "2026-10-21",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-21",
+      "eventDate": "2026-10-21",
+      "time": "19:00",
+      "expires": "2026-10-21T20:10:00+02:00",
+      "location": "Sandnes kulturhus · Mauritz Kartevolds plass 1, Sandnes",
+      "mapQuery": "Sandnes kulturhus · Mauritz Kartevolds plass 1, Sandnes",
+      "url": "https://www.sandnes-kulturhus.no/program/49035-ras-beauty-and-the-beast-the-selkie-poetry-reading/",
+      "source": "Regional arena for samtidsdans / Sandnes kulturhus",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "The Selkie Poetry Reading · RAS",
+          "Sandnes · 2026-10-21 · 19:00."
+        ],
+        "en": [
+          "The Selkie Poetry Reading · RAS",
+          "Sandnes · 2026-10-21 · 19:00."
+        ],
+        "uk": [
+          "The Selkie Poetry Reading · RAS",
+          "Sandnes · 2026-10-21 · 19:00."
+        ],
+        "sv": [
+          "The Selkie Poetry Reading · RAS",
+          "Sandnes · 2026-10-21 · 19:00."
+        ],
+        "da": [
+          "The Selkie Poetry Reading · RAS",
+          "Sandnes · 2026-10-21 · 19:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Poesi, sang og dans. 75–250 kr, cirka 70 minutter. Inneholder nakenhet. Foajeen åpner 18:00; forestillingen starter 19:00."
+        ],
+        "en": [
+          "Poetry, song and dance. NOK 75–250, approximately 70 minutes. Contains nudity. Foyer opens 18:00; performance starts 19:00."
+        ],
+        "uk": [
+          "Поезія, спів і танець. 75–250 NOK, приблизно 70 хвилин. Є оголеність. Фоє відкривається о 18:00, вистава починається о 19:00."
+        ],
+        "sv": [
+          "Poesi, sång och dans. 75–250 NOK, cirka 70 minuter. Innehåller nakenhet. Foajén öppnar 18:00; föreställningen börjar 19:00."
+        ],
+        "da": [
+          "Poesi, sang og dans. 75–250 NOK, cirka 70 minutter. Indeholder nøgenhed. Foyeren åbner 18:00; forestillingen begynder 19:00."
+        ]
+      },
+      "eventType": "theatre"
+    },
+    {
+      "id": "sandnes-frida-amundsen-20261022",
+      "municipality": "1108",
+      "category": "events",
+      "published": "2026-10-21",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-21",
+      "eventDate": "2026-10-22",
+      "time": "18:00",
+      "expires": "2026-10-22T19:00:00+02:00",
+      "location": "Sandnes kulturhus · Mauritz Kartevolds plass 1, Sandnes",
+      "mapQuery": "Sandnes kulturhus · Mauritz Kartevolds plass 1, Sandnes",
+      "url": "https://www.sandnes-kulturhus.no/program/46639-foajekonsert-frida-amundsen/",
+      "source": "Sandnes kunst- og kulturhus",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Foajékonsert · Frida Amundsen",
+          "Sandnes · 2026-10-22 · 18:00."
+        ],
+        "en": [
+          "Foajékonsert · Frida Amundsen",
+          "Sandnes · 2026-10-22 · 18:00."
+        ],
+        "uk": [
+          "Foajékonsert · Frida Amundsen",
+          "Sandnes · 2026-10-22 · 18:00."
+        ],
+        "sv": [
+          "Foajékonsert · Frida Amundsen",
+          "Sandnes · 2026-10-22 · 18:00."
+        ],
+        "da": [
+          "Foajékonsert · Frida Amundsen",
+          "Sandnes · 2026-10-22 · 18:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Frida Amundsen i foajeen. 90–170 kr, cirka 60 minutter. Foajeen åpner 17:00; konsertstart 18:00. Billetter hos arrangøren."
+        ],
+        "en": [
+          "Frida Amundsen in the foyer. NOK 90–170, approximately 60 minutes. Foyer opens 17:00; concert starts 18:00. Tickets from the organiser."
+        ],
+        "uk": [
+          "Frida Amundsen у фоє. 90–170 NOK, приблизно 60 хвилин. Фоє відкривається о 17:00, концерт починається о 18:00. Квитки в організатора."
+        ],
+        "sv": [
+          "Frida Amundsen i foajén. 90–170 NOK, cirka 60 minuter. Foajén öppnar 17:00; konserten börjar 18:00. Biljetter hos arrangören."
+        ],
+        "da": [
+          "Frida Amundsen i foyeren. 90–170 NOK, cirka 60 minutter. Foyeren åbner 17:00; koncertstart 18:00. Billetter hos arrangøren."
+        ]
+      },
+      "eventType": "concert"
+    },
+    {
+      "id": "tromso-tilfluktsrom-open-day-20261028",
+      "municipality": "5501",
+      "category": "events",
+      "published": "2026-10-21",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-21",
+      "eventDate": "2026-10-28",
+      "time": "16:00–20:00",
+      "expires": "2026-10-28T20:00:00+01:00",
+      "location": "Fjellet parkeringsanlegg · Tromsø",
+      "mapQuery": "Fjellet parkeringsanlegg · Tromsø",
+      "url": "https://www.tromso.kommune.no/hendelse/egenberedskapsuka-omvisning-i-byens-tilfluktsrom",
+      "source": "Tromsø kommune",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Åpen ettermiddag i tilfluktsrommet",
+          "Tromsø · 2026-10-28 · 16:00–20:00."
+        ],
+        "en": [
+          "Shelter open afternoon",
+          "Tromsø · 2026-10-28 · 16:00–20:00."
+        ],
+        "uk": [
+          "Відкритий день в укритті",
+          "Tromsø · 2026-10-28 · 16:00–20:00."
+        ],
+        "sv": [
+          "Öppet hus i skyddsrummet",
+          "Tromsø · 2026-10-28 · 16:00–20:00."
+        ],
+        "da": [
+          "Åbent hus i beskyttelsesrummet",
+          "Tromsø · 2026-10-28 · 16:00–20:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Omvisning og beredskapsstands i hall 3–4. Inngang bak biblioteket. Åpent for alle. Pris ikke oppgitt."
+        ],
+        "en": [
+          "Shelter tours and preparedness stands in halls 3–4. Entrance behind the library. Open to everyone. Price not stated."
+        ],
+        "uk": [
+          "Екскурсії та стенди з готовності до надзвичайних ситуацій у залах 3–4. Вхід позаду бібліотеки. Для всіх. Вартість не зазначена."
+        ],
+        "sv": [
+          "Visningar och beredskapsstationer i hall 3–4. Ingång bakom biblioteket. Öppet för alla. Pris anges inte."
+        ],
+        "da": [
+          "Rundvisninger og beredskabsstande i hal 3–4. Indgang bag biblioteket. Åbent for alle. Pris ikke oplyst."
+        ]
+      }
+    },
+    {
+      "id": "tromso-matlordag-grab-20261031",
+      "municipality": "5501",
+      "category": "events",
+      "published": "2026-10-21",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-21",
+      "eventDate": "2026-10-31",
+      "time": "14:00–17:00",
+      "expires": "2026-10-31T17:00:00+01:00",
+      "location": "Ungdomsklubben GRAB · Tromsø",
+      "mapQuery": "Ungdomsklubben GRAB · Tromsø",
+      "url": "https://www.tromso.kommune.no/hendelse/matlordag-pa-grab",
+      "source": "Fremtiden i våre hender / Tromsø kommune",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Matlørdag på GRAB",
+          "Tromsø · 2026-10-31 · 14:00–17:00."
+        ],
+        "en": [
+          "Cooking Saturday at GRAB",
+          "Tromsø · 2026-10-31 · 14:00–17:00."
+        ],
+        "uk": [
+          "Кулінарна субота в GRAB",
+          "Tromsø · 2026-10-31 · 14:00–17:00."
+        ],
+        "sv": [
+          "Matlördag på GRAB",
+          "Tromsø · 2026-10-31 · 14:00–17:00."
+        ],
+        "da": [
+          "Madlørdag på GRAB",
+          "Tromsø · 2026-10-31 · 14:00–17:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Gratis matlaging og felles måltid for ungdom. Ingen påmelding. Arrangør: Fremtiden i våre hender. Detaljert gateadresse ikke oppgitt."
+        ],
+        "en": [
+          "Free cooking and a shared meal for young people. No registration. Organiser: Fremtiden i våre hender. Exact street address not stated."
+        ],
+        "uk": [
+          "Безкоштовне приготування їжі та спільна трапеза для молоді. Без реєстрації. Організатор: Fremtiden i våre hender. Точну адресу не зазначено."
+        ],
+        "sv": [
+          "Gratis matlagning och gemensam måltid för ungdomar. Ingen anmälan. Arrangör: Fremtiden i våre hender. Exakt gatuadress anges inte."
+        ],
+        "da": [
+          "Gratis madlavning og fælles måltid for unge. Ingen tilmelding. Arrangør: Fremtiden i våre hender. Præcis gadeadresse ikke oplyst."
+        ]
+      }
+    },
+    {
+      "id": "honefoss-digger-20261021",
+      "municipality": "3305",
+      "category": "events",
+      "eventType": "cinema",
+      "published": "2026-10-21",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-21",
+      "eventDate": "2026-10-21",
+      "time": "14:45",
+      "expires": "2026-10-21T16:54:00+02:00",
+      "location": "Hønefoss kino · Hønefoss Bru 3, Hønefoss",
+      "mapQuery": "Hønefoss kino, Hønefoss Bru 3",
+      "url": "https://www.nfkino.no/screening/2592/a475d8ee-b9d7-4f54-a1ba-7162df6e4585",
+      "source": "Nordisk Film Kino · Hønefoss",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Digger",
+          "Hønefoss · 2026-10-21 · 14:45."
+        ],
+        "en": [
+          "Digger",
+          "Hønefoss · 2026-10-21 · 14:45."
+        ],
+        "uk": [
+          "Digger",
+          "Hønefoss · 2026-10-21 · 14:45."
+        ],
+        "sv": [
+          "Digger",
+          "Hønefoss · 2026-10-21 · 14:45."
+        ],
+        "da": [
+          "Digger",
+          "Hønefoss · 2026-10-21 · 14:45."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Hønefoss 3. Engelsk tale, norske undertekster, 12 år. Oppgitt filmlengde 129 minutter. Pris og nøyaktig sluttid må sjekkes hos kinoen."
+        ],
+        "en": [
+          "Screen 3. English audio, Norwegian subtitles, age rating 12. Listed film runtime 129 minutes. Check price and exact finishing time with the cinema."
+        ],
+        "uk": [
+          "Зал 3. Англійська мова, норвезькі субтитри, віковий рейтинг 12. Тривалість фільму 129 хвилин. Ціну й точне завершення перевіряйте в кінотеатрі."
+        ],
+        "sv": [
+          "Salong 3. Engelskt tal, norska undertexter, åldersgräns 12. Angiven filmlängd 129 minuter. Kontrollera pris och exakt sluttid hos biografen."
+        ],
+        "da": [
+          "Sal 3. Engelsk tale, norske undertekster, aldersgrænse 12. Oplyst filmlængde 129 minutter. Tjek pris og præcis sluttid hos biografen."
+        ]
+      }
     }
   ],
   "mediaUpdated": "2026-10-19"
