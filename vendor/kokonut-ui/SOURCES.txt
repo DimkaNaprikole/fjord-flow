@@ -1,0 +1,16 @@
+Kokonut UI patterns adapted to vanilla HTML/CSS/JavaScript for FJORD / FLOW.
+No React, Tailwind or Motion runtime is introduced.
+
+Source repository: https://github.com/kokonut-labs/kokonutui
+Pinned source commit: 3383c65c957daaaf7623393036ecabfcd5d5e709
+License: MIT (full text retained in LICENSE).
+
+components/kokonutui/ai-input-search.tsx
+  Nested composer frame, textarea and stable actions row.
+hooks/use-auto-resize-textarea.ts
+  Bounded height based on scrollHeight; resize with draft/viewport changes.
+components/kokonutui/carousel-cards.tsx
+  Rounded photo-card composition, inset edge and clear keyboard focus.
+
+Adaptation: existing theme tokens, real photos, accessible labels and existing
+chat/voice handlers retained. Animation uses local pinned Anime.js.
