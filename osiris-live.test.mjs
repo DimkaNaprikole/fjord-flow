@@ -126,3 +126,12 @@ test('Live caller language controls service labels without changing the Norwegia
  assert.equal(app.find('fjord-ai-compose').children.find(n=>n.tag==='label').textContent,'Ваше сообщение');assert.equal(app.document.documentElement.lang,'nb');
  output(channel,'Hello there.','locale-a1');assert.equal(app.find('fjord-ai-compose').children.find(n=>n.tag==='label').textContent,'Ваше сообщение','Assistant output cannot override the caller language');app.dialog.close();
 });
+
+test('Live goodbye dismisses the panel, while pause keeps it available',async()=>{
+ const {app,channel,track}=await start();input(channel,'Осирис, подожди','dismiss-pause');assert.equal(app.dialog.open,true);assert.equal(track.readyState,'live');input(channel,'Всё, пока','dismiss-goodbye');assert.equal(app.dialog.open,false);assert.equal(track.readyState,'ended');
+});
+test('manual microphone stop and pet stop dismiss the panel without losing the draft',async()=>{
+ for(const target of ['osiris-compact-mic','fjord-ai-record-fallback','pet','device']){
+ const {app,track}=await start();const draft=app.find('fjord-ai-compose').children.find(n=>n.tag==='textarea');draft.value='Черновик';if(target==='pet')app.launch.onclick();else if(target==='device')track.onended();else if(target==='osiris-compact-mic')app.find(target).onclick();else await app.find(target).emit('click');assert.equal(app.dialog.open,false,target);assert.equal(track.readyState,'ended');assert.equal(draft.value,'Черновик');
+ }
+});

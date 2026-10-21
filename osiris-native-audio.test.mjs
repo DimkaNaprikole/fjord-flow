@@ -73,19 +73,11 @@ test('recording unavailable or too large cannot stall the native conversation',a
  const {app,channel,track}=await start();delete app.browserWindow.MediaRecorder;await askVoice(channel);created(channel);text(channel);done(channel);drained(channel);assert.equal(track.enabled,true);app.dialog.close();
 });
 
-test('native farewell stops capture immediately, speaks Russian and closes after audio drain',async()=>{
- const {app,channel,track,remoteTrack}=await start();await askVoice(channel,'Пока');assert.equal(track.readyState,'ended');assert.equal(track.enabled,false);assert.equal(app.voiceState.peer.closed,undefined,'Keep only output connected for the farewell');
- const request=channel.sent.find(message=>message.type==='response.create');assert.match(request.response.instructions,/До свидания|до свидания/);assert.equal(request.response.conversation,'none');assert.equal(app.voiceState.spoken.length,0);
- created(channel);text(channel,'Давай, до свидания. Связь окончена. Спасибо за внимание, обращайтесь завтра.');done(channel);assert.equal(app.voiceState.peer.closed,undefined);assert.equal(track.enabled,false);drained(channel);assert.equal(app.voiceState.peer.closed,true);assert.equal(track.enabled,false);assert.equal(remoteTrack.stopped,true);assert.equal([...app.voiceState.timers.values()].filter(timer=>timer.ms===30000).length,0);app.dialog.close();
+test('native goodbye dismisses the panel and releases input/output immediately',async()=>{
+ const {app,channel,track,remoteTrack}=await start();await askVoice(channel,'Пока');assert.equal(track.readyState,'ended');assert.equal(track.enabled,false);assert.equal(app.dialog.open,false);assert.equal(app.voiceState.peer.closed,true);assert.equal(remoteTrack.stopped,true);assert.equal(channel.sent.filter(m=>m.type==='response.create').length,0,'No new paid farewell after goodbye');
 });
-
-test('native farewell failure or missing drain has bounded cleanup and never restarts capture',async()=>{
- for(const outcome of ['failed','missing-drain']){
-  const {app,channel,track,remoteTrack}=await start();await askVoice(channel,'Пока');created(channel);text(channel,'До свидания.');
-  if(outcome==='failed')channel.message({type:'response.done',response:{id:'r1',status:'failed'}});
-  else{done(channel);const timeout=[...app.voiceState.timers.values()].find(timer=>timer.ms===30000);assert.ok(timeout,'A farewell has a bounded output cleanup');timeout.fn()}
-  assert.equal(app.voiceState.peer.closed,true);assert.equal(track.readyState,'ended');assert.equal(track.enabled,false);assert.equal(remoteTrack.stopped,true);const calls=app.calls.length;app.document.emit('visibilitychange');await flush();assert.equal(app.calls.length,calls);app.dialog.close();
- }
+test('late native output after goodbye cannot reopen the panel or restart capture',async()=>{
+ const {app,channel,track}=await start();await askVoice(channel,'Пока');const calls=app.calls.length;created(channel);text(channel,'До свидания.');done(channel);drained(channel);assert.equal(app.dialog.open,false);assert.equal(track.readyState,'ended');assert.equal(app.calls.length,calls);
 });
 
 test('moderation warning is spoken locally and resumes listening without model reply',async()=>{

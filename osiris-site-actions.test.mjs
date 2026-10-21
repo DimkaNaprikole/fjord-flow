@@ -148,7 +148,7 @@ test('negated commands, how-to questions and recommendations do not navigate; al
 });
 test('settings off also blocks the no-module fallback',async()=>{
  const app=boot();await flush();app.browserWindow.emit('fjord:open-chat');app.sections.journeys=app.document.createElement('section');app.browserWindow.OsirisSettings={isAllowed:()=>false};
- await submit(app,'Открой туризм');assert.equal(app.sections.journeys.scrolled,undefined);assert.match(app.find('fjord-ai-status').textContent,/disabled/);app.dialog.close();
+ await submit(app,'Открой туризм');assert.equal(app.sections.journeys.scrolled,undefined);assert.match(app.find('fjord-ai-status').textContent,/отключены/);app.dialog.close();
 });
 
 function authFixture(app) {
