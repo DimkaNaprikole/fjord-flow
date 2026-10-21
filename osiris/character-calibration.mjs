@@ -1698,6 +1698,57 @@ export const CHARACTER_CALIBRATION = Object.freeze({
       "confidence": "medium",
       "identityContinuity": "owner-provided-sphynx-video",
       "note": "Approximate cranial bounds exclude ears. Foot-support centers visually measured at decoded first/last frame; cloud is a prop below the support. Fixed clip scale; full decoded alpha trajectory includes a 2px margin. One native descent with source camera perspective. The last tail-tip blur is retained. Start and end poses differ; not a loop or an interaction with an arbitrary site ledge."
+    },
+    "window-hop-cloud": {
+      "head": {
+        "left": 0.351288056206089,
+        "top": 0.4803921568627451,
+        "right": 0.47423887587822017,
+        "bottom": 0.6764705882352942,
+        "cx": 0.4127634660421546,
+        "cy": 0.5784313725490197,
+        "width": 0.12295081967213115,
+        "height": 0.19607843137254902
+      },
+      "body": {
+        "left": 0.13114754098360656,
+        "top": 0.49264705882352944,
+        "right": 0.373536299765808,
+        "bottom": 0.8627450980392157,
+        "width": 0.2423887587822014,
+        "height": 0.3700980392156863
+      },
+      "ground": {
+        "x": 0.29859484777517564,
+        "y": 0.9558823529411765
+      },
+      "endGround": {
+        "x": 0.7084309133489461,
+        "y": 0.9705882352941176
+      },
+      "pose": "crouch-three-quarter-right",
+      "referenceFrame": 0,
+      "sourceSize": {
+        "width": 854,
+        "height": 408
+      },
+      "startBounds": {
+        "left": 0.0234192037470726,
+        "top": 0.32598039215686275,
+        "right": 0.49765807962529274,
+        "bottom": 0.9681372549019608
+      },
+      "unionBounds": {
+        "left": 0.0234192037470726,
+        "top": 0.09068627450980392,
+        "right": 0.9625292740046838,
+        "bottom": 0.9803921568627451
+      },
+      "stageScope": "one-shot",
+      "scaleToReference": 1.2380952380952381,
+      "confidence": "medium",
+      "identityContinuity": "owner-provided-sphynx-video",
+      "note": "Native f60–116. Forepaws lift f6, all four paws airborne f15, first forepaw support about f20, all paws landed by f30. Source camera/head scale changes remain; use one constant crop/scale. Approximate support centers and skull excluding ears; separate cloud has its own bounds."
     }
   }
 });

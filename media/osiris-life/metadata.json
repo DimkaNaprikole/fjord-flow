@@ -1285,6 +1285,73 @@
       "sourceMotion": true,
       "limitation": "One native descent with source camera perspective. The last tail-tip blur is retained. Start and end poses differ; not a loop or an interaction with an arbitrary site ledge.",
       "packedSha256": "a61f292141afc8e33eabb7229a6266e7ce2d0bed92903b1d1d112700f40547e5"
+    },
+    {
+      "id": "window-hop-cloud",
+      "packed": "window-hop-cloud-packed.mp4",
+      "poster": "window-hop-cloud-poster.png",
+      "width": 854,
+      "height": 408,
+      "duration": 1.9,
+      "fps": 30,
+      "frameCount": 57,
+      "bounds": {
+        "left": 0.0234192037470726,
+        "top": 0.32598039215686275,
+        "right": 0.49765807962529274,
+        "bottom": 0.9681372549019608
+      },
+      "unionBounds": {
+        "left": 0.0234192037470726,
+        "top": 0.09068627450980392,
+        "right": 0.9625292740046838,
+        "bottom": 0.9803921568627451
+      },
+      "startBounds": {
+        "left": 0.0234192037470726,
+        "top": 0.32598039215686275,
+        "right": 0.49765807962529274,
+        "bottom": 0.9681372549019608
+      },
+      "anchor": {
+        "x": 0.29859484777517564,
+        "y": 0.9558823529411765
+      },
+      "sourceSha256": "403ecf2e77adef9b09e786b073671bf782bdad9e6b8809bdf208c503de5c0a7e",
+      "sourceVersion": 1,
+      "sourceStart": 2,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "403ecf2e77adef9b09e786b073671bf782bdad9e6b8809bdf208c503de5c0a7e",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed",
+        "reviewedFrames": 57,
+        "alphaBoundsThreshold": 32,
+        "alphaBoundsPaddingPixels": 2
+      },
+      "oneShot": true,
+      "loop": false,
+      "sourceMotion": true,
+      "takeoffFrame": 15,
+      "firstForepawContactFrame": 20,
+      "landingFrame": 30,
+      "sceneCloud": {
+        "file": "cloud-target.png",
+        "width": 322,
+        "height": 180,
+        "contact": {
+          "x": 161,
+          "y": 64
+        },
+        "widthInJumpPixels": 400,
+        "contactNote": "Approximate support band inside the soft rounded upper cloud, not its tallest wisp. Target stays fixed during the native hop."
+      },
+      "limitation": "Native short horizontal hop; fixed frame crop preserves original camera scale change. Cloud target is separate and aligned with the real low landing line. Do not add a high ballistic arc or repeat/reverse the clip. Rounded cloud contact is approximate.",
+      "packedSha256": "6738b3a7c494c08888e280a51efd81ab7298f990dce9f96e04a4de2862aa2169"
     }
   ]
 }

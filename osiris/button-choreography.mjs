@@ -1,5 +1,5 @@
-import {fitCharacterClip} from './character-layout.mjs?v=20261021ambient1';
-import {CHARACTER_CALIBRATION} from './character-calibration.mjs?v=20261021ambient1';
+import {fitCharacterClip} from './character-layout.mjs?v=20261021cloudapproach1';
+import {CHARACTER_CALIBRATION} from './character-calibration.mjs?v=20261021cloudapproach1';
 
 // Measured on cursor-button frame 108 (native 24fps), not a prompt timestamp.
 export const PAW_CONTACT = Object.freeze({x:603/854,y:404/480,time:4.5,end:4.79});

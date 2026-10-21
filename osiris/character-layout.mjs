@@ -1,4 +1,4 @@
-import {CHARACTER_CALIBRATION} from './character-calibration.mjs?v=20261021ambient1';
+import {CHARACTER_CALIBRATION} from './character-calibration.mjs?v=20261021cloudapproach1';
 
 const PAD=4;
 const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));

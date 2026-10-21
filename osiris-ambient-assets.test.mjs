@@ -8,15 +8,16 @@ import {gestureFit} from './osiris/button-choreography.mjs';
 import {buildMovementCatalog} from './osiris/movement-catalog.mjs';
 
 const metadata=JSON.parse(await readFile(new URL('./media/osiris-life/metadata.json',import.meta.url),'utf8'));
-const ids=['cloud-perch','run-short','descent-short'];
+const ids=['cloud-perch','run-short','descent-short','window-hop-cloud'];
 const clips=ids.map(id=>metadata.clips.find(clip=>clip.id===id));
 
 test('reviewed ambient assets keep exact native durations and unique one-shot identity',async()=>{
  const catalog=buildMovementCatalog(metadata);
- assert.deepEqual(clips.map(clip=>clip.frameCount),[29,19,63]);
+ assert.deepEqual(clips.map(clip=>clip.frameCount),[29,19,63,57]);
  for(const clip of clips){
   assert.equal(metadata.clips.filter(item=>item.id===clip.id).length,1);
-  assert.equal(catalog.clips.find(item=>item.id===clip.id)?.mode,'auto');
+  assert.equal(catalog.clips.find(item=>item.id===clip.id)?.mode,
+   ['cloud-perch','window-hop-cloud'].includes(clip.id)?'manual':'auto');
   assert.equal(clip.oneShot,true);assert.equal(clip.loop,false);assert.equal(clip.sourceMotion,true);
   assert.equal(clip.duration,clip.frameCount/clip.fps);
   assert.equal(clip.verification.reviewedFrames,clip.frameCount);
@@ -25,6 +26,18 @@ test('reviewed ambient assets keep exact native durations and unique one-shot id
   const poster=await readFile(new URL(`./media/osiris-life/${clip.poster}`,import.meta.url));
   assert.ok(poster.length>1000);
  }
+});
+
+test('cloud arrival keeps a separate existing cloud and actual native support phases',async()=>{
+ const clip=clips.find(clip=>clip.id==='window-hop-cloud');
+ assert.ok(clip.takeoffFrame<clip.firstForepawContactFrame&&clip.firstForepawContactFrame<clip.landingFrame);
+ assert.ok(clip.landingFrame<clip.frameCount);
+ assert.deepEqual([clip.takeoffFrame,clip.firstForepawContactFrame,clip.landingFrame],[15,20,30]);
+ const cloud=clip.sceneCloud;
+ assert.equal(cloud.file,'cloud-target.png');
+ const png=await readFile(new URL(`./media/osiris-life/${cloud.file}`,import.meta.url));
+ assert.equal(png.readUInt32BE(16),cloud.width);assert.equal(png.readUInt32BE(20),cloud.height);
+ assert.ok(cloud.contact.x>0&&cloud.contact.x<cloud.width&&cloud.contact.y>0&&cloud.contact.y<cloud.height);
 });
 
 test('cloud and descent do not reduce the original library physical scale',()=>{

@@ -1,14 +1,15 @@
 import {AlphaSequence} from './alpha-sequence.mjs?v=20261020contact1';
 import {createCatBrain} from './cat-brain.mjs?v=20261020continuity1';
-import {buildMovementCatalog,behaviorPools} from './movement-catalog.mjs?v=20261021ambient1';
-import {MOTION_POSES,CHARACTER_CALIBRATION} from './character-calibration.mjs?v=20261021ambient1';
+import {buildMovementCatalog,behaviorPools} from './movement-catalog.mjs?v=20261021cloudapproach1';
+import {MOTION_POSES,CHARACTER_CALIBRATION} from './character-calibration.mjs?v=20261021cloudapproach1';
 import {clampCenter,planRoute,stepRoute} from './viewport-roaming.mjs';
-import {gestureFit,contactPlans,PAW_CONTACT} from './button-choreography.mjs?v=20261021ambient1';
+import {gestureFit,contactPlans,PAW_CONTACT} from './button-choreography.mjs?v=20261021cloudapproach1';
 
-import {horizontalRoute,walkingSpeed,chooseDifferentPlay,clearHorizontalGoals,walkingEnvelope} from './behavior-policy.mjs?v=20261021ambient1';
+import {horizontalRoute,walkingSpeed,chooseDifferentPlay,clearHorizontalGoals,walkingEnvelope} from './behavior-policy.mjs?v=20261021cloudapproach1';
+import {planCloudApproach,createCloudSequence,decodedCloudFrame} from './cloud-approach.mjs?v=20261021cloudapproach1';
 
-const MEDIA=new URL('../media/osiris-life/metadata.json?v=20261021ambient1',import.meta.url);
-const AMBIENT_SCENES=new Set(['cloud-perch','run-short','descent-short']);
+const MEDIA=new URL('../media/osiris-life/metadata.json?v=20261021cloudapproach1',import.meta.url);
+const AMBIENT_SCENES=new Set(['cloud-perch','run-short','descent-short','window-hop-cloud']);
 const COPY={
  en:['Pause Osiris animations','Resume Osiris animations','Osiris movements','Choose a movement…','Play','Rest'],
  nb:['Sett Osiris-animasjonene på pause','Fortsett Osiris-animasjonene','Osiris bevegelser','Velg en bevegelse…','Lek','Hvil'],
@@ -89,11 +90,12 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  let walkReady=walk.complete&&walk.naturalWidth>0;
  let obstacleCacheAt=-Infinity,obstacleCache=[];
  let anchorFraction=.5,baselineFraction;
- let interaction=null;
+ let interaction=null,cloudScene=null,heldGroundOverride=null;
  const playHistory=[],activityHistory=[];let roamDue=false,completedSinceWalk=0,roamCount=0,lastRouteRefusal=null,lastRoamPolicy=null;
  const playIds=catalog.clips.filter(item=>item.group==='play').map(item=>item.id);
- const ambientSceneIds=catalog.clips.filter(item=>AMBIENT_SCENES.has(item.id)&&item.mode==='auto').map(item=>item.id);
- const sceneStarted=new Map();let sceneSerial=0,nextSceneAt=4000,ordinarySinceScene=2,lastScene='',ambientWasAllowed=false;
+ const ambientSceneIds=catalog.clips.filter(item=>AMBIENT_SCENES.has(item.id)&&item.id!=='cloud-perch'&&item.mode==='auto').map(item=>item.id);
+ if(clips.has('window-hop-cloud'))ambientSceneIds.push('window-hop-cloud');
+ const sceneStarted=new Map(),sceneHistory=[];let sceneSerial=0,nextSceneAt=4000,ordinarySinceScene=2,lastScene='',ambientWasAllowed=false,initialCloudAttempted=false;
  function rememberActivity(id){activityHistory.push({id,time});if(activityHistory.length>40)activityHistory.shift();
   if(playIds.includes(id)){playHistory.push(id);if(playHistory.length>12)playHistory.shift();}}
 
@@ -123,7 +125,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   caption.textContent=copy[2];play.textContent=copy[4];rest.textContent=copy[5];
   const value=select.value;
   select.replaceChildren(new Option(copy[3],''));
-  for(const item of catalog.clips)select.add(new Option(lang()==='ru'?item.title:ENGLISH[item.id]||item.title,item.id));
+  for(const item of catalog.clips)if(item.id!=='window-hop-cloud')select.add(new Option(lang()==='ru'?item.title:ENGLISH[item.id]||item.title,item.id));
   select.value=value;
  }
  function position(){
@@ -167,6 +169,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(!docked()){const box=visualRect();placeCenter(box);}
  }
  function groundPoint(source,end=false){
+  if(source===currentClip&&heldGroundOverride)return {...heldGroundOverride};
   const stage=pet.getBoundingClientRect(),fit=fitPresenceClip(source,stage.width,stage.height);
   const ground=end?fit.endGround:fit.ground;
   return ground&&{x:stage.left+ground.x,y:stage.top+ground.y};
@@ -230,7 +233,24 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   interaction=null;previous.controller.abort();previous.detach?.();previous.resolve(false);
   delete launch.dataset.osirisInteraction;
  }
- function stop({preserveWalk=false,preserveInteraction=false}={}){
+ function cancelCloudScene(reason='interrupted'){
+  const scene=cloudScene;if(!scene)return;
+  if(launch.dataset.osirisCloudPhase==='jump'){
+   // One read of the actual displayed silhouette keeps an interrupted airborne
+   // cat at its current position; never rewind it to the source takeoff point.
+   try{
+    const w=canvas.width,h=canvas.height,pixels=canvas.getContext('2d').getImageData(0,0,w,h).data;
+    let bottom=-1,sum=0,count=0;
+    for(let y=h-1;y>=0&&bottom<0;y--)for(let x=0;x<w;x++)if(pixels[(y*w+x)*4+3]>64){bottom=y;break;}
+    if(bottom>=0){for(let y=Math.max(0,bottom-3);y<=bottom;y++)for(let x=0;x<w;x++)if(pixels[(y*w+x)*4+3]>64){sum+=x;count++;}
+     const stage=pet.getBoundingClientRect();heldGroundOverride={x:stage.left+(sum/count+.5)*stage.width/w,y:stage.top+(bottom+1)*stage.height/h};}
+   }catch{/* A tainted/unavailable canvas keeps its frozen picture unchanged. */}
+  }
+  cloudScene=null;scene.sequence.cancel(reason);scene.controller.abort();scene.image.remove();
+  delete launch.dataset.osirisCloudPhase;
+ }
+ function stop({preserveWalk=false,preserveInteraction=false,preserveCloud=false}={}){
+  if(!preserveCloud)cancelCloudScene();
   if(!preserveInteraction)cancelInteraction();
   cancelTravel();
   generation++;load?.abort();loading=false;renderer.pause();brain.cancel(time);active=null;
@@ -259,7 +279,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
    // The chat can remain open in compact mode while the pet is still in its
    // launcher. In either presentation it owns attention, so no ambient scene
    // or route continues underneath it. Explicit site actions keep their owner.
-   if(!allowed&&!interaction&&(travel?.reason==='ambient'||active?.priority===0))stop();
+   if(!allowed&&!interaction&&(cloudScene||travel?.reason==='ambient'||active?.priority===0))stop();
    if(allowed){brain.noteUserActivity(time);nextRoamAt=time+2500;last=performance.now();}
   }
   launch.dataset.osirisLife=paused||!animationsEnabled?'paused':busy?'conversation':reduced.matches?'still':'ready';
@@ -274,7 +294,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   }
   const source=clips.get(decision.id),clip=source&&{...source,anchorFraction,baselineFraction,mirrored:direction<0};
   if(!clip){brain.finish(decision.token,time);return;}
-  const incomingGround=walking?groundPoint(walkClip()):null;
+  const incomingGround=walking?groundPoint(walkClip()):heldGroundOverride;
   const token=++generation;load?.abort();load=new AbortController();renderer.pause();
   active=decision;loading=true;held=false;launch.dataset.osirisScene=clip.id;rememberActivity(clip.id);
   // Keep the actual outgoing frame during buffering, interruptions and rest.
@@ -289,7 +309,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
    // dissolve would show two different cats/clouds for 180 ms at the cut.
    if(incomingGround||AMBIENT_SCENES.has(clip.id)||AMBIENT_SCENES.has(currentClip?.id))await renderer.seek(0);
    if(token!==generation||blocked||dead)return;
-   currentClip=clip;alignGround(incomingGround,clip);position();ready=true;loading=false;
+   currentClip=clip;alignGround(incomingGround,clip);heldGroundOverride=null;position();ready=true;loading=false;
    hideWalk();
    clampViewport();position();
    canvas.style.opacity='1';poster.style.opacity='0';last=performance.now();
@@ -318,6 +338,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(preferences?.siteActions===false&&interaction)stop();
   if(typeof preferences?.roaming==='boolean')roamingEnabled=preferences.roaming;
   if(typeof preferences?.animations==='boolean')animationsEnabled=preferences.animations;
+  if(!roamingEnabled&&cloudScene)stop();
   if(!roamingEnabled&&travel?.reason==='ambient')finishTravel(false);
   translate();sync();
  }
@@ -331,7 +352,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  listen(walk,'load',()=>{walkReady=true;});
  listen(walk,'error',()=>{walkReady=false;cancelTravel();hideWalk({immediate:true});holdLastFrame();});
  listen(renderer.video,'ended',()=>{
-  if(interaction)return;
+  if(interaction||cloudScene)return;
   if(loading||!active||active.mode==='rest'||!renderer.video.ended)return;
   brain.finish(active.token,time,{completed:true});
   const {width,height}=pet.getBoundingClientRect();
@@ -353,7 +374,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   lastViewportSize={width:innerWidth,height:innerHeight};
   // Opening a Fjord Flow section emits resize to refresh its maps. It does
   // not resize the screen and must not cancel the gesture that opened it.
-  if(changed){if(interaction)stop();else cancelTravel();hideWalk({immediate:true});holdLastFrame();}
+  if(changed){if(interaction||cloudScene)stop();else cancelTravel();hideWalk({immediate:true});holdLastFrame();}
   position();clampViewport();position();
  });
  listen(window,'scroll',()=>{obstacleCacheAt=-Infinity;},true);
@@ -506,7 +527,8 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(nextObstacles.length!==obstacleCache.length||nextObstacles.some((r,i)=>['left','right','top','bottom'].some(k=>r[k]!==obstacleCache[i][k])))obstacleCache=nextObstacles;
   return obstacleCache;
  }
- function moveTo(target,{reason='command',signal,scene=null}={}){
+ function moveTo(target,{reason='command',signal,scene=null,preserveCloud=false}={}){
+  if(heldGroundOverride)return Promise.resolve(false);
   if(dead||blocked||docked()||drag||!walkReady||!hasViewport()||signal?.aborted||!Number.isFinite(target?.x)||!Number.isFinite(target?.y)||(reason==='ambient'&&(!roamingEnabled||!ambientAllowed())))return Promise.resolve(false);
   if(!walking){const here=groundPoint(currentClip,held)||visualRect();if(Math.abs(target.x-here.x)>1)direction=target.x<here.x?-1:1;}
   const startBox=walkingStart(),{footprint,offset:envelopeOffset}=walkingGeometry();
@@ -520,7 +542,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(!planned){lastRouteRefusal=Math.abs(goal.y-start.y)>.5?'different-height':'blocked-horizontal-lane';return Promise.resolve(false);}
   const path=planned.map(fromPlan);
   lastRouteRefusal=null;
-  stop({preserveInteraction:scene===interaction&&!!scene});restUntil=0;
+  stop({preserveInteraction:scene===interaction&&!!scene,preserveCloud});restUntil=0;
   if(Math.hypot(goal.x-start.x,goal.y-start.y)<2)return Promise.resolve(true);
   return new Promise(resolve=>{
    const abort=()=>{cancelTravel();holdAtWalkGround();};
@@ -537,7 +559,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   brain.noteUserActivity(time);launch.dataset.osirisScene='rest';previous.resolve(success);
  }
  function maybeRoam(){
-  if(interaction||!ambientAllowed()||!roamingEnabled||!hasViewport()||travel||drag||hover||docked()||!walkReady||time<nextRoamAt||launch.matches(':focus-visible'))return;
+  if(heldGroundOverride||interaction||!ambientAllowed()||!roamingEnabled||!hasViewport()||travel||drag||hover||docked()||!walkReady||time<nextRoamAt||launch.matches(':focus-visible'))return;
   nextRoamAt=time+6000;
   const here=walkingStart(),{footprint,offset}=walkingGeometry();
   const start={x:here.x+offset.x,y:here.y+offset.y};
@@ -549,14 +571,111 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(!travel){roamDue=false;lastRoamPolicy='no-clear-horizontal-segment';}
  }
  function maybeAmbientScene(){
-  if(!ambientAllowed()||hover||interaction||travel||drag||loading||time<nextSceneAt||ordinarySinceScene<2||launch.matches(':focus-visible'))return false;
-  const candidates=ambientSceneIds.filter(id=>id!==lastScene&&time-(sceneStarted.get(id)??-Infinity)>=45000);
+  if(heldGroundOverride||!ambientAllowed()||cloudScene||hover||interaction||travel||drag||loading||time<nextSceneAt||ordinarySinceScene<2||launch.matches(':focus-visible'))return false;
+  const eligible=ambientSceneIds.filter(id=>id!==lastScene&&time-(sceneStarted.get(id)??-Infinity)>=45000);
+  const fresh=eligible.filter(id=>!sceneHistory.slice(-2).includes(id)),candidates=fresh.length?fresh:eligible;
   if(!candidates.length)return false;
-  const id=candidates[Math.min(candidates.length-1,Math.floor(random()*candidates.length))];
-  sceneStarted.set(id,time);lastScene=id;nextSceneAt=time+18000;ordinarySinceScene=0;
+  const id=!initialCloudAttempted&&eligible.includes('window-hop-cloud')?'window-hop-cloud':candidates[Math.min(candidates.length-1,Math.floor(random()*candidates.length))];
+  if(id==='window-hop-cloud'){
+   const started=startCloudScene();nextSceneAt=time+(started?45000:8000);
+   if(started){initialCloudAttempted=true;sceneStarted.set(id,time);lastScene=id;sceneHistory.push(id);if(sceneHistory.length>3)sceneHistory.shift();ordinarySinceScene=0;}return started;
+  }
+  sceneStarted.set(id,time);lastScene=id;sceneHistory.push(id);if(sceneHistory.length>3)sceneHistory.shift();nextSceneAt=time+18000;ordinarySinceScene=0;
   // Native one-shot footage already contains its own trajectory. Its stage is
   // stationary; no WebP loop, extra translation or synthetic continuation.
   void show({id,mode:'play',priority:0,token:`scene-${++sceneSerial}`});return true;
+ }
+ function cloudDelay(scene,milliseconds){
+  return new Promise(resolve=>{
+   const done=()=>{clearTimeout(timer);scene.controller.signal.removeEventListener('abort',done);resolve(cloudScene===scene&&!scene.controller.signal.aborted);};
+   const timer=setTimeout(done,milliseconds);scene.controller.signal.addEventListener('abort',done,{once:true});
+  });
+ }
+ function cloudImageReady(scene){
+  return new Promise(resolve=>{
+   const image=scene.image,signal=scene.controller.signal;
+   const done=()=>{clearTimeout(timer);image.removeEventListener('load',loaded);image.removeEventListener('error',failed);signal.removeEventListener('abort',failed);};
+   const loaded=()=>{done();resolve(true);},failed=()=>{done();resolve(false);};
+   const timer=setTimeout(failed,8000);
+   image.addEventListener('load',loaded,{once:true});image.addEventListener('error',failed,{once:true});signal.addEventListener('abort',failed,{once:true});
+   if(image.complete&&image.naturalWidth>0)loaded();
+  });
+ }
+ async function playCloudJump(scene){
+  const {clip,plan,controller,sequence}=scene,signal=controller.signal,token=++generation;
+  load?.abort();load=new AbortController();const abortLoad=()=>load?.abort();signal.addEventListener('abort',abortLoad,{once:true});
+  loading=true;renderer.pause();
+  try{
+   await renderer.load(new URL(clip.packed,mediaUrl).href,{signal:load.signal,clip});
+   if(cloudScene!==scene||signal.aborted||token!==generation)return false;
+   await renderer.seek(0);
+   if(cloudScene!==scene||signal.aborted||token!==generation)return false;
+   currentClip=clip;heldGroundOverride=null;ready=true;held=false;loading=false;shiftStage(plan.jump.origin);hideWalk({immediate:true});position();
+   canvas.style.opacity='1';poster.style.opacity='0';launch.dataset.osirisScene=clip.id;launch.dataset.osirisCloudPhase='jump';sequence.arrived();rememberActivity(clip.id);
+   active={id:clip.id,token:`cloud-${++sceneSerial}`,mode:'play',priority:0};
+   return await new Promise(resolve=>{
+    const cleanup=()=>{renderer.video.removeEventListener('ended',ended);signal.removeEventListener('abort',aborted);};
+    const aborted=()=>{cleanup();renderer.pause();resolve(false);};
+    const ended=()=>{
+     if(!renderer.video.ended)return;
+     // AlphaSequence flushes the actual last native frame before emitting ended;
+     // browsers need not deliver a final requestVideoFrameCallback as well.
+     sequence.decoded(clip.frameCount-1);cleanup();held=true;renderer.pause();active=null;resolve(sequence.ended().phase==='hold');
+    };
+    renderer.video.addEventListener('ended',ended,{once:true});signal.addEventListener('abort',aborted,{once:true});
+    let previous=0;
+    renderer.play(seconds=>{
+     if(cloudScene!==scene||signal.aborted||token!==generation)return;
+     time+=Math.max(0,seconds-previous)*1000;previous=seconds;
+     sequence.decoded(decodedCloudFrame(seconds,clip.fps,clip.frameCount));
+    }).catch(aborted);
+   });
+  }finally{signal.removeEventListener('abort',abortLoad);if(cloudScene===scene)loading=false;}
+ }
+ function startCloudScene(){
+  if(!roamingEnabled||!walkReady||!ambientAllowed()||cloudScene)return false;
+  const source=clips.get('window-hop-cloud'),prop=source?.sceneCloud;if(!prop)return false;
+  const stage=pet.getBoundingClientRect(),ground=groundPoint(currentClip,held);if(!ground)return false;
+  let selected;
+  // Try the natural facing direction first, then the same native footage
+  // mirrored away from an edge. Neither variant alters its authored jump.
+  for(const facing of [direction,-direction]){
+   const clip={...source,anchorFraction,baselineFraction,mirrored:facing<0},fit=fitPresenceClip(clip,stage.width,stage.height);
+   if(!fit.ground||!fit.endGround)continue;
+   const u=CHARACTER_CALIBRATION.clips[clip.id].unionBounds;
+   const bounds={left:fit.left+(clip.mirrored?1-u.right:u.left)*fit.width,right:fit.left+(clip.mirrored?1-u.left:u.right)*fit.width,top:fit.top+u.top*fit.height,bottom:fit.top+u.bottom*fit.height};
+   const walkSource={...walkClip(),mirrored:facing<0},walkGround=groundPoint(walkSource),box=visualRect(walkSource,facing<0);
+   const walkingBox={x:ground.x+box.x-walkGround.x,y:ground.y+box.y-walkGround.y};
+   const geometry=walkingEnvelope(box,walkGround,visualRect(currentClip),ground);
+   const centerFromGround={x:box.x-walkGround.x+geometry.offset.x,y:box.y-walkGround.y+geometry.offset.y};
+   const approachBounds={left:centerFromGround.x-geometry.footprint.width/2,right:centerFromGround.x+geometry.footprint.width/2,top:centerFromGround.y-geometry.footprint.height/2,bottom:centerFromGround.y+geometry.footprint.height/2};
+   const cloudWidth=prop.widthInJumpPixels*fit.width/clip.width,cloudScale=cloudWidth/prop.width;
+   const plan=planCloudApproach({startGround:ground,approachBounds,jump:{bounds,ground:fit.ground,endGround:fit.endGround,frameCount:clip.frameCount,landingFrame:clip.landingFrame},
+    cloud:{width:cloudWidth,height:prop.height*cloudScale,contact:{x:prop.contact.x*cloudScale,y:prop.contact.y*cloudScale}},viewport:viewport(),obstacles:patrolObstacles(performance.now()),
+    minApproach:Math.min(90,viewport().width*.15),maxApproach:Math.min(260,viewport().width*.4),random});
+   if(plan){selected={clip,fit,walkingBox,plan};break;}
+  }
+  if(!selected)return false;
+  const {clip,fit,walkingBox,plan}=selected;
+  stop();const image=document.createElement('img'),controller=new AbortController(),sequence=createCloudSequence(plan);
+  image.className='osiris-cloud-target';image.alt='';image.setAttribute('aria-hidden','true');
+  Object.assign(image.style,{position:'fixed',pointerEvents:'none',left:`${plan.cloud.origin.x}px`,top:`${plan.cloud.origin.y}px`,width:`${plan.cloud.width}px`,height:`${plan.cloud.height}px`,maxWidth:'none',opacity:'0',transition:'opacity 400ms ease',zIndex:String((parseInt(window.getComputedStyle?.(launch)?.zIndex)||1000)-1)});
+  image.src=new URL(prop.file,mediaUrl).href;document.body.append(image);
+  const scene=cloudScene={image,controller,sequence,clip,plan};launch.dataset.osirisCloudPhase='cloud';
+  void(async()=>{
+   if(!await cloudImageReady(scene)||cloudScene!==scene)return;
+   image.style.opacity='1';if(!await cloudDelay(scene,500))return;
+   sequence.approach();launch.dataset.osirisCloudPhase='approach';
+   const target={x:plan.approach.ground.x+walkingBox.x-ground.x,y:walkingBox.y};
+   if(!await moveTo(target,{reason:'ambient',signal:controller.signal,preserveCloud:true})||cloudScene!==scene)return;
+   if(!await playCloudJump(scene)||cloudScene!==scene)return;
+   launch.dataset.osirisCloudPhase='hold';if(!await cloudDelay(scene,900))return;
+   image.style.opacity='0';if(!await cloudDelay(scene,450))return;
+   sequence.finish();
+   const end=fit.endGround;anchorFraction=clip.mirrored?1-end.x/stage.width:end.x/stage.width;baselineFraction=end.y/stage.height;
+   restUntil=time+1200;nextRoamAt=time+3500;ordinarySinceScene=0;completedSinceWalk=0;roamDue=false;
+  })().catch(()=>{}).finally(()=>{if(cloudScene===scene){cancelCloudScene('finished');loading=false;active=null;holdLastFrame();restUntil=Math.max(restUntil,time+1200);}});
+  return true;
  }
  function advanceTravel(delta,now){
   if(!travel)return;
@@ -618,8 +737,9 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  function tick(now){
   if(dead)return;
   const delta=Math.min(250,Math.max(0,now-last));last=now;
+  if(cloudScene&&cloudScene.sequence.validate({chatOpen:!ambientAllowed(),hidden:document.hidden,motion:animationsEnabled&&!reduced.matches,roaming:roamingEnabled,dragging:!!drag?.active,viewport:viewport(),obstacles:patrolObstacles(now)}).phase==='cancelled')stop();
   if(!blocked&&!drag&&!loading&&(!active||active.mode==='rest'))time+=delta;
-  if(ambientAllowed()&&!drag&&!travel&&!interaction&&!loading&&time>=restUntil&&typeof active?.token!=='string'){
+  if(ambientAllowed()&&!cloudScene&&!drag&&!travel&&!interaction&&!loading&&time>=restUntil&&typeof active?.token!=='string'){
    const betweenScenes=!active||active.mode==='rest';
    if(betweenScenes&&roamDue)maybeRoam();
    if(!travel&&betweenScenes&&maybeAmbientScene()){frame=requestAnimationFrame(tick);return;}

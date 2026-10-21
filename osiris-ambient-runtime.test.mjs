@@ -58,7 +58,7 @@ class Video extends Element {
  cancelVideoFrameCallback(key){this.frames.delete(key);}
  frame(time){this.currentTime=time;const [key,fn]=this.frames.entries().next().value||[];if(fn){this.frames.delete(key);fn();}}
 }
-function setup(t,{fetcher,random=()=>.99,preferences,trackPaint=false}={}){
+function setup(t,{fetcher,random=()=>.99,preferences,trackPaint=false,virtualTimers=false}={}){
  const saved=new Map(),set=(name,value)=>{saved.set(name,globalThis[name]);globalThis[name]=value;};
  const body=new Element(),launch=new Element('button','fjord-helper-launch osiris-launch');
  const pet=new Element('span','fjord-ai-pet osiris-pet'),original=new Element('img','osiris-avatar');
@@ -67,7 +67,7 @@ function setup(t,{fetcher,random=()=>.99,preferences,trackPaint=false}={}){
  reduced.matches=false;
  if(preferences)window.OsirisSettings={preferences};
  const videos=[],canvases=[],observers=[],resizers=[],frames=new Map(),requests=[];
- let clock=0,serial=0;
+ let clock=0,serial=0;const timers=new Map();
  pet.dataset.state='idle';pet.append(original);launch.append(pet);portrait.append(duplicate);dialog.append(portrait,about);body.append(launch,dialog);
  const originalClick=()=>{launch.chatClicks=(launch.chatClicks||0)+1;};launch.onclick=originalClick;
  document.body=body;document.readyState='complete';document.hidden=false;document.activeElement=null;document.documentElement={lang:'ru'};
@@ -94,11 +94,12 @@ function setup(t,{fetcher,random=()=>.99,preferences,trackPaint=false}={}){
  set('requestAnimationFrame',callback=>{const key=++serial;frames.set(key,callback);return key;});
  set('cancelAnimationFrame',key=>frames.delete(key));
  set('performance',{now:()=>clock});
+ if(virtualTimers){set('setTimeout',(fn,ms)=>{const id=++serial;timers.set(id,{fn,due:clock+ms});return id;});set('clearTimeout',id=>timers.delete(id));}
  set('fetch',async(url,options)=>{requests.push({url,options});return fetcher?fetcher(url,options):{ok:true,json:async()=>metadata};});
  let api;
  t.after(()=>{api?.destroy();for(const [name,value]of saved){if(value===undefined)delete globalThis[name];else globalThis[name]=value;}});
  const update=()=>{for(const observer of [...observers])if(!observer.disconnected)observer.callback();};
- const step=async(ms=100)=>{clock+=ms;const pending=[...frames];frames.clear();for(const [,fn]of pending)fn(clock);await flush();};
+ const step=async(ms=100)=>{clock+=ms;const pending=[...frames];frames.clear();for(const [,fn]of pending)fn(clock);for(const [id,timer]of [...timers])if(timer.due<=clock){timers.delete(id);timer.fn();}await flush();};
  const mount=async()=>{api=await mountSitePresence({launch,dialog,pet,random,mediaUrl:new URL('./media/osiris-life/metadata.json',import.meta.url)});return api;};
  return {mount,launch,pet,original,dialog,about,portrait,duplicate,document,window,reduced,videos,canvases,observers,resizers,requests,frames,step,update,originalClick};
 }
@@ -277,13 +278,15 @@ test('Escape closes the chat without leaving ambient motion permanently paused',
  assert.equal(api.snapshot().paused,true,'Escape must not undo an explicitly selected pause');
 });
 
-test('closed-chat scene scheduler plays reviewed one-shots once and varies subsequent activities',async t=>{
- const ids=['cloud-perch','run-short','descent-short'];
+test('closed-chat scene scheduler varies one-shots and uses a separate cloud before its native hop',async t=>{
+ const ids=['run-short','descent-short','window-hop-cloud'];
  for(const id of ids)assert.ok(metadata.clips.some(c=>c.id===id),`missing reviewed ${id}`);
- const f=setup(t,{random:()=>.5}),api=await f.mount();f.pet.querySelector('.osiris-life-walk').emit('load');
- let elapsed=0;const seen=new Set();
+ const f=setup(t,{random:()=>.5,virtualTimers:true}),api=await f.mount();f.pet.querySelector('.osiris-life-walk').emit('load');
+ let elapsed=0;const seen=new Set(),phases=new Set();
  for(let i=0;i<1800;i++){
   await f.step(100);elapsed+=100;
+  const cloud=f.document.body.children.find(c=>c.className==='osiris-cloud-target');if(cloud)cloud.emit('load');
+  if(f.launch.dataset.osirisCloudPhase)phases.add(f.launch.dataset.osirisCloudPhase);
   const playing=f.videos.find(v=>!v.paused);
   if(api.snapshot().loading){
    const loading=f.videos.find(v=>v.src&&v.readyState===0);loading?.ready();await flush();
@@ -300,8 +303,108 @@ test('closed-chat scene scheduler plays reviewed one-shots once and varies subse
   }
  }
  assert.deepEqual([...seen].sort(),[...ids].sort());
+ assert.ok(!api.snapshot().activityHistory.some(a=>a.id==='cloud-perch'),'the rejected pop-in is not automatic');
+ for(const phase of ['cloud','approach','jump','hold'])assert.ok(phases.has(phase),phase);
  const state=api.snapshot();assert.ok(state.roamCount>=3);assert.ok(new Set(state.activityHistory.map(a=>a.id)).size>=7);
  for(const id of ids){const starts=state.activityHistory.filter(a=>a.id===id);for(let i=1;i<starts.length;i++)assert.ok(starts[i].time-starts[i-1].time>=45000);}
+ assert.equal(f.launch.chatClicks,undefined);
+});
+
+async function advanceAmbient(f,api,{loadCloud=false}={}){
+ await f.step(100);
+ const cloud=f.document.body.children.find(c=>c.className==='osiris-cloud-target');
+ if(loadCloud)cloud?.emit('load');
+ const loading=f.videos.find(v=>v.src&&v.readyState===0);
+ if(api.snapshot().loading&&loading){loading.ready();await flush();}
+ for(const playing of f.videos.filter(v=>!v.paused)){
+  const source=metadata.clips.find(c=>String(playing.src).endsWith(c.packed));
+  playing.duration=source.duration;
+  const next=playing.currentTime+.1;playing.frame(Math.min(next,source.duration));
+  if(next>=source.duration){playing.ended=true;playing.emit('ended');}
+ }
+ return cloud;
+}
+
+test('a stalled cloud image times out and ordinary activity resumes without a late hop',async t=>{
+ const f=setup(t,{random:()=>.5,virtualTimers:true}),api=await f.mount();f.pet.querySelector('.osiris-life-walk').emit('load');
+ let cloud;
+ for(let i=0;i<500&&!cloud;i++)cloud=await advanceAmbient(f,api);
+ assert.ok(cloud,'a safe cloud attempt starts');
+ const before=api.snapshot().activityHistory.length;
+ for(let i=0;i<180;i++)await advanceAmbient(f,api);
+ assert.equal(cloud.parentNode,null);assert.equal(f.launch.dataset.osirisCloudPhase,undefined);
+ assert.ok(api.snapshot().activityHistory.length>before,'normal scheduler is not held by the failed image');
+ cloud.emit('load');await flush();
+ assert.ok(!f.videos.some(v=>String(v.src).includes('window-hop-cloud')),'stale load cannot start a hop');
+ assert.equal(f.launch.chatClicks,undefined);
+});
+
+for(const interruption of ['chat','resize','obstacle'])test(`cloud approach cancels safely on ${interruption} before a native hop loads`,async t=>{
+ const f=setup(t,{random:()=>.5,virtualTimers:true}),api=await f.mount();f.pet.querySelector('.osiris-life-walk').emit('load');
+ let cloud,visibleSteps=0;
+ for(let i=0;i<500&&f.launch.dataset.osirisCloudPhase!=='approach';i++){
+  cloud=await advanceAmbient(f,api,{loadCloud:true})||cloud;
+  if(cloud?.style.opacity==='1')visibleSteps++;
+ }
+ assert.equal(f.launch.dataset.osirisCloudPhase,'approach');assert.ok(visibleSteps>=5,'cloud is visibly separate before walking');
+ assert.equal(api.snapshot().travelling,true);
+ if(interruption==='chat'){f.dialog.open=true;f.update();}
+ if(interruption==='resize'){globalThis.innerWidth=1200;f.window.emit('resize');}
+ if(interruption==='obstacle'){
+  const obstacle=new Element('button');
+  const left=parseFloat(cloud.style.left),top=parseFloat(cloud.style.top),width=parseFloat(cloud.style.width),height=parseFloat(cloud.style.height);
+  obstacle.rect={left,top,right:left+width,bottom:top+height,width,height};f.document.obstacles.push(obstacle);
+  await f.step(1000);
+ }
+ await flush();assert.equal(cloud.parentNode,null);assert.equal(api.snapshot().travelling,false);
+ cloud.emit('load');for(let i=0;i<10;i++)await f.step(100);
+ assert.equal(f.launch.dataset.osirisCloudPhase,undefined);
+ assert.ok(!f.videos.some(v=>String(v.src).includes('window-hop-cloud')),'cancelled approach cannot load a delayed native jump');
+ assert.equal(f.launch.chatClicks,undefined);
+});
+
+test('native ended flush completes the hop even without a final video-frame callback',async t=>{
+ const f=setup(t,{random:()=>.5,virtualTimers:true}),api=await f.mount();f.pet.querySelector('.osiris-life-walk').emit('load');
+ for(let i=0;i<600&&f.launch.dataset.osirisCloudPhase!=='jump';i++)await advanceAmbient(f,api,{loadCloud:true});
+ assert.equal(f.launch.dataset.osirisCloudPhase,'jump');
+ const video=f.videos.find(v=>String(v.src).includes('window-hop-cloud'));
+ video.frame(1);video.currentTime=1.9;video.ended=true;video.emit('ended');await flush();
+ assert.equal(f.launch.dataset.osirisCloudPhase,'hold');assert.equal(api.snapshot().held,true);
+});
+
+for(const side of ['left','right'])test(`the first cloud tries the opposite native direction when the cat faces the ${side} edge`,async t=>{
+ const f=setup(t,{random:()=>.5,virtualTimers:true}),api=await f.mount();f.pet.querySelector('.osiris-life-walk').emit('load');
+ const pending=api.moveTo({x:side==='left'?110:1170,y:api.snapshot().walkStart.y});
+ for(let i=0;i<200&&api.snapshot().travelling;i++)await f.step(100);
+ assert.equal(await pending,true);
+ const ground=api.snapshot().ground;assert.ok(side==='left'?ground.x<150:ground.x>1130,'cat is near the edge and facing it');
+ api.command('blink');const blink=f.videos.find(v=>v.src&&v.readyState===0);blink.ready();await flush();
+ blink.frame(5);blink.ended=true;blink.emit('ended');await flush();
+ await f.step(100);
+ const cloud=f.document.body.children.find(c=>c.className==='osiris-cloud-target');
+ assert.ok(cloud,`first safe attempt succeeds without waiting for a different ordinary route: ${JSON.stringify(api.snapshot())}`);
+ assert.ok(side==='left'?parseFloat(cloud.style.left)>ground.x:parseFloat(cloud.style.left)+parseFloat(cloud.style.width)<ground.x,'separate cloud is away from the blocked edge');
+ cloud.emit('load');await flush();
+ for(let i=0;i<6;i++)await f.step(100);
+ assert.equal(f.launch.dataset.osirisCloudPhase,'approach');assert.ok(side==='left'?api.snapshot().target.x>ground.x:api.snapshot().target.x<ground.x);
+ for(let i=0;i<100&&f.launch.dataset.osirisCloudPhase!=='jump';i++)await advanceAmbient(f,api,{loadCloud:true});
+ assert.equal(f.launch.dataset.osirisCloudPhase,'jump');
+ const box=api.snapshot().position;assert.ok(box.left>=8&&box.right<=innerWidth-8);
+});
+
+test('interrupting an airborne source frame anchors the next pose at the displayed silhouette',async t=>{
+ const f=setup(t,{random:()=>.5,virtualTimers:true}),api=await f.mount();f.pet.querySelector('.osiris-life-walk').emit('load');
+ for(let i=0;i<600&&f.launch.dataset.osirisCloudPhase!=='jump';i++)await advanceAmbient(f,api,{loadCloud:true});
+ assert.equal(f.launch.dataset.osirisCloudPhase,'jump');
+ const canvas=f.canvases.find(c=>c.className==='osiris-life-canvas'),context=canvas.getContext('2d'),stage=f.pet.getBoundingClientRect();
+ const x=Math.floor(canvas.width*.65),y=Math.floor(canvas.height*.6);
+ context.getImageData=()=>{const data=new Uint8ClampedArray(canvas.width*canvas.height*4);data[(y*canvas.width+x)*4+3]=255;return {data};};
+ const expected={x:stage.left+(x+.5)*stage.width/canvas.width,y:stage.top+(y+1)*stage.height/canvas.height};
+ f.dialog.open=true;f.dialog.classList.add('osiris-compact');f.update();await flush();
+ assert.deepEqual(api.snapshot().ground,expected);assert.equal(f.launch.dataset.osirisCloudPhase,undefined);
+ f.dialog.open=false;f.update();api.command('blink');
+ f.videos.find(v=>v.src&&v.readyState===0).ready();await flush();
+ assert.ok(Math.abs(api.snapshot().ground.x-expected.x)<.02);assert.ok(Math.abs(api.snapshot().ground.y-expected.y)<.02);
  assert.equal(f.launch.chatClicks,undefined);
 });
 
