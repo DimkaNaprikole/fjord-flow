@@ -101,14 +101,20 @@
       status.textContent = '';
       const verified = auth.ensureVerified(dialog, config.firebaseApiKey, language(), {mode: mode === 'register' ? 'register' : 'login'});
       const visitor = await verified;
-      if (visitor && dialog.open) {showProfile(visitor); changed();}
+      if (visitor && dialog.open) {
+        if (mode === 'profile') showProfile(visitor);
+        else dialog.close();
+        changed();
+      }
     } catch {if (dialog.open) status.textContent = words()[5];}
     finally {pending = false;}
   }
   window.FjordSiteAuth = {open, getProfile};
   window.addEventListener('fjord:auth-changed', () => {
     changed();
-    if (dialog?.open && getProfile()) showProfile(getProfile());
+    // Verification emits this event before its promise settles. Leave its form
+    // intact until the flow finishes, then close login or show an explicit profile.
+    if (!pending && dialog?.open && getProfile()) showProfile(getProfile());
   });
   window.addEventListener('fjordlanguagechange', () => {
     localize(); if (dialog?.open && getProfile() && !dialog.querySelector('.fjord-ai-auth')) showProfile(getProfile());

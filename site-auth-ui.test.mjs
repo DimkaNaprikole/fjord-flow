@@ -19,15 +19,16 @@ function fixture(){
  const window={FjordI18n:{language:'uk'},addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent:event=>events.get(event.type)?.()};
  const context=vm.createContext({window,document,CustomEvent:class{constructor(type){this.type=type}},fetch:async()=>({ok:true,json:async()=>({firebaseApiKey:'public-firebase-key'})}),fakeAuth:auth});
  vm.runInContext(source.replace("import('./afonya-auth.js?v=7')",'Promise.resolve(fakeAuth)'),context);
- return {window,document,calls,visitor,events};
+ return {window,document,calls,visitor,events,auth};
 }
-test('shared account exposes email only and validates with Firebase before showing profile',async()=>{
+test('successful registration closes the dialog; explicit profile still offers sign out',async()=>{
  const f=fixture();await f.window.FjordSiteAuth.open('register');
  assert.deepEqual(Object.keys(f.window.FjordSiteAuth.getProfile()),['email']);
  assert.equal(f.window.FjordSiteAuth.getProfile().email,'visitor@example.com');
  const call=f.calls.find(x=>x[0]==='verify');assert.equal(call[2],'public-firebase-key');assert.equal(call[3],'uk');
  assert.equal(call[4].mode,'register');
- const dialog=f.document.body.children[0];assert.equal(dialog.open,true);
+ const dialog=f.document.body.children[0];assert.equal(dialog.open,false);
+ await f.window.FjordSiteAuth.open('profile');assert.equal(dialog.open,true);
  const body=dialog.children.find(x=>x.className==='site-account-body');
  assert.equal(body.children[0].textContent,'visitor@example.com');
  await body.children.at(-1).listeners.click();assert.equal(dialog.open,false);assert.equal(f.window.FjordSiteAuth.getProfile(),null);
@@ -37,8 +38,28 @@ test('opening an account while initial config is loading still uses one safe dia
  assert.equal(f.document.body.children.length,1);assert.equal(f.calls.filter(x=>x[0]==='verify').length,1);
 });
 
+test('social auth event does not replace the verification form before login finishes',async()=>{
+ const f=fixture();let bodyDuringEvent;
+ f.auth.ensureVerified=async()=>{
+  f.events.get('fjord:auth-changed')();
+  bodyDuringEvent=f.document.body.children[0].children.find(x=>x.className==='site-account-body').children.length;
+  return f.visitor;
+ };
+ await f.window.FjordSiteAuth.open('login');
+ assert.equal(bodyDuringEvent,0);
+ assert.equal(f.document.body.children[0].open,false);
+ assert.equal(f.window.FjordSiteAuth.getProfile().email,'visitor@example.com');
+});
+
+test('unsuccessful verification keeps the dialog open and does not show sign out',async()=>{
+ const f=fixture();f.auth.ensureVerified=async()=>null;
+ await f.window.FjordSiteAuth.open('login');
+ const dialog=f.document.body.children[0];assert.equal(dialog.open,true);
+ assert.equal(dialog.children.find(x=>x.className==='site-account-body').children.length,0);
+});
+
 test('owner account gets an inbox entry while ordinary profiles do not',async()=>{
- const f=fixture();await f.window.FjordSiteAuth.open();const body=f.document.body.children[0].children.find(x=>x.className==='site-account-body');
+ const f=fixture();await f.window.FjordSiteAuth.open('profile');const body=f.document.body.children[0].children.find(x=>x.className==='site-account-body');
  assert.equal(body.children.some(x=>x.className==='site-account-owner-inbox'),false);
  f.visitor.email='Laurkent123@gmail.com';f.events.get('fjord:auth-changed')();
  const link=body.children.find(x=>x.className==='site-account-owner-inbox');assert.equal(link.href,'owner-inbox.html');
@@ -46,7 +67,7 @@ test('owner account gets an inbox entry while ordinary profiles do not',async()=
 });
 
 test('account artwork follows explicit interface language without changing the authenticated visitor',async()=>{
- const f=fixture();await f.window.FjordSiteAuth.open();const dialog=f.document.body.children[0],profile=f.window.FjordSiteAuth.getProfile();
+ const f=fixture();await f.window.FjordSiteAuth.open('profile');const dialog=f.document.body.children[0],profile=f.window.FjordSiteAuth.getProfile();
  for(const [lang,caption]of [['uk','Wake up Украина'],['nb','Wake up Norway'],['en','Wake up USA']]){f.window.FjordI18n.language=lang;f.events.get('fjordlanguagechange')();assert.equal(dialog.querySelector('.site-account-cover').dataset.language,lang);assert.equal(dialog.querySelector('.site-account-pledge span').textContent,caption);assert.equal(f.window.FjordSiteAuth.getProfile().email,profile.email);}
  assert.equal(f.calls.filter(x=>x[0]==='verify').length,1);assert.equal(dialog.querySelector('.site-account-brand').src,'images/friendship-wordmark-no-slash.webp');
 });
