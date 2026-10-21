@@ -1,6 +1,6 @@
 // A narrow bridge for explicitly requested, already implemented site actions.
 // It never interprets model URLs/selectors and never clicks controls on its own.
-export const SECTION_IDS = Object.freeze(['collection','scenicRoutes','staysSauna','cafeNearby','routeExperiences','travelStories','norwayCatalogue','buaEquipment','journeys','norwayWebcams']);
+export const SECTION_IDS = Object.freeze(['collection','scenicRoutes','staysSauna','cafeNearby','routeExperiences','travelStories','norwayCatalogue','buaEquipment','journeys','norwayWebcams','municipalNews','community','norwayOverview']);
 
 export function approachPoint(target, position, viewport) {
   if (!target?.getBoundingClientRect || !position) return null;

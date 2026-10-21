@@ -11,7 +11,8 @@ const fixtureStart=normalizedFixture.indexOf('class Element {'),fixtureEnd=norma
 assert.ok(fixtureStart>=0&&fixtureEnd>fixtureStart,'Shared chat fixture boundaries must be present');
 const fixture=normalizedFixture.slice(fixtureStart,fixtureEnd);
 assert.ok(fixture.includes('function boot(')&&!fixture.includes('const a=boot({enabled:false})'));
-const context={source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
+// The shared account/history fixture uses browser globals inside this outer VM.
+const context={atob,CustomEvent:class{constructor(type,options){this.type=type;this.detail=options?.detail}},source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
 vm.runInNewContext(fixture+'\nthis.fixtureApi={boot,flush};',context);
 const {boot,flush}=context.fixtureApi;
 const config={enabled:true,endpoint:'https://chat.example.test',voiceConversation:true,nativeVoiceAudio:true};

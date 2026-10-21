@@ -10,7 +10,8 @@ const normalizedFixture=fixtureSource.replace(/\r\n/g,'\n');
 const fixtureStart=normalizedFixture.indexOf('class Element {'),fixtureEnd=normalizedFixture.indexOf('\n{\n const a=boot({enabled:false})');
 assert.ok(fixtureStart>=0&&fixtureEnd>fixtureStart,'Shared chat fixture boundaries must be present');
 const fixture=normalizedFixture.slice(fixtureStart,fixtureEnd).replace("if(url.endsWith('/chat'))return","if(url.endsWith('/chat')&&config.deferIdentityReply)await new Promise(resolve=>voiceState.resolveIdentityReply=resolve);if(url.endsWith('/chat'))return");
-const context={source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
+// The shared account/history fixture uses browser globals inside this outer VM.
+const context={atob,CustomEvent:class{constructor(type,options){this.type=type;this.detail=options?.detail}},source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
 vm.runInNewContext(fixture+'\nthis.fixtureApi={boot,flush};',context);
 const {boot,flush}=context.fixtureApi;
 async function start(){
@@ -93,6 +94,28 @@ function delayedBridge(app) {
  return {moves,disable(){allowed=false;app.browserWindow.emit('osiris:settings-changed')}};
 }
 const submit=async(app,text)=>{const form=app.find('fjord-ai-compose');form.children.find(n=>n.tag==='textarea').value=text;await form.emit('submit');await flush()};
+
+for(const voice of [false,true])test((voice?'legacy voice':'text')+' opens News, Facebook and map through the real bridge only after contact',async()=>{
+ for(const [question,id,tab,label]of[['Окей, покажи мне новости','municipalNews','news','Новости'],['откройFacebook','community','forum','Facebook'],['Покажи карту','norwayOverview','home','Карта Норвегии']]){
+  const app=voice?await start():boot();await flush();if(!voice)app.browserWindow.emit('fjord:open-chat');
+  const target=app.document.createElement('section'),control=app.document.createElement('button');target.id=id;target.hidden=true;control.id='sitePrimary-'+tab;app.sections[id]=target;app.sections[control.id]=control;
+  target.getBoundingClientRect=()=>({width:target.hidden?0:900,height:target.hidden?0:600});
+  const revealed=[];app.browserWindow.FjordTabs={reveal:node=>{revealed.push(node);node.hidden=false}};
+  let contact,complete;
+  app.browserWindow.OsirisSiteActions=createSiteActionBridge({document:app.document,reducedMotion:()=>false,getPresence:()=>({interactWith:(node,options)=>{assert.equal(node,control,'Uses the real primary tab as visual target');contact=options.onContact;return new Promise(resolve=>complete=resolve)}})});
+  try{
+   const pending=voice?heard(app,question):submit(app,question);await flush();
+   assert.equal(typeof contact,'function','New section ID reaches the real allowlist bridge');assert.equal(revealed.length,0);assert.equal(target.scrolled,undefined);
+   const replies=()=>app.find('fjord-ai-log').children.filter(node=>node.textContent?.startsWith('Открыт раздел:'));
+   assert.equal(replies().length,0,'No success before the local action commits');
+   assert.equal(contact(),true);contact();assert.deepEqual(revealed,[target]);complete(true);await pending;await flush();
+   assert.equal(target.scrolled.block,'start');assert.equal(target.focused,true);assert.equal(actions(app)[0].attrs['aria-controls'],id);
+   assert.equal(replies().length,1);assert.equal(replies()[0].textContent,'Открыт раздел: '+label+'.');
+   assert.equal(app.calls.filter(call=>/\/(chat|skill-match)$/.test(call.url)).length,0);
+   if(voice){assert.equal(app.voiceState.track.readyState,'live');assert.equal(app.calls.filter(call=>call.url.endsWith('/moderate')).length,1,'Existing voice moderation is preserved')}
+  }finally{app.dialog.close()}
+ }
+});
 
 test('typed command waits for arrival, then reports success; correction cancels without a stale success',async()=>{
  const app=boot();await flush();app.browserWindow.emit('fjord:open-chat');app.sections.journeys=app.document.createElement('section');app.sections.norwayWebcams=app.document.createElement('section');
