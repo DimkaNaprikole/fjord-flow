@@ -29,7 +29,7 @@ export function createGmailAuthorizer({load=loadSDK,verify=verifyOwner,sdkTimeou
    const {sdk,auth}=context;const provider=new sdk.GoogleAuthProvider();
    provider.addScope('https://www.googleapis.com/auth/gmail.readonly');
    if(send===true)provider.addScope('https://www.googleapis.com/auth/gmail.send');
-   provider.setCustomParameters({login_hint:OWNER,prompt:'consent'});
+   provider.setCustomParameters({login_hint:OWNER});
    const result=await sdk.signInWithPopup(auth,provider);if(run!==generation)throw fail('stale');
    if(result.user.emailVerified!==true||result.user.uid!==expected.uid||String(result.user.email).toLowerCase()!==OWNER)throw fail('wrongAccount');
    const profile=await verify(apiKey,await result.user.getIdToken());if(run!==generation)throw fail('stale');
