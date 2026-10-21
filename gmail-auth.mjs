@@ -48,5 +48,6 @@ export function createGmailAuthorizer({load=loadSDK,verify=verifyOwner}={}){
  return {authorize,disconnect};
 }
 const authorizer=createGmailAuthorizer();
+export const prepareGmailAuthorization=apiKey=>loadSDK(apiKey).then(()=>undefined);
 export const authorizeGmail=(apiKey,options)=>authorizer.authorize(apiKey,options);
 export const disconnectGmailAuthorization=()=>authorizer.disconnect();

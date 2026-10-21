@@ -139,4 +139,3 @@ test('concurrent send duplicate is rejected before network, disconnect preserves
   await assert.rejects(pending, code('unknownSend'));
   assert.equal(calls.length, 2);
 });
-
