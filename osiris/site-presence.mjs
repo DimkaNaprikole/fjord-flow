@@ -40,7 +40,7 @@ export function patrolStep(rect,dx,width,obstacles=[]) {
   left<r.right+10&&right>r.left-10&&rect.top<r.bottom+10&&rect.bottom>r.top-10);
 }
 
-export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random=Math.random}={}) {
+async function mountLegacySitePresence({launch,dialog,pet,mediaUrl=MEDIA,random=Math.random}={}) {
  if(!launch||!dialog||!pet||launch.dataset.osirisLife)return null;
  launch.dataset.osirisLife='loading';
  // The production dock can reuse the original pet even if metadata fails.
@@ -574,6 +574,19 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  window.OsirisPresence=publicApi;
  window.dispatchEvent(new Event('osiris:presence-ready'));
  return publicApi;
+}
+
+
+// Startup-only fallback keeps the existing assistant usable without WebGL.
+export async function mountSitePresence(options={}){
+ try {
+  const {mountLivingSitePresence}=await import('./living-presence/index.mjs?v=20261021living1');
+  return await mountLivingSitePresence(options);
+ } catch(error) {
+  if(error?.name==='AbortError'||!options.pet?.isConnected)throw error;
+  console.warn('Osiris native presence could not start; using existing presence.',error);
+  return mountLegacySitePresence(options);
+ }
 }
 
 function attach(){
