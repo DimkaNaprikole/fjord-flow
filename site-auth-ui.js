@@ -2,12 +2,12 @@
 (() => {
   'use strict';
   const labels = {
-    nb: ['Din konto','Lukk konto','Logg ut','E-posten er bekreftet','Laster sikker innlogging …','Kunne ikke åpne innlogging. Prøv igjen.','Denne kontoen brukes også med Fjordi. Publisering i fellesskapet er ikke tilgjengelig ennå.'],
-    en: ['Your account','Close account','Sign out','Email verified','Loading secure sign-in …','Could not open sign-in. Please try again.','This account also works with Fjordi. Community posting is not available yet.'],
-    uk: ['Ваш акаунт','Закрити акаунт','Вийти','Пошту підтверджено','Завантаження безпечного входу …','Не вдалося відкрити вхід. Спробуйте ще раз.','Цей акаунт також працює з Фьорді. Публікації у спільноті поки недоступні.'],
-    ru: ['Ваш аккаунт','Закрыть аккаунт','Выйти','Почта подтверждена','Загрузка безопасного входа …','Не удалось открыть вход. Попробуйте ещё раз.','Этот аккаунт также работает с Фьорди. Публикации в сообществе пока недоступны.'],
-    sv: ['Ditt konto','Stäng konto','Logga ut','E-postadressen är verifierad','Laddar säker inloggning …','Kunde inte öppna inloggningen. Försök igen.','Kontot fungerar även med Fjordi. Inlägg i gemenskapen är inte tillgängliga ännu.'],
-    da: ['Din konto','Luk konto','Log ud','E-mailen er bekræftet','Indlæser sikkert login …','Kunne ikke åbne login. Prøv igen.','Kontoen fungerer også med Fjordi. Indlæg i fællesskabet er endnu ikke tilgængelige.']
+    nb: ['Din konto','Lukk konto','Logg ut','E-posten er bekreftet','Laster sikker innlogging …','Kunne ikke åpne innlogging. Prøv igjen.','Denne kontoen brukes også med Osiris. Publisering i fellesskapet er ikke tilgjengelig ennå.'],
+    en: ['Your account','Close account','Sign out','Email verified','Loading secure sign-in …','Could not open sign-in. Please try again.','This account also works with Osiris. Community posting is not available yet.'],
+    uk: ['Ваш акаунт','Закрити акаунт','Вийти','Пошту підтверджено','Завантаження безпечного входу …','Не вдалося відкрити вхід. Спробуйте ще раз.','Цей акаунт також працює з Осірісом. Публікації у спільноті поки недоступні.'],
+    ru: ['Ваш аккаунт','Закрыть аккаунт','Выйти','Почта подтверждена','Загрузка безопасного входа …','Не удалось открыть вход. Попробуйте ещё раз.','Этот аккаунт также работает с Осирисом. Публикации в сообществе пока недоступны.'],
+    sv: ['Ditt konto','Stäng konto','Logga ut','E-postadressen är verifierad','Laddar säker inloggning …','Kunde inte öppna inloggningen. Försök igen.','Kontot fungerar även med Osiris. Inlägg i gemenskapen är inte tillgängliga ännu.'],
+    da: ['Din konto','Luk konto','Log ud','E-mailen er bekræftet','Indlæser sikkert login …','Kunne ikke åbne login. Prøv igen.','Kontoen fungerer også med Osiris. Indlæg i fællesskabet er endnu ikke tilgængelige.']
   };
   let auth, config, dialog, status, body, opener, pending = false;
   const language = () => window.FjordI18n?.language || document.getElementById('siteLanguage')?.value || document.documentElement.lang || 'nb';
