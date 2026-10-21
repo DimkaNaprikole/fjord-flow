@@ -1545,6 +1545,159 @@ export const CHARACTER_CALIBRATION = Object.freeze({
       "duration": 5.229,
       "note": "Real right-facing walk in place. First and last frames are mid-stride, not neutral standing. Legacy light is greyer than the newer frontal portrait; this is neither a run nor a full turn. No primary media metadata was changed.",
       "evidence": "work/life-cutouts/calibration/legacy-walk.jpg"
+    },
+    "cloud-perch": {
+      "head": {
+        "left": 0.20707964601769913,
+        "top": 0.16666666666666666,
+        "right": 0.3548672566371681,
+        "bottom": 0.32666666666666666,
+        "cx": 0.2809734513274336,
+        "cy": 0.24666666666666667,
+        "width": 0.14778761061946902,
+        "height": 0.16
+      },
+      "body": {
+        "left": 0.3274336283185841,
+        "top": 0.21555555555555556,
+        "right": 0.7,
+        "bottom": 0.5455555555555556,
+        "width": 0.37256637168141593,
+        "height": 0.33
+      },
+      "ground": {
+        "x": 0.4831858407079646,
+        "y": 0.6
+      },
+      "endGround": {
+        "x": 0.4389380530973451,
+        "y": 0.6611111111111111
+      },
+      "pose": "sit-left-on-cloud",
+      "referenceFrame": 0,
+      "sourceSize": {
+        "width": 1130,
+        "height": 900
+      },
+      "startBounds": {
+        "left": 0.15752212389380532,
+        "top": 0.04555555555555556,
+        "right": 0.9725663716814159,
+        "bottom": 0.9155555555555556
+      },
+      "unionBounds": {
+        "left": 0.09292035398230089,
+        "top": 0.04555555555555556,
+        "right": 0.9725663716814159,
+        "bottom": 0.9155555555555556
+      },
+      "stageScope": "one-shot",
+      "scaleToReference": 0.7784431137724551,
+      "confidence": "medium",
+      "identityContinuity": "owner-provided-sphynx-video",
+      "note": "Approximate cranial bounds exclude ears. Foot-support centers visually measured at decoded first/last frame; cloud is a prop below the support. Fixed clip scale; full decoded alpha trajectory includes a 2px margin. One continuous crouch on its own cloud, not a complete jump or a loop. The original small marker near the paw remains; later marked frames were excluded."
+    },
+    "run-short": {
+      "head": {
+        "left": 0.26,
+        "top": 0.42857142857142855,
+        "right": 0.3243478260869565,
+        "bottom": 0.56,
+        "cx": 0.2921739130434783,
+        "cy": 0.4942857142857143,
+        "width": 0.06434782608695652,
+        "height": 0.13142857142857142
+      },
+      "body": {
+        "left": 0.10434782608695652,
+        "top": 0.35428571428571426,
+        "right": 0.25565217391304346,
+        "bottom": 0.6457142857142857,
+        "width": 0.15130434782608695,
+        "height": 0.2914285714285714
+      },
+      "ground": {
+        "x": 0.19130434782608696,
+        "y": 0.8228571428571428
+      },
+      "endGround": {
+        "x": 0.4782608695652174,
+        "y": 0.8142857142857143
+      },
+      "pose": "run-right",
+      "referenceFrame": 0,
+      "sourceSize": {
+        "width": 1150,
+        "height": 350
+      },
+      "startBounds": {
+        "left": 0.042608695652173914,
+        "top": 0.1457142857142857,
+        "right": 0.32608695652173914,
+        "bottom": 0.8314285714285714
+      },
+      "unionBounds": {
+        "left": 0.042608695652173914,
+        "top": 0.11714285714285715,
+        "right": 0.6165217391304347,
+        "bottom": 0.8314285714285714
+      },
+      "stageScope": "one-shot",
+      "scaleToReference": 1.7567567567567568,
+      "confidence": "medium",
+      "identityContinuity": "owner-provided-sphynx-video",
+      "note": "Approximate cranial bounds exclude ears. Foot-support centers visually measured at decoded first/last frame; cloud is a prop below the support. Fixed clip scale; full decoded alpha trajectory includes a 2px margin. One short native run. Start and end phases differ; do not repeat as a seamless walk or add a second CSS travel path."
+    },
+    "descent-short": {
+      "head": {
+        "left": 0.6537037037037037,
+        "top": 0.41940298507462687,
+        "right": 0.7907407407407407,
+        "bottom": 0.49850746268656715,
+        "cx": 0.7222222222222222,
+        "cy": 0.458955223880597,
+        "width": 0.13703703703703704,
+        "height": 0.0791044776119403
+      },
+      "body": {
+        "left": 0.3888888888888889,
+        "top": 0.3597014925373134,
+        "right": 0.65,
+        "bottom": 0.5298507462686567,
+        "width": 0.2611111111111111,
+        "height": 0.1701492537313433
+      },
+      "ground": {
+        "x": 0.6166666666666667,
+        "y": 0.5940298507462687
+      },
+      "endGround": {
+        "x": 0.26851851851851855,
+        "y": 0.8059701492537313
+      },
+      "pose": "stand-three-quarter-right",
+      "referenceFrame": 0,
+      "sourceSize": {
+        "width": 540,
+        "height": 670
+      },
+      "startBounds": {
+        "left": 0.2796296296296296,
+        "top": 0.3044776119402985,
+        "right": 0.8240740740740741,
+        "bottom": 0.6074626865671642
+      },
+      "unionBounds": {
+        "left": 0.1648148148148148,
+        "top": 0.14328358208955225,
+        "right": 0.8351851851851851,
+        "bottom": 0.908955223880597
+      },
+      "stageScope": "one-shot",
+      "scaleToReference": 1.7567567567567568,
+      "confidence": "medium",
+      "identityContinuity": "owner-provided-sphynx-video",
+      "note": "Approximate cranial bounds exclude ears. Foot-support centers visually measured at decoded first/last frame; cloud is a prop below the support. Fixed clip scale; full decoded alpha trajectory includes a 2px margin. One native descent with source camera perspective. The last tail-tip blur is retained. Start and end poses differ; not a loop or an interaction with an arbitrary site ledge."
     }
   }
 });

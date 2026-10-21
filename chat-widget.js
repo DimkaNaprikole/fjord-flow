@@ -93,8 +93,14 @@ function serviceError(error,language){const copy=serviceErrors[language]||servic
 function endpointURL(value){if(typeof value!=='string'||value.length>500)return null;try{const u=new URL(value);if(u.username||u.password||u.hash||u.search)return null;if(u.protocol!=='https:'&&!(u.protocol==='http:'&&['localhost','127.0.0.1','[::1]'].includes(u.hostname)))return null;return u.href.replace(/\/$/,'')}catch{return null}}
 async function request(url,options={},timeout=35000){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),timeout);try{const response=await fetch(url,{...options,signal:controller.signal,credentials:'omit',cache:'no-store'});if(!response.ok)throw new Error('Service unavailable');return await response.json()}finally{clearTimeout(timer)}}
 let initRetryTimer=null,initRetries=0;function retryInit(){if(initRetryTimer||initRetries>=3)return;initRetries++;initRetryTimer=setTimeout(()=>{initRetryTimer=null;void init()},10000)}
-async function init(){let config;try{config=await request('./chat-config.json',{},8000)}catch{retryInit();return}if(config?.enabled!==true)return;if(config.liveOwnerPilot===true&&new URLSearchParams(location.search).get('osirisLiveTest')!=='1'){config.liveVoiceModel='';config.paidRealtimeDisabled=false}const endpoint=endpointURL(config.endpoint);if(!endpoint)return;try{if((await request(endpoint+'/health',{},8000))?.ready!==true){retryInit();return}}catch{retryInit();return}
+async function init(){let config;try{config=await request('./chat-config.json',{},8000)}catch{retryInit();return}if(config?.enabled!==true)return;if(config.liveOwnerPilot===true&&new URLSearchParams(location.search).get('osirisLiveTest')!=='1'){config.liveVoiceModel='';config.paidRealtimeDisabled=false}const endpoint=endpointURL(config.endpoint);if(!endpoint)return;
 const dialog=document.getElementById('fjordHelper'),launch=document.querySelector('.fjord-helper-launch');if(!dialog||!launch)return;
+// Local pictures and ambient motion do not depend on the AI service being
+// reachable (a private preview may intentionally have no service CORS grant).
+// This is diagnostic only: actual chat/auth/voice requests retain their guards
+// and error handling; a picture never implies a ready or authorized service.
+launch.setAttribute('data-osiris-service','checking');
+void request(endpoint+'/health',{},8000).then(result=>launch.setAttribute('data-osiris-service',result?.ready===true?'ready':'unavailable'),()=>launch.setAttribute('data-osiris-service','unavailable'));
 let visitorToken='',browserRecognition=null,dictationSession=null,micPointerId=null,micKey=null,micLanguageExplicit=false;
 const make=(tag,cls)=>{const n=document.createElement(tag);if(cls)n.className=cls;return n};
 // Approved Osiris portrait; a lightweight rendered image, not a rigged 3D model.

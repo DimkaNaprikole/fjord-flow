@@ -1,11 +1,14 @@
 import {AlphaSequence} from './alpha-sequence.mjs?v=20261020contact1';
 import {createCatBrain} from './cat-brain.mjs?v=20261020continuity1';
-import {buildMovementCatalog,behaviorPools} from './movement-catalog.mjs';
-import {MOTION_POSES,CHARACTER_CALIBRATION} from './character-calibration.mjs';
+import {buildMovementCatalog,behaviorPools} from './movement-catalog.mjs?v=20261021ambient1';
+import {MOTION_POSES,CHARACTER_CALIBRATION} from './character-calibration.mjs?v=20261021ambient1';
 import {clampCenter,planRoute,stepRoute} from './viewport-roaming.mjs';
-import {gestureFit,contactPlans,PAW_CONTACT} from './button-choreography.mjs';
+import {gestureFit,contactPlans,PAW_CONTACT} from './button-choreography.mjs?v=20261021ambient1';
 
-const MEDIA=new URL('../media/osiris-life/metadata.json',import.meta.url);
+import {horizontalRoute,walkingSpeed,chooseDifferentPlay,clearHorizontalGoals,walkingEnvelope} from './behavior-policy.mjs?v=20261021ambient1';
+
+const MEDIA=new URL('../media/osiris-life/metadata.json?v=20261021ambient1',import.meta.url);
+const AMBIENT_SCENES=new Set(['cloud-perch','run-short','descent-short']);
 const COPY={
  en:['Pause Osiris animations','Resume Osiris animations','Osiris movements','Choose a movement…','Play','Rest'],
  nb:['Sett Osiris-animasjonene på pause','Fortsett Osiris-animasjonene','Osiris bevegelser','Velg en bevegelse…','Lek','Hvil'],
@@ -21,6 +24,7 @@ const ENGLISH={
  scratch:'Scratch ear',shake:'Shake head','body-groom':'Groom shoulder',roll:'Roll over','look-back':'Look back',
  'rear-leg-stretch':'Stretch hind leg','lie-down':'Lie down',pleading:'Hold hat',rub:'Rub cheek',
  'ledge-reach':'Reach down','arched-back':'Arch back','jump-panther-short':'Panther jump',cursor:'Touch the arrow',
+ 'cloud-perch':'Balance on a cloud','run-short':'Short run','descent-short':'Step down',
 };
 
 // A fixed crop covers the whole trajectory. It never follows individual limbs
@@ -34,6 +38,8 @@ export function conversationOwnsAttention({state='idle',voice=false,typing=false
 }
 
 export const presencePaused=({paused=false,hidden=false,reduced=false,animations=true}={})=>paused||hidden||reduced||animations===false;
+export const ambientCanRun=({chatOpen=false,state='idle',voice=false,typing=false,...settings}={})=>
+ !chatOpen&&!conversationOwnsAttention({state,voice,typing})&&!presencePaused(settings);
 export function patrolStep(rect,dx,width,obstacles=[]) {
  const left=Math.min(rect.left,rect.left+dx),right=Math.max(rect.right,rect.right+dx);
  return left>=12&&right<=width-12&&!obstacles.some(r=>
@@ -79,16 +85,23 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  let roamingEnabled=window.OsirisSettings?.preferences?.roaming!==false;
  let animationsEnabled=window.OsirisSettings?.preferences?.animations!==false;
  let lastPlay='',restUntil=0,frame=0,offset=0,offsetY=0,direction=-1,hover=false,walking=false;
- let travel=null,drag=null,nextRoamAt=8000,suppressClickUntil=0,suppressNextClick=false,lastRoamZone=-1,publicApi;
+ let travel=null,drag=null,nextRoamAt=5000,suppressClickUntil=0,suppressNextClick=false,publicApi;
  let walkReady=walk.complete&&walk.naturalWidth>0;
  let obstacleCacheAt=-Infinity,obstacleCache=[];
  let anchorFraction=.5,baselineFraction;
  let interaction=null;
+ const playHistory=[],activityHistory=[];let roamDue=false,completedSinceWalk=0,roamCount=0,lastRouteRefusal=null,lastRoamPolicy=null;
+ const playIds=catalog.clips.filter(item=>item.group==='play').map(item=>item.id);
+ const ambientSceneIds=catalog.clips.filter(item=>AMBIENT_SCENES.has(item.id)&&item.mode==='auto').map(item=>item.id);
+ const sceneStarted=new Map();let sceneSerial=0,nextSceneAt=4000,ordinarySinceScene=2,lastScene='',ambientWasAllowed=false;
+ function rememberActivity(id){activityHistory.push({id,time});if(activityHistory.length>40)activityHistory.shift();
+  if(playIds.includes(id)){playHistory.push(id);if(playHistory.length>12)playHistory.shift();}}
+
  const events=[],listen=(el,type,fn,opts)=>{el.addEventListener(type,fn,opts);events.push(()=>el.removeEventListener(type,fn,opts));};
  const brain=createCatBrain({
   now:()=>time,random,...behaviorPools(catalog),
   durations:Object.fromEntries([...clips].map(([id,c])=>[id,c.duration*1000+500])),
-  restDurationRangeMs:[3500,5200],initialPlayDelayMs:1500,playCooldownMs:7000,samePlayCooldownMs:35000,
+  restDurationRangeMs:[2200,3500],initialPlayDelayMs:4000,playCooldownMs:14000,samePlayCooldownMs:90000,
   dailyCooldownMs:4000,sameDailyCooldownMs:30000,reducedMotion:reduced.matches,
   motionPoses:MOTION_POSES,initialPose:MOTION_POSES.blink.start,poseSelection:'prefer',
  });
@@ -127,8 +140,11 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
    width:`${box.width}px`,height:`${box.height}px`});
   hitbox.hidden=docked();
  }
- const viewport=()=>({width:innerWidth,height:innerHeight});
- const hasViewport=()=>Number.isFinite(innerWidth)&&innerWidth>0&&Number.isFinite(innerHeight)&&innerHeight>0;
+ // innerWidth/innerHeight include classic scrollbars. The visible silhouette
+ // must stay in the drawable client area, including on a narrow desktop window.
+ const clientExtent=(outer,client)=>Number.isFinite(client)&&client>0?Math.min(outer,client):outer;
+ const viewport=()=>({width:clientExtent(innerWidth,document.documentElement.clientWidth),height:clientExtent(innerHeight,document.documentElement.clientHeight)});
+ const hasViewport=()=>Object.values(viewport()).every(value=>Number.isFinite(value)&&value>0);
  const docked=()=>Boolean(dialog.open&&!dialog.classList.contains('osiris-compact')&&!dialog.classList.contains('fjord-ai-auth-pending')||!launch.contains(pet)||launch.hidden);
  const walkClip=()=>({id:'walk',width:480,height:270,anchorFraction,baselineFraction,mirrored:direction<0});
  function visualRect(source=walking?walkClip():ready?currentClip:clips.get('blink'),mirror=source.mirrored||source.id==='walk'&&direction<0){
@@ -161,10 +177,28 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   launch.style.setProperty('--osiris-roam-x',`${offset.toFixed(2)}px`);
   launch.style.setProperty('--osiris-roam-y',`${offsetY.toFixed(2)}px`);
  }
- function alignGround(point,source){
+ function alignGround(point,source,end=false){
   if(!point)return;
   const stage=pet.getBoundingClientRect(),fit=fitPresenceClip(source,stage.width,stage.height);
-  if(fit.ground)shiftStage({x:point.x-fit.ground.x,y:point.y-fit.ground.y});
+  const ground=end?fit.endGround||fit.ground:fit.ground;
+  if(ground)shiftStage({x:point.x-ground.x,y:point.y-ground.y});
+ }
+ function walkingStart(){
+  const box=visualRect(walkClip());
+  if(!walking){const ground=groundPoint(currentClip,held),wg=groundPoint(walkClip());
+   if(ground&&wg){box.x=ground.x+box.x-wg.x;box.y=ground.y+box.y-wg.y;}}
+  return box;
+ }
+ function walkingGeometry(){
+  const walk=visualRect(walkClip()),heldBox=visualRect(currentClip);
+  return walkingEnvelope(walk,groundPoint(walkClip()),heldBox,groundPoint(currentClip,held));
+ }
+ function holdAtWalkGround(){
+  const ground=walking?groundPoint(walkClip()):null;hideWalk({immediate:true});
+  if(ground&&ready)alignGround(ground,currentClip,held);holdLastFrame();
+  // Resize/cancel can invalidate a previously safe plan. This guard runs only
+  // at handoff; ordinary walking already reserves the complete held envelope.
+  clampViewport();position();
  }
  function cancelTravel(){
   if(!travel)return;
@@ -200,7 +234,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(!preserveInteraction)cancelInteraction();
   cancelTravel();
   generation++;load?.abort();loading=false;renderer.pause();brain.cancel(time);active=null;
-  if(!preserveWalk){hideWalk({immediate:true});holdLastFrame();}
+  if(!preserveWalk)holdAtWalkGround();
  }
  function attention(){
   const focused=document.activeElement;
@@ -209,6 +243,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
    typing:dialog.contains(focused)&&/^(INPUT|TEXTAREA)$/.test(focused?.tagName||''),
   });
  }
+ function ambientAllowed(){return !dead&&ambientCanRun({chatOpen:Boolean(dialog.open),voice:attention(),paused:blocked});}
  function sync(){
   obstacleCacheAt=-Infinity;
   const busy=attention(),next=presencePaused({paused,hidden:document.hidden,reduced:reduced.matches,animations:animationsEnabled});
@@ -218,11 +253,21 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
    if(blocked){endDrag(true);stop();}
    else{brain.noteUserActivity(time);last=performance.now();}
   }
+  const allowed=ambientAllowed();
+  if(allowed!==ambientWasAllowed){
+   ambientWasAllowed=allowed;
+   // The chat can remain open in compact mode while the pet is still in its
+   // launcher. In either presentation it owns attention, so no ambient scene
+   // or route continues underneath it. Explicit site actions keep their owner.
+   if(!allowed&&!interaction&&(travel?.reason==='ambient'||active?.priority===0))stop();
+   if(allowed){brain.noteUserActivity(time);nextRoamAt=time+2500;last=performance.now();}
+  }
   launch.dataset.osirisLife=paused||!animationsEnabled?'paused':busy?'conversation':reduced.matches?'still':'ready';
   position();
  }
  async function show(decision){
   if(dead||blocked)return;
+  if(decision.priority===0&&!ambientAllowed()){brain.cancel(time);return;}
   if(decision.mode==='rest'){
    active=decision;renderer.pause();launch.dataset.osirisScene='rest';
    if(decision.phase!=='settle')maybeRoam();return;
@@ -231,7 +276,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(!clip){brain.finish(decision.token,time);return;}
   const incomingGround=walking?groundPoint(walkClip()):null;
   const token=++generation;load?.abort();load=new AbortController();renderer.pause();
-  active=decision;loading=true;held=false;launch.dataset.osirisScene=clip.id;
+  active=decision;loading=true;held=false;launch.dataset.osirisScene=clip.id;rememberActivity(clip.id);
   // Keep the actual outgoing frame during buffering, interruptions and rest.
   // The fallback portrait is only needed before the first decoded frame.
   if(!ready&&!walking){canvas.style.opacity='0';poster.style.opacity='1';}
@@ -240,7 +285,9 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
    if(token!==generation||blocked||dead)return;
    // The outgoing canvas is not the outgoing picture when the native walk is
    // visible. Do not dissolve an old seated pose over the new action.
-   if(incomingGround)await renderer.seek(0);
+   // These are separately filmed scenes, not matching anatomical poses. A
+   // dissolve would show two different cats/clouds for 180 ms at the cut.
+   if(incomingGround||AMBIENT_SCENES.has(clip.id)||AMBIENT_SCENES.has(currentClip?.id))await renderer.seek(0);
    if(token!==generation||blocked||dead)return;
    currentClip=clip;alignGround(incomingGround,clip);position();ready=true;loading=false;
    hideWalk();
@@ -261,6 +308,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  function command(id){
   if(!animationsEnabled||!clips.has(id)||document.hidden||reduced.matches)return;
   paused=false;translate();sync();stop({preserveWalk:true});restUntil=0;
+  if(AMBIENT_SCENES.has(id)){void show({id,mode:'play',priority:100,token:`scene-${++sceneSerial}`});return;}
   brain.queueReaction({kind:'command',id},time);
   const decision=brain.next(time);if(decision)void show(decision);
  }
@@ -275,9 +323,8 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  }
  listen(pause,'click',()=>setPaused(!paused));
  listen(play,'click',()=>{
-  const choices=catalog.clips.filter(item=>item.group==='play'&&item.id!==lastPlay);
-  const choice=choices[Math.floor(Math.random()*choices.length)];
-  if(choice){lastPlay=choice.id;command(choice.id);}
+  const choice=chooseDifferentPlay(playIds,playHistory,random);
+  if(choice){lastPlay=choice;command(choice);}
  });
  listen(rest,'click',()=>{stop();restUntil=time+45000;launch.dataset.osirisScene='rest';});
  listen(select,'change',()=>{command(select.value);select.value='';});
@@ -291,6 +338,11 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   const fit=fitPresenceClip(currentClip,width,height);
   if(fit.endGround){anchorFraction=currentClip.mirrored?1-fit.endGround.x/width:fit.endGround.x/width;baselineFraction=fit.endGround.y/height;}
   active=null;held=true;renderer.pause();
+  if(AMBIENT_SCENES.has(currentClip.id))ordinarySinceScene=0;else ordinarySinceScene++;
+  completedSinceWalk++;
+  if(playIds.includes(currentClip.id)||completedSinceWalk>=2){
+   roamDue=true;nextRoamAt=time+1200;restUntil=time+1200;
+  }
  });
  listen(pet,'pointerenter',()=>{hover=true;if(travel&&!travel.scene){hideWalk({immediate:true});holdLastFrame();}else if(!blocked&&!interaction)brain.queueReaction({kind:'hover',targetId:'osiris'},time);});
  listen(pet,'pointerleave',()=>{hover=false;brain.cancelAttention('osiris',time);});
@@ -312,7 +364,13 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  listen(document,'visibilitychange',sync);listen(reduced,'change',()=>{brain.setReducedMotion(reduced.matches,time);sync();});
  listen(window,'fjordlanguagechange',translate);
  listen(window,'osiris:settings-changed',event=>setPreferences(event.detail?.preferences));
- listen(document,'keydown',event=>{if(event.key==='Escape'){endDrag(true);setPaused(true);}});
+ listen(document,'keydown',event=>{
+  if(event.key!=='Escape')return;
+  endDrag(true);
+  // Escape belongs to dialogs throughout the site. It may cancel a gesture,
+  // but closing the chat/photo must not silently disable all future animation.
+  if(interaction||travel)stop();
+ });
  const observer=new MutationObserver(sync);
  observer.observe(pet,{attributes:true,attributeFilter:['data-state']});
  observer.observe(dialog,{attributes:true,attributeFilter:['open','class']});
@@ -449,59 +507,71 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   return obstacleCache;
  }
  function moveTo(target,{reason='command',signal,scene=null}={}){
-  if(dead||blocked||docked()||drag||!walkReady||!hasViewport()||signal?.aborted||!Number.isFinite(target?.x)||!Number.isFinite(target?.y)||(reason==='ambient'&&!roamingEnabled))return Promise.resolve(false);
-  if(scene&&!walking){const here=groundPoint(currentClip,held)||visualRect();if(Math.abs(target.x-here.x)>1)direction=target.x<here.x?-1:1;}
-  const startBox=visualRect(),walkBox=visualRect(walkClip()),footprint={width:walkBox.width,height:walkBox.height};
-  if(scene&&ready&&!walking){
-   const ground=groundPoint(currentClip,held),wg=groundPoint(walkClip());
-   if(ground&&wg){startBox.x=ground.x+walkBox.x-wg.x;startBox.y=ground.y+walkBox.y-wg.y;}
-  }
-  const start=clampCenter(startBox,footprint,viewport(),8),goal=clampCenter(target,footprint,viewport(),8);
-  if(!start||!goal)return Promise.resolve(false);
+  if(dead||blocked||docked()||drag||!walkReady||!hasViewport()||signal?.aborted||!Number.isFinite(target?.x)||!Number.isFinite(target?.y)||(reason==='ambient'&&(!roamingEnabled||!ambientAllowed())))return Promise.resolve(false);
+  if(!walking){const here=groundPoint(currentClip,held)||visualRect();if(Math.abs(target.x-here.x)>1)direction=target.x<here.x?-1:1;}
+  const startBox=walkingStart(),{footprint,offset:envelopeOffset}=walkingGeometry();
+  const envelopeStart={x:startBox.x+envelopeOffset.x,y:startBox.y+envelopeOffset.y};
+  const startPlan=clampCenter(envelopeStart,footprint,viewport(),8),goalPlan=clampCenter({x:target.x+envelopeOffset.x,y:target.y+envelopeOffset.y},footprint,viewport(),8);
+  if(!startPlan||!goalPlan||Math.abs(startPlan.y-envelopeStart.y)>.5)return Promise.resolve(false);
+  const fromPlan=p=>({x:p.x-envelopeOffset.x,y:p.y-envelopeOffset.y});
+  const start=fromPlan(startPlan),goal=fromPlan(goalPlan);
   const obstacles=sceneObstacles(patrolObstacles(performance.now()),scene);
-  const path=planRoute({start,target:goal,footprint,viewport:viewport(),obstacles,clearance:8});
-  if(!path)return Promise.resolve(false);
+  const planned=(reason==='ambient'?horizontalRoute:planRoute)({start:startPlan,target:goalPlan,footprint,viewport:viewport(),obstacles,clearance:8});
+  if(!planned){lastRouteRefusal=Math.abs(goal.y-start.y)>.5?'different-height':'blocked-horizontal-lane';return Promise.resolve(false);}
+  const path=planned.map(fromPlan);
+  lastRouteRefusal=null;
   stop({preserveInteraction:scene===interaction&&!!scene});restUntil=0;
   if(Math.hypot(goal.x-start.x,goal.y-start.y)<2)return Promise.resolve(true);
   return new Promise(resolve=>{
-   const abort=()=>{cancelTravel();hideWalk({immediate:true});holdLastFrame();};
-   travel={position:start,target:goal,remaining:path,footprint,obstacles,reason,resolve,signal,abort,scene};
+   const abort=()=>{cancelTravel();holdAtWalkGround();};
+   travel={position:start,target:goal,remaining:path,footprint,envelopeOffset,obstacles,reason,resolve,signal,abort,scene};
    signal?.addEventListener('abort',abort,{once:true});
   });
  }
  function finishTravel(success){
   if(!travel)return;
   const previous=travel;travel=null;previous.signal?.removeEventListener('abort',previous.abort);
-  if(!previous.scene){hideWalk();holdLastFrame();placeCenter(previous.position);position();}
-  restUntil=time+1500;nextRoamAt=time+9000+random()*7000;
+  if(!previous.scene)holdAtWalkGround();
+  if(success){roamCount++;completedSinceWalk=0;roamDue=false;ordinarySinceScene++;rememberActivity('walk');}
+  restUntil=time+2000;nextRoamAt=time+10000+random()*5000;
   brain.noteUserActivity(time);launch.dataset.osirisScene='rest';previous.resolve(success);
  }
  function maybeRoam(){
-  if(interaction||!roamingEnabled||!hasViewport()||travel||drag||hover||docked()||!walkReady||time<nextRoamAt||launch.matches(':focus-visible'))return;
-  nextRoamAt=time+6000+random()*8000;
-  // Many pauses remain genuine rest. A walk is a route, never a treadmill loop.
-  if(random()>.45)return;
-  const view=viewport(),here=visualRect(),zones=[[.15,.18],[.5,.18],[.85,.18],[.15,.5],[.5,.5],[.85,.5],[.15,.82],[.5,.82],[.85,.82]];
-  const first=Math.floor(random()*zones.length);
-  for(let i=0;i<zones.length;i++){
-   const index=(first+i)%zones.length;if(index===lastRoamZone)continue;
-   const target={x:view.width*zones[index][0],y:view.height*zones[index][1]};
-   if(Math.hypot(target.x-here.x,target.y-here.y)<100)continue;
-   void moveTo(target,{reason:'ambient'});
-   if(travel){lastRoamZone=index;break;}
+  if(interaction||!ambientAllowed()||!roamingEnabled||!hasViewport()||travel||drag||hover||docked()||!walkReady||time<nextRoamAt||launch.matches(':focus-visible'))return;
+  nextRoamAt=time+6000;
+  const here=walkingStart(),{footprint,offset}=walkingGeometry();
+  const start={x:here.x+offset.x,y:here.y+offset.y};
+  const goals=clearHorizontalGoals({start,footprint,viewport:viewport(),obstacles:patrolObstacles(performance.now()),random});
+  for(const target of goals){
+   void moveTo({x:target.x-offset.x,y:target.y-offset.y},{reason:'ambient'});
+   if(travel){lastRoamPolicy=target.escape?'overlap-escape':'clear-horizontal-segment';roamDue=false;break;}
   }
+  if(!travel){roamDue=false;lastRoamPolicy='no-clear-horizontal-segment';}
+ }
+ function maybeAmbientScene(){
+  if(!ambientAllowed()||hover||interaction||travel||drag||loading||time<nextSceneAt||ordinarySinceScene<2||launch.matches(':focus-visible'))return false;
+  const candidates=ambientSceneIds.filter(id=>id!==lastScene&&time-(sceneStarted.get(id)??-Infinity)>=45000);
+  if(!candidates.length)return false;
+  const id=candidates[Math.min(candidates.length-1,Math.floor(random()*candidates.length))];
+  sceneStarted.set(id,time);lastScene=id;nextSceneAt=time+18000;ordinarySinceScene=0;
+  // Native one-shot footage already contains its own trajectory. Its stage is
+  // stationary; no WebP loop, extra translation or synthetic continuation.
+  void show({id,mode:'play',priority:0,token:`scene-${++sceneSerial}`});return true;
  }
  function advanceTravel(delta,now){
   if(!travel)return;
-  if(blocked||drag||docked()||!hasViewport()){finishTravel(false);return;}
+  if(blocked||drag||docked()||!hasViewport()||(travel.reason==='ambient'&&!ambientAllowed())){finishTravel(false);return;}
   if(!travel.scene&&(hover||launch.matches(':focus-visible'))){hideWalk({immediate:true});holdLastFrame();return;}
   const obstacles=sceneObstacles(patrolObstacles(now),travel.scene);
   if(obstacles.length!==travel.obstacles.length||obstacles.some((r,i)=>!sameRect(r,travel.obstacles[i]))){
-   const path=planRoute({start:travel.position,target:travel.target,footprint:travel.footprint,viewport:viewport(),obstacles,clearance:8});
+   const e=travel.envelopeOffset,toPlan=p=>({x:p.x+e.x,y:p.y+e.y});
+   const path=(travel.reason==='ambient'?horizontalRoute:planRoute)({start:toPlan(travel.position),target:toPlan(travel.target),footprint:travel.footprint,viewport:viewport(),obstacles,clearance:8});
    if(!path){finishTravel(false);return;}
-   travel.remaining=path;travel.obstacles=obstacles;
+   travel.remaining=path.map(p=>({x:p.x-e.x,y:p.y-e.y}));travel.obstacles=obstacles;
   }
-  const step=stepRoute(travel.position,travel.remaining,85*Math.min(100,delta)/1000);
+  const stage=pet.getBoundingClientRect();
+  const speed=walkingSpeed(fitPresenceClip(walkClip(),stage.width,stage.height).headPixels,fitPresenceClip(walkClip(),280,180).headPixels);
+  const step=stepRoute(travel.position,travel.remaining,speed*Math.min(100,delta)/1000);
   if(!step){finishTravel(false);return;}
   const dx=step.position.x-travel.position.x;
   if(Math.abs(dx)>.01)direction=dx<0?-1:1;
@@ -549,8 +619,12 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
   if(dead)return;
   const delta=Math.min(250,Math.max(0,now-last));last=now;
   if(!blocked&&!drag&&!loading&&(!active||active.mode==='rest'))time+=delta;
-  if(!blocked&&!drag&&!travel&&!interaction&&!loading&&time>=restUntil){
-   const decision=brain.next(time);
+  if(ambientAllowed()&&!drag&&!travel&&!interaction&&!loading&&time>=restUntil&&typeof active?.token!=='string'){
+   const betweenScenes=!active||active.mode==='rest';
+   if(betweenScenes&&roamDue)maybeRoam();
+   if(!travel&&betweenScenes&&maybeAmbientScene()){frame=requestAnimationFrame(tick);return;}
+   if(!travel&&betweenScenes&&time>=nextRoamAt)maybeRoam();
+   const decision=!travel?brain.next(time):null;
    if(decision&&decision.token!==active?.token)void show(decision);
   }
   advanceTravel(delta,now);
@@ -570,7 +644,7 @@ export async function mountSitePresence({launch,dialog,pet,mediaUrl=MEDIA,random
  publicApi={command,setPaused,setPreferences,moveTo,interactWith,cancelMove:()=>{
   const had=!!travel||!!interaction;stop();return had;
  },destroy,snapshot:()=>({paused,blocked,loading,ready,held,walking,roaming:roamingEnabled,animations:animationsEnabled,offset,offsetY,dragging:!!drag?.active,
-  travelling:!!travel,interaction:launch.dataset.osirisInteraction||null,position:visualRect(),target:travel?{...travel.target}:null,scene:launch.dataset.osirisScene,brain:brain.snapshot(time)})};
+  travelling:!!travel,ambient:ambientAllowed(),clock:time,roamCount,playHistory:[...playHistory],activityHistory:[...activityHistory],lastRouteRefusal,lastRoamPolicy,ground:groundPoint(walking?walkClip():currentClip,held&&!walking),walkStart:walkingStart(),interaction:launch.dataset.osirisInteraction||null,position:visualRect(),target:travel?{...travel.target}:null,scene:launch.dataset.osirisScene,brain:brain.snapshot(time)})};
  window.OsirisPresence=publicApi;
  window.dispatchEvent(new Event('osiris:presence-ready'));
  return publicApi;

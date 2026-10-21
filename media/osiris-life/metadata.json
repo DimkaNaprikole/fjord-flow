@@ -1126,6 +1126,165 @@
       "verification": {
         "fullDecode": "passed"
       }
+    },
+    {
+      "id": "cloud-perch",
+      "packed": "cloud-perch-packed.mp4",
+      "poster": "cloud-perch-poster.png",
+      "width": 1130,
+      "height": 900,
+      "duration": 0.9666666666666667,
+      "fps": 30,
+      "frameCount": 29,
+      "bounds": {
+        "left": 0.15752212389380532,
+        "top": 0.04555555555555556,
+        "right": 0.9725663716814159,
+        "bottom": 0.9155555555555556
+      },
+      "unionBounds": {
+        "left": 0.09292035398230089,
+        "top": 0.04555555555555556,
+        "right": 0.9725663716814159,
+        "bottom": 0.9155555555555556
+      },
+      "startBounds": {
+        "left": 0.15752212389380532,
+        "top": 0.04555555555555556,
+        "right": 0.9725663716814159,
+        "bottom": 0.9155555555555556
+      },
+      "anchor": {
+        "x": 0.4831858407079646,
+        "y": 0.6
+      },
+      "sourceSha256": "403ecf2e77adef9b09e786b073671bf782bdad9e6b8809bdf208c503de5c0a7e",
+      "sourceVersion": 1,
+      "sourceStart": 4.0,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "403ecf2e77adef9b09e786b073671bf782bdad9e6b8809bdf208c503de5c0a7e",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed",
+        "reviewedFrames": 29,
+        "alphaBoundsThreshold": 32,
+        "alphaBoundsPaddingPixels": 2
+      },
+      "oneShot": true,
+      "loop": false,
+      "sourceMotion": true,
+      "limitation": "One continuous crouch on its own cloud, not a complete jump or a loop. The original small marker near the paw remains; later marked frames were excluded.",
+      "packedSha256": "b70417bc140d15d8de12a60e9c73f6aaa193322d902e9a0ecadb1e7dbd3de235"
+    },
+    {
+      "id": "run-short",
+      "packed": "run-short-packed.mp4",
+      "poster": "run-short-poster.png",
+      "width": 1150,
+      "height": 350,
+      "duration": 0.6333333333333333,
+      "fps": 30,
+      "frameCount": 19,
+      "bounds": {
+        "left": 0.042608695652173914,
+        "top": 0.1457142857142857,
+        "right": 0.32608695652173914,
+        "bottom": 0.8314285714285714
+      },
+      "unionBounds": {
+        "left": 0.042608695652173914,
+        "top": 0.11714285714285715,
+        "right": 0.6165217391304347,
+        "bottom": 0.8314285714285714
+      },
+      "startBounds": {
+        "left": 0.042608695652173914,
+        "top": 0.1457142857142857,
+        "right": 0.32608695652173914,
+        "bottom": 0.8314285714285714
+      },
+      "anchor": {
+        "x": 0.19130434782608696,
+        "y": 0.8228571428571428
+      },
+      "sourceSha256": "92a36d301c47cfc53deda91d62c439fac2017b88db651e55c3bb234ccf6838ba",
+      "sourceVersion": 1,
+      "sourceStart": 0.8,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "92a36d301c47cfc53deda91d62c439fac2017b88db651e55c3bb234ccf6838ba",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed",
+        "reviewedFrames": 19,
+        "alphaBoundsThreshold": 32,
+        "alphaBoundsPaddingPixels": 2
+      },
+      "oneShot": true,
+      "loop": false,
+      "sourceMotion": true,
+      "limitation": "One short native run. Start and end phases differ; do not repeat as a seamless walk or add a second CSS travel path.",
+      "packedSha256": "332d6e2223f6dd190d6fd1690992651f0ed54cba01287a6e3b6cac64ccc9e5fa"
+    },
+    {
+      "id": "descent-short",
+      "packed": "descent-short-packed.mp4",
+      "poster": "descent-short-poster.png",
+      "width": 540,
+      "height": 670,
+      "duration": 2.1,
+      "fps": 30,
+      "frameCount": 63,
+      "bounds": {
+        "left": 0.2796296296296296,
+        "top": 0.3044776119402985,
+        "right": 0.8240740740740741,
+        "bottom": 0.6074626865671642
+      },
+      "unionBounds": {
+        "left": 0.1648148148148148,
+        "top": 0.14328358208955225,
+        "right": 0.8351851851851851,
+        "bottom": 0.908955223880597
+      },
+      "startBounds": {
+        "left": 0.2796296296296296,
+        "top": 0.3044776119402985,
+        "right": 0.8240740740740741,
+        "bottom": 0.6074626865671642
+      },
+      "anchor": {
+        "x": 0.6166666666666667,
+        "y": 0.5940298507462687
+      },
+      "sourceSha256": "92a36d301c47cfc53deda91d62c439fac2017b88db651e55c3bb234ccf6838ba",
+      "sourceVersion": 1,
+      "sourceStart": 2.5,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "92a36d301c47cfc53deda91d62c439fac2017b88db651e55c3bb234ccf6838ba",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed",
+        "reviewedFrames": 63,
+        "alphaBoundsThreshold": 32,
+        "alphaBoundsPaddingPixels": 2
+      },
+      "oneShot": true,
+      "loop": false,
+      "sourceMotion": true,
+      "limitation": "One native descent with source camera perspective. The last tail-tip blur is retained. Start and end poses differ; not a loop or an interaction with an arbitrary site ledge.",
+      "packedSha256": "a61f292141afc8e33eabb7229a6266e7ce2d0bed92903b1d1d112700f40547e5"
     }
   ]
 }

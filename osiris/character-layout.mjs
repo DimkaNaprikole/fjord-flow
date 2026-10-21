@@ -1,4 +1,4 @@
-import {CHARACTER_CALIBRATION} from './character-calibration.mjs';
+import {CHARACTER_CALIBRATION} from './character-calibration.mjs?v=20261021ambient1';
 
 const PAD=4;
 const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
@@ -13,7 +13,9 @@ function units(entry){
 }
 // One physical scale for the entire library, not a separate fit per action.
 // Empty source margins, toys, ears and lying posture never define skull size.
-const EXTENTS=Object.values(CHARACTER_CALIBRATION.clips).map(units);
+// Short source scenes can contain a cloud or a long descent. Their complete
+// trajectory must fit, but must not shrink every ordinary behavior in the library.
+const EXTENTS=Object.values(CHARACTER_CALIBRATION.clips).filter(entry=>entry.stageScope!=='one-shot').map(units);
 export function characterStage(width,height){
  const horizontal=Math.max(...EXTENTS.map(e=>e.left+e.right));
  const up=Math.max(...EXTENTS.map(e=>e.up)),down=Math.max(0,...EXTENTS.map(e=>e.down));
@@ -29,12 +31,16 @@ export function fitCharacterClip(clip,width,height,{anchorX=width/2,baseline}={}
   return {width:h*ratio,height:h,left:width/2-h*ratio*(u.left+u.right)/2,top:height-PAD-u.bottom*h};
  }
  const u=boundsFor(entry),aspect=entry.sourceSize.width/entry.sourceSize.height;
- const w=stage.headPixels/entry.head.width,h=w/aspect;
+ const extent=units(entry);
+ const headPixels=entry.stageScope==='one-shot'?
+  Math.min(stage.headPixels,(width-PAD*2)/(extent.left+extent.right),(height-PAD*2)/(extent.up+extent.down)):
+  stage.headPixels;
+ const w=headPixels/entry.head.width,h=w/aspect;
  const groundX=clamp(anchorX,PAD+(entry.ground.x-u.left)*w,width-PAD-(u.right-entry.ground.x)*w);
  const groundY=clamp(baseline??stage.baseline,PAD+(entry.ground.y-u.top)*h,height-PAD-(u.bottom-entry.ground.y)*h);
  return {
   width:w,height:h,left:groundX-entry.ground.x*w,top:groundY-entry.ground.y*h,
-  headPixels:stage.headPixels,
+  headPixels,
   ground:{x:groundX,y:groundY},
   endGround:{
    x:groundX+((entry.endGround?.x??entry.ground.x)-entry.ground.x)*w,
