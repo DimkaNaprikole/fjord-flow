@@ -1,6 +1,6 @@
 import {ensureVerified,getStoredVisitor,getVisitorToken} from './afonya-auth.js';
-import {authorizeGmail,disconnectGmailAuthorization,prepareGmailAuthorization} from './gmail-auth.mjs';
-import {GmailClient} from './gmail-client.mjs';
+import {authorizeGmail,disconnectGmailAuthorization,prepareGmailAuthorization} from './gmail-auth.mjs?v=20261021pilot2';
+import {GmailClient} from './gmail-client.mjs?v=20261021pilot2';
 
 const keys=['title','intro','language','admin','home','login','restricted','gate','connection','privacy','connect','disconnect','enableSend','limits','mail','searchLabel','search','unread','more','from','to','date','compose','subject','body','review','reviewTitle','confirmation','send','close','loading','denied','connected','disconnected','empty','sent','unknown','error','permission','apiDisabled','expired','popup','cancelled','wrongAccount','reviewChanged','configError','sendEnabled'];
 export const COPY={};
