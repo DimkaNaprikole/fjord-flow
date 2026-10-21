@@ -75,7 +75,7 @@ export class GmailClient {
   #controllers = new Set(); #authorizations = new WeakMap();
   constructor({ fetchImpl = globalThis.fetch } = {}) {
     if (typeof fetchImpl !== 'function') throw new TypeError('fetchImpl required');
-    this.#fetch = fetchImpl;
+    this.#fetch = fetchImpl.bind(globalThis);
   }
   get connected() { return Boolean(this.#token && this.#email && Date.now() < this.#expiresAt); }
   get email() { return this.connected ? this.#email : ''; }
