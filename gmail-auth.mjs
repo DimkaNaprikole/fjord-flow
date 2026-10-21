@@ -18,14 +18,14 @@ async function verifyOwner(apiKey,overrideToken){
  return value.profile;
 }
 // Factory makes cancellation, account binding and scopes testable without real OAuth.
-export function createGmailAuthorizer({load=loadSDK,verify=verifyOwner}={}){
+export function createGmailAuthorizer({load=loadSDK,verify=verifyOwner,sdkTimeoutMs=15000}={}){
  let generation=0,active=null,busy=false;
  async function disconnect(){generation++;const previous=active;active=null;if(previous)try{await previous.sdk.signOut(previous.auth);}catch{} }
  async function authorize(apiKey,{send=false}={}){
   if(busy)throw fail('authBusy');busy=true;const run=generation;
   try{
    const expected=await verify(apiKey);if(run!==generation)throw fail('stale');
-   const context=await load(apiKey);if(run!==generation)throw fail('stale');active=context;
+   let timer;const context=await Promise.race([load(apiKey),new Promise((_,reject)=>{timer=setTimeout(()=>reject(fail('authUnavailable')),sdkTimeoutMs);})]).finally(()=>clearTimeout(timer));if(run!==generation)throw fail('stale');active=context;
    const {sdk,auth}=context;const provider=new sdk.GoogleAuthProvider();
    provider.addScope('https://www.googleapis.com/auth/gmail.readonly');
    if(send===true)provider.addScope('https://www.googleapis.com/auth/gmail.send');
