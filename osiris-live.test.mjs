@@ -120,3 +120,9 @@ test('budget-protected dictation never opens old paid RTC when browser ASR is mi
 for(const autoSend of [false,true])test('budget-protected browser dictation keeps Stop and auto-send '+autoSend,async()=>{
  const app=boot({...config,paidRealtimeDisabled:true,budgetProtectedVoice:true},true);await flush();let recognition;app.browserWindow.SpeechRecognition=class{constructor(){recognition=this}start(){this.onstart?.()}stop(){this.onend?.()}abort(){}};app.browserWindow.emit('fjord:open-chat');app.find('fjord-ai-auto-send').children[0].checked=autoSend;await app.find('fjord-ai-record-fallback').emit('click');recognition.onresult({results:[[{transcript:'Tell me about auroras'}]]});assert.equal(app.calls.filter(c=>c.url.includes('/live-session')).length,0);await app.find('fjord-ai-record-fallback').emit('click');await flush();assert.equal(app.calls.filter(c=>c.url.endsWith('/chat')).length,autoSend?1:0);if(!autoSend)assert.equal(app.find('fjord-ai-compose').children.find(n=>n.tag==='textarea').value,'Tell me about auroras');app.dialog.close();
 });
+
+test('Live caller language controls service labels without changing the Norwegian website',async()=>{
+ const {app,channel}=await start();app.document.documentElement.lang='nb';app.browserWindow.emit('fjordlanguagechange');input(channel,'Привет, Осирис!','locale-u1');
+ assert.equal(app.find('fjord-ai-compose').children.find(n=>n.tag==='label').textContent,'Ваше сообщение');assert.equal(app.document.documentElement.lang,'nb');
+ output(channel,'Hello there.','locale-a1');assert.equal(app.find('fjord-ai-compose').children.find(n=>n.tag==='label').textContent,'Ваше сообщение','Assistant output cannot override the caller language');app.dialog.close();
+});
