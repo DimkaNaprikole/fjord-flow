@@ -62,7 +62,7 @@ test('owner account gets an inbox entry while ordinary profiles do not',async()=
  const f=fixture();await f.window.FjordSiteAuth.open('profile');const body=f.document.body.children[0].children.find(x=>x.className==='site-account-body');
  assert.equal(body.children.some(x=>x.className==='site-account-owner-inbox'),false);
  f.visitor.email='Laurkent123@gmail.com';f.events.get('fjord:auth-changed')();
- const link=body.children.find(x=>x.className==='site-account-owner-inbox');assert.equal(link.href,'owner-inbox.html');
+ const link=body.children.find(x=>x.className==='site-account-owner-inbox');assert.equal(link.href,'admin-cabinet.html');
  f.visitor.email='visitor@example.com';f.events.get('fjord:auth-changed')();assert.equal(body.children.some(x=>x.className==='site-account-owner-inbox'),false);
 });
 

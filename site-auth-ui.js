@@ -81,10 +81,13 @@
       catch {status.textContent = words()[5]; logout.disabled = false;}
     });
     body.append(email, note);
+    const profileLink = document.createElement('a'); profileLink.className = 'site-account-profile'; profileLink.href = 'account.html';
+    profileLink.textContent = ({nb:'Profil og tilganger',en:'Profile and permissions',uk:'Профіль і дозволи',ru:'Профиль и доступы',sv:'Profil och behörigheter',da:'Profil og tilladelser'})[language()] || 'Profile and permissions';
+    body.append(profileLink);
     // A convenience entry only; the inbox verifies owner identity on the server.
     if (String(visitor.email || '').trim().toLowerCase() === 'laurkent123@gmail.com') {
-      const inbox = document.createElement('a'); inbox.className = 'site-account-owner-inbox'; inbox.href = 'owner-inbox.html';
-      inbox.textContent = ({nb:'Osiris · Henvendelser',en:'Osiris · Visitor requests',uk:'Osiris · Звернення',ru:'Osiris · Обращения',sv:'Osiris · Förfrågningar',da:'Osiris · Henvendelser'})[language()] || 'Osiris · Visitor requests';
+      const inbox = document.createElement('a'); inbox.className = 'site-account-owner-inbox'; inbox.href = 'admin-cabinet.html';
+      inbox.textContent = ({nb:'Administrator',en:'Administrator cabinet',uk:'Кабінет адміністратора',ru:'Кабинет администратора',sv:'Administratör',da:'Administrator'})[language()] || 'Administrator cabinet';
       body.append(inbox);
     }
     body.append(logout);

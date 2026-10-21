@@ -31,6 +31,7 @@ function renderList(){
  more.hidden=!nextCursor;more.disabled=pendingList;select('readerResetFilter').hidden=!contactEmail;select('readerFilter').hidden=!contactEmail;select('readerFilter').textContent=contactEmail?'Обращения с email: '+contactEmail:'';
 }
 function renderTicket(value){
+ if(select('readerReplyForm')){select('readerReplyForm').hidden=value.status==='answered';select('readerReply').value='';select('readerReply').disabled=false;select('readerReplySend').disabled=false;select('readerReplyStatus').textContent='';}
  selected=value;const facts=select('readerFacts');facts.replaceChildren();select('readerTicketTitle').textContent=clean(value.display_name)||'Обращение посетителя';
  const lastUser=[...(value.messages||[])].reverse().find(message=>message?.role==='user'&&clean(message.content));select('readerTopic').textContent=clean(value.summary)||clean(lastUser?.content).slice(0,240)||'Без темы';
  const fields=[['Имя',clean(value.display_name)||'Не указано'],['Email',safeEmail(value.email)||'Не указан']];if(clean(value.phone))fields.push(['Телефон',clean(value.phone)]);if(clean(value.family_name))fields.push(['Фамилия',clean(value.family_name)]);fields.push(['Получено',created(value.created_at)?created(value.created_at)+' (Норвегия)':'Не указано'],['Статус',stateLabel(value.status)]);
@@ -67,3 +68,10 @@ select('readerContactHistory').addEventListener('click',()=>{contactEmail=safeEm
 select('readerResetFilter').addEventListener('click',()=>{contactEmail='';search.value='';void loadList();});
 window.addEventListener('fjord:auth-changed',()=>{void getVisitorToken(settings?.firebaseApiKey).then(token=>{if(!token){clear();status.textContent='Войдите в аккаунт владельца, чтобы открыть обращения.';}}).catch(()=>{});});
 void open();
+select('readerReplyForm')?.addEventListener('submit',async event=>{
+ event.preventDefault();const ticket=selected?.id,answer=select('readerReply').value.trim(),run=generation;
+ if(!ticket||!answer||answer.length>2000||!authenticated)return;
+ const button=select('readerReplySend');button.disabled=true;select('readerReplyStatus').textContent='Сохраняем ответ…';
+ try{const data=await config(),token=await getVisitorToken(data.firebaseApiKey);if(!token)throw Object.assign(Error('auth'),{status:401});const response=await fetch(new URL('/owner-cabinet-reply',data.endpoint),{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify({ticket_id:ticket,answer}),credentials:'omit',cache:'no-store',referrerPolicy:'no-referrer'});if(!response.ok)throw Object.assign(Error('reply'),{status:response.status});const result=await response.json();if(run!==generation||selected?.id!==ticket)return;select('readerReplyStatus').textContent=result.already_answered?'Ответ уже был сохранён ранее.':'Ответ сохранён. Посетитель сможет получить его в чате сайта; это не email.';button.disabled=true;select('readerReply').disabled=true;}
+ catch(error){if(run!==generation)return;select('readerReplyStatus').textContent='Не удалось сохранить ответ. Проверьте вход и повторите.';button.disabled=false;if(error.status===401||error.status===403)failure(error);}
+});

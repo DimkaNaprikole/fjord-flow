@@ -15,7 +15,9 @@ const hasUnsaved=()=>dirty()||Boolean(catalogueEditor?.hasUnapplied());
 function status(message,kind=''){ $('status').textContent=message;$('status').dataset.kind=kind; }
 function controls(){
   $('save').disabled=busy||!authorized;$('publish').disabled=busy||!authorized;$('login').disabled=busy;
-  document.querySelector('.editor-controls').inert=busy;
+  document.querySelector('.editor-controls').inert=busy||!authorized;
+  document.querySelector('.editor-layout').hidden=!authorized;
+  document.querySelector('.editor-status').hidden=!authorized;
 }
 function changed(){
   status('Есть изменения в черновике. Они ещё не сохранены.');
@@ -79,6 +81,7 @@ async function loadOwner({keepPreview=false}={}){
     documentValue=validateDocument(state.draft?.document||state.published?.document||emptyDocument());savedJSON=JSON.stringify(documentValue);renderAll();
   }
   catalogueEditor?.refresh();$('identity').textContent=OWNER;$('login').textContent='Проверить вход';renderHistory(state.history);controls();
+  if(!frame.getAttribute('src'))openPreview();
   status(hasUnsaved()?'Владелец вошёл. Изменения ещё не сохранены.':state.draft&&!keepPreview?`Открыт сохранённый черновик. На сайте опубликована версия ${publishedRevision||'исходная'}.`:`Вход владельца подтверждён. Публикация: ${publishedRevision||'исходный сайт'}.`,'success');
 }
 async function signIn(){
@@ -138,13 +141,11 @@ $('login').onclick=()=>void signIn();$('closeAuth').onclick=()=>$('authDialog').
 $('save').onclick=()=>void run(saveDraft);$('publish').onclick=()=>void publish();
 window.addEventListener('beforeunload',event=>{if(hasUnsaved()){event.preventDefault();event.returnValue='';}});
 catalogueEditor=mountCatalogueEditor({getDocument:()=>documentValue,changed:()=>{validateDocument(documentValue);changed();},api,isAuthorized:()=>authorized,status});
-renderAll();openPreview();
+controls();
 try{
   const response=await fetch('./chat-config.json',{cache:'no-store'});if(!response.ok)throw new Error();config=await response.json();
   const endpoint=new URL(config.endpoint);if(endpoint.protocol!=='https:'||endpoint.hostname!=='fjord-flow-chat.laurkent123.workers.dev')throw new Error();
-  const state=await api('/cms/public',{auth:false});publishedRevision=Number(state.revision||0);
-  if(state.document&&!dirty()){documentValue=validateDocument(state.document);savedJSON=JSON.stringify(documentValue);renderAll();}
-  status('Каталог готов. Войдите владельцем для сохранения и публикации.');
+  status('Войдите владельцем, чтобы открыть редактор.');
   if(await getVisitorToken(config.firebaseApiKey))await loadOwner();
 }catch(error){
   status(changeAccount?'Вы вошли как посетитель. Для сохранения и публикации войдите подтверждённым аккаунтом '+OWNER+'. Предпросмотр доступен.':'Предпросмотр доступен. Подключение к админке или вход пока не подтверждены; изменения не сохранены.','error');

@@ -12,7 +12,7 @@ let fixture=normalizedFixture.slice(fixtureStart,fixtureEnd);
 // Extend only the transport response; all UI, RTC, auth and request fixtures remain shared.
 fixture=fixture.replace("return{ok:true,text:async()=>('v=0", "return{ok:true,json:async()=>({session:{id:'live_fixture'},transport:{type:'webrtc',sdp:'v=0\\r\\nm=audio 9 UDP/TLS/RTP/SAVPF 111\\r\\n'}}),text:async()=>('v=0");
 fixture=fixture.replace("if(url.endsWith('/chat'))return","if(url.endsWith('/chat')&&config.deferChat)await new Promise(resolve=>voiceState.resolveChat=resolve);if(url.endsWith('/chat'))return");
-const context={source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
+const context={atob,CustomEvent:class{constructor(type,options){this.type=type;this.detail=options?.detail}},source,directionsSource,directionsCatalog:JSON.parse(catalog),vm,URL,Blob,FormData,AbortController,setTimeout,clearTimeout,setInterval,clearInterval,setImmediate};
 vm.runInNewContext(fixture+'\nthis.fixtureApi={boot,flush};',context);
 const {boot,flush}=context.fixtureApi;
 const config={enabled:true,endpoint:'https://chat.example.test',voiceConversation:true,nativeVoiceAudio:true,liveVoiceModel:'gpt-live-1'};
