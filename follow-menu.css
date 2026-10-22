@@ -1,7 +1,7 @@
 .follow-menu-slot { grid-area: tabs; width: 100%; }
 .follow-menu-cloud { display: none; }
 .follow-menu-cloud.is-moving {
-  display: grid; grid-template-columns: minmax(0, 1fr) 84px;
+  display: grid; grid-template-columns: minmax(0, 1fr) 68px;
   position: relative; z-index: 7; box-sizing: border-box; margin-inline: auto;
   background: linear-gradient(115deg,#fffefa 0%,#f3f5ee 48%,#fffdf4 100%);
   border-radius: 0;
@@ -85,7 +85,7 @@ body.reference-layout #municipalNews :is(.news-topics,.news-location) > button:h
   }
 }
 @media (max-width:650px) {
-  .follow-menu-cloud.is-moving { grid-template-columns: minmax(0,1fr) 76px; }
+  .follow-menu-cloud.is-moving { grid-template-columns: minmax(0,1fr) 64px; }
   body .follow-menu-cloud > nav.site-tabs { gap: 2px 4px; padding: 6px 8px; }
   body .follow-menu-cloud > nav.site-tabs > a:not([hidden]) { flex: 1 1 28%; padding: 0 4px; font-size: 12px; }
   body.reference-layout .follow-menu-cloud > .site-group-links:not([hidden]) { padding: 8px; }
@@ -112,4 +112,31 @@ body.reference-layout #municipalNews :is(.news-topics,.news-location) > button:d
   body.reference-layout #municipalNews :is(.news-topics,.news-location) > button {
     transition: none; transform: none;
   }
+}
+
+/* Shared raised link finish for both original and travelling navigation rows. */
+body.reference-layout :is(header > nav.site-tabs,.follow-menu-cloud > nav.site-tabs) > a[data-primary-tab],
+body.reference-layout .site-group-links a {
+  background: linear-gradient(155deg,#ffffffa6,#edf2ed66 65%,#fffdf599);
+  border: 1px solid #78928633; border-radius: 2px;
+  box-shadow: inset 0 1px 0 #fff,inset 0 -1px 0 #cbd3c655,0 3px 7px #234f4a14;
+  text-shadow: 0 1px 0 #fff;
+  transition: box-shadow .18s ease,border-color .18s ease;
+}
+body.reference-layout .site-group-links a { padding: 8px 4px; min-height: 44px; box-sizing: border-box; }
+body.reference-layout :is(header > nav.site-tabs,.follow-menu-cloud > nav.site-tabs) > a[data-primary-tab]:hover,
+body.reference-layout .site-group-links a:hover {
+  border-color: #ac914c88;
+  box-shadow: inset 0 1px 0 #fff,0 4px 10px #234f4a20,0 0 10px #e1cf8399;
+}
+body.reference-layout .follow-menu-cloud :is(.follow-menu-home,.follow-menu-end) button {
+  font-family: Manrope,"Segoe UI",sans-serif; font-weight: 800; font-size: 12px;
+  padding: 4px; min-height: 44px;
+}
+@media(min-width:651px) and (max-width:1000px) {
+  body.reference-layout .follow-menu-cloud .site-group-links a { padding-inline: 2px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  body.reference-layout :is(header > nav.site-tabs,.follow-menu-cloud > nav.site-tabs) > a[data-primary-tab],
+  body.reference-layout .site-group-links a { transition: none; }
 }
