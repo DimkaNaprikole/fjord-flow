@@ -1,6 +1,10 @@
 /* Move the real two-row navigation; never clone controls or their handlers. */
 (() => {
   'use strict';
+  const isSpaceFree = (rect, obstacles) => !obstacles.some(other =>
+    rect.left < other.right + 6 && rect.right > other.left - 6 &&
+    rect.top < other.bottom + 6 && rect.bottom > other.top - 6);
+  if (typeof module !== 'undefined' && module.exports) { module.exports = {isSpaceFree}; return; }
   const nav = document.querySelector('body > header > nav.site-tabs');
   const main = document.getElementById('journeys');
   if (!nav || !main) return;
@@ -104,7 +108,18 @@
       const box = host.getBoundingClientRect();
       if (box.bottom <= 0 && !endActive) place();
     }
-    if (moved) reveal();
+    if (moved) { reveal(); checkFreeSpace(); }
+  }
+  function checkFreeSpace() {
+    if (!moved || document.hidden) return;
+    const area = host.getBoundingClientRect();
+    if (area.bottom <= 0 || area.top >= innerHeight) return;
+    const occupied = [...document.querySelectorAll('.fjord-helper-launch,.fjord-ai-pet-name,dialog[open]')]
+      .map(node => node.getBoundingClientRect()).filter(rect => rect.width && rect.height);
+    for (const box of controls) {
+      const value = String(!isSpaceFree(box.getBoundingClientRect(), occupied));
+      if (box.dataset.occupied !== value) box.dataset.occupied = value;
+    }
   }
   function schedule() { if (!queued) { queued = true; requestAnimationFrame(update); } }
   addEventListener('scroll', schedule, {passive:true});
@@ -114,5 +129,6 @@
   } schedule(); });
   addEventListener('fjord:sections-changed', schedule);
   addEventListener('pageshow', schedule);
+  if (typeof setInterval === 'function') setInterval(checkFreeSpace, 200);
   update();
 })();

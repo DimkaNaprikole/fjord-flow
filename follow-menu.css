@@ -3,42 +3,75 @@
 .follow-menu-cloud.is-moving {
   display: grid; grid-template-columns: minmax(0, 1fr) 84px;
   position: relative; z-index: 7; box-sizing: border-box; margin-inline: auto;
-  background: rgba(255,253,243,.95); border-radius: 0;
-  box-shadow: 0 0 24px 14px rgba(255,251,237,.65);
+  background: linear-gradient(115deg,#fffefa 0%,#f3f5ee 48%,#fffdf4 100%);
+  border-radius: 0;
+  box-shadow: inset 0 1px 0 #fff,inset 0 -1px 0 #d3d9cd,
+    0 5px 18px #173d4520,0 0 24px 14px #fffbedb0;
   font-family: Manrope, "Segoe UI", sans-serif;
 }
 body .follow-menu-cloud > nav.site-tabs {
   grid-row: 1; grid-column: 1; display: flex; align-items: center;
   justify-content: space-around; flex-wrap: wrap; box-sizing: border-box;
   gap: 4px 16px; padding: 10px 16px; margin: 0;
-  background: rgba(255,251,237,.92); border: 0;
+  background: transparent; border: 0;
 }
 body .follow-menu-cloud > nav.site-tabs > a:not([hidden]) {
   display: inline-flex; align-items: center; justify-content: center;
   position: relative; min-height: 44px; padding: 0 10px;
   color: #103e4b; background: transparent; border: 0; border-radius: 0;
   font: 800 15px/1.4 Manrope,"Segoe UI",sans-serif; text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
 }
 body .follow-menu-cloud > nav.site-tabs > a[aria-selected="true"]::after {
   content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-  height: 2px; background: #28574d;
+  height: 2px; background: linear-gradient(90deg,transparent,#a58036 20%,#c0a258 80%,transparent);
+  box-shadow: 0 1px 6px #d6c18455;
 }
-body .follow-menu-cloud > nav.site-tabs > a:hover { background: #28574d0d; }
+body .follow-menu-cloud > nav.site-tabs > a:hover { background: transparent; color: #215f68; }
 body.reference-layout .follow-menu-cloud > .site-group-links:not([hidden]) {
   grid-row: 2; grid-column: 1; display: flex; justify-content: center;
   align-items: center; flex-wrap: wrap; gap: 8px 18px; padding: 10px 16px;
-  margin: 0; background: rgba(255,253,243,.95);
+  margin: 0; background: transparent;
 }
 .follow-menu-home, .follow-menu-end {
   grid-column: 2; display: flex; justify-content: center; align-items: center;
   padding: 8px 8px 8px 0;
 }
-.follow-menu-home { grid-row: 1; background: rgba(255,251,237,.92); }
-.follow-menu-end { grid-row: 2; background: rgba(255,253,243,.95); }
-.follow-menu-cloud button {
-  min-height: 44px; width: 100%; padding: 5px 8px; background: #143f46;
-  color: #f7f4e9; border: 1px solid #8ba9a8; border-radius: 6px;
-  font: 700 13px/1.3 Manrope,"Segoe UI",sans-serif; cursor: pointer;
+.follow-menu-home { grid-row: 1; background: transparent; }
+.follow-menu-end { grid-row: 2; background: transparent; }
+.follow-menu-cloud button,
+body.reference-layout #municipalNews :is(.news-topics,.news-location) > button {
+  min-height: 44px; width: 100%; padding: 5px 8px;
+  background: linear-gradient(155deg,#ffffffd9,#edf2ed99 60%,#fffdf5cc);
+  color: #163f49; border: 1px solid #61847b55; border-radius: 2px;
+  box-shadow: inset 0 1px 0 #fff,inset 0 -1px 0 #d4d9ce,0 3px 8px #234f4a18;
+  text-shadow: 0 1px 0 #fff;
+  font: 800 13px/1.3 Manrope,"Segoe UI",sans-serif; cursor: pointer;
+  transition: box-shadow .18s ease,border-color .18s ease,transform .18s ease;
+}
+.follow-menu-cloud button:hover,
+body.reference-layout #municipalNews :is(.news-topics,.news-location) > button:hover {
+  border-color: #b79a53;
+  box-shadow: inset 0 1px 0 #fff,0 4px 10px #234f4a20,0 0 12px #e3d39399;
+  transform: translateY(-1px);
+}
+.follow-menu-cloud button:active,
+body.reference-layout #municipalNews :is(.news-topics,.news-location) > button:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px #234f4a1f,0 0 8px #e3d39366;
+}
+body.reference-layout > header > nav.site-tabs,
+body.reference-layout .site-group-links[data-fjord-group-menu="home"]:not([hidden]) {
+  background: linear-gradient(115deg,#fffefaee,#f3f5eeee 48%,#fffdf4ee);
+  box-shadow: inset 0 1px 0 #fff,inset 0 -1px 0 #d3d9cd,0 0 20px 10px #fffbed88;
+}
+body.reference-layout .follow-menu-cloud > .site-group-links[data-fjord-group-menu="home"]:not([hidden]) {
+  background: transparent; box-shadow: none;
+}
+@media(prefers-reduced-motion:reduce) {
+  .follow-menu-cloud button { transition: none; }
+  .follow-menu-cloud button:hover,
+body.reference-layout #municipalNews :is(.news-topics,.news-location) > button:hover { transform: none; }
 }
 .follow-menu-cloud :is(a,button,select):focus-visible {
   outline: 3px solid #b57c18; outline-offset: 2px;
@@ -57,4 +90,26 @@ body.reference-layout .follow-menu-cloud > .site-group-links:not([hidden]) {
   body .follow-menu-cloud > nav.site-tabs > a:not([hidden]) { flex: 1 1 28%; padding: 0 4px; font-size: 12px; }
   body.reference-layout .follow-menu-cloud > .site-group-links:not([hidden]) { padding: 8px; }
   .follow-menu-cloud .site-group-picker { min-width: 0; font-size: 14px; }
+}
+
+.follow-menu-cloud [data-occupied="true"] { visibility: hidden; pointer-events: none; }
+
+body.reference-layout #municipalNews :is(.news-topics,.news-location) > button {
+  width: auto; padding: 8px 14px;
+}
+body.reference-layout #municipalNews .news-topics > button[aria-pressed="true"] {
+  color: #163f49; background: linear-gradient(155deg,#fffef8,#f3e9ca);
+  border-color: #ad8b42;
+  box-shadow: inset 0 -2px 0 #ad8b42,inset 0 1px 0 #fff,0 2px 8px #bfa66133;
+}
+body.reference-layout #municipalNews :is(.news-topics,.news-location) > button:focus-visible {
+  outline: 3px solid #916d21; outline-offset: 3px;
+}
+body.reference-layout #municipalNews :is(.news-topics,.news-location) > button:disabled {
+  opacity: .6; transform: none; cursor: default;
+}
+@media(prefers-reduced-motion:reduce) {
+  body.reference-layout #municipalNews :is(.news-topics,.news-location) > button {
+    transition: none; transform: none;
+  }
 }

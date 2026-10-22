@@ -3,6 +3,7 @@
 - Use `fjord-theme.css` as the shared visual system; it loads after feature CSS.
 - Align top-level content sections with the shared `--ff-page-gutter`, `--ff-content-max` and `--ff-panel-inset` rails; avoid separate percentage side margins for new sections.
 - Reuse `--ff-*` tokens for panels, cards, typography, controls and dialogs. Text buttons use a dark teal background and a light label; do not introduce cream, white or pink button variants.
+- Owner exception, 22 October 2026: Home/End and news toolbar controls use light frosted surfaces, dark labels, fine nearly straight borders and restrained bevel/glow. The owner rejected filled green rounded pills for these controls; this overrides the text-button default above.
 - Keep scenic page backgrounds, photographs, flip-card imagery and map tiles intact. Do not replace their background images when changing text surfaces.
 - Keep the approved Ukraine/Norway composition as a full-width header background behind branding and navigation; do not turn it into standalone image cards. Preserve the complete “Wake Up Ukraine” framing.
 - When changing a background, verify computed foreground colours too. Check primary/secondary links, selected/disabled states and modal actions; inherited colours and older ID selectors can override new styling.

@@ -25,7 +25,7 @@ function harness({reduced=false}={}) {
   const nav=element('nav',500,60),menu=element('menu',560,60),other=element('other',560,0);
   other.hidden=true;header.append(nav);main.append(menu);main.append(other);main.append(element('advert',900,400));main.append(element('chapter',1100,600));main.append(element('near',1400,500));main.append(element('later',3000,1000));
   let host;
-  const document={body,documentElement:{scrollHeight:5000},querySelector:()=>nav,querySelectorAll:()=>[menu,other],getElementById:()=>main,
+  const document={body,documentElement:{scrollHeight:5000},querySelector:()=>nav,querySelectorAll:selector=>selector==='.site-group-links'?[menu,other]:[],getElementById:()=>main,
     createElement:()=>{const el=element(host?'node':'host');if(!host)host=el;return el;}};
   const ctx={document,performance:{now:()=>now+=100},innerWidth:1000,innerHeight:800,get scrollY(){return y;},matchMedia:()=>({matches:reduced}),
     addEventListener:(k,fn)=>listeners[k]=fn,requestAnimationFrame:fn=>frames.push(fn),window:{scrollTo:opts=>{scrolls.push(opts);y=opts.top;}}};
@@ -68,3 +68,12 @@ test('nearby chapters do not cause rapid consecutive menu hops',()=>{
   const h=harness();h.scroll(650);assert.equal(h.landing(),'chapter');
   h.scroll(1250);assert.equal(h.landing(),'later');
 });
+
+ test('arrow space rejects cat overlap and nearby labels but accepts a clear lane',()=>{
+  const {isSpaceFree}=require('./follow-menu.js');
+  const arrow={left:300,right:376,top:400,bottom:444};
+  assert.equal(isSpaceFree(arrow,[]),true);
+  assert.equal(isSpaceFree(arrow,[{left:280,right:380,top:420,bottom:470}]),false);
+  assert.equal(isSpaceFree(arrow,[{left:200,right:296,top:400,bottom:420}]),false);
+  assert.equal(isSpaceFree(arrow,[{left:100,right:260,top:500,bottom:600}]),true);
+ });
