@@ -5,9 +5,17 @@
   const main = document.getElementById('journeys');
   if (!nav || !main) return;
   const menus = [...document.querySelectorAll('.site-group-links')];
+  // Main navigation may land only in dedicated gaps before substantive chapters.
+  // Advertising, small anchors, card rails and photo-only inserts are not landing zones.
+  const landingIds = new Set(['about','scenicRoutes','collection','waterfallChapter',
+    'buaEquipment','cafeStops','staysSauna','travelUpdates','travelServices',
+    'norwayCatalogue','norwayWebcams','municipalNews','community','travelStories','shoppingCentres']);
+  let lastLanding = null;
+  let entrance = null;
   const host = document.createElement('div');
   host.className = 'follow-menu-cloud';
   host.dataset.followMenuGap = 'true';
+  host.setAttribute('data-osiris-no-roam', '');
   const slots = new Map();
   let moved = false, queued = false, endFollow = 0, revealPending = false, endActive = false;
   function jump(end) {
@@ -43,7 +51,7 @@
   function restore() {
     if (!moved) return;
     for (const [node, slot] of slots) { slot.before(node); slot.remove(); }
-    slots.clear(); controls.forEach(box => box.remove()); document.body.append(host); host.classList.remove('is-moving'); moved = false;
+    slots.clear(); lastLanding = null; entrance?.cancel?.(); controls.forEach(box => box.remove()); document.body.append(host); host.classList.remove('is-moving'); moved = false;
   }
   function transfer() {
     for (const node of [nav, ...menus]) {
@@ -58,17 +66,23 @@
   function place() {
     const rail = slots.get(nav).getBoundingClientRect();
     host.style.width = Math.min(innerWidth, rail.width) + 'px';
-    const targets = [...main.children].filter(el => !el.hidden && !el.dataset.followMenuGap
-      && !el.classList.contains('follow-menu-subslot') && !el.classList.contains('site-group-links'))
-      .filter(el => { const box = el.getBoundingClientRect(); return box.height > 0 && box.top >= 16; });
+    const minDistance = Math.max(400, innerHeight * .75);
+    const targets = [...main.children].filter(el => !el.hidden && landingIds.has(el.id))
+      .filter(el => {
+        const box = el.getBoundingClientRect();
+        const distance = lastLanding === null ? Infinity : box.top + scrollY - lastLanding;
+        return box.height >= 280 && box.top >= 16 && distance >= minDistance;
+      });
     // Occupy real layout space at a section boundary; never cover its heading/photo.
     if (targets.length) {
       if (targets[0].previousElementSibling === host) return;
+      lastLanding = targets[0].getBoundingClientRect().top + scrollY;
       targets[0].before(host);
     } else {
       if (main.lastElementChild === host) return;
       main.append(host);
     }
+    entrance?.cancel?.();
     revealPending = true;
   }
   function reveal() {
@@ -76,8 +90,7 @@
     if (!revealPending || box.top >= innerHeight || box.bottom <= 0) return;
     revealPending = false;
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
-      host.animate([{opacity:0,transform:'translateY(8px)',filter:'blur(4px)'},
-        {opacity:1,transform:'translateY(0)',filter:'blur(0)'}],{duration:260,easing:'ease-out'});
+      entrance = host.animate([{opacity:0},{opacity:1}],{duration:180,easing:'ease-out'});
   }
 
   function update() {

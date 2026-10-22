@@ -7,7 +7,7 @@ function harness({reduced=false}={}) {
   const listeners={};
   function element(name, top=0, height=0) {
     const classes=new Set();
-    return {name,naturalTop:top,naturalHeight:height,hidden:false,children:[],style:{},className:'',dataset:{},parent:null,
+    return {name,id:({chapter:'about',later:'scenicRoutes',advert:'advertising',near:'collection'})[name]||'',naturalTop:top,naturalHeight:height,hidden:false,children:[],style:{},className:'',dataset:{},parent:null,
       classList:{add:c=>classes.add(c),remove:c=>classes.delete(c),contains:c=>classes.has(c)},
       setAttribute(){},addEventListener(k,fn){this[k]=fn;},
       append(node){node.remove();this.children.push(node);node.parent=this;},
@@ -23,7 +23,7 @@ function harness({reduced=false}={}) {
   const body=element('body'),header=element('header'),main=element('main');
   body.append(header);body.append(main);
   const nav=element('nav',500,60),menu=element('menu',560,60),other=element('other',560,0);
-  other.hidden=true;header.append(nav);main.append(menu);main.append(other);main.append(element('chapter',1100,600));main.append(element('later',3000,1000));
+  other.hidden=true;header.append(nav);main.append(menu);main.append(other);main.append(element('advert',900,400));main.append(element('chapter',1100,600));main.append(element('near',1400,500));main.append(element('later',3000,1000));
   let host;
   const document={body,documentElement:{scrollHeight:5000},querySelector:()=>nav,querySelectorAll:()=>[menu,other],getElementById:()=>main,
     createElement:()=>{const el=element(host?'node':'host');if(!host)host=el;return el;}};
@@ -58,4 +58,13 @@ test('no viewport-bottom fallback or repeated appearances before the next real b
   assert.equal(h.landing(),'later');assert.equal(h.animations(),count);
   h.scroll(2300);assert.equal(h.animations(),count+1);
   h.scroll(2350);assert.equal(h.animations(),count+1);
+});
+
+test('advertising is never selected as a landing zone',()=>{
+  const h=harness();h.scroll(650);assert.equal(h.landing(),'chapter');
+});
+
+test('nearby chapters do not cause rapid consecutive menu hops',()=>{
+  const h=harness();h.scroll(650);assert.equal(h.landing(),'chapter');
+  h.scroll(1250);assert.equal(h.landing(),'later');
 });
