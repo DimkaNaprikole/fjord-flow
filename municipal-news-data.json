@@ -98,6 +98,11 @@
       "name": "Ringerike · Hønefoss kino",
       "events": "https://www.nfkino.no/kino/honefoss",
       "eventsChecked": "2026-10-19"
+    },
+    "4205": {
+      "name": "Lindesnes · Buen kulturhus",
+      "events": "https://www.buenkulturhus.no/programoversikt",
+      "eventsChecked": "2026-10-22"
     }
   },
   "items": [
@@ -170,7 +175,7 @@
           "Aflevering: Harestua 19. oktober; Gran og Roa 21. oktober; Jevnaker 23. oktober. Præcise tider og vilkår hos arrangøren."
         ]
       },
-      "checked": "2026-10-19",
+      "checked": "2026-10-22",
       "relatedMunicipalities": [
         "3234",
         "3236"
@@ -232,27 +237,28 @@
       "mapQuery": "Gran rådhus Jaren",
       "details": {
         "nb": [
-          "Åpne øvelser: Bjoneroa kulturbygg 27. oktober og Gran rådhus i Jaren 28. oktober.",
-          "Bli kjent med informasjonspunktene ved bortfall av mobilnett og internett. Tidspunkter og program oppdateres av kommunen."
+          "27. oktober 15:00–19:00: Bjoneroa kulturbygg, Skolevegen 7, 3522 Bjoneroa.",
+          "28. oktober 08:00–20:00: Gran rådhus, Rådhusvegen 39, 2770 Jaren. Detaljert program kommer."
         ],
         "en": [
-          "Open exercises at Bjoneroa kulturbygg on 27 October and Gran town hall in Jaren on 28 October.",
-          "Learn where to find municipal information if mobile networks or the internet fail. The municipality provides the programme and times."
+          "27 October, 15:00–19:00: Bjoneroa kulturbygg, Skolevegen 7, 3522 Bjoneroa.",
+          "28 October, 08:00–20:00: Gran town hall, Rådhusvegen 39, 2770 Jaren. Detailed programme forthcoming."
         ],
         "uk": [
-          "Відкриті навчання: Bjoneroa kulturbygg — 27 жовтня, ратуша Gran у Jaren — 28 жовтня.",
-          "Дізнайтеся, де отримати інформацію без мобільного зв’язку й інтернету. Час і програму уточнює комуна."
+          "27 жовтня, 15:00–19:00: Bjoneroa kulturbygg, Skolevegen 7, 3522 Bjoneroa.",
+          "28 жовтня, 08:00–20:00: ратуша Gran, Rådhusvegen 39, 2770 Jaren. Докладну програму оприлюднять пізніше."
         ],
         "sv": [
-          "Öppna övningar: Bjoneroa kulturbygg 27 oktober och Grans rådhus i Jaren 28 oktober.",
-          "Lär känna informationspunkterna vid avbrott i mobilnät och internet. Kommunen uppdaterar program och tider."
+          "27 oktober 15:00–19:00: Bjoneroa kulturbygg, Skolevegen 7, 3522 Bjoneroa.",
+          "28 oktober 08:00–20:00: Grans rådhus, Rådhusvegen 39, 2770 Jaren. Detaljerat program kommer."
         ],
         "da": [
-          "Åbne øvelser: Bjoneroa kulturbygg 27. oktober og Grans rådhus i Jaren 28. oktober.",
-          "Lær informationspunkterne at kende ved udfald af mobilnet og internet. Kommunen opdaterer program og tider."
+          "27. oktober 15:00–19:00: Bjoneroa kulturbygg, Skolevegen 7, 3522 Bjoneroa.",
+          "28. oktober 08:00–20:00: Grans rådhus, Rådhusvegen 39, 2770 Jaren. Detaljeret program følger."
         ]
       },
-      "checked": "2026-10-18"
+      "checked": "2026-10-22",
+      "time": "27.10 15:00–19:00; 28.10 08:00–20:00"
     },
     {
       "id": "local-granavolden-cafe",
@@ -832,7 +838,7 @@
       "published": "2026-10-19",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-20",
+      "checked": "2026-10-22",
       "eventDate": "2026-10-24",
       "time": "17:00",
       "expires": "2026-10-25T00:00:00+02:00",
@@ -930,7 +936,7 @@
       "published": "2026-10-19",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-19",
+      "checked": "2026-10-22",
       "eventDate": "2026-10-30",
       "expires": "2026-10-31T00:00:00+01:00",
       "source": "Jevnaker kommune · Fjordlandsbyen 2026",
@@ -1178,7 +1184,7 @@
       "published": "2026-10-19",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-19",
+      "checked": "2026-10-22",
       "eventDate": "2026-10-22",
       "eventDates": [
         "2026-10-22",
@@ -2047,7 +2053,7 @@
       "published": "2026-10-19",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-19",
+      "checked": "2026-10-22",
       "eventDate": "2026-10-23",
       "expires": "2026-10-24T00:00:00+02:00",
       "source": "Stavanger konserthus",
@@ -2288,7 +2294,7 @@
       "published": "2026-10-19",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-19",
+      "checked": "2026-10-22",
       "eventDate": "2026-10-22",
       "expires": "2026-10-23T00:00:00+02:00",
       "source": "Kilden / Kristiansand Symfoniorkester",
@@ -2446,7 +2452,7 @@
       "published": "2026-10-19",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-19",
+      "checked": "2026-10-22",
       "eventDate": "2026-10-24",
       "expires": "2026-10-25T00:00:00+02:00",
       "source": "Verkstedhallen",
@@ -2955,7 +2961,7 @@
       "published": "2026-10-19",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-19",
+      "checked": "2026-10-22",
       "eventDate": "2026-10-23",
       "time": "20:00",
       "expires": "2026-10-24T00:00:00+02:00",
@@ -3238,7 +3244,7 @@
       "published": "2026-10-20",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-20",
+      "checked": "2026-10-22",
       "textOnly": true,
       "coordinates": {
         "latitude": 60.4002799987793,
@@ -8438,7 +8444,7 @@
       "published": "2026-10-21",
       "publishedKind": "editorial",
       "sourcePublished": null,
-      "checked": "2026-10-21",
+      "checked": "2026-10-22",
       "eventDate": "2026-10-22",
       "time": "18:00",
       "expires": "2026-10-22T19:00:00+02:00",
@@ -8654,6 +8660,232 @@
         ],
         "da": [
           "Sal 3. Engelsk tale, norske undertekster, aldersgrænse 12. Oplyst filmlængde 129 minutter. Tjek pris og præcis sluttid hos biografen."
+        ]
+      }
+    },
+    {
+      "id": "jevnaker-strikkelounge-20261022",
+      "municipality": "3236",
+      "category": "events",
+      "published": "2026-10-22",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-22",
+      "eventDate": "2026-10-22",
+      "time": "17:00–19:00",
+      "expires": "2026-10-22T19:00:00+02:00",
+      "source": "Jevnaker folkebibliotek / Fjordlandsbykalenderen",
+      "url": "https://jevnaker.foreningsportal.no/hendelse?Id=2695453",
+      "location": "Jevnaker folkebibliotek, Storgata 24, 3520 Jevnaker",
+      "mapQuery": "Jevnaker folkebibliotek, Storgata 24, Jevnaker",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Strikkelounge på Jevnaker folkebibliotek",
+          "22. oktober kl. 17:00–19:00: en hyggelig håndarbeidsstund på biblioteket."
+        ],
+        "en": [
+          "Knitting lounge at Jevnaker library",
+          "22 October, 17:00–19:00: a sociable handicraft session at the library."
+        ],
+        "uk": [
+          "В’язальний вечір у бібліотеці Jevnaker",
+          "22 жовтня, 17:00–19:00: зустріч для спілкування та рукоділля в бібліотеці."
+        ],
+        "sv": [
+          "Sticklounge på Jevnakers bibliotek",
+          "22 oktober kl. 17:00–19:00: en trevlig handarbetsstund på biblioteket."
+        ],
+        "da": [
+          "Strikkelounge på Jevnaker bibliotek",
+          "22. oktober kl. 17:00–19:00: hyggeligt samvær med håndarbejde på biblioteket."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Ta med eget håndarbeid; nybegynnere er velkomne. Pris er ikke oppgitt."
+        ],
+        "en": [
+          "Bring your own project; beginners are welcome. Admission price is not stated."
+        ],
+        "uk": [
+          "Візьміть власне рукоділля; початківці також запрошені. Вартість участі не вказана."
+        ],
+        "sv": [
+          "Ta med eget handarbete; nybörjare är välkomna. Deltagarpris anges inte."
+        ],
+        "da": [
+          "Medbring eget håndarbejde; begyndere er velkomne. Deltagerpris er ikke oplyst."
+        ]
+      }
+    },
+    {
+      "id": "trondheim-the-barren-opening-20261022",
+      "municipality": "5001",
+      "category": "events",
+      "eventType": "exhibition",
+      "published": "2026-10-22",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-22",
+      "eventDate": "2026-10-22",
+      "time": "18:00–20:00",
+      "expires": "2026-10-22T20:00:00+02:00",
+      "source": "Kunsthall Trondheim",
+      "url": "https://kunsthalltrondheim.no/en/arrangementer/utstillingsapning-isabelle-andriessen-the-barren",
+      "location": "Kunsthall Trondheim, Kongens gate 2, Trondheim",
+      "mapQuery": "Kunsthall Trondheim, Kongens gate 2, Trondheim",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Utstillingsåpning: Isabelle Andriessen · THE BARREN",
+          "22. oktober kl. 18:00–20:00 på Kunsthall Trondheim."
+        ],
+        "en": [
+          "Exhibition opening: Isabelle Andriessen · THE BARREN",
+          "22 October, 18:00–20:00 at Kunsthall Trondheim."
+        ],
+        "uk": [
+          "Відкриття виставки: Isabelle Andriessen · THE BARREN",
+          "22 жовтня, 18:00–20:00 у Kunsthall Trondheim."
+        ],
+        "sv": [
+          "Utställningsöppning: Isabelle Andriessen · THE BARREN",
+          "22 oktober kl. 18:00–20:00 på Kunsthall Trondheim."
+        ],
+        "da": [
+          "Udstillingsåbning: Isabelle Andriessen · THE BARREN",
+          "22. oktober kl. 18:00–20:00 på Kunsthall Trondheim."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Utstillingene har vanligvis gratis inngang. Egne vilkår for åpningen er ikke oppgitt; sjekk med arrangøren."
+        ],
+        "en": [
+          "General exhibition admission is free. Opening-specific terms are not stated; check with the organiser."
+        ],
+        "uk": [
+          "Загальний вхід на виставки безкоштовний. Окремі умови відкриття не вказані; уточнюйте в організатора."
+        ],
+        "sv": [
+          "Ordinarie entré till utställningarna är gratis. Särskilda villkor för öppningen anges inte; kontrollera med arrangören."
+        ],
+        "da": [
+          "Almindelig adgang til udstillingerne er gratis. Særlige vilkår for åbningen er ikke oplyst; spørg arrangøren."
+        ]
+      }
+    },
+    {
+      "id": "stavanger-rakhmaninov-stravinskij-20261022",
+      "municipality": "1103",
+      "category": "events",
+      "eventType": "concert",
+      "published": "2026-10-22",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-22",
+      "eventDate": "2026-10-22",
+      "time": "19:00",
+      "expires": "2026-10-23T00:00:00+02:00",
+      "source": "Stavanger Konserthus / Stavanger Symfoniorkester",
+      "url": "https://www.stavanger-konserthus.no/event/stavanger-symfoniorkester-rakhmaninov-stravinskij/",
+      "location": "Fartein Valen, Stavanger konserthus, Sandvigå 1, Stavanger",
+      "mapQuery": "Stavanger konserthus, Sandvigå 1, Stavanger",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Stavanger Symfoniorkester · Rakhmaninov og Stravinskij",
+          "22. oktober kl. 19:00 i Fartein Valen."
+        ],
+        "en": [
+          "Stavanger Symphony Orchestra · Rachmaninoff and Stravinsky",
+          "22 October at 19:00 in Fartein Valen."
+        ],
+        "uk": [
+          "Симфонічний оркестр Ставангера · Рахманінов і Стравінський",
+          "22 жовтня о 19:00 у залі Fartein Valen."
+        ],
+        "sv": [
+          "Stavangers symfoniorkester · Rachmaninov och Stravinskij",
+          "22 oktober kl. 19:00 i Fartein Valen."
+        ],
+        "da": [
+          "Stavangers symfoniorkester · Rakhmaninov og Stravinskij",
+          "22. oktober kl. 19:00 i Fartein Valen."
+        ]
+      },
+      "details": {
+        "nb": [
+          "100–670 NOK inkludert serviceavgift. Gratis verkintroduksjon kl. 18:00 i VIP-rommet; konserten starter kl. 19:00. Sjekk billettilgang hos arrangøren."
+        ],
+        "en": [
+          "NOK 100–670 including fees. Free introduction at 18:00 in the VIP room; the concert starts at 19:00. Check ticket availability."
+        ],
+        "uk": [
+          "100–670 NOK зі збором. Безкоштовний вступ о 18:00 у VIP-залі; концерт починається о 19:00. Перевіряйте наявність квитків."
+        ],
+        "sv": [
+          "100–670 NOK inklusive avgift. Gratis introduktion kl. 18:00 i VIP-rummet; konserten börjar kl. 19:00. Kontrollera biljettillgång."
+        ],
+        "da": [
+          "100–670 NOK inklusive gebyr. Gratis introduktion kl. 18:00 i VIP-rummet; koncerten begynder kl. 19:00. Tjek billetstatus."
+        ]
+      }
+    },
+    {
+      "id": "mandal-pider-ro-historier-20261022",
+      "municipality": "4205",
+      "category": "events",
+      "published": "2026-10-22",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-22",
+      "eventDate": "2026-10-22",
+      "time": "18:00–20:00",
+      "expires": "2026-10-22T20:00:00+02:00",
+      "source": "Buen kulturhus / Lindesnesbibliotekene",
+      "url": "https://www.buenkulturhus.no/forestilling/nylanseringsturne-gabriel-scotts-pider-ros-historier",
+      "location": "Biblioteket, Buen kulturhus, Havnegata 2, Mandal",
+      "mapQuery": "Buen kulturhus, Havnegata 2, Mandal",
+      "textOnly": true,
+      "copy": {
+        "nb": [
+          "Gabriel Scott · Pider Ro’s historier",
+          "Mandal: litteraturkveld på Buen 22. oktober kl. 18:00–20:00."
+        ],
+        "en": [
+          "Gabriel Scott · Pider Ro’s historier",
+          "Mandal: a literary evening at Buen on 22 October, 18:00–20:00."
+        ],
+        "uk": [
+          "Gabriel Scott · Pider Ro’s historier",
+          "Mandal: літературний вечір у Buen 22 жовтня, 18:00–20:00."
+        ],
+        "sv": [
+          "Gabriel Scott · Pider Ro’s historier",
+          "Mandal: litteraturkväll på Buen 22 oktober kl. 18:00–20:00."
+        ],
+        "da": [
+          "Gabriel Scott · Pider Ro’s historier",
+          "Mandal: litteraturaften på Buen 22. oktober kl. 18:00–20:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Gratis presentasjon av nyutgivelsen i biblioteket. Arrangører: Gabriel Scott Selskabet og Lindesnesbibliotekene. Oppgitt varighet er to timer; sjekk praktiske vilkår hos arrangøren."
+        ],
+        "en": [
+          "Free presentation of the new edition in the library. Organised by Gabriel Scott Selskabet and Lindesnesbibliotekene. Listed duration: two hours; check practical arrangements with the organiser."
+        ],
+        "uk": [
+          "Безкоштовна презентація перевидання в бібліотеці. Організатори: Gabriel Scott Selskabet і Lindesnesbibliotekene. Заявлена тривалість — дві години; практичні умови уточнюйте в організатора."
+        ],
+        "sv": [
+          "Gratis presentation av nyutgåvan i biblioteket. Arrangörer: Gabriel Scott Selskabet och Lindesnesbibliotekene. Angiven längd är två timmar; kontrollera praktiska villkor med arrangören."
+        ],
+        "da": [
+          "Gratis præsentation af nyudgivelsen i biblioteket. Arrangører: Gabriel Scott Selskabet og Lindesnesbibliotekene. Angivet varighed er to timer; spørg arrangøren om praktiske vilkår."
         ]
       }
     }
