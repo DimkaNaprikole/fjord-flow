@@ -43,6 +43,14 @@ body.reference-layout .follow-menu-cloud > .site-group-links:not([hidden]) {
 .follow-menu-cloud :is(a,button,select):focus-visible {
   outline: 3px solid #b57c18; outline-offset: 2px;
 }
+@media (min-width:651px) and (max-width:1000px) {
+  body.reference-layout .follow-menu-cloud > .site-group-links:not([hidden]) {
+    gap: 6px 8px; padding: 10px 12px;
+  }
+  body.reference-layout .follow-menu-cloud .site-group-links a {
+    font-size: 12px; white-space: nowrap;
+  }
+}
 @media (max-width:650px) {
   .follow-menu-cloud.is-moving { grid-template-columns: minmax(0,1fr) 76px; }
   body .follow-menu-cloud > nav.site-tabs { gap: 2px 4px; padding: 6px 8px; }
