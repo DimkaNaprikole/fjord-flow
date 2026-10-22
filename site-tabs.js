@@ -50,7 +50,7 @@
  }
  function refresh(){
   if(refreshing)return;refreshing=true;
-  [...main.children].forEach(el=>{el.dataset.siteTab=el.dataset.fjordGroupMenu||keyForId(el.id);});
+  [...main.children].forEach(el=>{if(el.dataset.followMenuGap)return;el.dataset.siteTab=el.dataset.fjordGroupMenu||keyForId(el.id);});
   for(const el of nav.children)if(el.matches('a,button')&&!el.dataset.primaryTab){el.dataset.legacyTab='';el.hidden=true;el.removeAttribute('role');el.removeAttribute('aria-selected');el.tabIndex=-1;}
   for(const id of ['advertising','contact','norwayOverview']){const el=document.getElementById(id);if(el)el.dataset.siteTab='home';}
   const hero=main.querySelector('.hero');if(hero&&!hero.id)hero.id='homePanel';

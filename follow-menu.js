@@ -7,16 +7,19 @@
   const menus = [...document.querySelectorAll('.site-group-links')];
   const host = document.createElement('div');
   host.className = 'follow-menu-cloud';
+  host.dataset.followMenuGap = 'true';
   const slots = new Map();
-  let moved = false, queued = false, endFollow = 0;
+  let moved = false, queued = false, endFollow = 0, revealPending = false, endActive = false;
   function jump(end) {
     const run = ++endFollow;
+    endActive = end;
     window.scrollTo({top: end ? document.documentElement.scrollHeight : 0, behavior:'instant'});
     schedule();
     if (!end) return;
     const until = performance.now() + 1200;
     function settle() {
-      if (run !== endFollow || performance.now() >= until) return;
+      if (run !== endFollow) return;
+      if (performance.now() >= until) { endActive = false; return; }
       if (document.documentElement.scrollHeight - innerHeight - scrollY > 1)
         window.scrollTo({top:document.documentElement.scrollHeight,behavior:'instant'});
       requestAnimationFrame(settle);
@@ -24,24 +27,23 @@
     requestAnimationFrame(settle);
   }
   for (const name of ['wheel','touchstart','pointerdown','keydown'])
-    addEventListener(name, () => { endFollow++; }, {passive:true});
-  const controls = document.createElement('div');
-  controls.className = 'follow-menu-ends';
-  controls.dataset.i18nIgnore = '';
+    addEventListener(name, () => { endFollow++; endActive = false; }, {passive:true});
+  const controls = [];
   for (const [label, end] of [['Home ↑', false], ['End ↓', true]]) {
+    const box = document.createElement('div');
+    box.className = end ? 'follow-menu-end' : 'follow-menu-home';
+    box.dataset.i18nIgnore = '';
     const button = document.createElement('button');
     button.type = 'button'; button.textContent = label;
-    button.addEventListener('click', () => {
-      jump(end);
-    });
-    controls.append(button);
+    button.addEventListener('click', () => jump(end));
+    box.append(button); controls.push(box);
   }
   document.body.append(host);
   function visibleMenu() { return menus.find(menu => !menu.hidden); }
   function restore() {
     if (!moved) return;
     for (const [node, slot] of slots) { slot.before(node); slot.remove(); }
-    slots.clear(); controls.remove(); host.classList.remove('is-moving'); moved = false;
+    slots.clear(); controls.forEach(box => box.remove()); document.body.append(host); host.classList.remove('is-moving'); moved = false;
   }
   function transfer() {
     for (const node of [nav, ...menus]) {
@@ -51,24 +53,33 @@
       slot.setAttribute('aria-hidden', 'true');
       node.before(slot); slots.set(node, slot); host.append(node);
     }
-    (visibleMenu() || host).append(controls); moved = true; host.classList.add('is-moving');
+    controls.forEach(box => host.append(box)); moved = true; host.classList.add('is-moving');
   }
   function place() {
     const rail = slots.get(nav).getBoundingClientRect();
-    host.style.left = Math.max(0, rail.left) + 'px';
     host.style.width = Math.min(innerWidth, rail.width) + 'px';
-    const height = host.getBoundingClientRect().height;
-    const limit = Math.max(24, innerHeight - height - 18);
-    const boundaries = [...main.children].filter(el => !el.hidden && !el.classList.contains('follow-menu-subslot') && !el.classList.contains('site-group-links'))
-      .map(el => el.getBoundingClientRect().top).filter(top => top >= 24 && top <= limit);
-    const next = boundaries.length ? Math.max(...boundaries) : limit;
-    const pageEnd = Math.max(0, document.documentElement.scrollHeight - height - 32);
-    host.style.top = Math.min(pageEnd, scrollY + next) + 'px';
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      host.animate([{opacity:0,transform:'translateY(14px) scale(.98)',filter:'blur(7px)'},
-        {opacity:1,transform:'translateY(0) scale(1)',filter:'blur(0)'}],{duration:330,easing:'ease-out'});
+    const targets = [...main.children].filter(el => !el.hidden && !el.dataset.followMenuGap
+      && !el.classList.contains('follow-menu-subslot') && !el.classList.contains('site-group-links'))
+      .filter(el => { const box = el.getBoundingClientRect(); return box.height > 0 && box.top >= 16; });
+    // Occupy real layout space at a section boundary; never cover its heading/photo.
+    if (targets.length) {
+      if (targets[0].previousElementSibling === host) return;
+      targets[0].before(host);
+    } else {
+      if (main.lastElementChild === host) return;
+      main.append(host);
     }
+    revealPending = true;
   }
+  function reveal() {
+    const box = host.getBoundingClientRect();
+    if (!revealPending || box.top >= innerHeight || box.bottom <= 0) return;
+    revealPending = false;
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
+      host.animate([{opacity:0,transform:'translateY(8px)',filter:'blur(4px)'},
+        {opacity:1,transform:'translateY(0)',filter:'blur(0)'}],{duration:260,easing:'ease-out'});
+  }
+
   function update() {
     queued = false;
     if (moved && slots.get(nav).getBoundingClientRect().bottom > 0) restore();
@@ -76,15 +87,18 @@
       const last = visibleMenu() || nav;
       if (Math.max(nav.getBoundingClientRect().bottom, last.getBoundingClientRect().bottom) <= 0) { transfer(); place(); }
     } else {
-      (visibleMenu() || host).append(controls);
       for (const menu of menus) slots.get(menu).style.height = (!menu.hidden ? menu.getBoundingClientRect().height : 0) + 'px';
       const box = host.getBoundingClientRect();
-      if (box.bottom <= 0 || box.top >= innerHeight) place();
+      if (box.bottom <= 0 && !endActive) place();
     }
+    if (moved) reveal();
   }
   function schedule() { if (!queued) { queued = true; requestAnimationFrame(update); } }
   addEventListener('scroll', schedule, {passive:true});
-  addEventListener('resize', () => { if (moved) place(); schedule(); });
+  addEventListener('resize', () => { if (moved) {
+    const rail = slots.get(nav).getBoundingClientRect();
+    host.style.width = Math.min(innerWidth, rail.width) + 'px';
+  } schedule(); });
   addEventListener('fjord:sections-changed', schedule);
   addEventListener('pageshow', schedule);
   update();
