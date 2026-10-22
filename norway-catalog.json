@@ -3820,6 +3820,8 @@
     "latitude": 58.02057,
     "longitude": 7.45045,
     "coordinatePrecision": "area",
+    "routeQuery": "Piren parkering, Sjøsanden, Mandal, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Piren%20parkering%2C%20Sj%C3%B8sanden%2C%20Mandal%2C%20Norway",
     "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Sj%C3%B8sanden&fuzzy=false&treffPerSide=10",
     "website": "https://www.visitnorway.com/listings/sjosanden-beach/17423/",
     "source": "https://www.visitnorway.com/listings/sjosanden-beach/17423/",
@@ -3865,13 +3867,23 @@
         "original": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Sjosanden_fra_piren.JPG"
       }
     ],
-    "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=58.02057%2C7.45045",
     "county": "Agder",
     "countyId": "42",
     "municipality": "Lindesnes",
     "municipalityId": "4205",
     "countySource": "https://api.kartverket.no/kommuneinfo/v1/punkt?nord=58.02057&ost=7.45045&koordsys=4258",
-    "coordinateKey": "58.02057,7.45045"
+    "coordinateKey": "58.02057,7.45045",
+    "visitInfo": {
+      "checked": "2026-10-22",
+      "source": "https://www.lindesnes.kommune.no/_f/p1/ia03cc150-83fa-4ae6-8c43-d4d2181a5134/badstustrategi-i-lindesnes-kommune.pdf#page=10",
+      "text": {
+        "nb": "Kommunen beskriver parkering ved Piren/Sjøsanden. Bilveibeskrivelsen søker etter denne parkeringen; fortsett til fots langs strandpromenaden og følg lokale skilt. Kartpunktet viser strandområdet, ikke en bekreftet parkeringsinnkjøring. Sjekk kartets treff før avreise; ledige plasser og nøyaktig innkjøring er ikke bekreftet.",
+        "en": "The municipality identifies parking at Piren/Sjøsanden. Driving directions search for this parking area; continue on foot along the promenade and follow local signs. The map marker represents the beach area, not a verified parking entrance. Check the map result before travelling; spaces and the exact entrance are not confirmed.",
+        "uk": "Комуна вказує парковку біля Piren/Sjøsanden. Автомаршрут шукає цю парковку; далі йдіть набережною пішки й дотримуйтеся місцевих знаків. Позначка на карті показує пляжну зону, а не перевірений в’їзд на парковку. Перед поїздкою перевірте результат пошуку на карті; вільні місця й точний в’їзд не підтверджені.",
+        "sv": "Kommunen anger parkering vid Piren/Sjøsanden. Bilvägbeskrivningen söker efter denna parkering; fortsätt till fots längs strandpromenaden och följ lokala skyltar. Kartpunkten visar strandområdet, inte en verifierad parkeringsinfart. Kontrollera kartans träff före avresa; lediga platser och exakt infart är inte bekräftade.",
+        "da": "Kommunen angiver parkering ved Piren/Sjøsanden. Bilruten søger efter denne parkering; fortsæt til fods langs strandpromenaden og følg lokale skilte. Kortpunktet viser strandområdet, ikke en bekræftet parkeringsindkørsel. Tjek kortets resultat før afrejse; ledige pladser og den præcise indkørsel er ikke bekræftet."
+      }
+    }
   },
   {
     "id": "odderoya-kristiansand",

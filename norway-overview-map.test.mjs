@@ -33,7 +33,7 @@ import vm from 'node:vm';
 const flush = async () => {for(let i=0;i<30;i++)await Promise.resolve();};
 function overviewHarness({catalogueRows=[],extraRows=[],catalogueContent}={}){
  const nodes=[],events={},calls={create:0,geolocation:0,locations:[],fetches:[],renders:[],selections:[]};
- let resolveCatalogue,resolveMap;
+ let resolveCatalogue,resolveMap,showcaseOptions;
  const catalogue=new Promise(resolve=>{resolveCatalogue=()=>resolve({ok:true,json:async()=>catalogueRows});});
  const mapReady=new Promise(resolve=>{resolveMap=()=>resolve(map);});
  const map={resize(){},render(rows,route,category,fit){calls.renders.push(rows);calls.selections.push({route,category,fit,ids:filterPlaces(rows,category).map(p=>p.id)});return rows.length;},locate(p){calls.locations.push(p);}};
@@ -41,9 +41,23 @@ function overviewHarness({catalogueRows=[],extraRows=[],catalogueContent}={}){
  const footer=node('footer');
  const window={FjordCatalogueContent:catalogueContent,FjordGoogleMapConfig:{enabled:true},FjordGoogleStandardMap:{create(){calls.create++;return mapReady;}},FjordBrowserGeolocation:{locate(){calls.geolocation++;return {promise:Promise.resolve({coords:{latitude:60.3592,longitude:10.5728}})};}},addEventListener(k,fn){events[k]=fn;}};
  const document={documentElement:{lang:'en'},createElement:node,querySelector:s=>s==='footer'?footer:null};
+ window.FjordMapShowcase={mount(section,options){showcaseOptions=options;return {sync(){},select(){},lock(){},refresh(){}};}};
  vm.runInNewContext(readFileSync(new URL('./norway-overview-map.js',import.meta.url),'utf8'),{window,document,URL,AbortController,setTimeout,clearTimeout,fetch(url){calls.fetches.push(url);return url.includes('norway-catalog')?catalogue:Promise.resolve({ok:true,json:async()=>url.includes('map-attractions')?extraRows:[]});}});
- return {calls,events,window,resolveCatalogue,resolveMap,filters:nodes.find(n=>n.className==='norway-overview__filters'),fit:nodes.find(n=>n.tag==='button'&&n.textContent==='Show selection'),standard:nodes.find(n=>n.tag==='button'&&n.textContent==='Google Maps'),location:nodes.find(n=>n.tag==='button'&&n.textContent.includes('My location'))};
+ return {calls,events,window,resolveCatalogue,resolveMap,get showcase(){return showcaseOptions;},filters:nodes.find(n=>n.className==='norway-overview__filters'),fit:nodes.find(n=>n.tag==='button'&&n.textContent==='Show selection'),standard:nodes.find(n=>n.tag==='button'&&n.textContent==='Google Maps'),location:nodes.find(n=>n.tag==='button'&&n.textContent.includes('My location'))};
 }
+
+test('opening a map photograph retains verified access notes, source and independent check date',async()=>{
+ const h=overviewHarness(),opened=[];
+ h.resolveCatalogue();h.resolveMap();await h.standard.click();
+ h.window.FjordStayGallery={open:record=>opened.push(record)};
+ const place=JSON.parse(readFileSync(new URL('./norway-catalog.json',import.meta.url))).find(p=>p.id==='sjosanden-mandal');
+ h.showcase.open(place);
+ assert.equal(opened[0].visitInfo,place.visitInfo);
+ assert.equal(opened[0].directionsUrl,place.directionsUrl);
+ assert.equal(opened[0].openingHours.checked,'2026-10-18');
+ h.showcase.open({name:'Fallback',address:'Mandal',description:{en:'Beach walk'},website:'https://example.org/',checked:'2026-10-18'});
+ assert.match(opened[1].visitInfo.text,/Mandal.*Beach walk/);
+});
 test('immediate cached GPS waits for shared deferred catalogue and map activation',async()=>{
  const h=overviewHarness();
  const first=h.standard.click(),second=h.standard.click(),location=h.location.click();

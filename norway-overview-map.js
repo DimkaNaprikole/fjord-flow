@@ -156,7 +156,7 @@
     onCategory:key=>{category=key;labels();if(loaded)draw(true);},
     open:p=>{
       if(p.category==='equipment'){window.dispatchEvent(new CustomEvent('fjord:bua-select',{detail:{id:p.id}}));return;}
-      if(window.FjordStayGallery){window.FjordStayGallery.open({...p,name:localized(p.name),image:typeof p.image==='object'?p.image.url:p.image,visitInfo:{text:[p.address,localized(p.description),p.stores?.map(s=>s.name).join(' · ')].filter(Boolean).join(' · '),source:p.website,checked:p.checked,expanded:true}});return;}
+      if(window.FjordStayGallery){window.FjordStayGallery.open({...p,name:localized(p.name),image:typeof p.image==='object'?p.image.url:p.image,visitInfo:p.visitInfo?.text?p.visitInfo:{text:[p.address,localized(p.description),p.stores?.map(s=>s.name).join(' · ')].filter(Boolean).join(' · '),source:p.website,checked:p.checked,expanded:true}});return;}
       window.dispatchEvent(new CustomEvent(p.destinationId?'fjord:open-place':'fjord:catalogue-select',{detail:{id:p.destinationId||p.id}}));
     }
   });

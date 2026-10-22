@@ -74,6 +74,8 @@
     "latitude": 58.02057,
     "longitude": 7.45045,
     "coordinatePrecision": "area",
+    "routeQuery": "Piren parkering, Sjøsanden, Mandal, Norway",
+    "directionsUrl": "https://www.google.com/maps/dir/?api=1&travelmode=driving&destination=Piren%20parkering%2C%20Sj%C3%B8sanden%2C%20Mandal%2C%20Norway",
     "coordinatesSource": "https://ws.geonorge.no/stedsnavn/v1/navn?sok=Sj%C3%B8sanden&fuzzy=false&treffPerSide=10",
     "website": "https://www.visitnorway.com/listings/sjosanden-beach/17423/",
     "source": "https://www.visitnorway.com/listings/sjosanden-beach/17423/",
