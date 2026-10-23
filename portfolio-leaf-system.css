@@ -1,0 +1,23 @@
+/* Shared leaf geometry extends the accepted neutral controls; photos keep their frames. */
+body.portfolio-demo.editorial-edition.ff-leaf-system{--ff-cut:var(--ff-leaf-shape)}
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys :is(.button,.ref-link,.postcard-toggle,.photo-hint,.category,.catalogue-flip-toggle,.norway-catalog-photo-label,.norway-catalog-more,.norway-catalog-gps,.norway-catalog-retry,.norway-catalog-actions a,#filters button,.place-pagination button,input:not([type=checkbox]),select,summary),
+body.portfolio-demo.editorial-edition.ff-leaf-system header :is(select,.ff-select-trigger),
+body.portfolio-demo.editorial-edition.ff-leaf-system dialog :is(button:not(.stay-gallery-thumb),a.button,input:not([type=checkbox]),select){border-radius:var(--ff-leaf-shape)!important}
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys :is(.collection-search,#norwayCatalogue) input:not([type=checkbox]){padding-left:19px!important;padding-right:19px!important;background:linear-gradient(175deg,#fff,#f3f3f3)!important;color:#252525!important;border-bottom:3px solid #b7b7b7!important;min-height:48px!important;box-sizing:border-box!important}
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #norwayCatalogue .ff-select{display:block;margin-top:7px}
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #norwayCatalogue .ff-select>.ff-select-trigger{border-radius:var(--ff-leaf-shape)!important;color:#252525!important;background:linear-gradient(175deg,#fff,#f0f0f0)!important;transform:none!important}
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #cards .compact-postcard .photo .photo-hint{left:12px!important;right:auto!important;bottom:calc(var(--ff-photo-caption-height,80px) + 12px)!important;top:auto!important;transform:none!important;border-radius:var(--ff-leaf-shape)!important;max-width:calc(100% - 24px)!important}
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #cards .compact-postcard .photo .category{border-radius:var(--ff-leaf-shape)!important}
+.ff-leaf-system .gallery-stage,.ff-leaf-system .stay-gallery-stage{position:relative}
+.ff-leaf-system .ff-photo-corner{position:absolute;left:12px;bottom:12px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 17px;box-sizing:border-box;border-radius:var(--ff-leaf-shape);background:linear-gradient(175deg,#fff,#ededed);color:#252525;border:1px solid #ccc;border-bottom:3px solid #aaa;box-shadow:inset 0 1px 0 #fff,0 3px 8px #0003;font:700 12px/1.4 Manrope,sans-serif;text-shadow:none;pointer-events:none}
+body.portfolio-demo.editorial-edition.ff-leaf-system :is(#galleryClose,#galleryPrev,#galleryNext,.stay-gallery-icon){border-radius:22px 4px 22px 4px!important;min-width:44px!important;min-height:44px!important}
+/* Hide the native fallback without inheriting margins/width from earlier page styles. */
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys select.ff-select-native,body.portfolio-demo.editorial-edition.ff-leaf-system header select.ff-select-native,body.portfolio-demo.editorial-edition.ff-leaf-system dialog select.ff-select-native{width:1px!important;min-width:0!important;height:1px!important;min-height:0!important;margin:-1px!important;padding:0!important;border:0!important}
+@media(max-width:420px){
+ body.portfolio-demo.editorial-edition.ff-leaf-system #galleryDialog .gallery-top{position:relative;display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;gap:8px!important;padding:14px!important}
+ body.portfolio-demo.editorial-edition.ff-leaf-system #galleryDialog .gallery-top>div{grid-column:1/-1;min-width:0;padding-right:42px}
+ body.portfolio-demo.editorial-edition.ff-leaf-system #galleryDialog #galleryTitle{font-size:22px!important;line-height:1.18!important;letter-spacing:-.04em!important;word-break:normal!important}
+ body.portfolio-demo.editorial-edition.ff-leaf-system #galleryDialog #municipalityBadge{position:static!important;grid-column:1/-1;display:flex!important;justify-content:flex-start!important;gap:8px!important;max-width:100%!important}
+ body.portfolio-demo.editorial-edition.ff-leaf-system #galleryDialog #municipalityArms{width:26px!important;height:32px!important;object-fit:contain!important}
+ body.portfolio-demo.editorial-edition.ff-leaf-system #galleryDialog #galleryClose{position:absolute!important;right:10px!important;top:10px!important}
+}

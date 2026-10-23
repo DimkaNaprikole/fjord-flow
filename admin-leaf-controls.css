@@ -1,0 +1,58 @@
+/* Admin adapter only. Shared ff-leaf-controls.css owns surfaces and select menus. */
+body.ff-admin-leaf {
+  --ff-leaf-shape: 28px 5px 28px 5px;
+  --ff-leaf-surface: #fff;
+  --ff-leaf-ink: #252525;
+}
+body.ff-admin-leaf :is(button, .header-actions > a, input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]), select, textarea) {
+  border-radius: var(--ff-leaf-shape);
+  max-width: 100%;
+}
+body.ff-admin-leaf :is(.editor-panel, .preview-language) .ff-select {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: 7px;
+}
+body.ff-admin-leaf .ff-select > button {
+  width: 100%;
+  min-height: 44px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+/* Secondary text in selectable place rows must follow the light control. */
+body.ff-admin-leaf .place-list-item small { color: #535a60; }
+body.ff-admin-leaf .place-list-item[aria-pressed="true"] small { color: inherit; }
+body.ff-admin-leaf button { min-height: 44px; }
+body.ff-admin-leaf :is(button, .header-actions > a),body.ff-admin-leaf #publish {
+  border-radius:var(--ff-leaf-shape)!important;
+  background:linear-gradient(175deg,#fff,#ededed)!important;
+  color:#252525!important;text-shadow:none!important;
+  border:1px solid #c8c8c8!important;border-bottom:3px solid #aaa!important;
+  box-shadow:inset 0 1px 0 #fff,0 3px 7px #0002!important;
+}
+body.ff-admin-leaf :is(button[aria-pressed="true"],.place-list-item[aria-pressed="true"]){
+  background:linear-gradient(#454545,#292929)!important;color:#fff!important;
+  border-color:#666!important;border-bottom-color:#161616!important;
+}
+body.ff-admin-leaf button:is(:hover,:focus-visible):not(:disabled){box-shadow:inset 0 1px 0 #fff,0 0 0 2px #ffffff40,0 6px 12px #0003!important}
+body.ff-admin-leaf button:active:not(:disabled){box-shadow:inset 0 2px 5px #0003,0 1px 2px #0001!important}
+body.ff-admin-leaf :is(.editor-panel,.auth-dialog,.preview-language) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="range"]),textarea,select){background:#fff!important;color:#252525!important;border:1px solid #c8c8c8!important;border-radius:var(--ff-leaf-shape)!important;box-shadow:inset 0 1px 3px #0001!important}
+body.ff-admin-leaf select.ff-select-native{width:1px!important;min-width:0!important;height:1px!important;min-height:0!important;padding:0!important;margin:-1px!important;border:0!important}
+body.ff-admin-leaf :is(button, .header-actions > a):focus-visible {
+  outline: 3px solid #d5c08b;
+  outline-offset: 3px;
+}
+body.ff-admin-leaf input[type="file"]::file-selector-button {
+  font: inherit;
+  color: var(--ff-leaf-ink);
+  background: var(--ff-leaf-surface);
+  border: 1px solid #b7bbbe;
+  border-radius: var(--ff-leaf-shape);
+  padding: 8px 14px;
+  margin-right: 10px;
+}
+body.ff-admin-leaf input[type="file"] { white-space: normal; }
+@media (prefers-reduced-motion: reduce) {
+  body.ff-admin-leaf :is(button, input, select, textarea) { transition: none; }
+}

@@ -1,0 +1,22 @@
+/* FJORD FLOW control vocabulary. Leaf shape, pearl material, readable labels. */
+.ff-leaf-system{--ff-leaf-shape:28px 5px 28px 5px;--ff-leaf-surface:#fff;--ff-leaf-ink:#252525;--ff-leaf-edge:#ccc;--ff-leaf-focus:#313131;color-scheme:light}
+.ff-select{position:relative;display:inline-block;vertical-align:middle;min-width:0;max-width:100%;width:100%;box-sizing:border-box}
+.ff-select-native{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;border:0!important;opacity:0!important;overflow:hidden!important;clip-path:inset(50%)!important;pointer-events:none!important}
+.ff-leaf-system .ff-select>.ff-select-trigger{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;width:100%!important;max-width:100%!important;min-height:48px!important;margin:0!important;padding:11px 18px!important;box-sizing:border-box!important;border:1px solid var(--ff-leaf-edge)!important;border-bottom:3px solid #b0b0b0!important;border-radius:var(--ff-leaf-shape)!important;background:linear-gradient(175deg,#fff,#f0f0f0)!important;color:var(--ff-leaf-ink)!important;box-shadow:inset 0 1px 0 #fff,0 3px 7px #00000016!important;text-shadow:none!important;font:600 14px/1.5 Manrope,system-ui,sans-serif!important;letter-spacing:0!important;text-align:left!important;cursor:pointer;transform:none!important;transition:box-shadow .18s ease,background .18s ease!important}
+.ff-select-label{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;pointer-events:none}
+.ff-select-chevron{flex:none;width:8px;height:8px;border:solid currentColor;border-width:0 1.5px 1.5px 0;transform:rotate(45deg);margin:-4px 2px 0 0;pointer-events:none}
+.ff-leaf-system .ff-select-trigger::before,.ff-leaf-system .ff-select-trigger::after{content:none!important}
+.ff-leaf-system .ff-select-trigger:is(:hover,[aria-expanded=true]){background:linear-gradient(#fff,#f7f7f2)!important;box-shadow:inset 0 1px 0 #fff,0 0 0 2px #fff8,0 5px 12px #0002!important}
+.ff-leaf-system .ff-select-trigger:active{box-shadow:inset 0 2px 5px #0002,0 1px 2px #0001!important}
+.ff-leaf-system .ff-select-trigger:focus-visible{outline:2px solid var(--ff-leaf-focus)!important;outline-offset:3px!important}
+.ff-leaf-system .ff-select-trigger:disabled{opacity:.55;cursor:not-allowed}
+.ff-leaf-menu{position:fixed;z-index:50000;box-sizing:border-box;margin:0;padding:8px;overflow:auto;overscroll-behavior:contain;border:1px solid #bcbcbc;border-bottom:3px solid #aaa;border-radius:28px 5px 28px 5px;background:#fff!important;color:#252525!important;box-shadow:0 12px 32px #0003,0 2px 5px #0002;font:600 14px/1.5 Manrope,system-ui,sans-serif;text-shadow:none;color-scheme:light}
+.ff-leaf-menu[hidden]{display:none!important}
+.ff-leaf-option{display:flex;align-items:center;gap:10px;min-height:44px;box-sizing:border-box;padding:10px 15px;border-radius:20px 4px 20px 4px;background:#fff;color:#252525;cursor:pointer;overflow-wrap:anywhere}
+.ff-leaf-option::before{content:'';width:7px;height:7px;border:1px solid #aaa;border-radius:7px 1px 7px 1px;flex:none}
+.ff-leaf-option[aria-selected=true]{background:#ececec;color:#171717;font-weight:800}
+.ff-leaf-option[aria-selected=true]::before{background:#454545;border-color:#454545}
+.ff-leaf-option.is-active,.ff-leaf-option:hover{background:#f2f1ea;color:#171717;outline:1px solid #ccc;outline-offset:-1px}
+.ff-leaf-option[aria-disabled=true]{opacity:.5;cursor:default}
+.ff-leaf-system select option,.ff-leaf-system select optgroup{background:#fff!important;color:#252525!important;text-shadow:none!important}
+@media(prefers-reduced-motion:reduce){.ff-leaf-system .ff-select-trigger{transition:none!important}}
