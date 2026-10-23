@@ -1,0 +1,32 @@
+/* Scoped portfolio states: retain the existing artwork, geometry and typography. */
+.portfolio-demo .portfolio-notice{display:flex;justify-content:center;gap:18px;align-items:center;flex-wrap:wrap;padding:11px 6%;background:#f5f6f8ed;color:#23333e;border-block:1px solid #c4ced6;font:12px 'DM Sans',sans-serif;position:relative;z-index:2}
+.portfolio-notice strong{font-size:10px;letter-spacing:.16em}.portfolio-scene-note{font-size:14px;line-height:1.55}
+.portfolio-demo>header{min-height:155px!important;height:auto!important;display:flex!important;align-items:center!important;padding:24px 5%!important;gap:24px!important}
+.portfolio-demo>header>.solidarity-art-pair{opacity:.2!important}.portfolio-demo>header>.header-branding>.brand{width:300px!important;background:#ffffffc9;box-shadow:0 0 18px 10px #ffffffc9}
+.portfolio-demo>header>.header-branding>.brand>span{font-size:11px!important;white-space:normal!important}
+.portfolio-demo>header>nav{position:relative!important;z-index:3;display:flex!important;align-items:center;justify-content:center;gap:20px;margin-left:auto;flex-wrap:wrap}
+.portfolio-demo>header>nav a{font-weight:700;color:#193847;background:#ffffffb5;padding:8px 10px;border-radius:4px}
+.portfolio-demo>header .header-tools{position:relative;z-index:3}
+.portfolio-demo #advertising{min-height:clamp(500px,72vh,760px);margin-top:20px}
+.portfolio-demo .advertising-message{width:min(500px,calc(100% - 64px));bottom:40px}
+.portfolio-demo #advertising .advertising-message,.portfolio-demo #advertising .advertising-message h2{color:#fff!important;text-shadow:0 2px 5px #071e2d,0 4px 18px #071e2d!important}
+.portfolio-demo #advertising .portfolio-scene-note{color:#fff!important;font-weight:600;padding:8px 12px;display:inline-block;background:#0a223ac9;border-radius:5px;text-shadow:none!important}
+.portfolio-demo .advertising-message h2{font-family:'Manrope',sans-serif;font-size:clamp(40px,6vw,76px);line-height:1.05;letter-spacing:-.04em}
+.portfolio-demo #advertising .advertising-brand img{max-width:230px;height:auto;filter:brightness(0) invert(1)!important}
+.portfolio-demo :is(.button,.welcome-film-trigger,.ref-link,.norway-catalog-gps,.norway-catalog-more){background:rgba(255,255,255,.92)!important;color:#172d3c!important;border:1px solid rgba(39,62,78,.25)!important;box-shadow:0 4px 16px #10283d12!important;backdrop-filter:blur(9px)}
+.portfolio-demo :is(.button,.welcome-film-trigger,.ref-link,.norway-catalog-more):hover{background:#fff!important;color:#142837!important;border-color:#526a7c!important}
+.portfolio-demo :is(button,a,select,input):focus-visible{outline:3px solid #d7b66b!important;outline-offset:4px}
+.portfolio-demo :is(#filters button,.roadtrip-presets>button,.explorer-tabs button,.norway-catalog-controls button){color:#203846!important}
+.portfolio-demo #filters button.active{background:#ffffffd9!important;color:#142d3f!important;border-color:#526a7c!important}
+.portfolio-demo .hero .hero-content{padding-top:80px}
+.portfolio-demo footer{color:#20343d}.portfolio-demo footer p{color:#3f5260}
+.portfolio-demo .route-privacy{color:#445564!important}
+.portfolio-demo #galleryDialog .button,.portfolio-demo #galleryDialog #selectAllStops{background:#f8fafb!important;color:#173343!important;border:1px solid #b4c4cf!important}
+.portfolio-demo #galleryDialog .button *{color:inherit!important}
+.portfolio-demo #galleryDialog .route-privacy{color:#dce8ef!important}
+.portfolio-demo #norwayCatalogue :is(.norway-catalog-photo-label,.catalogue-flip-toggle,.norway-catalog-actions a,.norway-catalog-more,.norway-catalog-retry){background:rgba(255,255,255,.94)!important;color:#173343!important;border:1px solid #b6c7d2!important;animation:none!important;text-shadow:none!important;box-shadow:0 3px 14px #10283d20!important}
+.portfolio-demo #advertising .portfolio-first-cta{text-shadow:none!important}
+.portfolio-demo.reference-layout #journeys .collection-search{display:block!important;margin-top:24px}
+.portfolio-demo.reference-layout #journeys .filterline{display:flex!important}
+.portfolio-demo.reference-layout #journeys #cards{display:grid!important}
+@media(max-width:650px){.portfolio-demo>header{min-height:150px!important;gap:14px!important;padding:18px 6%!important;justify-content:space-between!important}.portfolio-demo>header>.header-branding>.brand{width:158px!important}.portfolio-demo>header>.header-branding>.brand>span{font-size:8px!important}.portfolio-demo>header>nav{order:3;width:100%;margin:0;gap:4px!important}.portfolio-demo>header>nav a{font-size:11px;padding:7px 9px}.portfolio-demo .portfolio-notice{gap:5px;text-align:center;font-size:11px}.portfolio-demo #advertising{min-height:555px;margin-inline:10px;background:#173342!important}.portfolio-demo #advertising>.hero-artwork{display:none}.portfolio-demo .advertising-background-film{height:235px;object-fit:contain!important;object-position:center center!important}.portfolio-demo .advertising-message{right:20px;top:248px;bottom:auto;width:calc(100% - 40px);text-align:left}.portfolio-demo .advertising-message h2{font-size:38px!important;margin-bottom:14px}.portfolio-demo #advertising .advertising-brand img{max-width:170px}.portfolio-demo #advertising .portfolio-scene-note{padding:6px 0;background:none;font-size:12px;margin-bottom:14px}.portfolio-demo .portfolio-first-cta{width:auto;max-width:100%;font-size:12px}.portfolio-demo .route-origin-row{display:block}}
