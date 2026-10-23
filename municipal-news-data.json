@@ -6916,6 +6916,100 @@
           "Arbejdet gælder nye vejunderføringer til vand. Tiderne er lokal norsk tid."
         ]
       }
+    },
+    {
+      "id": "bergen-julemarked-2026",
+      "municipality": "4601",
+      "category": "events",
+      "published": "2026-10-23",
+      "publishedKind": "editorial",
+      "sourcePublished": null,
+      "checked": "2026-10-23",
+      "eventDate": "2026-11-20",
+      "eventDates": [
+        "2026-11-20",
+        "2026-11-21",
+        "2026-11-22",
+        "2026-11-23",
+        "2026-11-24",
+        "2026-11-25",
+        "2026-11-26",
+        "2026-11-27",
+        "2026-11-28",
+        "2026-11-29",
+        "2026-11-30",
+        "2026-12-01",
+        "2026-12-02",
+        "2026-12-03",
+        "2026-12-04",
+        "2026-12-05",
+        "2026-12-06",
+        "2026-12-07",
+        "2026-12-08",
+        "2026-12-09",
+        "2026-12-10",
+        "2026-12-11",
+        "2026-12-12",
+        "2026-12-13",
+        "2026-12-14",
+        "2026-12-15",
+        "2026-12-16",
+        "2026-12-17",
+        "2026-12-18",
+        "2026-12-19",
+        "2026-12-20",
+        "2026-12-21",
+        "2026-12-22"
+      ],
+      "expires": "2026-12-22T21:00:00+01:00",
+      "source": "Bergen Julemarked / Visit Bergen",
+      "url": "https://bergenjulemarked.no/",
+      "verificationUrls": [
+        "https://www.visitbergen.com/hva-skjer/bergen-julemarked-p3708833"
+      ],
+      "location": "Festplassen, Bergen",
+      "time": "20.11–22.12.2026 · Mon–Fri 12:00–21:00; Sat–Sun 10:00–21:00 (Europe/Oslo)",
+      "mapQuery": "Festplassen, Bergen",
+      "copy": {
+        "nb": [
+          "Bergen Julemarked på Festplassen",
+          "Julemarked med håndverk, mat og familieopplevelser, 20. november–22. desember 2026."
+        ],
+        "en": [
+          "Bergen Christmas market at Festplassen",
+          "Crafts, food and family attractions, 20 November–22 December 2026."
+        ],
+        "uk": [
+          "Різдвяний ярмарок у Бергені",
+          "Ремесла, їжа та сімейні розваги на Festplassen, 20 листопада–22 грудня 2026 року."
+        ],
+        "sv": [
+          "Bergens julmarknad på Festplassen",
+          "Hantverk, mat och familjeupplevelser, 20 november–22 december 2026."
+        ],
+        "da": [
+          "Bergens julemarked på Festplassen",
+          "Kunsthåndværk, mad og familieoplevelser, 20. november–22. december 2026."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Åpent mandag–fredag 12:00–21:00, lørdag–søndag 10:00–21:00, norsk lokaltid. Gratis inngang; karuseller, mat og kjøp betales separat. Se arrangørens nettsted for program og endringer."
+        ],
+        "en": [
+          "Open Monday–Friday 12:00–21:00, Saturday–Sunday 10:00–21:00, Norway local time. Entry is free; rides, food and purchases cost extra. Check the organiser for programme updates."
+        ],
+        "uk": [
+          "Відкрито понеділок–п’ятниця 12:00–21:00, субота–неділя 10:00–21:00 за місцевим часом Норвегії. Вхід безкоштовний; атракціони, їжа та покупки оплачуються окремо. Зміни програми перевіряйте в організатора."
+        ],
+        "sv": [
+          "Öppet måndag–fredag 12:00–21:00, lördag–söndag 10:00–21:00, norsk lokal tid. Fri entré; åkattraktioner, mat och inköp kostar extra. Se arrangören för programändringar."
+        ],
+        "da": [
+          "Åbent mandag–fredag 12:00–21:00, lørdag–søndag 10:00–21:00, norsk lokaltid. Gratis adgang; forlystelser, mad og køb betales særskilt. Se arrangøren for programændringer."
+        ]
+      },
+      "textOnly": true
     }
   ],
   "mediaUpdated": "2026-10-19"
