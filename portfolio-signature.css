@@ -1,44 +1,44 @@
-/* Fjord Flow — a tactile control system and a more expressive editorial rhythm. */
-body.portfolio-demo.editorial-edition{--signature-ink:#182b35;--signature-brass:#c5ad79;--signature-line:#d8dcd9;--signature-paper:#f7f7f3}
-body.portfolio-demo.editorial-edition>header{border-top:3px solid var(--signature-ink)!important;border-bottom-color:#dde2e1!important}
+/* Fjord Flow — neutral graphite/silver controls; photography retains its colour. */
+body.portfolio-demo.editorial-edition{--signature-ink:#282828;--signature-silver:#a4a4a4;--signature-line:#dadada;--signature-paper:#f6f6f6}
+body.portfolio-demo.editorial-edition>header{border-top:3px solid var(--signature-ink)!important;border-bottom-color:#e0e0e0!important}
 body.portfolio-demo.editorial-edition>header>nav a{position:relative;font-size:12px!important;letter-spacing:.025em!important;padding:10px 4px!important;border-bottom:0!important}
-body.editorial-edition>header>nav a[aria-current]::after{content:'';position:absolute;height:3px;width:16px;bottom:1px;left:50%;transform:translateX(-50%);border-radius:2px;background:var(--signature-brass)}
-body.editorial-edition>header>nav a:hover{color:#8a6a33!important}
+body.editorial-edition>header>nav a[aria-current]::after{content:'';position:absolute;height:3px;width:16px;bottom:1px;left:50%;transform:translateX(-50%);border-radius:2px;background:var(--signature-silver)}
+body.editorial-edition>header>nav a:hover{color:#626262!important}
 body.editorial-edition #advertising .editorial-eyebrow{display:flex;align-items:center;gap:12px;letter-spacing:.2em!important}
-body.editorial-edition #advertising .editorial-eyebrow::before{content:'';display:block;flex:0 0 28px;height:2px;background:var(--signature-brass)}
+body.editorial-edition #advertising .editorial-eyebrow::before{content:'';display:block;flex:0 0 28px;height:2px;background:var(--signature-silver)}
 body.portfolio-demo.editorial-edition #advertising #advertisingTitle{letter-spacing:-.055em!important;max-width:580px!important}
 body.editorial-edition #advertising #advertisingTitle strong{font-weight:800;line-height:1.04}
 body.editorial-edition #advertising #advertisingTitle span{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-weight:400;letter-spacing:-.055em;line-height:1.08;font-size:.92em}
-body.portfolio-demo.editorial-edition #advertising .editorial-intro{font-size:15px!important;line-height:1.75!important;color:#4b5960!important}
+body.portfolio-demo.editorial-edition #advertising .editorial-intro{font-size:15px!important;line-height:1.75!important;color:#575757!important}
 body.editorial-edition .editorial-landscape>img:first-child{object-position:center 32%!important}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta,
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link{
- display:inline-flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important;min-height:56px!important;padding:8px 9px 8px 21px!important;border:1px solid #30434b!important;border-bottom:3px solid #0c1820!important;border-radius:12px!important;background:linear-gradient(165deg,#314750 0%,#182b35 70%)!important;color:#fff!important;font:700 13px/1.4 Manrope,sans-serif!important;letter-spacing:.015em!important;text-decoration:none!important;text-shadow:none!important;box-shadow:inset 0 1px 0 #ffffff30,0 5px 10px #12232c18!important;transition:transform .16s ease,box-shadow .16s ease!important}
+ display:inline-flex!important;align-items:center!important;justify-content:space-between!important;gap:24px!important;min-height:56px!important;padding:8px 9px 8px 21px!important;border:1px solid #3f3f3f!important;border-bottom:3px solid #171717!important;border-radius:12px!important;background:linear-gradient(165deg,#434343 0%,#282828 70%)!important;color:#ffffff!important;font:700 13px/1.4 Manrope,sans-serif!important;letter-spacing:.015em!important;text-decoration:none!important;text-shadow:none!important;box-shadow:inset 0 1px 0 #ffffff30,0 5px 10px #20202018!important;transition:transform .16s ease,box-shadow .16s ease!important}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta::after,
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link::after{
- content:'↗' / '';display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border:1px solid #d9c69e;border-radius:8px;background:linear-gradient(145deg,#e2d3ad,#bda570);color:#22323a;font:400 21px/1 Manrope,sans-serif;box-shadow:inset 0 1px 0 #fff9,0 2px 3px #0002}
+ content:'↗' / '';display:grid;place-items:center;flex:0 0 34px;width:34px;height:34px;border:1px solid #bfbfbf;border-radius:8px;background:linear-gradient(145deg,#cbcbcb,#9b9b9b);color:#2f2f2f;font:400 21px/1 Manrope,sans-serif;box-shadow:inset 0 1px 0 #ffffff99,0 2px 3px #00000022}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta:hover,
-body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:hover{transform:translateY(-2px)!important;background:linear-gradient(165deg,#425d67,#20343e)!important;color:#fff!important;box-shadow:inset 0 1px 0 #ffffff40,0 8px 18px #12232c25!important}
+body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:hover{transform:translateY(-2px)!important;background:linear-gradient(165deg,#575757,#313131)!important;color:#ffffff!important;box-shadow:inset 0 1px 0 #ffffff40,0 8px 18px #20202025!important}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta:active,
-body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:active{transform:translateY(1px)!important;box-shadow:inset 0 2px 5px #0003!important}
+body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:active{transform:translateY(1px)!important;box-shadow:inset 0 2px 5px #00000033!important}
 body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link,
 body.portfolio-demo.editorial-edition #journeys #norwayCatalogue :is(.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a),
 body.portfolio-demo.editorial-edition dialog :is(button:not(.stay-gallery-thumb),a.button){
- min-height:44px!important;padding:10px 16px!important;border:1px solid #ccd2d2!important;border-bottom:2px solid #b5bfc1!important;border-radius:9px!important;background:linear-gradient(175deg,#fff,#f0f2f0)!important;color:#263942!important;font:650 12px/1.4 Manrope,sans-serif!important;letter-spacing:.01em!important;box-shadow:inset 0 1px 0 #fff,0 2px 3px #172c3510!important;text-decoration:none!important;text-shadow:none!important;transition:background .16s,border-color .16s,transform .16s!important}
-body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link::after{content:'↗' / '';margin-left:18px;color:#78633b;font-size:17px}
+ min-height:44px!important;padding:10px 16px!important;border:1px solid #d0d0d0!important;border-bottom:2px solid #bcbcbc!important;border-radius:9px!important;background:linear-gradient(175deg,#ffffff,#f1f1f1)!important;color:#363636!important;font:650 12px/1.4 Manrope,sans-serif!important;letter-spacing:.01em!important;box-shadow:inset 0 1px 0 #ffffff,0 2px 3px #28282810!important;text-decoration:none!important;text-shadow:none!important;transition:background .16s,border-color .16s,transform .16s!important}
+body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link::after{content:'↗' / '';margin-left:18px;color:#5d5d5d;font-size:17px}
 body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link:hover,
-body.portfolio-demo.editorial-edition #journeys #norwayCatalogue :is(.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a):hover{background:#e9edeb!important;border-color:#899b9f!important;transform:translateY(-1px)!important;color:#192e39!important}
-body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-card{border:1px solid #e1e5e3!important;border-radius:14px!important;background:#f7f8f5!important;box-shadow:0 4px 12px #1a303b08!important}
-body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-card-body{background:#f7f8f5!important;padding:20px 22px!important}
+body.portfolio-demo.editorial-edition #journeys #norwayCatalogue :is(.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a):hover{background:#ebebeb!important;border-color:#969696!important;transform:translateY(-1px)!important;color:#2b2b2b!important}
+body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-card{border:1px solid #e3e3e3!important;border-radius:14px!important;background:#f7f7f7!important;box-shadow:0 4px 12px #2c2c2c08!important}
+body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-card-body{background:#f7f7f7!important;padding:20px 22px!important}
 body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-card-body h3{font-weight:750!important;letter-spacing:-.035em!important}
-body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-card-body p{font-size:12px!important;line-height:1.65!important;font-weight:500!important;color:#59676b!important}
+body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-card-body p{font-size:12px!important;line-height:1.65!important;font-weight:500!important;color:#646464!important}
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes .ref-photo{height:230px!important}
-body.editorial-edition #scenicRoutes .ref-photo::after{content:attr(data-editorial-index) / '';position:absolute;top:14px;left:14px;display:grid;place-items:center;width:34px;height:34px;border:1px solid #ffffffb0;border-radius:50%;background:#f8faf4ed;color:#263942;font:650 11px Manrope,sans-serif;box-shadow:0 3px 8px #13283218;pointer-events:none}
+body.editorial-edition #scenicRoutes .ref-photo::after{content:attr(data-editorial-index) / '';position:absolute;top:14px;left:14px;display:grid;place-items:center;width:34px;height:34px;border:1px solid #ffffffb0;border-radius:50%;background:#f7f7f7ed;color:#363636;font:650 11px Manrope,sans-serif;box-shadow:0 3px 8px #24242418;pointer-events:none}
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes .ref-title{font-size:39px!important;letter-spacing:-.055em!important;font-weight:750!important;margin-bottom:12px!important}
 body.editorial-edition #scenicRoutes>.ref-panel{padding-top:42px!important}
 body.editorial-edition #scenicRoutes .ref-carousel-count{font-size:10px!important;letter-spacing:.1em!important;font-weight:600!important;text-transform:uppercase}
-body.portfolio-demo.editorial-edition #journeys :is(input:not([type=checkbox]),select){border:1px solid #ccd4d5!important;border-radius:9px!important;background:#fcfcfa!important;box-shadow:inset 0 1px 3px #152b3510!important;color:#263942!important}
-body.portfolio-demo.editorial-edition :is(a,button,input,select):focus-visible{outline:3px solid #a07d3d!important;outline-offset:4px!important}
+body.portfolio-demo.editorial-edition #journeys :is(input:not([type=checkbox]),select){border:1px solid #d2d2d2!important;border-radius:9px!important;background:#fbfbfb!important;box-shadow:inset 0 1px 3px #27272710!important;color:#363636!important}
+body.portfolio-demo.editorial-edition :is(a,button,input,select):focus-visible{outline:3px solid #737373!important;outline-offset:4px!important}
 @media(max-width:650px){
  body.portfolio-demo.editorial-edition #advertising #advertisingTitle{font-size:46px!important;letter-spacing:-.05em!important}
  body.editorial-edition #advertising #advertisingTitle span{font-size:.92em;letter-spacing:-.06em}
@@ -57,10 +57,40 @@ body.portfolio-demo.editorial-edition :is(a,button,input,select):focus-visible{o
 
 @media(max-width:360px){body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta{max-width:calc(100% - 82px)!important}}
 body.portfolio-demo.editorial-edition dialog :is(#galleryClose,#galleryPrev,#galleryNext){font-size:25px!important;padding:0!important;min-width:44px!important;min-height:44px!important}
-body.portfolio-demo.editorial-edition footer{display:grid!important;grid-template-columns:220px minmax(0,1fr)!important;gap:22px 40px!important;align-items:start!important;border-top:1px solid #e0e5e2!important;background:#f7f8f5!important}
-body.portfolio-demo.editorial-edition footer>.brand{font:750 28px/1.2 Manrope,sans-serif!important;letter-spacing:-.055em!important;white-space:nowrap!important;color:#182b35!important}
-body.portfolio-demo.editorial-edition footer>.brand i{font-style:normal!important;color:#a18c5b!important}
+body.portfolio-demo.editorial-edition footer{display:grid!important;grid-template-columns:220px minmax(0,1fr)!important;gap:22px 40px!important;align-items:start!important;border-top:1px solid #e2e2e2!important;background:#f7f7f7!important}
+body.portfolio-demo.editorial-edition footer>.brand{font:750 28px/1.2 Manrope,sans-serif!important;letter-spacing:-.055em!important;white-space:nowrap!important;color:#282828!important}
+body.portfolio-demo.editorial-edition footer>.brand i{font-style:normal!important;color:#838383!important}
 body.portfolio-demo.editorial-edition footer>.editorial-credit{grid-column:2;margin:0!important}
 body.portfolio-demo.editorial-edition footer>p{font-size:12px!important;line-height:1.7!important}
 @media(max-width:650px){body.portfolio-demo.editorial-edition footer{grid-template-columns:1fr!important;gap:20px!important}body.portfolio-demo.editorial-edition footer>.editorial-credit{grid-column:1}}
 
+/* Complete the same system across original place cards and catalog/gallery controls. */
+body.portfolio-demo.editorial-edition #journeys #cards.cards>.compact-postcard{background:#262626!important;border:1px solid #dadada!important;box-shadow:0 5px 18px #00000012!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard>.card-atmosphere{display:none!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard>.photo{background:#262626!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard>.photo::after{background:linear-gradient(transparent,#171717e6)!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .postcard-caption{background:linear-gradient(transparent,#171717eb)!important;color:#fff!important;box-shadow:none!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .postcard-caption :is(small,strong){color:#fff!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.photo-hint,.category,.card-bottom button,.flight-launch){background:linear-gradient(165deg,#3d3d3d,#242424)!important;color:#fff!important;border:1px solid #ffffff66!important;border-bottom:2px solid #151515!important;box-shadow:inset 0 1px 0 #ffffff26,0 2px 5px #00000022!important;text-shadow:none!important;animation:none!important;border-radius:9px!important;min-height:40px!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch):hover{background:linear-gradient(165deg,#505050,#333)!important;color:#fff!important;border-color:#bbb!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch):active{background:#202020!important;box-shadow:inset 0 2px 4px #0005!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .category{background:#f5f5f5ee!important;color:#333!important;border:1px solid #ddd!important;min-height:0!important;padding:6px 9px!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard>.postcard-back{background:linear-gradient(#242424ed,#171717f5),var(--postcard-photo) center/cover!important;color:#fff!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .postcard-back :is(.description,.region,h3,.reference){color:#fff!important;text-shadow:none!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .card-bottom{background:#ffffff12!important;border:1px solid #ffffff26!important}
+body.portfolio-demo.editorial-edition #journeys #filters button{background:linear-gradient(#fff,#f1f1f1)!important;border:1px solid #cecece!important;border-bottom:2px solid #bababa!important;border-radius:9px!important;color:#303030!important;box-shadow:inset 0 1px 0 #fff!important}
+body.portfolio-demo.editorial-edition #journeys #filters button.active{background:linear-gradient(#414141,#252525)!important;color:#fff!important;border-color:#252525!important}
+body.portfolio-demo.editorial-edition #journeys #filters button:hover{background:#e5e5e5!important;color:#252525!important}
+body.portfolio-demo.editorial-edition #journeys #filters button.active:hover{background:#444!important;color:#fff!important}
+body.portfolio-demo.editorial-edition #journeys #norwayCatalogue .norway-catalog-photo-label{background:#f7f7f7f5!important;border:1px solid #cecece!important;color:#292929!important;box-shadow:0 2px 6px #0002!important}
+body.portfolio-demo.editorial-edition #journeys #norwayCatalogue .catalogue-front-caption{background:#fafafaf5!important;color:#292929!important}
+body.portfolio-demo.editorial-edition #journeys #norwayCatalogue .catalogue-front-caption :is(strong,small){color:#292929!important}
+body.portfolio-demo.editorial-edition :is(.place-pagination button,.norway-catalog-gps,.norway-catalog-retry,.norway-catalog-controls button){background:linear-gradient(#fff,#f1f1f1)!important;border:1px solid #ccc!important;color:#303030!important;box-shadow:0 2px 4px #0001!important}
+body.portfolio-demo.editorial-edition :is(button,a,input,select,summary):focus-visible{outline:3px solid #656565!important;outline-offset:4px!important}
+
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .card-arms{background:#ffffff12!important;border-color:#ffffff33!important;box-shadow:none!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .photo .category{background:#f5f5f5ee!important;color:#333!important;border:1px solid #ddd!important;min-height:0!important;box-shadow:0 2px 5px #0002!important}
+body.portfolio-demo.editorial-edition dialog :is(button:not(.stay-gallery-thumb),a.button):hover,
+body.portfolio-demo.editorial-edition #journeys :is(.ref-link,.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry):hover{background:linear-gradient(#ededed,#dedede)!important;color:#252525!important;border-color:#999!important}
+body.portfolio-demo.editorial-edition dialog :is(button:not(.stay-gallery-thumb),a.button):active,
+body.portfolio-demo.editorial-edition #journeys :is(.ref-link,.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry):active{background:#d7d7d7!important;color:#202020!important;box-shadow:inset 0 2px 4px #0002!important}
