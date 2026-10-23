@@ -24,3 +24,10 @@ test('failed or malformed responses never become an accepted news snapshot',asyn
  await assert.rejects(fetchNewsSnapshot(async()=>({ok:false}),1),/unavailable/);
  await assert.rejects(fetchNewsSnapshot(async()=>({ok:true,json:async()=>({})}),2),/invalid/);
 });
+
+
+test('a continuous market season is a readable range, but separate dates stay separate',()=>{
+ const {storyDates}=require('./municipal-news.js');const format=x=>x;
+ assert.equal(storyDates({eventDates:['2026-11-20','2026-11-21','2026-11-22']},format),'2026-11-20 — 2026-11-22');
+ assert.equal(storyDates({eventDates:['2026-11-20','2026-11-22','2026-11-24']},format),'2026-11-20 / 2026-11-22 / 2026-11-24');
+});

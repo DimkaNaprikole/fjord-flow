@@ -14,6 +14,11 @@ function compactEventLabel(item,language='nb'){const dates=(item.eventDates||[it
 function localizedImageText(value,language='nb'){return typeof value==='string'?value:value?.[language]||value?.nb||value?.en||'';}
 function imageRoleLabel(image,language='nb'){const labels={nb:['Stedsfoto','Illustrasjon'],en:['Venue photo','Illustration'],uk:['Фото місця','Ілюстрація'],sv:['Platsfoto','Illustration'],da:['Stedsfoto','Illustration']};return(labels[language]||labels.nb)[image?.kind==='illustration'?1:0];}
 function facebookPostURL(value){try{const u=new URL(value);if(u.protocol!=='https:'||!['facebook.com','www.facebook.com','m.facebook.com'].includes(u.hostname)||!/^\/(?:[^/]+\/posts\/[^/]+|groups\/[^/]+\/posts\/[^/]+)\/?$/.test(u.pathname))return null;return u.href}catch{return null}}
+function storyDates(item,format){
+ const dates=[...new Set((item.eventDates||[item.eventDate]).filter(Boolean))].sort();
+ const continuous=dates.length>2&&dates.every((date,index)=>!index||Date.parse(date+'T12:00:00Z')-Date.parse(dates[index-1]+'T12:00:00Z')===86400000);
+ return continuous?format(dates[0])+' — '+format(dates.at(-1)):dates.map(format).join(' / ');
+}
 async function fetchNewsSnapshot(fetcher=fetch,stamp=Date.now()){
  const responses=await Promise.all([fetcher('./news-municipalities.json?v=1',{cache:'no-cache'}),fetcher('./municipal-news-data.json?fresh='+encodeURIComponent(stamp),{cache:'no-store'})]);
  if(responses.some(r=>!r.ok))throw Error('news sources unavailable');
@@ -21,7 +26,7 @@ async function fetchNewsSnapshot(fetcher=fetch,stamp=Date.now()){
  if(!directory.municipalities?.length||!Array.isArray(data.items))throw Error('invalid news data');
  return {directory,data};
 }
-if(typeof module!=='undefined'&&module.exports){module.exports={fetchNewsSnapshot,activeItems,upcomingItems,osloDate,groupSearch,facebookPostURL,publicationLabel,compactEventLabel,localizedImageText,imageRoleLabel};return;}
+if(typeof module!=='undefined'&&module.exports){module.exports={storyDates,fetchNewsSnapshot,activeItems,upcomingItems,osloDate,groupSearch,facebookPostURL,publicationLabel,compactEventLabel,localizedImageText,imageRoleLabel};return;}
 const words={
  nb:['Nyheter og arrangementer','Lokalt i Norge','Kommune','Alle kommuner','Tema','Alt','Arrangementer','Nyttig å vite','Les originalen ↗','Nyheter fra kommunen ↗','Arrangementskalender ↗','Finn Facebook-grupper ↗','Offisiell Facebook-side ↗','Ingen kontrollerte nyheter i dette utvalget ennå. Se kildene for siste nytt.','Kildene','Publisert','Arrangement','Kort redaksjonelt sammendrag med lenke til originalen. Facebook-grupper åpnes som søk, ikke som en tilkoblet nyhetsstrøm.','Kommuneoversikt: Kartverket','Sist gjennomgått','Kunne ikke laste kommuneoversikten. Prøv igjen.','Prøv igjen','Nyheter'],
  en:['News and events','Local life in Norway','Municipality','All municipalities','Topic','All','Events','Useful notices','Read original ↗','Municipal news ↗','Events calendar ↗','Find Facebook groups ↗','Official Facebook page ↗','No reviewed news in this selection yet. Check the sources for current updates.','Sources','Published','Event','Short editorial summaries link to the original. Facebook groups open as a search, not a connected news feed.','Municipality directory: Kartverket','Last reviewed','Could not load the municipality directory. Please retry.','Retry','News'],
@@ -58,7 +63,7 @@ const safeURL=value=>{try{const u=new URL(value,location.href);return u.protocol
 const link=(title,url,cls)=>{const a=el('a',title,cls);a.href=safeURL(url)||'#';a.target='_blank';a.rel='noopener noreferrer';return a;};
 const button=(title,action,cls)=>{const b=el('button',title,cls);b.type='button';b.onclick=action;return b;};
 const localDate=value=>{const dt=new Date(value+'T12:00:00Z');return Number.isNaN(+dt)?'':new Intl.DateTimeFormat(lang(),{day:'numeric',month:'short',year:'numeric'}).format(dt)};
-const when=item=>(item.eventDates||[item.eventDate]).filter(Boolean).map(localDate).join(' / ')+(item.time?' · '+item.time:'');
+const when=item=>storyDates(item,localDate)+(item.time?' · '+item.time:'');
 const maps=item=>'https://www.google.com/maps/dir/?'+new URLSearchParams({api:'1',destination:item.mapQuery,travelmode:'driving'});
 const storyURL=item=>{const u=new URL(location.href);u.searchParams.set('news',item.id);u.hash='municipalNews';return u.href};
 function photo(item,hero=false){
