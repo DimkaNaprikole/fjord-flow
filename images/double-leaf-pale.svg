@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-5 -6 330 122" preserveAspectRatio="none">
+<defs>
+ <linearGradient id="rear" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#e4efcc"/><stop offset=".5" stop-color="#b8cf99"/><stop offset="1" stop-color="#8cae68"/></linearGradient>
+ <linearGradient id="silk" x1=".2" y1="0" x2=".65" y2="1"><stop stop-color="#f5f7df"/><stop offset=".32" stop-color="#dcebc2"/><stop offset=".48" stop-color="#eef4d7"/><stop offset=".68" stop-color="#dcebc2"/><stop offset="1" stop-color="#b1cb8c"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7fbe7"/><stop offset="1" stop-color="#71934e"/></linearGradient>
+ <mask id="quiet"><rect x="0" y="0" width="320" height="110" fill="white"/><rect x="31" y="43" width="257" height="40" rx="20" fill="black"/></mask>
+</defs>
+<g>
+ <path d="M18 77C62 -20 200 -8 305 7C263 84 149 101 18 77Z" fill="url(#rear)" stroke="url(#edge)" stroke-width="1.2"/>
+ <path d="M25 79C98 48 196 28 293 17M69 62Q75 44 88 34M107 48Q118 28 132 21M155 35Q173 18 187 13M194 27Q213 15 225 12" fill="none" stroke="#6b9350" opacity=".24" stroke-width=".9"/>
+ <path d="M8 88C52 -12 180 -16 314 49C272 128 120 127 8 88Z" fill="url(#silk)" stroke="url(#edge)" stroke-width="1.4"/>
+ <path d="M10 86C69 9 199 15 311 49" fill="none" stroke="#fff" opacity=".42" stroke-width="1.4"/>
+ <g mask="url(#quiet)" fill="none" stroke="#6b9350" opacity=".29" stroke-width=".9">
+  <path d="M10 89C97 70 208 51 310 41M46 81Q52 61 65 53M82 75Q91 51 108 44M124 68Q140 44 156 39M167 59Q184 40 199 36M211 51Q231 36 244 35M52 80Q72 94 94 98M96 73Q122 94 145 101M144 65Q173 90 194 96M193 56Q222 78 244 83M239 48Q262 64 278 68"/>
+ </g>
+</g></svg>
