@@ -6,7 +6,7 @@ const languages=['nb','en','uk','sv','da'];
 const calmPortfolio=document.body.classList.contains('portfolio-demo');
 const tr=(...s)=>s[languages.indexOf(lang())]||s[0];
 const copy={
- routes:()=>tr('RUTER','ROUTES','МАРШРУТИ','RUTTER','RUTER'),
+ routes:()=>tr('Finn din neste opplevelse.','Find your next stop.','Знайдіть наступну пригоду.','Hitta ditt nästa stopp.','Find dit næste stop.'),
  routeIntro:()=>tr('Utrolige veier, fjorder og landskap som er verdt å se.','Remarkable roads, fjords and landscapes worth seeing.','Неймовірні дороги, фіорди та краєвиди, які варто побачити.','Fantastiska vägar, fjordar och landskap att upptäcka.','Fantastiske veje, fjorde og landskaber at opleve.'),
  places:()=>tr('STEDER','PLACES','МІСЦЯ','PLATSER','STEDER'),
  placesIntro:()=>tr('Oppdag noen av Norges flotteste steder.','Discover memorable places across Norway.','Відкрийте найвідоміші локації Норвегії.','Upptäck Norges fina platser.','Oplev Norges smukke steder.'),
