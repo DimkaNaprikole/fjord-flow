@@ -1,0 +1,27 @@
+/* Botanical detail is decorative; the central label band is masked out in the SVG. */
+body.portfolio-demo.editorial-edition #journeys :is(.portfolio-first-cta,.ref-panel .ref-link,#filters button,.place-pagination button,.card-bottom button,.norway-catalog-more,.norway-catalog-actions a,.norway-catalog-gps,.norway-catalog-retry){position:relative!important}
+body.portfolio-demo.editorial-edition #journeys :is(.portfolio-first-cta,.ref-panel .ref-link,#cards .postcard-toggle,#cards .card-bottom button,#cards .photo-hint,#norwayCatalogue .catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a,#filters button,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry){isolation:isolate}
+body.portfolio-demo.editorial-edition #journeys :is(.portfolio-first-cta,.ref-panel .ref-link,#cards .postcard-toggle,#cards .card-bottom button,#cards .photo-hint,#norwayCatalogue .catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a,#filters button,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry)::before{
+ content:''!important;position:absolute!important;inset:2px!important;display:block!important;border-radius:inherit!important;pointer-events:none!important;z-index:0!important;
+ background:currentColor!important;opacity:.23;mask-image:url('images/leaf-veins-ui.svg');mask-size:100% 100%;mask-repeat:no-repeat;
+ transition:opacity .25s ease!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta::after,
+body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link::after{position:relative;z-index:1}
+@media(hover:hover) and (pointer:fine){
+ body.portfolio-demo.editorial-edition #journeys :is(.portfolio-first-cta,.ref-panel .ref-link,#cards .postcard-toggle,#cards .card-bottom button,#norwayCatalogue .catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a,#filters button,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry):hover::before{opacity:.34}
+ body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta:hover,
+ body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:hover{
+  background:radial-gradient(ellipse 85px 15px at var(--ff-light-x,50%) 8%,#f0ffda38,transparent 75%),radial-gradient(ellipse at var(--ff-light-x,50%) var(--ff-light-y,0%),#ffffff0b,transparent 75%),linear-gradient(175deg,#327222,#28631d 55%,#285c1b)!important}
+ body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch):hover{
+  background:radial-gradient(ellipse 65px 11px at var(--ff-light-x,50%) 6%,#e8ffca30,transparent 75%),radial-gradient(ellipse at var(--ff-light-x,50%) var(--ff-light-y,0%),#ffffff0b,transparent 78%),linear-gradient(#347322,#28631d)!important}
+ body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link:hover,
+ body.portfolio-demo.editorial-edition #journeys #norwayCatalogue :is(.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a):hover,
+ body.portfolio-demo.editorial-edition #journeys :is(#filters button,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry):hover{
+  background:radial-gradient(ellipse 75px 13px at var(--ff-light-x,50%) 10%,#fff,transparent 80%),linear-gradient(#faffef,#dfedca)!important}
+ body.portfolio-demo.editorial-edition #journeys #filters button.active:hover{background:radial-gradient(ellipse 65px 11px at var(--ff-light-x,50%) 8%,#efffd52b,transparent 75%),linear-gradient(#3b7726,#285b1b)!important}
+}
+/* Pressed remains darker, and keeps the same geometry. */
+body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta:active,
+body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:active,
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch):active{background:linear-gradient(#244817,#28631d)!important}
+@media(prefers-reduced-motion:reduce){body.portfolio-demo.editorial-edition #journeys :is(a,button,span)::before{transition:none!important}}
