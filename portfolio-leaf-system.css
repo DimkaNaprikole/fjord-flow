@@ -13,6 +13,11 @@ body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #cards .compact-p
 body.portfolio-demo.editorial-edition.ff-leaf-system :is(#galleryClose,#galleryPrev,#galleryNext,.stay-gallery-icon){border-radius:22px 4px 22px 4px!important;min-width:44px!important;min-height:44px!important}
 /* Hide the native fallback without inheriting margins/width from earlier page styles. */
 body.portfolio-demo.editorial-edition.ff-leaf-system #journeys select.ff-select-native,body.portfolio-demo.editorial-edition.ff-leaf-system header select.ff-select-native,body.portfolio-demo.editorial-edition.ff-leaf-system dialog select.ff-select-native{width:1px!important;min-width:0!important;height:1px!important;min-height:0!important;margin:-1px!important;padding:0!important;border:0!important}
+/* Owner correction: white leaf controls with a silver edge, no black outline. */
+body.portfolio-demo.editorial-edition.ff-leaf-system :is(button,a,input,select,summary):focus-visible{outline:2px solid #858585!important;outline-offset:3px!important;box-shadow:0 0 0 2px #fff!important}
+body.portfolio-demo.editorial-edition.ff-leaf-system :is(#journeys,header,dialog) .ff-select>.ff-select-trigger:focus-visible{outline:2px solid #858585!important;outline-offset:3px!important;box-shadow:0 0 0 2px #fff,inset 0 1px 0 #fff!important}
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #cards .compact-postcard :is(button,a):focus-visible{outline-color:#aaa!important}
+body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #norwayCatalogue .norway-catalog-photo:focus-visible .norway-catalog-photo-label{outline:2px solid #aaa!important;outline-offset:3px!important}
 @media(max-width:420px){
  body.portfolio-demo.editorial-edition.ff-leaf-system #galleryDialog .gallery-top{position:relative;display:grid!important;grid-template-columns:minmax(0,1fr) 44px!important;gap:8px!important;padding:14px!important}
  body.portfolio-demo.editorial-edition.ff-leaf-system #galleryDialog .gallery-top>div{grid-column:1/-1;min-width:0;padding-right:42px}

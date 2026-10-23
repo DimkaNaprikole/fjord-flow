@@ -7,4 +7,4 @@ body.ff-public-leaf #journeys #filters button.active{background:linear-gradient(
 body.ff-public-leaf #journeys :is(input:not([type=checkbox]),select){background:#fff!important;color:#252525!important;text-shadow:none!important}
 body.ff-public-leaf .ff-select>.ff-select-trigger,body.ff-public-leaf #journeys .ff-select>.ff-select-trigger{border-radius:var(--ff-leaf-shape)!important;background:linear-gradient(175deg,#fff,#f0f0f0)!important;color:#252525!important;min-height:48px!important;transform:none!important}
 body.ff-public-leaf :is(header,#journeys,dialog) select.ff-select-native{width:1px!important;min-width:0!important;height:1px!important;min-height:0!important;margin:-1px!important;padding:0!important;border:0!important}
-body.ff-public-leaf :is(button,.ref-link,.button,input,select,summary):focus-visible{outline:2px solid #424242!important;outline-offset:4px!important}
+body.ff-public-leaf :is(button,.ref-link,.button,input,select,summary):focus-visible{outline:2px solid #858585!important;outline-offset:4px!important;box-shadow:0 0 0 2px #fff!important}
