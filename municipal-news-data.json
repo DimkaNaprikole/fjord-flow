@@ -6928,6 +6928,60 @@
         ]
       },
       "textOnly": true
+    },
+    {
+      "id": "lunner-myllavegen-closure-20261026",
+      "municipality": "3234",
+      "category": "notice",
+      "published": "2026-10-23",
+      "sourcePublished": "2026-10-23",
+      "checked": "2026-10-23",
+      "eventDate": "2026-10-26",
+      "expires": "2026-10-28T16:00:00+01:00",
+      "source": "Lunner kommune",
+      "url": "https://www.lunner.kommune.no/nyhetsarkiv/nyheter-forside/2026-10-23-myllavegen-stengt-fra-mandag-26.-oktober",
+      "location": "Myllavegen, Lunner",
+      "time": "26.10 08:00 – 28.10 16:00 (Europe/Oslo)",
+      "copy": {
+        "nb": [
+          "Myllavegen: stengt 26.–28. oktober",
+          "Lunner: veiarbeid fra 26. oktober kl. 08 til 28. oktober kl. 16. Følg skiltet omkjøring via Sveavegen og Vollavegen."
+        ],
+        "en": [
+          "Myllavegen closed 26–28 October",
+          "Lunner: roadworks from 26 October, 08:00 until 28 October, 16:00. Follow the signed diversion via Sveavegen and Vollavegen."
+        ],
+        "uk": [
+          "Myllavegen перекриють 26–28 жовтня",
+          "Lunner: дорожні роботи з 08:00 26 жовтня до 16:00 28 жовтня. Позначений об’їзд — через Sveavegen і Vollavegen."
+        ],
+        "sv": [
+          "Myllavegen stängd 26–28 oktober",
+          "Lunner: vägarbete från 26 oktober kl. 08 till 28 oktober kl. 16. Följ skyltad omledning via Sveavegen och Vollavegen."
+        ],
+        "da": [
+          "Myllavegen lukket 26.–28. oktober",
+          "Lunner: vejarbejde fra 26. oktober kl. 08 til 28. oktober kl. 16. Følg skiltet omkørsel via Sveavegen og Vollavegen."
+        ]
+      },
+      "textOnly": true,
+      "details": {
+        "nb": [
+          "Arbeidet gjelder nye stikkrenner. Tidene er lokal norsk tid."
+        ],
+        "en": [
+          "The work installs drainage culverts. Times are local Norwegian time."
+        ],
+        "uk": [
+          "Прокладають водопропускні труби. Час — місцевий норвезький."
+        ],
+        "sv": [
+          "Arbetet gäller nya vägtrummor. Tiderna är lokal norsk tid."
+        ],
+        "da": [
+          "Arbejdet gælder nye vejunderføringer til vand. Tiderne er lokal norsk tid."
+        ]
+      }
     }
   ],
   "mediaUpdated": "2026-10-19"
