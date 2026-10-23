@@ -1,4 +1,5 @@
 import {mountOwnerPassword} from './owner-password-form.mjs?v=cms-auth-20261023-r3';
+import {mountPreviewPolicyCheck,requestPreviewPolicy} from './cms-preview-policy.mjs?v=cms-cache-20261023-r4';
 import {createPrivatePreviews} from './cms-private-preview.mjs?v=cms-private-20261023-r2';
 import {validateDocument,emptyDocument} from './site-editor-schema.mjs?v=7';
 import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=cms-private-20261023-r2';
@@ -9,7 +10,7 @@ const OWNER='laurkent123@gmail.com';
 const nonce=crypto.randomUUID();
 const frame=$('sitePreview');
 const panels=['catalogue','library','history','access'];
-let privatePreviews=null,previewGeneration=0;
+let privatePreviews=null,previewGeneration=0,previewPolicyCheck=null;
 async function previewImage(image,src){
  if(!privatePreviews||!authorized){image.removeAttribute('src');return;}
  try{const url=await privatePreviews.resolve(src);if(authorized)image.src=url;}catch{image.alt=(image.alt||'Фото')+' · предпросмотр недоступен';}
@@ -21,6 +22,7 @@ const dirty=()=>JSON.stringify(documentValue)!==savedJSON;
 const hasUnsaved=()=>dirty()||Boolean(catalogueEditor?.hasUnapplied());
 function status(message,kind=''){ $('status').textContent=message;$('status').dataset.kind=kind; }
 function controls(){
+  previewPolicyCheck?.sync();
   if(!authorized){privatePreviews?.clear();previewGeneration++;}
   $('save').disabled=busy||!authorized;$('publish').disabled=busy||!authorized;$('login').disabled=busy;
   document.querySelector('.editor-controls').inert=busy||!authorized;
@@ -163,6 +165,7 @@ try{
   const endpoint=new URL(config.endpoint);if(endpoint.protocol!=='https:'||endpoint.hostname!=='fjord-flow-chat.laurkent123.workers.dev')throw new Error();
   privatePreviews=createPrivatePreviews({endpoint:config.endpoint,load:path=>api(path,{responseType:'blob'})});
   mountOwnerPassword(document.getElementById('ownerPasswordHost'),{apiKey:config.firebaseApiKey,endpoint:config.endpoint,language:'ru'});
+  previewPolicyCheck=mountPreviewPolicyCheck($('ownerPasswordHost'),{load:()=>requestPreviewPolicy({endpoint:config.endpoint,getToken:()=>getVisitorToken(config.firebaseApiKey),isAuthorized:()=>authorized,getRevision:getAuthSessionRevision}),isAuthorized:()=>authorized,getRevision:getAuthSessionRevision});
   status('Войдите владельцем через Google или по почте, чтобы открыть редактор.');
   if(await getVisitorToken(config.firebaseApiKey))await loadOwner();
 }catch(error){
