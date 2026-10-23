@@ -6,7 +6,7 @@ async function api(path,body){return window.FjordPortfolio.api(path,body)}
 function toast(s){$('#toast').textContent=s;$('#toast').style.display='block';setTimeout(()=>$('#toast').style.display='none',4500)}
 function tab(name){if(name!=='journeys')return;$('#collection').scrollIntoView({behavior:'smooth'});document.querySelectorAll('.nav').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));}
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>tab(b.dataset.tab));
-document.querySelectorAll('#filters button').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('active',x===b));cards()});
+document.querySelectorAll('#filters button').forEach(b=>{b.setAttribute('aria-pressed',String(b.classList.contains('active')));b.onclick=()=>{filter=b.dataset.filter;document.querySelectorAll('#filters button').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});cards()};});
 // Search both original and displayed copy; accents are optional when typing place names.
 const searchText=value=>String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase().replace(/ø/g,'o').replace(/æ/g,'ae').trim();
 function matchesPlaceSearch(place,query){const terms=searchText(query).split(/\s+/).filter(Boolean);if(!terms.length)return true;const values=[place.name,place.region,place.description,place.category,place.municipalityLabel,place.municipality,place.routeLabel].filter(Boolean);const haystack=searchText(values.flatMap(value=>[value,window.FjordI18n?.t(value)||value]).join(' '));return terms.every(term=>haystack.includes(term));}

@@ -2,6 +2,8 @@
 import {waterfallVisits} from './waterfall-visits.mjs?v=2';
 const lang=()=>window.FjordI18n?.language||document.documentElement.lang||'nb';
 const languages=['nb','en','uk','sv','da'];
+// This portfolio is a quiet reading/demo surface; visitors move cards themselves.
+const calmPortfolio=document.body.classList.contains('portfolio-demo');
 const tr=(...s)=>s[languages.indexOf(lang())]||s[0];
 const copy={
  routes:()=>tr('RUTER','ROUTES','МАРШРУТИ','RUTTER','RUTER'),
@@ -105,7 +107,7 @@ function automaticScene(panel,key,intro,items){
  const finePointer=matchMedia('(min-width:751px) and (hover:hover) and (pointer:fine)');
  const resetDepth=()=>{cancelAnimationFrame(tiltFrame);tiltFrame=0;lastPointer=null;for(const name of ['--wf-rx','--wf-ry','--wf-px','--wf-py','--wf-light'])stage.style.removeProperty(name);};
  const moveDepth=event=>{
-  if(key!=='waterfalls'||event.pointerType!=='mouse'||!finePointer.matches||reduced.matches)return;
+   if(calmPortfolio||key!=='waterfalls'||event.pointerType!=='mouse'||!finePointer.matches||reduced.matches)return;
   lastPointer={x:event.clientX,y:event.clientY};if(tiltFrame)return;
   tiltFrame=requestAnimationFrame(()=>{tiltFrame=0;if(!lastPointer)return;const box=stage.getBoundingClientRect();if(!box.width||!box.height)return;
    const x=Math.max(-1,Math.min(1,(lastPointer.x-box.left)/box.width*2-1)),y=Math.max(-1,Math.min(1,(lastPointer.y-box.top)/box.height*2-1));
@@ -115,7 +117,7 @@ function automaticScene(panel,key,intro,items){
  };
  if(key==='waterfalls'){hero.classList.add('ref-waterfall-depth');stage.addEventListener('pointermove',moveDepth);stage.addEventListener('pointerleave',resetDepth);stage.addEventListener('pointercancel',resetDepth);stage.addEventListener('focusin',resetDepth);reduced.addEventListener('change',resetDepth);finePointer.addEventListener('change',resetDepth);}
  const timer=setInterval(()=>{
-  if(items.length<2||!visible||document.hidden||reduced.matches||hero.querySelector(':focus-visible')||document.querySelector('dialog[open]'))return;
+   if(calmPortfolio||items.length<2||!visible||document.hidden||reduced.matches||hero.querySelector(':focus-visible')||document.querySelector('dialog[open]'))return;
   const next=(current+1)%slides.length;
   const nextImage=slides[next].querySelector('img');if(nextImage&&(!nextImage.complete||!nextImage.naturalWidth)){nextImage.loading='eager';return;}
   slides[current].classList.remove('is-active');slides[current].inert=true;slides[current].setAttribute('aria-hidden','true');
@@ -134,7 +136,7 @@ function carousel(panel,items,plain=false){
  const observe=new IntersectionObserver(([e])=>{visible=e.isIntersecting;},{threshold:.2});observe.observe(g);
  const down=()=>{pressed=true},up=()=>{pressed=false};g.addEventListener('pointerdown',down);g.addEventListener('pointerup',up);g.addEventListener('pointercancel',up);g.addEventListener('pointerleave',up);
  const timer=setInterval(()=>{
-  if(!visible||pressed||document.hidden||matchMedia('(prefers-reduced-motion:reduce)').matches||g.querySelector(':focus-visible')||document.querySelector('dialog[open]')||g.scrollWidth<=g.clientWidth+2)return;
+   if(calmPortfolio||!visible||pressed||document.hidden||matchMedia('(prefers-reduced-motion:reduce)').matches||g.querySelector(':focus-visible')||document.querySelector('dialog[open]')||g.scrollWidth<=g.clientWidth+2)return;
   const step=g.firstElementChild.getBoundingClientRect().width+parseFloat(getComputedStyle(g).columnGap||18),end=g.scrollLeft+g.clientWidth>=g.scrollWidth-3;
   g.scrollTo({left:end?0:Math.min(g.scrollLeft+step,g.scrollWidth-g.clientWidth),behavior:end?'instant':'smooth'});
  },4500);

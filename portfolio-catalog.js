@@ -107,7 +107,7 @@
     }
     toggle.onclick=()=>{hoverOpened=false;side(!article.classList.contains('catalogue-flipped'));};
     article.addEventListener('pointerenter',event=>{
-      if(event.pointerType==='touch'||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+      if(document.body.classList.contains('portfolio-demo')||event.pointerType==='touch'||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
       dwell=setTimeout(()=>{if(article.isConnected&&article.matches(':hover')&&!article.matches(':focus-within')&&performance.now()-lastCardScroll>300&&!document.querySelector('dialog[open]')){hoverOpened=true;side(true);}},2000);
     });
     article.addEventListener('pointerleave',()=>{clearTimeout(dwell);if(hoverOpened&&!article.matches(':focus-within')){hoverOpened=false;side(false);}});
@@ -119,7 +119,7 @@
   }
   // One shared clock: pause offscreen cards, inactive tabs, open galleries and reduced motion.
   setInterval(()=>{
-    if(document.hidden||document.querySelector('dialog[open]')||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    if(document.body.classList.contains('portfolio-demo')||document.hidden||document.querySelector('dialog[open]')||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
     document.querySelectorAll('.catalogue-flip:not(.catalogue-flipped) img[data-slides]').forEach(img=>{
       const rect=img.getBoundingClientRect();if(!rect.width||!rect.height||rect.bottom<0||rect.top>innerHeight)return;
       const sources=JSON.parse(img.dataset.slides), next=(Number(img.dataset.slide)+1)%sources.length;

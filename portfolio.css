@@ -30,3 +30,98 @@
 .portfolio-demo.reference-layout #journeys .filterline{display:flex!important}
 .portfolio-demo.reference-layout #journeys #cards{display:grid!important}
 @media(max-width:650px){.portfolio-demo>header{min-height:150px!important;gap:14px!important;padding:18px 6%!important;justify-content:space-between!important}.portfolio-demo>header>.header-branding>.brand{width:158px!important}.portfolio-demo>header>.header-branding>.brand>span{font-size:8px!important}.portfolio-demo>header>nav{order:3;width:100%;margin:0;gap:4px!important}.portfolio-demo>header>nav a{font-size:11px;padding:7px 9px}.portfolio-demo .portfolio-notice{gap:5px;text-align:center;font-size:11px}.portfolio-demo #advertising{min-height:555px;margin-inline:10px;background:#173342!important}.portfolio-demo #advertising>.hero-artwork{display:none}.portfolio-demo .advertising-background-film{height:235px;object-fit:contain!important;object-position:center center!important}.portfolio-demo .advertising-message{right:20px;top:248px;bottom:auto;width:calc(100% - 40px);text-align:left}.portfolio-demo .advertising-message h2{font-size:38px!important;margin-bottom:14px}.portfolio-demo #advertising .advertising-brand img{max-width:170px}.portfolio-demo #advertising .portfolio-scene-note{padding:6px 0;background:none;font-size:12px;margin-bottom:14px}.portfolio-demo .portfolio-first-cta{width:auto;max-width:100%;font-size:12px}.portfolio-demo .route-origin-row{display:block}}
+
+/* Owner request, 23 October: a quiet monochrome reading area.
+   These rules deliberately exclude #advertising, #homePanel and the header. */
+body.portfolio-demo :is(.ref-chapter:not(#homePanel),#norwayCatalogue,#cards,.collection-search,.filterline,.place-pagination,.place-pagination-status,dialog,footer,.photo-legal){
+ --ff-panel:#fff;--ff-card:#fff;--ff-field:#f5f5f5;--ff-deep:#ededed;
+ --ff-ink:#202020;--ff-muted:#555;--ff-accent:#242424;--ff-action:#f1f1f1;
+ --ff-line:#dedede;--ff-line-strong:#a8a8a8;--fjord-focus:#202020;
+ color:#202020;color-scheme:light;text-shadow:none;
+}
+body.portfolio-demo.reference-layout #journeys>section.ref-chapter:not(#homePanel),
+body.portfolio-demo.reference-layout>section.ref-chapter,
+body.portfolio-demo #norwayCatalogue,
+body.portfolio-demo :is(.collection-search,.filterline,#cards,.place-pagination,.place-pagination-status,footer,.photo-legal){
+ background:#fff!important;background-image:none!important;color:#202020!important;border-color:#dedede!important;box-shadow:none!important;
+}
+body.portfolio-demo .ref-chapter:not(#homePanel)>.hero-artwork,
+body.portfolio-demo #norwayCatalogue>.hero-artwork,
+body.portfolio-demo .ref-chapter:not(#homePanel)::before,
+body.portfolio-demo .ref-chapter:not(#homePanel)::after{display:none!important}
+body.portfolio-demo #norwayCatalogue::before,body.portfolio-demo #norwayCatalogue::after{display:none!important}
+body.portfolio-demo #norwayCatalogue .norway-catalog-grid{background:#fff!important}
+body.portfolio-demo .ref-panel{background:#fff;color:#202020!important;text-shadow:none!important}
+body.portfolio-demo .ref-panel :is(.ref-title,.ref-intro,.ref-carousel-count,.ref-visit-info h3,.ref-visit-info h4,.ref-visit-info p,.ref-visit-checked,.ref-app h3,.ref-app p){color:#202020!important;text-shadow:none!important}
+body.portfolio-demo .ref-panel .ref-title{font-family:Manrope,'Segoe UI',sans-serif!important;font-weight:600!important;font-style:normal!important;letter-spacing:-.025em!important;text-transform:none!important;font-size:clamp(32px,4vw,54px)!important}
+body.portfolio-demo .ref-heading{background:#fff;padding:20px;box-shadow:none;text-shadow:none;border:1px solid #e0e0e0;border-radius:8px}
+body.portfolio-demo .ref-panel :is(.ref-visit-info,.ref-bua-controls,.ref-app,.ref-finn-free){background:#f5f5f5!important;color:#202020!important;border:1px solid #dedede;box-shadow:none!important;backdrop-filter:none!important}
+body.portfolio-demo .ref-panel .ref-card{background:#ededed!important;border:1px solid #d6d6d6;border-radius:8px;box-shadow:none!important}
+body.portfolio-demo .ref-panel :is(.ref-card-body,.ref-card-plain .ref-card-body){background:#f5f5f5!important;padding:16px 18px;color:#202020!important}
+body.portfolio-demo .ref-panel :is(.ref-card-body h3,.ref-card-body p,.ref-card-plain .ref-card-body h3){color:#202020!important;text-shadow:none!important}
+body.portfolio-demo #scenicRoutes .ref-panel .ref-card-body :is(p,small,span){color:#444!important;text-shadow:none!important}
+body.portfolio-demo .ref-panel .ref-card-body h3{font-size:22px;line-height:1.3}
+body.portfolio-demo .ref-panel .ref-scene-name{color:#202020!important;background:#fff;padding:10px 14px;border:1px solid #dedede;border-radius:5px;text-shadow:none!important;max-width:calc(100% - 50px);font-size:clamp(19px,2vw,28px)}
+body.portfolio-demo .ref-panel .ref-scene-credit{background:#fff!important;color:#555!important;text-shadow:none!important}
+body.portfolio-demo .ref-panel .ref-grid{scrollbar-color:#999 #ededed;scroll-behavior:auto}
+body.portfolio-demo .ref-panel :is(.ref-scene-stage,.ref-scene-target>img){transform:none!important;filter:none!important;transition:none!important}
+body.portfolio-demo .ref-panel .ref-scene-stage::after{display:none!important}
+body.portfolio-demo .ref-panel :is(.ref-photo img,.ref-hero>img){filter:none!important}
+
+/* Controls retain their existing handlers and data; contrast never relies on hue. */
+body.portfolio-demo :is(.ref-panel,#norwayCatalogue,#filters,.filterline,.collection-search,.place-pagination,dialog)
+ :is(.ref-link,.button,button:not(:where(.ref-photo,.ref-scene-target,.norway-catalog-photo,.stay-gallery-thumb)),input:not([type=checkbox]),select,summary){
+ background:#f5f5f5!important;color:#242424!important;border:1px solid #aaa!important;box-shadow:none!important;backdrop-filter:none!important;text-shadow:none!important;animation:none!important;min-height:44px;
+}
+body.portfolio-demo .ref-panel .ref-link{padding:9px 12px!important;border-radius:5px!important;font-size:14px!important;text-decoration:none!important;line-height:1.45!important}
+body.portfolio-demo :is(.ref-panel,#norwayCatalogue,#filters,.filterline,.collection-search,.place-pagination,dialog)
+ :is(button,a.button,a.ref-link,summary):not(:disabled):not([aria-disabled=true]):hover{background:#e9e9e9!important;color:#151515!important;border-color:#555!important;transform:none!important}
+body.portfolio-demo :is(.ref-panel,#norwayCatalogue,#filters,.filterline,.collection-search,.place-pagination,dialog)
+ :is(button,a,input,select,summary):focus-visible{outline:3px solid #202020!important;outline-offset:3px!important;box-shadow:0 0 0 2px #fff!important}
+body.portfolio-demo :is(#filters button.active,button[aria-selected=true],.catalogue-flip-toggle[aria-expanded=true]){background:#dedede!important;color:#171717!important;border:2px solid #343434!important;font-weight:800!important}
+body.portfolio-demo :is(.ref-panel,#norwayCatalogue,#filters,.place-pagination,dialog) :is(button,input,select):disabled,
+body.portfolio-demo :is(.ref-panel,#norwayCatalogue,.place-pagination,dialog) [aria-disabled=true]{background:#ededed!important;color:#666!important;border-color:#c5c5c5!important;opacity:1!important;cursor:not-allowed!important;box-shadow:none!important}
+body.portfolio-demo :is(#galleryThumbs button[aria-pressed=true],.stay-gallery-thumb[aria-current=true]){outline:3px solid #242424!important;outline-offset:2px;border-color:#242424!important}
+body.portfolio-demo :is(.collection-search,#norwayCatalogue,dialog) :is(label,p,small){color:#444!important}
+body.portfolio-demo :is(.collection-search,#norwayCatalogue,dialog) ::placeholder{color:#666!important;opacity:1}
+
+/* Catalogue front remains a colour photograph; its reading side is plain paper. */
+body.portfolio-demo #norwayCatalogue :is(.norway-catalog-copy,.catalogue-flip>.norway-catalog-copy){background:#f5f5f5!important;color:#202020!important;scrollbar-color:#999 #ededed}
+body.portfolio-demo #norwayCatalogue :is(.norway-catalog-copy h3,.norway-catalog-description,.norway-catalog-address,.norway-catalog-hours,.norway-catalog-about,.norway-catalog-meta,.norway-catalog-meta a,.norway-catalog-status){color:#303030!important;text-shadow:none!important}
+body.portfolio-demo #norwayCatalogue :is(.norway-catalog-photo-label,.catalogue-flip-toggle,.norway-catalog-actions a,.norway-catalog-more,.norway-catalog-retry){background:#f5f5f5!important;color:#242424!important;border-color:#aaa!important;box-shadow:none!important;backdrop-filter:none!important}
+body.portfolio-demo #norwayCatalogue .catalogue-front-caption{background:#fff;color:#202020!important;bottom:12px;left:12px;right:12px;padding:12px 14px;border-radius:5px}
+body.portfolio-demo #norwayCatalogue .catalogue-front-caption :is(strong,small){color:#202020!important;text-shadow:none!important}
+body.portfolio-demo #norwayCatalogue .catalogue-front-caption strong{font-size:21px;line-height:1.3}
+body.portfolio-demo #norwayCatalogue .norway-catalog-card{border-color:#c4c4c4!important;box-shadow:none!important}
+body.portfolio-demo #norwayCatalogue .norway-catalog-card:hover{border-color:#888!important;box-shadow:none!important}
+body.portfolio-demo #norwayCatalogue .norway-catalog-photo{background:#ededed!important}
+body.portfolio-demo #norwayCatalogue .norway-catalog-no-photo{position:relative;z-index:3;color:#555!important;background:#ededed!important;padding:18px;max-width:80%;font-size:14px;line-height:1.5}
+body.portfolio-demo #norwayCatalogue .norway-catalog-photo::after{background:none!important}
+body.portfolio-demo #norwayCatalogue .norway-catalog-photo img{transform:none!important;transition:none!important}
+body.portfolio-demo #norwayCatalogue .catalogue-flip>:is(.norway-catalog-photo,.norway-catalog-copy){transition:none!important}
+
+body.portfolio-demo dialog{background:#fff!important;color:#202020!important;border-color:#aaa!important;backdrop-filter:none!important}
+body.portfolio-demo dialog :is(.gallery-top,.stay-gallery-header,.route-planner,.route-controls,.stay-gallery-venue-actions,.stay-gallery-meta,#destinationDetails,#tripSummary,.route-stop,.trip-leg){background:#f5f5f5!important;color:#202020!important;border-color:#d4d4d4!important;text-shadow:none!important;box-shadow:none!important}
+body.portfolio-demo dialog :is(h2,h3,h4,label,strong,b,a,.route-privacy,.stop-explanation,#routeStatus,#routeNote,#tripSummary span,.route-stop span,.route-stop small,.trip-leg p){color:#242424!important;text-shadow:none!important}
+body.portfolio-demo #galleryDialog .route-privacy{color:#444!important}
+body.portfolio-demo #galleryDialog .route-planner .eyebrow{color:#555!important}
+body.portfolio-demo dialog :is(h3,h4){font-family:Manrope,'Segoe UI',sans-serif!important;font-weight:650!important}
+body.portfolio-demo #norwayCatalogue summary::marker{color:#555!important}
+body.portfolio-demo dialog :is(.gallery-stage,.stay-gallery-stage){background:#ededed!important}
+body.portfolio-demo #galleryDialog .route-stop:has(input:checked){background:#e4e4e4!important;border:2px solid #555!important}
+body.portfolio-demo dialog input[type=checkbox]{accent-color:#333}
+body.portfolio-demo :is(.ref-panel,#norwayCatalogue,#cards,#filters,.filterline,.collection-search,.place-pagination,dialog) *{animation:none!important;transition-duration:0s!important}
+body.portfolio-demo #journeys #filters button.active,
+body.portfolio-demo #journeys #norwayCatalogue .catalogue-flip-toggle[aria-expanded=true]{background:#252525!important;color:#fff!important;border-color:#252525!important;font-weight:750!important}
+body.portfolio-demo #galleryDialog :is(#findRouteStops,#updateTrip):not(:disabled){background:#252525!important;color:#fff!important;border-color:#252525!important}
+body.portfolio-demo #galleryDialog :is(#findRouteStops,#updateTrip):not(:disabled):hover{background:#444!important;color:#fff!important;border-color:#444!important}
+body.portfolio-demo #journeys #scenicRoutes .ref-panel>.ref-link{background:#252525!important;color:#fff!important;border-color:#252525!important}
+body.portfolio-demo #journeys #scenicRoutes .ref-panel>.ref-link:hover{background:#444!important;color:#fff!important;border-color:#444!important}
+@media(max-width:650px){
+ body.portfolio-demo .ref-heading{padding:16px;max-width:100%!important}
+ body.portfolio-demo .ref-panel .ref-title{font-size:31px!important;overflow-wrap:anywhere}
+ body.portfolio-demo .ref-panel .ref-card-body h3{font-size:20px}
+ body.portfolio-demo .ref-panel .ref-scene-name{left:14px;max-width:calc(100% - 28px);font-size:20px}
+ body.portfolio-demo .ref-panel .ref-scene-credit{left:14px;max-width:calc(100% - 28px)}
+ body.portfolio-demo :is(.ref-panel,#norwayCatalogue,dialog) .ref-actions{gap:8px}
+}
