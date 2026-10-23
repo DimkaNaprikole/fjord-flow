@@ -91,9 +91,11 @@
   function foldCatalogue(article, visual, body, r, image, photos) {
     article.classList.add('catalogue-flip');
     if (image) article.style.setProperty('--catalogue-photo', `url("${image}")`);
-    const caption = node('div','catalogue-front-caption');
+    const portfolio = document.body.classList.contains('portfolio-demo');
+    const caption = node(portfolio ? 'span' : 'div','catalogue-front-caption');
     caption.append(node('small','',[r.town,r.region].filter(Boolean).join(' · ')),node('strong','',r.name));
-    article.append(caption);
+    // Keep the photo action above the actual caption height, including wrapped names.
+    (portfolio ? visual : article).append(caption);
     const labels = flipCopy[lang()];
     const prompts={nb:['Foto','Informasjon og adresse'],en:['Photos','Information & address'],uk:['Фото','Інформація та адреса'],sv:['Foto','Information och adress'],da:['Foto','Information og adresse']}[lang()];
     const photoLabel=visual.querySelector('.norway-catalog-photo-label');
