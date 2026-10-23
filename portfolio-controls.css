@@ -1,72 +1,72 @@
-/* Fjord / Flow: green leaf controls with tactile depth, shared across the page. */
-body.portfolio-demo.editorial-edition{--ff-cut:48% 3px 48% 3px / 88% 3px 88% 3px;--ff-control-edge:#81a75e;--ff-control-shadow:#0000001a}
+/* Fjord / Flow: chamfered graphite and pearl controls, shared across the page. */
+body.portfolio-demo.editorial-edition{--ff-cut:15px 5px 15px 5px;--ff-control-edge:#b8b8b8;--ff-control-shadow:#0000001a}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta,
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link{
- border-radius:48% 3px 48% 3px / 88% 3px 88% 3px!important;min-height:58px!important;padding:12px 16px 12px 34px!important;border:1px solid #6b9e42!important;border-bottom:4px solid #163a0e!important;
- background:radial-gradient(ellipse at var(--ff-light-x,30%) var(--ff-light-y,0%),#ffffff12,transparent 76%),linear-gradient(175deg,#326c20 0%,#2e651f 45%,#204c17 100%)!important;
+ border-radius:19px 6px 19px 6px!important;min-height:58px!important;padding:9px 9px 9px 22px!important;border:1px solid #5c5c5c!important;border-bottom:4px solid #101010!important;
+ background:radial-gradient(ellipse at var(--ff-light-x,30%) var(--ff-light-y,0%),#ffffff23,transparent 76%),linear-gradient(175deg,#484848 0%,#2b2b2b 45%,#1d1d1d 100%)!important;
  box-shadow:inset 0 1px 0 #ffffff5c,inset 1px 0 0 #ffffff1a,inset -1px 0 0 #0005,0 3px 0 #00000018,0 7px 15px #0000001f!important;
  color:#fff!important;letter-spacing:.025em!important;font-weight:750!important;transform:none!important;
  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta::after,
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link::after{
- width:36px!important;height:36px!important;flex-basis:36px!important;border-radius:50%!important;border:1px solid #c7e0a5!important;
- background:linear-gradient(140deg,#e8f5cf 5%,#b5d77c 45%,#8db752 100%)!important;color:#244817!important;font-size:22px!important;
+ width:36px!important;height:36px!important;flex-basis:36px!important;border-radius:50%!important;border:1px solid #e1e1e1!important;
+ background:linear-gradient(140deg,#f8f8f8 5%,#c8c8c8 45%,#999 100%)!important;color:#222!important;font-size:22px!important;
  box-shadow:inset 0 1px 1px #fff,inset 0 -2px 3px #0003,0 1px 0 #ffffff40,0 2px 5px #0005!important;
  transition:transform .18s ease,box-shadow .18s ease!important}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta:hover,
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:hover{
- background:radial-gradient(ellipse at var(--ff-light-x,50%) var(--ff-light-y,0%),#ffffff1c,transparent 75%),linear-gradient(175deg,#327222,#28631d 55%,#285c1b)!important;
- border-color:#88b55c!important;border-bottom-color:#1a4411!important;transform:translateY(-2px)!important;
+ background:radial-gradient(ellipse at var(--ff-light-x,50%) var(--ff-light-y,0%),#ffffff54,transparent 75%),linear-gradient(175deg,#535353,#303030 55%,#242424)!important;
+ border-color:#909090!important;border-bottom-color:#161616!important;transform:translateY(-2px)!important;
  box-shadow:inset 0 1px 0 #ffffffa6,inset 1px 0 0 #ffffff30,0 0 0 3px #00000008,0 6px 0 #00000010,0 12px 24px #0000002b!important}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta:hover::after,
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:hover::after{transform:rotate(7deg)!important;box-shadow:inset 0 1px 1px #fff,inset 0 -2px 3px #0002,0 0 11px #ffffff42!important}
 body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta:active,
 body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:active{
- transform:translateY(2px)!important;border-bottom-width:2px!important;background:linear-gradient(#244817,#28631d)!important;box-shadow:inset 0 3px 7px #0006,0 1px 2px #0002!important}
+ transform:translateY(2px)!important;border-bottom-width:2px!important;background:linear-gradient(#222,#303030)!important;box-shadow:inset 0 3px 7px #0006,0 1px 2px #0002!important}
 
 body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link,
 body.portfolio-demo.editorial-edition #journeys #norwayCatalogue :is(.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a),
 body.portfolio-demo.editorial-edition #journeys :is(#filters button,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry),
 body.portfolio-demo.editorial-edition dialog :is(button:not(.stay-gallery-thumb),a.button){
- border-radius:var(--ff-cut)!important;min-height:44px!important;padding:12px 26px!important;border:1px solid #a2c579!important;border-bottom:3px solid #81a75e!important;
- background:radial-gradient(ellipse at var(--ff-light-x,30%) var(--ff-light-y,0%),#fff,transparent 80%),linear-gradient(175deg,#f6fbe9,#d5e8bd)!important;
- color:#254c1b!important;font-weight:700!important;letter-spacing:.015em!important;
+ border-radius:var(--ff-cut)!important;min-height:44px!important;padding:11px 16px!important;border:1px solid #c9c9c9!important;border-bottom:3px solid #b8b8b8!important;
+ background:radial-gradient(ellipse at var(--ff-light-x,30%) var(--ff-light-y,0%),#fff,transparent 80%),linear-gradient(175deg,#fafafa,#e9e9e9)!important;
+ color:#292929!important;font-weight:700!important;letter-spacing:.015em!important;
  box-shadow:inset 0 1px 0 #fff,inset 1px 0 0 #fff9,0 2px 0 #00000005,0 4px 7px #0000000d!important;
  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important}
-body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link::after{font-size:17px!important;color:#356224!important;margin-left:14px!important}
+body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link::after{font-size:17px!important;color:#404040!important;margin-left:14px!important}
 body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link:hover,
 body.portfolio-demo.editorial-edition #journeys #norwayCatalogue :is(.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a):hover,
 body.portfolio-demo.editorial-edition #journeys :is(#filters button,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry):hover,
 body.portfolio-demo.editorial-edition dialog :is(button:not(.stay-gallery-thumb),a.button):hover{
- background:radial-gradient(ellipse at var(--ff-light-x,50%) var(--ff-light-y,0%),#fff,transparent 85%),linear-gradient(#fff,#dfedca)!important;
- color:#1c4014!important;border-color:#8db752!important;border-bottom-color:#88ad63!important;transform:translateY(-2px)!important;
+ background:radial-gradient(ellipse at var(--ff-light-x,50%) var(--ff-light-y,0%),#fff,transparent 85%),linear-gradient(#fff,#ededed)!important;
+ color:#1c1c1c!important;border-color:#999!important;border-bottom-color:#aaa!important;transform:translateY(-2px)!important;
  box-shadow:inset 0 1px 0 #fff,0 0 0 3px #00000005,0 8px 15px #0000001c!important}
 body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link:active,
 body.portfolio-demo.editorial-edition #journeys #norwayCatalogue :is(.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-actions a):active,
 body.portfolio-demo.editorial-edition #journeys :is(#filters button,.place-pagination button,.norway-catalog-gps,.norway-catalog-retry):active,
-body.portfolio-demo.editorial-edition dialog :is(button:not(.stay-gallery-thumb),a.button):active{transform:translateY(1px)!important;background:#c4dda8!important;box-shadow:inset 0 2px 4px #0002!important;border-bottom-width:1px!important}
+body.portfolio-demo.editorial-edition dialog :is(button:not(.stay-gallery-thumb),a.button):active{transform:translateY(1px)!important;background:#e0e0e0!important;box-shadow:inset 0 2px 4px #0002!important;border-bottom-width:1px!important}
 
 body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch){
- min-height:44px!important;border-radius:var(--ff-cut)!important;padding:11px 24px!important;border:1px solid #ffffff70!important;border-bottom:3px solid #151515!important;
- background:radial-gradient(ellipse at var(--ff-light-x,35%) var(--ff-light-y,0%),#ffffff12,transparent 75%),linear-gradient(175deg,#326b21f5,#285c1bf5)!important;
+ min-height:44px!important;border-radius:var(--ff-cut)!important;padding:11px 15px!important;border:1px solid #ffffff70!important;border-bottom:3px solid #151515!important;
+ background:radial-gradient(ellipse at var(--ff-light-x,35%) var(--ff-light-y,0%),#ffffff30,transparent 75%),linear-gradient(175deg,#4c4c4cf5,#242424f5)!important;
  box-shadow:inset 0 1px 0 #ffffff70,inset 1px 0 0 #ffffff18,0 4px 8px #0004!important;
  color:#fff!important;font:700 11px/1.4 Manrope,sans-serif!important;letter-spacing:.01em!important;
  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease!important}
 body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch):hover{
- background:radial-gradient(ellipse at var(--ff-light-x,50%) var(--ff-light-y,0%),#ffffff1c,transparent 78%),linear-gradient(#347322,#28631d)!important;
- transform:translateY(-2px)!important;border-color:#fff!important;border-bottom-color:#254c1b!important;
+ background:radial-gradient(ellipse at var(--ff-light-x,50%) var(--ff-light-y,0%),#ffffff72,transparent 78%),linear-gradient(#555,#303030)!important;
+ transform:translateY(-2px)!important;border-color:#fff!important;border-bottom-color:#292929!important;
  box-shadow:inset 0 1px 0 #fff,0 0 0 3px #ffffff12,0 0 16px #ffffff30,0 8px 15px #0005!important}
-body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch):active{transform:translateY(1px)!important;background:#285c1b!important;box-shadow:inset 0 2px 5px #0008!important;border-bottom-width:1px!important}
-body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .photo .photo-hint{border-radius:var(--ff-cut)!important;padding-inline:20px!important;background:linear-gradient(#326b21f5,#214b17f5)!important;border:1px solid #ffffff80!important;box-shadow:inset 0 1px 0 #ffffff5c,0 3px 7px #0004!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch):active{transform:translateY(1px)!important;background:#242424!important;box-shadow:inset 0 2px 5px #0008!important;border-bottom-width:1px!important}
+body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .photo-hint{border-radius:11px 4px 11px 4px!important;background:linear-gradient(#454545ed,#252525ed)!important;border:1px solid #ffffff80!important;box-shadow:inset 0 1px 0 #ffffff5c,0 3px 7px #0004!important}
 body.portfolio-demo.editorial-edition #journeys #filters button.active,
-body.portfolio-demo.editorial-edition #journeys #filters button.active:hover{background:linear-gradient(#467f28,#285b1b)!important;border-color:#254c1b!important;color:#fff!important;box-shadow:inset 0 1px 0 #ffffff50,0 2px 3px #0002!important}
+body.portfolio-demo.editorial-edition #journeys #filters button.active:hover{background:linear-gradient(#444,#262626)!important;border-color:#292929!important;color:#fff!important;box-shadow:inset 0 1px 0 #ffffff50,0 2px 3px #0002!important}
 body.portfolio-demo.editorial-edition dialog :is(#galleryClose,#galleryPrev,#galleryNext){padding:0!important;border-radius:50%!important;width:44px!important;height:44px!important;font-size:25px!important}
 body.portfolio-demo.editorial-edition :is(a,button,input,select,summary):focus-visible{outline:2px solid #252525!important;outline-offset:5px!important}
 body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(button,a):focus-visible{outline-color:#fff!important;outline-offset:4px!important}
 @media(max-width:650px){
- body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta{min-height:56px!important;padding-left:28px!important;gap:10px!important}
- body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .postcard-toggle{font-size:10px!important;padding:10px 20px!important}
- body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link{padding:10px 22px!important}
+ body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta{min-height:56px!important;padding-left:16px!important;gap:13px!important}
+ body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .postcard-toggle{font-size:10px!important;padding:10px 12px!important}
+ body.portfolio-demo.editorial-edition #journeys .ref-panel .ref-link{padding:10px 13px!important}
 }
 @media(hover:none){
  body.portfolio-demo.editorial-edition #journeys :is(.ref-link,.portfolio-first-cta,.postcard-toggle,.card-bottom button):hover{transform:none!important}
@@ -88,6 +88,3 @@ body.portfolio-demo.editorial-edition dialog :is(button:not(.stay-gallery-thumb)
  body.portfolio-demo.editorial-edition #journeys #scenicRoutes>.ref-panel>.ref-link:hover,
  body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard :is(.postcard-toggle,.card-bottom button,.flight-launch):hover{transform:none!important}
 }
-
-body.portfolio-demo.editorial-edition #journeys #cards .compact-postcard .photo:hover .photo-hint{background:linear-gradient(#347322,#28631d)!important;box-shadow:inset 0 1px 0 #fff9,0 0 12px #c0e49855,0 5px 10px #0004!important}
-
