@@ -1,6 +1,6 @@
 /* Admin adapter only. Shared ff-leaf-controls.css owns surfaces and select menus. */
 body.ff-admin-leaf {
-  --ff-leaf-shape: 28px 5px 28px 5px;
+  --ff-leaf-shape: 15px 5px 15px 5px;
   --ff-leaf-surface: #fff;
   --ff-leaf-ink: #252525;
 }
