@@ -11,7 +11,22 @@ test('news images and practical details retain attribution and do not invent eng
  assert.deepEqual(data.items[1].eventDates,['2026-10-27','2026-10-28']);
 });
 test('municipality registry is national and disambiguates duplicate names by code',()=>{assert.equal(directory.municipalities.length,357);assert.equal(new Set(directory.municipalities.map(x=>x.id)).size,357);for(const item of data.items)assert.ok(directory.municipalities.some(m=>m.id===item.municipality));});
-test('local news filters and expiry prevent old events appearing as upcoming',()=>{const now=Date.parse('2026-10-18');assert.equal(activeItems(data.items,'3446','all',now).filter(x=>x.category!=='places').length,2);assert.equal(activeItems(data.items,'0301','all',now).length,0);assert.equal(activeItems(data.items,'all','events',now).length,1);assert.equal(activeItems(data.items.filter(x=>x.publishedKind!=='editorial'),'all','all',Date.parse('2026-10-30')).filter(x=>x.category!=='places').length,0);assert.equal(activeItems(data.items,'all','all',Date.parse('2026-10-01')).length,0);});
+test('local news filters and expiry prevent old events appearing as upcoming',()=>{
+ const fixture=[
+  {id:'gran-event',municipality:'3446',category:'events',published:'2026-10-16',expires:'2026-10-19T00:00:00Z'},
+  {id:'expired',municipality:'3446',category:'events',published:'2026-10-15',expires:'2026-10-17T00:00:00Z'},
+  {id:'future-announcement',municipality:'0301',category:'events',published:'2026-10-19',expires:'2026-10-20T00:00:00Z'},
+  {id:'notice',municipality:'3234',category:'notice',published:'2026-10-17',expires:'2026-10-21T00:00:00Z'},
+  {id:'place',municipality:'3446',category:'places',published:'2026-10-10'}
+ ];
+ const now=Date.parse('2026-10-18');
+ assert.deepEqual(activeItems(fixture,'3446','all',now).map(x=>x.id),['gran-event','place']);
+ assert.equal(activeItems(fixture,'0301','all',now).length,0);
+ assert.deepEqual(activeItems(fixture,'all','events',now).map(x=>x.id),['gran-event']);
+ assert.equal(activeItems(fixture,'all','all',Date.parse('2026-10-30')).filter(x=>x.category!=='places').length,0);
+ assert.equal(activeItems(fixture,'all','all',Date.parse('2026-10-01')).length,0);
+});
+
 test('editorial items have dated attributable sources and five languages',()=>{for(const item of data.items){assert.equal(new URL(item.url).protocol,'https:');assert.ok(item.published);if(item.category!=='places')assert.ok(item.expires);for(const lang of['nb','en','uk','sv','da'])assert.equal(item.copy[lang].length,2);}assert.equal(new URL(groupSearch('Våler')).searchParams.get('q'),'Våler kommune');assert.ok(data.sources['4204'].facebookSource);});
 
 test('nearby catalogue includes only Gran, Lunner and Jevnaker while respecting category and expiry',()=>{

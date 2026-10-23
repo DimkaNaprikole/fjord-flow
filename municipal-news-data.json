@@ -7010,6 +7010,118 @@
         ]
       },
       "textOnly": true
+    },
+    {
+      "municipality": "1108",
+      "category": "events",
+      "checked": "2026-10-23",
+      "eventDate": "2026-10-24",
+      "source": "Sandnes kunst- og kulturhus",
+      "location": "Sandnes kulturhus · Mauritz Kartevolds plass 1, 4306 Sandnes",
+      "mapQuery": "Sandnes kulturhus, Mauritz Kartevolds plass 1, Sandnes",
+      "textOnly": true,
+      "id": "sandnes-foajelordag-kari-grethe-marit-20261024",
+      "published": "2026-04-16",
+      "sourcePublished": "2026-04-16",
+      "expires": "2026-10-24T15:00:00+02:00",
+      "url": "https://www.sandnes-kulturhus.no/program/46807-foajelordag-kari-grethe-og-marit-med-band/",
+      "website": "https://tix.no/nb/sandnes/buyingflow/tickets/46807/",
+      "time": "14:00",
+      "copy": {
+        "nb": [
+          "Foajélørdag · Kari Grethe og Marit med band",
+          "Konsert med søstrene og band i Sandnes kulturhus, 24. oktober kl. 14:00."
+        ],
+        "en": [
+          "Foajélørdag · Kari Grethe and Marit with band",
+          "The sisters perform with their band at Sandnes kulturhus on 24 October at 14:00."
+        ],
+        "uk": [
+          "Foajélørdag · Kari Grethe та Marit із гуртом",
+          "Концерт сестер із гуртом у Sandnes kulturhus, 24 жовтня о 14:00."
+        ],
+        "sv": [
+          "Foajélørdag · Kari Grethe och Marit med band",
+          "Systrarna spelar med sitt band på Sandnes kulturhus den 24 oktober kl. 14:00."
+        ],
+        "da": [
+          "Foajélørdag · Kari Grethe og Marit med band",
+          "Søstrene spiller med deres band i Sandnes kulturhus den 24. oktober kl. 14:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Arrangøren oppgir 90–170 kr og ca. 45–60 minutters varighet. Alle tider er norsk lokaltid. Sjekk billettkategori, eventuelle gebyrer, ledige plasser og endringer hos arrangøren."
+        ],
+        "en": [
+          "The organiser lists NOK 90–170 and an approximate duration of 45–60 minutes. Times are local to Norway. Check ticket categories, any fees, availability and updates with the organiser."
+        ],
+        "uk": [
+          "Організатор указує 90–170 NOK і приблизну тривалість 45–60 хвилин. Час місцевий, норвезький. Категорії квитків, можливі збори, наявність місць і зміни перевіряйте в організатора."
+        ],
+        "sv": [
+          "Arrangören anger 90–170 NOK och cirka 45–60 minuters speltid. Norsk lokal tid. Kontrollera biljettkategori, eventuella avgifter, lediga platser och ändringar hos arrangören."
+        ],
+        "da": [
+          "Arrangøren oplyser 90–170 NOK og cirka 45–60 minutters varighed. Norsk lokaltid. Kontrollér billetkategori, eventuelle gebyrer, ledige pladser og ændringer hos arrangøren."
+        ]
+      }
+    },
+    {
+      "municipality": "1108",
+      "category": "events",
+      "checked": "2026-10-23",
+      "eventDate": "2026-10-24",
+      "source": "Sandnes kunst- og kulturhus",
+      "location": "Sandnes kulturhus · Mauritz Kartevolds plass 1, 4306 Sandnes",
+      "mapQuery": "Sandnes kulturhus, Mauritz Kartevolds plass 1, Sandnes",
+      "textOnly": true,
+      "id": "sandnes-espen-lind-20261024",
+      "published": "2026-04-29",
+      "sourcePublished": "2026-04-29",
+      "expires": "2026-10-24T20:30:00+02:00",
+      "url": "https://www.sandnes-kulturhus.no/program/47073-espen-lind/",
+      "time": "19:00",
+      "copy": {
+        "nb": [
+          "Espen Lind med band",
+          "Konsert i Sandnes kulturhus, 24. oktober kl. 19:00."
+        ],
+        "en": [
+          "Espen Lind with band",
+          "Concert at Sandnes kulturhus on 24 October at 19:00."
+        ],
+        "uk": [
+          "Espen Lind із гуртом",
+          "Концерт у Sandnes kulturhus, 24 жовтня о 19:00."
+        ],
+        "sv": [
+          "Espen Lind med band",
+          "Konsert på Sandnes kulturhus den 24 oktober kl. 19:00."
+        ],
+        "da": [
+          "Espen Lind med band",
+          "Koncert i Sandnes kulturhus den 24. oktober kl. 19:00."
+        ]
+      },
+      "details": {
+        "nb": [
+          "Arrangøren oppgir 620 kr og ca. 90 minutters varighet. Alle tider er norsk lokaltid. Sjekk eventuelle gebyrer, ledige plasser og endringer hos arrangøren før bestilling."
+        ],
+        "en": [
+          "The organiser lists NOK 620 and an approximate duration of 90 minutes. Times are local to Norway. Check any fees, availability and updates with the organiser before booking."
+        ],
+        "uk": [
+          "Організатор указує 620 NOK і приблизну тривалість 90 хвилин. Час місцевий, норвезький. Можливі збори, наявність місць і зміни перевіряйте в організатора перед бронюванням."
+        ],
+        "sv": [
+          "Arrangören anger 620 NOK och cirka 90 minuters speltid. Norsk lokal tid. Kontrollera eventuella avgifter, lediga platser och ändringar hos arrangören före bokning."
+        ],
+        "da": [
+          "Arrangøren oplyser 620 NOK og cirka 90 minutters varighed. Norsk lokaltid. Kontrollér eventuelle gebyrer, ledige pladser og ændringer hos arrangøren før bestilling."
+        ]
+      },
+      "website": "https://tix.no/nb/sandnes/buyingflow/tickets/47073/"
     }
   ],
   "mediaUpdated": "2026-10-19"
