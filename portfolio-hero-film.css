@@ -1,0 +1,21 @@
+/* Full original film frame; the static hero mascot is removed in HTML. */
+body.portfolio-demo.editorial-edition #journeys #advertising{display:grid!important;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr)!important;align-items:center!important;gap:36px!important;height:auto!important;min-height:0!important;padding:44px max(32px,calc((100vw - 1320px)/2))!important;overflow:hidden!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .editorial-landscape{grid-column:2;grid-row:1;position:relative!important;inset:auto!important;width:100%!important;height:auto!important;aspect-ratio:16/9;overflow:hidden!important;border-radius:16px!important;background:#0c1921!important;isolation:isolate;mask:none!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .editorial-landscape::before,body.portfolio-demo.editorial-edition #journeys #advertising .editorial-landscape::after{content:none!important;display:none!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .editorial-landscape video{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:contain!important;filter:none!important;opacity:1!important;mask:none!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .advertising-message{grid-column:1;grid-row:1;position:relative!important;inset:auto!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+body.portfolio-demo.editorial-edition #journeys #advertising #advertisingTitle{font-size:clamp(40px,4.8vw,68px)!important;max-width:100%!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .editorial-intro{width:100%!important;max-width:100%!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .portfolio-first-cta{max-width:100%!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .hero-film-control{position:absolute;z-index:4;right:12px;bottom:12px;display:inline-flex;align-items:center;justify-content:center;min-height:44px;max-width:calc(100% - 24px);padding:10px 17px;border:1px solid #ccc;border-bottom:3px solid #aaa;border-radius:var(--ff-leaf-shape,15px 5px 15px 5px);background:linear-gradient(175deg,#fff,#ededed);color:#252525;text-shadow:none;box-shadow:inset 0 1px 0 #fff,0 3px 8px #0003;font:700 12px/1.4 Manrope,sans-serif;cursor:pointer}
+body.portfolio-demo.editorial-edition #journeys #advertising .hero-film-control::before,body.portfolio-demo.editorial-edition #journeys #advertising .hero-film-control::after{content:none!important}
+body.portfolio-demo.editorial-edition #journeys #advertising .hero-film-control:hover{background:#fff;box-shadow:inset 0 1px 0 #fff,0 0 0 2px #ffffff60,0 5px 10px #0003}
+body.portfolio-demo.editorial-edition #journeys #advertising .hero-film-control:focus-visible{outline:2px solid #858585!important;outline-offset:3px!important}
+@media(max-width:760px){
+ body.portfolio-demo.editorial-edition #journeys #advertising{grid-template-columns:minmax(0,1fr)!important;gap:26px!important;padding:20px!important}
+ body.portfolio-demo.editorial-edition #journeys #advertising .editorial-landscape{grid-column:1;grid-row:1;border-radius:12px!important}
+ body.portfolio-demo.editorial-edition #journeys #advertising .advertising-message{grid-column:1;grid-row:2}
+ body.portfolio-demo.editorial-edition #journeys #advertising #advertisingTitle{font-size:clamp(38px,10vw,52px)!important;margin-bottom:16px!important}
+ body.portfolio-demo.editorial-edition #journeys #advertising .editorial-eyebrow{margin-bottom:14px!important}
+ body.portfolio-demo.editorial-edition #journeys #advertising .hero-film-control{right:8px;bottom:8px;padding:9px 13px;font-size:11px}
+}
