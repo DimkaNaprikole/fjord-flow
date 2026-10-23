@@ -1,6 +1,6 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';
-const source=await fs.readFile(new URL('./afonya-auth.js',import.meta.url),'utf8');const auth=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
-function setup(profile){const map=new Map();globalThis.sessionStorage={getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};globalThis.window={dispatchEvent:()=>{}};globalThis.fetch=async()=>({ok:true,json:async()=>({users:[profile]})});return map;}
+const source=await fs.readFile(new URL('./afonya-auth.js',import.meta.url),'utf8');const portableSource=source.replace("'./visitor-session.mjs?v=cms-auth-20261023-r3'",JSON.stringify(new URL('./visitor-session.mjs?v=cms-auth-20261023-r3',import.meta.url).href));const auth=await import('data:text/javascript;base64,'+Buffer.from(portableSource).toString('base64'));
+function setup(profile){const map=new Map(),local=new Map();globalThis.localStorage={getItem:k=>local.get(k)||null,setItem:(k,v)=>local.set(k,v),removeItem:k=>local.delete(k)};globalThis.sessionStorage={getItem:k=>map.get(k)||null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};globalThis.window={dispatchEvent:()=>{}};globalThis.fetch=async()=>({ok:true,json:async()=>({users:[profile]})});return map;}
 test('only server-verified email and matching identity become a signed-in profile',async()=>{setup({localId:'visitor-1',email:'test@example.com',emailVerified:true});const user={uid:'visitor-1',refreshToken:'refresh',getIdToken:async()=>'token'};await auth.saveSocialVisitor('public-api-key',user);assert.equal(auth.getStoredVisitor().email,'test@example.com');await auth.signOutVisitor();assert.equal(auth.getStoredVisitor(),null);});
 test('missing email, disabled accounts and mismatched users never create a session',async()=>{for(const profile of[{localId:'visitor-1',emailVerified:true},{localId:'visitor-1',email:'test@example.com',emailVerified:true,disabled:true},{localId:'other',email:'test@example.com',emailVerified:true}]){setup(profile);await assert.rejects(auth.saveSocialVisitor('key',{uid:'visitor-1',getIdToken:async()=>'token'}),/SOCIAL_EMAIL_REQUIRED/);assert.equal(auth.getStoredVisitor(),null);}});
 test('Facebook email is not considered verified until Firebase confirms it',async()=>{setup({localId:'visitor-1',email:'test@example.com',emailVerified:false});const visitor=await auth.saveSocialVisitor('key',{uid:'visitor-1',getIdToken:async()=>'token'});assert.equal(visitor.emailVerified,false);assert.equal(auth.getStoredVisitor(),null);});
@@ -58,4 +58,18 @@ test('127 preview directs Google login to the authorized public site without a c
  const f=await gateFixture('en',{providers:['google.com']});
  globalThis.location={hostname:'127.0.0.1'};
  try{const social=f.gate.children.find(n=>n.className==='fjord-social-buttons');assert.ok(social);await social.children[0].onclick();const message=f.form.children.find(n=>n.tag==='p');const find=n=>n.tag==='a'?n:n.children?.map(find).find(Boolean);const link=find(f.gate);assert.equal(link.href,'https://dimkanaprikole.github.io/fjord-flow/');assert.equal(f.calls.length,0);}finally{delete globalThis.location;f.dialog.close();await f.promise;}
+});
+
+
+test('remember checkbox is explicit, localizes its lifetime and never persists a password',async()=>{
+ const f=await gateFixture('en');const label=f.form.children.find(n=>n.className==='fjord-auth-remember'),remember=label.children[0];assert.equal(remember.type,'checkbox');assert.equal(remember.checked,false);assert.match(label.children[1].textContent,/30 days/);remember.checked=true;f.email.value='test@example.test';f.password.value='must-not-be-saved';for(const fn of f.form.events.get('submit'))fn({preventDefault(){}});await flush();const raw=globalThis.localStorage.getItem('fjord-afonya-visitor');assert.ok(raw);assert.doesNotMatch(raw,/must-not-be-saved|password/);assert.equal(globalThis.sessionStorage.getItem('fjord-afonya-visitor'),null);assert.equal(globalThis.localStorage.getItem('fjord-afonya-remember'),'1');f.dialog.close();await f.promise;
+});
+
+
+test('closing a password-login dialog during lookup prevents late verified sign-in',async()=>{
+ const f=await gateFixture('en');let completeLookup;const original=globalThis.fetch;globalThis.fetch=(url,options)=>url.includes('accounts:lookup')?new Promise(resolve=>{completeLookup=()=>resolve({ok:true,json:async()=>({users:[{email:'test@example.test',emailVerified:true}]})})}):original(url,options);f.email.value='test@example.test';f.password.value='mock-password';for(const fn of f.form.events.get('submit'))fn({preventDefault(){}});await flush();assert.ok(completeLookup);f.dialog.close();assert.equal(await f.promise,null);completeLookup();await flush();assert.equal(auth.getStoredVisitor(),null);
+});
+
+test('password-login verification rejects disabled or different-email profiles',async()=>{
+ for(const profile of [{email:'test@example.test',emailVerified:true,disabled:true},{email:'someone-else@example.test',emailVerified:true}]){const f=await gateFixture('en');const original=globalThis.fetch;globalThis.fetch=(url,options)=>url.includes('accounts:lookup')?Promise.resolve({ok:true,json:async()=>({users:[profile]})}):original(url,options);f.email.value='test@example.test';f.password.value='mock-password';for(const fn of f.form.events.get('submit'))fn({preventDefault(){}});await flush();assert.equal(auth.getStoredVisitor(),null);f.dialog.close();await f.promise;}
 });

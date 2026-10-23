@@ -1,3 +1,4 @@
+import {previewDocument} from './cms-private-preview.mjs?v=cms-private-20261023-r2';
 /* Published, validated content only. Drafts enter solely through the same-origin editor preview. */
 import {PAGES,BLOCKS,BUTTONS,LANGUAGES,validateDocument,emptyDocument,elementDescriptor} from './site-editor-schema.mjs?v=7';
 import {globalDesignCSS,individualDesignDescriptor,DESIGN_SCOPE} from './global-design.mjs?v=2';
@@ -82,7 +83,7 @@ if(preview){
  window.addEventListener('message',event=>{
   if(event.source!==parent||event.origin!==location.origin||event.data?.nonce!==previewNonce)return;
   const message=event.data;
-  if(message.type==='fjord-editor:apply'){try{const next=validateDocument(message.document);if(LANGUAGES.includes(message.language)&&language()!==message.language)window.FjordI18n?.setLanguage(message.language);documentValue=next;apply();if(PAGES.some(p=>p.id===message.pageId))window.FjordTabs?.activate(message.pageId);const target=BLOCKS.find(b=>b.id===message.blockId)||PAGES.find(p=>p.id===message.pageId);if(target&&target.id!==lastPreviewTarget)select(target.root)?.scrollIntoView({block:'start'});lastPreviewTarget=target?.id||'';reply({type:'fjord-editor:applied'});}catch{reply({type:'fjord-editor:error',error:'invalid_document'});}}
+  if(message.type==='fjord-editor:apply'){try{const next=validateDocument(message.document);if(LANGUAGES.includes(message.language)&&language()!==message.language)window.FjordI18n?.setLanguage(message.language);documentValue=previewDocument(next,message.previewAssets,location.origin);apply();if(PAGES.some(p=>p.id===message.pageId))window.FjordTabs?.activate(message.pageId);const target=BLOCKS.find(b=>b.id===message.blockId)||PAGES.find(p=>p.id===message.pageId);if(target&&target.id!==lastPreviewTarget)select(target.root)?.scrollIntoView({block:'start'});lastPreviewTarget=target?.id||'';reply({type:'fjord-editor:applied'});}catch{reply({type:'fjord-editor:error',error:'invalid_document'});}}
  });
  reply({type:'fjord-editor:ready'});
 }else{

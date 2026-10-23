@@ -18,7 +18,7 @@ function fixture(){
  const auth={getStoredVisitor:()=>visitor,getVisitorToken:async key=>{calls.push(['token',key]);return visitor.idToken},ensureVerified:async(...args)=>{calls.push(['verify',...args]);return visitor},signOutVisitor:async()=>{calls.push(['logout']);visitor.email='';}};
  const window={FjordI18n:{language:'uk'},addEventListener:(name,fn)=>events.set(name,fn),dispatchEvent:event=>events.get(event.type)?.()};
  const context=vm.createContext({window,document,CustomEvent:class{constructor(type){this.type=type}},fetch:async()=>({ok:true,json:async()=>({firebaseApiKey:'public-firebase-key'})}),fakeAuth:auth});
- vm.runInContext(source.replace("import('./afonya-auth.js?v=7')",'Promise.resolve(fakeAuth)'),context);
+ vm.runInContext(source.replace(/import\(['"]\.\/afonya-auth\.js(?:\?[^'"]*)?['"]\)/g,'Promise.resolve(fakeAuth)'),context);
  return {window,document,calls,visitor,events,auth};
 }
 test('successful registration closes the dialog; explicit profile still offers sign out',async()=>{

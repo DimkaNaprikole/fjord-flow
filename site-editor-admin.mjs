@@ -1,12 +1,19 @@
+import {mountOwnerPassword} from './owner-password-form.mjs?v=cms-auth-20261023-r3';
+import {createPrivatePreviews} from './cms-private-preview.mjs?v=cms-private-20261023-r2';
 import {validateDocument,emptyDocument} from './site-editor-schema.mjs?v=7';
-import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=6';
-import {getVisitorToken,ensureVerified} from './afonya-auth.js';
+import {mountCatalogueEditor} from './catalogue-editor-admin.mjs?v=cms-private-20261023-r2';
+import {getVisitorToken,ensureVerified,getStoredVisitor,getAuthSessionRevision} from './afonya-auth.js?v=cms-auth-20261023-r3';
 
 const $=id=>document.getElementById(id);
 const OWNER='laurkent123@gmail.com';
 const nonce=crypto.randomUUID();
 const frame=$('sitePreview');
-const panels=['catalogue','library','history'];
+const panels=['catalogue','library','history','access'];
+let privatePreviews=null,previewGeneration=0;
+async function previewImage(image,src){
+ if(!privatePreviews||!authorized){image.removeAttribute('src');return;}
+ try{const url=await privatePreviews.resolve(src);if(authorized)image.src=url;}catch{image.alt=(image.alt||'Фото')+' · предпросмотр недоступен';}
+}
 let documentValue=emptyDocument(),savedJSON=JSON.stringify(documentValue),draftVersion=0,publishedRevision=0;
 let authorized=false,busy=false,config=null,previewReady=false,changeAccount=false,catalogueEditor,previewTimer;
 const create=(tag,text)=>{const node=document.createElement(tag);if(text!==undefined)node.textContent=text;return node;};
@@ -14,6 +21,7 @@ const dirty=()=>JSON.stringify(documentValue)!==savedJSON;
 const hasUnsaved=()=>dirty()||Boolean(catalogueEditor?.hasUnapplied());
 function status(message,kind=''){ $('status').textContent=message;$('status').dataset.kind=kind; }
 function controls(){
+  if(!authorized){privatePreviews?.clear();previewGeneration++;}
   $('save').disabled=busy||!authorized;$('publish').disabled=busy||!authorized;$('login').disabled=busy;
   document.querySelector('.editor-controls').inert=busy||!authorized;
   document.querySelector('.editor-layout').hidden=!authorized;
@@ -23,13 +31,18 @@ function changed(){
   status('Есть изменения в черновике. Они ещё не сохранены.');
   clearTimeout(previewTimer);previewTimer=setTimeout(sendPreview,100);
 }
-function sendPreview(){
-  if(!previewReady)return;
+async function sendPreview(){
+  if(!previewReady||!authorized||!privatePreviews)return;
+  const generation=++previewGeneration;
   let clean;
   try{clean=validateDocument(documentValue);}
   catch{status('Проверьте заполненные ссылки и значения. Последний корректный черновик остаётся в предпросмотре; изменения не сохранены.','error');return;}
   $('previewStatus').textContent='Обновляем предпросмотр черновика…';
-  frame.contentWindow.postMessage({type:'fjord-editor:apply',nonce,document:clean,language:$('previewLanguage').value,pageId:'catalogue'},location.origin);
+  try{
+    const previewAssets=await privatePreviews.prepare(clean);
+    if(!authorized||generation!==previewGeneration)return;
+    frame.contentWindow.postMessage({type:'fjord-editor:apply',nonce,document:clean,previewAssets,language:$('previewLanguage').value,pageId:'catalogue'},location.origin);
+  }catch(error){if(generation===previewGeneration)$('previewStatus').textContent='Фото предпросмотра недоступны: '+error.message;}
 }
 function openPreview(){
   previewReady=false;$('previewStatus').textContent='Загружаем предпросмотр…';
@@ -54,7 +67,7 @@ function renderHistory(history=[]){
     button.addEventListener('click',()=>void rollback(item.revision));row.append(label,button);host.append(row);
   }
 }
-async function api(path,{method='GET',body,auth=true}={}){
+async function api(path,{method='GET',body,auth=true,responseType='json'}={}){
   if(!config)throw new Error('Настройки сервера ещё не загружены. Изменения не сохранены.');
   const headers={};if(body!==undefined)headers['Content-Type']='application/json';
   if(auth){
@@ -63,6 +76,7 @@ async function api(path,{method='GET',body,auth=true}={}){
     headers.Authorization='Bearer '+token;
   }
   const response=await fetch(config.endpoint.replace(/\/$/,'')+path,{method,headers,body:body===undefined?undefined:JSON.stringify(body),credentials:'omit',cache:'no-store',signal:AbortSignal.timeout(15000)});
+  if(response.ok&&responseType==='blob')return response.blob();
   const value=await response.json().catch(()=>({}));
   if(!response.ok){
     if(response.status===401||response.status===403){
@@ -75,7 +89,9 @@ async function api(path,{method='GET',body,auth=true}={}){
   return value;
 }
 async function loadOwner({keepPreview=false}={}){
-  const state=await api('/cms/admin/state');authorized=true;changeAccount=false;
+  const ownerRevision=getAuthSessionRevision();
+  const state=await api('/cms/admin/state');
+  if(ownerRevision!==getAuthSessionRevision()||getStoredVisitor()?.email?.toLowerCase()!==OWNER)throw Error('STALE_SESSION');authorized=true;changeAccount=false;
   publishedRevision=Number(state.published?.revision||0);draftVersion=Number(state.draft?.version||0);
   if(!dirty()&&!keepPreview){
     documentValue=validateDocument(state.draft?.document||state.published?.document||emptyDocument());savedJSON=JSON.stringify(documentValue);renderAll();
@@ -140,13 +156,19 @@ $('previewLanguage').onchange=sendPreview;$('reloadPreview').onclick=openPreview
 $('login').onclick=()=>void signIn();$('closeAuth').onclick=()=>$('authDialog').close();
 $('save').onclick=()=>void run(saveDraft);$('publish').onclick=()=>void publish();
 window.addEventListener('beforeunload',event=>{if(hasUnsaved()){event.preventDefault();event.returnValue='';}});
-catalogueEditor=mountCatalogueEditor({getDocument:()=>documentValue,changed:()=>{validateDocument(documentValue);changed();},api,isAuthorized:()=>authorized,status});
+catalogueEditor=mountCatalogueEditor({getDocument:()=>documentValue,changed:()=>{validateDocument(documentValue);changed();},api,previewImage,isAuthorized:()=>authorized,status});
 controls();
 try{
   const response=await fetch('./chat-config.json',{cache:'no-store'});if(!response.ok)throw new Error();config=await response.json();
   const endpoint=new URL(config.endpoint);if(endpoint.protocol!=='https:'||endpoint.hostname!=='fjord-flow-chat.laurkent123.workers.dev')throw new Error();
-  status('Войдите владельцем, чтобы открыть редактор.');
+  privatePreviews=createPrivatePreviews({endpoint:config.endpoint,load:path=>api(path,{responseType:'blob'})});
+  mountOwnerPassword(document.getElementById('ownerPasswordHost'),{apiKey:config.firebaseApiKey,endpoint:config.endpoint,language:'ru'});
+  status('Войдите владельцем через Google или по почте, чтобы открыть редактор.');
   if(await getVisitorToken(config.firebaseApiKey))await loadOwner();
 }catch(error){
   status(changeAccount?'Вы вошли как посетитель. Для сохранения и публикации войдите подтверждённым аккаунтом '+OWNER+'. Предпросмотр доступен.':'Предпросмотр доступен. Подключение к админке или вход пока не подтверждены; изменения не сохранены.','error');
 }
+
+window.addEventListener('pagehide',()=>privatePreviews?.clear());
+
+window.addEventListener('fjord:auth-changed',()=>{privatePreviews?.clear();previewGeneration++;if(getStoredVisitor()?.email?.toLowerCase()!==OWNER){authorized=false;controls();frame.removeAttribute('src');previewReady=false;status('Вы вышли из аккаунта. Закрытые фото больше не отображаются.');}});

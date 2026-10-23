@@ -8,7 +8,8 @@
   <title>Администрирование · FJORD / FLOW</title>
   <link rel="stylesheet" href="site-editor-admin.css?v=8">
   <style>[hidden]{display:none!important}</style>
-  <script type="module" src="site-editor-admin.mjs?v=20261021gate1"></script>
+  <script type="module" src="site-editor-admin.mjs?v=cms-auth-20261023-r3"></script>
+<link rel="stylesheet" href="owner-password.css?v=cms-auth-20261023-r3">
 </head>
 <body>
   <header class="editor-header">
@@ -18,9 +19,10 @@
   <div class="editor-status" hidden><p id="status" role="status" aria-live="polite">Проверяем доступ…</p><div><button id="save" type="button" disabled>Сохранить черновик</button><button id="publish" type="button" disabled>Опубликовать</button></div></div>
   <main class="editor-layout" hidden>
     <section class="editor-controls" aria-label="Управление содержимым">
-      <nav class="editor-tabs" aria-label="Разделы администрирования"><button type="button" data-tab="catalogue" aria-pressed="true">Каталог мест</button><button type="button" data-tab="library" aria-pressed="false">Фотобиблиотека</button><button type="button" data-tab="history" aria-pressed="false">История</button></nav>
+      <nav class="editor-tabs" aria-label="Разделы администрирования"><button type="button" data-tab="catalogue" aria-pressed="true">Каталог мест</button><button type="button" data-tab="library" aria-pressed="false">Фотобиблиотека</button><button type="button" data-tab="history" aria-pressed="false">История</button><button type="button" data-tab="access" aria-pressed="false">Вход и пароль</button></nav>
       <section id="cataloguePanel" class="editor-panel"></section>
       <section id="libraryPanel" class="editor-panel" hidden></section>
+      <section id="accessPanel" class="editor-panel" hidden><div id="ownerPasswordHost"></div></section>
       <section id="historyPanel" class="editor-panel" hidden><h2>Опубликованные версии</h2><p class="hint">Откат создаёт новую публикацию. Предыдущие версии сохраняются.</p><div id="historyList">Войдите владельцем, чтобы увидеть историю.</div></section>
     </section>
     <section class="preview" aria-label="Предпросмотр сайта">

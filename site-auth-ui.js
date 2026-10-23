@@ -19,7 +19,7 @@
   const changed = () => window.dispatchEvent(new CustomEvent('fjord:site-auth-ready'));
   let loading;
   const load = () => loading ||= Promise.all([
-    import('./afonya-auth.js?v=7'),
+    import('./afonya-auth.js?v=cms-auth-20261023-r3'),
     fetch('./chat-config.json', {cache: 'no-cache'}).then(response => {
       if (!response.ok) throw Error('CONFIG_UNAVAILABLE');
       return response.json();

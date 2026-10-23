@@ -1,4 +1,4 @@
-import {ensureVerified,getVisitorToken,signOutVisitor} from './afonya-auth.js?v=7';
+import {ensureVerified,getVisitorToken,signOutVisitor} from './afonya-auth.js?v=cms-auth-20261023-r3';
 const $=id=>document.getElementById(id),fixedOrigin='https://fjord-flow-chat.laurkent123.workers.dev';
 let config,generation=0,users=[];
 const text=(tag,value)=>{const node=document.createElement(tag);node.textContent=String(value??'');return node;};

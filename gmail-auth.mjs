@@ -1,4 +1,4 @@
-import {getVisitorToken} from './afonya-auth.js?v=7';
+import {getVisitorToken} from './afonya-auth.js?v=cms-auth-20261023-r3';
 const OWNER='laurkent123@gmail.com';
 const ENDPOINT='https://fjord-flow-chat.laurkent123.workers.dev/account-profile';
 const fail=code=>Object.assign(new Error(code),{code});

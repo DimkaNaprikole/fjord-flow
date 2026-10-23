@@ -1,4 +1,4 @@
-import {ensureVerified,getVisitorToken,signOutVisitor} from './afonya-auth.js?v=7';
+import {ensureVerified,getVisitorToken,signOutVisitor} from './afonya-auth.js?v=cms-auth-20261023-r3';
 const select=id=>document.querySelector('#'+id),status=select('readerStatus'),login=select('readerLogin'),logout=select('readerLogout'),article=select('readerTicket'),dialog=select('readerAuth'),workspace=select('readerWorkspace'),list=select('readerList'),search=select('readerSearch'),more=select('readerMore');
 const ID=/^[a-f0-9]{64}$/,EMAIL=/^[^\s@\r\n]+@[^\s@\r\n]+\.[^\s@\r\n]+$/;
 let settings,rows=[],nextCursor=null,selected=null,contactEmail='',authenticated=false,generation=0,detailGeneration=0,pendingList=false;
