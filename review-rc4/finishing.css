@@ -1,0 +1,86 @@
+/* Shared finishing layer: readable landscapes, consistent controls, comfortable touch targets. */
+:root{--fjord-focus:#b98a36;--fjord-soft:#f4faf7;--fjord-dark:#123d4f}
+html{scroll-padding-top:24px}
+button,a,input,select,textarea{touch-action:manipulation}
+:is(button,a,input,select,textarea,summary):focus-visible{outline:3px solid var(--fjord-focus);outline-offset:4px}
+button:disabled{cursor:default}
+.intro h2,.roadtrip-collection h2,.explorer-heading h2,.community-title h2{text-wrap:balance}
+.roadtrip-collection>.eyebrow,.roadtrip-collection>h2,.roadtrip-collection>p{max-width:830px}
+.roadtrip-scene:after{background:linear-gradient(150deg,#f0f7f1e8 0%,#e6f1ecbd 45%,#e3f0ee80 100%)}
+.roadtrip-presets{gap:20px}
+.roadtrip-presets button{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.roadtrip-presets button:hover{box-shadow:0 14px 30px #092a3e30;border-color:#bce9e1}
+.roadtrip-presets button>b{text-wrap:balance}
+.roadtrip-presets button>small{color:#edf6f4;line-height:1.75}
+.searchline{gap:18px;align-items:center}
+#placeSearch{border-radius:14px;border:1px solid #a8c1c7;background:#f6fbf8e8;color:#163c4b;min-height:52px;padding:15px 18px;box-shadow:inset 0 1px #fff,0 4px 16px #173d4810}
+#placeSearch::placeholder{color:#526f79}
+.filterline{border:0;gap:16px;align-items:center;margin-bottom:28px}
+#filters{gap:8px;flex-wrap:wrap;min-width:0}
+#filters button{border:1px solid #acc4c8;border-radius:999px;min-height:44px;padding:10px 16px;background:#f5faf7d9;color:#244b5a;font-size:12px;white-space:nowrap;transition:background .2s,border-color .2s}
+#filters button:hover{background:#e2f0eb;border-color:#6a999f}
+#filters button.active{border:1px solid #143f51;background:#143f51;color:#fff;box-shadow:0 4px 12px #143f5120}
+#count{flex-shrink:0;font-size:12px;color:#365966}
+#cards.cards>.compact-postcard{grid-column:auto}
+#cards .compact-postcard .postcard-back .description{font-size:13px;line-height:1.65}
+#cards .compact-postcard .postcard-back .card-bottom small{font-size:10px}
+#cards .compact-postcard .postcard-back .card-bottom button{font-size:12px;min-height:44px}
+#cards .compact-postcard .postcard-toggle,.experience-flip-toggle{min-height:44px;font-size:11px}
+#cards .compact-postcard .postcard-back{scrollbar-width:thin;scrollbar-color:#8aadaf #153746;overscroll-behavior:contain}
+#cards .compact-postcard .photo-hint,#cards .compact-postcard .flight-launch{font-size:11px;min-height:40px}
+.place-pagination{margin-top:8px}
+.place-pagination button{border-radius:999px;box-shadow:none}
+.gallery-top>div{min-width:0}
+#galleryDialog #galleryTitle{overflow-wrap:anywhere;text-wrap:balance}
+#galleryDialog .gallery-action-row{gap:22px;padding-top:6px}
+#galleryDialog #galleryThumbs{overflow-x:auto;scrollbar-width:thin;scrollbar-color:#8aadaf transparent}
+#galleryDialog #galleryThumbs button{flex-shrink:0}
+#galleryDialog .gallery-quick-actions{padding:15px;border:1px solid #c8e8df33;border-radius:14px;background:#0a263b66}
+#galleryDialog .route-controls label{font-size:13px;color:#e0efeb}
+#galleryDialog .route-origin-row{gap:10px}
+#galleryDialog .route-origin-row input{min-width:0}
+.fjord-contact-links a{padding:10px 0;min-height:44px;line-height:1.6}
+footer{gap:24px;align-items:flex-start}
+footer p{line-height:1.85;max-width:650px}
+@media(max-width:950px){.filterline{align-items:flex-start}.roadtrip-presets{gap:15px}}
+@media(max-width:650px){
+ .filterline{display:block;overflow:visible}
+ #filters{overflow:visible;width:100%;gap:7px;padding:0}
+ #filters button{padding:9px 12px;font-size:11px}
+ #count{display:block;margin-top:14px}
+ #placeSearch{width:100%;font-size:16px}
+ .roadtrip-collection{padding:22px 18px}
+ .roadtrip-presets{gap:14px}
+ .roadtrip-presets button>span,.roadtrip-presets button>b,.roadtrip-presets button>small{margin-left:17px;margin-right:17px}
+ #galleryDialog .gallery-action-row{gap:14px}
+ #galleryDialog .gallery-stage{height:auto;min-height:0;aspect-ratio:3/2}
+ #galleryDialog .gallery-quick-actions{padding:12px}
+ #galleryDialog .route-origin-row{display:grid;grid-template-columns:1fr}
+ #galleryDialog .route-controls input,#galleryDialog .route-controls select{font-size:16px}
+ .fjord-contact{margin:30px 5%;padding:24px}
+}
+@media(max-width:520px){
+ #cards.cards{grid-template-columns:minmax(0,1fr);grid-auto-rows:340px;gap:24px}
+ #cards.cards>.compact-postcard{height:340px}
+ #cards .compact-postcard .postcard-caption{padding:20px}
+ #cards .compact-postcard .postcard-caption strong{font-size:28px}
+ #cards .compact-postcard .postcard-back{padding:64px 18px 16px;gap:12px}
+ #cards .compact-postcard .postcard-back h3{font-size:26px}
+ #cards .compact-postcard .postcard-back .card-bottom{flex-wrap:nowrap}
+ #cards .compact-postcard .postcard-back .card-bottom small{display:block}
+ #cards .compact-postcard .category{display:block;max-width:42%}
+ #cards .compact-postcard .postcard-back .card-arms{display:block}
+ #galleryDialog .gallery-top{align-items:flex-start}
+ #galleryDialog .gallery-top .eyebrow{font-size:8px;line-height:1.6;letter-spacing:1px}
+ #galleryDialog #municipalityBadge{max-width:45px}
+ #galleryDialog #municipalityName{display:none}
+ #galleryDialog #galleryTitle{font-size:26px;line-height:1.2}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.roadtrip-presets button,#filters button{transition:none}.roadtrip-presets button:hover{transform:none}}
+
+/* Finishing audit: stronger reading hierarchy and non-overlapping mobile hero. */
+body{line-height:1.65}h2,h3{font-weight:750}button,a,input,select,textarea{font-synthesis:none}.intro>p,.roadtrip-collection>p,.community-title>div>p{font-size:15px;line-height:1.8}.roadtrip-presets button>b{font-weight:750;line-height:1.2}.roadtrip-presets button>small{font-size:12px;line-height:1.7}.discovery-cafe-card p,.stay-card p{font-size:14px;line-height:1.75}.fjord-contact>p,footer p{font-size:12px;line-height:1.8}.photo-legal summary,.photo-legal #creditsList,.photo-legal #sceneryCredits{font-size:11px}#cards .compact-postcard .postcard-caption strong{text-shadow:0 2px 12px #001d35a6}.fjord-ai-guide{display:inline-flex;align-items:center;min-height:42px;line-height:1.5;text-decoration:none;overflow-wrap:anywhere}
+@media(max-width:650px){
+ .hero{display:flex;flex-direction:column;height:auto;min-height:0;padding-bottom:24px}.hero>.hero-content{position:relative;order:1;padding-bottom:20px}.hero>.hero-bottom{position:relative;inset:auto;order:2;margin:0 20px;display:flex;flex-direction:column-reverse;align-items:flex-start;gap:10px}.hero .hero-photo-info{position:static;inset:auto;align-items:flex-start;text-align:left;width:auto}.hero>.explorer-weather--hero{position:relative;inset:auto;order:3;margin:16px 20px 0 auto}.hero>.hero-advertising-message{position:relative;inset:auto;order:4;margin:22px 20px 0 auto;width:min(300px,calc(100% - 40px))}.hero .hero-advertising-message h2{font-size:24px;line-height:1.2}.hero .hero-advertising-message .advertising-contact{font-size:11px}.hero .hero-bottom{font-size:10px}.hero-copy{font-size:14px;line-height:1.8}.fjord-ai textarea,.fjord-ai-auth input{font-size:16px}#cards .compact-postcard .postcard-back .description{font-size:14px}
+}
+@media(max-width:380px){.hero .journey-doodles{right:12px;width:155px}.hero .brand-luggage>svg{width:140px}.hero .brand-luggage .brand-rhythm-tagline{font-size:8px}}

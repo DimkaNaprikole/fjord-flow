@@ -1,0 +1,12 @@
+/* Photos stay at a steady size. These selectors deliberately exclude Google Maps. */
+.card .photo>img,.card:hover .photo>img,.card:focus-within .photo>img,
+.norway-catalog-photo img,.norway-catalog-photo:is(:hover,:focus-visible) img,
+.experience-photo-button>img,.experience-photo-button:hover>img,
+.stay-photo-open img,.stay-photo-open:hover img,
+.region-tile img,.region-tile:hover img,.discovery-story-card img,.discovery-story-card>button:hover img,
+.stay-gallery-stage img,#galleryImage,.flight-still,.scenery-frame,.roadtrip-scene .scenery-frame{
+ transform:none!important;animation:none!important;
+}
+.stay-gallery-stage img{width:100%;height:100%;max-width:100%;object-fit:contain;cursor:default}
+.stay-gallery-stage{overflow:hidden}
+.card .photo,.experience-photo-button{cursor:pointer}

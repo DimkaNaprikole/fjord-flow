@@ -1,0 +1,187 @@
+/* Crisp, optically centered controls for the gallery and Fjordi. */
+#galleryDialog #galleryClose,
+dialog.fjord-helper .fjord-helper-close {
+  display: block;
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #c7ece588;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #31566a, #0b2b3c);
+  box-shadow: inset 0 1px #ffffff40, 0 5px 16px #00142165;
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+/* The assistant rests as a small northern-light dot and reveals its name on hover. */
+button.fjord-helper-launch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: 1px solid #b2e7e2a6;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #16495a, #08293a);
+  box-shadow: inset 0 1px #ffffff70, 0 10px 26px #00263680;
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  transition: width .28s ease, gap .28s ease, background .28s ease, box-shadow .28s ease;
+}
+button.fjord-helper-launch::before {
+  content: '';
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #dbfff0ae;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 25%, #f9ffea 0, #9ff4d7 22%, #51c4bd 47%, #2b729b 72%, #173c67 100%);
+  box-shadow: 0 0 10px #91f5daab, 0 0 22px #50c6d077, inset -4px -5px 8px #123c6580;
+  animation: afonya-glow 4s ease-in-out infinite;
+}
+button.fjord-helper-launch::after {
+  content: attr(aria-label);
+  flex: 0 0 auto;
+  width: 0;
+  overflow: hidden;
+  color: #f5fffb;
+  font: 700 0/1 'Manrope', sans-serif;
+  opacity: 0;
+  transition: opacity .2s ease, font-size .2s ease, width .2s ease;
+}
+button.fjord-helper-launch:hover,
+button.fjord-helper-launch:focus-visible {
+  width: 138px;
+  gap: 12px;
+  background: linear-gradient(145deg, #1e5c68, #0b344a);
+  box-shadow: inset 0 1px #ffffff85, 0 12px 30px #0026369c;
+}
+button.fjord-helper-launch:hover::after,
+button.fjord-helper-launch:focus-visible::after {
+  width: 59px;
+  font-size: 14px;
+  opacity: 1;
+}
+.fjord-ai h2::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #f9ffea, #7ce2ce 40%, #227ca1 85%);
+  box-shadow: 0 0 13px #7ce2ce9c;
+}
+@keyframes afonya-glow {
+  50% { box-shadow: 0 0 14px #a9ffe0e0, 0 0 28px #50c6d099, inset -4px -5px 8px #123c6580; }
+}
+#galleryDialog #galleryClose::before,
+#galleryDialog #galleryClose::after,
+dialog.fjord-helper .fjord-helper-close::before,
+dialog.fjord-helper .fjord-helper-close::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 17px;
+  height: 2px;
+  border-radius: 2px;
+  background: #f4fbf8;
+}
+#galleryDialog #galleryClose::before,
+dialog.fjord-helper .fjord-helper-close::before { transform: rotate(45deg); }
+#galleryDialog #galleryClose::after,
+dialog.fjord-helper .fjord-helper-close::after { transform: rotate(-45deg); }
+#galleryDialog #galleryClose:hover,
+dialog.fjord-helper .fjord-helper-close:hover {
+  background: linear-gradient(145deg, #426d78, #164354);
+  box-shadow: inset 0 1px #ffffff55, 0 8px 22px #00142180;
+  transform: translateY(-2px);
+}
+
+#galleryDialog .gallery-stage > #galleryPrev,
+#galleryDialog .gallery-stage > #galleryNext {
+  display: block;
+  box-sizing: border-box;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 1px solid #d3f2e88a;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #17495ce8, #082b3eea);
+  box-shadow: inset 0 1px #ffffff38, 0 6px 18px #00172680;
+  color: transparent;
+  font-size: 0;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+#galleryDialog .gallery-stage > #galleryPrev::before,
+#galleryDialog .gallery-stage > #galleryNext::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 2.5px solid #f5fffc;
+  border-right: 2.5px solid #f5fffc;
+  border-radius: 1px;
+}
+#galleryDialog .gallery-stage > #galleryPrev::before { transform: translateX(3px) rotate(-135deg); }
+#galleryDialog .gallery-stage > #galleryNext::before { transform: translateX(-3px) rotate(45deg); }
+#galleryDialog .gallery-stage > #galleryPrev:hover,
+#galleryDialog .gallery-stage > #galleryNext:hover {
+  background: linear-gradient(145deg, #306d77, #10495d);
+  box-shadow: inset 0 1px #ffffff55, 0 9px 22px #001726a3;
+  transform: translateY(-50%) scale(1.09);
+}
+#galleryDialog .gallery-stage > #galleryPrev:active,
+#galleryDialog .gallery-stage > #galleryNext:active { transform: translateY(-50%) scale(.97); }
+
+#galleryDialog .gallery-quick-actions button,
+#galleryDialog #galleryBook,
+.fjord-ai .fjord-ai-primary,
+.fjord-ai .fjord-ai-human,
+.fjord-ai .fjord-ai-guide {
+  box-shadow: inset 0 1px #ffffff60, 0 4px 12px #001a2850;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+#galleryDialog .gallery-quick-actions button:hover,
+#galleryDialog #galleryBook:hover,
+.fjord-ai .fjord-ai-primary:hover,
+.fjord-ai .fjord-ai-human:hover,
+.fjord-ai .fjord-ai-guide:hover {
+  filter: brightness(1.08);
+  box-shadow: inset 0 1px #ffffff80, 0 8px 18px #001a2870;
+  transform: translateY(-2px);
+}
+#galleryDialog .gallery-quick-actions button:active,
+#galleryDialog #galleryBook:active,
+.fjord-ai .fjord-ai-primary:active,
+.fjord-ai .fjord-ai-human:active,
+.fjord-ai .fjord-ai-guide:active { transform: translateY(0); }
+#galleryDialog :is(#galleryClose, #galleryPrev, #galleryNext, .gallery-quick-actions button, #galleryBook):focus-visible,
+.fjord-ai :is(.fjord-helper-close, .fjord-ai-primary, .fjord-ai-human, .fjord-ai-guide):focus-visible {
+  outline: 3px solid #ffde94;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  button.fjord-helper-launch,
+  button.fjord-helper-launch::after { transition: none; }
+  button.fjord-helper-launch::before { animation: none; }
+  #galleryDialog :is(#galleryClose, #galleryPrev, #galleryNext, .gallery-quick-actions button, #galleryBook),
+  .fjord-ai :is(.fjord-helper-close, .fjord-ai-primary, .fjord-ai-human, .fjord-ai-guide) { transition: none; }
+}
+
+/* Keep the assistant close to the bottom-right edge, clear of device safe areas. */
+button.fjord-helper-launch{top:auto;left:auto;right:calc(env(safe-area-inset-right,0px) + 4px);bottom:calc(env(safe-area-inset-bottom,0px) + 4px)}

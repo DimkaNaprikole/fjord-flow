@@ -19,6 +19,11 @@ PATTERNS = {
     "private-key-pem": re.compile(r"-----BEGIN (?:[A-Z0-9]+ )*PRIVATE KEY-----"),
 }
 
+# The review copy uses the same public browser configuration and origin.
+# Keep exact paths; arbitrary nested configs must still be checked normally.
+FIREBASE_PUBLIC_CONFIG_PATHS = {"chat-config.json", "review-rc4/chat-config.json"}
+MAPS_PUBLIC_CONFIG_PATHS = {"google-maps-config.js", "review-rc4/google-maps-config.js"}
+
 
 def unique_object(pairs):
     result = {}
@@ -31,7 +36,7 @@ def unique_object(pairs):
 
 def firebase_public_span(path, content):
     """Allow only the exact string value of the root configuration property."""
-    if path != "chat-config.json":
+    if path not in FIREBASE_PUBLIC_CONFIG_PATHS:
         return None
     try:
         config = json.loads(content, object_pairs_hook=unique_object)
@@ -51,7 +56,7 @@ def scan_text(path, content):
     # This browser Maps key is public by design. Google Cloud enforces its
     # HTTP-referrer and Maps-JavaScript-only restrictions, not this scanner.
     # Allow just the single key value in the exact root configuration shape.
-    if path == "google-maps-config.js":
+    if path in MAPS_PUBLIC_CONFIG_PATHS:
         config = re.fullmatch(r"(?:/\*[\s\S]*?\*/\s*)?window\.FjordGoogleMapConfig = Object\.freeze\(\{enabled:(?:true|false), (?:provider:'google', )?apiKey:'(AIza[0-9A-Za-z_-]{35})'\}\);\s*", content)
         if config:
             allowed = config.span(1)

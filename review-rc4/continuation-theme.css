@@ -1,0 +1,167 @@
+/* Selected continuation mockup: bright scenery and local ivory reading surfaces. */
+#journeys>#homePanel,#journeys>#advertising.portal-art-section{--chapter-paper:#faf6e9;--chapter-ink:#103e4b;background-color:var(--chapter-paper);color:var(--chapter-ink)}
+#homePanel>.hero-artwork,#advertising>.hero-artwork{opacity:.08;background:var(--chapter-paper)}
+#journeys>#homePanel{display:flex;align-items:center;box-sizing:border-box;height:auto;min-height:clamp(680px,55vw,840px);padding:110px 0 135px}
+#homePanel #heroScenery{background:var(--chapter-paper)!important;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 8%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 8%,#000 94%,transparent)}
+#homePanel #heroScenery::after{background:none}
+#homePanel .hero-content{position:relative;width:min(48%,620px);max-width:none;box-sizing:border-box;margin:0 0 0 calc(var(--ff-page-gutter) + var(--ff-panel-inset));padding:20px 12px 22px 0;background:#faf6e9e8;box-shadow:0 0 42px 28px #faf6e9e8;color:var(--chapter-ink)}
+#homePanel .hero-content h1,#homePanel .hero-content h1 em{font-family:Manrope,'Segoe UI',sans-serif;font-size:clamp(50px,6.4vw,96px);font-weight:800;font-style:normal;line-height:1.02;letter-spacing:-.04em;color:var(--chapter-ink);text-shadow:none;text-transform:uppercase}
+#homePanel .hero-content h1{margin:8px 0 16px;overflow-wrap:normal}
+#homePanel .hero-content .eyebrow{color:#315762;font-size:10px;letter-spacing:1.8px}
+#homePanel .hero-content .hero-copy{max-width:460px;color:var(--chapter-ink);font-size:clamp(15px,1.25vw,18px);font-weight:600;line-height:1.7;text-shadow:none;margin:0 0 22px}
+#homePanel .hero-content .button{display:inline-flex;align-items:center;gap:12px;min-height:46px;padding:12px 22px;background:var(--ff-action);color:var(--ff-ink);border:1px solid var(--ff-action);border-radius:13px;box-shadow:none}
+#homePanel .journey-doodles{display:none}
+#homePanel .hero-bottom{position:absolute;inset:auto calc(var(--ff-page-gutter) + var(--ff-panel-inset)) 30px;display:flex;align-items:flex-end;justify-content:flex-start;gap:16px;max-width:calc(100% - 300px);margin:0;color:var(--chapter-ink)}
+#homePanel .hero-bottom>span{display:none}
+#homePanel .hero-photo-info{position:static;inset:auto;width:auto;max-width:100%;padding:10px 14px;border-radius:10px;background:#103e4bde;color:#f5fbf5;text-align:left;align-items:flex-start;overflow-wrap:anywhere}
+#homePanel .hero-photo-info :is(span,a){color:inherit}
+#homePanel .norway-origin{background:#faf6e9eb;color:var(--chapter-ink);border-color:#31576230;text-shadow:none;backdrop-filter:none}
+#homePanel .explorer-weather--hero{top:auto;right:calc(var(--ff-page-gutter) + var(--ff-panel-inset));bottom:28px;background:#faf6e9f2;color:var(--chapter-ink);border:1px solid #31576240;box-shadow:none;backdrop-filter:none}
+#homePanel .explorer-weather--hero :is(.explorer-weather-label,.explorer-weather-icon,.explorer-weather-condition,.explorer-weather-credit){color:var(--chapter-ink)}
+#journeys>#advertising.portal-art-section{min-height:clamp(580px,46vw,720px);padding:0;overflow:hidden}
+#advertising.portal-art-section::before{background:none}
+#advertising .advertising-background-film{-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 7%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 7%,#000 94%,transparent)}
+#journeys>#advertising.portal-art-section .advertising-message{right:calc(var(--ff-page-gutter) + var(--ff-panel-inset));bottom:64px;width:min(38%,440px);box-sizing:border-box;padding:12px 0 12px 12px;background:#faf6e9e8;box-shadow:0 0 40px 28px #faf6e9e8;color:var(--chapter-ink);text-shadow:none;text-align:left;font-family:Manrope,'Segoe UI',sans-serif}
+#advertising .advertising-message h2{font-family:Manrope,'Segoe UI',sans-serif;font-weight:800;font-size:clamp(32px,3.3vw,48px);line-height:1.15;color:var(--chapter-ink);margin-bottom:20px}
+#advertising .advertising-brand{margin:0 0 15px}
+#advertising .advertising-brand img{display:block;width:230px;max-width:100%;height:auto}
+#advertising .advertising-contact{justify-content:flex-start;color:var(--chapter-ink);font-size:12px;line-height:1.65;gap:4px 14px}
+#advertising .advertising-inquiry{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:11px 23px;margin:0 0 16px;gap:8px;border-radius:13px;background:var(--ff-action);color:var(--ff-ink);font:700 14px/1.4 Manrope,'Segoe UI',sans-serif;text-decoration:none}
+#advertising :is(a,button):focus-visible{outline:3px solid #2568a7;outline-offset:4px}
+@media(min-width:651px) and (max-width:1000px){#homePanel .hero-content{width:54%}#homePanel .hero-content h1,#homePanel .hero-content h1 em{font-size:clamp(48px,6.3vw,64px)}#journeys>#advertising.portal-art-section .advertising-message{width:44%}}
+@media(max-width:650px){
+ #journeys>#homePanel{display:flex;flex-direction:column;align-items:stretch;min-height:750px;padding:90px 26px 24px;gap:18px}
+ #homePanel .hero-content{order:1;width:100%;margin:70px 0 0;padding:10px 0 14px;box-shadow:0 0 28px 18px #faf6e9e8}
+ #homePanel .hero-content h1,#homePanel .hero-content h1 em{font-size:clamp(39px,11.2vw,64px);letter-spacing:-.04em}
+ #homePanel .hero-content .hero-copy{font-size:14px;line-height:1.7}
+ #homePanel .hero-content .eyebrow{font-size:8px;letter-spacing:1px}
+ #homePanel .hero-bottom{position:relative;inset:auto;order:2;max-width:100%;margin:12px 0 0;display:block}
+ #homePanel .hero-photo-info{width:max-content;max-width:100%;font-size:10px}
+ #homePanel .explorer-weather--hero{position:relative;inset:auto;order:3;align-self:flex-end;min-width:0;width:min(205px,100%);max-width:100%;margin:0}
+ #homePanel .norway-origin{left:26px;top:24px}
+ #journeys>#advertising.portal-art-section{min-height:640px}
+ #journeys>#advertising.portal-art-section .advertising-message{left:34px;right:34px;bottom:32px;width:auto;padding:12px 0;background:#faf6e9ed;box-shadow:0 0 28px 18px #faf6e9ed}
+ #advertising .advertising-message h2{font-size:30px;line-height:1.16;margin-bottom:15px}
+ #advertising .advertising-brand img{width:190px}
+ #advertising .advertising-contact{font-size:11px}
+ #advertising .advertising-background-film{object-position:35% center}
+}
+
+/* Owner refinement: glow belongs to lettering, never to a rectangular panel. */
+#homePanel .hero-content,#journeys>#advertising.portal-art-section .advertising-message{background:transparent;box-shadow:none}
+#homePanel .hero-content :is(h1,h1 em,.eyebrow,.hero-copy),#advertising .advertising-message{ text-shadow:0 0 3px #fffef5,0 0 9px #fffef5,0 0 18px #fffef5b3 }
+#homePanel .hero-content .button,#advertising .advertising-inquiry{background:transparent;border:0;border-radius:0;color:var(--chapter-ink);font:800 15px/1.3 Manrope,'Segoe UI',sans-serif;padding:8px 12px;min-height:44px;text-shadow:0 0 3px #fffef5,0 0 9px #fffef5;text-decoration:none}
+#homePanel .hero-content .button:hover,#advertising .advertising-inquiry:hover{text-decoration:underline;text-underline-offset:6px}
+.site-group-links{background:#faf6e9;color:#103e4b;gap:8px 20px;padding-top:12px;padding-bottom:12px}
+.site-group-links a{color:#103e4b;font:800 15px/1.3 Manrope,'Segoe UI',sans-serif;padding:8px 12px;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;text-decoration:none}
+#homePanel #heroScenery,#advertising .advertising-background-film{-webkit-mask-composite:source-in;mask-composite:intersect}
+#journeys>#advertising.portal-art-section .advertising-message{right:calc(var(--ff-ornament-width) + 26px);bottom:28px;width:min(30%,370px);padding:0}
+#advertising .advertising-message h2{font-size:clamp(26px,2.4vw,35px);margin-bottom:14px}
+#advertising .advertising-brand img{width:205px;filter:drop-shadow(0 0 3px #fffef5) drop-shadow(0 0 8px #fffef5)}
+#advertising .advertising-contact{display:flex;flex-direction:column;align-items:flex-start;gap:6px;font-size:12px}
+#advertising .advertising-contact a[href*="facebook"]{order:-1}
+#advertising .advertising-contact a{color:var(--chapter-ink);font-weight:750;text-shadow:0 0 3px #fffef5,0 0 8px #fffef5}
+@media(max-width:650px){
+ .site-group-links{justify-content:center;gap:2px 0}
+ .site-group-links a{font-size:13px;padding:8px 10px}
+ #homePanel .hero-content{background:transparent;box-shadow:none}
+ #journeys>#advertising.portal-art-section .advertising-message{left:auto;right:28px;bottom:26px;width:76%;background:transparent;box-shadow:none}
+ #advertising .advertising-message h2{font-size:26px}
+ #advertising .advertising-brand img{width:185px}
+}
+
+#advertising .advertising-message h2{text-shadow:0 0 2px #fffef5,0 0 6px #fffef5,0 0 12px #fffef5,0 0 20px #fffef5b3}
+#homePanel .hero-content .button:hover,#homePanel .hero-content .button:focus-visible,#advertising .advertising-inquiry:hover{background:transparent;box-shadow:none}
+
+#homePanel .hero-content .button,#advertising .advertising-inquiry{backdrop-filter:none;-webkit-backdrop-filter:none}
+
+/* Direct, visibly clickable contacts replace the redundant inquiry action. */
+#advertising .advertising-contact{margin:26px 0 0;gap:10px}
+#advertising .advertising-contact a{font:800 14px/1.5 Manrope,'Segoe UI',sans-serif;color:#082c37;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;padding:4px 0;min-height:30px}
+#advertising .advertising-contact a:hover{color:#000;text-decoration-thickness:2px}
+#homePanel .hero-content .button,.site-group-links a{color:#082c37;font-weight:850;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px}
+
+/* Soft white mist stays on the video perimeter, away from the eagle. */
+#advertising.portal-art-section::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:linear-gradient(90deg,#fffdf2d9,transparent 7%,transparent 93%,#fffdf2d9),linear-gradient(0deg,#fffdf2c9,transparent 10%,transparent 90%,#fffdf2c9)}
+#journeys>#advertising.portal-art-section .advertising-message{z-index:2}
+
+#advertising .advertising-contact a{font-size:17px;line-height:1.5;min-height:36px}
+
+#advertising .advertising-brand{margin-bottom:8px}
+#advertising .advertising-contact{margin-top:6px;gap:4px}
+#advertising .advertising-contact a{color:#000;font-weight:900}
+
+#homePanel .explorer-weather--hero{top:85px;bottom:auto}
+.explorer-weather-icon{font-family:'Segoe UI Emoji','Apple Color Emoji','Noto Color Emoji',sans-serif;font-size:34px;filter:drop-shadow(0 2px 2px #103e4b18)}
+@media(max-width:650px){#homePanel .explorer-weather--hero{position:absolute;top:22px;right:26px;bottom:auto;width:180px;padding:10px 12px}#homePanel .explorer-weather-icon{font-size:28px}#homePanel .norway-origin{top:124px}}
+
+#homePanel .hero-photo-info{background:#faf6e9f2;color:#103e4b;border:1px solid #31576240;box-shadow:none}
+#homePanel .hero-content h1,#homePanel .hero-content h1 em{font-family:'Fjord Saga',Georgia,serif;font-weight:400;font-synthesis:none;letter-spacing:.025em;line-height:1.04}
+#homePanel .hero-content .eyebrow{color:#000;font-weight:900;font-size:12px;line-height:1.5;letter-spacing:1.2px;text-shadow:0 0 3px #fffef5,0 0 8px #fffef5}
+@media(max-width:650px){#homePanel .hero-content .eyebrow{font-size:10px;letter-spacing:.8px}#homePanel .hero-content h1,#homePanel .hero-content h1 em{font-size:clamp(36px,10vw,58px)}}
+
+#homePanel .hero-content .hero-copy{color:#000;font-weight:850;text-shadow:0 0 2px #fffef5,0 0 6px #fffef5,0 0 12px #fffef5c9}
+
+#homePanel .hero-content .hero-copy{font-size:clamp(18px,1.5vw,22px);font-weight:900;line-height:1.65}
+@media(max-width:650px){#homePanel .hero-content .hero-copy{font-size:16px}}
+
+#homePanel .hero-content h1,#homePanel .hero-content h1 em{color:#174c5b;-webkit-text-stroke:.5px #e6f3ed;text-shadow:1px 1px 0 #103b47,2px 2px 0 #103b47,3px 3px 0 #0a303c,4px 4px 0 #0a303c,5px 5px 0 #062632,7px 9px 7px #001c3260,0 0 9px #fffef5}
+#homePanel .hero-content h1 em{display:inline-block}
+
+/* Hero only: ivory rim → alternating friendship art → clear scenic centre. */
+#homePanel>.hero-artwork{opacity:1;background:var(--chapter-paper);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-composite:intersect}
+#homePanel>.hero-artwork .hero-artwork-pair img{filter:saturate(.9) brightness(1)}
+#homePanel #heroScenery{-webkit-mask-image:linear-gradient(90deg,transparent,#000 17%,#000 83%,transparent),linear-gradient(0deg,transparent,#000 19%,#000 81%,transparent);mask-image:linear-gradient(90deg,transparent,#000 17%,#000 83%,transparent),linear-gradient(0deg,transparent,#000 19%,#000 81%,transparent)}
+
+#homePanel .explorer-weather--hero{top:28px}
+@media(max-width:650px){#homePanel .explorer-weather--hero{top:24px;width:168px;right:26px}#homePanel .norway-origin{top:24px;max-width:128px;box-sizing:border-box;font-size:8px;padding:7px 8px}}
+
+@media(max-width:650px){#homePanel .explorer-weather--hero{max-width:calc(50% - 32px);min-width:0}#homePanel .norway-origin{max-width:min(128px,calc(50% - 32px))}}
+
+/* Eagle chapter repeats the approved scenic/photo/art/mist layering. */
+#advertising>.hero-artwork{opacity:1;background:var(--chapter-paper);-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent),linear-gradient(0deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-composite:source-in;mask-composite:intersect}
+#advertising.portal-art-section>.hero-artwork .hero-artwork-pair{filter:saturate(.9) brightness(1)}
+#advertising.portal-art-section>.advertising-background-film{-webkit-mask-image:linear-gradient(90deg,transparent,#000 17%,#000 83%,transparent),linear-gradient(0deg,transparent,#000 19%,#000 81%,transparent);mask-image:linear-gradient(90deg,transparent,#000 17%,#000 83%,transparent),linear-gradient(0deg,transparent,#000 19%,#000 81%,transparent)}
+
+#about .explorer-ghost{display:none}
+
+#about .explorer-heading h2{font-family:Manrope,'Segoe UI',sans-serif;font-weight:900;font-style:normal;text-transform:uppercase;letter-spacing:.015em;color:#103e4b;text-shadow:0 0 3px #fffef5,0 0 9px #fffef5}
+
+/* Explorer controls sit above the chapter title, matching the opening menu. */
+#about .explorer-tabs{top:24px;bottom:auto;left:6%;right:calc(6% + 240px);display:flex;flex-wrap:wrap;gap:4px 14px}
+#about .explorer-tabs button,#about .explorer-tabs button[aria-selected=true]{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;border-radius:0;box-shadow:none;padding:8px 4px;min-height:44px;color:#082c37;font:850 15px/1.3 Manrope,'Segoe UI',sans-serif;text-shadow:0 0 3px #fffef5,0 0 8px #fffef5;text-decoration:underline;text-underline-offset:5px}
+#about .explorer-tabs button[aria-selected=true]{text-decoration-thickness:3px}
+#about .explorer-tabs button:focus-visible{outline:3px solid #2568a7;outline-offset:4px}
+#about .explorer-tab-number,#about .explorer-tab-arrow{display:none}
+#about .explorer-weather--navigator{top:24px;bottom:auto;right:6%;background:#faf6e9f2;border:1px solid #31576240;color:#103e4b;backdrop-filter:none;box-shadow:none}
+#about .explorer-weather--navigator :is(.explorer-weather-label,.explorer-weather-condition,.explorer-weather-credit){color:#103e4b}
+#about .explorer-heading{top:150px}
+#about .explorer-copy{padding-top:355px;padding-bottom:80px}
+#about .explorer-action,#about .explorer-next-place{background:transparent;backdrop-filter:none;border:0;border-radius:0;box-shadow:none;color:#082c37;font-weight:850;text-decoration:underline;text-underline-offset:5px;text-shadow:0 0 3px #fffef5,0 0 8px #fffef5}
+@media(max-width:650px){
+ #about .explorer-tabs{top:16px;left:24px;right:24px;gap:0 13px;justify-content:center}
+ #about .explorer-tabs button{font-size:13px;padding:8px 0}
+ #about .explorer-weather--navigator{top:82px;right:24px}
+ #about .explorer-heading{top:210px}
+ #about .explorer-copy{padding-top:440px;padding-bottom:70px}
+ #about .explorer-frame{min-height:1000px}
+}
+
+/* Same outer ivory mist as the preceding scenic chapters. */
+#about .explorer-frame::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:linear-gradient(90deg,#fffdf2e0,transparent 7%,transparent 93%,#fffdf2e0),linear-gradient(0deg,#fffdf2d9,transparent 10%,transparent 90%,#fffdf2d9)}
+#about .explorer-copy{position:relative;z-index:3}
+
+#about .explorer-copy{background:transparent}
+
+/* One measured mist treatment for all three scenic chapters. */
+#homePanel,#advertising,#about{--chapter-edge-mist:linear-gradient(90deg,#fffdf2d9,transparent 52px,transparent calc(100% - 52px),#fffdf2d9),linear-gradient(0deg,#fffdf2c9,transparent 56px,transparent calc(100% - 56px),#fffdf2c9)}
+#homePanel::after,#advertising.portal-art-section::after,#about .explorer-frame::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:2;background:var(--chapter-edge-mist)}
+#homePanel .hero-content,#homePanel .hero-bottom,#about .explorer-copy{z-index:3}
+
+/* Stronger type hierarchy and unmistakable explorer actions. */
+#about .explorer-intro,#about .explorer-description{font-weight:700;font-size:16px;line-height:1.75}
+#about .explorer-eyebrow,#about .explorer-kicker{font-weight:850;font-size:11px}
+#about .explorer-action,#about .explorer-next-place{font:900 17px/1.5 Manrope,'Segoe UI',sans-serif;color:#000;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;padding:10px 12px;min-height:46px;text-shadow:0 0 2px #fffef5,0 0 6px #fffef5,0 0 11px #fffef5}
+#about .explorer-gps{font-size:13px;font-weight:850;text-underline-offset:4px}
+#about .explorer-tabs button,#about .explorer-tabs button[aria-selected=true]{font-weight:900}
+@media(max-width:650px){#about .explorer-intro,#about .explorer-description{font-size:15px}#about .explorer-action,#about .explorer-next-place{font-size:16px}}

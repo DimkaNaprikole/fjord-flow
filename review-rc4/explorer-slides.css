@@ -1,0 +1,6 @@
+/* Destination names and a manual control for the photographic shuffle. */
+.explorer-current-place{display:inline-flex;align-items:center;max-width:100%;margin:0 0 13px;padding:6px 11px;border:1px solid #ffffff6b;border-radius:999px;background:#082d42a6;backdrop-filter:blur(10px);color:#fff8df;font:750 12px/1.5 Manrope,'Segoe UI',sans-serif;letter-spacing:.2px}
+.explorer-next-place{display:block;margin-top:12px;min-height:40px;padding:8px 14px;border:1px solid #ffffff80;border-radius:999px;background:#ffffff16;backdrop-filter:blur(10px);color:#fffaf0;font:700 11px/1.5 Manrope,'Segoe UI',sans-serif;cursor:pointer;transition:background .2s,border-color .2s}
+.explorer-next-place:hover{background:#ffffff35;border-color:#fff}.explorer-next-place:focus-visible{outline:3px solid #f7d69b;outline-offset:4px}.explorer-next-place[hidden],.explorer-current-place[hidden]{display:none!important}
+@media(max-width:650px){.explorer-next-place{min-height:44px}.explorer-current-place{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.explorer-next-place{transition:none}}

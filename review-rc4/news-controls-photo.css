@@ -1,0 +1,8 @@
+body #municipalNews.ff-news-photo-through-controls>.ref-panel{position:relative!important;isolation:isolate!important}
+body #municipalNews .ff-news-controls-backdrop{position:absolute;inset:0 0 auto;z-index:0;pointer-events:none;overflow:hidden;mask-image:linear-gradient(#000 calc(100% - 24px),transparent)}
+body #municipalNews .ff-news-controls-backdrop>img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+body #municipalNews .ff-news-controls-backdrop::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#ffffff18 0%,#ffffff75 42%,#ffffffd9 100%);pointer-events:none}
+body #municipalNews.ff-news-photo-through-controls>.ref-panel>.ref-hero,body #municipalNews.ff-news-photo-through-controls>.ref-panel>.news-content{position:relative!important;z-index:1!important;background-color:transparent!important}
+body #municipalNews.ff-news-photo-through-controls .ref-hero>img{visibility:hidden!important}
+
+body #newsDialog .news-story-photo>.news-photo-badge{position:absolute!important;z-index:2!important;inset:10px 10px auto auto!important;display:inline-flex!important;width:auto!important;max-width:calc(100% - 20px)!important;padding:3px 7px!important;border:1px solid #c7ccd2!important;border-radius:8px 3px!important;background:#fffffff2!important;color:#3e4c57!important;font:650 10px/1.4 Manrope,"Segoe UI",sans-serif!important;pointer-events:none!important}

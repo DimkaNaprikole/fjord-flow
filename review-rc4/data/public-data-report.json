@@ -1,0 +1,776 @@
+{
+  "schema_version": 1,
+  "total": 415,
+  "datasets": {
+    "bua": 310,
+    "catalogue": 99,
+    "shopping": 6
+  },
+  "photos": 111,
+  "shops": 48,
+  "review_queue": {
+    "hours_not_verified": 11,
+    "missing_coordinates": 2,
+    "single_photo_gallery": 93
+  },
+  "review_items": [
+    {
+      "key": "catalogue:cafe-ole-geiranger",
+      "name": "Café Olé",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-17",
+      "source": "https://no.tripadvisor.com/Restaurant_Review-g642196-d2186167-Reviews-CafeOle-Geiranger_Stranda_More_og_Romsdal_Western_Norway.html"
+    },
+    {
+      "key": "catalogue:cafe-oscar-ii-gran",
+      "name": "Café Oscar II",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-17",
+      "source": "https://vika-uteliv.no/cafe-oscar-ii/"
+    },
+    {
+      "key": "catalogue:damp-venla-stavanger",
+      "name": "Damp Sauna · Venla",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-17",
+      "source": "https://www.dampsauna.no/"
+    },
+    {
+      "key": "catalogue:flyt-fjordsauna-jevnaker",
+      "name": "Flyt FjordSauna · Jevnaker",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-17",
+      "source": "https://www.flytfjordsauna.no/"
+    },
+    {
+      "key": "catalogue:granavolden-cafe",
+      "name": "Granavolden Hotel & Gjæstgiveri",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-17",
+      "source": "https://www.granavolden.no/om-oss/restaurant-og-kafe/"
+    },
+    {
+      "key": "catalogue:heit-sandviken-bergen",
+      "name": "Heit Bergen · Sandviken",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-17",
+      "source": "https://heitbergen.no/home"
+    },
+    {
+      "key": "catalogue:nevlunghavn-bakeri",
+      "name": "Nevlunghavn Bakeri & Conditori",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-18",
+      "source": "https://www.nevlunghavnbakeri.no/kontakt/"
+    },
+    {
+      "key": "catalogue:nordraak-kragero",
+      "name": "Nordraak · Kragerø",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-18",
+      "source": "https://www.nordraakkragero.no/%C3%A5pningstider-om-oss"
+    },
+    {
+      "key": "catalogue:strandhaven-lillesand",
+      "name": "Strandhaven · Lillesand",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-18",
+      "source": "https://www.strand-haven.no/"
+    },
+    {
+      "key": "catalogue:traktern-horten",
+      "name": "Traktern Kaffebar · Horten",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-18",
+      "source": "https://www.traktern.no/"
+    },
+    {
+      "key": "catalogue:tyholmen-arendal",
+      "name": "Tyholmen Kolonial · Arendal",
+      "reason": "hours_not_verified",
+      "checked": "2026-10-18",
+      "source": "https://tyholmenkolonial.no/"
+    },
+    {
+      "key": "bua:bua-nordkapp",
+      "name": "BUA Nordkapp",
+      "reason": "missing_coordinates",
+      "checked": "2026-10-18",
+      "source": "https://bua.no/finn-bua?location=407"
+    },
+    {
+      "key": "bua:bua-senja",
+      "name": "BUA Senja",
+      "reason": "missing_coordinates",
+      "checked": "2026-10-18",
+      "source": "https://bua.no/finn-bua?location=344"
+    },
+    {
+      "key": "catalogue:akvariet-bergen",
+      "name": "Akvariet i Bergen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.akvariet.no/"
+    },
+    {
+      "key": "catalogue:arendal-pollen-tyholmen",
+      "name": "Arendal · Pollen & Tyholmen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitsorlandet.com/destinasjoner/arendal/"
+    },
+    {
+      "key": "catalogue:atlanterhavsparken",
+      "name": "Atlanterhavsparken — Det Norske Akvariet",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.atlanterhavsparken.no/"
+    },
+    {
+      "key": "catalogue:bare-barista-tonsberg",
+      "name": "Bare Barista · Øvre Langgate",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://barebarista.no/"
+    },
+    {
+      "key": "catalogue:bare-beppe-sandefjord",
+      "name": "Bare Beppe · Sandefjord",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.barebeppe.no/finn-oss"
+    },
+    {
+      "key": "catalogue:dovrefjell-wild-reindeer-centre",
+      "name": "Besøkssenter villrein / viewpoint SNØHETTA",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://villrein.no/besokssenter/"
+    },
+    {
+      "key": "catalogue:bjorneparken-fla",
+      "name": "Bjørneparken",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://bjorneparken.no/"
+    },
+    {
+      "key": "catalogue:boker-og-borst-stavanger",
+      "name": "Bøker og Børst",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.bokerogborst.no/contact.html"
+    },
+    {
+      "key": "catalogue:cafe-ole-geiranger",
+      "name": "Café Olé",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://no.tripadvisor.com/Restaurant_Review-g642196-d2186167-Reviews-CafeOle-Geiranger_Stranda_More_og_Romsdal_Western_Norway.html"
+    },
+    {
+      "key": "catalogue:cafe-opera-bergen",
+      "name": "Café Opera",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://cafeopera.org/"
+    },
+    {
+      "key": "catalogue:cafe-oscar-ii-gran",
+      "name": "Café Oscar II",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://vika-uteliv.no/cafe-oscar-ii/"
+    },
+    {
+      "key": "catalogue:damp-venla-stavanger",
+      "name": "Damp Sauna · Venla",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.dampsauna.no/"
+    },
+    {
+      "key": "catalogue:dromedar-moxness-trondheim",
+      "name": "Dromedar Moxness",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://dromedar.no/kaffebarer/"
+    },
+    {
+      "key": "catalogue:dromedar-nordre-trondheim",
+      "name": "Dromedar Nordre",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://dromedar.no/kaffebarer/"
+    },
+    {
+      "key": "catalogue:drobak-waterfront",
+      "name": "Drøbak · gamlebyen & havnen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitgreateroslo.com/no/https%3A/www.visitgreateroslo.com/no/drobak-og-oscarsborg"
+    },
+    {
+      "key": "catalogue:drommeplassen-kristiansand",
+      "name": "Drømmeplassen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://krsguide.no/spisesteder/drommeplassen/"
+    },
+    {
+      "key": "catalogue:sanner-dukkestua-gran",
+      "name": "Dukkestua · Sanner Hotell",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.sanner-hotell.no/en/stay-overnight/cabins"
+    },
+    {
+      "key": "catalogue:dyreparken-kristiansand",
+      "name": "Dyreparken Kristiansand",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.dyreparken.no/"
+    },
+    {
+      "key": "catalogue:fjordsauna-flam",
+      "name": "FjordSauna Flåm",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.fjordsauna.com/fjordsauna-flaam"
+    },
+    {
+      "key": "catalogue:flekkefjord-hollenderbyen",
+      "name": "Flekkefjord · Hollenderbyen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-19",
+      "source": "https://www.visitsorlandet.com/destinasjoner/flekkefjord/"
+    },
+    {
+      "key": "catalogue:flyt-fjordsauna-jevnaker",
+      "name": "Flyt FjordSauna · Jevnaker",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.flytfjordsauna.no/"
+    },
+    {
+      "key": "catalogue:flam-bakery",
+      "name": "Flåm Bakery",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.norwaysbest.com/en/flam/food-and-drinks/flam-bakery"
+    },
+    {
+      "key": "catalogue:furustrand-vestfold-cabins",
+      "name": "Furustrand · strandhytter",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://furustrand.no/bestilling/"
+    },
+    {
+      "key": "catalogue:teskje-drobak",
+      "name": "Galleri Café Teskje",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.teskje.no/"
+    },
+    {
+      "key": "catalogue:gamme-cabins-kirkenes",
+      "name": "Gamme Cabins · Snow Resort Kirkenes",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.snowresortkirkenes.com/gamme-cabins"
+    },
+    {
+      "key": "catalogue:godt-hjemmelaget-holmestrand",
+      "name": "Godt og Hjemmelaget · Kafé og Landhandel",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://godtoghjemmelaget.no/cafe-og-landhandel"
+    },
+    {
+      "key": "catalogue:gon-vestfold-cabins",
+      "name": "Gon Camping · hytter",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://goncamping.no/hytter-cabins/"
+    },
+    {
+      "key": "catalogue:granavolden-cafe",
+      "name": "Granavolden Hotel & Gjæstgiveri",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.granavolden.no/om-oss/restaurant-og-kafe/"
+    },
+    {
+      "key": "catalogue:granavollen-rest",
+      "name": "Granavollen · Søsterkirkene",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.visitnorway.com/places-to-go/eastern-norway/hadeland/"
+    },
+    {
+      "key": "catalogue:grimstad-harbour",
+      "name": "Grimstad · havn & smågater",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitsorlandet.com/destinasjoner/grimstad/"
+    },
+    {
+      "key": "catalogue:hadeland-gjestegard-jaren",
+      "name": "Hadeland Gjestegård",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.hadelandgjestegard.no/"
+    },
+    {
+      "key": "catalogue:heit-sandviken-bergen",
+      "name": "Heit Bergen · Sandviken",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://heitbergen.no/home"
+    },
+    {
+      "key": "catalogue:herlighed-grimstad",
+      "name": "Herlighed · Grimstad",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.herlighed.no/"
+    },
+    {
+      "key": "catalogue:holmestrand-waterfront",
+      "name": "Holmestrand · havn & brygge",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitvestfold.com/no/Holmestrand/"
+    },
+    {
+      "key": "catalogue:horten-karljohansvern",
+      "name": "Horten · Karljohansvern",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitvestfold.com/no/attraksjon/karljohansvern"
+    },
+    {
+      "key": "catalogue:huk-bygdoy-beach",
+      "name": "Huk · Bygdøy",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.oslo.kommune.no/natur-kultur-og-fritid/tur-og-friluftsliv/badeplasser/huk/"
+    },
+    {
+      "key": "catalogue:hunderfossen",
+      "name": "Hunderfossen Eventyrpark",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://hunderfossen.no/"
+    },
+    {
+      "key": "catalogue:oddane-sand-coastal-cabins",
+      "name": "KNA Oddane Sand · Utsikten 2",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://oddanesand.no/products/utsikten-2"
+    },
+    {
+      "key": "catalogue:kilsti-compact-lodge",
+      "name": "Kilsti Compact Lodge",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.kilsticompactlodge.no/"
+    },
+    {
+      "key": "catalogue:kinsarvik-heng",
+      "name": "Kinsarvik Camping — Heng",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.kinsarvikcamping.no/overnatting/heng"
+    },
+    {
+      "key": "catalogue:kistefos",
+      "name": "Kistefos",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.kistefosmuseum.no/"
+    },
+    {
+      "key": "catalogue:kragero-waterfront",
+      "name": "Kragerø · brygger & trehus",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visittelemark.com/kragero/kragero/information/customer-home"
+    },
+    {
+      "key": "catalogue:luprohjornet-gran",
+      "name": "LUPROhjørnet",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.lupro.no/lupro-hj%C3%B8rnet"
+    },
+    {
+      "key": "catalogue:langesund-bad-cafe",
+      "name": "Langesund Bad · kafé og kake",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.langesundbad.no/restaurant"
+    },
+    {
+      "key": "catalogue:langesund-bad-coastal-cabins",
+      "name": "Langesund Bad · sjøhytter",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.langesundbad.no/"
+    },
+    {
+      "key": "catalogue:langesund-harbour",
+      "name": "Langesund · havn & smågater",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visittelemark.no/produkter/langesund"
+    },
+    {
+      "key": "catalogue:larvik-bokeskogen",
+      "name": "Larvik · Bøkeskogen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitvestfold.com/no/attraksjon/bokeskogen"
+    },
+    {
+      "key": "catalogue:lilleputthammer",
+      "name": "Lilleputthammer Familiepark",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://lilleputthammer.no/"
+    },
+    {
+      "key": "catalogue:lillesand-harbour",
+      "name": "Lillesand · havn & trehus",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitsorlandet.com/destinasjoner/lillesand/"
+    },
+    {
+      "key": "catalogue:lista-fyr-coast",
+      "name": "Lista fyr",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-19",
+      "source": "https://www.listafyr.no/"
+    },
+    {
+      "key": "catalogue:loen-skylift",
+      "name": "Loen Skylift",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.loenskylift.no/"
+    },
+    {
+      "key": "catalogue:lovisenberg-coastal-cabins",
+      "name": "Lovisenberg Familiecamping · hytter",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://lovisenbergfamiliecamping.no/"
+    },
+    {
+      "key": "catalogue:luster-fjordhytter",
+      "name": "Luster Fjordhytter & Fjordspa",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.luster-fjordhytter.com/en"
+    },
+    {
+      "key": "catalogue:lovoya-vestfold-cabins",
+      "name": "Løvøya Oslofjord · Leafhut Ash",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://booking.lovoyaoslofjord.no/en/accommodation"
+    },
+    {
+      "key": "catalogue:moysand-coastal-cabins",
+      "name": "Moysand Familiecamping · hytter",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.moysand-familiecamping.no/praktisk-informasjon/"
+    },
+    {
+      "key": "catalogue:nevlunghavn-bakeri",
+      "name": "Nevlunghavn Bakeri & Conditori",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.nevlunghavnbakeri.no/kontakt/"
+    },
+    {
+      "key": "catalogue:nevlunghavn-harbour",
+      "name": "Nevlunghavn · fiskehavn",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://visitvestfold.com/no/sted/nevlunghavn"
+    },
+    {
+      "key": "catalogue:nordberg-fort-lista",
+      "name": "Nordberg fort",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-19",
+      "source": "https://www.vestagdermuseet.no/lista/"
+    },
+    {
+      "key": "catalogue:nordraak-kragero",
+      "name": "Nordraak · Kragerø",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.nordraakkragero.no/%C3%A5pningstider-om-oss"
+    },
+    {
+      "key": "catalogue:nordre-jarlsberg-sauna",
+      "name": "Nordre Jarlsberg Badstue",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.nordrejarlsbergbadstue.no/"
+    },
+    {
+      "key": "catalogue:norsk-natursenter",
+      "name": "Norsk Natursenter – Hardanger",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.norsknatursenter.no/"
+    },
+    {
+      "key": "catalogue:norsk-skogmuseum",
+      "name": "Norsk skogmuseum",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://skogmus.no/"
+    },
+    {
+      "key": "catalogue:odderoya-kristiansand",
+      "name": "Odderøya · Kristiansand",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://en.visitsorlandet.com/listing/odder%C3%B8ya/139632306/"
+    },
+    {
+      "key": "catalogue:oslo-opera-waterfront",
+      "name": "Operahuset · Bjørvika",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.operaen.no/en/about-us-oslo-operahouse/about-the-oslo-opera-house/"
+    },
+    {
+      "key": "catalogue:oslo-badstuforening-langkaia",
+      "name": "Oslo Badstuforening · Langkaia",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://oslobadstuforening.no/en/lokasjon-langkaia/"
+    },
+    {
+      "key": "catalogue:polaria-tromso",
+      "name": "Polaria",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://polaria.no/"
+    },
+    {
+      "key": "catalogue:pust-bodo",
+      "name": "Pust Bodø",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.pust.io/en/badstue/bodo/"
+    },
+    {
+      "key": "catalogue:pust-lavvo-tromso",
+      "name": "Pust Lavvo · Tromsø",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.pust.io/badstue/lavvo-badstue/"
+    },
+    {
+      "key": "catalogue:risor-resort-seaside-cabin",
+      "name": "Risør Resort · Sjøhytta",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://risorresort.no/sjohytta/"
+    },
+    {
+      "key": "catalogue:risor-harbour-oldtown",
+      "name": "Risør · havn & hvite trehus",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitsorlandet.com/destinasjoner/risor/"
+    },
+    {
+      "key": "catalogue:sagvollstallen-gran",
+      "name": "Sagvollstallen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.granil.no/sagvollstallen"
+    },
+    {
+      "key": "catalogue:saltstraumen-bodo",
+      "name": "Saltstraumen · tidevannsstrømmen",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://nordnorge.com/utforsk/hoydepunkter/saltstraumen/"
+    },
+    {
+      "key": "catalogue:sande-camping-loen",
+      "name": "Sande Camping",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://sande-camping.no/en/kontakt-oss/"
+    },
+    {
+      "key": "catalogue:sandefjord-waterfront",
+      "name": "Sandefjord · havn & strandpromenade",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitvestfold.com/no/forretning/sandefjord-havnevesen"
+    },
+    {
+      "key": "catalogue:sjosanden-mandal",
+      "name": "Sjøsanden · Furulunden",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitnorway.com/listings/sjosanden-beach/17423/"
+    },
+    {
+      "key": "catalogue:skottevik-coastal-cabins",
+      "name": "Skottevik Feriesenter · hytter",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://skottevik.no/om-oss/"
+    },
+    {
+      "key": "catalogue:smortorget-tromso",
+      "name": "Smørtorget Kaffe og Mat",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.smortorget.no/"
+    },
+    {
+      "key": "catalogue:son-waterfront",
+      "name": "Son · småbåthavn & trehus",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitgreateroslo.com/no/son-pa-oslofjordens-solside"
+    },
+    {
+      "key": "catalogue:stavelin-risor",
+      "name": "Stavelin Bakeri · Risør",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.stavelin.no/utsalgene"
+    },
+    {
+      "key": "catalogue:stavern-harbour-fredriksvern",
+      "name": "Stavern · havn & Fredriksvern",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitvestfold.com/no/larvik/artikler/Stavern"
+    },
+    {
+      "key": "catalogue:storelgen",
+      "name": "Storelgen — The Big Elk",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://norconsult.no/prosjekter/bjoeraaa-rasteplass/"
+    },
+    {
+      "key": "catalogue:strandhaven-lillesand",
+      "name": "Strandhaven · Lillesand",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.strand-haven.no/"
+    },
+    {
+      "key": "catalogue:svelvik-old-town",
+      "name": "Svelvik · trehus ved fjorden",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitdrammen.no/aktiviteter/svelvik-sorlandsidyll-ved-fjorden"
+    },
+    {
+      "key": "catalogue:svinoya-rorbuer-svolvaer",
+      "name": "Svinøya Rorbuer",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://www.svinoya.no/overnatting/"
+    },
+    {
+      "key": "catalogue:teaterkafeen-larvik",
+      "name": "Teaterkafeen · Munken",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://teaterhusetmunken.no/teaterkafeen/"
+    },
+    {
+      "key": "catalogue:tim-wendelboe-oslo",
+      "name": "Tim Wendelboe Espresso Bar",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://timwendelboe.no/pages/contact-us"
+    },
+    {
+      "key": "catalogue:tjugen-camping-cabins",
+      "name": "Tjugen Camping · hytter",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-17",
+      "source": "https://tjugen.no/"
+    },
+    {
+      "key": "catalogue:traktern-horten",
+      "name": "Traktern Kaffebar · Horten",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.traktern.no/"
+    },
+    {
+      "key": "catalogue:tusenfryd",
+      "name": "TusenFryd",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://www.tusenfryd.no/"
+    },
+    {
+      "key": "catalogue:tyholmen-arendal",
+      "name": "Tyholmen Kolonial · Arendal",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://tyholmenkolonial.no/"
+    },
+    {
+      "key": "catalogue:tonsberg-brygga",
+      "name": "Tønsberg · Brygga & Slottsfjellet",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://www.visitvestfold.com/no/attraksjon/tonsberg-brygge"
+    },
+    {
+      "key": "catalogue:voss-gondol",
+      "name": "Voss Gondol",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-16",
+      "source": "https://vossgondol.no/"
+    },
+    {
+      "key": "catalogue:vora-vestfold-cabins",
+      "name": "Vøra Camping · hytter",
+      "reason": "single_photo_gallery",
+      "checked": "2026-10-18",
+      "source": "https://voracamping.no/overnatting/hytter/"
+    }
+  ],
+  "unmapped": [
+    {
+      "key": "bua:bua-senja",
+      "name": "BUA Senja"
+    },
+    {
+      "key": "bua:bua-nordkapp",
+      "name": "BUA Nordkapp"
+    }
+  ],
+  "private_data_included": false,
+  "source_hashes": {
+    "bua-locations.json": "1f4d3ab6c3332497724a1bb558f0512bfab40e563ec3635f877b53c4c3481225",
+    "norway-catalog.json": "e8857104e3d60d166cf8237e65208c61988f417dcb2df855d38dc7b6c56492c7",
+    "shopping-centres.json": "d4e0db6d01ec8926fd46d9af51341e73433d836824cf195cb1d73194d9f055d3"
+  }
+}

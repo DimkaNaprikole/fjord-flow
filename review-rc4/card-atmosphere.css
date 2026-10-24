@@ -1,0 +1,26 @@
+/* A quiet moving photo wash under the card copy, never a video. */
+.cards{position:relative;isolation:isolate}
+.card{position:relative;isolation:isolate;background:transparent;overflow:visible}
+.card>.card-atmosphere{position:absolute;top:var(--scene-top,43%);left:calc(-1 * var(--scene-left,20px));right:calc(-1 * var(--scene-right,20px));bottom:calc(-1 * var(--scene-bottom,20px));z-index:-1;overflow:hidden;border-radius:0;pointer-events:none;background:#d8e8e7;mask-image:linear-gradient(90deg,transparent,#000 16px,#000 calc(100% - 16px),transparent),linear-gradient(180deg,transparent,#000 24px,#000 calc(100% - 20px),transparent);mask-composite:intersect}
+.card>.card-atmosphere:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#ffffff40 0%,#ffffff70 48%,#ffffff90 100%)}
+.card .card-atmosphere img{position:absolute;inset:-9%;width:118%;height:118%;object-fit:cover;filter:blur(3px) saturate(1.05);opacity:.95;scale:1;transition:filter 1.1s ease,scale 1.25s cubic-bezier(.22,.61,.36,1);animation:card-landscape-drift 16s ease-in-out infinite alternate;animation-play-state:paused}
+.card .card-atmosphere img+img{opacity:0;animation:card-landscape-drift 19s ease-in-out infinite alternate-reverse,card-landscape-dissolve 18s ease-in-out infinite;animation-play-state:paused}
+.card.card-in-view .card-atmosphere img{animation-play-state:running}
+.card .photo>img{transition:transform 1.25s cubic-bezier(.22,.61,.36,1)}
+.card:focus-within .card-atmosphere img{filter:blur(1.4px) saturate(1.12);scale:1.055}
+.card:focus-within .photo>img{transform:scale(1.055)}
+@media(hover:hover) and (pointer:fine){.card:hover .card-atmosphere img{filter:blur(1.4px) saturate(1.12);scale:1.055}.card:hover .photo>img{transform:scale(1.055)}}
+.card .card-place-heading{position:relative;background:transparent!important;border:1px solid #ffffffb3;box-shadow:0 4px 20px #1740520b;padding:10px}
+.card .card-place-heading>div{background:#ffffffe0;border:1px solid #ffffffb8;backdrop-filter:blur(6px);border-radius:8px;padding:11px;cursor:pointer;transition:background .3s}
+.card .card-place-heading>div:hover{background:#ffffffe0}
+.card .card-place-heading>div:focus-visible{outline:3px solid #54899b;outline-offset:3px}
+.card .card-place-heading h3{color:#113a4c;text-shadow:0 1px 0 #fff9}
+.card .card-place-heading .region{color:#3d6574}
+.card .description{color:#234859;text-shadow:0 1px 0 #fff9;background:#ffffffcf;border-radius:8px;padding:9px 11px}
+.card .card-bottom{position:relative;border-color:#9cb5bd80;background:#ffffffd9;border-radius:9px;padding:11px}
+.card .card-bottom button{background:#ffffffc4;backdrop-filter:blur(5px);border-color:#7197a7}
+.card .reference{position:relative;color:#315c6b;background:#ffffffd9;border-radius:5px;padding:3px 7px;display:inline-block}
+.card .card-arms{background:#fffdf5e8}
+@keyframes card-landscape-drift{from{transform:scale(1.03) translate(-3%,-2%)}to{transform:scale(1.22) translate(3%,2.5%)}}
+@keyframes card-landscape-dissolve{0%,15%,100%{opacity:0}42%,70%{opacity:.95}}
+@media(prefers-reduced-motion:reduce){.card .card-atmosphere img,.card:hover .card-atmosphere img,.card:focus-within .card-atmosphere img{animation:none;transform:none;scale:1;transition:none}.card .card-atmosphere img+img{display:none}.card .photo>img,.card:hover .photo>img,.card:focus-within .photo>img{transform:none;transition:none}}

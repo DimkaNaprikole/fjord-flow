@@ -1,0 +1,20 @@
+.fjord-leaflet-map{background:#e4ebe8;color:#173e49;isolation:isolate;z-index:0;min-height:280px;}
+.fjord-leaflet-map .leaflet-tile{max-width:none!important;max-height:none!important;border:0;border-radius:0;box-shadow:none;filter:none;}
+.fjord-leaflet-map .leaflet-control-attribution{font:11px/1.4 sans-serif;background:#fffffff0;color:#173e49;}
+.fjord-leaflet-map .leaflet-control-attribution a{color:#15517b;text-shadow:none;}
+.fjord-leaflet-map .leaflet-popup-content{color:#173e49;text-shadow:none;}
+.fjord-map-error{position:absolute;z-index:1200;top:12px;left:48px;right:12px;background:#fffdf3;padding:12px;display:flex;gap:12px;flex-wrap:wrap;border-radius:8px;color:#173e49;}
+.fjord-map-error[hidden]{display:none;}
+.fjord-map-error :is(a,button){color:#173e49;font-weight:800;}
+.fjord-leaflet-map a.leaflet-control-zoom-in,.fjord-leaflet-map a.leaflet-control-zoom-out{color:#173e49!important;background:white!important;padding:0!important;min-height:0!important;border-radius:0!important;font:700 22px/30px monospace!important;}
+
+.norway-overview__providers[hidden]{display:none!important;}
+
+.fjord-map-location{position:absolute;z-index:1000;right:12px;top:12px;max-width:min(220px,calc(100% - 65px));font-family:Manrope,sans-serif;}
+.fjord-map-location button{display:block;margin:0 0 0 auto;min-height:38px;padding:8px 12px;border:1px solid #31576266;border-radius:8px;background:#fffdf3;color:#103e4b;font:850 13px/1.4 Manrope,sans-serif;cursor:pointer;box-shadow:0 2px 8px #103e4925;}
+.fjord-map-location button:disabled{cursor:wait;opacity:.85;}
+.fjord-map-location button:focus-visible{outline:3px solid #1476a6;outline-offset:3px;}
+.fjord-map-location p{background:#fffdf3;color:#103e4b;margin:6px 0 0;padding:10px;border-radius:8px;font:700 12px/1.45 Manrope,sans-serif;}
+.fjord-map-location p[hidden]{display:none;}
+
+.fjord-map-has-location{position:relative;}

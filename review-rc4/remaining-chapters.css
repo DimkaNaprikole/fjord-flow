@@ -1,0 +1,127 @@
+/* Approved continuation boards. Existing venue data, photos and maps stay live. */
+.portal-light-chapter {
+ --ff-ink:#103e4b;--ff-muted:#365963;--ff-accent:#245d69;
+ --ff-panel:#faf6e9;--ff-card:#fffdf3ed;--ff-field:#fffdf5;
+ --ff-action:#fffdf3;--ff-deep:#ecf0e7;--ff-line:#31576230;--ff-line-strong:#31576266;
+ --fjord-focus:#246d9c;--chapter-paper:#faf6e9;
+ --chapter-scene:url('images/hero-geiranger.jpg');
+ color:var(--ff-ink);
+}
+#journeys>section.portal-light-chapter:not(#homePanel),body>section.portal-light-chapter:not(#homePanel) {
+ background:var(--chapter-paper);color:var(--ff-ink);
+ padding-block:clamp(36px,5vw,72px);
+}
+.portal-light-chapter>.hero-artwork {opacity:1;background:var(--chapter-paper)}
+.portal-light-chapter>.hero-artwork .hero-artwork-pair {filter:saturate(.85) brightness(1)}
+.portal-light-chapter::before {
+ background:linear-gradient(#faf6e9d9,#faf6e9ec),var(--chapter-scene) center/cover;
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(0deg,transparent,#000 12%,#000 88%,transparent);
+ mask-image:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent),linear-gradient(0deg,transparent,#000 12%,#000 88%,transparent);
+ -webkit-mask-composite:source-in;mask-composite:intersect;z-index:-2;
+}
+.portal-light-chapter::after {
+ content:'';position:absolute;inset:0;pointer-events:none;z-index:-1;
+ background:linear-gradient(90deg,#fffdf2d9,transparent 52px,transparent calc(100% - 52px),#fffdf2d9),linear-gradient(0deg,#fffdf2c9,transparent 56px,transparent calc(100% - 56px),#fffdf2c9);
+}
+.portal-light-chapter :is(h2,h3) {font-family:Manrope,'Segoe UI',sans-serif;font-weight:850;color:var(--ff-ink)}
+.portal-light-chapter>h2,.portal-light-chapter :is(.experiences-heading,.stays-heading,.discovery-cafe-heading,.discovery-story-heading,.news-heading) h2 {
+ font-size:clamp(30px,3.5vw,50px);line-height:1.13;letter-spacing:-.025em;
+ text-shadow:0 0 3px #fffdf5,0 0 10px #fffdf5;
+}
+.portal-light-chapter :is(.eyebrow,.intro>p,.news-heading p,.shopping-note,.travel-services-note),
+#collection.portal-light-chapter :is(h2,p,strong),
+.portal-light-chapter>.hero-artwork~:is(h2,h3,p) {color:var(--ff-ink)}
+.portal-light-chapter :is(p,li) {line-height:1.7}
+.portal-light-chapter :is(input,select,textarea) {background:#fffdf5;color:#103e4b;border-color:#31576266;color-scheme:light}
+.portal-light-chapter :is(a,button,summary):focus-visible {outline:3px solid #246d9c;outline-offset:4px}
+/* Text actions retain their existing handlers and usable hit areas. */
+.portal-light-chapter :is(.text-link,.stay-link,.stay-links>a,.cafe-route,.experience-official,.stays-waypoints>a,.discovery-cafe-links>a,.travel-service-card>a,.webcam-links>a,.news-source>a,.fjord-contact-links>a) {
+ background:transparent;color:#082c37;font-weight:850;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;border-color:transparent;box-shadow:none;
+}
+.portal-light-chapter :is(button,a):disabled {opacity:.5}
+.portal-light-chapter :is(.travel-services-filters,.experience-filters,.webcam-filters,.news-topics,.bua-map-tools,.norway-catalog-geo-controls) button,
+.portal-light-chapter :is(.norway-catalog-controls,.norway-overview__controls) button {
+ background:#fffdf3eb;color:#103e4b;border-color:#31576255;font-weight:800;box-shadow:none;
+}
+.portal-light-chapter :is(.travel-services-filters,.experience-filters,.webcam-filters,.news-topics) button:is([aria-pressed=true],[aria-selected=true]) {
+ background:#255563;color:#edf6f4;border-color:#255563;
+}
+/* Keep photo fronts and photo-backed flip faces in their own contrast context. */
+.portal-light-chapter :is(.compact-postcard,.catalogue-flip,.cafe-flip,.experience-flip) {
+ --ff-ink:#edf6f4;--ff-muted:#c9dedd;--ff-accent:#d0e7df;--ff-panel:#123440;--ff-card:#193f4b;--ff-deep:#0c2530;--ff-field:#0c2a36;--ff-action:#255563;
+}
+#cards.portal-light-chapter .postcard-back :is(h3,p,small,strong),
+.portal-light-chapter .catalogue-front-caption :is(h3,strong,span) {color:#edf6f4}
+#cards.portal-light-chapter.cards {gap:22px;padding-top:24px}
+.portal-light-chapter :is(.norway-catalog-photo,.stay-photo-open,.experience-photo,.discovery-story-card) {text-shadow:none}
+/* Route previews are compact and uniform, with real landscape photos prominent. */
+#scenicRoutes.portal-light-chapter .roadtrip-presets {grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#scenicRoutes.portal-light-chapter .roadtrip-presets button[data-roadtrip] {height:300px;background:#fffdf3ed!important;color:#103e4b;border-color:#31576244;border-radius:16px;overflow:hidden;box-shadow:0 8px 22px #103e4b15}
+#scenicRoutes.portal-light-chapter .roadtrip-presets .route-scenery {height:165px}
+#scenicRoutes.portal-light-chapter .roadtrip-presets button>:is(span,b,small) {color:#103e4b;background:transparent;text-shadow:none;padding:0}
+#scenicRoutes.portal-light-chapter .roadtrip-presets button>b {font-size:19px;font-weight:850}
+#scenicRoutes.portal-light-chapter .roadtrip-scene {opacity:.3}
+#scenicRoutes.portal-light-chapter .roadtrip-scene::after {background:#faf6e944}
+#scenicRoutes.portal-light-chapter .roadtrip-intro {max-width:700px;font-weight:700;text-shadow:0 0 8px #fffdf5}
+#collection.portal-light-chapter {--chapter-scene:url('images/hero-lofoten.jpg')}
+/* Search and pagination between collection sections must share the light canvas. */
+#journeys>:is(.collection-search,.filterline,.place-pagination,.place-pagination-status) {background:#faf6e9;color:#103e4b}
+#journeys .collection-search :is(label,span),#journeys #filters button {color:#103e4b}
+#journeys #filters button {background:#fffdf3;border-color:#31576266}
+#journeys #filters button:is(.active,[aria-pressed=true]) {background:#255563;color:#edf6f4}
+#journeys .place-pagination button {background:#fffdf3;color:#103e4b;border-color:#31576266}
+/* Light utility surfaces and photographic directory previews. */
+.portal-light-chapter :is(.cafe-nearby,.bua-location,.travel-update-card,.travel-service-card,.webcam-card,.news-card,.shopping-card,.community-hub,.community-group-card) {
+ background:#fffdf3ed;color:#103e4b;border-color:#31576244;box-shadow:0 7px 24px #103e4b14;
+}
+.portal-light-chapter :is(.cafe-nearby,.bua-location,.travel-update-card,.travel-service-card,.webcam-card,.news-card,.shopping-card,.community-group-card) :is(h3,p,li,small,label) {color:inherit}
+.portal-light-chapter :is(.news-card-open,.shopping-card-open) {background:#fffdf3ed;color:#103e4b}
+.portal-light-chapter :is(.news-card-open,.shopping-card-open):hover {background:#f3f0e4}
+.portal-light-chapter .shopping-photo-title :is(h3,.shopping-town) {color:#fffdf5}
+.portal-light-chapter .news-card-more,.portal-light-chapter .shopping-more {color:#082c37;font-weight:850;text-decoration:underline;text-underline-offset:4px}
+#municipalNews.portal-light-chapter .news-grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#municipalNews.portal-light-chapter .news-card h3 {font-weight:850}
+#municipalNews.portal-light-chapter .news-card-body {padding:18px}
+#shoppingCentres.portal-light-chapter {--chapter-scene:url('images/hero-bergen.jpg')}
+#shoppingCentres.portal-light-chapter .shopping-card {border-radius:16px}
+#cafeStops.portal-light-chapter {--chapter-scene:url('images/hero-bergen.jpg')}
+#cafeStops.portal-light-chapter .discovery-cafe-heading {background:transparent;color:#103e4b}
+#cafeStops.portal-light-chapter .discovery-cafe-heading :is(h2,p) {color:#103e4b;text-shadow:0 0 8px #fffdf5}
+#cafeStops.portal-light-chapter .cafe-nearby :is(h3,p,label,summary) {color:#103e4b}
+#cafeStops.portal-light-chapter .discovery-footnote {color:#365963}
+#staysSauna.portal-light-chapter .stays-heading :is(h2,p) {color:#103e4b}
+/* Existing full-bleed scenic sections retain their photographs. */
+#journeys>.waterfall-story.portal-light-chapter>div {color:#103e4b;text-shadow:0 0 3px #fffdf5,0 0 10px #fffdf5}
+#journeys>.waterfall-story.portal-light-chapter>div :is(h2,p) {color:#103e4b}
+#droneExperience.portal-light-chapter .drone-experience-body {background:transparent;color:#103e4b}
+#droneExperience.portal-light-chapter .drone-experience-body :is(h2,p) {color:#103e4b;text-shadow:0 0 8px #fffdf5}
+#travelStories.portal-light-chapter .discovery-story-heading :is(h2,p) {color:#103e4b}
+#norwayOverview.portal-light-chapter .norway-overview__canvas {border:1px solid #31576266;border-radius:16px;overflow:hidden}
+@media(min-width:1600px){#scenicRoutes.portal-light-chapter .roadtrip-presets {grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:950px){#scenicRoutes.portal-light-chapter .roadtrip-presets,#municipalNews.portal-light-chapter .news-grid {grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){
+ #journeys>section.portal-light-chapter:not(#homePanel),body>section.portal-light-chapter:not(#homePanel) {padding-block:36px;padding-inline:28px}
+ .portal-light-chapter>h2,.portal-light-chapter :is(.experiences-heading,.stays-heading,.discovery-cafe-heading,.discovery-story-heading,.news-heading) h2 {font-size:30px}
+ #scenicRoutes.portal-light-chapter .roadtrip-presets {grid-template-columns:1fr}
+ #scenicRoutes.portal-light-chapter .roadtrip-presets button[data-roadtrip] {height:300px}
+ #municipalNews.portal-light-chapter .news-grid {grid-template-columns:1fr}
+ .portal-light-chapter :is(input,select,textarea) {max-width:100%;min-width:0}
+ .portal-light-chapter :is(.news-filters,.shopping-controls,.bua-map-tools) {min-width:0}
+}
+
+.portal-light-chapter>.hero-artwork{-webkit-mask-image:linear-gradient(90deg,#000,transparent 19%,transparent 81%,#000);mask-image:linear-gradient(90deg,#000,transparent 19%,transparent 81%,#000)}
+
+.portal-light-chapter :is(.travel-service-card,.travel-update-card,.webcam-card) a {font-weight:850;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:650px){#municipalNews.portal-light-chapter .news-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#municipalNews.portal-light-chapter .news-card-body{padding:12px}}
+
+#travelStories.portal-light-chapter .discovery-story-card{--ff-ink:#edf6f4;--ff-muted:#c9dedd;--ff-card:#193f4b}
+#travelStories.portal-light-chapter .discovery-story-card :is(h3,p,small,b,.discovery-story-image>span){color:#fffdf5;text-shadow:0 1px 5px #001b2d}
+
+/* The cafe chapter uses its existing Bergen photograph as a broad scene. */
+#cafeStops.portal-light-chapter .discovery-cafe-heading{position:relative;display:flex;align-items:center;min-height:380px;margin-bottom:30px;isolation:isolate}
+#cafeStops.portal-light-chapter .discovery-cafe-photo{position:absolute;inset:0;z-index:-1;width:100%;max-width:none;height:100%;margin:0;padding:0;border:0;border-radius:0;transform:none;box-shadow:none;background:transparent;-webkit-mask-image:linear-gradient(90deg,transparent,#000 13%,#000 87%,transparent),linear-gradient(0deg,transparent,#000 13%,#000 87%,transparent);mask-image:linear-gradient(90deg,transparent,#000 13%,#000 87%,transparent),linear-gradient(0deg,transparent,#000 13%,#000 87%,transparent);-webkit-mask-composite:source-in;mask-composite:intersect}
+#cafeStops.portal-light-chapter .discovery-cafe-photo>img{border-radius:0}
+#cafeStops.portal-light-chapter .discovery-cafe-photo>span,#cafeStops.portal-light-chapter .discovery-coffee-rule{display:none}
+#cafeStops.portal-light-chapter .discovery-heading{width:52%;padding:25px 0}
+#cafeStops.portal-light-chapter .discovery-heading>p{font-weight:750;color:#103e4b;text-shadow:0 0 3px #fffdf5,0 0 8px #fffdf5}
+@media(max-width:650px){#cafeStops.portal-light-chapter .discovery-cafe-heading{min-height:390px}#cafeStops.portal-light-chapter .discovery-heading{width:100%}}

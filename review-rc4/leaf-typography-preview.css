@@ -1,0 +1,10 @@
+/* Unpublished opt-in typography only. No artwork, photos, video, auth or layout changes. */
+body.ff-typography-preview{--ff-ui-font:Manrope,"Segoe UI",sans-serif}
+body.ff-typography-preview :is(button,input,select,textarea,summary,[role=tab]){font-family:var(--ff-ui-font)!important}
+body.ff-typography-preview>header nav :is(a,button){font-size:12px!important;line-height:1.4!important;font-weight:600!important;letter-spacing:.025em!important}
+body.ff-typography-preview .site-group-links :is(a,button,select){font-size:13px!important;line-height:1.4!important;font-weight:650!important}
+body.ff-typography-preview #journeys .ref-panel .ref-title{font-family:var(--ff-ui-font)!important;font-weight:750!important;font-size:clamp(30px,3vw,39px)!important;line-height:1.15!important;letter-spacing:-.055em!important}
+body.ff-typography-preview #journeys .ref-card-body h3{font-family:var(--ff-ui-font)!important;font-size:22px!important;line-height:1.25!important;font-weight:750!important;letter-spacing:-.035em!important}
+body.ff-typography-preview .norway-catalog-controls label{font:650 13px/20px var(--ff-ui-font)!important}
+body.ff-typography-preview.ff-admin-leaf :is(.editor-tabs button,.header-actions>a){font-size:12px!important;line-height:1.4!important;font-weight:700!important}
+@media(max-width:450px){body.ff-typography-preview :is(input:not([type=checkbox]):not([type=radio]),select,.ff-select-trigger){font-size:16px!important}}

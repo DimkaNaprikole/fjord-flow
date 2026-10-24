@@ -1,0 +1,1357 @@
+{
+  "schemaVersion": 1,
+  "clips": [
+    {
+      "id": "blink",
+      "packed": "blink-packed.mp4",
+      "poster": "blink-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 4.041666666666667,
+      "fps": 24,
+      "frameCount": 97,
+      "bounds": {
+        "left": 0.327869,
+        "top": 0.025,
+        "right": 0.625293,
+        "bottom": 0.922917
+      },
+      "unionBounds": {
+        "left": 0.326698,
+        "top": 0.002083,
+        "right": 0.631148,
+        "bottom": 0.925
+      },
+      "startBounds": {
+        "left": 0.327869,
+        "top": 0.0125,
+        "right": 0.625293,
+        "bottom": 0.922917
+      },
+      "anchor": {
+        "x": 0.476581,
+        "y": 0.922917
+      },
+      "sourceSha256": "0f2cd5efe95832ac3ffc82623c82fb09deea820a72a525f73001bc2a08a497ff",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "yawn",
+      "packed": "yawn-packed.mp4",
+      "poster": "yawn-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.312646,
+        "top": 0.029167,
+        "right": 0.627635,
+        "bottom": 0.964583
+      },
+      "unionBounds": {
+        "left": 0.311475,
+        "top": 0.0125,
+        "right": 0.648712,
+        "bottom": 0.966667
+      },
+      "startBounds": {
+        "left": 0.313817,
+        "top": 0.035417,
+        "right": 0.619438,
+        "bottom": 0.966667
+      },
+      "anchor": {
+        "x": 0.466628,
+        "y": 0.966667
+      },
+      "sourceSha256": "94bfff87dc626c4efaf5a3776dbe16e6e63172f1f00d63154bc7788615048c61",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "listen",
+      "packed": "listen-packed.mp4",
+      "poster": "listen-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.327869,
+        "top": 0.014583,
+        "right": 0.625293,
+        "bottom": 0.922917
+      },
+      "unionBounds": {
+        "left": 0.320843,
+        "top": 0.008333,
+        "right": 0.627635,
+        "bottom": 0.925
+      },
+      "startBounds": {
+        "left": 0.327869,
+        "top": 0.0125,
+        "right": 0.625293,
+        "bottom": 0.922917
+      },
+      "anchor": {
+        "x": 0.476581,
+        "y": 0.922917
+      },
+      "sourceSha256": "3154b6fa6ea0f75847c1080e8de80aaf4c9280471b7c214e1767937d9ad16018",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "nose-lick",
+      "packed": "nose-lick-packed.mp4",
+      "poster": "nose-lick-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 4.041666666666667,
+      "fps": 24,
+      "frameCount": 97,
+      "bounds": {
+        "left": 0.327869,
+        "top": 0.016667,
+        "right": 0.625293,
+        "bottom": 0.922917
+      },
+      "unionBounds": {
+        "left": 0.327869,
+        "top": 0.010417,
+        "right": 0.631148,
+        "bottom": 0.925
+      },
+      "startBounds": {
+        "left": 0.327869,
+        "top": 0.0125,
+        "right": 0.625293,
+        "bottom": 0.922917
+      },
+      "anchor": {
+        "x": 0.476581,
+        "y": 0.922917
+      },
+      "sourceSha256": "ee6cbf253ccf827008e049c13c07658c08317fcf9446b71bc5a2aa846bc75a9b",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "pleading",
+      "packed": "pleading-packed.mp4",
+      "poster": "pleading-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.345433,
+        "top": 0.102083,
+        "right": 0.679157,
+        "bottom": 0.914583
+      },
+      "unionBounds": {
+        "left": 0.344262,
+        "top": 0.0125,
+        "right": 0.697892,
+        "bottom": 0.916667
+      },
+      "startBounds": {
+        "left": 0.345433,
+        "top": 0.0125,
+        "right": 0.696721,
+        "bottom": 0.914583
+      },
+      "anchor": {
+        "x": 0.521077,
+        "y": 0.914583
+      },
+      "sourceSha256": "85ad1d6501ca82309f71ff399bc44f524d3441d18c64332e9018147f57641277",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "mouse",
+      "packed": "mouse-packed.mp4",
+      "poster": "mouse-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 8.041666666666666,
+      "fps": 24,
+      "frameCount": 193,
+      "bounds": {
+        "left": 0.179157,
+        "top": 0.458333,
+        "right": 0.490632,
+        "bottom": 0.679167
+      },
+      "unionBounds": {
+        "left": 0.140515,
+        "top": 0.354167,
+        "right": 0.61007,
+        "bottom": 0.691667
+      },
+      "startBounds": {
+        "left": 0.141686,
+        "top": 0.35625,
+        "right": 0.322014,
+        "bottom": 0.664583
+      },
+      "anchor": {
+        "x": 0.23185,
+        "y": 0.664583
+      },
+      "sourceSha256": "ca38e7101b26e93332d40aa3ca21fef1c589d9cf8ae22fec4521bcf50086d9fd",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "lying-toy",
+      "packed": "lying-toy-packed.mp4",
+      "poster": "lying-toy-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 8.041666666666666,
+      "fps": 24,
+      "frameCount": 193,
+      "bounds": {
+        "left": 0.106557,
+        "top": 0.4875,
+        "right": 0.456674,
+        "bottom": 0.672917
+      },
+      "unionBounds": {
+        "left": 0.063232,
+        "top": 0.354167,
+        "right": 0.498829,
+        "bottom": 0.704167
+      },
+      "startBounds": {
+        "left": 0.141686,
+        "top": 0.35625,
+        "right": 0.322014,
+        "bottom": 0.664583
+      },
+      "anchor": {
+        "x": 0.23185,
+        "y": 0.664583
+      },
+      "sourceSha256": "e0fd66e10b83b474e9c45d8d7c6fa3f4955c9eab60f5ed18bc644fa22b917d24",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "feather",
+      "packed": "feather-packed.mp4",
+      "poster": "feather-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 7.041666666666667,
+      "fps": 24,
+      "frameCount": 169,
+      "bounds": {
+        "left": 0.204918,
+        "top": 0.275,
+        "right": 0.733021,
+        "bottom": 0.847917
+      },
+      "unionBounds": {
+        "left": 0.092506,
+        "top": 0.029167,
+        "right": 0.922717,
+        "bottom": 0.895833
+      },
+      "startBounds": {
+        "left": 0.172131,
+        "top": 0.252083,
+        "right": 0.385246,
+        "bottom": 0.797917
+      },
+      "anchor": {
+        "x": 0.278689,
+        "y": 0.797917
+      },
+      "sourceSha256": "ea733b2b7047c172bd3e31f2a1a972869a43e8e846e0cfd0ed15962c7ea3c2dd",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "tail",
+      "packed": "tail-packed.mp4",
+      "poster": "tail-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 8.041666666666666,
+      "fps": 24,
+      "frameCount": 193,
+      "bounds": {
+        "left": 0.29274,
+        "top": 0.283333,
+        "right": 0.593677,
+        "bottom": 0.791667
+      },
+      "unionBounds": {
+        "left": 0.230679,
+        "top": 0.129167,
+        "right": 0.681499,
+        "bottom": 0.802083
+      },
+      "startBounds": {
+        "left": 0.289227,
+        "top": 0.135417,
+        "right": 0.594848,
+        "bottom": 0.802083
+      },
+      "anchor": {
+        "x": 0.442037,
+        "y": 0.802083
+      },
+      "sourceSha256": "bd2309b090d9b0bb5f0598c6a23d8ed7cc7f23146c058cacfba31c404266992f",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "side-hop",
+      "packed": "side-hop-packed.mp4",
+      "poster": "side-hop-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 6.041666666666667,
+      "fps": 24,
+      "frameCount": 145,
+      "bounds": {
+        "left": 0.312646,
+        "top": 0.314583,
+        "right": 0.631148,
+        "bottom": 0.71875
+      },
+      "unionBounds": {
+        "left": 0.206089,
+        "top": 0.24375,
+        "right": 0.668618,
+        "bottom": 0.722917
+      },
+      "startBounds": {
+        "left": 0.208431,
+        "top": 0.345833,
+        "right": 0.473068,
+        "bottom": 0.679167
+      },
+      "anchor": {
+        "x": 0.340749,
+        "y": 0.679167
+      },
+      "sourceSha256": "0f93f03fc02c606d18d80f558e4687306bde513e3a4c4fcfbacb9c9893b12f66",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "paper",
+      "packed": "paper-packed.mp4",
+      "poster": "paper-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 7.041666666666667,
+      "fps": 24,
+      "frameCount": 169,
+      "bounds": {
+        "left": 0.312646,
+        "top": 0.460417,
+        "right": 0.659251,
+        "bottom": 0.760417
+      },
+      "unionBounds": {
+        "left": 0.223653,
+        "top": 0.372917,
+        "right": 0.905152,
+        "bottom": 0.845833
+      },
+      "startBounds": {
+        "left": 0.227166,
+        "top": 0.375,
+        "right": 0.407494,
+        "bottom": 0.69375
+      },
+      "anchor": {
+        "x": 0.31733,
+        "y": 0.69375
+      },
+      "sourceSha256": "1d1fa1ee759b414b3564302248b62dad75ed49e4c4a4f6e2dfa04bbbad48f9e0",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "yarn",
+      "packed": "yarn-packed.mp4",
+      "poster": "yarn-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 8.041666666666666,
+      "fps": 24,
+      "frameCount": 193,
+      "bounds": {
+        "left": 0.112412,
+        "top": 0.302083,
+        "right": 0.713115,
+        "bottom": 0.827083
+      },
+      "unionBounds": {
+        "left": 0.044496,
+        "top": 0.125,
+        "right": 0.936768,
+        "bottom": 0.872917
+      },
+      "startBounds": {
+        "left": 0.083138,
+        "top": 0.127083,
+        "right": 0.4637,
+        "bottom": 0.820833
+      },
+      "anchor": {
+        "x": 0.273419,
+        "y": 0.820833
+      },
+      "sourceSha256": "7e33e3ee4f4004929c85cda16995cbfe278eadb9182abff895b56e341d3ef8e0",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "groom",
+      "packed": "groom-packed.mp4",
+      "poster": "groom-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 6.041666666666667,
+      "fps": 24,
+      "frameCount": 145,
+      "bounds": {
+        "left": 0.322014,
+        "top": 0.09375,
+        "right": 0.639344,
+        "bottom": 0.922917
+      },
+      "unionBounds": {
+        "left": 0.318501,
+        "top": 0.010417,
+        "right": 0.688525,
+        "bottom": 0.925
+      },
+      "startBounds": {
+        "left": 0.327869,
+        "top": 0.0125,
+        "right": 0.625293,
+        "bottom": 0.922917
+      },
+      "anchor": {
+        "x": 0.476581,
+        "y": 0.922917
+      },
+      "sourceSha256": "b746f6e922f50aa7ec4d83885b6f751b1f2f8119d5cf53cd2c719c17b3ee2793",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "cursor-button",
+      "packed": "cursor-button-packed.mp4",
+      "poster": "cursor-button-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 7.041666666666667,
+      "fps": 24,
+      "frameCount": 169,
+      "bounds": {
+        "left": 0.13466,
+        "top": 0.3125,
+        "right": 0.680328,
+        "bottom": 0.795833
+      },
+      "unionBounds": {
+        "left": 0.067916,
+        "top": 0.214583,
+        "right": 0.850117,
+        "bottom": 0.845833
+      },
+      "startBounds": {
+        "left": 0.105386,
+        "top": 0.216667,
+        "right": 0.394614,
+        "bottom": 0.772917
+      },
+      "anchor": {
+        "x": 0.25,
+        "y": 0.772917
+      },
+      "sourceSha256": "07e593c9b690e793a6e4ddfc635759baa9425e5f02fe23b9adba4594b866774d",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "cursor",
+      "packed": "cursor-packed.mp4",
+      "poster": "cursor-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 7.041666666666667,
+      "fps": 24,
+      "frameCount": 169,
+      "bounds": {
+        "left": 0.13466,
+        "top": 0.3125,
+        "right": 0.680328,
+        "bottom": 0.795833
+      },
+      "unionBounds": {
+        "left": 0.067916,
+        "top": 0.214583,
+        "right": 0.921546,
+        "bottom": 0.94375
+      },
+      "startBounds": {
+        "left": 0.105386,
+        "top": 0.216667,
+        "right": 0.394614,
+        "bottom": 0.772917
+      },
+      "anchor": {
+        "x": 0.25,
+        "y": 0.772917
+      },
+      "sourceSha256": "07e593c9b690e793a6e4ddfc635759baa9425e5f02fe23b9adba4594b866774d",
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "sniff",
+      "packed": "sniff-packed.mp4",
+      "poster": "sniff-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 7.041666666666667,
+      "fps": 24,
+      "frameCount": 169,
+      "bounds": {
+        "left": 0.129977,
+        "top": 0.208333,
+        "right": 0.525761,
+        "bottom": 0.816667
+      },
+      "unionBounds": {
+        "left": 0.106557,
+        "top": 0.1,
+        "right": 0.614754,
+        "bottom": 0.820833
+      },
+      "startBounds": {
+        "left": 0.11007,
+        "top": 0.225,
+        "right": 0.401639,
+        "bottom": 0.797917
+      },
+      "anchor": {
+        "x": 0.255855,
+        "y": 0.797917
+      },
+      "sourceSha256": "056c698afbf05dfb9e09e1c8b2f440a7da76cea4cf2174732afbac38a77d1530",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "rub",
+      "packed": "rub-packed.mp4",
+      "poster": "rub-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.151054,
+        "top": 0.222917,
+        "right": 0.480094,
+        "bottom": 0.7125
+      },
+      "unionBounds": {
+        "left": 0.099532,
+        "top": 0.197917,
+        "right": 0.482436,
+        "bottom": 0.7125
+      },
+      "startBounds": {
+        "left": 0.154567,
+        "top": 0.258333,
+        "right": 0.478923,
+        "bottom": 0.7125
+      },
+      "anchor": {
+        "x": 0.316745,
+        "y": 0.7125
+      },
+      "sourceSha256": "10fdc43407f75e3e43ddfbffe1dbf6cda61b4e86fbc55b20ea2d2419e8df1824",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "scratch",
+      "packed": "scratch-packed.mp4",
+      "poster": "scratch-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.13466,
+        "top": 0.297917,
+        "right": 0.345433,
+        "bottom": 0.727083
+      },
+      "unionBounds": {
+        "left": 0.133489,
+        "top": 0.270833,
+        "right": 0.346604,
+        "bottom": 0.729167
+      },
+      "startBounds": {
+        "left": 0.13466,
+        "top": 0.295833,
+        "right": 0.345433,
+        "bottom": 0.727083
+      },
+      "anchor": {
+        "x": 0.240047,
+        "y": 0.727083
+      },
+      "sourceSha256": "1e603d8559f9ad23f812a304c82de7c223bce8ea5e57f65d4dfab3ebde053c5b",
+      "sourceVersion": 2,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "knead",
+      "packed": "knead-packed.mp4",
+      "poster": "knead-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.09719,
+        "top": 0.1875,
+        "right": 0.51171,
+        "bottom": 0.764583
+      },
+      "unionBounds": {
+        "left": 0.087822,
+        "top": 0.172917,
+        "right": 0.525761,
+        "bottom": 0.766667
+      },
+      "startBounds": {
+        "left": 0.103044,
+        "top": 0.177083,
+        "right": 0.510539,
+        "bottom": 0.758333
+      },
+      "anchor": {
+        "x": 0.306792,
+        "y": 0.758333
+      },
+      "sourceSha256": "596974546c15f77e5f10cd3449fc2fca60d5e2d25c8b8ac7f6138e0cdd5003cd",
+      "sourceVersion": 2,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "shake",
+      "packed": "shake-packed.mp4",
+      "poster": "shake-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.101874,
+        "top": 0.225,
+        "right": 0.490632,
+        "bottom": 0.8
+      },
+      "unionBounds": {
+        "left": 0.058548,
+        "top": 0.135417,
+        "right": 0.535129,
+        "bottom": 0.80625
+      },
+      "startBounds": {
+        "left": 0.11007,
+        "top": 0.225,
+        "right": 0.401639,
+        "bottom": 0.797917
+      },
+      "anchor": {
+        "x": 0.255855,
+        "y": 0.797917
+      },
+      "sourceSha256": "20d0db69670619e0a3b4b25bfa1fe841310267a1319e2a2ab3ac17255ec6bdba",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "body-groom",
+      "packed": "body-groom-packed.mp4",
+      "poster": "body-groom-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 6.041666666666667,
+      "fps": 24,
+      "frameCount": 145,
+      "bounds": {
+        "left": 0.11007,
+        "top": 0.266667,
+        "right": 0.355972,
+        "bottom": 0.797917
+      },
+      "unionBounds": {
+        "left": 0.107728,
+        "top": 0.202083,
+        "right": 0.403981,
+        "bottom": 0.797917
+      },
+      "startBounds": {
+        "left": 0.11007,
+        "top": 0.225,
+        "right": 0.401639,
+        "bottom": 0.797917
+      },
+      "anchor": {
+        "x": 0.255855,
+        "y": 0.797917
+      },
+      "sourceSha256": "c9e42a2771ba06a435e9d293d502e0083ee1033ebf60631895709108f06f9a20",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "stretch",
+      "packed": "stretch-packed.mp4",
+      "poster": "stretch-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 7.041666666666667,
+      "fps": 24,
+      "frameCount": 169,
+      "bounds": {
+        "left": 0.112412,
+        "top": 0.310417,
+        "right": 0.581967,
+        "bottom": 0.80625
+      },
+      "unionBounds": {
+        "left": 0.079625,
+        "top": 0.172917,
+        "right": 0.606557,
+        "bottom": 0.81875
+      },
+      "startBounds": {
+        "left": 0.11007,
+        "top": 0.225,
+        "right": 0.401639,
+        "bottom": 0.797917
+      },
+      "anchor": {
+        "x": 0.255855,
+        "y": 0.797917
+      },
+      "sourceSha256": "46e2395e0073ae1b06a8cb293c8ac4e8cc30930487b01fb0272af23a3529c046",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "ledge-reach",
+      "packed": "ledge-reach-packed.mp4",
+      "poster": "ledge-reach-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.103044,
+        "top": 0.2,
+        "right": 0.599532,
+        "bottom": 0.7125
+      },
+      "unionBounds": {
+        "left": 0.103044,
+        "top": 0.1625,
+        "right": 0.626464,
+        "bottom": 0.716667
+      },
+      "startBounds": {
+        "left": 0.103044,
+        "top": 0.1625,
+        "right": 0.552693,
+        "bottom": 0.7125
+      },
+      "anchor": {
+        "x": 0.327869,
+        "y": 0.7125
+      },
+      "sourceSha256": "b32bcb7ef5dcf93e58d41905dfc058949266b769875117ce6d9705579fda4d38",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "look-back",
+      "packed": "look-back-packed.mp4",
+      "poster": "look-back-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.041666666666667,
+      "fps": 24,
+      "frameCount": 121,
+      "bounds": {
+        "left": 0.155738,
+        "top": 0.21875,
+        "right": 0.462529,
+        "bottom": 0.764583
+      },
+      "unionBounds": {
+        "left": 0.151054,
+        "top": 0.197917,
+        "right": 0.494145,
+        "bottom": 0.766667
+      },
+      "startBounds": {
+        "left": 0.155738,
+        "top": 0.210417,
+        "right": 0.492974,
+        "bottom": 0.764583
+      },
+      "anchor": {
+        "x": 0.324356,
+        "y": 0.764583
+      },
+      "sourceSha256": "d63f6169345d1713732613c31e975984639b7820224772667821085dd3efe7fe",
+      "sourceVersion": 2,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "roll",
+      "packed": "roll-packed.mp4",
+      "poster": "roll-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 7.041666666666667,
+      "fps": 24,
+      "frameCount": 169,
+      "bounds": {
+        "left": 0.252927,
+        "top": 0.410417,
+        "right": 0.63466,
+        "bottom": 0.58125
+      },
+      "unionBounds": {
+        "left": 0.172131,
+        "top": 0.372917,
+        "right": 0.641686,
+        "bottom": 0.595833
+      },
+      "startBounds": {
+        "left": 0.285714,
+        "top": 0.427083,
+        "right": 0.638173,
+        "bottom": 0.585417
+      },
+      "anchor": {
+        "x": 0.461944,
+        "y": 0.585417
+      },
+      "sourceSha256": "7b089ff831adf72c0a469d727ac05a7fcc4fdb8b1d389fa6da6b29dc568a43aa",
+      "sourceVersion": 3,
+      "visualReview": "sampled-pass",
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "lie-down",
+      "packed": "lie-down-packed.mp4",
+      "poster": "lie-down-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 7.041666666666667,
+      "fps": 24,
+      "frameCount": 169,
+      "bounds": {
+        "left": 0.117096,
+        "top": 0.458333,
+        "right": 0.65808,
+        "bottom": 0.802083
+      },
+      "unionBounds": {
+        "left": 0.04918,
+        "top": 0.225,
+        "right": 0.688525,
+        "bottom": 0.808333
+      },
+      "startBounds": {
+        "left": 0.11007,
+        "top": 0.225,
+        "right": 0.401639,
+        "bottom": 0.797917
+      },
+      "anchor": {
+        "x": 0.255855,
+        "y": 0.797917
+      },
+      "sourceSha256": "6a6aaa5d1aa650cafe6bba63c6b58e860022c167787216b906708f0f14d70a25",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "6a6aaa5d1aa650cafe6bba63c6b58e860022c167787216b906708f0f14d70a25",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed"
+      }
+    },
+    {
+      "id": "arched-back",
+      "packed": "arched-back-packed.mp4",
+      "poster": "arched-back-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 3.0416666666666665,
+      "fps": 24,
+      "frameCount": 73,
+      "bounds": {
+        "left": 0.220141,
+        "top": 0.297917,
+        "right": 0.676815,
+        "bottom": 0.74375
+      },
+      "unionBounds": {
+        "left": 0.206089,
+        "top": 0.25,
+        "right": 0.700234,
+        "bottom": 0.74375
+      },
+      "startBounds": {
+        "left": 0.216628,
+        "top": 0.2875,
+        "right": 0.696721,
+        "bottom": 0.74375
+      },
+      "anchor": {
+        "x": 0.456674,
+        "y": 0.74375
+      },
+      "sourceSha256": "7ab5fb3580a9b27d430e5c1bbdeb92a47d291dac50b73bc5d2ad6080cfe85187",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "7ab5fb3580a9b27d430e5c1bbdeb92a47d291dac50b73bc5d2ad6080cfe85187",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "rear-leg-stretch",
+      "packed": "rear-leg-stretch-packed.mp4",
+      "poster": "rear-leg-stretch-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 3.0416666666666665,
+      "fps": 24,
+      "frameCount": 73,
+      "bounds": {
+        "left": 0.24356,
+        "top": 0.195833,
+        "right": 0.696721,
+        "bottom": 0.764583
+      },
+      "unionBounds": {
+        "left": 0.233021,
+        "top": 0.177083,
+        "right": 0.711944,
+        "bottom": 0.766667
+      },
+      "startBounds": {
+        "left": 0.271663,
+        "top": 0.195833,
+        "right": 0.700234,
+        "bottom": 0.764583
+      },
+      "anchor": {
+        "x": 0.485948,
+        "y": 0.764583
+      },
+      "sourceSha256": "3680a73da5d196d8b435e1aec13056aa47e39454fb0600e79b2da2e8140df627",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "3680a73da5d196d8b435e1aec13056aa47e39454fb0600e79b2da2e8140df627",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "jump-panther-short",
+      "packed": "jump-panther-short-packed.mp4",
+      "poster": "jump-panther-short-poster.png",
+      "width": 854,
+      "height": 480,
+      "duration": 5.208333333333333,
+      "fps": 24,
+      "frameCount": 125,
+      "bounds": {
+        "left": 0.056206,
+        "top": 0.31875,
+        "right": 0.649883,
+        "bottom": 0.735417
+      },
+      "unionBounds": {
+        "left": 0.001171,
+        "top": 0.210417,
+        "right": 0.766979,
+        "bottom": 0.747917
+      },
+      "startBounds": {
+        "left": 0.026932,
+        "top": 0.2125,
+        "right": 0.484778,
+        "bottom": 0.735417
+      },
+      "anchor": {
+        "x": 0.255855,
+        "y": 0.735417
+      },
+      "sourceSha256": "593f6a8e4f6693dea2f7fb16451a61adf67d9f0d2069a9f10d212b78809c9964",
+      "sourceVersion": 1,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "593f6a8e4f6693dea2f7fb16451a61adf67d9f0d2069a9f10d212b78809c9964",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed"
+      }
+    },
+    {
+      "id": "cloud-perch",
+      "packed": "cloud-perch-packed.mp4",
+      "poster": "cloud-perch-poster.png",
+      "width": 1130,
+      "height": 900,
+      "duration": 0.9666666666666667,
+      "fps": 30,
+      "frameCount": 29,
+      "bounds": {
+        "left": 0.15752212389380532,
+        "top": 0.04555555555555556,
+        "right": 0.9725663716814159,
+        "bottom": 0.9155555555555556
+      },
+      "unionBounds": {
+        "left": 0.09292035398230089,
+        "top": 0.04555555555555556,
+        "right": 0.9725663716814159,
+        "bottom": 0.9155555555555556
+      },
+      "startBounds": {
+        "left": 0.15752212389380532,
+        "top": 0.04555555555555556,
+        "right": 0.9725663716814159,
+        "bottom": 0.9155555555555556
+      },
+      "anchor": {
+        "x": 0.4831858407079646,
+        "y": 0.6
+      },
+      "sourceSha256": "403ecf2e77adef9b09e786b073671bf782bdad9e6b8809bdf208c503de5c0a7e",
+      "sourceVersion": 1,
+      "sourceStart": 4.0,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "403ecf2e77adef9b09e786b073671bf782bdad9e6b8809bdf208c503de5c0a7e",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed",
+        "reviewedFrames": 29,
+        "alphaBoundsThreshold": 32,
+        "alphaBoundsPaddingPixels": 2
+      },
+      "oneShot": true,
+      "loop": false,
+      "sourceMotion": true,
+      "limitation": "One continuous crouch on its own cloud, not a complete jump or a loop. The original small marker near the paw remains; later marked frames were excluded.",
+      "packedSha256": "b70417bc140d15d8de12a60e9c73f6aaa193322d902e9a0ecadb1e7dbd3de235"
+    },
+    {
+      "id": "run-short",
+      "packed": "run-short-packed.mp4",
+      "poster": "run-short-poster.png",
+      "width": 1150,
+      "height": 350,
+      "duration": 0.6333333333333333,
+      "fps": 30,
+      "frameCount": 19,
+      "bounds": {
+        "left": 0.042608695652173914,
+        "top": 0.1457142857142857,
+        "right": 0.32608695652173914,
+        "bottom": 0.8314285714285714
+      },
+      "unionBounds": {
+        "left": 0.042608695652173914,
+        "top": 0.11714285714285715,
+        "right": 0.6165217391304347,
+        "bottom": 0.8314285714285714
+      },
+      "startBounds": {
+        "left": 0.042608695652173914,
+        "top": 0.1457142857142857,
+        "right": 0.32608695652173914,
+        "bottom": 0.8314285714285714
+      },
+      "anchor": {
+        "x": 0.19130434782608696,
+        "y": 0.8228571428571428
+      },
+      "sourceSha256": "92a36d301c47cfc53deda91d62c439fac2017b88db651e55c3bb234ccf6838ba",
+      "sourceVersion": 1,
+      "sourceStart": 0.8,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "92a36d301c47cfc53deda91d62c439fac2017b88db651e55c3bb234ccf6838ba",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed",
+        "reviewedFrames": 19,
+        "alphaBoundsThreshold": 32,
+        "alphaBoundsPaddingPixels": 2
+      },
+      "oneShot": true,
+      "loop": false,
+      "sourceMotion": true,
+      "limitation": "One short native run. Start and end phases differ; do not repeat as a seamless walk or add a second CSS travel path.",
+      "packedSha256": "332d6e2223f6dd190d6fd1690992651f0ed54cba01287a6e3b6cac64ccc9e5fa"
+    },
+    {
+      "id": "descent-short",
+      "packed": "descent-short-packed.mp4",
+      "poster": "descent-short-poster.png",
+      "width": 540,
+      "height": 670,
+      "duration": 2.1,
+      "fps": 30,
+      "frameCount": 63,
+      "bounds": {
+        "left": 0.2796296296296296,
+        "top": 0.3044776119402985,
+        "right": 0.8240740740740741,
+        "bottom": 0.6074626865671642
+      },
+      "unionBounds": {
+        "left": 0.1648148148148148,
+        "top": 0.14328358208955225,
+        "right": 0.8351851851851851,
+        "bottom": 0.908955223880597
+      },
+      "startBounds": {
+        "left": 0.2796296296296296,
+        "top": 0.3044776119402985,
+        "right": 0.8240740740740741,
+        "bottom": 0.6074626865671642
+      },
+      "anchor": {
+        "x": 0.6166666666666667,
+        "y": 0.5940298507462687
+      },
+      "sourceSha256": "92a36d301c47cfc53deda91d62c439fac2017b88db651e55c3bb234ccf6838ba",
+      "sourceVersion": 1,
+      "sourceStart": 2.5,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "92a36d301c47cfc53deda91d62c439fac2017b88db651e55c3bb234ccf6838ba",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed",
+        "reviewedFrames": 63,
+        "alphaBoundsThreshold": 32,
+        "alphaBoundsPaddingPixels": 2
+      },
+      "oneShot": true,
+      "loop": false,
+      "sourceMotion": true,
+      "limitation": "One native descent with source camera perspective. The last tail-tip blur is retained. Start and end poses differ; not a loop or an interaction with an arbitrary site ledge.",
+      "packedSha256": "a61f292141afc8e33eabb7229a6266e7ce2d0bed92903b1d1d112700f40547e5"
+    },
+    {
+      "id": "window-hop-cloud",
+      "packed": "window-hop-cloud-packed.mp4",
+      "poster": "window-hop-cloud-poster.png",
+      "width": 854,
+      "height": 408,
+      "duration": 1.9,
+      "fps": 30,
+      "frameCount": 57,
+      "bounds": {
+        "left": 0.0234192037470726,
+        "top": 0.32598039215686275,
+        "right": 0.49765807962529274,
+        "bottom": 0.9681372549019608
+      },
+      "unionBounds": {
+        "left": 0.0234192037470726,
+        "top": 0.09068627450980392,
+        "right": 0.9625292740046838,
+        "bottom": 0.9803921568627451
+      },
+      "startBounds": {
+        "left": 0.0234192037470726,
+        "top": 0.32598039215686275,
+        "right": 0.49765807962529274,
+        "bottom": 0.9681372549019608
+      },
+      "anchor": {
+        "x": 0.29859484777517564,
+        "y": 0.9558823529411765
+      },
+      "sourceSha256": "403ecf2e77adef9b09e786b073671bf782bdad9e6b8809bdf208c503de5c0a7e",
+      "sourceVersion": 1,
+      "sourceStart": 2,
+      "visualReview": "sampled-pass",
+      "sourceReview": {
+        "status": "sampled-pass",
+        "sourceSha256": "403ecf2e77adef9b09e786b073671bf782bdad9e6b8809bdf208c503de5c0a7e",
+        "version": 1
+      },
+      "verification": {
+        "fullDecode": "passed",
+        "everyFrameAlphaAndCount": "passed",
+        "reviewedFrames": 57,
+        "alphaBoundsThreshold": 32,
+        "alphaBoundsPaddingPixels": 2
+      },
+      "oneShot": true,
+      "loop": false,
+      "sourceMotion": true,
+      "takeoffFrame": 15,
+      "firstForepawContactFrame": 20,
+      "landingFrame": 30,
+      "sceneCloud": {
+        "file": "cloud-target.png",
+        "width": 322,
+        "height": 180,
+        "contact": {
+          "x": 161,
+          "y": 64
+        },
+        "widthInJumpPixels": 400,
+        "contactNote": "Approximate support band inside the soft rounded upper cloud, not its tallest wisp. Target stays fixed during the native hop."
+      },
+      "limitation": "Native short horizontal hop; fixed frame crop preserves original camera scale change. Cloud target is separate and aligned with the real low landing line. Do not add a high ballistic arc or repeat/reverse the clip. Rounded cloud contact is approximate.",
+      "packedSha256": "6738b3a7c494c08888e280a51efd81ab7298f990dce9f96e04a4de2862aa2169"
+    }
+  ]
+}

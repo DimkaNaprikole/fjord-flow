@@ -1,0 +1,127 @@
+/* Shared site account. Authentication and credentials stay with Firebase. */
+(() => {
+  'use strict';
+  const labels = {
+    nb: ['Din konto','Lukk konto','Logg ut','E-posten er bekreftet','Laster sikker innlogging …','Kunne ikke åpne innlogging. Prøv igjen.','Denne kontoen brukes også med Osiris. Publisering i fellesskapet er ikke tilgjengelig ennå.'],
+    en: ['Your account','Close account','Sign out','Email verified','Loading secure sign-in …','Could not open sign-in. Please try again.','This account also works with Osiris. Community posting is not available yet.'],
+    uk: ['Ваш акаунт','Закрити акаунт','Вийти','Пошту підтверджено','Завантаження безпечного входу …','Не вдалося відкрити вхід. Спробуйте ще раз.','Цей акаунт також працює з Осірісом. Публікації у спільноті поки недоступні.'],
+    ru: ['Ваш аккаунт','Закрыть аккаунт','Выйти','Почта подтверждена','Загрузка безопасного входа …','Не удалось открыть вход. Попробуйте ещё раз.','Этот аккаунт также работает с Осирисом. Публикации в сообществе пока недоступны.'],
+    sv: ['Ditt konto','Stäng konto','Logga ut','E-postadressen är verifierad','Laddar säker inloggning …','Kunde inte öppna inloggningen. Försök igen.','Kontot fungerar även med Osiris. Inlägg i gemenskapen är inte tillgängliga ännu.'],
+    da: ['Din konto','Luk konto','Log ud','E-mailen er bekræftet','Indlæser sikkert login …','Kunne ikke åbne login. Prøv igen.','Kontoen fungerer også med Osiris. Indlæg i fællesskabet er endnu ikke tilgængelige.']
+  };
+  let auth, config, dialog, status, body, opener, pending = false;
+  const language = () => window.FjordI18n?.language || document.getElementById('siteLanguage')?.value || document.documentElement.lang || 'nb';
+  const words = () => labels[language()] || labels.en;
+  const getProfile = () => {
+    const visitor = auth?.getStoredVisitor?.();
+    return visitor?.email && visitor?.idToken ? { email: visitor.email } : null;
+  };
+  const changed = () => window.dispatchEvent(new CustomEvent('fjord:site-auth-ready'));
+  let loading;
+  const load = () => loading ||= Promise.all([
+    import('./afonya-auth.js?v=cms-auth-20261023-r3'),
+    fetch('./chat-config.json', {cache: 'no-cache'}).then(response => {
+      if (!response.ok) throw Error('CONFIG_UNAVAILABLE');
+      return response.json();
+    })
+  ]).then(async ([module, settings]) => {
+    auth = module; config = settings;
+    if (!config.firebaseApiKey) throw Error('CONFIG_UNAVAILABLE');
+    await auth.getVisitorToken(config.firebaseApiKey);
+    changed();
+    return auth;
+  }).catch(error => {loading = null; throw error;});
+  function createDialog() {
+    dialog = document.createElement('dialog');
+    dialog.id = 'fjordSiteAccount';
+    dialog.setAttribute('aria-labelledby', 'fjordSiteAccountTitle');
+    dialog.setAttribute('data-i18n-ignore', '');
+    const brand = document.createElement('img'); brand.className = 'site-account-brand'; brand.src = 'images/friendship-wordmark-no-slash.webp'; brand.alt = 'FJORD FLOW';
+    const cover = document.createElement('div'); cover.className = 'site-account-cover'; cover.setAttribute('aria-hidden', 'true'); cover.setAttribute('translate', 'no');
+    for (const country of ['ukraine', 'norway']) {const image = document.createElement('img'); image.className = 'site-account-art site-account-art-' + country; image.alt = ''; cover.append(image);}
+    const pledge = document.createElement('div'); pledge.className = 'site-account-pledge';
+    const pledgeText = document.createElement('span'); pledge.append(pledgeText);
+    const forever = document.createElement('img'); forever.className = 'site-account-forever'; forever.src = 'images/friendship-nazavzhdy.png'; forever.alt = 'назавжди'; pledge.append(forever);
+    cover.append(brand, pledge);
+    const close = document.createElement('button');
+    close.className = 'site-account-close'; close.type = 'button'; close.textContent = '×';
+    close.addEventListener('click', () => dialog.close());
+    const title = document.createElement('h2'); title.id = 'fjordSiteAccountTitle';
+    status = document.createElement('p'); status.className = 'site-account-status'; status.setAttribute('role', 'status');
+    body = document.createElement('div'); body.className = 'site-account-body';
+    dialog.append(cover, close, title, status, body); document.body.append(dialog);
+    dialog.addEventListener('close', () => {
+      pending = false; body.replaceChildren();
+      if (opener?.isConnected) opener.focus({preventScroll: true});
+    });
+    dialog.addEventListener('click', event => { if (event.target === dialog) {
+      const bounds = dialog.getBoundingClientRect();
+      if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+    }});
+  }
+  function localize() {
+    if (!dialog) return;
+    const locale = language(), cover = dialog.querySelector('.site-account-cover');
+    cover.dataset.language = locale;
+    cover.querySelector('.site-account-art-ukraine').src = 'images/ukraine-friendship-clean.webp';
+    cover.querySelector('.site-account-art-norway').src = 'images/norway-friendship-original.png';
+    cover.querySelector('.site-account-pledge span').textContent = locale === 'uk' ? 'Wake up Украина' : locale === 'nb' ? 'Wake up Norway' : locale === 'en' ? 'Wake up USA' : 'Norge + Ukraina · Sammen for frihet';
+    cover.querySelector('.site-account-forever').hidden = ['uk', 'nb', 'en'].includes(locale);
+    dialog.querySelector('h2').textContent = words()[0];
+    dialog.querySelector('.site-account-close').setAttribute('aria-label', words()[1]);
+  }
+  function showProfile(visitor) {
+    status.textContent = words()[3]; body.replaceChildren();
+    const email = document.createElement('p'); email.className = 'site-account-email'; email.textContent = visitor.email;
+    const note = document.createElement('p'); note.className = 'site-account-note'; note.textContent = words()[6];
+    const logout = document.createElement('button'); logout.type = 'button'; logout.textContent = words()[2];
+    logout.addEventListener('click', async () => {
+      logout.disabled = true;
+      try {await auth.signOutVisitor(); dialog.close(); changed();}
+      catch {status.textContent = words()[5]; logout.disabled = false;}
+    });
+    body.append(email, note);
+    const profileLink = document.createElement('a'); profileLink.className = 'site-account-profile'; profileLink.href = 'account.html';
+    profileLink.textContent = ({nb:'Profil og tilganger',en:'Profile and permissions',uk:'Профіль і дозволи',ru:'Профиль и доступы',sv:'Profil och behörigheter',da:'Profil og tilladelser'})[language()] || 'Profile and permissions';
+    body.append(profileLink);
+    // A convenience entry only; the inbox verifies owner identity on the server.
+    if (String(visitor.email || '').trim().toLowerCase() === 'laurkent123@gmail.com') {
+      const inbox = document.createElement('a'); inbox.className = 'site-account-owner-inbox'; inbox.href = 'admin-cabinet.html';
+      inbox.textContent = ({nb:'Administrator',en:'Administrator cabinet',uk:'Кабінет адміністратора',ru:'Кабинет администратора',sv:'Administratör',da:'Administrator'})[language()] || 'Administrator cabinet';
+      body.append(inbox);
+    }
+    body.append(logout);
+  }
+  async function open(mode = 'login') {
+    if (!dialog) createDialog();
+    if (dialog.open && pending) return;
+    opener = document.activeElement; localize();
+    if (!dialog.open) dialog.showModal();
+    status.textContent = words()[4]; body.replaceChildren(); pending = true;
+    try {
+      await load();
+      if (!dialog.open) return;
+      status.textContent = '';
+      const verified = auth.ensureVerified(dialog, config.firebaseApiKey, language(), {mode: mode === 'register' ? 'register' : 'login'});
+      const visitor = await verified;
+      if (visitor && dialog.open) {
+        if (mode === 'profile') showProfile(visitor);
+        else dialog.close();
+        changed();
+      }
+    } catch {if (dialog.open) status.textContent = words()[5];}
+    finally {pending = false;}
+  }
+  window.FjordSiteAuth = {open, getProfile};
+  window.addEventListener('fjord:auth-changed', () => {
+    changed();
+    // Verification emits this event before its promise settles. Leave its form
+    // intact until the flow finishes, then close login or show an explicit profile.
+    if (!pending && dialog?.open && getProfile()) showProfile(getProfile());
+  });
+  window.addEventListener('fjordlanguagechange', () => {
+    localize(); if (dialog?.open && getProfile() && !dialog.querySelector('.fjord-ai-auth')) showProfile(getProfile());
+  });
+  void load().catch(() => {});
+})();
+

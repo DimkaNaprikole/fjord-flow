@@ -1,0 +1,266 @@
+[
+  {
+    "id": "kinsarvik-heng",
+    "name": "Kinsarvik Camping — Heng",
+    "area": "Kinsarvik · Hardanger",
+    "placeId": "voringfossen",
+    "imageCaption": {
+      "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "en": "Illustrative photograph, not a photograph of this place or event. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "uk": "Ілюстративне фото, не знімок цього місця чи події. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed. · Daniel J. Schwarz / Unsplash · Unsplash License"
+    },
+    "description": {
+      "nb": "Familiehytter av typen Heng i Kinsarvik, med tre soverom, to bad og fullt utstyrt kjøkken. Et overnattingsalternativ i Hardanger-regionen med utsikt over Hardangerfjorden.",
+      "en": "Heng family cabins in Kinsarvik, with three bedrooms, two bathrooms and a fully equipped kitchen. A stay option in the Hardanger region with views over Hardangerfjord.",
+      "uk": "Сімейні будиночки категорії Heng у Kinsarvik із трьома спальнями, двома ванними кімнатами та повністю обладнаною кухнею. Варіант ночівлі в регіоні Hardanger з видом на Hardangerfjord.",
+      "sv": "Familjestugor av typen Heng i Kinsarvik, med tre sovrum, två badrum och fullt utrustat kök. Ett boendealternativ i Hardangerregionen med utsikt över Hardangerfjorden.",
+      "da": "Familiehytter af typen Heng i Kinsarvik med tre soveværelser, to badeværelser og fuldt udstyret køkken. En overnatningsmulighed i Hardanger-regionen med udsigt over Hardangerfjorden."
+    },
+    "sauna": {
+      "nb": "Privat badstue inne i Heng-hyttene nr. 15–16. Opplysningen gjelder denne hyttetypen, ikke alle hyttene på campingplassen.",
+      "en": "Private sauna inside Heng cabins nos. 15–16. This applies to this cabin category, not every cabin at the campsite.",
+      "uk": "Власна сауна всередині будиночків Heng № 15–16. Це стосується саме цієї категорії, а не всіх будиночків кемпінгу.",
+      "sv": "Privat bastu inne i Heng-stugorna nr 15–16. Uppgiften gäller denna stugtyp, inte alla stugor på campingen.",
+      "da": "Privat sauna inde i Heng-hytterne nr. 15–16. Oplysningen gælder denne hyttetype, ikke alle hytter på campingpladsen."
+    },
+    "website": "https://www.kinsarvikcamping.no/overnatting/heng",
+    "bookingUrl": "https://online.bookvisit.com/accommodation?channelId=1a877ef6-b451-41cc-9726-8fa753577d63&langId=5",
+    "sources": [
+      "https://www.kinsarvikcamping.no/overnatting/heng",
+      "https://online.bookvisit.com/accommodation?channelId=1a877ef6-b451-41cc-9726-8fa753577d63&langId=5"
+    ],
+    "checked": "2026-10-16",
+    "image": "./images/news/topics/cabin-daniel-schwarz.webp",
+    "imageSource": "https://unsplash.com/photos/brown-wooden-house-in-the-middle-of-green-trees-BNX4W2GDjxI",
+    "gallery": [
+      {
+        "alt": {
+          "nb": "En trehytte ved skogen",
+          "en": "A wooden cabin beside a forest",
+          "uk": "Дерев’яна хатина біля лісу",
+          "sv": "En trästuga vid skogen",
+          "da": "En træhytte ved skoven"
+        },
+        "credit": "Daniel J. Schwarz / Unsplash",
+        "source": "https://unsplash.com/photos/brown-wooden-house-in-the-middle-of-green-trees-BNX4W2GDjxI",
+        "license": "Unsplash License",
+        "licenseUrl": "https://unsplash.com/license",
+        "rightsStatus": "documented_license",
+        "checked": "2026-10-24",
+        "modifications": "Resized by the source image service and converted to WebP; responsive crop in layout.",
+        "objectPosition": "50% 72%",
+        "kind": "thematic_photo",
+        "photoContext": "thematic_photo",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen.",
+          "en": "Illustrative photograph, not a photograph of this place or event.",
+          "uk": "Ілюстративне фото, не знімок цього місця чи події.",
+          "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse.",
+          "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed."
+        },
+        "src": "./images/news/topics/cabin-daniel-schwarz.webp"
+      }
+    ],
+    "routeQuery": "Kinsarvik Camping, Sandvikvegen 17, 5780 Kinsarvik, Norway",
+    "latitude": 60.374461,
+    "longitude": 6.719237,
+    "coordinatePrecision": "property-access",
+    "imageCredit": "Daniel J. Schwarz / Unsplash",
+    "imageLicense": "Unsplash License",
+    "imageLicenseUrl": "https://unsplash.com/license",
+    "photoAlt": {
+      "nb": "En trehytte ved skogen",
+      "en": "A wooden cabin beside a forest",
+      "uk": "Дерев’яна хатина біля лісу",
+      "sv": "En trästuga vid skogen",
+      "da": "En træhytte ved skoven"
+    },
+    "photoCaption": {
+      "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "en": "Illustrative photograph, not a photograph of this place or event. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "uk": "Ілюстративне фото, не знімок цього місця чи події. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed. · Daniel J. Schwarz / Unsplash · Unsplash License"
+    },
+    "photoContext": "thematic_photo",
+    "rightsStatus": "documented_license"
+  },
+  {
+    "id": "luster-fjordhytter",
+    "name": "Luster Fjordhytter & Fjordspa",
+    "area": "Høyheimsvik · Luster / Sognefjord",
+    "placeId": "nigardsbreen",
+    "imageCaption": {
+      "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "en": "Illustrative photograph, not a photograph of this place or event. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "uk": "Ілюстративне фото, не знімок цього місця чи події. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed. · Daniel J. Schwarz / Unsplash · Unsplash License"
+    },
+    "description": {
+      "nb": "Hytter ved Lustrafjorden med kjøkken, dusj og toalett. Et alternativ på en egen avstikker gjennom Luster og Sognefjord-regionen, ikke i Flåm sentrum.",
+      "en": "Cottages beside Lustrafjord with kitchens, showers and toilets. An option on a separate detour through Luster and the Sognefjord region, not in central Flåm.",
+      "uk": "Будиночки біля Lustrafjord із кухнею, душем і туалетом. Варіант для окремого відгалуження маршруту через Luster і регіон Sognefjord, не в центрі Flåm.",
+      "sv": "Stugor vid Lustrafjorden med kök, dusch och toalett. Ett alternativ på en separat avstickare genom Luster och Sognefjordregionen, inte i centrala Flåm.",
+      "da": "Hytter ved Lustrafjorden med køkken, bruser og toilet. En mulighed på en særskilt afstikker gennem Luster og Sognefjord-regionen, ikke i centrum af Flåm."
+    },
+    "sauna": {
+      "nb": "Separat vedfyrt badstue med fjordutsikt for 8–10 personer og vedfyrt badestamp. Drop-in og privat bestilling tilbys. Badstue er ikke bekreftet inkludert i hytteleien; avtal pris og tidspunkt med verten.",
+      "en": "Separate wood-fired sauna with fjord views for 8–10 people, plus a wood-fired hot tub. Drop-in and private bookings are offered. Sauna access is not confirmed as included in the cottage rate; arrange price and timing with the host.",
+      "uk": "Окрема сауна на дровах із видом на фіорд для 8–10 осіб і чан на дровах. Пропонуються спільні сеанси та приватне бронювання. Включення сауни у вартість будиночка не підтверджене; узгодьте ціну й час із господарем.",
+      "sv": "Separat vedeldad bastu med fjordutsikt för 8–10 personer samt vedeldad badtunna. Drop-in och privat bokning erbjuds. Bastu är inte bekräftad som inkluderad i stugpriset; avtala pris och tid med värden.",
+      "da": "Separat brændefyret sauna med fjordudsigt til 8–10 personer samt brændefyret vildmarksbad. Der tilbydes drop-in og privat booking. Sauna er ikke bekræftet inkluderet i hyttelejen; aftal pris og tidspunkt med værten."
+    },
+    "website": "https://www.luster-fjordhytter.com/en",
+    "bookingUrl": "https://www.luster-fjordhytter.com/en/booking",
+    "sources": [
+      "https://www.luster-fjordhytter.com/en",
+      "https://www.luster-fjordhytter.com/en/luster-fjordspa"
+    ],
+    "checked": "2026-10-16",
+    "image": "./images/news/topics/cabin-daniel-schwarz.webp",
+    "imageSource": "https://unsplash.com/photos/brown-wooden-house-in-the-middle-of-green-trees-BNX4W2GDjxI",
+    "gallery": [
+      {
+        "alt": {
+          "nb": "En trehytte ved skogen",
+          "en": "A wooden cabin beside a forest",
+          "uk": "Дерев’яна хатина біля лісу",
+          "sv": "En trästuga vid skogen",
+          "da": "En træhytte ved skoven"
+        },
+        "credit": "Daniel J. Schwarz / Unsplash",
+        "source": "https://unsplash.com/photos/brown-wooden-house-in-the-middle-of-green-trees-BNX4W2GDjxI",
+        "license": "Unsplash License",
+        "licenseUrl": "https://unsplash.com/license",
+        "rightsStatus": "documented_license",
+        "checked": "2026-10-24",
+        "modifications": "Resized by the source image service and converted to WebP; responsive crop in layout.",
+        "objectPosition": "50% 72%",
+        "kind": "thematic_photo",
+        "photoContext": "thematic_photo",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen.",
+          "en": "Illustrative photograph, not a photograph of this place or event.",
+          "uk": "Ілюстративне фото, не знімок цього місця чи події.",
+          "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse.",
+          "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed."
+        },
+        "src": "./images/news/topics/cabin-daniel-schwarz.webp"
+      }
+    ],
+    "routeQuery": "Luster Fjordhytter, Lustravegen 2623, 6875 Høyheimsvik, Norway",
+    "latitude": 61.39969592552051,
+    "longitude": 7.395916039941032,
+    "coordinatePrecision": "area",
+    "imageCredit": "Daniel J. Schwarz / Unsplash",
+    "imageLicense": "Unsplash License",
+    "imageLicenseUrl": "https://unsplash.com/license",
+    "photoAlt": {
+      "nb": "En trehytte ved skogen",
+      "en": "A wooden cabin beside a forest",
+      "uk": "Дерев’яна хатина біля лісу",
+      "sv": "En trästuga vid skogen",
+      "da": "En træhytte ved skoven"
+    },
+    "photoCaption": {
+      "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "en": "Illustrative photograph, not a photograph of this place or event. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "uk": "Ілюстративне фото, не знімок цього місця чи події. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed. · Daniel J. Schwarz / Unsplash · Unsplash License"
+    },
+    "photoContext": "thematic_photo",
+    "rightsStatus": "documented_license"
+  },
+  {
+    "id": "kilsti-compact-lodge",
+    "name": "Kilsti Compact Lodge",
+    "area": "Eidsdal · Geiranger–Trollstigen",
+    "placeId": "geiranger",
+    "image": "./images/news/topics/cabin-daniel-schwarz.webp",
+    "imageCaption": {
+      "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "en": "Illustrative photograph, not a photograph of this place or event. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "uk": "Ілюстративне фото, не знімок цього місця чи події. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed. · Daniel J. Schwarz / Unsplash · Unsplash License"
+    },
+    "description": {
+      "nb": "Små arkitekttegnede glasshytter med panoramautsikt i Eidsdal-området. Et overnattingsalternativ ved ruten mellom Geiranger og Trollstigen.",
+      "en": "Small architect-designed glass cottages with panoramic views in the Eidsdal area. A stay option by the route between Geiranger and Trollstigen.",
+      "uk": "Невеликі дизайнерські скляні будиночки з панорамними видами в районі Eidsdal. Варіант ночівлі біля маршруту між Geiranger і Trollstigen.",
+      "sv": "Små arkitektritade glasstugor med panoramautsikt i Eidsdalområdet. Ett boendealternativ vid rutten mellan Geiranger och Trollstigen.",
+      "da": "Små arkitekttegnede glashytter med panoramaudsigt i Eidsdal-området. En overnatningsmulighed ved ruten mellem Geiranger og Trollstigen."
+    },
+    "sauna": {
+      "nb": "Separat vedfyrt badstue med utedusj. Den er oppført som del av pakken når hele lodgen leies, med minst to netter. Ved bestilling av én hytte må tilgang, eventuell privat bruk og tillegg bekreftes.",
+      "en": "Separate wood-fired sauna with an outdoor shower. It is listed in the whole-lodge rental package, with a two-night minimum. For an individual cottage, confirm access, any private-use arrangements and extra charges.",
+      "uk": "Окрема сауна на дровах із душем надворі. Вона зазначена в пакеті оренди всього комплексу з мінімумом дві ночі. Для окремого будиночка підтвердьте доступ, умови приватного користування та доплати.",
+      "sv": "Separat vedeldad bastu med utomhusdusch. Den anges ingå när hela lodgen hyrs, med minst två nätter. Vid bokning av en stuga måste tillgång, eventuell privat användning och tillägg bekräftas.",
+      "da": "Separat brændefyret sauna med udendørs bruser. Den er angivet som del af pakken ved leje af hele lodgen, med mindst to nætter. Ved booking af én hytte skal adgang, eventuel privat brug og tillæg bekræftes."
+    },
+    "website": "https://www.kilsticompactlodge.no/",
+    "bookingUrl": "https://reservations.bookvisit.com/accommodation?channelId=677187f3-92a0-4ffa-b31a-cea24d063f0f&culture=nb",
+    "sources": [
+      "https://www.kilsticompactlodge.no/",
+      "https://www.kilsticompactlodge.no/hele-lodgen"
+    ],
+    "checked": "2026-10-16",
+    "imageSource": "https://unsplash.com/photos/brown-wooden-house-in-the-middle-of-green-trees-BNX4W2GDjxI",
+    "gallery": [
+      {
+        "alt": {
+          "nb": "En trehytte ved skogen",
+          "en": "A wooden cabin beside a forest",
+          "uk": "Дерев’яна хатина біля лісу",
+          "sv": "En trästuga vid skogen",
+          "da": "En træhytte ved skoven"
+        },
+        "credit": "Daniel J. Schwarz / Unsplash",
+        "source": "https://unsplash.com/photos/brown-wooden-house-in-the-middle-of-green-trees-BNX4W2GDjxI",
+        "license": "Unsplash License",
+        "licenseUrl": "https://unsplash.com/license",
+        "rightsStatus": "documented_license",
+        "checked": "2026-10-24",
+        "modifications": "Resized by the source image service and converted to WebP; responsive crop in layout.",
+        "objectPosition": "50% 72%",
+        "kind": "thematic_photo",
+        "photoContext": "thematic_photo",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen.",
+          "en": "Illustrative photograph, not a photograph of this place or event.",
+          "uk": "Ілюстративне фото, не знімок цього місця чи події.",
+          "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse.",
+          "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed."
+        },
+        "src": "./images/news/topics/cabin-daniel-schwarz.webp"
+      }
+    ],
+    "routeQuery": "Kilsti Compact Lodge, Eidsdal, Norway",
+    "latitude": 62.25882889455008,
+    "longitude": 7.153376458356803,
+    "coordinatePrecision": "area",
+    "imageCredit": "Daniel J. Schwarz / Unsplash",
+    "imageLicense": "Unsplash License",
+    "imageLicenseUrl": "https://unsplash.com/license",
+    "photoAlt": {
+      "nb": "En trehytte ved skogen",
+      "en": "A wooden cabin beside a forest",
+      "uk": "Дерев’яна хатина біля лісу",
+      "sv": "En trästuga vid skogen",
+      "da": "En træhytte ved skoven"
+    },
+    "photoCaption": {
+      "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "en": "Illustrative photograph, not a photograph of this place or event. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "uk": "Ілюстративне фото, не знімок цього місця чи події. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse. · Daniel J. Schwarz / Unsplash · Unsplash License",
+      "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed. · Daniel J. Schwarz / Unsplash · Unsplash License"
+    },
+    "photoContext": "thematic_photo",
+    "rightsStatus": "documented_license"
+  }
+]

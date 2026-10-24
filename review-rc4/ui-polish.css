@@ -1,0 +1,137 @@
+/* Kokonut UI visual adaptation; sources and MIT notice: vendor/kokonut-ui/. */
+body .ref-panel .ff-place-card {
+  border-radius: var(--ff-radius, 18px);
+  box-shadow: 0 8px 22px #06212d20;
+  outline: 1px solid #d0e7df42;
+  outline-offset: -1px;
+}
+body .ref-panel .ff-place-card::after {
+  content: ''; position: absolute; inset: 0; z-index: 2;
+  border-radius: inherit; pointer-events: none;
+  box-shadow: inset 0 1px 0 #ffffff55;
+}
+body .ref-panel .ff-place-card .ref-card-body {
+  padding: 44px 18px 14px;
+  background: linear-gradient(transparent, #062b38cf 35%, #062b38f5);
+}
+body .ref-panel .ff-place-card .ref-card-body h3 {
+  font-size: clamp(19px, 1.65vw, 25px); line-height: 1.25;
+  letter-spacing: -.025em; text-wrap: balance; margin-bottom: 9px;
+}
+body .ref-panel .ff-place-card .ref-actions { gap: 4px 16px; }
+body .ref-panel .ff-place-card .ref-link {
+  min-height: 44px; font-size: 14px; color: #ffe98c !important;
+  text-decoration-thickness: 1px; text-underline-offset: 5px;
+}
+body .ref-panel .ff-place-card:focus-within {
+  outline: 2px solid var(--fjord-focus, #e6c78c); outline-offset: -2px;
+}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference) {
+  body .ref-panel .ff-place-card { transition: box-shadow .22s ease; }
+  body .ref-panel .ff-place-card:hover { box-shadow: 0 12px 28px #06212d3b; }
+  body .ref-panel .ff-place-card .ref-photo img { transition: transform .5s ease; }
+  body .ref-panel .ff-place-card:hover .ref-photo img { transform: scale(1.035); }
+}
+
+/* The existing four-row shell and all microphone controls remain authoritative. */
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) {
+  border: 1px solid var(--ff-line-strong, #b5d7d25c);
+  border-radius: 22px;
+  background: linear-gradient(150deg, #193f4bf7, #0c2530fa);
+  box-shadow: 0 22px 64px #05212d50, inset 0 1px 0 #ffffff18;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-portrait {
+  min-height: 48px; margin-bottom: 10px; padding-right: 52px;
+  border-bottom: 1px solid var(--ff-line); padding-bottom: 10px;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-portrait .osiris-pet {
+  width: 40px; height: 48px; margin: 0;
+}
+/* The full motion frame becomes unreadable at avatar size; use its clear portrait here. */
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-portrait .osiris-avatar { display: block !important; }
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-portrait :is(.osiris-life-canvas,.osiris-life-poster,.osiris-life-walk) { display: none !important; }
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-portrait h2 {
+  font-size: 21px; letter-spacing: -.025em; color: var(--ff-ink);
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-conversation {
+  padding: 2px 5px 8px 0; scrollbar-color: #789b9f transparent;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-message {
+  max-width: 94%; padding: 11px 13px; margin-block: 10px;
+  border-radius: 16px; font-size: 14px; line-height: 1.55;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-assistant {
+  background: #d0e7df0b; border: 1px solid #d0e7df22;
+  color: var(--ff-ink); border-bottom-left-radius: 5px;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-user {
+  background: #255563; border: 1px solid #a6d5d04d;
+  color: #f5fbff; border-bottom-right-radius: 5px;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose {
+  padding: 9px; margin-top: 8px; border: 1px solid #b5d7d24d;
+  border-radius: 18px; background: #ffffff06;
+  box-shadow: inset 0 1px 0 #ffffff09;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose:focus-within {
+  border-color: #9ac7c9; box-shadow: 0 0 0 2px #9ac7c920;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose textarea {
+  height: var(--ff-compose-height, 52px); min-height: 44px; max-height: 112px;
+  padding: 10px 11px; border: 1px solid #b5d7d224;
+  border-radius: 11px; background: var(--ff-field, #0c2a36);
+  color: #f5fbff; font-size: 16px; line-height: 1.45;
+  resize: none; overflow-y: auto; scroll-padding-block: 8px;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) textarea::placeholder { color: #b8cecf; opacity: 1; }
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose-actions {
+  gap: 8px; margin-top: 8px;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) :is(.fjord-ai-primary,.fjord-ai-mic-language,.fjord-ai-input-mode) {
+  min-height: 44px; height: auto; border-radius: 11px;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-primary {
+  background: var(--ff-action, #255563); color: #f5fbff;
+  border: 1px solid #b5d7d25c; padding: 9px 14px; font-weight: 750;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-record-fallback {
+  min-height: 48px; border-radius: 12px;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-auto-send {
+  min-height: 32px; margin: 0; font-size: 11px; line-height: 1.35;
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-record-note {
+  font-size: 11px; line-height: 1.4; color: var(--ff-muted);
+}
+#fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) :is(button,select,textarea):focus-visible {
+  outline: 2px solid var(--fjord-focus, #e6c78c); outline-offset: 2px;
+}
+#fjordHelper.fjord-ai.ff-ui-polished button:disabled { opacity: .5; }
+#fjordHelper.fjord-ai.ff-ui-polished .fjord-ai-compose[aria-busy=true] {
+  border-color: #d0bd87;
+}
+@media (max-width:500px) {
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact):not(.fjord-ai-auth-pending)[open] {
+    inset: auto 10px max(10px, env(safe-area-inset-bottom)) auto;
+    width: calc(100% - 20px); height: calc(100dvh - 24px);
+    max-height: calc(100dvh - 24px); padding: 12px !important;
+  }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose textarea { max-height: 88px; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-links a {
+    display: inline-flex; align-items: center; min-height: 36px;
+  }
+}
+@media (max-height:520px) {
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-portrait { min-height: 28px; padding-bottom: 4px; margin-bottom: 4px; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose { padding: 5px; margin-top: 4px; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose textarea { max-height: 48px; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-mode-bar { margin-block: 2px; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-record-note { display: none; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose-actions { grid-template-columns: 1fr 1fr; gap: 4px 8px; margin-top: 4px; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-compose-actions .fjord-ai-primary { grid-column: 2; grid-row: 1; justify-self: stretch; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-record-fallback { grid-column: 1; grid-row: 1; min-height: 44px; }
+  #fjordHelper.fjord-ai.ff-ui-polished:not(.osiris-compact) .fjord-ai-auto-send { grid-row: 2; min-height: 28px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .ff-place-card,.ff-place-card img { transition: none !important; }
+}

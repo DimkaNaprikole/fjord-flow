@@ -1,0 +1,9 @@
+.gallery-action-row{display:flex;gap:16px;align-items:center;background:#153948bd;border-radius:0 0 12px 12px;margin-bottom:16px;padding:0 14px 14px;min-width:0}
+#galleryDialog .gallery-action-row #galleryThumbs{background:transparent;margin:0;padding:0;flex:1;min-width:0;border-radius:0}
+.gallery-quick-actions{flex:0 0 235px;display:grid;grid-template-columns:1fr 1fr;gap:8px;color:#effbf8}
+.gallery-quick-actions strong{grid-column:1/-1;font-size:25px;line-height:1.1}.gallery-quick-actions small{grid-column:1/-1;font-size:10px;color:#b9d4d8}
+.gallery-quick-actions button{border:1px solid #a4d4d866;border-radius:24px;padding:11px 9px;background:#d9eee9;color:#123848;font-family:inherit;font-weight:700;font-size:12px;cursor:pointer;min-height:44px}
+.gallery-quick-actions button:last-child{background:#153a4b;color:#effbf8}.gallery-quick-actions button:hover{filter:brightness(1.15)}.gallery-quick-actions button:focus-visible{outline:2px solid #fff;outline-offset:3px}.gallery-quick-actions [hidden]{display:none}
+@media(max-width:700px){.gallery-action-row{flex-direction:column;align-items:stretch}.gallery-quick-actions{flex:auto;grid-template-columns:1fr 1fr}.gallery-action-row #galleryThumbs{width:100%}}
+
+#galleryDialog #destinationDetails{background:#153948;color:#e3f1f1}#galleryDialog #destinationDetails h3,#galleryDialog #destinationDetails h4,#galleryDialog #destinationDetails p,#galleryDialog #destinationDetails a{color:inherit}

@@ -1,0 +1,102 @@
+[
+  {
+    "image": "./images/hero-bergen.jpg",
+    "title": "Bergen · Bryggen",
+    "author": "Pssmidi Pål S. Schaathun",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bergen_bryggen_panorama.jpg",
+    "width": 1920,
+    "height": 1045
+  },
+  {
+    "image": "./images/hero-floibanen.jpg",
+    "title": "Bergen · Fløibanen",
+    "author": "Bjørn Christian Tørrissen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Floeibanen-2021.jpg",
+    "width": 1920,
+    "height": 1237
+  },
+  {
+    "image": "./images/hero-geiranger.jpg",
+    "title": "Geirangerfjord",
+    "author": "Ximonic (Simo Räsänen)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Geirangerfjord_from_%C3%98rnesvingen,_2013_June.jpg",
+    "width": 1920,
+    "height": 1078
+  },
+  {
+    "image": "./images/hero-lofoten.jpg",
+    "title": "Lofoten · Austnesfjorden",
+    "author": "Ximonic (Simo Räsänen)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Late_evening_view_to_Austnesfjorden_at_Sildpollnes_Church,_Austv%C3%A5g%C3%B8ya,_Lofoten,_Norway,_2015_April.jpg",
+    "width": 1920,
+    "height": 658
+  },
+  {
+    "image": "./images/hero-naeroyfjord.jpg",
+    "title": "Nærøyfjord",
+    "author": "Cbliu",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:N%C3%A6r%C3%B8yfjord-cruise-view.jpg",
+    "width": 1920,
+    "height": 1440
+  },
+  {
+    "image": "./images/hero-atlantic.jpg",
+    "title": "Atlanterhavsveien",
+    "author": "Bingar1234",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Atlanterhavsveien_BG_2023.jpg",
+    "width": 1920,
+    "height": 1349
+  },
+  {
+    "image": "./images/hero-alesund.jpg",
+    "title": "Ålesund · Aksla",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vista_de_%C3%85lesund_desde_Aksla,_Noruega,_2019-09-01,_DD_16.jpg",
+    "width": 1920,
+    "height": 1126
+  },
+  {
+    "image": "./images/hero-trollstigen.jpg",
+    "title": "Trollstigen",
+    "author": "Stefan Krause, Germany",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trollstigen_HochPanno.jpg",
+    "width": 1920,
+    "height": 1154
+  },
+  {
+    "image": "./images/hero-loen.jpg",
+    "title": "Lovatnet · Loen",
+    "author": "Ximonic (Simo Räsänen)",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Summer_evening_at_Lovatnet,_Stryn,_Norway,_2013_June.jpg",
+    "width": 1920,
+    "height": 820
+  },
+  {
+    "image": "./images/hero-stegastein.jpg",
+    "title": "Stegastein · Aurlandsfjord",
+    "author": "TomasEE",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Stegastein_viewpoint_-_panoramio_(1).jpg",
+    "width": 1920,
+    "height": 1277
+  }
+]

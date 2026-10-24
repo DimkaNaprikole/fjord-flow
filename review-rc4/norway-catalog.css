@@ -1,0 +1,80 @@
+/* Match the shared fjord theme; no light button variants. */
+.norway-catalog{margin:40px 5%;padding:32px;border:1px solid var(--ff-line,#b5d7d22e);border-radius:24px;background:linear-gradient(135deg,#173e49,var(--ff-panel,#123440));color:var(--ff-ink,#edf6f4);box-shadow:var(--ff-shadow,0 12px 30px #06212d1c);scroll-margin-top:100px}
+.norway-catalog *{box-sizing:border-box;min-width:0}.norway-catalog h2{color:var(--ff-ink,#edf6f4);font-size:clamp(26px,3vw,40px);line-height:1.2;margin:8px 0 16px}.norway-catalog-eyebrow{color:var(--ff-accent,#d0e7df);text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:750}.norway-catalog-intro{color:var(--ff-muted,#b8cecf);font-size:15px;line-height:1.8;max-width:850px}.norway-catalog-controls{display:grid;grid-template-columns:minmax(0,2fr) minmax(180px,1fr);gap:16px;margin:24px 0 12px}.norway-catalog-controls label{display:flex;flex-direction:column;gap:9px;font-size:13px;font-weight:700;color:var(--ff-ink,#edf6f4)}.norway-catalog-controls input,.norway-catalog-controls select{width:100%;min-height:48px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);padding:12px;background:var(--ff-field,#0c2a36);color:var(--ff-ink,#edf6f4);font-size:15px}.norway-catalog-controls input::placeholder{color:var(--ff-muted,#b8cecf);opacity:1}.norway-catalog-status{font-size:13px;color:var(--ff-muted,#b8cecf);line-height:1.6;min-height:24px}
+.norway-catalog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.norway-catalog-card{display:flex;flex-direction:column;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-radius,18px);overflow:hidden;background:var(--ff-card,#193f4b);color:var(--ff-ink,#edf6f4)}.norway-catalog-photo{position:relative;width:100%;height:210px;display:grid;place-items:center;overflow:hidden;background:var(--ff-deep,#0c2530)!important;border:0;border-radius:0!important;padding:0;cursor:pointer}.norway-catalog-photo img{display:block;position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:cover;transition:transform .4s}.norway-catalog-photo:hover img{transform:scale(1.04)}.norway-catalog-photo-label{position:absolute;bottom:12px;left:12px;right:12px;padding:9px 12px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:12px;background:#0c2530ed;color:#edf6f4;font-size:13px;font-weight:700;text-align:center;line-height:1.5}.norway-catalog-no-photo{padding:24px;font-size:14px;color:var(--ff-muted,#b8cecf);line-height:1.6}.norway-catalog-copy{display:flex;flex:1;flex-direction:column;padding:20px;overflow-wrap:anywhere}.norway-catalog-location{font-size:12px;line-height:1.7;color:var(--ff-accent,#d0e7df);margin:0}.norway-catalog-copy h3{font-size:23px;line-height:1.3;margin:9px 0 12px;color:var(--ff-ink,#edf6f4)}.norway-catalog-description,.norway-catalog-address{font-size:14px;line-height:1.8;margin:0 0 14px;color:var(--ff-ink,#edf6f4)}.norway-catalog-address,.norway-catalog-muted{color:var(--ff-muted,#b8cecf)}.norway-catalog-hours{border-top:1px solid var(--ff-line,#b5d7d22e);border-bottom:1px solid var(--ff-line,#b5d7d22e);font-size:13px;line-height:1.8;margin:0 0 18px;padding:10px 0;color:var(--ff-ink,#edf6f4)}.norway-catalog-hours summary{min-height:44px;display:list-item;align-content:center;cursor:pointer;font-weight:700;color:var(--ff-ink,#edf6f4)}.norway-catalog-hours ul{padding-left:19px;margin:12px 0}.norway-catalog-hours p{margin:8px 0}.norway-catalog-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:auto}.norway-catalog-actions a,.norway-catalog-more,.norway-catalog-retry{display:inline-flex;align-items:center;justify-content:center;min-height:46px;max-width:100%;padding:11px 14px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);background:var(--ff-action,#255563)!important;color:var(--ff-ink,#edf6f4)!important;font-size:13px;line-height:1.5;font-weight:750;text-align:center;text-decoration:none;cursor:pointer;white-space:normal;overflow-wrap:anywhere}.norway-catalog-actions a{flex:1 1 115px}.norway-catalog-meta{display:flex;flex-wrap:wrap;gap:7px 12px;border-top:1px solid var(--ff-line,#b5d7d22e);margin-top:18px;padding-top:12px;font-size:12px;line-height:1.7;color:var(--ff-muted,#b8cecf)}.norway-catalog-meta a{color:var(--ff-accent,#d0e7df)!important;text-decoration:underline;text-underline-offset:3px}.norway-catalog-meta span{width:100%}.norway-catalog-more{margin:24px auto 0;display:flex;min-width:180px}.norway-catalog-more[hidden]{display:none}.norway-catalog :is(a,button,input,select,summary):focus-visible{outline:3px solid var(--fjord-focus,#e6c78c);outline-offset:3px}
+@media(max-width:1050px){.norway-catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.norway-catalog{margin:28px 4%;padding:20px 15px}.norway-catalog-controls,.norway-catalog-grid{grid-template-columns:minmax(0,1fr)}.norway-catalog-controls input,.norway-catalog-controls select{font-size:16px}.norway-catalog-photo{height:230px}.norway-catalog-copy{padding:17px}.norway-catalog-copy h3{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.norway-catalog-photo img{transition:none}}
+.norway-catalog-hours-note{font-size:13px;line-height:1.8;color:var(--ff-muted,#b8cecf);margin:0 0 14px}
+.norway-catalog-geo-controls{display:grid;grid-template-columns:minmax(180px,1.4fr) minmax(130px,.7fr) minmax(160px,1fr);align-items:end;gap:14px;margin-top:24px}.norway-catalog-geo-controls label{display:flex;flex-direction:column;gap:9px;font-size:13px;font-weight:700;color:var(--ff-ink,#edf6f4)}.norway-catalog-geo-controls select{width:100%;min-height:48px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);padding:12px;background:var(--ff-field,#0c2a36);color:var(--ff-ink,#edf6f4);font-size:15px}.norway-catalog-gps{min-height:48px;padding:11px 14px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);background:var(--ff-action,#255563)!important;color:var(--ff-ink,#edf6f4)!important;font-size:13px;font-weight:750;line-height:1.5;white-space:normal;overflow-wrap:anywhere;cursor:pointer}.norway-catalog-gps:disabled{opacity:.7;cursor:wait}.norway-catalog-geo-status{font-size:12px;line-height:1.8;color:var(--ff-muted,#b8cecf);overflow-wrap:anywhere}.norway-catalog-distance{font-size:13px;font-weight:750;color:var(--ff-accent,#d0e7df);line-height:1.7;margin:0 0 14px}@media(max-width:650px){.norway-catalog-geo-controls{grid-template-columns:minmax(0,1fr)}.norway-catalog-geo-controls select{font-size:16px}.norway-catalog-gps{width:100%}}
+.norway-catalog-geo-controls{grid-template-columns:minmax(0,2fr) minmax(140px,1fr)}.norway-catalog-gps{min-height:54px;font-size:15px}.norway-catalog-manual{max-width:480px;margin:12px 0 22px;color:var(--ff-muted,#b8cecf)}.norway-catalog-manual summary{min-height:44px;align-content:center;cursor:pointer;font-size:13px;text-decoration:underline;text-underline-offset:3px;color:var(--ff-accent,#d0e7df)}.norway-catalog-manual label{display:flex;flex-direction:column;gap:9px;font-size:13px;font-weight:700;margin-top:12px}.norway-catalog-manual select{width:100%;min-height:48px;border:1px solid var(--ff-line-strong,#b5d7d25c);border-radius:var(--ff-control-radius,12px);padding:12px;background:var(--ff-field,#0c2a36);color:var(--ff-ink,#edf6f4);font-size:15px}@media(max-width:650px){.norway-catalog-geo-controls{grid-template-columns:minmax(0,1fr)}.norway-catalog-manual select{font-size:16px}}
+
+/* Compact progressive cards: the photograph and main actions stay visible. */
+.norway-catalog-grid{align-items:start}
+.norway-catalog-photo{height:180px}
+.norway-catalog-photo:is(:hover,:focus-visible) img{transform:scale(1.065)}
+.norway-catalog-copy{padding:16px}
+.norway-catalog-location{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.norway-catalog-copy h3{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:21px;line-height:1.3;margin:8px 0 10px}
+.norway-catalog-card.is-expanded h3{-webkit-line-clamp:unset;display:block;overflow:visible}
+.norway-catalog-about{margin:0 0 12px;border-top:1px solid var(--ff-line,#b5d7d22e);color:var(--ff-ink,#edf6f4);font-size:14px;line-height:1.7}
+.norway-catalog-about>summary,.norway-catalog-address-details>summary{min-height:44px;align-content:center;cursor:pointer;font-weight:700;color:var(--ff-ink,#edf6f4)}
+.norway-catalog-about>summary::marker,.norway-catalog-address-details>summary::marker{color:var(--ff-accent,#d0e7df)}
+.norway-catalog-about-content{padding:4px 0 6px}
+.norway-catalog-description{line-height:1.7;margin:0 0 12px}
+.norway-catalog-address-details{border-top:1px solid var(--ff-line,#b5d7d22e);margin:0 0 10px}
+.norway-catalog-address-details .norway-catalog-address{margin:0 0 10px;line-height:1.7}
+.norway-catalog-hours{margin-bottom:10px;padding:4px 0}
+.norway-catalog-meta{margin-top:12px;padding-top:10px}
+.norway-catalog-distance{margin-bottom:7px;font-size:12px}
+.norway-catalog-actions{margin-top:auto}
+@media(max-width:650px){.norway-catalog-photo{height:190px}.norway-catalog-copy{padding:15px}.norway-catalog-copy h3{font-size:21px}}
+@media(prefers-reduced-motion:reduce){.norway-catalog-photo:is(:hover,:focus-visible) img{transform:none}}
+
+/* Hover hints keep card geometry and content unchanged. */
+.norway-catalog-card{transition:border-color .2s ease,box-shadow .2s ease}
+.norway-catalog-about>summary{border-radius:8px;transition:background-color .2s ease,color .2s ease}
+@media(hover:hover) and (pointer:fine){
+.norway-catalog-card:hover{border-color:#8fc9cb;box-shadow:0 0 0 1px #8fc9cb33,0 8px 24px #061f2938}
+.norway-catalog-card:hover .norway-catalog-about>summary{background:#8fc9cb12;color:#e4fffa}
+.norway-catalog-about>summary:hover{background:#8fc9cb25}
+}
+@media(prefers-reduced-motion:reduce){.norway-catalog-card,.norway-catalog-about>summary{transition:none}}
+
+/* One fixed postcard format across catalogue categories. */
+.norway-catalog-grid{grid-auto-rows:350px}
+.norway-catalog-card.catalogue-flip{position:relative;height:350px;min-height:0;perspective:1100px;overflow:visible;isolation:isolate}
+.catalogue-flip>.norway-catalog-photo,.catalogue-flip>.norway-catalog-copy{position:absolute;inset:0;width:100%;height:100%;border-radius:17px;box-sizing:border-box;backface-visibility:hidden;transition:transform .8s cubic-bezier(.22,.7,.25,1)}
+.catalogue-flip>.norway-catalog-photo{transform:rotateY(0);overflow:hidden}
+.catalogue-flip>.norway-catalog-photo:after{content:'';position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#062838ef);pointer-events:none}
+.catalogue-flip .norway-catalog-photo-label{left:45px;right:45px;bottom:100px;font-size:11px;padding:7px;z-index:2}
+.catalogue-front-caption{position:absolute;left:20px;right:20px;bottom:22px;color:#fff;pointer-events:none;z-index:2}
+.catalogue-front-caption small{display:block;color:#dbede6;font-size:10px;line-height:1.5;margin-bottom:6px}
+.catalogue-front-caption strong{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;font:800 24px/1.18 Manrope,sans-serif;text-shadow:0 2px 14px #0009;overflow-wrap:anywhere}
+.catalogue-flip>.norway-catalog-copy{transform:rotateY(-180deg);overflow:auto;overscroll-behavior:contain;padding:58px 18px 18px;background:linear-gradient(#082b3be8,#082b3bf2),var(--catalogue-photo) center/cover;scrollbar-width:thin;scrollbar-color:#87b1a7 #173b45}
+.catalogue-flipped>.norway-catalog-photo{transform:rotateY(180deg)}
+.catalogue-flipped>.norway-catalog-copy{transform:rotateY(0)}
+.catalogue-flip .norway-catalog-about>summary{display:none}
+.catalogue-flip .norway-catalog-about{border:0;margin-bottom:12px}
+.catalogue-flip .norway-catalog-copy h3{display:block;overflow:visible;-webkit-line-clamp:unset;font-size:21px}
+.catalogue-flip .norway-catalog-description,.catalogue-flip .norway-catalog-address{font-size:13px}
+.catalogue-flip .norway-catalog-actions a{background:#255563!important;color:#edf6f4!important;border-color:#a9d4cd80!important;font-size:12px;padding:9px}
+.catalogue-flip-toggle{position:absolute;right:10px;top:10px;z-index:4;min-height:38px;padding:9px 12px;border-radius:999px;border:1px solid #deefeb88;background:#0b3245ed;color:#fff;backdrop-filter:blur(12px);font:650 11px/1.4 Manrope,sans-serif;cursor:pointer;max-width:calc(100% - 20px)}
+.catalogue-flipped>.catalogue-flip-toggle:focus-visible{outline:3px solid #e6c78c;outline-offset:2px}
+@media(max-width:650px){.catalogue-front-caption strong{font-size:23px}.catalogue-flip>.norway-catalog-copy{padding-left:15px;padding-right:15px}}
+@media(prefers-reduced-motion:reduce){.catalogue-flip>.norway-catalog-photo,.catalogue-flip>.norway-catalog-copy{transition:none}}
+.catalogue-flip>.norway-catalog-photo{border-radius:17px!important}
+
+/* Two clear targets: photo in the centre, information at the side. */
+.catalogue-flip .norway-catalog-photo-label{left:50%;right:auto;top:43%;bottom:auto;transform:translate(-50%,-50%);width:max-content;max-width:calc(100% - 90px);padding:12px 16px;border-radius:999px;background:#0b3245e8;border-color:#deefeb88;font-size:12px;box-shadow:0 4px 18px #00131e38}
+.catalogue-flip-toggle{max-width:calc(100% - 20px);font-size:10px}
+
+/* Calm shared invitation on both photo and information controls. */
+.catalogue-flip .norway-catalog-photo-label,.catalogue-flip-toggle{animation:catalogue-control-glow 3.6s ease-in-out infinite;background:#0b3245ed;color:#f0fffb;border-color:#a8d9d3}
+.catalogue-flip-toggle{font-size:11px}
+@keyframes catalogue-control-glow{0%,100%{background-color:#0b3245ed;border-color:#a8d9d38c;box-shadow:0 0 0 0 #8ddbd000}50%{background-color:#285e69f5;border-color:#c9fff0;box-shadow:0 0 14px 2px #8ddbd04a}}
+.catalogue-flip:focus-within .catalogue-flip-toggle,.catalogue-flip-toggle:hover,.catalogue-flip .norway-catalog-photo:hover .norway-catalog-photo-label{animation:none;background:#285e69f5;border-color:#c9fff0}
+@media(prefers-reduced-motion:reduce){.catalogue-flip .norway-catalog-photo-label,.catalogue-flip-toggle{animation:none}}
+
+/* Region selection fits beside search and category without a spare row. */
+.norway-catalog-controls{grid-template-columns:minmax(0,2fr) repeat(2,minmax(140px,1fr))}
+@media(max-width:650px){.norway-catalog-controls{grid-template-columns:minmax(0,1fr)}}

@@ -1,0 +1,50 @@
+<!doctype html>
+<html style="background-color:#fff!important" lang="ru">
+<head><!-- Insert into each local preview HTML head before external stylesheets.
+     Root-only white paint is intentional: no unscoped text/button overrides. -->
+<style id="ff-early-white-canvas">html,body{background-color:#fff!important;color-scheme:light}
+body.ff-public-leaf #journeys,body.ff-public-leaf>header,body.ff-public-leaf .hero-artwork,body.ff-public-leaf .nordic-backdrop,body.ff-public-leaf #heroScenery{background-color:#fff!important}
+body.ff-public-leaf>.nordic-backdrop::after{background:linear-gradient(90deg,#ffffff66,#ffffffd9 48%,#ffffff55)!important}</style><script id="ff-local-flash-probe">
+if(new URLSearchParams(location.search).has('flashcheck')){
+let frames=[];const sample=()=>{if(document.body){const selectors=['html','body','#journeys','body>header','.nordic-backdrop','#homePanel','.hero-artwork'];frames.push({at:Math.round(performance.now()),layers:selectors.map(s=>{const e=document.querySelector(s);return e?{selector:s,color:getComputedStyle(e).backgroundColor}:null}).filter(Boolean)});}if(frames.length<120)requestAnimationFrame(sample);else{const out=document.createElement('script');out.type='application/json';out.id='ff-local-flash-results';out.textContent=JSON.stringify(frames);document.body.append(out);}};requestAnimationFrame(sample);
+}
+</script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="same-origin">
+  <title>Администрирование · FJORD / FLOW</title>
+  <link rel="stylesheet" href="site-editor-admin.css?v=8">
+  <style>[hidden]{display:none!important}</style>
+  <script type="module" src="site-editor-admin.mjs?v=cms-cache-20261023-r4"></script>
+<link rel="stylesheet" href="owner-password.css?v=cms-auth-20261023-r3">
+<link rel="stylesheet" href="ff-leaf-controls.css?v=merge20">
+<link rel="stylesheet" href="admin-leaf-controls.css?v=admin21">
+<script src="ff-leaf-controls.js?v=merge20" defer></script>
+<link rel="stylesheet" href="leaf-typography-preview.css?v=merge20"><link rel="stylesheet" href="white-foundation-preview.css?v=white1"><link rel="stylesheet" href="compact-details-preview.css?v=detail1"><link rel="stylesheet" href="leaf-warm-hover-preview.css?v=flag1"></head>
+<body style="background-color:#fff!important" class="ff-leaf-system ff-admin-leaf ff-typography-preview">
+  <aside style="padding:12px;background:#fff;color:#252525">ТЕСТОВАЯ КОПИЯ — реальные вход и сохранение отключены. <a href="admin-controls-demo.html">Показать элементы редактора</a></aside><header class="editor-header">
+    <div><a href="admin-cabinet.html" class="brand">Кабинет администратора</a><h1>Контент FJORD / FLOW</h1></div>
+    <div class="header-actions"><span id="identity">Войдите владельцем</span><button id="login" type="button">Войти владельцу</button><a href="./" target="_blank" rel="noopener">Открыть сайт ↗</a></div>
+  </header>
+  <div class="editor-status" hidden><p id="status" role="status" aria-live="polite">Проверяем доступ…</p><div><button id="save" type="button" disabled>Сохранить черновик</button><button id="publish" type="button" disabled>Опубликовать</button></div></div>
+  <main class="editor-layout" hidden>
+    <section class="editor-controls" aria-label="Управление содержимым">
+      <nav class="editor-tabs" aria-label="Разделы администрирования"><button type="button" data-tab="catalogue" aria-pressed="true">Каталог мест</button><button type="button" data-tab="library" aria-pressed="false">Фотобиблиотека</button><button type="button" data-tab="history" aria-pressed="false">История</button><button type="button" data-tab="access" aria-pressed="false">Вход и пароль</button></nav>
+      <section id="cataloguePanel" class="editor-panel"></section>
+      <section id="libraryPanel" class="editor-panel" hidden></section>
+      <section id="accessPanel" class="editor-panel" hidden><div id="ownerPasswordHost"></div></section>
+      <section id="historyPanel" class="editor-panel" hidden><h2>Опубликованные версии</h2><p class="hint">Откат создаёт новую публикацию. Предыдущие версии сохраняются.</p><div id="historyList">Войдите владельцем, чтобы увидеть историю.</div></section>
+    </section>
+    <section class="preview" aria-label="Предпросмотр сайта">
+      <div class="preview-toolbar"><strong>Предпросмотр каталога</strong><div><button id="desktop" type="button" aria-pressed="true">Компьютер</button><button id="mobile" type="button" aria-pressed="false">Телефон</button><button id="reloadPreview" type="button">Обновить</button></div></div>
+      <label class="preview-language" for="previewLanguage">Язык предпросмотра<select id="previewLanguage"><option value="nb">Норвежский</option><option value="en">English</option><option value="uk">Українська</option><option value="sv">Svenska</option><option value="da">Dansk</option></select></label>
+      <p class="preview-note" id="previewStatus" role="status" aria-live="polite">Загружаем предпросмотр…</p>
+      <p class="preview-note">Примените форму места в черновик, чтобы увидеть результат здесь. Посетители увидят изменения после публикации.</p>
+      <div id="previewStage"><iframe id="sitePreview" title="Предпросмотр Fjord Flow" referrerpolicy="same-origin"></iframe></div>
+    </section>
+  </main>
+  <dialog id="authDialog"><button id="closeAuth" type="button" aria-label="Закрыть вход">×</button><h2>Вход владельца — локальный просмотр</h2><p>Здесь проверяется оформление. Не вводите настоящий пароль: запросы к рабочему серверу заблокированы.</p><p>Редактировать и публиковать может только подтверждённый аккаунт laurkent123@gmail.com.</p></dialog>
+</body>
+</html>

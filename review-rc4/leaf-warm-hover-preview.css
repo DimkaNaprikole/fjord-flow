@@ -1,0 +1,27 @@
+/* Owner24Oct: white leaves; sky-blue glow above, yellow below. Public pointer hover only. */
+@media(hover:hover) and (pointer:fine){
+ body.ff-leaf-system.ff-public-leaf :is(header,#journeys,dialog,.follow-menu-cloud,.ff-unified-menu) button:not(:is(.ref-photo,.ref-scene-target,.norway-catalog-photo,.postcard-caption,.stay-gallery-thumb,.roadtrip-presets button)):not(:has(img)):hover:not(:disabled),
+ body.ff-leaf-system.ff-public-leaf :is(header,#journeys,dialog,.follow-menu-cloud,.ff-unified-menu) :is(.button,.ref-link,.site-group-links>a,a[data-primary-tab],.explorer-action,.ff-primary-picker,.norway-catalog-actions a,.ff-select-trigger,.postcard-toggle,.photo-hint,.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-gps,.norway-catalog-retry,[role=tab],summary,#filters button,.place-pagination button):hover:not(:disabled),
+ body.ff-leaf-system.ff-public-leaf #journeys #norwayCatalogue :is(.ff-select-trigger,.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-gps,.norway-catalog-retry,summary):hover:not(:disabled),
+ body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #norwayCatalogue :is(.ff-select-trigger,.catalogue-flip-toggle,.norway-catalog-more,.norway-catalog-gps,.norway-catalog-retry,summary):hover:not(:disabled),
+ body.portfolio-demo.editorial-edition.ff-leaf-system #journeys :is(.button,.ref-link,.postcard-toggle,#filters button,.place-pagination button):hover:not(:disabled){
+  box-shadow:inset 0 1px 0 #fff,0 3px 7px #00000016,0 -5px 10px -3px #63b8f5b3,0 5px 10px -3px #f6d45cb3!important;
+  border-color:#bec7cd!important;
+ }
+ body.ff-leaf-system.ff-public-leaf #journeys #cards .compact-postcard .photo:hover .photo-hint,
+ body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #cards .compact-postcard .photo:hover .photo-hint,
+ body.ff-leaf-system.ff-public-leaf #journeys #norwayCatalogue .norway-catalog-photo:hover .norway-catalog-photo-label,
+ body.portfolio-demo.editorial-edition.ff-leaf-system #journeys #norwayCatalogue .norway-catalog-photo:hover .norway-catalog-photo-label{
+  box-shadow:inset 0 1px 0 #fff,0 3px 7px #00000016,0 -5px 10px -3px #63b8f5b3,0 5px 10px -3px #f6d45cb3!important;
+  border-color:#bec7cd!important;
+ }
+ /* The admin exception removes hover halos; keyboard focus remains visible. */
+ body:is(.ff-admin-leaf,.admin-cabinet) .header-actions>a:hover:not(:focus-visible),
+ body:is(.ff-admin-leaf,.admin-cabinet) .admin-card:hover:not(:focus-visible),
+ body:is(.ff-admin-leaf,.admin-cabinet) button:hover:not(:disabled):not(:focus-visible),
+ body:is(.ff-admin-leaf,.admin-cabinet) .ff-select>.ff-select-trigger:hover:not(:disabled):not(:focus-visible){
+  box-shadow:inset 0 1px 0 #fff,0 3px 7px #00000016!important;
+ }
+}
+
+

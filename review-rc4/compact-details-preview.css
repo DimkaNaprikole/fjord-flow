@@ -1,0 +1,96 @@
+/* Visual refinement only. Keep controls, names, links and image sources intact. */
+body.ff-public-leaf #fjordSiteAccount {
+  width:min(420px,calc(100vw - 24px))!important;max-height:calc(100dvh - 24px)!important;
+  padding:22px 20px 18px!important;background:#fff!important;color:#252525!important;
+  border-color:#c8c8c8!important;border-radius:24px 7px 24px 7px!important;
+  font:500 13px/1.45 Manrope,'Segoe UI',sans-serif!important;
+}
+body.ff-public-leaf #fjordSiteAccount .site-account-cover {
+  height:96px!important;margin:-22px -20px 14px!important;
+}
+body.ff-public-leaf #fjordSiteAccount h2 { font-size:22px!important;line-height:1.2!important;margin-bottom:12px!important;color:#252525!important; }
+body.ff-public-leaf #fjordSiteAccount :is(.fjord-ai-auth h3,.fjord-auth-field) { color:#252525!important; }
+body.ff-public-leaf #fjordSiteAccount :is(.fjord-auth-intro,.site-account-note,.site-account-status,.fjord-social-divider,.fjord-ai-auth p) {
+  color:#595959!important;font-size:12px!important;line-height:1.45!important;
+}
+body.ff-public-leaf #fjordSiteAccount .fjord-auth-modes { margin:10px 0!important;background:#f5f5f5!important; }
+body.ff-public-leaf #fjordSiteAccount .fjord-ai-auth { margin-top:10px!important; }
+body.ff-public-leaf #fjordSiteAccount :is(.fjord-social-buttons,.fjord-ai-auth-buttons) { gap:7px!important;margin-block:10px!important; }
+/* Width:100% from the old input rule must never reach checkbox controls. */
+body:is(.ff-public-leaf,.ff-admin-leaf,.admin-cabinet) :is(#fjordSiteAccount,#authDialog) .fjord-auth-remember {
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  gap:8px!important;min-height:36px!important;margin:8px 0 4px!important;
+  font-size:12px!important;line-height:1.4!important;color:#414141!important;
+}
+body:is(.ff-public-leaf,.ff-admin-leaf,.admin-cabinet) :is(#fjordSiteAccount,#authDialog) input[type=checkbox] {
+  appearance:auto!important;width:16px!important;height:16px!important;
+  min-width:16px!important;min-height:16px!important;max-width:16px!important;
+  flex:0 0 16px!important;padding:0!important;margin:0!important;border-radius:3px!important;
+  box-shadow:none!important;accent-color:#555;
+}
+body.ff-public-leaf #fjordSiteAccount .fjord-auth-remember-note { margin:0 0 10px!important;font-size:11px!important; }
+/* Vertical leaf silhouette retains the full description (no clipping/truncation). */
+body.ff-public-leaf .ref-visit-info {
+  border-radius:38px 8px 38px 8px!important;background:#fffffff2!important;
+  color:#252525!important;padding:24px 22px!important;
+  border:1px solid #d7d7d7!important;box-shadow:0 5px 18px #00000012!important;
+}
+body.ff-public-leaf .ref-visit-info h3 {
+  font:750 clamp(20px,2.2vw,26px)/1.2 Manrope,'Segoe UI',sans-serif!important;
+  letter-spacing:-.025em!important;color:#252525!important;text-decoration:none!important;
+  border:0!important;background:none!important;box-shadow:none!important;
+}
+body.ff-public-leaf .ref-visit-info h3::after { display:none!important; }
+body.ff-public-leaf .ref-visit-info h4 { font:700 13px/1.4 Manrope,sans-serif!important;color:#333!important;margin-top:14px!important; }
+body.ff-public-leaf .ref-visit-info p { font:500 13px/1.55 Manrope,sans-serif!important;color:#414141!important; }
+body.ff-public-leaf .ref-visit-info :is(.ref-visit-location,.ref-visit-checked) { font-size:11px!important;line-height:1.5!important; }
+body.ff-public-leaf .ref-visit-info .ref-link {
+  box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;
+  min-height:44px!important;width:100%!important;height:auto!important;
+  padding:9px 12px!important;margin:8px 0 0!important;
+  font:650 12px/1.4 Manrope,'Segoe UI',sans-serif!important;
+  white-space:normal!important;overflow-wrap:anywhere!important;
+}
+/* Existing rotating place text is the content; do not duplicate or freeze it. */
+body.ff-public-leaf .hero-photo-info {
+  border-radius:15px 5px 15px 5px!important;background:linear-gradient(175deg,#fff,#ededed)!important;
+  color:#252525!important;padding:9px 13px!important;
+}
+body.ff-public-leaf .hero-photo-info>span { color:#252525!important;text-shadow:none!important; }
+body.ff-public-leaf .norway-origin { border-radius:15px 5px 15px 5px!important; }
+body.ff-public-leaf .explorer-tabs :is(button,.explorer-tab-label) {
+  text-decoration:none!important;
+}
+body.ff-public-leaf .explorer-current-place {
+  border-radius:15px 5px 15px 5px!important;background:linear-gradient(175deg,#fff,#ededed)!important;
+  color:#252525!important;text-shadow:none!important;border:1px solid #c8c8c8!important;
+  padding:8px 12px!important;font:650 12px/1.4 Manrope,'Segoe UI',sans-serif!important;
+  box-shadow:inset 0 1px 0 #fff,0 3px 8px #0002!important;text-decoration:none!important;
+}
+/* Owner explicitly removed visible coordinates from this explorer block only. */
+body.ff-public-leaf #about .explorer-gps { display:none!important; }
+body.ff-public-leaf #fjordSiteAccount .fjord-ai-auth a { color:#414141!important; }
+@media(max-width:480px) {
+  body.ff-public-leaf #fjordSiteAccount input:not([type=checkbox]):not([type=radio]) { font-size:16px!important;min-height:44px!important; }
+  body.ff-public-leaf .ref-visit-info { padding:22px 18px!important; }
+}
+/* Local integration of the existing artwork and live labels. */
+body.ff-public-leaf #homePanel{overflow:visible!important}
+body.ff-public-leaf #homePanel>.hero-artwork{top:calc(-1 * var(--ff-local-nav-height,116px))!important}
+body.ff-public-leaf #journeys>.site-group-links{position:relative;z-index:4}
+body.ff-public-leaf footer .friendship-wordmark{display:block;width:min(300px,100%);height:auto;max-width:100%}
+body:is(.ff-admin-leaf,.admin-cabinet) :is(.editor-header h1,.editor-header a,.admin-header h1,.admin-header a){color:#252525!important;text-shadow:none!important}
+body.ff-public-leaf #about .explorer-frame>.explorer-current-place{position:absolute!important;left:24px!important;bottom:24px!important;z-index:4!important;max-width:calc(100% - 48px)!important;box-sizing:border-box!important}
+body.ff-public-leaf #about .explorer-copy{padding-bottom:110px!important}
+body.ff-public-leaf #homePanel>.hero-artwork{height:calc(100% + var(--ff-local-nav-height,116px))!important}
+body.ff-leaf-system.ff-admin-leaf .editor-header :is(h1,.brand){color:#252525!important;text-shadow:none!important}
+body.ff-public-leaf.reference-layout .follow-menu-cloud.is-moving,
+body.ff-public-leaf.reference-layout .follow-menu-cloud.is-moving>nav{background:transparent!important;box-shadow:none!important}
+body.ff-public-leaf.reference-layout .follow-menu-cloud a[data-primary-tab]::after{display:none!important}
+body.ff-public-leaf.reference-layout .follow-menu-cloud.is-moving{background-image:var(--ff-moving-art-left,none),var(--ff-moving-art-right,none)!important;background-position:left center,right center!important;background-size:50% auto!important;background-repeat:no-repeat!important}
+body.ff-public-leaf #about :is(.explorer-action,.explorer-next-place){border-radius:15px 5px 15px 5px!important;background:linear-gradient(175deg,#fff,#ededed)!important;color:#252525!important;text-decoration:none!important;text-shadow:none!important;border:1px solid #c8c8c8!important;border-bottom:3px solid #aaa!important;box-shadow:inset 0 1px 0 #fff,0 3px 7px #0002!important;padding:10px 14px!important;min-height:44px!important;display:inline-flex!important;align-items:center!important;box-sizing:border-box!important}
+/* Keep the footer copy readable beside the approved wordmark. */
+body.ff-public-leaf footer{display:flex!important;flex-wrap:wrap!important;gap:24px!important}
+body.ff-public-leaf footer>.brand{flex:0 0 100%!important;width:auto!important;min-width:0!important}
+body.ff-public-leaf footer>p{flex:1 1 360px!important;min-width:0!important;max-width:none!important;margin:0!important}
+body.ff-public-leaf footer>span{flex:0 1 160px!important;min-width:0!important}

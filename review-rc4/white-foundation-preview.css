@@ -1,0 +1,46 @@
+/* Owner voice 24 Oct: replace solid green foundations, including hidden admin panes.
+   Load last. No image URLs, media rules, auth logic, or visibility changes. */
+html:has(>body.ff-public-leaf),
+html:has(>body.ff-admin-leaf),
+html:has(>body.admin-cabinet) { background:#fff!important; color-scheme:light; }
+body.ff-public-leaf { background-color:#fff!important; }
+body.ff-public-leaf>.nordic-backdrop { background-color:#fff!important; }
+body.ff-public-leaf>.nordic-backdrop::after {
+  background:linear-gradient(90deg,#ffffff66,#ffffffd9 48%,#ffffff55)!important;
+}
+/* Transparent menu containers; individual white leaf buttons remain visible. */
+body.ff-public-leaf :is(header>nav.site-tabs,.site-group-links,.follow-menu-cloud.is-moving) {
+  background:transparent!important; box-shadow:none!important;
+}
+body.ff-public-leaf .explorer-tabs button {
+  border-radius:15px 5px 15px 5px!important;
+  background:linear-gradient(175deg,#fff,#ededed)!important;color:#252525!important;
+  border:1px solid #c8c8c8!important;border-bottom:3px solid #aaa!important;
+}
+body.ff-public-leaf .explorer-tabs button[aria-selected=true] { border-bottom-color:#b59d52!important; }
+/* Neutral tokens apply to both admin entry points, including hidden content. */
+body:is(.ff-admin-leaf,.admin-cabinet) {
+  --ff-deep:#fff;--ff-bg:#fff;--ff-panel:#fff;--ff-card:#fff;
+  --ff-field:#fff;--ff-action:#f4f4f4;--ff-ink:#252525;
+  --ff-muted:#595959;--ff-accent:#414141;--ff-line:#dedede;
+  --ff-line-strong:#b7b7b7;--fjord-focus:#858585;
+  background:#fff!important;color:#252525!important;color-scheme:light;
+}
+body:is(.ff-admin-leaf,.admin-cabinet) :is(.editor-header,.editor-status,.editor-controls,
+  .editor-layout,.editor-panel,.preview,#previewStage,#sitePreview,
+  .admin-card,.admin-panel,.admin-stat,.admin-user,dialog,.photo-editor-card,.asset-card) {
+  background-color:#fff!important;color:#252525;border-color:#d0d0d0;
+}
+body:is(.ff-admin-leaf,.admin-cabinet) .editor-header { border-top-color:#d0d0d0; }
+body:is(.ff-admin-leaf,.admin-cabinet) :is(.editor-panel,.preview-language,#authDialog,.fjord-ai-auth)
+  :is(input:not([type=checkbox]):not([type=radio]):not([type=color]):not([type=range]),select,textarea) {
+  background:#fff!important;color:#252525!important;border-color:#b7b7b7!important;
+}
+body:is(.ff-admin-leaf,.admin-cabinet) dialog::backdrop { background:#0006!important; }
+body:is(.ff-admin-leaf,.admin-cabinet) input[type=checkbox] { accent-color:#555; }
+body:is(.ff-admin-leaf,.admin-cabinet) #status[data-kind=error] { color:#a12828; }
+body:is(.ff-admin-leaf,.admin-cabinet) #status[data-kind=success] { color:#343434; }
+body:is(.ff-admin-leaf,.admin-cabinet) :focus-visible { outline:2px solid #858585!important;outline-offset:3px!important; }
+html,body{background-color:#fff!important;color-scheme:light}
+body.ff-public-leaf #journeys,body.ff-public-leaf>header,body.ff-public-leaf .hero-artwork,body.ff-public-leaf .nordic-backdrop,body.ff-public-leaf #heroScenery{background-color:#fff!important}
+body.ff-public-leaf>.nordic-backdrop::after{background:linear-gradient(90deg,#ffffff66,#ffffffd9 48%,#ffffff55)!important}

@@ -1,0 +1,11 @@
+/* Local visual trial only. Row-sized cards; whole illustration is retained. */
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-grid{align-items:stretch!important}
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-grid .news-card{align-self:stretch!important;display:flex!important;flex-direction:column!important;min-height:0!important;height:auto!important}
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-open{flex:1 1 auto!important}
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-body{display:flex!important;flex-direction:column!important;flex:1 1 auto!important}
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-more{margin-top:auto!important}
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-photo{display:block!important;position:relative!important;flex:0 0 auto!important;width:100%!important;height:180px!important;max-height:180px!important;margin:0!important;background:#f4f6f8!important}
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-photo img[hidden],body #newsDialog .news-story-photo img[hidden]{display:none!important}
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-photo-error-message{position:absolute!important;inset:20px 12px!important;display:grid!important;place-items:center!important;margin:0!important;font:500 12px/1.5 Manrope,'Segoe UI',sans-serif!important;color:#465361!important}
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-photo img[src*="storyset-amico"],body #newsDialog .news-story-photo img[src*="storyset-amico"]{object-fit:contain!important;background:#f4f6f8!important;padding:8px!important;box-sizing:border-box!important}
+body #newsDialog .news-story-photo img[src*="storyset-amico"]{max-height:350px!important;width:100%!important}

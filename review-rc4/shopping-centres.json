@@ -1,0 +1,743 @@
+[
+  {
+    "id": "granstunet",
+    "name": "Granstunet",
+    "town": "Gran",
+    "address": "Storgata 10, 2750 Gran",
+    "website": "https://granstunet.no/",
+    "storesURL": "https://granstunet.no/butikker/",
+    "latitude": 60.35631099185805,
+    "longitude": 10.572258045261144,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Gran&adressenavn=Storgata&nummer=10",
+    "stores": [
+      {
+        "name": "Cubus",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Lindex",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Dressmann",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Eurosko",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Apotek 1",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "POWER",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "ARK Bokhandel",
+        "url": "https://granstunet.no/butikker/"
+      },
+      {
+        "name": "Kid",
+        "url": "https://granstunet.no/butikker/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18",
+    "image": {
+      "alt": {
+        "nb": "Klær i en bruktbutikk",
+        "en": "Clothes in a second-hand shop",
+        "uk": "Одяг у крамниці вживаних речей",
+        "sv": "Kläder i en second hand-butik",
+        "da": "Tøj i en genbrugsbutik"
+      },
+      "credit": "Mirza Polat / Unsplash",
+      "source": "https://unsplash.com/photos/a-rack-of-clothes-in-a-clothing-store-KA9Mjg2z2YI",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "rightsStatus": "documented_license",
+      "checked": "2026-10-24",
+      "modifications": "Resized by the source image service and converted to WebP; responsive crop in layout.",
+      "objectPosition": "50% 50%",
+      "kind": "thematic_photo",
+      "photoContext": "thematic_photo",
+      "caption": {
+        "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen.",
+        "en": "Illustrative photograph, not a photograph of this place or event.",
+        "uk": "Ілюстративне фото, не знімок цього місця чи події.",
+        "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse.",
+        "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed."
+      },
+      "url": "./images/news/topics/clothes-mirza-polat.webp"
+    },
+    "gallery": [
+      {
+        "alt": {
+          "nb": "Klær i en bruktbutikk",
+          "en": "Clothes in a second-hand shop",
+          "uk": "Одяг у крамниці вживаних речей",
+          "sv": "Kläder i en second hand-butik",
+          "da": "Tøj i en genbrugsbutik"
+        },
+        "credit": "Mirza Polat / Unsplash",
+        "source": "https://unsplash.com/photos/a-rack-of-clothes-in-a-clothing-store-KA9Mjg2z2YI",
+        "license": "Unsplash License",
+        "licenseUrl": "https://unsplash.com/license",
+        "rightsStatus": "documented_license",
+        "checked": "2026-10-24",
+        "modifications": "Resized by the source image service and converted to WebP; responsive crop in layout.",
+        "objectPosition": "50% 50%",
+        "kind": "thematic_photo",
+        "photoContext": "thematic_photo",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen.",
+          "en": "Illustrative photograph, not a photograph of this place or event.",
+          "uk": "Ілюстративне фото, не знімок цього місця чи події.",
+          "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse.",
+          "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed."
+        },
+        "src": "./images/news/topics/clothes-mirza-polat.webp"
+      }
+    ],
+    "hours": {
+      "nb": "Man–fre 10:00–19:00; lør 10:00–18:00. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–19:00; Sat 10:00–18:00. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–19:00; сб 10:00–18:00. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–19:00; lör 10:00–18:00. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–19:00; lør 10:00–18:00. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursNote": {
+      "nb": "Man–fre 10:00–19:00; lør 10:00–18:00. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–19:00; Sat 10:00–18:00. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–19:00; сб 10:00–18:00. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–19:00; lör 10:00–18:00. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–19:00; lør 10:00–18:00. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursSource": "https://granstunet.no/",
+    "imageSource": "https://unsplash.com/photos/a-rack-of-clothes-in-a-clothing-store-KA9Mjg2z2YI",
+    "imageCredit": "Mirza Polat / Unsplash",
+    "imageLicense": "Unsplash License",
+    "imageLicenseUrl": "https://unsplash.com/license",
+    "photoAlt": {
+      "nb": "Klær i en bruktbutikk",
+      "en": "Clothes in a second-hand shop",
+      "uk": "Одяг у крамниці вживаних речей",
+      "sv": "Kläder i en second hand-butik",
+      "da": "Tøj i en genbrugsbutik"
+    },
+    "photoCaption": {
+      "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen. · Mirza Polat / Unsplash · Unsplash License",
+      "en": "Illustrative photograph, not a photograph of this place or event. · Mirza Polat / Unsplash · Unsplash License",
+      "uk": "Ілюстративне фото, не знімок цього місця чи події. · Mirza Polat / Unsplash · Unsplash License",
+      "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse. · Mirza Polat / Unsplash · Unsplash License",
+      "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed. · Mirza Polat / Unsplash · Unsplash License"
+    },
+    "photoContext": "thematic_photo",
+    "rightsStatus": "documented_license"
+  },
+  {
+    "id": "smietorget",
+    "name": "Smietorget",
+    "town": "Gran",
+    "address": "Smiegata 17, 2750 Gran",
+    "website": "https://smietorget.no/",
+    "storesURL": "https://smietorget.no/",
+    "latitude": 60.35643336702773,
+    "longitude": 10.571112685368758,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Gran&adressenavn=Smiegata&nummer=17",
+    "addressSource": "https://data.brreg.no/enhetsregisteret/api/enheter?navn=Smietorget&size=4",
+    "stores": [
+      {
+        "name": "SPAR",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "KappAhl",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Sport 1",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Norli Hadeland",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Normal",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Nille",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Mester Grønn",
+        "url": "https://smietorget.no/"
+      },
+      {
+        "name": "Traktøren",
+        "url": "https://smietorget.no/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18",
+    "image": {
+      "alt": {
+        "nb": "Klær i en bruktbutikk",
+        "en": "Clothes in a second-hand shop",
+        "uk": "Одяг у крамниці вживаних речей",
+        "sv": "Kläder i en second hand-butik",
+        "da": "Tøj i en genbrugsbutik"
+      },
+      "credit": "Mirza Polat / Unsplash",
+      "source": "https://unsplash.com/photos/a-rack-of-clothes-in-a-clothing-store-KA9Mjg2z2YI",
+      "license": "Unsplash License",
+      "licenseUrl": "https://unsplash.com/license",
+      "rightsStatus": "documented_license",
+      "checked": "2026-10-24",
+      "modifications": "Resized by the source image service and converted to WebP; responsive crop in layout.",
+      "objectPosition": "50% 50%",
+      "kind": "thematic_photo",
+      "photoContext": "thematic_photo",
+      "caption": {
+        "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen.",
+        "en": "Illustrative photograph, not a photograph of this place or event.",
+        "uk": "Ілюстративне фото, не знімок цього місця чи події.",
+        "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse.",
+        "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed."
+      },
+      "url": "./images/news/topics/clothes-mirza-polat.webp"
+    },
+    "gallery": [
+      {
+        "alt": {
+          "nb": "Klær i en bruktbutikk",
+          "en": "Clothes in a second-hand shop",
+          "uk": "Одяг у крамниці вживаних речей",
+          "sv": "Kläder i en second hand-butik",
+          "da": "Tøj i en genbrugsbutik"
+        },
+        "credit": "Mirza Polat / Unsplash",
+        "source": "https://unsplash.com/photos/a-rack-of-clothes-in-a-clothing-store-KA9Mjg2z2YI",
+        "license": "Unsplash License",
+        "licenseUrl": "https://unsplash.com/license",
+        "rightsStatus": "documented_license",
+        "checked": "2026-10-24",
+        "modifications": "Resized by the source image service and converted to WebP; responsive crop in layout.",
+        "objectPosition": "50% 50%",
+        "kind": "thematic_photo",
+        "photoContext": "thematic_photo",
+        "caption": {
+          "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen.",
+          "en": "Illustrative photograph, not a photograph of this place or event.",
+          "uk": "Ілюстративне фото, не знімок цього місця чи події.",
+          "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse.",
+          "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed."
+        },
+        "src": "./images/news/topics/clothes-mirza-polat.webp"
+      }
+    ],
+    "hours": {
+      "nb": "Man–fre 09:00–20:00; lør 09:00–18:00. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 09:00–20:00; Sat 09:00–18:00. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 09:00–20:00; сб 09:00–18:00. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 09:00–20:00; lör 09:00–18:00. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 09:00–20:00; lør 09:00–18:00. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursNote": {
+      "nb": "Man–fre 09:00–20:00; lør 09:00–18:00. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 09:00–20:00; Sat 09:00–18:00. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 09:00–20:00; сб 09:00–18:00. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 09:00–20:00; lör 09:00–18:00. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 09:00–20:00; lør 09:00–18:00. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursSource": "https://smietorget.no/",
+    "imageSource": "https://unsplash.com/photos/a-rack-of-clothes-in-a-clothing-store-KA9Mjg2z2YI",
+    "imageCredit": "Mirza Polat / Unsplash",
+    "imageLicense": "Unsplash License",
+    "imageLicenseUrl": "https://unsplash.com/license",
+    "photoAlt": {
+      "nb": "Klær i en bruktbutikk",
+      "en": "Clothes in a second-hand shop",
+      "uk": "Одяг у крамниці вживаних речей",
+      "sv": "Kläder i en second hand-butik",
+      "da": "Tøj i en genbrugsbutik"
+    },
+    "photoCaption": {
+      "nb": "Illustrasjonsfoto, ikke et bilde av dette stedet eller denne hendelsen. · Mirza Polat / Unsplash · Unsplash License",
+      "en": "Illustrative photograph, not a photograph of this place or event. · Mirza Polat / Unsplash · Unsplash License",
+      "uk": "Ілюстративне фото, не знімок цього місця чи події. · Mirza Polat / Unsplash · Unsplash License",
+      "sv": "Illustrationsfoto, inte ett foto av denna plats eller händelse. · Mirza Polat / Unsplash · Unsplash License",
+      "da": "Illustrationsfoto, ikke et foto af dette sted eller denne begivenhed. · Mirza Polat / Unsplash · Unsplash License"
+    },
+    "photoContext": "thematic_photo",
+    "rightsStatus": "documented_license"
+  },
+  {
+    "id": "storo",
+    "name": "Thon Senter Storo",
+    "town": "Oslo",
+    "address": "Vitaminveien 7–9, 0485 Oslo",
+    "website": "https://thonsenter.no/storo/",
+    "storesURL": "https://thonsenter.no/storo/butikker/",
+    "latitude": 59.94684205812542,
+    "longitude": 10.77538723559638,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Oslo&adressenavn=Vitaminveien&nummer=7",
+    "stores": [
+      {
+        "name": "ARK Bokhandel",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/storo/ark-bokhandel/"
+      },
+      {
+        "name": "Clas Ohlson",
+        "location": "3. etasje",
+        "url": "https://thonsenter.no/storo/clas-ohlson/"
+      },
+      {
+        "name": "Cubus",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/storo/cubus/"
+      },
+      {
+        "name": "H&M",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/storo/hm/"
+      },
+      {
+        "name": "Jernia",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/storo/jernia/"
+      },
+      {
+        "name": "Kid Interiør",
+        "location": "3. etasje",
+        "url": "https://thonsenter.no/storo/kid-interior/"
+      },
+      {
+        "name": "Normal",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/storo/normal/"
+      },
+      {
+        "name": "XXL",
+        "location": "Gunnar Schjelderups vei 2",
+        "url": "https://thonsenter.no/storo/xxl/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18",
+    "image": {
+      "alt": {
+        "nb": "Storo Storsenter — exterior",
+        "en": "Storo Storsenter — exterior",
+        "uk": "Storo Storsenter — exterior",
+        "sv": "Storo Storsenter — exterior",
+        "da": "Storo Storsenter — exterior"
+      },
+      "credit": "Nøttestad · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Storo_Storsenter.jpg",
+      "license": "Public domain",
+      "licenseUrl": "https://commons.wikimedia.org/wiki/File:Storo_Storsenter.jpg",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Storo_Storsenter.jpg",
+      "url": "images/shopping/storo.jpg"
+    },
+    "gallery": [
+      {
+        "src": "images/shopping/storo.jpg",
+        "alt": "Storo Storsenter — exterior",
+        "credit": "Nøttestad · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Storo_Storsenter.jpg",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/File:Storo_Storsenter.jpg",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Storo_Storsenter.jpg"
+      }
+    ],
+    "hours": {
+      "nb": "Man–fre 10:00–21:00; lør 10:00–19:00. Søndag stengt. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–21:00; Sat 10:00–19:00. Closed Sunday. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–21:00; сб 10:00–19:00. Неділя — зачинено. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–21:00; lör 10:00–19:00. Söndag stängt. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–21:00; lør 10:00–19:00. Søndag lukket. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursNote": {
+      "nb": "Man–fre 10:00–21:00; lør 10:00–19:00. Søndag stengt. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–21:00; Sat 10:00–19:00. Closed Sunday. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–21:00; сб 10:00–19:00. Неділя — зачинено. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–21:00; lör 10:00–19:00. Söndag stängt. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–21:00; lør 10:00–19:00. Søndag lukket. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursSource": "https://thonsenter.no/storo/apningstider/",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Storo_Storsenter.jpg",
+    "imageCredit": "Nøttestad · Wikimedia Commons",
+    "imageLicense": "Public domain",
+    "imageLicenseUrl": "https://commons.wikimedia.org/wiki/File:Storo_Storsenter.jpg",
+    "photoAlt": {
+      "nb": "Storo Storsenter — exterior",
+      "en": "Storo Storsenter — exterior",
+      "uk": "Storo Storsenter — exterior",
+      "sv": "Storo Storsenter — exterior",
+      "da": "Storo Storsenter — exterior"
+    },
+    "photoCaption": {
+      "nb": "Thon Senter Storo · Nøttestad · Wikimedia Commons · Public domain",
+      "en": "Thon Senter Storo · Nøttestad · Wikimedia Commons · Public domain",
+      "uk": "Thon Senter Storo · Nøttestad · Wikimedia Commons · Public domain",
+      "sv": "Thon Senter Storo · Nøttestad · Wikimedia Commons · Public domain",
+      "da": "Thon Senter Storo · Nøttestad · Wikimedia Commons · Public domain"
+    },
+    "photoContext": "venue_photo",
+    "rightsStatus": "documented_license_metadata"
+  },
+  {
+    "id": "sandvika",
+    "name": "Thon Senter Sandvika",
+    "town": "Sandvika",
+    "address": "Brodtkorbsgate 7, 1338 Sandvika",
+    "website": "https://thonsenter.no/sandvika/",
+    "storesURL": "https://thonsenter.no/sandvika/butikker/",
+    "latitude": 59.89058289376388,
+    "longitude": 10.519495516273063,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=B%C3%A6rum&adressenavn=Brodtkorbsgate&nummer=7",
+    "stores": [
+      {
+        "name": "Apotek 1 Inforama Sandvika",
+        "location": "1. etasje, Nytorget - ny del",
+        "url": "https://thonsenter.no/sandvika/apotek-1-inforama-sandvika/"
+      },
+      {
+        "name": "Apotek 1 Sandvika",
+        "location": "Underetasje, Elvetorget - gammel del",
+        "url": "https://thonsenter.no/sandvika/apotek-1-sandvika/"
+      },
+      {
+        "name": "ARK Bokhandel",
+        "location": "2. etasje, Elvetorget – gammel del",
+        "url": "https://thonsenter.no/sandvika/ark-bokhandel/"
+      },
+      {
+        "name": "Clas Ohlson",
+        "location": "Underetasje, Lilletorget - gammel del",
+        "url": "https://thonsenter.no/sandvika/clas-ohlson/"
+      },
+      {
+        "name": "Cubus",
+        "location": "1. og 2. etasje, Lilletorget - gammel del",
+        "url": "https://thonsenter.no/sandvika/cubus/"
+      },
+      {
+        "name": "H&M",
+        "location": "2. etasje, Stortorget",
+        "url": "https://thonsenter.no/sandvika/hm/"
+      },
+      {
+        "name": "Jernia",
+        "location": "1. etasje, Stortorget",
+        "url": "https://thonsenter.no/sandvika/jernia/"
+      },
+      {
+        "name": "Kid Interiør",
+        "location": "1. etasje, Stortorget – gammel del",
+        "url": "https://thonsenter.no/sandvika/kid-interior/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18",
+    "image": {
+      "alt": {
+        "nb": "Sandvika Storsenter — exterior",
+        "en": "Sandvika Storsenter — exterior",
+        "uk": "Sandvika Storsenter — exterior",
+        "sv": "Sandvika Storsenter — exterior",
+        "da": "Sandvika Storsenter — exterior"
+      },
+      "credit": "Ssu · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Sandvika_Storsenter.JPG",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Sandvika_Storsenter.JPG",
+      "url": "images/shopping/sandvika.jpg"
+    },
+    "gallery": [
+      {
+        "src": "images/shopping/sandvika.jpg",
+        "alt": "Sandvika Storsenter — exterior",
+        "credit": "Ssu · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Sandvika_Storsenter.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/02/Sandvika_Storsenter.JPG"
+      }
+    ],
+    "hours": {
+      "nb": "Man–fre 10:00–21:00; lør 09:00–19:00. Søndag stengt. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–21:00; Sat 09:00–19:00. Closed Sunday. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–21:00; сб 09:00–19:00. Неділя — зачинено. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–21:00; lör 09:00–19:00. Söndag stängt. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–21:00; lør 09:00–19:00. Søndag lukket. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursNote": {
+      "nb": "Man–fre 10:00–21:00; lør 09:00–19:00. Søndag stengt. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–21:00; Sat 09:00–19:00. Closed Sunday. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–21:00; сб 09:00–19:00. Неділя — зачинено. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–21:00; lör 09:00–19:00. Söndag stängt. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–21:00; lør 09:00–19:00. Søndag lukket. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursSource": "https://thonsenter.no/sandvika/apningstider/",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Sandvika_Storsenter.JPG",
+    "imageCredit": "Ssu · Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "photoAlt": {
+      "nb": "Sandvika Storsenter — exterior",
+      "en": "Sandvika Storsenter — exterior",
+      "uk": "Sandvika Storsenter — exterior",
+      "sv": "Sandvika Storsenter — exterior",
+      "da": "Sandvika Storsenter — exterior"
+    },
+    "photoCaption": {
+      "nb": "Thon Senter Sandvika · Ssu · Wikimedia Commons · CC BY-SA 3.0",
+      "en": "Thon Senter Sandvika · Ssu · Wikimedia Commons · CC BY-SA 3.0",
+      "uk": "Thon Senter Sandvika · Ssu · Wikimedia Commons · CC BY-SA 3.0",
+      "sv": "Thon Senter Sandvika · Ssu · Wikimedia Commons · CC BY-SA 3.0",
+      "da": "Thon Senter Sandvika · Ssu · Wikimedia Commons · CC BY-SA 3.0"
+    },
+    "photoContext": "venue_photo",
+    "rightsStatus": "documented_license_metadata"
+  },
+  {
+    "id": "sorlandssenteret",
+    "name": "Thon Sørlandssenteret",
+    "town": "Kristiansand",
+    "address": "Barstølveien 35, 4636 Kristiansand",
+    "website": "https://thonsenter.no/sorlandssenteret/",
+    "storesURL": "https://thonsenter.no/sorlandssenteret/butikker/",
+    "latitude": 58.17940181078332,
+    "longitude": 8.133820529955338,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Kristiansand&adressenavn=Barst%C3%B8lveien&nummer=35",
+    "stores": [
+      {
+        "name": "Apotek 1 ved Hovedinngang",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/apotek-1-ved-hovedinngang/"
+      },
+      {
+        "name": "ARK Bokhandel",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/ark-bokhandel/"
+      },
+      {
+        "name": "Clas Ohlson",
+        "location": "1. etasje v. Norli og Synsam",
+        "url": "https://thonsenter.no/sorlandssenteret/clas-ohlson/"
+      },
+      {
+        "name": "Cubus",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/cubus/"
+      },
+      {
+        "name": "H&M",
+        "location": "1. og 2. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/hm/"
+      },
+      {
+        "name": "H&M Home",
+        "location": "2. etg i samme lokale som H&M",
+        "url": "https://thonsenter.no/sorlandssenteret/hm-home/"
+      },
+      {
+        "name": "Jernia",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/jernia/"
+      },
+      {
+        "name": "Kid Interiør",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/sorlandssenteret/kid-interior/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18",
+    "image": {
+      "alt": {
+        "nb": "Sørlandssenteret — exterior",
+        "en": "Sørlandssenteret — exterior",
+        "uk": "Sørlandssenteret — exterior",
+        "sv": "Sørlandssenteret — exterior",
+        "da": "Sørlandssenteret — exterior"
+      },
+      "credit": "Carsten R D · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:S%C3%B8rlandssenteret.JPG",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/S%C3%B8rlandssenteret.JPG",
+      "url": "images/shopping/sorlandssenteret.jpg"
+    },
+    "gallery": [
+      {
+        "src": "images/shopping/sorlandssenteret.jpg",
+        "alt": "Sørlandssenteret — exterior",
+        "credit": "Carsten R D · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:S%C3%B8rlandssenteret.JPG",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/S%C3%B8rlandssenteret.JPG"
+      }
+    ],
+    "hours": {
+      "nb": "Man–fre 10:00–21:00; lør 10:00–19:00. Søndag stengt. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–21:00; Sat 10:00–19:00. Closed Sunday. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–21:00; сб 10:00–19:00. Неділя — зачинено. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–21:00; lör 10:00–19:00. Söndag stängt. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–21:00; lør 10:00–19:00. Søndag lukket. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursNote": {
+      "nb": "Man–fre 10:00–21:00; lør 10:00–19:00. Søndag stengt. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–21:00; Sat 10:00–19:00. Closed Sunday. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–21:00; сб 10:00–19:00. Неділя — зачинено. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–21:00; lör 10:00–19:00. Söndag stängt. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–21:00; lør 10:00–19:00. Søndag lukket. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursSource": "https://thonsenter.no/sorlandssenteret/apningstider/",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:S%C3%B8rlandssenteret.JPG",
+    "imageCredit": "Carsten R D · Wikimedia Commons",
+    "imageLicense": "CC BY-SA 3.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "photoAlt": {
+      "nb": "Sørlandssenteret — exterior",
+      "en": "Sørlandssenteret — exterior",
+      "uk": "Sørlandssenteret — exterior",
+      "sv": "Sørlandssenteret — exterior",
+      "da": "Sørlandssenteret — exterior"
+    },
+    "photoCaption": {
+      "nb": "Thon Sørlandssenteret · Carsten R D · Wikimedia Commons · CC BY-SA 3.0",
+      "en": "Thon Sørlandssenteret · Carsten R D · Wikimedia Commons · CC BY-SA 3.0",
+      "uk": "Thon Sørlandssenteret · Carsten R D · Wikimedia Commons · CC BY-SA 3.0",
+      "sv": "Thon Sørlandssenteret · Carsten R D · Wikimedia Commons · CC BY-SA 3.0",
+      "da": "Thon Sørlandssenteret · Carsten R D · Wikimedia Commons · CC BY-SA 3.0"
+    },
+    "photoContext": "venue_photo",
+    "rightsStatus": "documented_license_metadata"
+  },
+  {
+    "id": "lagunen",
+    "name": "Thon Senter Lagunen",
+    "town": "Bergen",
+    "address": "Laguneveien 1, 5239 Rådal",
+    "website": "https://thonsenter.no/lagunen/",
+    "storesURL": "https://thonsenter.no/lagunen/butikker/",
+    "latitude": 60.29686524470207,
+    "longitude": 5.331154048866262,
+    "coordinateSource": "https://ws.geonorge.no/adresser/v1/sok?kommunenavn=Bergen&adressenavn=Laguneveien&nummer=1",
+    "stores": [
+      {
+        "name": "Apotek 1",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/lagunen/apotek-1/"
+      },
+      {
+        "name": "ARK Bokhandel",
+        "location": "4. etasje",
+        "url": "https://thonsenter.no/lagunen/ark-bokhandel/"
+      },
+      {
+        "name": "Clas Ohlson",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/lagunen/clas-ohlson/"
+      },
+      {
+        "name": "Cubus",
+        "location": "2. etasje",
+        "url": "https://thonsenter.no/lagunen/cubus/"
+      },
+      {
+        "name": "H&M",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/lagunen/hm/"
+      },
+      {
+        "name": "Jernia",
+        "location": "1. etasje",
+        "url": "https://thonsenter.no/lagunen/jernia/"
+      },
+      {
+        "name": "Kid Interiør",
+        "location": "4. etasje",
+        "url": "https://thonsenter.no/lagunen/kid-interior/"
+      },
+      {
+        "name": "Kids Outlet",
+        "location": "3. etasje, gågaten",
+        "url": "https://thonsenter.no/lagunen/kids-outlet/"
+      }
+    ],
+    "category": "shopping",
+    "checked": "2026-10-18",
+    "image": {
+      "alt": {
+        "nb": "Lagunen Storsenter i Bergen, 2020 — exterior",
+        "en": "Lagunen Storsenter i Bergen, 2020 — exterior",
+        "uk": "Lagunen Storsenter i Bergen, 2020 — exterior",
+        "sv": "Lagunen Storsenter i Bergen, 2020 — exterior",
+        "da": "Lagunen Storsenter i Bergen, 2020 — exterior"
+      },
+      "credit": "Ssu · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Lagunen_Storsenter_i_Bergen,_2020.jpg",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Lagunen_Storsenter_i_Bergen%2C_2020.jpg",
+      "url": "images/shopping/lagunen.jpg"
+    },
+    "gallery": [
+      {
+        "src": "images/shopping/lagunen.jpg",
+        "alt": "Lagunen Storsenter i Bergen, 2020 — exterior",
+        "credit": "Ssu · Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Lagunen_Storsenter_i_Bergen,_2020.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Lagunen_Storsenter_i_Bergen%2C_2020.jpg"
+      }
+    ],
+    "hours": {
+      "nb": "Man–fre 10:00–21:00; lør 10:00–18:00. Søndag stengt. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–21:00; Sat 10:00–18:00. Closed Sunday. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–21:00; сб 10:00–18:00. Неділя — зачинено. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–21:00; lör 10:00–18:00. Söndag stängt. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–21:00; lør 10:00–18:00. Søndag lukket. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursNote": {
+      "nb": "Man–fre 10:00–21:00; lør 10:00–18:00. Søndag stengt. Ordinære sentertider; butikker og helligdager kan avvike. Sjekk senterets nettside før besøket.",
+      "en": "Mon–Fri 10:00–21:00; Sat 10:00–18:00. Closed Sunday. Regular centre hours; individual shops and holidays may differ. Check the official website before visiting.",
+      "uk": "Пн–пт 10:00–21:00; сб 10:00–18:00. Неділя — зачинено. Звичайні години центру; окремі магазини та свята можуть мати інший графік. Перевірте офіційний сайт перед візитом.",
+      "sv": "Mån–fre 10:00–21:00; lör 10:00–18:00. Söndag stängt. Ordinarie centertider; enskilda butiker och helgdagar kan avvika. Kontrollera centrets webbplats före besöket.",
+      "da": "Man–fre 10:00–21:00; lør 10:00–18:00. Søndag lukket. Normale centertider; enkelte butikker og helligdage kan afvige. Tjek centrets hjemmeside før besøget."
+    },
+    "hoursSource": "https://thonsenter.no/lagunen/apningstider/",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Lagunen_Storsenter_i_Bergen,_2020.jpg",
+    "imageCredit": "Ssu · Wikimedia Commons",
+    "imageLicense": "CC BY-SA 4.0",
+    "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "photoAlt": {
+      "nb": "Lagunen Storsenter i Bergen, 2020 — exterior",
+      "en": "Lagunen Storsenter i Bergen, 2020 — exterior",
+      "uk": "Lagunen Storsenter i Bergen, 2020 — exterior",
+      "sv": "Lagunen Storsenter i Bergen, 2020 — exterior",
+      "da": "Lagunen Storsenter i Bergen, 2020 — exterior"
+    },
+    "photoCaption": {
+      "nb": "Thon Senter Lagunen · Ssu · Wikimedia Commons · CC BY-SA 4.0",
+      "en": "Thon Senter Lagunen · Ssu · Wikimedia Commons · CC BY-SA 4.0",
+      "uk": "Thon Senter Lagunen · Ssu · Wikimedia Commons · CC BY-SA 4.0",
+      "sv": "Thon Senter Lagunen · Ssu · Wikimedia Commons · CC BY-SA 4.0",
+      "da": "Thon Senter Lagunen · Ssu · Wikimedia Commons · CC BY-SA 4.0"
+    },
+    "photoContext": "venue_photo",
+    "rightsStatus": "documented_license_metadata"
+  }
+]

@@ -1,0 +1,29 @@
+/* Scope: these licensed illustrative photographs only. Other framing is unchanged. */
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-photo img[src*="cabin-daniel-schwarz.webp"],
+body.ff-leaf-system.ff-public-leaf #newsStoryDialog .news-story-photo img[src*="cabin-daniel-schwarz.webp"],
+body.ff-leaf-system.ff-public-leaf #stayGallery img[src*="cabin-daniel-schwarz.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-scene-slide img[src*="cabin-daniel-schwarz.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-card img[src*="cabin-daniel-schwarz.webp"] { object-position: 50% 72% !important; }
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-photo img[src*="clothes-mirza-polat.webp"],
+body.ff-leaf-system.ff-public-leaf #newsStoryDialog .news-story-photo img[src*="clothes-mirza-polat.webp"],
+body.ff-leaf-system.ff-public-leaf #stayGallery img[src*="clothes-mirza-polat.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-scene-slide img[src*="clothes-mirza-polat.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-card img[src*="clothes-mirza-polat.webp"] { object-position: 50% 50% !important; }
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-photo img[src*="coffee-jeffrey-wegrzyn.webp"],
+body.ff-leaf-system.ff-public-leaf #newsStoryDialog .news-story-photo img[src*="coffee-jeffrey-wegrzyn.webp"],
+body.ff-leaf-system.ff-public-leaf #stayGallery img[src*="coffee-jeffrey-wegrzyn.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-scene-slide img[src*="coffee-jeffrey-wegrzyn.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-card img[src*="coffee-jeffrey-wegrzyn.webp"] { object-position: 50% 50% !important; }
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-photo img[src*="notebook-clay-banks.webp"],
+body.ff-leaf-system.ff-public-leaf #newsStoryDialog .news-story-photo img[src*="notebook-clay-banks.webp"],
+body.ff-leaf-system.ff-public-leaf #stayGallery img[src*="notebook-clay-banks.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-scene-slide img[src*="notebook-clay-banks.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-card img[src*="notebook-clay-banks.webp"] { object-position: 50% 50% !important; }
+body.ff-leaf-system.ff-public-leaf #municipalNews .news-card-photo img[src*="sauna-auroom.webp"],
+body.ff-leaf-system.ff-public-leaf #newsStoryDialog .news-story-photo img[src*="sauna-auroom.webp"],
+body.ff-leaf-system.ff-public-leaf #stayGallery img[src*="sauna-auroom.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-scene-slide img[src*="sauna-auroom.webp"],
+body.ff-leaf-system.ff-public-leaf .ref-card img[src*="sauna-auroom.webp"] { object-position: 50% 50% !important; }
+
+/* Keep disclosure visible when information-dialogs moves figcaption into Sources. */
+body.ff-leaf-system.ff-public-leaf .shopping-photo-kind { position:absolute; top:12px; left:12px; z-index:3; max-width:calc(100% - 24px); padding:5px 9px; border:1px solid rgba(255,255,255,.35); border-radius:5px; background:rgba(10,25,31,.94); color:#fff; font:500 11px/1.4 system-ui,sans-serif; white-space:normal; }

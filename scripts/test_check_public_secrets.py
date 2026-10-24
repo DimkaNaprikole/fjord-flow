@@ -55,6 +55,23 @@ class SecretCheckTests(unittest.TestCase):
         content = json.dumps({"nested": {"firebaseApiKey": self.google}})
         self.assertEqual(len(scanner.scan_text("chat-config.json", content)), 1)
 
+    def test_review_firebase_exception_keeps_exact_path_and_property(self):
+        content = json.dumps({"enabled": True, "firebaseApiKey": self.google})
+        self.assertEqual(scanner.scan_text("review-rc4/chat-config.json", content), [])
+        for path in ["review-rc3/chat-config.json", "review-rc4/sub/chat-config.json", "review-rc4/chat-config.json.bak"]:
+            self.assertEqual(len(scanner.scan_text(path, content)), 1)
+        extra = json.dumps({"firebaseApiKey": self.google, "secret": self.fixtures["openai-key"]})
+        self.assertEqual(scanner.scan_text("review-rc4/chat-config.json", extra)[0][2], "openai-key")
+        duplicate = '{"firebaseApiKey":"' + self.google + '","firebaseApiKey":"' + self.google + '"}'
+        self.assertEqual(len(scanner.scan_text("review-rc4/chat-config.json", duplicate)), 1)
+
+    def test_review_maps_exception_keeps_exact_path_and_shape(self):
+        config = "window.FjordGoogleMapConfig = Object.freeze({enabled:true, provider:'google', apiKey:'" + self.google + "'});\n"
+        self.assertEqual(scanner.scan_text("review-rc4/google-maps-config.js", config), [])
+        for path in ["review-rc3/google-maps-config.js", "review-rc4/sub/google-maps-config.js", "review-rc4/other.js"]:
+            self.assertEqual(len(scanner.scan_text(path, config)), 1)
+        self.assertEqual(len(scanner.scan_text("review-rc4/google-maps-config.js", config + self.google)), 2)
+        self.assertEqual(len(scanner.scan_text("review-rc4/google-maps-config.js", config.replace("provider:'google'", "provider:'other'"))), 1)
     def test_maps_browser_key_exception_is_narrow(self):
         config = "window.FjordGoogleMapConfig = Object.freeze({enabled:true, apiKey:'" + self.google + "'});\n"
         self.assertEqual(scanner.scan_text("google-maps-config.js", config), [])

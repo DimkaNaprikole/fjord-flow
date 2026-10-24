@@ -1,0 +1,206 @@
+[
+  {
+    "id": "bua",
+    "image": "./images/service-icons/bua-logo.svg",
+    "imageSource": "https://www.bua.no/app",
+    "imageCredit": "BUA · official website",
+    "original": "https://craft.bua.io/files/Hero/_1200x630_crop_center-center_82_none/8586/Untitled-design-1.jpg?v=1776621510",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "circle-k",
+    "image": "./images/service-icons/official-circle-k.svg",
+    "imageSource": "https://www.circlek.no/",
+    "imageCredit": "circle-k · official website",
+    "original": "https://www.circlek.no/profiles/custom/ck/themes/circlek/assets/images/logo.svg",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "drivstoff",
+    "image": "./images/service-icons/official-drivstoff.png",
+    "imageSource": "https://drivstoffappen.no/",
+    "imageCredit": "DrivstoffAppen · official website",
+    "original": "https://apperio-strapi-aws-s3-images-bucket.s3.eu-north-1.amazonaws.com/Sharing_Image_b9653f3024.png",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "hyre",
+    "image": "./images/service-icons/official-hyre.jpg",
+    "imageSource": "https://www.hyre.no/en/",
+    "imageCredit": "Hyre · official website",
+    "original": "https://www.hyre.no/img/ogimageBlue.jpg",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "entur",
+    "image": "./images/service-icons/official-entur.jpg",
+    "imageSource": "https://om.entur.no/last-ned-appen/",
+    "imageCredit": "Entur · official website",
+    "original": "https://om.entur.no/static/d574cd956664ae4da49effb051eb3186/ae5f7/Reisetogiutlandet.jpg",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "trumf",
+    "image": "./images/service-icons/official-trumf.png",
+    "imageSource": "https://www.trumf.no/digitalt-trumf-kort",
+    "imageCredit": "Trumf · official website",
+    "original": "https://cdn.sanity.io/images/56az5oc2/production/52a5da21a4e3d141fbe779615c0383519aac1a82-3875x2796.png",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "coopay",
+    "image": "./images/service-icons/official-coopay.svg",
+    "imageSource": "https://www.coop.no/medlem/fordeler/coop-appen",
+    "imageCredit": "Coop · Coopay · official website",
+    "original": "https://www.coop.no/assets/contentful/69zmfo9ko3qk/2uUusiYn3YeRQaTHs9KPAs/bb1364d264fd606bd98c6a19daae40bd/coop_litt_ditt_-_liten_coop_hvit.svg",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "vy",
+    "image": "./images/service-icons/official-vy.webp",
+    "imageSource": "https://www.vy.no/en",
+    "imageCredit": "Vy · official website",
+    "original": "https://cdn.sanity.io/images/eyx1eny7/~alias-vyno-production/d844d01ef5acbc4b8a6bf6eddc3011403336e38f-7512x4984.tif?rect=0,520,7512,3944&w=1200&h=630&fm=webp&fit=crop",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "vipps",
+    "image": "./images/service-icons/official-vipps.png",
+    "imageSource": "https://vipps.no/",
+    "imageCredit": "Vipps · official website",
+    "original": "https://cdn.sanity.io/images/zai55r7s/production/c32d5b2cc25c883b7990bd6724525bad7a93da39-2044x952.png",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "nav",
+    "image": "./images/service-icons/official-nav.png",
+    "imageSource": "https://www.nav.no/",
+    "imageCredit": "NAV · official website",
+    "original": "https://www.nav.no/gfx/social-share-fallback.png",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "helsenorge",
+    "image": "./images/service-icons/official-helsenorge.png",
+    "imageSource": "https://www.helsenorge.no/",
+    "imageCredit": "Helsenorge · official website",
+    "original": "https://www.helsenorge.no/4a413d/globalassets/bilder/profilbilder/standardbilde_forside_helsenorge.png?width=1200&hash=B9D9365F5055C5A7B64889A330A1DE20E053BDD4FA5EDD1BCD4AC3A14FC8AC35",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "skatteetaten",
+    "image": "./images/service-icons/official-skatteetaten.png",
+    "imageSource": "https://www.skatteetaten.no/person/",
+    "imageCredit": "Skatteetaten · official website",
+    "original": "https://www.skatteetaten.no/static/img/skatteetatenlogo/1200x630/png/se_logo_norsk_sort1200x630.png",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "udi",
+    "imageSource": "https://www.udi.no/en/",
+    "imageCredit": "UDI · official website",
+    "original": "https://www.udi.no/Resources/Internal/img/udi_logo.png",
+    "rightsNote": "Official website artwork; no open licence asserted.",
+    "missing": true
+  },
+  {
+    "id": "altinn",
+    "image": "./images/service-icons/official-altinn.png",
+    "imageSource": "https://info.altinn.no/",
+    "imageCredit": "altinn · official website",
+    "original": "https://info.altinn.no/assets/favicon/apple-touch-icon-180x180.png",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "politiet",
+    "image": "./images/service-icons/official-politiet.png",
+    "imageSource": "https://www.politiet.no/",
+    "imageCredit": "Politiet · official website",
+    "original": "https://www.politiet.no/globalassets/forside-admin/politiet.png",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "vegvesen",
+    "image": "./images/service-icons/official-vegvesen.png",
+    "imageSource": "https://www.vegvesen.no/trafikk",
+    "imageCredit": "Vegvesen trafikk · official website",
+    "original": "https://www.vegvesen.no/globalassets/trafikk/vegvesenno-trafikk-illustrasjon-some.png",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "yr",
+    "image": "./images/service-icons/official-yr.jpg",
+    "imageSource": "https://www.yr.no/",
+    "imageCredit": "Yr · official website",
+    "original": "https://www.yr.no/assets/images/yr-some.jpg",
+    "rightsNote": "Official website artwork; no open licence asserted."
+  },
+  {
+    "id": "viking",
+    "image": "./images/service-icons/official-viking.jpg",
+    "imageSource": "https://www.vikingredning.no/",
+    "imageCredit": "Viking Redningstjeneste · official website",
+    "original": "https://cdn.sanity.io/images/eocvjlv1/production-2024/bbc0ed4116515e40d53313ec23c48fc3ede5ce49-3840x2160.jpg?rect=480,0,2880,2160&w=800&h=600",
+    "rightsNote": "Official provider artwork; no open licence asserted."
+  },
+  {
+    "id": "redgo",
+    "image": "./images/service-icons/official-redgo.png",
+    "imageSource": "https://www.redgo.no/veihjelp",
+    "imageCredit": "redgo · official website",
+    "original": "https://www.redgo.no/images/favicon/assist/apple-touch-icon.png?v=WajpKQw8UWGdHq9ITd-6DghCX-rsZBgPQcjlCfutgtA",
+    "rightsNote": "Official provider logo; no open licence asserted."
+  },
+  {
+    "id": "naf",
+    "image": "./images/service-icons/official-naf.png",
+    "imageSource": "https://www.naf.no/",
+    "imageCredit": "NAF · official website",
+    "original": "https://res.cloudinary.com/nafmedier/image/upload/v1694692540/Logo/LogoNAF_480x480_ijk3ga.png",
+    "rightsNote": "Official provider artwork; no open licence asserted."
+  },
+  {
+    "id": "gjensidige",
+    "image": "./images/service-icons/official-gjensidige.png",
+    "imageSource": "https://www.gjensidige.no/",
+    "imageCredit": "gjensidige · official website",
+    "original": "https://cdn.gjensidige.no/builders/builders-platform/assets/favicons/gjensidige/apple-touch-icon.png",
+    "rightsNote": "Official provider logo; no open licence asserted."
+  },
+  {
+    "id": "if-insurance",
+    "image": "./images/service-icons/official-if-insurance.png",
+    "imageSource": "https://www.if.no/privat",
+    "imageCredit": "if-insurance · official website",
+    "original": "https://www.if.no/static/img/favicons/apple-touch-icon-512x512.png",
+    "rightsNote": "Official provider logo; no open licence asserted."
+  },
+  {
+    "id": "tryg",
+    "image": "./images/service-icons/official-tryg.jpg",
+    "imageSource": "https://www.tryg.no/",
+    "imageCredit": "Tryg · official website",
+    "original": "https://media.tryg.no/prod/styles/medium/azblob/tryg-no-2-0-media/2026-05/Livboyen.jpg?itok=8ZaLj7k-",
+    "rightsNote": "Official provider artwork; no open licence asserted."
+  },
+  {
+    "id": "fremtind",
+    "image": "./images/service-icons/official-fremtind.svg",
+    "imageSource": "https://www.fremtind.no/",
+    "imageCredit": "Fremtind · official website",
+    "original": "https://www.fremtind.no/assets/linkedin-logo-LCugXlaF.svg",
+    "rightsNote": "Official provider artwork; no open licence asserted."
+  },
+  {
+    "id": "medical-emergency",
+    "image": "./images/service-icons/official-medical-emergency.jpg",
+    "imageSource": "https://www.helsenorge.no/forstehjelp/ring-113",
+    "imageCredit": "Helsenorge · official website",
+    "original": "https://www.helsenorge.no/49ed51/globalassets/bilder/akuttmottak.jpg?width=1200&hash=23B853473D9428ABA6A6883AB61B22E89E043EEB02A2B21B8281F3EEAC537964",
+    "rightsNote": "Official information artwork; no open licence asserted."
+  },
+  {
+    "id": "fire-emergency",
+    "missing": true
+  }
+]

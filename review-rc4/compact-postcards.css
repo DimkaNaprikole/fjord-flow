@@ -1,0 +1,40 @@
+/* Photo and information occupy the same space instead of two stacked halves. */
+#cards.cards{gap:22px;grid-auto-rows:350px;grid-template-columns:repeat(3,minmax(0,1fr));padding-bottom:40px}
+#cards.cards>.compact-postcard{height:350px;min-height:0;padding:0;border-radius:19px;perspective:1100px;transform:none;overflow:visible;background:#133a49;border:1px solid #bddbd677;box-shadow:0 9px 26px #082f3a22}
+#cards.cards>.compact-postcard>.card-atmosphere{inset:-8px;z-index:-1;mask-image:none;border-radius:23px;opacity:.75}
+#cards.cards>.compact-postcard>.card-atmosphere img{filter:blur(7px);object-fit:cover}
+#cards.cards>.compact-postcard>.photo,#cards.cards>.compact-postcard>.postcard-back{position:absolute;inset:0;margin:0;width:100%;height:100%;border-radius:18px;overflow:hidden;backface-visibility:hidden;transition:transform .8s cubic-bezier(.22,.7,.25,1),opacity .5s;transform-style:preserve-3d}
+#cards.cards>.compact-postcard>.photo{transform:rotateY(0);z-index:1;background:#163c4b}
+#cards.cards>.compact-postcard>.photo>img{width:100%;height:100%;object-fit:cover}
+#cards.cards>.compact-postcard>.photo:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#041e2ce6);pointer-events:none}
+#cards.cards>.compact-postcard>.postcard-back{transform:rotateY(-180deg);z-index:2;padding:57px 14px 12px;display:flex;flex-direction:column;gap:9px;background:linear-gradient(#082b3ba6,#082b3bce),var(--postcard-photo) center/cover;backdrop-filter:blur(4px);overflow:auto;color:#f1fbf8;box-sizing:border-box}
+#cards.cards>.compact-postcard.postcard-open>.photo{transform:rotateY(180deg)}
+#cards.cards>.compact-postcard.postcard-open>.postcard-back{transform:rotateY(0)}
+#cards .compact-postcard .postcard-back .card-place-heading{margin:0;gap:8px;align-items:center}
+#cards .compact-postcard .postcard-back .card-place-heading>div{padding:0;background:none;border:0;box-shadow:none;backdrop-filter:none;flex:1;min-width:0}
+#cards .compact-postcard .postcard-back h3{font-size:25px;line-height:1.12;margin:4px 0;overflow-wrap:anywhere}
+#cards .compact-postcard .postcard-back .region{font-size:8px;margin:0;letter-spacing:1px}
+#cards .compact-postcard .postcard-back .card-arms{width:38px;min-width:38px;padding:4px;margin:0;border-radius:8px}
+#cards .compact-postcard .postcard-back .card-arms img{max-height:45px;width:100%;object-fit:contain}
+#cards .compact-postcard .postcard-back .description{font-size:11px;line-height:1.55;padding:0;margin:0;background:none;border:0;box-shadow:none;backdrop-filter:none}
+#cards .compact-postcard .postcard-back .card-bottom{margin:auto 0 0;padding:8px;gap:6px;border-radius:10px}
+#cards .compact-postcard .postcard-back .card-bottom strong{font-size:17px}
+#cards .compact-postcard .postcard-back .card-bottom small{font-size:8px;line-height:1.5;margin-top:4px}
+#cards .compact-postcard .postcard-back .card-bottom button{padding:8px 10px;min-height:40px;font-size:10px;white-space:nowrap}
+#cards .compact-postcard .postcard-back .reference{font-size:9px;min-height:26px;margin:0;padding:4px 0;border:0;background:none;box-shadow:none;backdrop-filter:none;align-self:flex-start}
+#cards .compact-postcard .postcard-caption{position:absolute;bottom:0;left:0;width:100%;padding:17px;z-index:3;text-align:left;color:#fff;background:linear-gradient(transparent,#082735e8);border:0;border-radius:0 0 18px 18px;transition:opacity .3s;cursor:pointer}
+#cards .compact-postcard .postcard-caption small{display:block;font:600 8px/1.5 Manrope,sans-serif;letter-spacing:1.6px;color:#d4e8e6}
+#cards .compact-postcard .postcard-caption strong{display:block;font:750 25px/1.15 Manrope,sans-serif;letter-spacing:-.7px;margin-top:5px;text-shadow:0 2px 14px #0008}
+#cards .compact-postcard.postcard-open .postcard-caption{opacity:0;pointer-events:none}
+#cards .compact-postcard .postcard-toggle{position:absolute;right:10px;top:10px;z-index:5;min-height:38px;padding:9px 12px;border-radius:999px;border:1px solid #deefeb88;background:#0b3245df;backdrop-filter:blur(12px);color:#fff;font:650 10px/1.4 Manrope,sans-serif;cursor:pointer}
+#cards .compact-postcard .postcard-toggle:focus-visible,#cards .compact-postcard .postcard-caption:focus-visible{outline:3px solid #f3d897;outline-offset:3px}
+#cards .compact-postcard .category{top:12px;left:10px;font-size:8px;padding:7px 9px;max-width:45%;box-sizing:border-box}
+#cards .compact-postcard .photo-hint{bottom:121px;right:10px;min-height:35px;padding:8px 10px;font-size:9px;z-index:2}
+#cards .compact-postcard .flight-launch{bottom:78px;left:10px;min-height:35px;padding:8px 10px;font-size:9px;z-index:2}
+@media(min-width:1300px){#cards.cards{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:950px){#cards.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:430px){#cards.cards{gap:14px;grid-auto-rows:310px}#cards.cards>.compact-postcard{height:310px}#cards .compact-postcard .postcard-caption{padding:12px}#cards .compact-postcard .postcard-caption strong{font-size:20px}#cards .compact-postcard .category{display:none}#cards .compact-postcard .postcard-back{padding:55px 9px 9px;gap:6px}#cards .compact-postcard .postcard-back h3{font-size:21px}#cards .compact-postcard .postcard-back .card-arms{display:none}#cards .compact-postcard .postcard-back .card-bottom{flex-wrap:wrap}#cards .compact-postcard .postcard-back .card-bottom small{display:none}}
+@media(prefers-reduced-motion:reduce){#cards.cards>.compact-postcard>.photo,#cards.cards>.compact-postcard>.postcard-back{transition:none}}
+@keyframes postcard-return-hint{0%,100%{box-shadow:0 0 0 0 #cbead300;border-color:#deefeb88}50%{box-shadow:0 0 0 5px #cbead338;border-color:#fff4c4;background:#285968}}
+#cards .compact-postcard.postcard-open .postcard-toggle{animation:postcard-return-hint 1.2s ease-in-out 3}
+@media(prefers-reduced-motion:reduce){#cards .compact-postcard.postcard-open .postcard-toggle{animation:none;border-color:#fff4c4}}

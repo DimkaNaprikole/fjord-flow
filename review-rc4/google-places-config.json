@@ -1,0 +1,6 @@
+{
+  "enabled": false,
+  "apiKey": "",
+  "radiusMeters": 10000,
+  "maxResults": 12
+}

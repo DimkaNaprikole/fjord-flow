@@ -1,0 +1,91 @@
+/* Static informational guide: public place data and road planning, without trip orders. */
+(()=>{'use strict';
+const nativeFetch=window.fetch.bind(window),copy=v=>JSON.parse(JSON.stringify(v));
+// Resolve against this script so a project Pages subdirectory and a domain root both work.
+const publicBase=new URL('.',document.currentScript?.src||document.baseURI);
+const apiPrefix=new URL('api/',publicBase).pathname;
+const messages={
+  "en": {
+    "blocked": "Community posting is not available yet. You can still explore the guide.",
+    "bookingDisabled": "This guide does not sell or reserve trips. Accommodation is booked with the provider.",
+    "route": "The road service is unavailable. Try a featured itinerary or open the route in Google Maps.",
+    "origin": "Enter an unambiguous Norwegian town or latitude,longitude.",
+    "access": "Choose a mainland road access point within 2 km of a mapped road.",
+    "invalid": "Choose valid destinations, stops and a detour between 0 and 240 minutes."
+  },
+  "nb": {
+    "blocked": "Innlegg i fellesskapet er ikke tilgjengelig ennå. Du kan fortsatt utforske guiden.",
+    "bookingDisabled": "Denne guiden selger eller bestiller ikke reiser. Overnatting bestilles hos tilbyderen.",
+    "route": "Rutetjenesten er utilgjengelig. Prøv en foreslått tur eller åpne ruten i Google Maps.",
+    "origin": "Skriv et entydig norsk stedsnavn eller breddegrad,lengdegrad.",
+    "access": "Velg et startpunkt på fastlandet innen 2 km fra en kartlagt vei.",
+    "invalid": "Velg gyldige reisemål, stopp og en omvei mellom 0 og 240 minutter."
+  },
+  "uk": {
+    "blocked": "Дописи спільноти ще недоступні. Путівником можна користуватися.",
+    "bookingDisabled": "Цей путівник не продає й не бронює поїздки. Житло бронюють у постачальника.",
+    "route": "Сервіс маршрутів недоступний. Оберіть готову подорож або відкрийте маршрут у Google Maps.",
+    "origin": "Уведіть однозначну назву міста Норвегії або широту,довготу.",
+    "access": "Оберіть точку на материку не далі 2 км від дороги.",
+    "invalid": "Оберіть чинні місця, зупинки та об’їзд від 0 до 240 хвилин."
+  },
+  "sv": {
+    "blocked": "Inlägg i gemenskapen är inte tillgängliga än. Du kan fortfarande utforska guiden.",
+    "bookingDisabled": "Guiden säljer eller bokar inte resor. Boende bokas hos leverantören.",
+    "route": "Ruttjänsten är otillgänglig. Prova en föreslagen resa eller öppna rutten i Google Maps.",
+    "origin": "Ange en entydig norsk ort eller latitud,longitud.",
+    "access": "Välj en plats på fastlandet inom 2 km från en kartlagd väg.",
+    "invalid": "Välj giltiga resmål, stopp och en omväg mellan 0 och 240 minuter."
+  },
+  "da": {
+    "blocked": "Indlæg i fællesskabet er ikke tilgængelige endnu. Du kan stadig udforske guiden.",
+    "bookingDisabled": "Guiden sælger eller booker ikke rejser. Overnatning bookes hos udbyderen.",
+    "route": "Rutetjenesten er utilgængelig. Prøv en foreslået tur eller åbn ruten i Google Maps.",
+    "origin": "Indtast et entydigt norsk stednavn eller breddegrad,længdegrad.",
+    "access": "Vælg et sted på fastlandet højst 2 km fra en kortlagt vej.",
+    "invalid": "Vælg gyldige rejsemål, stop og en omvej mellem 0 og 240 minutter."
+  }
+};
+const msg=k=>(messages[window.FjordI18n?.language||document.documentElement.lang]||messages.en)[k];
+const fail=k=>{throw Error(msg(k))},response=(v,status=200)=>new Response(JSON.stringify(v),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'}});
+window.FjordPublicDemo=Object.freeze({accountMessage:()=>msg('blocked')});
+let statePromise,routesPromise;
+async function asset(path){const r=await nativeFetch(new URL('demo-data/'+path,publicBase));if(!r.ok)fail('route');return r.json()}
+async function state(){return statePromise||(statePromise=asset('state.json?v=5').catch(e=>{statePromise=null;throw e}))}
+const norm=s=>String(s??'').normalize('NFC').trim().toLocaleLowerCase();
+const point=p=>{const a=[Number(p.latitude),Number(p.longitude)];if(!a.every(Number.isFinite)||a[0]<57||a[0]>72||a[1]<3||a[1]>33)fail('access');return a};
+const coords=s=>/^\s*[+-]?\d+(?:\.\d+)?\s*,\s*[+-]?\d+(?:\.\d+)?\s*$/.test(s)?s.split(',').map(Number):null;
+const distance=(a,b)=>{const r=Math.PI/180,x=(b[0]-a[0])*r,y=(b[1]-a[1])*r,h=Math.sin(x/2)**2+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(y/2)**2;return 12742*Math.asin(Math.min(1,Math.sqrt(h)))};
+const pack=ps=>ps.map(p=>p[1].toFixed(6)+','+p[0].toFixed(6)).join(';');
+const snap=p=>p&&Number.isFinite(p.distance)&&p.distance>=0&&p.distance<=2000;
+const abortReason=signal=>signal.reason||new DOMException('The request was aborted.','AbortError');
+function checkAbort(signal){if(signal?.aborted)throw abortReason(signal)}
+// Cancel this caller's wait without aborting assets shared by other route requests.
+function waitFor(promise,signal){if(!signal)return promise;return new Promise((resolve,reject)=>{const stop=()=>reject(abortReason(signal));signal.addEventListener('abort',stop,{once:true});const clean=()=>signal.removeEventListener('abort',stop);promise.then(value=>{clean();resolve(value)},error=>{clean();reject(error)});if(signal.aborted){clean();stop()}})}
+async function external(url,signal){checkAbort(signal);const controller=new AbortController(),stop=()=>controller.abort(abortReason(signal)),timeout=setTimeout(()=>controller.abort(),18000);signal?.addEventListener('abort',stop,{once:true});try{const r=await nativeFetch(url,{signal:controller.signal,credentials:'omit',referrerPolicy:'no-referrer'});if(!r.ok)fail('route');const d=await r.json();checkAbort(signal);if(d.code&&d.code!=='Ok')fail('route');return d}catch{checkAbort(signal);fail('route')}finally{clearTimeout(timeout);signal?.removeEventListener('abort',stop)}}
+async function origin(value,places,signal){checkAbort(signal);if(typeof value!=='string'||!value.trim()||value.length>180)fail('origin');const direct=coords(value);if(direct){const p=point({latitude:direct[0],longitude:direct[1]});return{latitude:p[0],longitude:p[1],label:'Selected location'}}
+ const known=places.find(p=>['id','name','geoName'].some(k=>norm(p[k])===norm(value)));if(known){point(known);return{latitude:known.latitude,longitude:known.longitude,label:known.geoName||known.name}}
+ const q=new URLSearchParams({sok:value.trim(),treffPerSide:'20',utkoordsys:'4258'}),d=await external('https://ws.geonorge.no/stedsnavn/v1/navn?'+q,signal),city=p=>['By','Tettsted','Grend','Bygdelag'].includes(p.navneobjekttype),list=d.navn||[];
+ list.sort((a,b)=>(Number(norm(a['skrivemåte'])!==norm(value))*2+Number(!city(a)))-(Number(norm(b['skrivemåte'])!==norm(value))*2+Number(!city(b))));if(!list.length||list.filter(p=>norm(p['skrivemåte'])===norm(value)&&city(p)).length>1)fail('origin');const p=list[0],a=point({latitude:p.representasjonspunkt?.nord,longitude:p.representasjonspunkt?.['øst']});return{latitude:a[0],longitude:a[1],label:p['skrivemåte']}}
+function progress(p,g){let best=Infinity,at=0,travel=0;const scale=Math.cos(p[0]*Math.PI/180);for(let i=1;i<g.length;i++){const a=g[i-1],b=g[i],x=(a[0]-p[1])*scale*111.195,y=(a[1]-p[0])*111.195,dx=(b[0]-a[0])*scale*111.195,dy=(b[1]-a[1])*111.195,den=dx*dx+dy*dy,t=den?Math.max(0,Math.min(1,-(x*dx+y*dy)/den)):0,gap=Math.hypot(x+t*dx,y+t*dy),length=distance([a[1],a[0]],[b[1],b[0]]);if(gap<best){best=gap;at=travel+t*length}travel+=length}return Math.round(at*100)/100}
+const road=(ps,signal)=>external('https://router.project-osrm.org/route/v1/driving/'+pack(ps)+'?overview=full&geometries=geojson&steps=false&continue_straight=false',signal);
+function checkedRoute(d,n){if(!d.routes?.[0]||d.waypoints?.length!==n||!d.waypoints.every(snap)||d.routes[0].geometry?.coordinates?.length<2)fail('access');return d.routes[0]}
+async function plan(p,places,signal){checkAbort(signal);const byid=new Map(places.map(x=>[x.id,x])),dest=byid.get(p.destination),requested=p.stops??[],limit=p.max_detour_minutes??60;if(!dest||!Array.isArray(requested)||requested.length>34||requested.some(id=>!byid.has(id))||!Number.isInteger(limit)||limit<0||limit>240)fail('invalid');const end=point(dest),o=await origin(p.origin,places,signal),start=point(o),base=checkedRoute(await road([start,end],signal),2),groups=[],canonical=new Map();
+ for(const place of places){if(place.id===dest.id||place.routeMode==='flight')continue;let a;try{a=point(place)}catch{continue}if(distance(a,start)<.15||distance(a,end)<.15){canonical.set(place.id,null);continue}const existing=groups.find(x=>distance(a,point(x))<.15);if(existing){canonical.set(place.id,existing.id);existing.also_includes.push(place.name);continue}canonical.set(place.id,place.id);groups.push({id:place.id,name:place.name,routeLabel:place.routeLabel||place.name,latitude:a[0],longitude:a[1],progress:progress(a,base.geometry.coordinates),also_includes:[]})}
+ const selected=[];for(const id of requested){if(byid.get(id).routeMode==='flight')fail('access');const c=canonical.get(id);if(c&&!selected.includes(c))selected.push(c)}
+ const out={origin:o,distance_km:Math.round(base.distance/100)/10,duration_minutes:Math.round(base.duration/60),candidates:[],selected_stops:selected,geometry:base.geometry.coordinates,max_detour_minutes:limit,attribution:'Driving estimates: OSRM / © OpenStreetMap contributors. Place names: Kartverket.',estimate_note:'Road estimates exclude sightseeing time, traffic, weather and current closures. Check ferry schedules and road access before departure.'};
+ if(groups.length){const pts=[start,...groups.map(point),end],table=await external('https://router.project-osrm.org/table/v1/driving/'+pack(pts)+'?annotations=duration,distance',signal),n=pts.length,d=table.durations,m=table.distances,s=table.sources;if(!Array.isArray(d)||!Array.isArray(m)||d.length!==n||m.length!==n||[...d,...m].some(r=>!Array.isArray(r)||r.length!==n)||s?.length!==n||!snap(s[0])||!snap(s[n-1]))fail('route');
+ groups.forEach((c,j)=>{const i=j+1,ok=snap(s[i])&&[d[0][i],d[i][n-1],m[0][i],m[i][n-1]].every(Number.isFinite);if(!ok){if(selected.includes(c.id))fail('access');return}const extra=Math.max(0,(d[0][i]+d[i][n-1]-base.duration)/60);c.extra_minutes=Math.ceil(extra);c.extra_km=Math.round(Math.max(0,(m[0][i]+m[i][n-1]-base.distance)/1000)*10)/10;if(extra<=limit||selected.includes(c.id))out.candidates.push(c)});out.candidates.sort((a,b)=>a.progress-b.progress)}
+ const actual=selected.length?checkedRoute(await road([start,...selected.map(id=>point(byid.get(id))),end],signal),selected.length+2):base;out.geometry=actual.geometry.coordinates;out.total_distance_km=Math.round(actual.distance/100)/10;out.total_duration_minutes=Math.round(actual.duration/60);return out}
+async function route(p,signal){checkAbort(signal);const places=(await waitFor(state(),signal)).destinations;try{const snapshots=await waitFor(routesPromise||(routesPromise=asset('routes.json').catch(e=>{routesPromise=null;throw e})),signal);checkAbort(signal);for(const item of Object.values(snapshots)){if(!item?.request||!item.result)continue;const r=item.request,requested=p.stops||[],wanted=r.stops||[];if(p.destination!==r.destination||JSON.stringify(requested)!==JSON.stringify(wanted)||(p.max_detour_minutes??60)!==(r.max_detour_minutes??60))continue;const knownOrigins={bergen:[60.39323,5.3245],'åndalsnes':[62.56749,7.68709]};const pc=coords(String(p.origin||''))||knownOrigins[norm(p.origin)],rc=coords(String(r.origin||'')),saved=item.result.origin;let match=norm(p.origin)===norm(r.origin);if(pc){const a=rc||(saved?[saved.latitude,saved.longitude]:null);match=!!a&&distance(pc,a)<.1}if(match)return copy(item.result)}}catch{checkAbort(signal);/* Live road service remains available when a snapshot is absent. */}return plan(p,places,signal)}
+window.fetch=async function(input,init={}){const url=new URL(input instanceof Request?input.url:String(input),document.baseURI);if(url.origin!==location.origin||!url.pathname.startsWith(apiPrefix))return nativeFetch(input,init);const path=url.pathname.slice(apiPrefix.length),method=(init.method||(input instanceof Request?input.method:'GET')).toUpperCase(),signal=init.signal||(input instanceof Request?input.signal:undefined);try{checkAbort(signal);
+ if(path==='state'&&method==='GET')return response(copy(await state()));
+ if(path==='videos'&&method==='GET')return response(await asset('videos.json'));
+ if(path==='community'&&method==='GET')return response({me:null,posts:[]});
+ if(path.startsWith('community'))return response({error:msg('blocked')},403);
+ let payload={};if(init.body)payload=JSON.parse(init.body);else if(input instanceof Request&&method!=='GET')payload=await input.clone().json();
+ if(path==='route'&&method==='POST')return response(await route(payload,signal));
+ if(path==='book')return response({error:msg('bookingDisabled')},410);
+ return response({error:msg('blocked')},403);
+ }catch(e){checkAbort(signal);return response({error:e instanceof Error?e.message:msg('route')},400)}};
+})();

@@ -1,0 +1,240 @@
+{
+  "checked": "2026-10-19",
+  "cameras": [
+    {
+      "id": "tokyo-shibuya-ann",
+      "name": "Tokyo · Shibuya",
+      "operator": "ANN / TV Asahi",
+      "youtube": "8H3nRCFVR6Y",
+      "url": "https://www.youtube.com/watch?v=8H3nRCFVR6Y",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official verified ANNnewsCH channel; current live stream, readyState 4. Embedded player visually checked before publication."
+    },
+    {
+      "id": "venice-caangeli-4k",
+      "name": "Venezia · Canal Grande",
+      "operator": "Ca’ Angeli / I Love You Venice",
+      "youtube": "zKGzYuT5tg0",
+      "url": "https://www.caangeli.it/es/webcams/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official operator page embeds this YouTube player; moving canal image and 2026-10-19 09:47:50 camera timestamp observed at 09:48 local."
+    },
+    {
+      "id": "hollywood-broadwalk",
+      "name": "Hollywood, Florida · Broadwalk",
+      "operator": "City of Hollywood",
+      "youtube": "cmkAbDUEoyA",
+      "url": "https://www.hollywoodfl.org/1047/Hollywood-Beach-Webcams?NID=349",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed playing; LIVE edge; camera changed view from boardwalk to beach. Overlay about 04:01 AM matched 08:01 UTC."
+    },
+    {
+      "id": "hollywood-beach-theatre",
+      "name": "Hollywood, Florida · Beach Theatre",
+      "operator": "City of Hollywood",
+      "youtube": "pcPwY5Qg594",
+      "url": "https://www.hollywoodfl.org/1047/Hollywood-Beach-Webcams?NID=349",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed playing; real illuminated night square, LIVE edge on City of Hollywood channel."
+    },
+    {
+      "id": "jupiter-sawfish-bay",
+      "name": "Jupiter, Florida · Sawfish Bay",
+      "operator": "Town of Jupiter",
+      "youtube": "jjFUDD3hWxE",
+      "url": "https://jupiter.fl.us/2096/Jup-Life-Live-Cams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; moving nighttime bay view. Town of Jupiter channel, LIVE edge, readyState4 pausedfalse. No separate date overlay."
+    },
+    {
+      "id": "deerfield-pier",
+      "name": "Deerfield Beach · Fishing Pier",
+      "operator": "City of Deerfield Beach",
+      "youtube": "H33wtprQqSM",
+      "url": "https://deerfield-beach.com/beachcams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; real illuminated pier deck, LIVE edge, timestamp04:05:58."
+    },
+    {
+      "id": "deerfield-beach",
+      "name": "Deerfield Beach · Beach",
+      "operator": "City of Deerfield Beach",
+      "youtube": "rdeoEeJ00xA",
+      "url": "https://deerfield-beach.com/beachcams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; real pier and moving waves, LIVE edge, weather overlay04:08."
+    },
+    {
+      "id": "deerfield-sports",
+      "name": "Deerfield Beach · Volleyball",
+      "operator": "City of Deerfield Beach",
+      "youtube": "1PLqzPwXP0c",
+      "url": "https://deerfield-beach.com/beachcams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; live night sports court, timestamp04:11:49."
+    },
+    {
+      "id": "jupiter-memorial",
+      "name": "Jupiter · Veterans Memorial",
+      "operator": "Town of Jupiter",
+      "youtube": "-nJwQ5ECvUw",
+      "url": "https://jupiter.fl.us/2096/Jup-Life-Live-Cams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official municipal embed; illuminated night plaza, playing video readyState4 with advancing playback time."
+    },
+    {
+      "id": "kilauea-v1",
+      "name": "Hawaiʻi · Kīlauea V1",
+      "operator": "USGS Hawaiian Volcano Observatory",
+      "youtube": "HggWKlZv9yk",
+      "url": "https://www.usgs.gov/volcanoes/kilauea/summit-webcams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official current stream; overlay2026-10-18 22:16:14HST matched19Oct08:16UTC; night crater with glowing vents.",
+      "note": {
+        "nb": "Nattbildet kan være mørkt.",
+        "en": "The night view may be dark.",
+        "uk": "Уночі зображення може бути темним.",
+        "sv": "Nattbilden kan vara mörk.",
+        "da": "Natbilledet kan være mørkt."
+      }
+    },
+    {
+      "id": "kilauea-v3",
+      "name": "Hawaiʻi · Kīlauea V3",
+      "operator": "USGS Hawaiian Volcano Observatory",
+      "youtube": "gXKuUyKt8mc",
+      "url": "https://url.usgs.gov/v3cam",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official current stream; overlay2026-10-18 22:16:29HST matched19Oct08:16UTC; moving live nighttime crater view.",
+      "note": {
+        "nb": "Nattbildet kan være mørkt.",
+        "en": "The night view may be dark.",
+        "uk": "Уночі зображення може бути темним.",
+        "sv": "Nattbilden kan vara mörk.",
+        "da": "Natbilledet kan være mørkt."
+      }
+    },
+    {
+      "id": "taipei-xiangshan",
+      "name": "Taipei · Xiangshan / Taipei 101",
+      "operator": "Taipei City Tourism",
+      "youtube": "z_fY1pj1VBw",
+      "url": "https://www.travel.taipei/4k-livestream/#/zh-tw/107",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official city tourism embed; actual skyline, playing at LIVE edge,61viewers at check."
+    },
+    {
+      "id": "seoul-plaza",
+      "name": "Seoul · Seoul Plaza",
+      "operator": "Seoul Metropolitan Government",
+      "youtube": "pBKHz27GG3c",
+      "url": "https://world.seoul.go.kr/news-events/multimedia/seoul-live/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official city government embed; real plaza, people/cars, playing at red LIVE edge."
+    },
+    {
+      "id": "tallinn-old-town",
+      "name": "Tallinn · Old Town",
+      "operator": "Digital.Tallinn / 360PANO",
+      "youtube": "VhVgZi2lGv0",
+      "url": "https://tallinn.info/citycam/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official operator embed; old-town traffic, overlay19-10-2026 11:16:11, LIVE."
+    },
+    {
+      "id": "prague-mozart",
+      "name": "Praha · Vltava / Mozart",
+      "operator": "CamStreamer / The Mozart Prague",
+      "youtube": "kvYMIaXclIE",
+      "url": "https://www.youtube.com/@Camstreamer_com/streams",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Current official CamStreamer LIVE stream since30Sep2026; real Vltava/LichtensteinPalace/PTZ view. Operator may show occasional own promos."
+    },
+    {
+      "id": "helsinki-south-harbour",
+      "name": "Helsinki · South Harbour",
+      "operator": "Port of Helsinki",
+      "youtube": "CvOB-Is_yYU",
+      "url": "https://www.portofhelsinki.fi/en/about-us/port-of-helsinki/web-camera-south-harbour/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official Port of Helsinki stream linked by thisisFINLAND; actual moving harbour/ferry image confirmed in embedded player on local site; live status also checked on YouTube."
+    },
+    {
+      "id": "riga-zoo-lions",
+      "name": "Rīga · Zoo / Lions",
+      "operator": "Rīga ZOO",
+      "youtube": "lbon7ER65L0",
+      "url": "https://rigazoo.lv/en/lion-live/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Current player embedded by official Riga ZOO; enclosure image plays in local site embed. Official RigaZOO YouTube channel confirms current live stream, started 26 June 2026. Animals may be outside the current camera view."
+    },
+    {
+      "id": "dublin-poolbeg",
+      "name": "Dublin · Poolbeg Lighthouse",
+      "operator": "Dublin Port",
+      "youtube": "jy3fkOBIolk",
+      "url": "https://www.dublinport.ie/webcam/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official operator iframe visually playing at LIVE edge. Operator discloses approximately 10-minute safety delay.",
+      "note": {
+        "nb": "Omtrent 10 minutters forsinkelse av sikkerhetshensyn.",
+        "en": "Approximately 10-minute delay for safety.",
+        "uk": "Затримка приблизно 10 хвилин з міркувань безпеки.",
+        "sv": "Cirka 10 minuters fördröjning av säkerhetsskäl.",
+        "da": "Cirka 10 minutters forsinkelse af sikkerhedshensyn."
+      }
+    },
+    {
+      "id": "dublin-bay",
+      "name": "Dublin · Bay",
+      "operator": "Dublin Port",
+      "youtube": "oxx7MqjhOpw",
+      "url": "https://www.dublinport.ie/webcam/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official operator iframe playing; real harbour/ferries, overlay 19 October 2026 09:28; approximately 10-minute safety delay disclosed.",
+      "note": {
+        "nb": "Omtrent 10 minutters forsinkelse av sikkerhetshensyn.",
+        "en": "Approximately 10-minute delay for safety.",
+        "uk": "Затримка приблизно 10 хвилин з міркувань безпеки.",
+        "sv": "Cirka 10 minuters fördröjning av säkerhetsskäl.",
+        "da": "Cirka 10 minutters forsinkelse af sikkerhedshensyn."
+      }
+    },
+    {
+      "id": "dublin-liffey",
+      "name": "Dublin · River Liffey",
+      "operator": "Dublin Port",
+      "youtube": "K_ye7QHXosQ",
+      "url": "https://www.dublinport.ie/webcam/",
+      "checked": "2026-10-19",
+      "verification": "embedded-visual",
+      "evidence": "Official operator iframe playing with moving tug, harbour/city; overlay 19 October 2026 09:28; approximately 10-minute safety delay disclosed.",
+      "note": {
+        "nb": "Omtrent 10 minutters forsinkelse av sikkerhetshensyn.",
+        "en": "Approximately 10-minute delay for safety.",
+        "uk": "Затримка приблизно 10 хвилин з міркувань безпеки.",
+        "sv": "Cirka 10 minuters fördröjning av säkerhetsskäl.",
+        "da": "Cirka 10 minutters forsinkelse af sikkerhedshensyn."
+      }
+    }
+  ]
+}

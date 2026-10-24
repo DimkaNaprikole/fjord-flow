@@ -1,0 +1,7 @@
+.hero .journey-doodles{display:block;position:absolute;z-index:9;top:22px;right:30px;bottom:auto;left:auto;width:232px;max-width:calc(100% - 40px);height:auto;transform:none;opacity:1;color:#fff1c6}
+.hero .brand-luggage{display:flex;flex-direction:column;align-items:center;gap:4px;padding:0 8px;text-decoration:none;color:#fff1c6;filter:drop-shadow(0 2px 3px #032334cc)}
+.hero .brand-luggage>svg{display:block;position:static;width:204px;max-width:100%;height:58px;opacity:1;stroke:#ffe3a0;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px #fff0aa35)}
+.hero .brand-luggage>svg rect{stroke:#bcebe3}.hero .brand-luggage>svg circle{stroke:#fff7df}
+.hero .brand-luggage .brand-rhythm-tagline{display:block;margin:0;text-align:center;font-family:'Segoe Print','Bradley Hand',cursive;font-size:11px;font-weight:750;line-height:1.5;letter-spacing:.2px;text-transform:none;color:#fff8df;text-shadow:0 2px 5px #032334,0 0 12px #032334}
+.hero .brand-luggage:focus-visible{outline:2px solid #ffe3a0;outline-offset:5px;border-radius:8px}.hero .brand-luggage:hover>svg{stroke:#fff5d8}
+@media(max-width:650px){.hero .journey-doodles{display:block;top:17px;right:20px;width:190px}.hero .brand-luggage>svg{width:165px;height:47px}.hero .brand-luggage .brand-rhythm-tagline{font-size:9px}.hero .hero-content{padding-top:110px}}

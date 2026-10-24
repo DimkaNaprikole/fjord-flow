@@ -1,0 +1,365 @@
+[
+  {
+    "id": "vy",
+    "name": "Vy",
+    "url": "https://www.vy.no/en",
+    "description": {
+      "nb": "Tog og buss.",
+      "en": "Trains and buses.",
+      "uk": "Потяги й автобуси.",
+      "sv": "Tåg och bussar.",
+      "da": "Tog og busser."
+    },
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "vipps",
+    "name": "Vipps",
+    "url": "https://vipps.no/",
+    "description": {
+      "nb": "Mobilbetaling.",
+      "en": "Mobile payments.",
+      "uk": "Мобільні платежі.",
+      "sv": "Mobilbetalningar.",
+      "da": "Mobilbetaling."
+    },
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "nav",
+    "name": "NAV",
+    "url": "https://www.nav.no/",
+    "description": {
+      "nb": "Arbeid og velferdstjenester.",
+      "en": "Work and welfare services.",
+      "uk": "Робота та соціальні послуги.",
+      "sv": "Arbete och välfärdstjänster.",
+      "da": "Arbejde og velfærdstjenester."
+    },
+    "checked": "2026-10-19",
+    "details": {
+      "nb": "Finn veiledning om jobbsøking, søknader, skjemaer, meldekort og utbetalinger.",
+      "en": "Find guidance on job seeking, applications, forms, employment status forms and payments.",
+      "uk": "Пошук роботи, заяви, форми, meldekort і відомості про виплати.",
+      "sv": "Vägledning om jobbsökning, ansökningar, formulär, meldekort och utbetalningar.",
+      "da": "Vejledning om jobsøgning, ansøgninger, formularer, meldekort og udbetalinger."
+    }
+  },
+  {
+    "id": "helsenorge",
+    "name": "Helsenorge",
+    "url": "https://www.helsenorge.no/",
+    "description": {
+      "nb": "Offentlige helsetjenester på nett.",
+      "en": "Public health services online.",
+      "uk": "Державні медичні послуги онлайн.",
+      "sv": "Offentliga hälsotjänster online.",
+      "da": "Offentlige sundhedstjenester online."
+    },
+    "checked": "2026-10-19",
+    "details": {
+      "nb": "Se timeavtaler, resepter, meldinger og tilgjengelige helsetjenester på Helsenorge.",
+      "en": "View appointments, prescriptions, messages and available healthcare services on Helsenorge.",
+      "uk": "Записи до лікаря, рецепти, повідомлення та доступні медичні послуги на Helsenorge.",
+      "sv": "Se tidsbokningar, recept, meddelanden och tillgängliga vårdtjänster på Helsenorge.",
+      "da": "Se tidsbestillinger, recepter, beskeder og tilgængelige sundhedstjenester på Helsenorge."
+    }
+  },
+  {
+    "id": "skatteetaten",
+    "name": "Skatteetaten",
+    "url": "https://www.skatteetaten.no/person/",
+    "description": {
+      "nb": "Skatt og folkeregister.",
+      "en": "Taxes and the population register.",
+      "uk": "Податки та реєстр населення.",
+      "sv": "Skatt och folkbokföring.",
+      "da": "Skat og folkeregister."
+    },
+    "checked": "2026-10-19",
+    "details": {
+      "nb": "Finn skattekort, skattemelding, skatteoppgjør og tjenester for adresse og folkeregister.",
+      "en": "Find tax cards, tax returns, tax assessments, address and population register services.",
+      "uk": "Податкова картка, декларація, податковий розрахунок, адреса та реєстр населення.",
+      "sv": "Skattekort, deklaration, skattebesked, adress och folkbokföring.",
+      "da": "Skattekort, selvangivelse, skatteopgørelse, adresse og folkeregister."
+    }
+  },
+  {
+    "id": "udi",
+    "name": "UDI",
+    "url": "https://www.udi.no/en/",
+    "description": {
+      "nb": "Informasjon om innvandring og opphold.",
+      "en": "Immigration and residence information.",
+      "uk": "Інформація про імміграцію та проживання.",
+      "sv": "Information om invandring och uppehåll.",
+      "da": "Information om indvandring og ophold."
+    },
+    "checked": "2026-10-19",
+    "details": {
+      "nb": "Se søknadsveiledning, dokumentlister, ventetider og informasjon om opphold.",
+      "en": "Read application guides, document checklists, waiting times and residence information.",
+      "uk": "Інструкції до заяв, переліки документів, строки очікування й інформація про проживання.",
+      "sv": "Ansökningsguider, dokumentlistor, väntetider och information om uppehåll.",
+      "da": "Ansøgningsvejledning, dokumentlister, ventetider og information om ophold."
+    }
+  },
+  {
+    "id": "altinn",
+    "name": "Altinn",
+    "url": "https://info.altinn.no/",
+    "description": {
+      "nb": "Offentlige skjemaer og digitale tjenester.",
+      "en": "Public forms and digital services.",
+      "uk": "Державні форми та цифрові послуги.",
+      "sv": "Offentliga formulär och digitala tjänster.",
+      "da": "Offentlige formularer og digitale tjenester."
+    },
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "politiet",
+    "name": "Politiet",
+    "url": "https://www.politiet.no/",
+    "description": {
+      "nb": "Politiets informasjon og tjenester.",
+      "en": "Police information and services.",
+      "uk": "Інформація та послуги поліції.",
+      "sv": "Polisens information och tjänster.",
+      "da": "Politiets information og tjenester."
+    },
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "vegvesen",
+    "name": "Vegvesen trafikk",
+    "url": "https://www.vegvesen.no/trafikk",
+    "description": {
+      "nb": "Trafikkmeldinger, kameraer og ruteplanlegging.",
+      "en": "Traffic notices, cameras and route planning.",
+      "uk": "Дорожні повідомлення, камери та планування маршруту.",
+      "sv": "Trafikmeddelanden, kameror och ruttplanering.",
+      "da": "Trafikmeldinger, kameraer og ruteplanlægning."
+    },
+    "checked": "2026-10-19",
+    "details": {
+      "nb": "Sjekk trafikkmeldinger, webkamera og ruteplanlegger før du kjører.",
+      "en": "Check traffic notices, webcams and the route planner before driving.",
+      "uk": "Перед виїздом перевірте дорожні повідомлення, вебкамери та планувальник маршруту.",
+      "sv": "Kontrollera trafikmeddelanden, webbkameror och ruttplaneraren före körning.",
+      "da": "Tjek trafikmeldinger, webkameraer og ruteplanlæggeren før du kører."
+    }
+  },
+  {
+    "id": "yr",
+    "name": "Yr",
+    "url": "https://www.yr.no/",
+    "description": {
+      "nb": "Værmelding for reisemålet.",
+      "en": "Weather forecast for your destination.",
+      "uk": "Прогноз погоди для місця призначення.",
+      "sv": "Väderprognos för resmålet.",
+      "da": "Vejrudsigt for rejsemålet."
+    },
+    "checked": "2026-10-19",
+    "details": {
+      "nb": "Søk etter reisemålet og se værmelding, nedbør og vind.",
+      "en": "Search for your destination and view the weather forecast, precipitation and wind.",
+      "uk": "Знайдіть місце призначення й перегляньте прогноз погоди, опади та вітер.",
+      "sv": "Sök efter resmålet och se väderprognos, nederbörd och vind.",
+      "da": "Søg efter rejsemålet og se vejrudsigt, nedbør og vind."
+    }
+  },
+  {
+    "id": "viking",
+    "name": "Viking Redningstjeneste",
+    "url": "https://www.vikingredning.no/",
+    "description": {
+      "nb": "Veihjelp og bilberging ved motorstopp, punktering og flatt batteri. Bestill hjelp på Vikings offisielle nettsted.",
+      "en": "Roadside assistance and towing for breakdowns, punctures and flat batteries. Request help through Viking’s official website.",
+      "uk": "Допомога на дорозі та евакуація при поломці, проколі шини або розрядженому акумуляторі. Замовлення — на офіційному сайті Viking.",
+      "sv": "Vägassistans och bärgning vid motorstopp, punktering och urladdat batteri. Beställ hjälp på Vikings webbplats.",
+      "da": "Vejhjælp og bugsering ved motorstop, punktering og fladt batteri. Bestil hjælp på Vikings officielle hjemmeside."
+    },
+    "details": {
+      "nb": "Pris, egenandel og dekning avhenger av medlemskap eller forsikringsavtale. Bekreft dette hos leverandøren før bestilling.",
+      "en": "Cost, excess and coverage depend on the membership or insurance policy. Confirm these with the provider before ordering.",
+      "uk": "Вартість, франшиза й покриття залежать від членства або страхового договору. Уточніть умови в оператора перед замовленням.",
+      "sv": "Pris, självrisk och skydd beror på medlemskap eller försäkringsavtal. Bekräfta villkoren före beställning.",
+      "da": "Pris, selvrisiko og dækning afhænger af medlemskab eller forsikringsaftale. Bekræft vilkårene før bestilling."
+    },
+    "category": "roadside",
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "redgo",
+    "name": "REDGO · tidligere Falck",
+    "url": "https://www.redgo.no/veihjelp",
+    "description": {
+      "nb": "Veihjelp og bilberging. Den tidligere Falck Redning-tjenesten heter nå REDGO.",
+      "en": "Roadside assistance and towing. The former Falck Redning service is now called REDGO.",
+      "uk": "Допомога на дорозі та евакуація. Колишня служба Falck Redning тепер називається REDGO.",
+      "sv": "Vägassistans och bärgning. Tidigare Falck Redning heter nu REDGO.",
+      "da": "Vejhjælp og bugsering. Den tidligere Falck Redning hedder nu REDGO."
+    },
+    "details": {
+      "nb": "Pris, egenandel og dekning avhenger av medlemskap eller forsikringsavtale. Bekreft dette hos leverandøren før bestilling.",
+      "en": "Cost, excess and coverage depend on the membership or insurance policy. Confirm these with the provider before ordering.",
+      "uk": "Вартість, франшиза й покриття залежать від членства або страхового договору. Уточніть умови в оператора перед замовленням.",
+      "sv": "Pris, självrisk och skydd beror på medlemskap eller försäkringsavtal. Bekräfta villkoren före beställning.",
+      "da": "Pris, selvrisiko og dækning afhænger af medlemskab eller forsikringsaftale. Bekræft vilkårene før bestilling."
+    },
+    "category": "roadside",
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "naf",
+    "name": "NAF",
+    "url": "https://www.naf.no/",
+    "description": {
+      "nb": "Bilorganisasjon med veihjelp, biltester og råd til bilister. Sjekk hva det valgte medlemskapet inkluderer.",
+      "en": "Motoring organisation offering roadside assistance, vehicle tests and advice. Check what your chosen membership includes.",
+      "uk": "Автомобільна організація: допомога на дорозі, перевірки автомобіля й поради водіям. Уточнюйте склад обраного членства.",
+      "sv": "Bilorganisation med vägassistans, biltester och råd. Kontrollera vad medlemskapet omfattar.",
+      "da": "Bilorganisation med vejhjælp, biltest og råd til bilister. Tjek hvad medlemskabet omfatter."
+    },
+    "details": {
+      "nb": "Pris, egenandel og dekning avhenger av medlemskap eller forsikringsavtale. Bekreft dette hos leverandøren før bestilling.",
+      "en": "Cost, excess and coverage depend on the membership or insurance policy. Confirm these with the provider before ordering.",
+      "uk": "Вартість, франшиза й покриття залежать від членства або страхового договору. Уточніть умови в оператора перед замовленням.",
+      "sv": "Pris, självrisk och skydd beror på medlemskap eller försäkringsavtal. Bekräfta villkoren före beställning.",
+      "da": "Pris, selvrisiko og dækning afhænger af medlemskab eller forsikringsaftale. Bekræft vilkårene før bestilling."
+    },
+    "category": "roadside",
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "gjensidige",
+    "name": "Gjensidige",
+    "url": "https://www.gjensidige.no/",
+    "description": {
+      "nb": "Forsikringsselskap. Se bil- og reiseforsikring, meld skade og finn kontaktinformasjon på selskapets nettsted.",
+      "en": "Insurance company. Find car and travel insurance, claim reporting and contact information on the company website.",
+      "uk": "Страхова компанія. Автострахування, страхування подорожей, повідомлення про страховий випадок і контакти — на сайті компанії.",
+      "sv": "Försäkringsbolag. Se bil- och reseförsäkring, skadeanmälan och kontaktuppgifter på bolagets webbplats.",
+      "da": "Forsikringsselskab. Se bil- og rejseforsikring, skadeanmeldelse og kontaktoplysninger på selskabets hjemmeside."
+    },
+    "details": {
+      "nb": "Pris, egenandel og dekning avhenger av medlemskap eller forsikringsavtale. Bekreft dette hos leverandøren før bestilling.",
+      "en": "Cost, excess and coverage depend on the membership or insurance policy. Confirm these with the provider before ordering.",
+      "uk": "Вартість, франшиза й покриття залежать від членства або страхового договору. Уточніть умови в оператора перед замовленням.",
+      "sv": "Pris, självrisk och skydd beror på medlemskap eller försäkringsavtal. Bekräfta villkoren före beställning.",
+      "da": "Pris, selvrisiko og dækning afhænger af medlemskab eller forsikringsaftale. Bekræft vilkårene før bestilling."
+    },
+    "category": "insurance",
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "if-insurance",
+    "name": "If",
+    "url": "https://www.if.no/privat",
+    "description": {
+      "nb": "Forsikringsselskap. Se bil- og reiseforsikring, meld skade og finn kontaktinformasjon på selskapets nettsted.",
+      "en": "Insurance company. Find car and travel insurance, claim reporting and contact information on the company website.",
+      "uk": "Страхова компанія. Автострахування, страхування подорожей, повідомлення про страховий випадок і контакти — на сайті компанії.",
+      "sv": "Försäkringsbolag. Se bil- och reseförsäkring, skadeanmälan och kontaktuppgifter på bolagets webbplats.",
+      "da": "Forsikringsselskab. Se bil- og rejseforsikring, skadeanmeldelse og kontaktoplysninger på selskabets hjemmeside."
+    },
+    "details": {
+      "nb": "Pris, egenandel og dekning avhenger av medlemskap eller forsikringsavtale. Bekreft dette hos leverandøren før bestilling.",
+      "en": "Cost, excess and coverage depend on the membership or insurance policy. Confirm these with the provider before ordering.",
+      "uk": "Вартість, франшиза й покриття залежать від членства або страхового договору. Уточніть умови в оператора перед замовленням.",
+      "sv": "Pris, självrisk och skydd beror på medlemskap eller försäkringsavtal. Bekräfta villkoren före beställning.",
+      "da": "Pris, selvrisiko og dækning afhænger af medlemskab eller forsikringsaftale. Bekræft vilkårene før bestilling."
+    },
+    "category": "insurance",
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "tryg",
+    "name": "Tryg",
+    "url": "https://www.tryg.no/",
+    "description": {
+      "nb": "Forsikringsselskap. Se bil- og reiseforsikring, meld skade og finn kontaktinformasjon på selskapets nettsted.",
+      "en": "Insurance company. Find car and travel insurance, claim reporting and contact information on the company website.",
+      "uk": "Страхова компанія. Автострахування, страхування подорожей, повідомлення про страховий випадок і контакти — на сайті компанії.",
+      "sv": "Försäkringsbolag. Se bil- och reseförsäkring, skadeanmälan och kontaktuppgifter på bolagets webbplats.",
+      "da": "Forsikringsselskab. Se bil- og rejseforsikring, skadeanmeldelse og kontaktoplysninger på selskabets hjemmeside."
+    },
+    "details": {
+      "nb": "Pris, egenandel og dekning avhenger av medlemskap eller forsikringsavtale. Bekreft dette hos leverandøren før bestilling.",
+      "en": "Cost, excess and coverage depend on the membership or insurance policy. Confirm these with the provider before ordering.",
+      "uk": "Вартість, франшиза й покриття залежать від членства або страхового договору. Уточніть умови в оператора перед замовленням.",
+      "sv": "Pris, självrisk och skydd beror på medlemskap eller försäkringsavtal. Bekräfta villkoren före beställning.",
+      "da": "Pris, selvrisiko og dækning afhænger af medlemskab eller forsikringsaftale. Bekræft vilkårene før bestilling."
+    },
+    "category": "insurance",
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "fremtind",
+    "name": "Fremtind",
+    "url": "https://www.fremtind.no/",
+    "description": {
+      "nb": "Forsikringsselskap. Se bil- og reiseforsikring, meld skade og finn kontaktinformasjon på selskapets nettsted.",
+      "en": "Insurance company. Find car and travel insurance, claim reporting and contact information on the company website.",
+      "uk": "Страхова компанія. Автострахування, страхування подорожей, повідомлення про страховий випадок і контакти — на сайті компанії.",
+      "sv": "Försäkringsbolag. Se bil- och reseförsäkring, skadeanmälan och kontaktuppgifter på bolagets webbplats.",
+      "da": "Forsikringsselskab. Se bil- og rejseforsikring, skadeanmeldelse og kontaktoplysninger på selskabets hjemmeside."
+    },
+    "details": {
+      "nb": "Pris, egenandel og dekning avhenger av medlemskap eller forsikringsavtale. Bekreft dette hos leverandøren før bestilling.",
+      "en": "Cost, excess and coverage depend on the membership or insurance policy. Confirm these with the provider before ordering.",
+      "uk": "Вартість, франшиза й покриття залежать від членства або страхового договору. Уточніть умови в оператора перед замовленням.",
+      "sv": "Pris, självrisk och skydd beror på medlemskap eller försäkringsavtal. Bekräfta villkoren före beställning.",
+      "da": "Pris, selvrisiko og dækning afhænger af medlemskab eller forsikringsaftale. Bekræft vilkårene før bestilling."
+    },
+    "category": "insurance",
+    "checked": "2026-10-19"
+  },
+  {
+    "id": "medical-emergency",
+    "name": "113 · Ambulanse",
+    "url": "https://www.helsenorge.no/forstehjelp/ring-113",
+    "phone": "113",
+    "category": "emergency",
+    "checked": "2026-10-19",
+    "description": {
+      "nb": "Ring 113 ved alvorlig ulykke eller akutt fare for liv og helse. For hjelp som ikke kan vente til fastlegen, men ikke er livstruende: legevakt 116 117.",
+      "en": "Call 113 for serious accidents or immediate danger to life and health. For urgent medical help that cannot wait for your GP but is not life-threatening: out-of-hours medical service 116 117.",
+      "uk": "Телефонуйте 113 при серйозній аварії або безпосередній загрозі життю та здоров’ю. Якщо медична допомога не може чекати сімейного лікаря, але загрози життю немає: чергова медична служба 116 117.",
+      "sv": "Ring 113 vid allvarlig olycka eller akut fara för liv och hälsa. För brådskande vård som inte kan vänta på vårdcentralen men inte är livshotande: legevakt 116 117.",
+      "da": "Ring 113 ved alvorlige ulykker eller akut fare for liv og helbred. For akut lægehjælp, der ikke kan vente på egen læge, men ikke er livstruende: lægevagt 116 117."
+    },
+    "details": {
+      "nb": "Offisiell informasjon fra Helsenorge.",
+      "en": "Official information from Helsenorge.",
+      "uk": "Офіційна інформація Helsenorge.",
+      "sv": "Officiell information från Helsenorge.",
+      "da": "Officiel information fra Helsenorge."
+    }
+  },
+  {
+    "id": "fire-emergency",
+    "name": "110 · Brann og redning",
+    "url": "https://www.dsb.no/brannsikkerhet/nodmelding/110-sentralene/",
+    "phone": "110",
+    "category": "emergency",
+    "checked": "2026-10-19",
+    "description": {
+      "nb": "Ring brannvesenets nødnummer 110 ved brann, ulykker eller andre akutte situasjoner som krever brann- og redningsvesenet.",
+      "en": "Call the fire emergency number 110 for fires, accidents or other emergencies requiring the fire and rescue service.",
+      "uk": "Телефонуйте за пожежним номером 110 у разі пожежі, аварії або іншої невідкладної ситуації, що потребує пожежно-рятувальної служби.",
+      "sv": "Ring brandkårens nödnummer 110 vid brand, olyckor och andra akuta händelser som kräver brand- och räddningstjänsten.",
+      "da": "Ring brandvæsenets alarmnummer 110 ved brand, ulykker eller andre akutte situationer, som kræver brand- og redningsvæsenet."
+    },
+    "details": {
+      "nb": "Offisiell informasjon fra DSB.",
+      "en": "Official information from DSB.",
+      "uk": "Офіційна інформація DSB.",
+      "sv": "Officiell information från DSB.",
+      "da": "Officiel information fra DSB."
+    }
+  }
+]
